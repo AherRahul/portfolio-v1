@@ -1,0 +1,12 @@
+.idea
+node_modules
+npm-debug.log
+.nuxt
+dist
+sw.*
+/functions-dist
+.env
+.env.production
+.output
+# Local Netlify folder
+.netlify
