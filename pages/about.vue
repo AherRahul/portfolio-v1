@@ -142,7 +142,7 @@ defineOgImageComponent('General')
         </div>
         <div class="hidden sticky bottom-0 lg:block">
           <NuxtPicture width="608" height="931" format="avif,webp,png" densities="x1 x2" placeholder
-            :img-attrs="{ class: 'z-20 ml-24 -mb-24' }" src="/img/alex-fingers-to-the-left-showing.png" alt=""
+            :img-attrs="{ class: 'z-20 ml-24 -mb-24' }" src="/img/rahul-to-the-left-showing.png" alt=""
             aria-hidden />
         </div>
       </div>

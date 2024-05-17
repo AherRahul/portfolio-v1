@@ -45,7 +45,7 @@ const { data: workshops } = useAsyncData('latest-workshops', () => queryContent(
             </div>
             <div class="md:hidden w-1/2">
               <NuxtPicture format="avif,webp,png" width="358" height="468" densities="x1 x2" placeholder :img-attrs="{ class: 'z-20 relative' }"
-                src="/img/alex-main.png" alt="Photo of Rahul Aher" />
+                src="/img/rahul-main.png" alt="Photo of Rahul Aher" />
             </div>
           </div>
           <AppParagraph look="subParagraph" class="mt-8">
@@ -81,7 +81,7 @@ const { data: workshops } = useAsyncData('latest-workshops', () => queryContent(
         </div>
         <div class="w-1/2 md:w-2/5 md:flex-1 h-full hidden md:flex justify-end items-center md:ml-32 md:mt-8">
           <NuxtPicture format="avif,webp,png" width="544" height="710" densities="x1 x2" placeholder :img-attrs="{ class: 'z-20 relative' }"
-            src="/img/alex-main.png" alt="Photo of Rahul Aher" />
+            src="/img/rahul-main.png" alt="Photo of Rahul Aher" />
         </div>
       </div>
       <ContentDivider class="mt-16 md:-mt-10" />
