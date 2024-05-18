@@ -49,33 +49,31 @@ const { data: workshops } = useAsyncData('latest-workshops', () => queryContent(
             </div>
           </div>
           <AppParagraph look="subParagraph" class="mt-8">
-            Hey! I am Rahul Aher, a Sr. Software Engineer (SDE II) based in Mumbai, Maharastra.
-            I help companies to build better web applications and to improve their knowledge, workflows, and culture.
+            Hey! I am Rahul Aher, a Sr. Software Engineer at <AppLink to="https://www.morningstar.com/" style="color: #dc2626 var(--tw-gradient-from-position);">Morningstar</AppLink>.
+            I'm Results driven professional targeting challenging roles in the area of Software Development and Product Development, specializing in both Front-End and Back-End Solutions.
           </AppParagraph>
           <AppParagraph look="subParagraph" class="mt-6">
-            My expertise in JavaScript, TypeScript, Vue.js, and Nuxt.js is highly valued by clients all around the world.
+            My expertise in full-stack web development, expertise in Java, JavaScript, and cloud technologies to drive innovation and deliver high-quality software solutions in a dynamic team environment.
           </AppParagraph>
           <div class="mt-8 flex">
-            <AppMeetingButtonWrapper meeting="intro-website">
-              <AppButton class="mr-4">Schedule meeting</AppButton>
-            </AppMeetingButtonWrapper>
+            <AppButton to="https://www.morningstar.com/" class="mr-4">Resume <Icon name="icons8:file" style="margin-bottom: 2px;" /></AppButton>
             <AppButton to="/about/" look="secondary">About <span class="hidden sm:inline">me</span></AppButton>
           </div>
           <div class="hidden md:flex mt-16 filter text-4xl gap-8">
             <AppLink title="To the Nuxt topic page" to="/topics/nuxt">
               <Icon class="grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all"
-                name="logos:nuxt-icon" />
+                name="logos:java" />
             </AppLink>
             <AppLink title="To the Vue topic page" to="/topics/vue">
               <Icon class="grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all" name="logos:vue" />
             </AppLink>
             <AppLink title="To the TypeScript topic page" to="/topics/typescript">
               <Icon class="grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all"
-                name="logos:typescript-icon" />
+                name="logos:javascript" />
             </AppLink>
             <AppLink title="To the Tailwind CSS topic page" to="/topics/tailwind">
               <Icon class="grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all"
-                name="logos:tailwindcss-icon" />
+                name="logos:aws" />
             </AppLink>
           </div>
         </div>
