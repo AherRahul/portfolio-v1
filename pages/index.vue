@@ -60,7 +60,7 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
             <AppButton to="/about/" look="secondary">About <span class="hidden sm:inline">me</span></AppButton>
           </div>
           <div class="hidden md:flex mt-16 filter text-4xl gap-8">
-            <AppLink title="To the java topic page" to="/topics/java">
+            <AppLink title="To the java topic page" to="/topics/vue">
               <Icon class="grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all"
                 name="logos:java" />
             </AppLink>
@@ -71,7 +71,7 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
               <Icon class="grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all"
                 name="logos:javascript" />
             </AppLink>
-            <AppLink title="To the aws topic page" to="/topics/aws">
+            <AppLink title="To the aws topic page" to="/topics/javascript">
               <Icon class="grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all"
                 name="logos:aws" />
             </AppLink>
