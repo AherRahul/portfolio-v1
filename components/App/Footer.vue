@@ -84,9 +84,13 @@ async function subscribeToNewsletter() {
   state.value = 'loading'
   const { name, email } = form.value
   try {
-    await $fetch('/api/newsletter/subscribe/', {
+    await $fetch('https://script.google.com/macros/s/AKfycbx4jemRUN32qS4nCOoES2bUyk3006GtqNPRRc62Iowi0eTKhocmA6EacDBItUQwyA9k/exec', {
       method: 'POST',
-      body: { name, email }
+      body: { name, email },
+      muteHttpExceptions: true,
+      headers: {
+        "Content-Type": "text/plain;charset=utf-8",
+      },
     })
     state.value = 'confirmation-mail-sent'
     addNotification({

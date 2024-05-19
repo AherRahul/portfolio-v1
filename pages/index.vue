@@ -53,7 +53,7 @@ const { data: workshops } = useAsyncData('latest-workshops', () => queryContent(
             I'm Results driven professional targeting challenging roles in the area of Software Development and Product Development, specializing in both Front-End and Back-End Solutions.
           </AppParagraph>
           <AppParagraph look="subParagraph" class="mt-6">
-            My expertise in full-stack web development, expertise in Java, JavaScript, and cloud technologies to drive innovation and deliver high-quality software solutions in a dynamic team environment.
+            My expertise in full-stack web development, Java, JavaScript, and cloud technologies to drive innovation and deliver high-quality software solutions in a dynamic team environment.
           </AppParagraph>
           <div class="mt-8 flex">
             <AppButton to="https://www.morningstar.com/" class="mr-4">Resume <Icon name="icons8:file" style="margin-bottom: 2px;" /></AppButton>
