@@ -221,7 +221,7 @@ async function subscribeToNewsletter() {
           </AppLink>
           &bull;
           <AppLink class="inline-block underline hover:no-underline"
-            to="https://github.com/aherrahul/rahulaher.netlify.app">
+            to="https://github.com/aherrahul/portfolio-v1">
             Code
           </AppLink>
           licensed under 

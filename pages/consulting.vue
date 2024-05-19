@@ -67,7 +67,7 @@ defineOgImageComponent('General')
             <AppLink class="inline-block" to="/speaking">
               talks and podcast episodes
             </AppLink>.
-            Also, the <AppLink to="https://github.com/aherrahul/rahulaher.netlify.app/">code of the site</AppLink> is open-source.
+            Also, the <AppLink to="https://github.com/aherrahul/portfolio-v1/">code of the site</AppLink> is open-source.
           </p>
 
           <p>

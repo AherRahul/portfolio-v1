@@ -14,13 +14,13 @@ const linkToCurrentPage = withSiteUrl(route.path)
 
 const links = computed(() => {
   const action = page.value.type === 'podcast' ? 'listened to' : 'checked out'
-  const rawShareOnTwitter = `https://twitter.com/intent/tweet?text=I just ${action} "${page.value.title}". Check it out!&url=${linkToCurrentPage.value}&via=TheAlexLichter`
+  const rawShareOnTwitter = `https://twitter.com/intent/tweet?text=I just ${action} "${page.value.title}". Check it out!&url=${linkToCurrentPage.value}&via=rahulvijayaher`
   const shareOnTwitter = encodeURI(rawShareOnTwitter.replace(/#/g, 'No. '))
 
   const twitterLink = page.value.podcastUrl ?? page.value.videoUrl ?? page.value.slidesUrl ?? linkToCurrentPage.value
   const rawDiscussOnTwitter = `https://twitter.com/search?q=${twitterLink}`
 
-  const editOnGitHub = `https://github.com/aherrahul/rahulaher.netlify.app-playground/edit/main/content/${page.value._file}`
+  const editOnGitHub = `https://github.com/aherrahul/portfolio-v1-playground/edit/main/content/${page.value._file}`
   return {
     shareOnTwitter,
     discussOnTwitter: encodeURI(rawDiscussOnTwitter),
@@ -113,7 +113,7 @@ defineOgImageComponent('Speaking', {
             <AppLink
               class="text-red-400 underline decoration-red-400/30 font-semibold transition-all duration-150 hover:decoration-red-400 inline-block"
               :to="links.shareOnTwitter">
-              Tweet this {{ page.type === 'podcast' ? 'podcast' : 'talk' }}
+              Tweet this {{ page.type === 'lecture-notes' ? 'learning' : 'info' }}
             </AppLink> &bull;
             <button
               class="text-red-400 underline decoration-red-400/30 font-semibold transition-all duration-150 hover:decoration-red-400 inline-block"
@@ -152,7 +152,7 @@ defineOgImageComponent('Speaking', {
       </div>
     </AppSection>
     <AppSection>
-      <AppParagraph look="heading" class="mt-16 !text-4xl">Further Talks & Podcasts</AppParagraph>
+      <AppParagraph look="heading" class="mt-16 !text-4xl">Explore Other Topics</AppParagraph>
       <div class="flex flex-col gap-8 justify-between mt-16 md:gap-32 md:mt-24">
         <LazySpeakingPreview v-if="isTalkOrPodcast(prev)" :talk="prev" />
         <LazySpeakingPreview v-if="isTalkOrPodcast(next)" :talk="next" />

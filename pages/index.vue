@@ -49,11 +49,18 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
             </div>
           </div>
           <AppParagraph look="subParagraph" class="mt-8">
-            Hey! I am Rahul Aher, a Sr. Software Engineer at <AppLink to="https://www.morningstar.com/" style="color: #dc2626 var(--tw-gradient-from-position);">Morningstar</AppLink>.
-            I'm Results driven professional targeting challenging roles in the area of Software Development and Product Development, specializing in both Front-End and Back-End Solutions.
+            Hello! I'm Rahul Aher, a Senior Software Engineer at 
+            <AppLink to="https://www.morningstar.com/" style="color: #dc2626 var(--tw-gradient-from-position);">Morningstar</AppLink>, 
+            passionate about crafting impactful software solutions. With a results-driven approach, 
+            I thrive on tackling challenging roles in Software and Product Development..
           </AppParagraph>
           <AppParagraph look="subParagraph" class="mt-6">
-            My expertise in full-stack web development, Java, JavaScript, and cloud technologies to drive innovation and deliver high-quality software solutions in a dynamic team environment.
+            My expertise spans full-stack web development, with a strong command of Java, JavaScript, 
+            and cutting-edge cloud technologies. I'm dedicated to driving innovation and delivering 
+            top-notch solutions, leveraging my skills to excel in dynamic team environments.
+          </AppParagraph>
+          <AppParagraph look="subParagraph" class="mt-6">
+            Let's collaborate to create software that makes a difference!
           </AppParagraph>
           <div class="mt-8 flex">
             <AppButton to="https://www.morningstar.com/" class="mr-4">Resume <Icon name="icons8:file" style="margin-bottom: 2px;" /></AppButton>
@@ -61,18 +68,18 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
           </div>
           <div class="hidden md:flex mt-16 filter text-4xl gap-8">
             <AppLink title="To the java topic page" to="/topics/vue">
-              <Icon class="grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all"
+              <Icon class=""
                 name="logos:java" />
             </AppLink>
             <AppLink title="To the Vue topic page" to="/topics/vue">
-              <Icon class="grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all" name="logos:vue" />
+              <Icon class="" name="logos:vue" />
             </AppLink>
             <AppLink title="To the javascript topic page" to="/topics/javascript">
-              <Icon class="grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all"
+              <Icon class=""
                 name="logos:javascript" />
             </AppLink>
             <AppLink title="To the aws topic page" to="/topics/javascript">
-              <Icon class="grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all"
+              <Icon class=""
                 name="logos:aws" />
             </AppLink>
           </div>
@@ -84,51 +91,80 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
       </div>
       <ContentDivider class="mt-16 md:-mt-10" />
     </AppSection>
-    <AppSection class="my-32">
+
+    <AppSection class="my-32" >
       <div class="flex flex-col gap-16 md:gap-8 md:flex-row justify-around">
         <LazyServicePreview icon="eos-icons:machine-learning-outlined" title="Learn" to="/speaking">
-          I love to share my knowledge and experience with the community.
-          I speak at conferences and meetups, and I am always open to new opportunities.
+          I'm passionate about continuous learning and believe in the value of hands-on experience. I actively 
+          learn new concepts, ensuring a deeper understanding of each topic. This proactive approach fuels my 
+          growth mindset and fosters ongoing professional development.
         </LazyServicePreview>
         <LazyServicePreview icon="ph:chalkboard-teacher-light" title="Build" to="/projects">
-          Want to level up your team's skills? I offer projects on Vue, Nuxt, TypeScript, testing and more topics.
-          Don't hesitate to reach out and let's discuss your needs.
+          I am dedicated to continuous learning, and I reinforce my understanding of new concepts by applying them
+           to real-world projects. This approach not only enhances my skills but also allows me to delve 
+           deeper into each concept, ensuring a comprehensive understanding.
         </LazyServicePreview>
         <LazyServicePreview icon="mdi:lightbulb-on-outline" title="Share" to="/articles">
-          Companies reach out to help them build better Vue and Nuxt applications
-          - from solving problems to discussing the right abstractions and architecture.
+          I love to share my knowledge and experience with the community. I mentor CDAC students, guiding them into 
+          the software world. I enjoy collaborating on problem-solving, discussing optimal abstractions, and refining 
+          architecture to ensure successful outcomes.
         </LazyServicePreview>
       </div>
       <ContentDivider class="mt-32" anchor="left" />
     </AppSection>
-    <AppSection class="mt-48 md:mt-32">
-      <LazyParagraphDecoration />
+
+    <AppSection>
+      <LazyParagraphDecoration class="" />
       <AppParagraph class="mr-8 mt-4" tag="h2" look="heading">
-        Projects
+        Concepts - Learning
       </AppParagraph>
       <div class="flex flex-col gap-8 md:gap-0 md:flex-row justify-between">
         <AppParagraph look="subParagraph" class="mt-8 max-w-xl">
-          Take your team's skills to the next level with my projects on Vue, Nuxt, TypeScript, testing and various other
-          topics.
+          <span style="font-style: italic;">“I am always ready to learn although I do not always like being taught.”</span> — Winston Churchill
         </AppParagraph>
+        <div>
+          <AppButton to="/speaking/" look="secondary">View all Learning's</AppButton>
+        </div>
+      </div>
+      <div class="flex flex-col space-y-8 mt-8">
+        <LazySpeakingPreview v-for="talk in talks" :key="talk._id" :talk="talk" />
+      </div>
+      <div class="flex md:justify-end mt-16">
+        <AppButton to="/speaking/" look="secondary">View all Learning's</AppButton>
+      </div>
+      <ContentDivider class="mt-14" />
+    </AppSection>
+
+    <AppSection class="bg-zinc-900" style="padding-top: 2.5rem;">
+      <LazyParagraphDecoration />
+      <AppParagraph class="mr-8 mt-4" tag="h2" look="heading">
+        Projects -Building
+      </AppParagraph>
+      <div class="flex flex-col gap-8 md:gap-0 md:flex-row justify-between">
+        <AppParagraph look="subParagraph" class="mt-8 max-w-xl">
+          <span style="font-style: italic;">“Offline-first is not just a feature, it’s a mindset. It’s about 
+            building resilient systems that empower users, no matter their connection status.”</span> — Akshat Paul
+         </AppParagraph>
         <div>
           <AppButton to="/projects/" look="secondary">Discover all Projects</AppButton>
         </div>
       </div>
       <div class="flex flex-col md:flex-row gap-16 md:gap-8 justify-around mt-8">
         <LazyProjectPreview class="flex-1" v-for="project in projects" :project="project" />
-      </div>
-      <ContentDivider class="mt-14" />
+      </div> 
+      <ContentDivider anchor="left" class="mt-14" />
     </AppSection>
-    <AppSection class="bg-zinc-900">
+
+    <AppSection>
       <LazyParagraphDecoration class="mt-16" />
-      <AppParagraph class="mr-8 mt-4" tag="h2" look="heading">
-        Articles
+      <AppParagraph class="mr-8 mt-4" tag="h2" look="heading"> 
+        Knowledge - Sharing
       </AppParagraph>
       <div class="flex flex-col gap-8 md:gap-0 md:flex-row justify-between">
         <AppParagraph look="subParagraph" class="mt-8 max-w-xl">
-          I love to share my knowledge and experience with the community.
-          Have a look at my latest articles below.
+          <span style="font-style: italic;">“You might not think that programmers are artists, but programming 
+            is an extremely creative profession. It’s logic-based creativity.”</span> — Alex Litcher
+          
         </AppParagraph>
         <div>
           <AppButton to="/articles" look="secondary" secondary-after-bg="bg-zinc-900">View all articles</AppButton>
@@ -140,27 +176,8 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
       <div class="flex md:justify-end mt-8">
         <AppButton to="/articles" look="secondary" secondary-after-bg="bg-zinc-900">View all articles</AppButton>
       </div>
-      <ContentDivider anchor="left" class="mt-14" />
+      <ContentDivider class="mt-14" />
     </AppSection>
-    <AppSection>
-      <LazyParagraphDecoration class="mt-16" />
-      <AppParagraph class="mr-8 mt-4" tag="h2" look="heading">
-        Speaking
-      </AppParagraph>
-      <div class="flex flex-col gap-8 md:gap-0 md:flex-row justify-between">
-        <AppParagraph look="subParagraph" class="mt-8 max-w-xl">
-          Check out my latest talks, podcast episodes and other appearances, as well as upcoming events.
-        </AppParagraph>
-        <div>
-          <AppButton to="/speaking/" look="secondary">View all talks</AppButton>
-        </div>
-      </div>
-      <div class="flex flex-col space-y-8 mt-8">
-        <LazySpeakingPreview v-for="talk in talks" :key="talk._id" :talk="talk" />
-      </div>
-      <div class="flex md:justify-end mt-16">
-        <AppButton to="/speaking/" look="secondary">View all talks</AppButton>
-      </div>
-    </AppSection>
+   
   </div>
 </template>

@@ -42,7 +42,7 @@ const links = computed(() => {
 
   const rawDiscussOnTwitter = `https://twitter.com/search?q=${linkToCurrentPage.value}`
 
-  const editOnGitHub = `https://github.com/aherrahul/rahulaher.netlify.app/edit/main/content/${article.value._file}`
+  const editOnGitHub = `https://github.com/aherrahul/portfolio-v1/edit/main/content/${article.value._file}`
   return {
     shareOnTwitter,
     discussOnTwitter: encodeURI(rawDiscussOnTwitter),
