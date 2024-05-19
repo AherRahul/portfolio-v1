@@ -24,7 +24,7 @@ const { data: talks } = useAsyncData('latest-speaking', () => queryContent<TalkP
   date: -1
 }).without(['body', 'excerpt']).limit(5).find())
 
-const { data: workshops } = useAsyncData('latest-workshops', () => queryContent('/workshops/').sort({
+const { data: projects } = useAsyncData('latest-projects', () => queryContent('/projects/').sort({
   onStartPage: 1
 }).without(['body', 'excerpt']).limit(3).find())
 </script>
@@ -60,18 +60,18 @@ const { data: workshops } = useAsyncData('latest-workshops', () => queryContent(
             <AppButton to="/about/" look="secondary">About <span class="hidden sm:inline">me</span></AppButton>
           </div>
           <div class="hidden md:flex mt-16 filter text-4xl gap-8">
-            <AppLink title="To the Nuxt topic page" to="/topics/nuxt">
+            <AppLink title="To the java topic page" to="/topics/java">
               <Icon class="grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all"
                 name="logos:java" />
             </AppLink>
             <AppLink title="To the Vue topic page" to="/topics/vue">
               <Icon class="grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all" name="logos:vue" />
             </AppLink>
-            <AppLink title="To the TypeScript topic page" to="/topics/typescript">
+            <AppLink title="To the javascript topic page" to="/topics/javascript">
               <Icon class="grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all"
                 name="logos:javascript" />
             </AppLink>
-            <AppLink title="To the Tailwind CSS topic page" to="/topics/tailwind">
+            <AppLink title="To the aws topic page" to="/topics/aws">
               <Icon class="grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all"
                 name="logos:aws" />
             </AppLink>
@@ -86,17 +86,17 @@ const { data: workshops } = useAsyncData('latest-workshops', () => queryContent(
     </AppSection>
     <AppSection class="my-32">
       <div class="flex flex-col gap-16 md:gap-8 md:flex-row justify-around">
-        <LazyServicePreview icon="mdi:lightbulb-on-outline" title="Consulting" to="/consulting">
-          Companies reach out to help them build better Vue and Nuxt applications
-          - from solving problems to discussing the right abstractions and architecture.
-        </LazyServicePreview>
-        <LazyServicePreview icon="ph:chalkboard-teacher-light" title="Workshops" to="/workshops">
-          Want to level up your team's skills? I offer workshops on Vue, Nuxt, TypeScript, testing and more topics.
-          Don't hesitate to reach out and let's discuss your needs.
-        </LazyServicePreview>
-        <LazyServicePreview icon="ph:microphone" title="Public speaking" to="/speaking">
+        <LazyServicePreview icon="eos-icons:machine-learning-outlined" title="Learn" to="/speaking">
           I love to share my knowledge and experience with the community.
           I speak at conferences and meetups, and I am always open to new opportunities.
+        </LazyServicePreview>
+        <LazyServicePreview icon="ph:chalkboard-teacher-light" title="Build" to="/projects">
+          Want to level up your team's skills? I offer projects on Vue, Nuxt, TypeScript, testing and more topics.
+          Don't hesitate to reach out and let's discuss your needs.
+        </LazyServicePreview>
+        <LazyServicePreview icon="mdi:lightbulb-on-outline" title="Share" to="/articles">
+          Companies reach out to help them build better Vue and Nuxt applications
+          - from solving problems to discussing the right abstractions and architecture.
         </LazyServicePreview>
       </div>
       <ContentDivider class="mt-32" anchor="left" />
@@ -104,19 +104,19 @@ const { data: workshops } = useAsyncData('latest-workshops', () => queryContent(
     <AppSection class="mt-48 md:mt-32">
       <LazyParagraphDecoration />
       <AppParagraph class="mr-8 mt-4" tag="h2" look="heading">
-        Workshops
+        Projects
       </AppParagraph>
       <div class="flex flex-col gap-8 md:gap-0 md:flex-row justify-between">
         <AppParagraph look="subParagraph" class="mt-8 max-w-xl">
-          Take your team's skills to the next level with my workshops on Vue, Nuxt, TypeScript, testing and various other
+          Take your team's skills to the next level with my projects on Vue, Nuxt, TypeScript, testing and various other
           topics.
         </AppParagraph>
         <div>
-          <AppButton to="/workshops/" look="secondary">Discover all Workshops</AppButton>
+          <AppButton to="/projects/" look="secondary">Discover all Projects</AppButton>
         </div>
       </div>
       <div class="flex flex-col md:flex-row gap-16 md:gap-8 justify-around mt-8">
-        <LazyWorkshopPreview class="flex-1" v-for="workshop in workshops" :workshop="workshop" />
+        <LazyProjectPreview class="flex-1" v-for="project in projects" :project="project" />
       </div>
       <ContentDivider class="mt-14" />
     </AppSection>

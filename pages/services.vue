@@ -4,7 +4,7 @@ definePageMeta({
 })
 
 const title = 'Services'
-const description = 'Take a look at the services I offer, including web engineering consulting, workshops for various topics and more.'
+const description = 'Take a look at the services I offer, including web engineering consulting, projects for various topics and more.'
 
 useSeoMeta({
   title,
@@ -24,8 +24,8 @@ defineOgImageComponent('General')
           Companies reach out to help them build better Vue and Nuxt applications
           - from solving problems to discussing the right abstractions and architecture.
         </ServicePreview>
-        <ServicePreview class="max-w-xl bg-zinc-900 p-8" icon="ph:chalkboard-teacher-light" title="Workshops" to="/workshops">
-          Want to level up your team's skills? I offer workshops on Vue, Nuxt, TypeScript, Testing, and more topics.
+        <ServicePreview class="max-w-xl bg-zinc-900 p-8" icon="ph:chalkboard-teacher-light" title="Projects" to="/projects/">
+          Want to level up your team's skills? I offer projects on Vue, Nuxt, TypeScript, Testing, and more topics.
           Don't hesitate to reach out and let's discuss your needs.
         </ServicePreview>
       </div>

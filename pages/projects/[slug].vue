@@ -1,21 +1,21 @@
 <script setup lang="ts">
 import { onContentNotFound } from '~/utils/content.js';
 
-const { page: workshop } = useContent()
+const { page: project } = useContent()
 
 useSeoMeta({
-  title: () => workshop.value.title,
-  description: () => workshop.value.description,  
-  ogTitle: () => workshop.value.title,
-  ogDescription: () => workshop.value.description,
+  title: () => project.value.title,
+  description: () => project.value.description,  
+  ogTitle: () => project.value.title,
+  ogDescription: () => project.value.description,
 })
 
-onContentNotFound(workshop)
+onContentNotFound(project)
 
 const requestQuoteLink = computed(() => {
-  const prefix = 'mailto:alichter@developmint.de?subject=Workshop request: '
-  const title = workshop.value.title
-  const suffix = `&body=Hi Rahul,%0D%0A%0D%0Awe would like to request a quote for the ${title} workshop.%0D%0A%0D%0A
+  const prefix = 'mailto:alichter@developmint.de?subject=Project request: '
+  const title = project.value.title
+  const suffix = `&body=Hi Rahul,%0D%0A%0D%0Awe would like to request a quote for the ${title} project.%0D%0A%0D%0A
 
   Desired/Possible dates: %0D%0A
 
@@ -28,11 +28,11 @@ const requestQuoteLink = computed(() => {
   return prefix + title + suffix
 })
 
-defineOgImageComponent('Workshop', {
-  title: workshop.value.title,
-  time: workshop.value.time,
-  attendees: workshop.value.attendees ?? 20,
-  languages: workshop.value.languages ?? ['English', 'Indian'],
+defineOgImageComponent('Project', {
+  title: project.value.title,
+  time: project.value.time,
+  attendees: project.value.attendees ?? 20,
+  languages: project.value.languages ?? ['English', 'Indian'],
 })
 
 </script>
@@ -40,12 +40,12 @@ defineOgImageComponent('Workshop', {
 <template>
   <div>
     <AppSection class="bg-gradient-to-b from-black to-zinc-900 !pb-4">
-      <AppLinkBack to="/workshops/">All Workshops</AppLinkBack>
+      <AppLinkBack to="/projects/">All Projects</AppLinkBack>
       <ParagraphDecoration class="mt-4" />
       <AppParagraph class="mt-4" look="heading" tag="h1">
-        {{ workshop.title }}
+        {{ project.title }}
       </AppParagraph>
-      <WorkshopDetails :time="workshop.time" class="mt-8 space-y-2 md:space-y-0 md:flex gap-8" />
+      <ProjectDetails :time="project.time" class="mt-8 space-y-2 md:space-y-0 md:flex gap-8" />
     </AppSection>
     <AppSection class="bg-zinc-900 !pb-0" inner-class="border-b border-zinc-800">
       <div class="md:grid grid-cols-2 justify-center gap-8 pb-16">

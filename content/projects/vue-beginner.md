@@ -1,6 +1,6 @@
 ---
-title: "Vue 3 Workshop: Learn the Framework from Scratch"
-description: "Vue.js is a popular, modern JavaScript framework for developing interactive web applications. This workshop is aimed at participants with no previous knowledge of using JavaScript frameworks and offers a comprehensive introduction to the basics of Vue 3."
+title: "Vue 3 Project: Learn the Framework from Scratch"
+description: "Vue.js is a popular, modern JavaScript framework for developing interactive web applications. This project is aimed at participants with no previous knowledge of using JavaScript frameworks and offers a comprehensive introduction to the basics of Vue 3."
 time: 3 days
 topics:
   - vue
@@ -8,7 +8,7 @@ onStartPage: true
 ---
 
 Vue.js is a popular, modern JavaScript framework for developing interactive web applications. With its third major version, Vue 3, it has become even more powerful and easier to use.
-During this workshop, we will cover the basics of Vue 3 and learn how to develop web applications using the framework. In fact, we will build one coherent application from scratch, step by step, and learn the most important concepts of Vue 3 along the way.
+During this project, we will cover the basics of Vue 3 and learn how to develop web applications using the framework. In fact, we will build one coherent application from scratch, step by step, and learn the most important concepts of Vue 3 along the way.
 
 :toc
 
@@ -50,11 +50,11 @@ During this workshop, we will cover the basics of Vue 3 and learn how to develop
 
 ## Target audience and requirements
 
-This workshop is aimed for developers who have basic [JavaScript](/workshops/javascript-beginner/), HTML and CSS knowledge. There is no Vue knowledge necessary. Having worked with [TypeScript](/workshops/typescript-beginner/) before is a plus, but not required.
+This project is aimed for developers who have basic [JavaScript](/projects/javascript-beginner/), HTML and CSS knowledge. There is no Vue knowledge necessary. Having worked with [TypeScript](/projects/typescript-beginner/) before is a plus, but not required.
 
 ## Takeways
 
-After this workshop, you will be able to:
+After this project, you will be able to:
 
 * Create Vue applications from scratch
 * Understand the core concepts of Vue.js 3
@@ -64,8 +64,8 @@ After this workshop, you will be able to:
 
 ## Format
 
-This workshop is a **hands-on workshop**.
+This project is a **hands-on project**.
 
-Instead of the typical workshop flow, you will work through the exercises before I'll teach you the theory and background. This way, you will learn the most important concepts of Nuxt.js by doing and not by listening or copying lines of code from the slides.
+Instead of the typical project flow, you will work through the exercises before I'll teach you the theory and background. This way, you will learn the most important concepts of Nuxt.js by doing and not by listening or copying lines of code from the slides.
 
 After each exercise, we will go through the solution and theory together, reinforcing what you have learned.

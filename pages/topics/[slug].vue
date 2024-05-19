@@ -31,11 +31,11 @@ const speakingQuery: QueryBuilderParams = {
 
 const workshopQuery: QueryBuilderParams = {
   ...baseQuery,
-  path: '/workshops/'
+  path: '/projects/'
 }
 
 const title = `Topic: ${page.value.title}`
-const description = `Being it talks, workshops, panels, podcasts or blog posts, here you can find all my content sorted by topic.`
+const description = `Being it talks, projects, panels, podcasts or blog posts, here you can find all my content sorted by topic.`
 
 useSeoMeta({
   title,
@@ -57,10 +57,10 @@ defineOgImageComponent('Speaking')
       <ContentList :query="workshopQuery">
         <template #default="{ list }">
           <AppParagraph class="pt-16 !text-4xl" look="heading" tag="h2">
-            Workshops
+            Projects
           </AppParagraph>
           <div class="space-y-8 md:space-y-0 md:grid grid-cols-2 gap-12 justify-around my-8">
-            <WorkshopPreview v-for="entry in list" :key="entry._path" :workshop="entry" />
+            <ProjectPreview v-for="entry in list" :key="entry._path" :project="entry" />
           </div>
         </template>
         <template #not-found></template>

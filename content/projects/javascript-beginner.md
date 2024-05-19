@@ -1,6 +1,6 @@
 ---
-title: "JavaScript Made Easy: A Beginner's Workshop"
-description: "During the JavaScript beginner's workshop, we will demystify the language and provide a clear and accessible introduction to. From the fundamentals of variables and functions to hands-on coding exercises, you'll begin your journey as a JavaScript developer."
+title: "JavaScript Made Easy: A Beginner's Project"
+description: "During the JavaScript beginner's project, we will demystify the language and provide a clear and accessible introduction to. From the fundamentals of variables and functions to hands-on coding exercises, you'll begin your journey as a JavaScript developer."
 time: 2 days
 topics:
   - javascript
@@ -9,7 +9,7 @@ onStartPage: true
 
 JavaScript is everywhere nowadays and can be your gateway to the world of web development, creating desktop or mobile applications, and becoming a fullstack developer &mdash; all by learning a single language.
 
-In this workshop, JavaScript will be demystified, providing a clear and accessible introduction to the language that powers interactivity on the web. From the fundamentals of variables and functions to hands-on coding exercises, you'll gain the essential skills needed to begin your journey as a JavaScript developer.
+In this project, JavaScript will be demystified, providing a clear and accessible introduction to the language that powers interactivity on the web. From the fundamentals of variables and functions to hands-on coding exercises, you'll gain the essential skills needed to begin your journey as a JavaScript developer.
 
 **JavaScript doesn't have to be daunting; let us make it easy for you!**
 
@@ -58,14 +58,14 @@ In this workshop, JavaScript will be demystified, providing a clear and accessib
 
 ## Target audience and requirements
 
-This workshop targets developers who have no or little knowledge of JavaScript and want to learn the basics. No previous knowledge is required. General programming understanding is helpful, but not required.
+This project targets developers who have no or little knowledge of JavaScript and want to learn the basics. No previous knowledge is required. General programming understanding is helpful, but not required.
 
-If JavaScript knowledge is already present but it lacks the info about the latest features, the [Modern JavaScript Workshop](/workshops/javascript-modern/) is recommended. Otherwise, combining is also possible
+If JavaScript knowledge is already present but it lacks the info about the latest features, the [Modern JavaScript Project](/projects/javascript-modern/) is recommended. Otherwise, combining is also possible
 
 ## Format
 
-This workshop is a **hands-on workshop**.
+This project is a **hands-on project**.
 
-Instead of the typical workshop flow, you will work through the exercises before I'll teach you the theory and background. This way, you will learn the most important concepts of Nuxt.js by doing and not by listening or copying lines of code from the slides.
+Instead of the typical project flow, you will work through the exercises before I'll teach you the theory and background. This way, you will learn the most important concepts of Nuxt.js by doing and not by listening or copying lines of code from the slides.
 
 After each exercise, we will go through the solution and theory together, reinforcing what you have learned.

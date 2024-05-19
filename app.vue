@@ -117,7 +117,7 @@ function useSiteNotifications() {
 
     addNotification({
       heading: 'Ich spreche auch Deutsch!',
-      body: 'Alle Workshops und Talks können auch auf Deutsch gehalten werden.',
+      body: 'Alle Projects und Talks können auch auf Deutsch gehalten werden.',
       onRemove() {
         localStorage.setItem(LOCALSTORAGE_KEYS.notificationGerman, 'true')
       }

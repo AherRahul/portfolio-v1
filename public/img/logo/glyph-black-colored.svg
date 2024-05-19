@@ -9,6 +9,7 @@
 
       .cls-2 {
         fill: #ea0f24;
+        src: url('./VLADIMIR.ttf');
         font-family: VladimirScript, 'Vladimir Script';
         font-size: 130px;
       }

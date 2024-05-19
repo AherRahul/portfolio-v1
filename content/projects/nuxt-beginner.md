@@ -1,6 +1,6 @@
 ---
-title: "Nuxt.js Workshop: Crafting modern web apps"
-description: "In this workshop, we will develop a real-life-like app using Nuxt.js - from creating the project to the final deployment. During this process we will take a look at various of the core features Nuxt.js offers and also show common pitfalls and how to avoid them."
+title: "Nuxt.js Project: Crafting modern web apps"
+description: "In this project, we will develop a real-life-like app using Nuxt.js - from creating the project to the final deployment. During this process we will take a look at various of the core features Nuxt.js offers and also show common pitfalls and how to avoid them."
 time: "2 days"
 topics:
   - nuxt
@@ -10,7 +10,7 @@ onStartPage: true
 
 Nuxt.js is an intuitive vue-based meta framework for building web applications &mdash; and it will make a developer’s life easier. The framework offers various rendering modes, including Server Side Rendering, Static Site Generation, ISG/ISR and hybrid modes, as well as more performance goodies out of the box like automatic code splitting and lazy-loading. With Nuxt you will make sure your front-end is production-ready quickly and comes with great performance by default.
 
-In this workshop, we will develop a real-life-like app with Nuxt.js together, from creating the project to the final deployment. During this process we will take a look at many features Nuxt.js offers and also show common pitfalls and how to avoid them.
+In this project, we will develop a real-life-like app with Nuxt.js together, from creating the project to the final deployment. During this process we will take a look at many features Nuxt.js offers and also show common pitfalls and how to avoid them.
 
 :toc
 
@@ -71,12 +71,12 @@ In this workshop, we will develop a real-life-like app with Nuxt.js together, fr
 
 ## Target audience and requirements
 
-This workshop is for developers who want to learn how to build web applications with Nuxt.js. It is not required to have any previous experience with Nuxt.js, but you should have a basic understanding of [Vue.js 3](/workshops/vue-beginner/), the [Vue Composition API](/workshops/vue-composition-api/) and [JavaScript](/workshops/javascript-beginner/).
+This project is for developers who want to learn how to build web applications with Nuxt.js. It is not required to have any previous experience with Nuxt.js, but you should have a basic understanding of [Vue.js 3](/projects/vue-beginner/), the [Vue Composition API](/projects/vue-composition-api/) and [JavaScript](/projects/javascript-beginner/).
 
 ## Format
 
-This workshop is a **hands-on workshop**.
+This project is a **hands-on project**.
 
-Instead of the typical workshop flow, you will work through the exercises before I'll teach you the theory and background. This way, you will learn the most important concepts of Nuxt.js by doing and not by listening or copying lines of code from the slides.
+Instead of the typical project flow, you will work through the exercises before I'll teach you the theory and background. This way, you will learn the most important concepts of Nuxt.js by doing and not by listening or copying lines of code from the slides.
 
 After each exercise, we will go through the solution and theory together, reinforcing what you have learned.

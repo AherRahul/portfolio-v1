@@ -4,7 +4,6 @@ const navigation = {
     { name: 'Articles', to: '/articles/' },
     { name: 'Talks & Podcasts', to: '/speaking/' },
     { name: 'Videos', to: SOCIALS.youtube },
-    { name: 'Livestreams', to: SOCIALS.twitch },
   ],
   general: [
     { name: 'About', to: '/about/' },
@@ -14,7 +13,7 @@ const navigation = {
   ],
   services: [
     { name: 'Consulting', to: '/consulting/' },
-    { name: 'Workshops', to: '/workshops/' },
+    { name: 'Projects', to: '/projects/' },
     // { name: 'Projects', to: '/projects/' },
     // { name: 'Testimonials', to: '/testimonials/' },
   ],
@@ -29,29 +28,17 @@ const navigation = {
       hoverClass: 'hover:text-blue-400'
     },
     {
-      name: 'Mastodon',
-      href: SOCIALS.mastodon,
-      icon: 'mdi:mastodon',
-      hoverClass: 'hover:text-gray-300',
-    },
-    {
       name: 'GitHub',
       href: SOCIALS.github,
       icon: 'mdi:github',
       hoverClass: 'hover:text-gray-200'
     },
-    {
-      name: 'YouTube',
-      href: SOCIALS.youtube,
-      icon: 'mdi:youtube',
-      hoverClass: 'hover:text-red-500'
-    },
-    {
-      name: 'Twitch',
-      href: SOCIALS.twitch,
-      icon: 'mdi:twitch',
-      hoverClass: 'hover:text-purple-500'
-    },
+    // {
+    //   name: 'YouTube',
+    //   href: SOCIALS.youtube,
+    //   icon: 'mdi:youtube',
+    //   hoverClass: 'hover:text-red-500'
+    // },
     {
       name: 'LinkedIn',
       href: SOCIALS.linkedin,
@@ -59,10 +46,10 @@ const navigation = {
       hoverClass: 'hover:text-blue-500'
     },
     {
-      name: 'Feed',
-      href: '/feed.xml',
-      icon: 'mdi:rss',
-      hoverClass: 'hover:text-red-500'
+      name: 'Gmail',
+      href: SOCIALS.gmail,
+      icon: 'mdi:gmail',
+      hoverClass: 'hover:text-blue-500'
     },
   ],
 }

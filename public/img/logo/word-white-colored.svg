@@ -12,6 +12,7 @@
 
       .cls-4 {
         fill: #fff;
+        src: url('./candara.ttf');
         font-family: Candara, Candara;
         font-size: 60px;
       }

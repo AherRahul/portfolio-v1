@@ -26,7 +26,7 @@ defineOgImageComponent('Article')
     <ParagraphDecoration class="mt-16" />
     <AppParagraph class="mt-4" tag="h1" look="heading">Articles</AppParagraph>
     <AppParagraph class="max-w-3xl mt-8" look="subParagraph">
-      Below you can find a list of my talks, podcast appearances, given workshops and panels.
+      Below you can find a list of my talks, podcast appearances, given projects and panels.
       If you are interested in more than just the excerpt, title and brief topics, click on the entry to get to the
       slides, videos or recording link!
     </AppParagraph>

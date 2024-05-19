@@ -1,7 +1,7 @@
 ---
 title: "Web Fundamentals and Vue.js"
 date: "2022-04-12"
-eventName: "Private workshop"
+eventName: "Private project"
 location: "Online"
 type: "talk"
 language: "en"
@@ -12,7 +12,7 @@ topics:
   - javascript
 ---
 
-The goal of the workshop was to teach people the fundamentals of the web: How the web works, the basics of the three main languages HTML, CSS and JavaScript and how to use them together.
+The goal of the project was to teach people the fundamentals of the web: How the web works, the basics of the three main languages HTML, CSS and JavaScript and how to use them together.
 
 Eventually, we took a look at Vue.js as a JavaScript framework and the concepts of single file components, props, events and more!
 

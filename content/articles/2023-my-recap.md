@@ -120,9 +120,9 @@ You can [subscribe to it now](/newsletter/) already!
 
 Open source is lots of fun, but it doesn't fully pay the bills. At this point, I want to thank [all my sponsors](/sponsors/) and also past sponsors for their support. It means a lot to me, and I'm really grateful for it.
 
-The main chunk of my income comes from my work at my own company through [consulting](/consulting/) and [workshops](/workshops/) - and I think it is the perfect counterpart to open source. I can work with companies and help them with their projects while also learning a lot from them and their use cases. That allows me to understand how they use Nuxt.js, which pain points they experience and how I can help them. On the other hand, they also expect me to know the guts of Nuxt.js and how it works internally - a perfect symbiosis.
+The main chunk of my income comes from my work at my own company through [consulting](/consulting/) and [projects](/projects/) - and I think it is the perfect counterpart to open source. I can work with companies and help them with their projects while also learning a lot from them and their use cases. That allows me to understand how they use Nuxt.js, which pain points they experience and how I can help them. On the other hand, they also expect me to know the guts of Nuxt.js and how it works internally - a perfect symbiosis.
 
-In 2023, I worked together with incredible people and companies. Business-wise, 2023 was a great year, even with quite some time spent on the move and the economic crisis. With a good number of clients as wells as more than 12 workshops (at conferences and for businesses), I'm really pleased with the outcome of 2023.
+In 2023, I worked together with incredible people and companies. Business-wise, 2023 was a great year, even with quite some time spent on the move and the economic crisis. With a good number of clients as wells as more than 12 projects (at conferences and for businesses), I'm really pleased with the outcome of 2023.
 
 ## Goals and plans for 2024
 

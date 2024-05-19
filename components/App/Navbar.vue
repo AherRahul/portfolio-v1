@@ -6,43 +6,43 @@ const route = useRoute()
 const MENU_ITEMS = [
   { text: 'Articles', to: '/articles/', activeRoutes: [] },
   { text: 'Learning', to: '/speaking/', activeRoutes: [] },
-  { text: 'Services', to: '/services/', activeRoutes: ['/workshops/', '/consulting/'] },
+  { text: 'Services', to: '/services/', activeRoutes: ['/projects/', '/consulting/'] },
   // { text: 'Projects', to: '/projects' },
   { text: 'About', to: '/about/', activeRoutes: [] },
   { text: 'Contact', to: '/contact/', activeRoutes: [] },
 ] as const
 
-const streamChangesEndpoint = 'https://raw.githubusercontent.com/manniL/rahulaher.netlify.app-twitch-status/main/latest.json'
+// const streamChangesEndpoint = 'https://raw.githubusercontent.com/aherrahul/portfolio-v1-twitch-status/main/latest.json'
 
-// TODO: Maybe fetch in app.vue and pass to the navbar?
-const { data, refresh } = useLazyFetch<any>(streamChangesEndpoint, {
-  server: false,
-  responseType: 'json'
-})
+// // TODO: Maybe fetch in app.vue and pass to the navbar?
+// const { data, refresh } = useLazyFetch<any>(streamChangesEndpoint, {
+//   server: false,
+//   responseType: 'json'
+// })
 
-const { addNotification } = useNotifications()
+// const { addNotification } = useNotifications()
 
-const isLive = computed(() => data.value?.title)
+// const isLive = computed(() => data.value?.title)
 
 onMounted(() => {
-  watch(isLive, (isLiveNow) => {
-    if (!isLiveNow) {
-      return
-    }
-    addNotification({
-      heading: 'Rahul Aher is live on Twitch at the moment',
-      iconName: 'mdi:twitch',
-      iconClass: 'text-purple-700',
-      body: [
-        { type: 'text', text: 'Go to '},
-        { type: 'link', href: 'https://www.twitch.tv/TheAlexLichter', text: 'the stream now!'},
-      ]
-    })
-  })
+  // watch(isLive, (isLiveNow) => {
+  //   if (!isLiveNow) {
+  //     return
+  //   }
+  //   addNotification({
+  //     heading: 'Rahul Aher is live on Twitch at the moment',
+  //     iconName: 'mdi:twitch',
+  //     iconClass: 'text-purple-700',
+  //     body: [
+  //       { type: 'text', text: 'Go to '},
+  //       { type: 'link', href: 'https://www.twitch.tv/TheAlexLichter', text: 'the stream now!'},
+  //     ]
+  //   })
+  // })
 })
 
 // Refresh data every 5 minutes
-useIntervalFn(refresh, 1000 * 60 * 5)
+// useIntervalFn(refresh, 1000 * 60 * 5)
 
 </script>
 <template>
@@ -62,7 +62,7 @@ useIntervalFn(refresh, 1000 * 60 * 5)
               :class="{ '!border-red-500 text-red-500': $route.path.startsWith(item.to) || item.activeRoutes.some(route => $route.path.startsWith(route)) }"
               class="transition-all duration-200 border-b-2 border-transparent pt-1 py-1 px-2 md:px-3 md:py-2 text-base font-medium text-gray-300 hover:text-red-500">
               {{ item.text }}</AppLink>
-            <AppLink :to="isLive ? SOCIALS.twitch : undefined" title="To my Twitch Channel" :aria-disabled="!isLive" active-class="!border-red-500 text-red-500"
+            <!-- <AppLink :to="isLive ? SOCIALS.twitch : undefined" title="To my Twitch Channel" :aria-disabled="!isLive" active-class="!border-red-500 text-red-500"
               class="transition-all inline-block relative duration-200 border-b-2 border-transparent py-1 md:px-3 md:py-2 text-base font-medium text-gray-300 hover:text-red-500">
               <template v-if="isLive">
                 <span>
@@ -72,18 +72,18 @@ useIntervalFn(refresh, 1000 * 60 * 5)
                 <span
                   class="animate-ping inline-flex absolute h-4 w-4 top-0 right-0 rounded-full bg-red-700 opacity-50" />
               </template>
-            </AppLink>
+            </AppLink> -->
           </div>
         </div>
         <div class="flex sm:hidden items-center gap-4">
-          <AppLink v-if="isLive" :to="SOCIALS.twitch" title="To my Twitch Channel"
+          <!-- <AppLink v-if="isLive" :to="SOCIALS.twitch" title="To my Twitch Channel"
             active-class="!border-red-500 text-red-500"
             class="transition-all inline-block relative duration-200 py-1 text-base font-medium">
             <span>
               <Icon class="text-purple-700 lg:mr-2 text-lg" name="mdi:twitch" />
             </span>
             <span class="animate-ping inline-flex absolute h-4 w-4 top-0 right-0 rounded-full bg-red-700 opacity-50" />
-          </AppLink>
+          </AppLink> -->
           <div class="-mr-2 flex sm:hidden">
             <!-- Mobile menu button -->
             <DisclosureButton

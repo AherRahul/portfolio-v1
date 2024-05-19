@@ -1,10 +1,9 @@
 export const SOCIALS = {
-  twitter: 'https://twitter.com/TheAlexLichter/',
-  mastodon: 'https://hachyderm.io/@manniL',
+  twitter: 'https://twitter.com/rahulvijayaher/',
   github: 'https://github.com/aherrahul/',
-  youtube: 'https://www.youtube.com/@TheAlexLichter/',
-  twitch: 'https://www.twitch.tv/TheAlexLichter/',
-  linkedin: 'https://www.linkedin.com/in/alexanderlichter/',
+  youtube: 'https://www.youtube.com/@rahulaher/',
+  linkedin: 'https://www.linkedin.com/in/rahul-aher/',
+  gmail: 'mailto:rahulvijayaher@gmail.com',
 } as const
 
 export const LOCALSTORAGE_KEYS = {

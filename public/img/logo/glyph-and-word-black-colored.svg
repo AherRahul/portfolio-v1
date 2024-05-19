@@ -15,12 +15,14 @@
       }
 
       .cls-5 {
+        src: url('./candara.ttf');
         font-family: Candara, Candara;
         font-size: 60px;
       }
 
       .cls-6 {
         fill: #ea0f24;
+        src: url('./VLADIMIR.ttf');
         font-family: VladimirScript, 'Vladimir Script';
         font-size: 150px;
       }
