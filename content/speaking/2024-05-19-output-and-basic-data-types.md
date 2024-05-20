@@ -7,8 +7,8 @@ slidesUrl: "https://github.com/AherRahul/portfolio-v1/tree/main/content/speaking
 type: "lecture-notes"
 language: "en"
 topics:
-  - Java
-  - Beginner Programming
+  - java
+  - beginner-programming
 ---
 
 ## Agenda
