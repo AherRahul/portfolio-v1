@@ -23,7 +23,7 @@ props.title.length > 30 ? 'text-5xl' : 'text-6xl')
 <template>
   <div class="p-4 h-full w-full flex justify-center items-center" :style="bgGradientStyle">
     <div class="p-10 bg-zinc-900 h-full w-full"
-      style="background-image: url(https://img.rahulaher.netlify.app/website-og/speaking.png); display: flex; flex-direction: column; justify-content: space-between;">
+      style="background-image: url(https://img.rahulaher.netlify.app/website-og/learning.png); display: flex; flex-direction: column; justify-content: space-between;">
       <div class="w-full h-full flex flex-col">
         <h1 class="font-bold text-white" :class="headingFontSizeClass">
           {{ title }}

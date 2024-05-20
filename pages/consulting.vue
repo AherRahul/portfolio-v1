@@ -64,7 +64,7 @@ defineOgImageComponent('General')
             Please convince yourself of my expertise by taking a look at this website. Here I share knowledge in deep-dive
             <AppLink to="/articles">blog posts</AppLink>,
             and introductory articles and also link to previous
-            <AppLink class="inline-block" to="/speaking">
+            <AppLink class="inline-block" to="/learning">
               talks and podcast episodes
             </AppLink>.
             Also, the <AppLink to="https://github.com/aherrahul/portfolio-v1/">code of the site</AppLink> is open-source.

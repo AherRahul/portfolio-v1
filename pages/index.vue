@@ -20,7 +20,7 @@ const { data: articles } = useAsyncData('latest-articles', () => queryContent<Ar
   datePublished: -1
 }).without(['body', 'excerpt']).limit(4).find())
 
-const { data: talks } = useAsyncData('latest-speaking', () => queryContent<TalkPreview>('/speaking/').sort({
+const { data: talks } = useAsyncData('latest-learning', () => queryContent<TalkPreview>('/learning/').sort({
   date: -1
 }).without(['body', 'excerpt']).limit(5).find())
 
@@ -67,7 +67,7 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
             <AppButton to="/about/" look="secondary">About <span class="hidden sm:inline">me</span></AppButton>
           </div>
           <div class="hidden md:flex mt-16 filter text-4xl gap-8">
-            <AppLink title="To the java topic page" to="/topics/vue">
+            <AppLink title="To the java topic page" to="/topics/java">
               <Icon class=""
                 name="logos:java" />
             </AppLink>
@@ -78,7 +78,7 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
               <Icon class=""
                 name="logos:javascript" />
             </AppLink>
-            <AppLink title="To the aws topic page" to="/topics/javascript">
+            <AppLink title="To the aws topic page" to="/topics/aws">
               <Icon class=""
                 name="logos:aws" />
             </AppLink>
@@ -89,12 +89,12 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
             src="/img/rahul-main.png" alt="Photo of Rahul Aher" />
         </div>
       </div>
-      <ContentDivider class="mt-16 md:-mt-10" />
+      <ContentDivider class="mt-16 md:-mt-10" style="margin-top: -5.2rem;" />
     </AppSection>
 
     <AppSection class="my-32" >
       <div class="flex flex-col gap-16 md:gap-8 md:flex-row justify-around">
-        <LazyServicePreview icon="eos-icons:machine-learning-outlined" title="Learn" to="/speaking">
+        <LazyServicePreview icon="eos-icons:machine-learning-outlined" title="Learn" to="/learning">
           I'm passionate about continuous learning and believe in the value of hands-on experience. I actively 
           learn new concepts, ensuring a deeper understanding of each topic. This proactive approach fuels my 
           growth mindset and fosters ongoing professional development.
@@ -123,14 +123,14 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
           <span style="font-style: italic;">“I am always ready to learn although I do not always like being taught.”</span> — Winston Churchill
         </AppParagraph>
         <div>
-          <AppButton to="/speaking/" look="secondary">View all Learning's</AppButton>
+          <AppButton to="/learning/" look="secondary">View all Learning's</AppButton>
         </div>
       </div>
       <div class="flex flex-col space-y-8 mt-8">
-        <LazySpeakingPreview v-for="talk in talks" :key="talk._id" :talk="talk" />
+        <LazyLearningPreview v-for="talk in talks" :key="talk._id" :talk="talk" />
       </div>
       <div class="flex md:justify-end mt-16">
-        <AppButton to="/speaking/" look="secondary">View all Learning's</AppButton>
+        <AppButton to="/learning/" look="secondary">View all Learning's</AppButton>
       </div>
       <ContentDivider class="mt-14" />
     </AppSection>

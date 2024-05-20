@@ -2,7 +2,7 @@
 const navigation = {
   content: [
     { name: 'Articles', to: '/articles/' },
-    { name: 'Talks & Podcasts', to: '/speaking/' },
+    { name: 'Talks & Podcasts', to: '/learning/' },
     { name: 'Videos', to: SOCIALS.youtube },
   ],
   general: [

@@ -93,6 +93,15 @@ defineOgImageComponent('Article', {
           </li>
         </ul>
       </div>
+      <div class="mt-16">
+        <ul class="flex flex-row gap-4 md:gap-8">
+          <li v-if="article.slidesUrl">
+            <AppLink class="border-b-4 border-white/75 hover:border-white transition-all pr-1 pb-1" :to="article.slidesUrl">
+              <Icon name="heroicons:bookmark" /> Want to edit 
+            </AppLink>
+          </li>
+        </ul>
+      </div>
     </AppSection>
     <AppSection class="justify-center bg-zinc-900 pb-8">
       <div>
@@ -140,8 +149,8 @@ defineOgImageComponent('Article', {
         <div class="col-span-4 text-center md:text-left">
           <h4 class="font-medium text-lg">Written by Rahul Aher</h4>
           <p class="max-w-xl text-lg mt-4 text-gray-400">
-            I'm Rahul, a Indian <b>Sr. Software Engineer (SDE II)</b> and content creator.
-            Helping companies with my experience in TypeScript, Vue.js, and Nuxt.js is my daily business.
+            I'm Rahul, a Indian <b>Sr. Software Engineer (SDE II)</b> and passionate content creator. 
+            Sharing my expertise in software development to assist learners.
           </p>
           <AppLink to="/about/" class="underline hover:no-underline mt-2 inline-block">More about me</AppLink>
         </div>

@@ -21,4 +21,4 @@ If you discover any security related issues, please email hello at lichter dot i
 
 ## License
 
-As mentioned on my website the code of my website is licensed under The MIT License (MIT). Please see [License File](MIT%20LICENSE) for more information. All written content such as speaking lists, articles or similar are licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+As mentioned on my website the code of my website is licensed under The MIT License (MIT). Please see [License File](MIT%20LICENSE) for more information. All written content such as learning lists, articles or similar are licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).

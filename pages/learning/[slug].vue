@@ -42,10 +42,10 @@ async function copyLinkToClipboard() {
 
 // TODO: This should not be necessary. `surround` is buggy?
 function isTalkOrPodcast(entry?: ParsedContent): Boolean {
-  return Boolean(entry?._path?.startsWith('/speaking/'))
+  return Boolean(entry?._path?.startsWith('/learning/'))
 }
 
-defineOgImageComponent('Speaking', {
+defineOgImageComponent('Learning', {
   title: page.value.title,
   topics: page.value.topics,
   date: formattedDate.value,
@@ -55,7 +55,7 @@ defineOgImageComponent('Speaking', {
 <template>
   <div>
     <AppSection class="bg-gradient-to-b from-black to-zinc-900 !pb-4">
-      <AppLinkBack to="/speaking/">All talks & podcasts</AppLinkBack>
+      <AppLinkBack to="/learning/">All learning's</AppLinkBack>
       <ParagraphDecoration class="mt-4" />
       <AppParagraph class="mt-4" look="heading" tag="h1">
         {{ page.title }}
@@ -87,7 +87,7 @@ defineOgImageComponent('Speaking', {
         <ul class="flex flex-row gap-4 md:gap-8">
           <li v-if="page.slidesUrl">
             <AppLink class="border-b-4 border-white/75 hover:border-white transition-all pr-1 pb-1" :to="page.slidesUrl">
-              <Icon name="heroicons:bookmark" /> Check out the slides
+              <Icon name="heroicons:bookmark" /> Want to edit 
             </AppLink>
           </li>
           <li v-if="page.videoUrl">
@@ -144,8 +144,9 @@ defineOgImageComponent('Speaking', {
         <div class="col-span-4 text-center md:text-left">
           <h4 class="font-medium text-lg">Rahul Aher</h4>
           <p class="max-w-xl text-lg mt-4 text-gray-400">
-            I'm Rahul, a Indian <b>Sr. Software Engineer (SDE II)</b> and content creator.
-            Helping companies with my experience in TypeScript, Vue.js, and Nuxt.js is my daily business.
+            I'm Rahul, a Indian <b>Sr. Software Engineer (SDE II)</b> and passionate content creator. 
+            Sharing my expertise in software development to assist learners.
+
           </p>
           <AppLink to="/about/" class="underline hover:no-underline mt-2 inline-block">More about me</AppLink>
         </div>
@@ -154,8 +155,8 @@ defineOgImageComponent('Speaking', {
     <AppSection>
       <AppParagraph look="heading" class="mt-16 !text-4xl">Explore Other Topics</AppParagraph>
       <div class="flex flex-col gap-8 justify-between mt-16 md:gap-32 md:mt-24">
-        <LazySpeakingPreview v-if="isTalkOrPodcast(prev)" :talk="prev" />
-        <LazySpeakingPreview v-if="isTalkOrPodcast(next)" :talk="next" />
+        <LazyLearningPreview v-if="isTalkOrPodcast(prev)" :talk="prev" />
+        <LazyLearningPreview v-if="isTalkOrPodcast(next)" :talk="next" />
       </div>
     </AppSection>
   </div>

@@ -65,7 +65,7 @@ function handleMouseLeave() {
       <ul class="flex gap-4 md:gap-8">
         <li v-if="talk.slidesUrl">
           <AppLink class="border-b-4 border-white/75 hover:border-white transition-all pr-1 pb-1" :to="talk.slidesUrl">
-            <Icon name="heroicons:bookmark" /> Slides
+            <Icon name="heroicons:bookmark" /> Improve
           </AppLink>
         </li>
         <li v-if="talk.videoUrl">

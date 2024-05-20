@@ -21,9 +21,9 @@ const articleQuery: QueryBuilderParams = {
   }]
 }
 
-const speakingQuery: QueryBuilderParams = {
+const learningQuery: QueryBuilderParams = {
   ...baseQuery,
-  path: '/speaking/',
+  path: '/learning/',
   sort: [{
     date: -1,
   }]
@@ -42,7 +42,7 @@ useSeoMeta({
   description,
 })
 
-defineOgImageComponent('Speaking')
+defineOgImageComponent('Learning')
 </script>
 <template>
   <div>
@@ -78,13 +78,13 @@ defineOgImageComponent('Speaking')
         <template #not-found></template>
       </ContentList>
 
-      <ContentList :query="speakingQuery">
+      <ContentList :query="learningQuery">
         <template #default="{ list }">
           <AppParagraph class="pt-16 !text-4xl" look="heading" tag="h2">
             Talks & Podcasts
           </AppParagraph>
           <div class="space-y-8 my-8">
-            <SpeakingPreview v-for="entry in list" :key="entry._path" :talk="entry" />
+            <LearningPreview v-for="entry in list" :key="entry._path" :talk="entry" />
           </div>
         </template>
         <template #not-found></template>

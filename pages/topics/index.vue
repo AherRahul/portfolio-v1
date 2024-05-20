@@ -13,7 +13,7 @@ useSeoMeta({
   description,
 })
 
-defineOgImageComponent('Speaking')
+defineOgImageComponent('Learning')
 
 const query: QueryBuilderParams = { path: '/topics', only: ['title', '_path'] }
 </script>
