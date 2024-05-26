@@ -33,7 +33,7 @@ defineOgImageComponent('General')
               And here I am, a self-taught developer for more than half my life who has been running his own company
               since 2015.
             </p>
-            <p>You might know me as <b>manniL</b> or <b>TheAlexLichter</b> on various platforms.</p>
+            <p>You might know me as <b>aherrahul</b> or <b>rahulvijayaher</b> on various platforms.</p>
 
             <h2>Tech Stack</h2>
 
@@ -116,7 +116,7 @@ defineOgImageComponent('General')
 
             <p>
               I'm a big fan of open source software and I try to contribute to it as much as my spare time allows.
-              Since my <AppLink to="https://firstcommit.is/mannil">initial commit back in 2012</AppLink>
+              Since my <AppLink to="https://firstcommit.is/aherrahul">initial commit back in 2012</AppLink>
               I have been actively contributing to open source projects.
             </p>
             <p>

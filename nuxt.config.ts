@@ -8,7 +8,7 @@ export default defineNuxtConfig({
     '/support-me/': { redirect: { to: '/sponsors/', statusCode: 301 } },
     '/timeline/': { redirect: { to: '/about/', statusCode: 301 } },
     // TODO: After https://github.com/unjs/nitro/issues/1748 is resolved
-    // '/slides/**': { redirect: { to: 'https://slides.com/mannil/**', statusCode: 302 } },
+    // '/slides/**': { redirect: { to: 'https://slides.com/aherrahul/**', statusCode: 302 } },
     // TODO: Remove this ^equivalent from _redirects afterwards
   },
   runtimeConfig: {

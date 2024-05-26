@@ -35,7 +35,7 @@ onMounted(() => {
   //     iconClass: 'text-purple-700',
   //     body: [
   //       { type: 'text', text: 'Go to '},
-  //       { type: 'link', href: 'https://www.twitch.tv/TheAlexLichter', text: 'the stream now!'},
+  //       { type: 'link', href: 'https://www.twitch.tv/rahulvijayaher', text: 'the stream now!'},
   //     ]
   //   })
   // })

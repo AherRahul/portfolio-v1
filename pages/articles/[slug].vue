@@ -37,7 +37,7 @@ const route = useRoute()
 const linkToCurrentPage = withSiteUrl(route.path)
 
 const links = computed(() => {
-  const rawShareOnTwitter = `https://twitter.com/intent/tweet?text=I just read "${article.value.title}". Check it out!&url=${linkToCurrentPage.value}&via=TheAlexLichter`
+  const rawShareOnTwitter = `https://twitter.com/intent/tweet?text=I just read "${article.value.title}". Check it out!&url=${linkToCurrentPage.value}&via=rahulvijayaher`
   const shareOnTwitter = encodeURI(rawShareOnTwitter.replace(/#/g, 'No. '))
 
   const rawDiscussOnTwitter = `https://twitter.com/search?q=${linkToCurrentPage.value}`

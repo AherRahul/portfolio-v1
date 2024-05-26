@@ -22,7 +22,7 @@ const bgGradientStyle = {
         </h2>
         <h2 class="text-4xl text-white flex items-center  mt-16">
           <Icon name="mdi:twitch" class="text-purple-800 text-6xl mr-4"/>
-          <span>twitch.tv/TheAlexLichter</span>
+          <span>twitch.tv/rahulvijayaher</span>
         </h2>
       </div>
       <!-- Weird hack so the lower line is correct when rendering svg -->

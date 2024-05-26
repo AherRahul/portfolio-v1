@@ -1,7 +1,7 @@
 ---
 title: "1. Beginner: Data Types + Reading Input"
 date: "2024-05-19"
-eventName: "MODULE 1: Introduction to Programming - 2"
+eventName: "MODULE 1: Introduction to Programming"
 location: ""
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/learning/2024-05-19-beginner-data-types-reading-input.md"
 type: "lecture-notes"

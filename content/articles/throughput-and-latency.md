@@ -161,4 +161,4 @@ Your QoS configurations prioritize latency-sensitive applications. Some applicat
 
 Thank you so much for reading. If you found it valuable, consider subscribing for more such content every week. If you have any questions or suggestions, please email me your comments or feel free to improve it.
 
-[YouTube Resource (Gate Smasher)](https://youtu.be/cDVNU2j26Bs?si=CVgQyF4WBuqo7Csd)
+- [YouTube Resource (Gate Smasher)](https://youtu.be/cDVNU2j26Bs?si=CVgQyF4WBuqo7Csd)

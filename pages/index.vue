@@ -52,15 +52,12 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
             Hello! I'm Rahul Aher, a Senior Software Engineer at 
             <AppLink to="https://www.morningstar.com/" style="color: #dc2626 var(--tw-gradient-from-position);">Morningstar</AppLink>, 
             passionate about crafting impactful software solutions. With a results-driven approach, 
-            I thrive on tackling challenging roles in Software and Product Development..
+            I thrive on tackling challenging roles in Software and Product Development.
           </AppParagraph>
           <AppParagraph look="subParagraph" class="mt-6">
-            My expertise spans full-stack web development, with a strong command of Java, JavaScript, 
-            and cutting-edge cloud technologies. I'm dedicated to driving innovation and delivering 
-            top-notch solutions, leveraging my skills to excel in dynamic team environments.
-          </AppParagraph>
-          <AppParagraph look="subParagraph" class="mt-6">
-            Let's collaborate to create software that makes a difference!
+            My expertise spans web development, with a strong command of Java, JavaScript, 
+            and cloud technologies. I'm dedicated to driving innovation and delivering 
+            solutions, leveraging my skills to excel in dynamic team environments.
           </AppParagraph>
           <div class="mt-8 flex">
             <AppButton to="https://www.morningstar.com/" class="mr-4">Resume <Icon name="icons8:file" style="margin-bottom: 2px;" /></AppButton>
@@ -89,7 +86,7 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
             src="/img/rahul-main.png" alt="Photo of Rahul Aher" />
         </div>
       </div>
-      <ContentDivider class="mt-16 md:-mt-10" style="margin-top: -5.2rem;" />
+      <ContentDivider class="mt-16 md:-mt-10" />
     </AppSection>
 
     <AppSection class="my-32" >

@@ -29,7 +29,7 @@ defineOgImageComponent('General')
           <p>
             I am very grateful for the support of my sponsors.
             If you want to become a sponsor, you can do so via my
-            <AppLink class="inline-block" to="https://github.com/sponsors/manniL">
+            <AppLink class="inline-block" to="https://github.com/sponsors/aherrahul">
               GitHub Sponsors Profile
             </AppLink>. Every contribution is highly appreciated and will be displayed here (unless set to anonymous)! 
           </p>
@@ -37,7 +37,7 @@ defineOgImageComponent('General')
           <p>Thanks a lot to everybody supporting open source!</p>
         </div>
         <div class="mt-16 md:mt-0">
-          <img src="https://raw.githubusercontent.com/manniL/static/main/sponsors.svg">
+          <img src="https://raw.githubusercontent.com/aherrahul/static/main/sponsors.svg">
         </div>
       </div>
     </AppSection>

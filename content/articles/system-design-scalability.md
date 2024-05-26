@@ -1,6 +1,6 @@
 ---
 title: "System Design: Scalability"
-description: "Scalability is a crucial aspect of system design, especially in today’s world of rapidly growing data and user bases. As applications and services become more popular, they must be able to handle increased traffic and data without compromising performance or reliability. In this article, we will explore what scalability is, why it is important, and how to achieve it in system design."
+description: "Scalability is a crucial aspect of system design, especially in today’s world of rapidly growing data and user bases. As applications and services become more popular, they must be able to handle increased traffic and data without compromising performance or reliability. In this article, we will explore what scalability is, why it is important, and how to achieve it in system design. The truth is, many of us don’t dive deep enough into scalability to truly grasp its significance in system design. Consequently, we fail to impress interviewers who are looking for candidates with a comprehensive understanding of this crucial aspect."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles/system-design-scalability.md"
 dateModified: "2024-05-19"
 datePublished: "2024-05-19"
@@ -9,6 +9,9 @@ topics:
   - aws
   - lld
 ---
+
+Scalability is a crucial aspect of system design, especially in today’s world of rapidly growing data and user bases. As applications and services become more popular, they must be able to handle increased traffic and data without compromising performance or reliability. In this article, we will explore what scalability is, why it is important, and how to achieve it in system design. The truth is, many of us don’t dive deep enough into scalability to truly grasp its significance in system design. Consequently, we fail to impress interviewers who are looking for candidates with a comprehensive understanding of this crucial aspect.
+
 
 ## System Design - Scalability
 
