@@ -4,6 +4,7 @@ const props = withDefaults(defineProps<{
   attendees?: number
   languages?: string[]
   noTrainer?: boolean
+  projectGitHubLink?:string
 }>(), {
   time: '2 days',
   attendees: 20,
@@ -25,16 +26,16 @@ const formattedLanguages = computed(() => {
       <Icon class="text-2xl mr-2" name="heroicons:clock" /> {{ time }}
     </p>
     <p>
-      <Icon class="text-2xl mr-2" name="heroicons:user-group" /> max. {{ attendees }}
+      <Icon class="text-2xl mr-2" name="heroicons:user-group" /> max. {{ attendees }} collabrators
     </p>
     <p>
       <Icon class="text-2xl mr-2" name="heroicons:language" /> {{ formattedLanguages }}
     </p>
     <p>
-      <NuxtLink v-if="!noTrainer" to="#trainer" class="group">
+      <!-- <NuxtLink v-if="!noTrainer" to="#trainer" class="group">
         <Icon class="text-2xl mr-2" name="ph:chalkboard-teacher-light" /> <span
           class="underline group-hover:no-underline">Rahul Aher</span>
-      </NuxtLink>
+      </NuxtLink> -->
     </p>
   </div>
 </template>

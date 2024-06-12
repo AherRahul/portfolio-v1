@@ -21,12 +21,12 @@ defineOgImageComponent('General')
       <AppParagraph look="heading" class="mt-4" tag="h1">Services</AppParagraph>
       <div class="flex flex-col items-center md:flex-row my-16 gap-16">
         <ServicePreview class="max-w-xl bg-zinc-900 p-8" icon="mdi:lightbulb-on-outline" title="Consulting" to="/consulting">
-          Companies reach out to help them build better Vue and Nuxt applications
-          - from solving problems to discussing the right abstractions and architecture.
+          Companies rely on my expertise to develop exceptional applications, leveraging my problem-solving skills, expertise 
+          in discussing optimal abstractions, and refining architecture.
         </ServicePreview>
         <ServicePreview class="max-w-xl bg-zinc-900 p-8" icon="ph:chalkboard-teacher-light" title="Projects" to="/projects/">
-          Want to level up your team's skills? I offer projects on Vue, Nuxt, TypeScript, Testing, and more topics.
-          Don't hesitate to reach out and let's discuss your needs.
+          I'm dedicated to continuous learning, reinforcing new concepts through real-world projects. This not only boosts my 
+          skills but also deepens my understanding of each concept.
         </ServicePreview>
       </div>
       <div class="flex justify-center">

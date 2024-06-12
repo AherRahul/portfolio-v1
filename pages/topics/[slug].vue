@@ -29,7 +29,7 @@ const learningQuery: QueryBuilderParams = {
   }]
 }
 
-const workshopQuery: QueryBuilderParams = {
+const projectQuery: QueryBuilderParams = {
   ...baseQuery,
   path: '/projects/'
 }
@@ -54,7 +54,7 @@ defineOgImageComponent('Learning')
       </AppParagraph>
     </AppSection>
     <AppSection class="justify-center pb-8">
-      <ContentList :query="workshopQuery">
+      <ContentList :query="projectQuery">
         <template #default="{ list }">
           <AppParagraph class="pt-16 !text-4xl" look="heading" tag="h2">
             Projects

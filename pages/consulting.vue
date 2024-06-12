@@ -23,7 +23,7 @@ defineOgImageComponent('General')
       <div class="md:flex md:gap-16">
         <div class="prose md:prose-lg lg:prose-xl pt-8 max-w-prose">
           <p>
-            Companies reach out to help them build better TypeScript, Vue and/or Nuxt applications
+            Companies reach out to help them build better applications
             - from solving problems to discussing the right abstractions and architecture.
           </p>
 
@@ -83,8 +83,8 @@ defineOgImageComponent('General')
       <div class="mt-8">
         <AppParagraph look="heading" class="!text-4xl">Testimonials</AppParagraph>
         <div class="grid md:grid-cols-2 gap-8 mt-16">
-          <LazyTestimonial person="Michael Müller" job="Business Leader of Software Engineering"
-            image-link="/img/testimonials/michael-mueller.jpg">
+          <LazyTestimonial person="Pranit Prakash" job="Founder and CEO @Tony creator india"
+            image-link="https://assets.cloudhi.io/system/team-members/fcf5222b-5df9-4e3e-9258-df9866d6d04d.jpg.webp">
             <p>
               I onboarded Rahul to a legacy project that should be transformed into a modern web application.
               Within a short time, he was able to understand the domain and asked helpful questions regarding the current
@@ -103,8 +103,8 @@ defineOgImageComponent('General')
               I am looking forward to collaborating with Rahul again in the future.
             </p>
           </LazyTestimonial>
-          <LazyTestimonial person="Christopher H. Stappert" job="Engineering Manager at intrinsify"
-            image-link="/img/testimonials/christopher-stappert.jpg">
+          <LazyTestimonial person="Sauvik Jha" job="Manager Tata CLiQ"
+            image-link="https://i1.sndcdn.com/artworks-yDFTTJQQzq8BP9nz-Q9wdFg-t500x500.jpg">
             <p class="font-bold">
               Rahul Aher is a problem solver for every programming task.
             </p><br>
@@ -126,38 +126,6 @@ defineOgImageComponent('General')
             <p>
               And a personal note: You'll have a lot of fun to work with Rahul. His kindness and endurance are remarkable.
               He's always willing to lend a hand and go the extra mile to ensure things get done right.
-            </p>
-          </LazyTestimonial>
-          <LazyTestimonial person="Marcel Golob" job="Managing Director at Vinspire GmbH"
-            image-link="/img/testimonials/marcel-golob.jpg">
-            <p>
-              I have been working with Rahul Aher for the past year and I can honestly say that that he is
-              one of the best software consultants out there.
-            </p>
-            <br>
-            <p>
-              He has been incredibly helpful to create solid and reliable software platforms.
-            </p>
-            <br>
-            <p>Especially when it comes to Nuxt 3!</p>
-            <br>
-            <p class="font-bold">I can only recommend working with him.</p>
-          </LazyTestimonial>
-          <LazyTestimonial person="Pascal Prellwitz" job="Lead Developer at OnlineLessons.tv GmbH"
-            image-link="/img/testimonials/pascal-prellwitz.jpg">
-            <p class="font-bold">
-              Collaborating with Rahul Aher has been an absolute game-changer for our team.
-            </p>
-            <br>
-            <p>
-              When we found ourselves in a bind, Rahul stepped in as our problem solver for our Nuxt 2 project.
-              After solving the initial issues, we kept in contact and Rahul has been a guiding star for the project ever
-              since.
-            </p>
-            <br>
-            <p>
-              From discussing architecture for new features over diving into legacy code to fixing bugs and improving
-              performance, Rahul has been a tremendous help and I can wholeheartedly recommend working with him.
             </p>
           </LazyTestimonial>
         </div>

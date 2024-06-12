@@ -48,14 +48,7 @@ const propsWithoutRelAndTarget = computed(() => {
 
 // TODO: Add exceptions for certain domains if needed
 const ALLOWED_DOMAINS = [
-  "https://developmint.de",
-  "https://www.developmint.de",
-  "https://blog.rahulaher.netlify.app",
-  "https://thanks.rahulaher.netlify.app",
-  "https://www.rahulaher.netlify.app",
   "https://rahulaher.netlify.app",
-  "https://brotli.pro",
-  "https://www.broltl.pro"
 ]
 const isDomainException = computed(() => typeof path.value === 'string' && ALLOWED_DOMAINS.some(domain => (path.value as string).startsWith(domain)))
 const defaultRel = computed(() => isExternal.value && !isDomainException.value ? 'nofollow noindex noreferrer' : null)

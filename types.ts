@@ -29,6 +29,16 @@ type ArticleBase = {
 export type Article = ArticleBase & ParsedContent
 export type ArticlePreview = ArticleBase & ParsedContentPreview
 
+
+type ProjectBase = {
+  title: string
+  time: string
+  topics: string[]
+}
+export type Project = ProjectBase & ParsedContent
+export type ProjectPreview = ProjectBase & ParsedContentPreview
+
+
 type BodyBlockLink = {
   type: 'link',
   href: string,

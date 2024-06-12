@@ -21,9 +21,7 @@ defineOgImageComponent('General')
       <AppParagraph look="heading" class="mt-4" tag="h1">Contact</AppParagraph>
       <AppParagraph class="mt-16 text-lg max-w-prose">
         <b>Hey there!</b> I'm always happy to hear from you. If you have any questions, or feedback or just want to say
-        hi,
-        feel
-        free to reach out to me on any of the platforms linked in the footer or via email at inquiry at lichter dot io.
+        hi, feel free to reach out to me on any of the platforms linked in the footer or via email at inquiry at rahulvijayaher@gmail.com.
       </AppParagraph>
       <AppParagraph class="mt-12 text-lg max-w-prose">
         You can also <AppMeetingButtonWrapper meeting="intro-website"><button

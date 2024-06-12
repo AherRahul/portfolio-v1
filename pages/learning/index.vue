@@ -2,14 +2,17 @@
 import type { QueryBuilderParams } from '@nuxt/content/dist/runtime/types'
 import type { Talk } from '~/types.js';
 
-// TODO: Remove type casting after https://github.com/nuxt/content/pull/2156 landed
 
 definePageMeta({
   documentDriven: false
 })
 
-const title = 'Talks and Podcast'
-const description = `Take a look at my talks, podcast appearances and panels I have given or participated in. Topics are among others Vue.js, Nuxt.js, TypeScript, JavaScript, Web Development, Performance, Clean Code as well as my personal story and experiences.`
+const title = 'Learnings'
+const description = `I'm deeply committed to continuous learning and hold hands-on experience in high regard. 
+      Actively pursuing new concepts, I delve into each topic for a comprehensive understanding. 
+      This proactive stance not only fuels my growth mindset but also nurtures ongoing professional 
+      development. Below, you'll find a curated list of my learnings and preparation strategies. 
+      If you seek more than just summaries and titles, click on each entry to delve into the content!`
 
 useSeoMeta({
   title,
@@ -17,7 +20,7 @@ useSeoMeta({
 })
 
 defineOgImageComponent('Learning', {
-  title: 'Talks and Podcasts'
+  title: 'Learnings'
 })
 
 const query: QueryBuilderParams = { path: '/learning', sort: [{ date: -1 }], without: ['body', 'excerpt'] }
@@ -28,9 +31,11 @@ const query: QueryBuilderParams = { path: '/learning', sort: [{ date: -1 }], wit
     <ParagraphDecoration class="mt-16" />
     <AppParagraph class="mt-4" tag="h1" look="heading">Learning</AppParagraph>
     <AppParagraph class="max-w-3xl mt-8" look="subParagraph">
-      Below you can find a list of my talks, podcast appearances, given projects and panels.
-      If you are interested in more than just the excerpt, title and brief topics, click on the entry to get to the
-      slides, videos or recording link!
+      I'm deeply committed to continuous learning and hold hands-on experience in high regard. 
+      Actively pursuing new concepts, I delve into each topic for a comprehensive understanding. 
+      This proactive stance not only fuels my growth mindset but also nurtures ongoing professional 
+      development. Below, you'll find a curated list of my learnings and preparation strategies. 
+      If you seek more than just summaries and titles, click on each entry to delve into the content!
     </AppParagraph>
     <div class="space-y-8 mt-8">
       <ContentList :query="query" v-slot="{ list }">

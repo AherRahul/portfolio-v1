@@ -12,7 +12,7 @@ const Comp = () => {
     return
   }
   const node = cloneVNode(slot, { 
-    'data-cal-link': `rahulaher/${props.meeting}` })
+    'data-cal-link': `rahulvijayaher/` })
   return node
 }
 </script>

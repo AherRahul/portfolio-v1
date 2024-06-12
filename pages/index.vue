@@ -49,35 +49,32 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
             </div>
           </div>
           <AppParagraph look="subParagraph" class="mt-8">
-            Hello! I'm Rahul Aher, a Senior Software Engineer at 
+            Hello! I'm Rahul Aher, a seasoned Sr. Software Engineer at
             <AppLink to="https://www.morningstar.com/" style="color: #dc2626 var(--tw-gradient-from-position);">Morningstar</AppLink>, 
-            passionate about crafting impactful software solutions. With a results-driven approach, 
-            I thrive on tackling challenging roles in Software and Product Development.
+            passionate about architecting transformative software solutions. With a results-oriented mindset, I pursue complex 
+            challenges in Software and Product Development.
           </AppParagraph>
           <AppParagraph look="subParagraph" class="mt-6">
-            My expertise spans web development, with a strong command of Java, JavaScript, 
-            and cloud technologies. I'm dedicated to driving innovation and delivering 
-            solutions, leveraging my skills to excel in dynamic team environments.
+            I excel in web development, mastering Java, JS, and cloud technologies. Committed to innovation, I leverage expertise to
+             boost team performance in dynamic environments.
           </AppParagraph>
           <div class="mt-8 flex">
-            <AppButton to="https://www.morningstar.com/" class="mr-4">Resume <Icon name="icons8:file" style="margin-bottom: 2px;" /></AppButton>
+            <AppButton to="https://asset.cloudinary.com/duojkrgue/a10e4a933b02a109d8d638d906054e5e" class="mr-4">Resume <Icon name="icons8:file" style="margin-bottom: 2px;" /></AppButton>
             <AppButton to="/about/" look="secondary">About <span class="hidden sm:inline">me</span></AppButton>
           </div>
           <div class="hidden md:flex mt-16 filter text-4xl gap-8">
-            <AppLink title="To the java topic page" to="/topics/java">
-              <Icon class=""
-                name="logos:java" />
-            </AppLink>
             <AppLink title="To the Vue topic page" to="/topics/vue">
               <Icon class="" name="logos:vue" />
             </AppLink>
             <AppLink title="To the javascript topic page" to="/topics/javascript">
-              <Icon class=""
-                name="logos:javascript" />
+              <Icon class="" name="logos:javascript" />
             </AppLink>
+            <AppLink title="To the java topic page" to="/topics/java">
+              <Icon class="" name="logos:java" />
+            </AppLink>
+            
             <AppLink title="To the aws topic page" to="/topics/aws">
-              <Icon class=""
-                name="logos:aws" />
+              <Icon class="" name="logos:aws" />
             </AppLink>
           </div>
         </div>

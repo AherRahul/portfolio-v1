@@ -6,8 +6,6 @@ definePageMeta({
   documentDriven: false
 })
 
-// TODO: Remove type casting after https://github.com/nuxt/content/pull/2156 landed
-
 const query: QueryBuilderParams = { path: '/articles', sort: [{ dateModified: -1, datePublished: -1 }] }
 
 const title = 'Articles'
@@ -26,9 +24,11 @@ defineOgImageComponent('Article')
     <ParagraphDecoration class="mt-16" />
     <AppParagraph class="mt-4" tag="h1" look="heading">Articles</AppParagraph>
     <AppParagraph class="max-w-3xl mt-8" look="subParagraph">
-      Below you can find a list of my talks, podcast appearances, given projects and panels.
-      If you are interested in more than just the excerpt, title and brief topics, click on the entry to get to the
-      slides, videos or recording link!
+      I'm passionate about contributing my knowledge and experience to the community.
+       I thrive on collaborating to solve problems, exploring optimal abstractions, 
+       and refining architectures for successful outcomes. Below, you'll discover a 
+       compilation of my articles and insights on various topics. For deeper engagement 
+       beyond summaries and titles, click on each entry to access the content!
     </AppParagraph>
     <div class="space-y-8 md:space-y-0 md:grid grid-cols-2 gap-12 justify-around mt-8">
       <ContentList :query="query" v-slot="{ list }">

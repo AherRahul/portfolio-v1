@@ -13,15 +13,19 @@ useSeoMeta({
 onContentNotFound(project)
 
 const requestQuoteLink = computed(() => {
-  const prefix = 'mailto:alichter@developmint.de?subject=Project request: '
+  const prefix = 'mailto:rahulvijayaher@gmail.com?subject=Project collabration request: '
   const title = project.value.title
-  const suffix = `&body=Hi Rahul,%0D%0A%0D%0Awe would like to request a quote for the ${title} project.%0D%0A%0D%0A
+  const suffix = `&body=Hi Rahul,%0D%0A%0D%0Awe would like to collabrate with you for the ${title} project.%0D%0A%0D%0A
 
-  Desired/Possible dates: %0D%0A
+  Desired/Possible time for contribution per week: %0D%0A
 
-  Location (remote/inhouse): %0D%0A
+  Location: %0D%0A
 
-  Amount of participants: %0D%0A%0D%0A
+  Your skill-set: %0D%0A
+
+  linkedin Profile: %0D%0A
+
+  Github Profile:  %0D%0A%0D%0A
 
   Further comments or info:%0D%0A
   `
@@ -33,6 +37,7 @@ defineOgImageComponent('Project', {
   time: project.value.time,
   attendees: project.value.attendees ?? 20,
   languages: project.value.languages ?? ['English', 'Indian'],
+  projectGitHubLink: project.value.projectGitHubLink,
 })
 
 </script>
@@ -48,14 +53,14 @@ defineOgImageComponent('Project', {
       <ProjectDetails :time="project.time" class="mt-8 space-y-2 md:space-y-0 md:flex gap-8" />
     </AppSection>
     <AppSection class="bg-zinc-900 !pb-0" inner-class="border-b border-zinc-800">
-      <div class="md:grid grid-cols-2 justify-center gap-8 pb-16">
+      <div class="justify-center gap-8 pb-16">
         <div>
           <div class="prose md:prose-lg lg:prose-xl pt-0.5">
             <ContentDoc />
           </div>
-          <AppButton :to="requestQuoteLink" class="hidden md:block mt-8 text-xl">Request quote</AppButton>
+          <AppButton :to="requestQuoteLink" class="hidden md:block mt-8 text-xl">Do you want to collabrate.?</AppButton>
         </div>
-        <div>
+        <!-- <div>
           <div class="flex flex-col items-center mt-12">
             <div>
               <img id="trainer" class="w-48 h-48 rounded-full mx-auto" width="192" height="192" src="/img/me@2x.jpg"
@@ -71,7 +76,7 @@ defineOgImageComponent('Project', {
             </div>
             <AppButton :to="requestQuoteLink" class="mt-8 text-xl">Request quote</AppButton>
           </div>
-        </div>
+        </div> -->
       </div>
     </AppSection>
   </div>

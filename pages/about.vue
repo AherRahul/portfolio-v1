@@ -19,7 +19,7 @@ defineOgImageComponent('General')
     <AppSection>
       <ParagraphDecoration />
       <AppParagraph look="heading" class="mt-4" tag="h1">About me</AppParagraph>
-      <div class="lg:grid grid-cols-2 lg:items-end mt-16 lg:mt-0">
+      <div class="lg:grid lg:items-end mt-16 lg:mt-0">
         <div class="lg:hidden">
           <img class="w-48 h-48 rounded-full mx-auto" width="192" height="192" src="/img/me@2x.jpg"
             alt="Photo of Rahul Aher">
@@ -140,11 +140,11 @@ defineOgImageComponent('General')
             </p>
           </div>
         </div>
-        <div class="hidden sticky bottom-0 lg:block">
+        <!-- <div class="hidden sticky bottom-0 lg:block">
           <NuxtPicture width="608" height="931" format="avif,webp,png" densities="x1 x2" placeholder
             :img-attrs="{ class: 'z-20 ml-24 -mb-24' }" src="/img/rahul-to-the-left-showing.png" alt=""
             aria-hidden />
-        </div>
+        </div> -->
       </div>
     </AppSection>
   </div>
