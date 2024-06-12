@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { type QueryBuilderParams } from '@nuxt/content/dist/runtime/types';
-import type { Projects } from '~/types.js';
+import type { Project } from '~/types.js';
 
 definePageMeta({
   documentDriven: false
@@ -31,7 +31,7 @@ const query: QueryBuilderParams = { path: '/projects', without: ['body', 'excerp
     </AppParagraph>
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-16 md:gap-8 mt-8">
       <ContentList :query="query" v-slot="{ list }">
-        <ProjectPreview v-for="entry in list" :key="entry._path" :project="(entry as Projects)" />
+        <ProjectPreview v-for="entry in list" :key="entry._path" :project="(entry as Project)" />
       </ContentList>
     </div>
   </AppSection>
