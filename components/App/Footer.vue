@@ -104,7 +104,11 @@ async function subscribeToNewsletter() {
 }
 </script>
 <template>
-  <footer class="bg-zinc-900" aria-labelledby="footer-heading">
+  
+  <div class="flex items-center justify-end" >
+      <span class="border-b border-dashed border-gray-500" style="width: 100%;" />
+  </div>
+  <footer  aria-labelledby="footer-heading" style="background-color: rgb(33 33 33);">
     <h2 id="footer-heading" class="sr-only">Footer</h2>
     <div class="mx-auto max-w-7xl px-6 pb-8 pt-8 sm:pt-16 lg:px-8 xl:pt-32">
       <div class="xl:grid xl:grid-cols-4 xl:gap-8">

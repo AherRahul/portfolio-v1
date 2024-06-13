@@ -62,7 +62,7 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
             <AppButton to="https://asset.cloudinary.com/duojkrgue/a10e4a933b02a109d8d638d906054e5e" class="mr-4">Resume <Icon name="icons8:file" style="margin-bottom: 2px;" /></AppButton>
             <AppButton to="/about/" look="secondary">About <span class="hidden sm:inline">me</span></AppButton>
           </div>
-          <div class="hidden md:flex mt-16 filter text-4xl gap-8">
+          <div class="hidden md:flex mt-4 filter text-4xl gap-8">
             <AppLink title="To the Vue topic page" to="/topics/vue">
               <Icon class="" name="logos:vue" />
             </AppLink>
@@ -72,11 +72,48 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
             <AppLink title="To the java topic page" to="/topics/java">
               <Icon class="" name="logos:java" />
             </AppLink>
-            
+            <AppLink title="To the NodeJs topic page" to="/topics/vue">
+              <Icon class="" name="logos:nodejs-icon" />
+            </AppLink>
+            <AppLink title="To the javascript topic page" to="/topics/javascript">
+              <Icon class="" name="logos:spring-icon" />
+            </AppLink>
             <AppLink title="To the aws topic page" to="/topics/aws">
               <Icon class="" name="logos:aws" />
             </AppLink>
+            <AppLink title="To the java topic page" to="/topics/java">
+              <Icon class="" name="logos:mysql" />
+            </AppLink>
+            <AppLink title="To the aws topic page" to="/topics/aws">
+              <Icon class="" name="logos:mongodb-icon" />
+            </AppLink>
           </div>
+          <!-- <div class="hidden md:flex filter text-4xl gap-8">
+            <AppLink title="To the Vue topic page" to="/topics/vue">
+              <Icon class="" name="logos:vue" />
+            </AppLink>
+            <AppLink title="To the javascript topic page" to="/topics/javascript">
+              <Icon class="" name="logos:javascript" />
+            </AppLink>
+            <AppLink title="To the java topic page" to="/topics/java">
+              <Icon class="" name="logos:java" />
+            </AppLink>
+            <AppLink title="To the aws topic page" to="/topics/aws">
+              <Icon class="" name="logos:aws" />
+            </AppLink>
+            <AppLink title="To the Vue topic page" to="/topics/vue">
+              <Icon class="" name="logos:vue" />
+            </AppLink>
+            <AppLink title="To the javascript topic page" to="/topics/javascript">
+              <Icon class="" name="logos:javascript" />
+            </AppLink>
+            <AppLink title="To the java topic page" to="/topics/java">
+              <Icon class="" name="logos:java" />
+            </AppLink>
+            <AppLink title="To the aws topic page" to="/topics/aws">
+              <Icon class="" name="logos:aws" />
+            </AppLink>
+          </div> -->
         </div>
         <div class="w-1/2 md:w-2/5 md:flex-1 h-full hidden md:flex justify-end items-center md:ml-32 md:mt-8">
           <NuxtPicture format="avif,webp,png" width="544" height="710" densities="x1 x2" placeholder :img-attrs="{ class: 'z-20 relative' }"
@@ -86,7 +123,7 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
       <ContentDivider class="mt-16 md:-mt-10" />
     </AppSection>
 
-    <AppSection class="my-32" >
+    <AppSection class="my-32" style="margin-bottom: 4.5rem;" >
       <div class="flex flex-col gap-16 md:gap-8 md:flex-row justify-around">
         <LazyServicePreview icon="eos-icons:machine-learning-outlined" title="Learn" to="/learning">
           I'm passionate about continuous learning and believe in the value of hands-on experience. I actively 
@@ -107,8 +144,8 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
       <ContentDivider class="mt-32" anchor="left" />
     </AppSection>
 
-    <AppSection>
-      <LazyParagraphDecoration class="" />
+    <AppSection class="bg-zinc-900">
+      <LazyParagraphDecoration class="mt-16" />
       <AppParagraph class="mr-8 mt-4" tag="h2" look="heading">
         Concepts - Learning
       </AppParagraph>
@@ -129,7 +166,7 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
       <ContentDivider class="mt-14" />
     </AppSection>
 
-    <AppSection class="bg-zinc-900" style="padding-top: 2.5rem;">
+    <AppSection style="padding-top: 2.5rem;">
       <LazyParagraphDecoration />
       <AppParagraph class="mr-8 mt-4" tag="h2" look="heading">
         Projects -Building
@@ -149,7 +186,7 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
       <ContentDivider anchor="left" class="mt-14" />
     </AppSection>
 
-    <AppSection>
+    <AppSection class="bg-zinc-900">
       <LazyParagraphDecoration class="mt-16" />
       <AppParagraph class="mr-8 mt-4" tag="h2" look="heading"> 
         Knowledge - Sharing
@@ -170,7 +207,6 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
       <div class="flex md:justify-end mt-8">
         <AppButton to="/articles" look="secondary" secondary-after-bg="bg-zinc-900">View all articles</AppButton>
       </div>
-      <ContentDivider class="mt-14" />
     </AppSection>
    
   </div>
