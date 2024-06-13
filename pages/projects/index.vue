@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { type QueryBuilderParams } from '@nuxt/content/dist/runtime/types';
+import type { QueryBuilderParams } from '@nuxt/content/dist/runtime/types';
 import type { Project } from '~/types.js';
 
 definePageMeta({
@@ -14,7 +14,7 @@ useSeoMeta({
   description,
 })
 
-defineOgImageComponent('Projects')
+defineOgImageComponent('Project')
 
 const query: QueryBuilderParams = { path: '/projects', without: ['body', 'excerpt'] }
 </script>
