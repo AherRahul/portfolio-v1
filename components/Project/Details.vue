@@ -3,8 +3,9 @@ const props = withDefaults(defineProps<{
   time?: string
   attendees?: number
   languages?: string[]
-  noTrainer?: boolean
   projectGitHubLink?:string
+  prjectDemoLink?:string
+  nodePackageLink?:string
 }>(), {
   time: '2 days',
   attendees: 20,
@@ -32,10 +33,22 @@ const formattedLanguages = computed(() => {
       <Icon class="text-2xl mr-2" name="heroicons:language" /> {{ formattedLanguages }}
     </p>
     <p>
-      <!-- <NuxtLink v-if="!noTrainer" to="#trainer" class="group">
-        <Icon class="text-2xl mr-2" name="ph:chalkboard-teacher-light" /> <span
-          class="underline group-hover:no-underline">Rahul Aher</span>
-      </NuxtLink> -->
+      <NuxtLink v-if="projectGitHubLink" :to="projectGitHubLink" class="group" target="_blank">
+        <Icon class="text-2xl mr-2" name="uil:github" /> <span
+          class="underline group-hover:no-underline">Code</span>
+      </NuxtLink>
+    </p>
+    <p>
+      <NuxtLink v-if="prjectDemoLink" :to="prjectDemoLink" class="group" target="_blank">
+        <Icon class="text-2xl mr-2" name="oui:documentation" /> <span
+          class="underline group-hover:no-underline">Documentaion</span>
+      </NuxtLink>
+    </p>
+    <p>
+      <NuxtLink v-if="nodePackageLink" :to="nodePackageLink" class="group" target="_blank">
+        <Icon class="text-2xl mr-2" name="teenyicons:npm-solid" /> <span
+          class="underline group-hover:no-underline">Npm Package</span>
+      </NuxtLink>
     </p>
   </div>
 </template>

@@ -72,19 +72,19 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
             <AppLink title="To the java topic page" to="/topics/java">
               <Icon class="" name="logos:java" />
             </AppLink>
-            <AppLink title="To the NodeJs topic page" to="/topics/vue">
+            <AppLink title="To the NodeJs topic page" to="/topics/nodejs">
               <Icon class="" name="logos:nodejs-icon" />
             </AppLink>
-            <AppLink title="To the javascript topic page" to="/topics/javascript">
+            <AppLink title="To the javascript topic page" to="/topics/spring">
               <Icon class="" name="logos:spring-icon" />
             </AppLink>
             <AppLink title="To the aws topic page" to="/topics/aws">
               <Icon class="" name="logos:aws" />
             </AppLink>
-            <AppLink title="To the java topic page" to="/topics/java">
+            <AppLink title="To the java topic page" to="/topics/mysql">
               <Icon class="" name="logos:mysql" />
             </AppLink>
-            <AppLink title="To the aws topic page" to="/topics/aws">
+            <AppLink title="To the aws topic page" to="/topics/mongodb">
               <Icon class="" name="logos:mongodb-icon" />
             </AppLink>
           </div>

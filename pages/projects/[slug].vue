@@ -50,7 +50,13 @@ defineOgImageComponent('Project', {
       <AppParagraph class="mt-4" look="heading" tag="h1">
         {{ project.title }}
       </AppParagraph>
-      <ProjectDetails :time="project.time" class="mt-8 space-y-2 md:space-y-0 md:flex gap-8" />
+      <ProjectDetails 
+        :time="project.time"
+        :projectGitHubLink="project.projectGitHubLink"
+        :nodePackageLink="project.nodePackageLink"
+        :prjectDemoLink="project.prjectDemoLink"
+        class="mt-8 space-y-2 md:space-y-0 md:flex gap-8"
+      />
     </AppSection>
     <AppSection class="bg-zinc-900 !pb-0" inner-class="border-b border-zinc-800">
       <div class="justify-center gap-8 pb-16">
@@ -58,7 +64,7 @@ defineOgImageComponent('Project', {
           <div class="prose md:prose-lg lg:prose-xl pt-0.5">
             <ContentDoc />
           </div>
-          <AppButton :to="requestQuoteLink" class="hidden md:block mt-8 text-xl">Do you want to collabrate.?</AppButton>
+          <AppButton :to="requestQuoteLink" class="hidden md:block mt-8 text-xl">Do you want to collabrate?</AppButton>
         </div>
         <!-- <div>
           <div class="flex flex-col items-center mt-12">
