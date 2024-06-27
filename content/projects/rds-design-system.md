@@ -100,7 +100,7 @@ Now that RDS is installed and configured, you can start using its components in 
 ```vue
 <template>
   <div id="app">
-    <cds-button
+    <rds-button
       variant="green"
       size="md"
       text="Lorem Ipsum"
@@ -130,7 +130,7 @@ RDS components are designed to be easily customizable. You can pass props to the
 ```vue
 <template>
   <div id="app">
-    <cds-button
+    <rds-button
       variant="red"
       size="lg"
       text="Click me..!!"
