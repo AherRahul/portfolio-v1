@@ -41,7 +41,7 @@ export default defineNuxtConfig({
       ],
     },
     devProxy: {
-      '/api/newsletter': { target: 'https://rahulaher.netlify.app', changeOrigin: true }
+      '/api/newsletter': { target: 'https://www.rahulaher.netlify.app', changeOrigin: true }
     }
   },
 
@@ -59,7 +59,7 @@ export default defineNuxtConfig({
 
   plausible: {
     domain: 'rahulaher.netlify.app',
-    apiHost: 'https://rahulaher.netlify.app',
+    apiHost: 'https://www.rahulaher.netlify.app',
   },
 
   content: {
