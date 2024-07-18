@@ -11,7 +11,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       site: {
-        url: 'https://rahulaher.netlify.app',
+        url: 'https://www.rahulaher.netlify.app',
       }
     }
   },
@@ -46,7 +46,7 @@ export default defineNuxtConfig({
   },
 
   site: {
-    url: 'https://rahulaher.netlify.app',
+    url: 'https://www.rahulaher.netlify.app',
     name: 'Rahul Aher',
     trailingSlash: true,
   },
