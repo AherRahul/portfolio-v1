@@ -8,7 +8,7 @@ useAppSeo()
 useSiteNotifications()
 
 function useAppSeo() {
-  const isDark = useDark()
+  const isDark = true
   const favicon = computed(() => `/img/logo/glyph-${isDark.value ? 'white' : 'black'}-colored.svg`)
 
   useServerHead({
