@@ -129,7 +129,7 @@ function useSiteNotifications() {
 </script>
 
 <template>
-  <div>
+  <div class="bg-black antialiased min-h-screen text-white">
     <AppNavbar />
     <div class="mt-8">
       <NuxtPage />

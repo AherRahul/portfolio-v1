@@ -35,7 +35,7 @@ const message = computed(() => {
 </script>
 
 <template>
-  <div>
+  <div class="bg-black antialiased min-h-screen text-white">
     <AppNavbar />
     <AppSection class="mt-8 prose md:prose-lg lg:prose-xl">
       <ParagraphDecoration />
