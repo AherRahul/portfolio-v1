@@ -104,24 +104,23 @@ Now that RDS is installed and configured, you can start using its components in 
       variant="green"
       size="md"
       text="Lorem Ipsum"
-        @click="handleClick"
+        @click="handleClick()"
     />
   </div>
 </template>
 
-<script>
-export default {
-  methods: {
-    handleClick() {
-      alert('Button clicked!');
-    }
-  }
-}
+<script setup lang="ts">
+
+const handleClick = (event)  => {
+  alert('Button clicked!');
+};
+
 </script>
 
 <style>
 /* Add any custom styles here */
 </style>
+
 ```
 
 ### Step 4: Customizing RDS Components
@@ -131,23 +130,34 @@ RDS components are designed to be easily customizable. You can pass props to the
 <template>
   <div id="app">
     <rds-button
-      variant="red"
-      size="lg"
-      text="Click me..!!"
-        @click="handleClick"
+      :variant="btnColor"
+      :size="btnSize"
+      :text="btnText"
+        @click="handleClick()"
     />
   </div>
 </template>
 
-<script>
-export default {
-  methods: {
-    handleClick() {
-      alert('Button clicked!');
-    }
-  }
-}
+<script setup>
+// imports
+import { ref } from 'vue';
+
+// data
+const btnColor = ref('red');
+const btnSize = ref('md');
+const btnText = ref('Button');
+
+
+// methods
+const handleClick = (event)  => {
+  alert('Button Alert');
+};
+
 </script>
+
+<style>
+/* Add any custom styles here */
+</style>
 ```
 
 ### Step 5: Exploring More Components
