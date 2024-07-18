@@ -95,7 +95,7 @@ defineOgImageComponent('General')
 
             <p>
               I am offering <AppLink to="/consulting/">Consulting</AppLink>
-              as well as <AppLink to="/workshops/">Workshops</AppLink>
+              as well as <AppLink to="/projects/">Projects</AppLink>
               for companies and developers around the world via my company Developmint.
             </p>
             <p>
