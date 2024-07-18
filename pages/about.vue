@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue';
-import { ChevronUpIcon } from '@heroicons/vue/20/solid';
 
 definePageMeta({
   documentDriven: false,
@@ -23,21 +21,22 @@ defineOgImageComponent('General')
     <AppSection>
       <ParagraphDecoration />
       <AppParagraph look="heading" class="mt-4" tag="h1">About me</AppParagraph>
-      <div class="lg:grid lg:items-end mt-16 lg:mt-0">
+      <div class="lg:grid grid-cols-2 lg:items-end mt-16 lg:mt-0">
         <div class="lg:hidden">
           <img class="w-48 h-48 rounded-full mx-auto" width="192" height="192" src="/img/me@2x.jpg"
-            alt="Photo of Rahul Aher">
+            alt="Photo of Alexander Lichter">
         </div>
         <div class="-mt-16 lg:mt-0">
           <div class="prose lg:prose-lg lg:mt-8">
             <h2>Hey!</h2>
             <p>
-              I'm Rahul, a Indian <b>Sr. Software Engineer (SDE II)</b>  living in Mumbai, Maharastra.
+              I'm Alex, a German <b>web engineering consultant</b> and managing director living in Amsterdam, The
+              Netherlands.
               Already at a young age, computers impressed me so much that I wanted to know more about them.
               And here I am, a self-taught developer for more than half my life who has been running his own company
               since 2015.
             </p>
-            <p>You might know me as <b>aherrahul</b> or <b>rahulvijayaher</b> on various platforms.</p>
+            <p>You might know me as <b>manniL</b> or <b>TheAlexLichter</b> on various platforms.</p>
 
             <h2>Tech Stack</h2>
 
@@ -92,45 +91,11 @@ defineOgImageComponent('General')
               component library, plain JavaScript, jQuery, and others!
             </p>
 
-            <!-- <div class="w-full px-4 pt-16">
-              <div class="mx-auto w-full max-w-md rounded-2xl bg-white p-2">
-                <Disclosure v-slot="{ open }">
-                  <DisclosureButton
-                    class="flex w-full justify-between rounded-lg bg-purple-100 px-4 py-2 text-left text-sm font-medium text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75"
-                  >
-                    <span>What is your refund policy?</span>
-                    <ChevronUpIcon
-                      :class="open ? 'rotate-180 transform' : ''"
-                      class="h-5 w-5 text-purple-500"
-                    />
-                  </DisclosureButton>
-                  <DisclosurePanel class="px-4 pb-2 pt-4 text-sm text-gray-500">
-                    If you're unhappy with your purchase for any reason, email us within
-                    90 days and we'll refund you in full, no questions asked.
-                  </DisclosurePanel>
-                </Disclosure>
-                <Disclosure as="div" class="mt-2" v-slot="{ open }">
-                  <DisclosureButton
-                    class="flex w-full justify-between rounded-lg bg-purple-100 px-4 py-2 text-left text-sm font-medium text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75"
-                  >
-                    <span>Do you offer technical support?</span>
-                    <ChevronUpIcon
-                      :class="open ? 'rotate-180 transform' : ''"
-                      class="h-5 w-5 text-purple-500"
-                    />
-                  </DisclosureButton>
-                  <DisclosurePanel class="px-4 pb-2 pt-4 text-sm text-gray-500">
-                    No.
-                  </DisclosurePanel>
-                </Disclosure>
-              </div>
-            </div> -->
-
             <h2>Business</h2>
 
             <p>
               I am offering <AppLink to="/consulting/">Consulting</AppLink>
-              as well as <AppLink to="/projects/">Projects</AppLink>
+              as well as <AppLink to="/workshops/">Workshops</AppLink>
               for companies and developers around the world via my company Developmint.
             </p>
             <p>
@@ -154,7 +119,7 @@ defineOgImageComponent('General')
 
             <p>
               I'm a big fan of open source software and I try to contribute to it as much as my spare time allows.
-              Since my <AppLink to="https://firstcommit.is/aherrahul">initial commit back in 2012</AppLink>
+              Since my <AppLink to="https://firstcommit.is/mannil">initial commit back in 2012</AppLink>
               I have been actively contributing to open source projects.
             </p>
             <p>
@@ -178,15 +143,20 @@ defineOgImageComponent('General')
             </p>
           </div>
         </div>
-        <!-- <div class="hidden sticky bottom-0 lg:block">
+        <div class="hidden sticky bottom-0 lg:block">
           <NuxtPicture width="608" height="931" format="avif,webp,png" densities="x1 x2" placeholder
-            :img-attrs="{ class: 'z-20 ml-24 -mb-24' }" src="/img/rahul-to-the-left-showing.png" alt=""
+            :img-attrs="{ class: 'z-20 ml-24 -mb-24' }" src="/img/rahul-main.png" alt=""
             aria-hidden />
-        </div> -->
+        </div>
+
+        
       </div>
     </AppSection>
   </div>
 </template>
+
+
+
 <style lang="css">
 @import '@aherrahul/design-system/dist/style.css';
 </style>

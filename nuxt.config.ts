@@ -7,9 +7,6 @@ export default defineNuxtConfig({
   routeRules: {
     '/support-me/': { redirect: { to: '/sponsors/', statusCode: 301 } },
     '/timeline/': { redirect: { to: '/about/', statusCode: 301 } },
-    // TODO: After https://github.com/unjs/nitro/issues/1748 is resolved
-    // '/slides/**': { redirect: { to: 'https://slides.com/aherrahul/**', statusCode: 302 } },
-    // TODO: Remove this ^equivalent from _redirects afterwards
   },
   runtimeConfig: {
     public: {
@@ -17,6 +14,14 @@ export default defineNuxtConfig({
         url: 'https://www.rahulaher.netlify.app',
       }
     }
+  },
+
+  plugins: [
+    { src: '~/plugins/rds.ts', mode: 'client' }
+  ],
+
+  build: {
+    transpile: ['@aherrahul/design-system'],
   },
 
   modules: [
@@ -36,7 +41,7 @@ export default defineNuxtConfig({
       ],
     },
     devProxy: {
-      '/api/newsletter': { target: 'https://lichter-io-newsletter.netlify.app', changeOrigin: true }
+      '/api/newsletter': { target: 'https://www.rahulaher.netlify.app', changeOrigin: true }
     }
   },
 
@@ -54,7 +59,7 @@ export default defineNuxtConfig({
 
   plausible: {
     domain: 'rahulaher.netlify.app',
-    apiHost: 'https://plausible.rahulaher.netlify.app',
+    apiHost: 'https://www.rahulaher.netlify.app',
   },
 
   content: {
