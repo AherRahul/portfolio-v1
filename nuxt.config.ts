@@ -16,13 +16,13 @@ export default defineNuxtConfig({
     }
   },
 
-  plugins: [
-    { src: '~/plugins/rds.ts', mode: 'client' }
-  ],
+  // plugins: [
+  //   { src: '~/plugins/rds.ts', mode: 'client' }
+  // ],
 
-  build: {
-    transpile: ['@aherrahul/design-system'],
-  },
+  // build: {
+  //   transpile: ['@aherrahul/design-system'],
+  // },
 
   modules: [
     '@nuxtjs/tailwindcss',
@@ -46,7 +46,7 @@ export default defineNuxtConfig({
   },
 
   site: {
-    url: 'https://www.rahulaher.netlify.app',
+    url: 'https://rahulaher.netlify.app',
     name: 'Rahul Aher',
     trailingSlash: true,
   },
@@ -58,8 +58,8 @@ export default defineNuxtConfig({
   },
 
   plausible: {
-    domain: 'rahulaher.netlify.app',
-    apiHost: 'https://plausible.rahulaher.netlify.app',
+    domain: 'lichter.io',
+    apiHost: 'https://plausible.lichter.io',
   },
 
   content: {
