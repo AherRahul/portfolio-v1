@@ -31,19 +31,17 @@ function useAppSeo() {
         addressCountry: 'India',
         addressLocality: 'Mumbai, Maharastra',
         addressRegion: 'Ambernath, Thane',
-        postalCode: '704, H wing, Balaji Apartment, ZP Hills',
+        postalCode: '704, H wing, Balaji Apartment, ZP Hills, Near Krishna marriage hall',
         streetAddress: 'Chinchpada, Ambernath (West) 421505'
       },
       name: 'Rahul Aher',
       image: '/img/me@2x.jpg',
       email: 'mailto:rahulvijayaher@gmail.com',
       nationality: "Indian",
-      jobTitle: 'Software Engineer (SDE-II) and Web Engineering Consultant',
+      jobTitle: 'Software Engineer and Web Engineering Consultant',
       url: 'https://rahulaher.netlify.app',
       sameAs: [
         ...Object.values(SOCIALS),
-        'https://stackoverflow.com/users/3975480/mannil',
-        'https://www.developmint.de/',
       ]
     }),
     defineWebSite(),
@@ -84,7 +82,7 @@ function useSiteNotifications() {
     if (result) {
       await new Promise((resolve) => setTimeout(resolve, 1000))
     }
-    onUserSpeaksGerman()
+    onUserSpeaksHindi()
   })
 
   function onDicsordRef(): Boolean {
@@ -104,22 +102,22 @@ function useSiteNotifications() {
     return true
   }
 
-  function onUserSpeaksGerman(): Boolean {
-    const doesSpeakGerman = navigator.languages.some(lang => lang.startsWith('de'))
-    if (!doesSpeakGerman) {
+  function onUserSpeaksHindi(): Boolean {
+    const doesSpeakHindi = navigator.languages.some(lang => lang.startsWith('hi'))
+    if (!doesSpeakHindi) {
       return false
     }
 
-    const didUserSeeGermanNotificationAlready = localStorage.getItem(LOCALSTORAGE_KEYS.notificationGerman)
-    if (didUserSeeGermanNotificationAlready) {
+    const didUserSeeHindiNotificationAlready = localStorage.getItem(LOCALSTORAGE_KEYS.notificationHindi)
+    if (didUserSeeHindiNotificationAlready) {
       return false
     }
 
     addNotification({
-      heading: 'Ich spreche auch Deutsch!',
-      body: 'Alle Projects und Talks können auch auf Deutsch gehalten werden.',
+      heading: 'I also speak Hindi!',
+      body: 'All projects and talks can also be held in Hindi.',
       onRemove() {
-        localStorage.setItem(LOCALSTORAGE_KEYS.notificationGerman, 'true')
+        localStorage.setItem(LOCALSTORAGE_KEYS.notificationHindi, 'true')
       }
     })
 
@@ -162,4 +160,9 @@ function useSiteNotifications() {
 .line.highlight {
   @apply bg-white/5;
 }
+
+p {
+    /* text-align: justify; */
+}
+
 </style>

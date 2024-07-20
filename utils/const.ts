@@ -7,5 +7,5 @@ export const SOCIALS = {
 } as const
 
 export const LOCALSTORAGE_KEYS = {
-  notificationGerman: 'notification-german',
+  notificationHindi: 'notification-hindi',
 } as const

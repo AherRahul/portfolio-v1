@@ -5,7 +5,7 @@ const props = defineProps<{
   talk: TalkPreview
 }>()
 
-// TODO: Differentiate between german and english items
+// TODO: Differentiate between hindi and english items
 // TODO: Highlight upcoming talks somehow!
 const isUpcoming = computed(() => {
   if (!props.talk.date) {

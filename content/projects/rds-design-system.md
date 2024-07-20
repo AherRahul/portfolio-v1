@@ -72,7 +72,6 @@ For Vue 2:
 import Vue from 'vue';
 import App from './App.vue';
 import RDS from '@aherrahul/design-system';
-import '@aherrahul/design-system/dist/style.css';
 
 Vue.use(RDS);
 
@@ -100,7 +99,7 @@ Now that RDS is installed and configured, you can start using its components in 
 ```vue
 <template>
   <div id="app">
-    <cds-button
+    <rds-button
       variant="green"
       size="md"
       text="Lorem Ipsum"
@@ -111,14 +110,15 @@ Now that RDS is installed and configured, you can start using its components in 
 
 <script setup lang="ts">
 
-const handleClick = (event)  => {
-  alert('Button clicked!');
-};
+  const handleClick = (event)  => {
+    alert('Button clicked!');
+  };
 
 </script>
 
 <style>
 /* Add any custom styles here */
+import '@aherrahul/design-system/dist/style.css';
 </style>
 
 ```
@@ -129,42 +129,35 @@ RDS components are designed to be easily customizable. You can pass props to the
 ```vue
 <template>
   <div id="app">
-<<<<<<< HEAD
-    <cds-button
-      variant="red"
-      size="lg"
-      text="Click me..!!"
-        @click="handleClick"
-=======
     <rds-button
       :variant="btnColor"
       :size="btnSize"
       :text="btnText"
         @click="handleClick()"
->>>>>>> 139e983572946fa020bcd61180d5be29a9e39f57
     />
   </div>
 </template>
 
 <script setup>
-// imports
-import { ref } from 'vue';
+  // imports
+  import { ref } from 'vue';
 
-// data
-const btnColor = ref('red');
-const btnSize = ref('md');
-const btnText = ref('Button');
+  // data
+  const btnColor = ref('red');
+  const btnSize = ref('md');
+  const btnText = ref('Button');
 
 
-// methods
-const handleClick = (event)  => {
-  alert('Button Alert');
-};
+  // methods
+  const handleClick = (event)  => {
+    alert('Button Alert');
+  };
 
 </script>
 
 <style>
 /* Add any custom styles here */
+  import '@aherrahul/design-system/dist/style.css';
 </style>
 ```
 

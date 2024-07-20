@@ -7,17 +7,18 @@ export default defineNuxtConfig({
   routeRules: {
     '/support-me/': { redirect: { to: '/sponsors/', statusCode: 301 } },
     '/timeline/': { redirect: { to: '/about/', statusCode: 301 } },
-    // TODO: After https://github.com/unjs/nitro/issues/1748 is resolved
-    // '/slides/**': { redirect: { to: 'https://slides.com/aherrahul/**', statusCode: 302 } },
-    // TODO: Remove this ^equivalent from _redirects afterwards
   },
   runtimeConfig: {
     public: {
       site: {
-        url: 'https://www.rahulaher.netlify.app',
+        url: 'https://rahulaher.netlify.app',
       }
     }
   },
+
+  plugins: [
+    { src: '~/plugins/rds.ts', mode: 'client' }
+  ],
 
   modules: [
     '@nuxtjs/tailwindcss',
@@ -36,12 +37,12 @@ export default defineNuxtConfig({
       ],
     },
     devProxy: {
-      '/api/newsletter': { target: 'https://lichter-io-newsletter.netlify.app', changeOrigin: true }
+      '/api/newsletter': { target: 'https://rahulaher.netlify.app', changeOrigin: true }
     }
   },
 
   site: {
-    url: 'https://www.rahulaher.netlify.app',
+    url: 'https://rahulaher.netlify.app',
     name: 'Rahul Aher',
     trailingSlash: true,
   },
@@ -54,7 +55,7 @@ export default defineNuxtConfig({
 
   plausible: {
     domain: 'rahulaher.netlify.app',
-    apiHost: 'https://plausible.rahulaher.netlify.app',
+    apiHost: 'https://rahulaher.netlify.app',
   },
 
   content: {

@@ -5,7 +5,7 @@ definePageMeta({
   documentDriven: false
 })
 
-const description = `I am Rahul, a Indian Sr. Software Engineer (SDE II) based in Amsterdam. I help companies to build better web applications and to improve their knowledge, workflows, and culture. My expertise in JavaScript, TypeScript, Vue.js, and Nuxt.js is highly valued by clients all around the world`
+const description = `I am Rahul, a Software Engineer (SDE II) based in India. I help companies to build better web applications and to improve their knowledge, workflows, and culture. My expertise in JavaScript, TypeScript, Vue.js, and Nuxt.js is highly valued by clients all around the world`
 
 useSeoMeta({
   title: '',
