@@ -65,7 +65,7 @@ defineOgImageComponent('General')
             <AppLink to="/articles">blog posts</AppLink>,
             and introductory articles and also link to previous
             <AppLink class="inline-block" to="/learning">
-              talks and podcast episodes
+              learnings
             </AppLink>.
             Also, the <AppLink to="https://github.com/aherrahul/portfolio-v1/">code of the site</AppLink> is open-source.
           </p>

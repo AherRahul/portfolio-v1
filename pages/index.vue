@@ -50,7 +50,7 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
           </div>
           <AppParagraph look="subParagraph" class="mt-8">
             Hello! I'm Rahul Aher, a seasoned Sr. Software Engineer at
-            <AppLink to="https://www.morningstar.com/" style="color: #dc2626 var(--tw-gradient-from-position);">Morningstar</AppLink>, 
+            <AppLink to="https://www.morningstar.com/" style="color: #dc2626 var(--tw-gradient-from-position);"><b>Morningstar</b></AppLink>, 
             passionate about architecting transformative software solutions. With a results-oriented mindset, I pursue complex 
             challenges in Software and Product Development.
           </AppParagraph>
@@ -211,3 +211,5 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
    
   </div>
 </template>
+
+<!-- https://icones.js.org/ -->

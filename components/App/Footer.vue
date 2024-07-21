@@ -7,7 +7,7 @@ const navigation = {
   general: [
     { name: 'About', to: '/about/' },
     // { name: 'My equipment', to: '/uses/' },
-    { name: 'Sponsors', to: '/sponsors/' },
+    // { name: 'Sponsors', to: '/sponsors/' },
     { name: 'Topics', to: '/topics/' }
   ],
   services: [
