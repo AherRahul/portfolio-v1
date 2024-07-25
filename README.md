@@ -1,6 +1,10 @@
-# [rahulaher.netlify.app](https://rahulaher.netlify.app) - My personal website, blog and more
+<p align="center">
+ <a href="https://rahulaher.netlify.app">
+  <img src="https://rahulaher.netlify.app/img/logo/glyph-black-colored.svg" alt="Rahul Aher" width="250" />
+ </a>
+</p>
 
-It took a while, but my eventually I had the time to rebuild my website!
+# [rahulaher.netlify.app](https://rahulaher.netlify.app) - My personal website, blog and more
 
 ## Tech stack
 
@@ -17,8 +21,8 @@ It took a while, but my eventually I had the time to rebuild my website!
 
 ## Security
 
-If you discover any security related issues, please email hello at lichter dot io instead of using the issue tracker.
+If you discover any security related issues, please email hello at rahulvijayaher@gmail.com instead of using the issue tracker.
 
 ## License
 
-As mentioned on my website the code of my website is licensed under The MIT License (MIT). Please see [License File](MIT%20LICENSE) for more information. All written content such as learning lists, articles or similar are licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+As mentioned on my website the code of my website is licensed under The MIT License (MIT). Please see [License File](MIT%20LICENSE) for more information.
