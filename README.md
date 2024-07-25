@@ -4,8 +4,8 @@
  </a>
 </p>
 
-# [rahulaher.netlify.app](https://rahulaher.netlify.app) - My personal website, blog and more
-
+# My personal website, blog and more
+Here's the link [Rahul Aher](https://rahulaher.netlify.app)
 ## Tech stack
 
 - [Nuxt.js 3](https://nuxtjs.org/)
