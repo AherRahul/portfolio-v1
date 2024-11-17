@@ -1,7 +1,6 @@
 ---
-title: "RDS (Design system): NPM Package for Vue Projects "
+title: "Rahul's Design system (RDS)"
 description: "Consistency and standards are important for building a unified design language and help the user know what to expect from our product and how to use it. However, this does not mean sacrificing the user experience. In this sense, the context and needs of our users are priorities when developing our solutions."
-time: "1 hr/day"
 projectGitHubLink: 'https://github.com/AherRahul/design-system'
 projectDemoLink: 'https://rds-design-system.netlify.app/'
 nodePackageLink: 'https://www.npmjs.com/package/@aherrahul/design-system'
@@ -183,13 +182,6 @@ Integrating RDS into your Vue.js project is a straightforward process that can g
 We hope this guide helps you get started with RDS. If you have any questions or feedback, feel free to leave a comment below or reach out to us on [GitHub](https://github.com/AherRahul/design-system).
 
 Happy coding!
-
-
-
-
-
-
-
 
 ---
 

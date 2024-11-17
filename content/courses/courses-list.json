@@ -1,0 +1,139 @@
+[
+    {
+        "id": 1,
+        "title": "AWS Certified Solutions Architect - Associate (SAA-C03)",
+        "description": "AWS Certified Solutions Architect is among the most valuable and sought-after cloud computing certifications in the world. We designed this cloud architect certification training for anyone seeking to learn the major components of Amazon Web Services (AWS). By the end of the course, you'll be prepared to pass the associate-level AWS Certified Solutions Architect certification exam.",
+        "time": "1 hr/day",
+        "tutor": "3",
+        "topics": ["aws", "solution-architect"],
+        "_path": "aws-solution-architect",
+        "content": [
+            {
+                "module_id": 1,
+                "module_name": "Introduction",
+                "module_duration": "10 mins",
+                "videos_count": 2,
+                "expanded": 1,
+                "videos": [
+                    {
+                        "id": 1,
+                        "topic_name": "Exam Guide",
+                        "sub_topic": "Associate SAA C03 Exam Guide",
+                        "publish_date": "2024-09-28",
+                        "description": "AWS Certified Solutions Architect is one of the most popular cloud computing certifications. In this full course taught by an expert trainer, you will learn the major parts of Amazon Web Services, and prepare for the associate-level AWS Certified Solutions Architect exam. By the end of this course, you will be ready to take the AWS Certified Solutions Architect Associate exam - and pass!",
+                        "topics": ["aws", "solution-architect"],
+                        "duration": "6:54 mins",
+                        "video_url": "https://www.youtube.com/embed/ejZm0c_OhYM?si=_EDroaJF7rPD1dvL",
+                        "auther_name": "Rahul Aher",
+                        "is_on_youtube": 1,
+                        "_path": "aws-solution-architect-1-1"
+                    }
+                ]
+            },
+            {
+                "module_id": 2,
+                "module_name": "AWS Fundamentals",
+                "module_duration": "44 mins",
+                "videos_count": 3,
+                "videos": [
+                    {
+                        "id": 1,
+                        "topic_name": "The Building Blocks of AWS: Availability Zones and Regions",
+                        "publish_date": "2024-10-15",
+                        "description": "Data centers within each AWS region that are physically separated and isolated. Each AZ has its own power, cooling, and networking infrastructure. AZs are connected with low-latency, high throughput, highly redundant networking. Data centers within each AWS region that are physically separated and isolated. Each AZ has its own power, cooling, and networking infrastructure. AZs are connected with low-latency, high throughput, highly redundant networking. ",
+                        "topics": ["aws", "solution-architect"],
+                        "duration": "8:27 mins",
+                        "video_url": "https://www.youtube.com/embed/SVW2HBZ3QNA?si=TsD1JykWf5LYzBil",
+                        "auther_name": "Rahul Aher",
+                        "is_on_youtube": 1,
+                        "file_name": "",
+                        "_path": "aws-solution-architect-2-1"
+                    },
+                    {
+                        "id": 2,
+                        "topic_name": "Who Owns What in the Cloud?",
+                        "publish_date": "2024-10-15",
+                        "description": "Data centers within each AWS region that are physically separated and isolated. Each AZ has its own power, cooling, and networking infrastructure. AZs are connected with low-latency, high throughput, highly redundant networking. Data centers within each AWS region that are physically separated and isolated. Each AZ has its own power, cooling, and networking infrastructure. AZs are connected with low-latency, high throughput, highly redundant networking. ",
+                        "topics": ["aws", "solution-architect"],
+                        "duration": "5:44 mins",
+                        "video_url": "https://www.youtube.com/embed/izQlU1sZkNg?si=q_GceoOp1N6nWdNZ",
+                        "auther_name": "Rahul Aher",
+                        "is_on_youtube": 1,
+                        "file_name": "",
+                        "_path": "aws-solution-architect-2-2"
+                    },
+                    {
+                        "id": 3,
+                        "topic_name": "Compute, Storage, Databases, and Networking",
+                        "publish_date": "2024-10-15",
+                        "description": "Data centers within each AWS region that are physically separated and isolated. Each AZ has its own power, cooling, and networking infrastructure. AZs are connected with low-latency, high throughput, highly redundant networking. Data centers within each AWS region that are physically separated and isolated. Each AZ has its own power, cooling, and networking infrastructure. AZs are connected with low-latency, high throughput, highly redundant networking. ",
+                        "topics": ["aws", "solution-architect"],
+                        "duration": "8:27 mins",
+                        "video_url": "https://www.youtube.com/embed/ULfTWvsHw20?si=O7d0O9g4OH5sZHRS",
+                        "auther_name": "Rahul Aher",
+                        "is_on_youtube": 1,
+                        "file_name": "",
+                        "_path": "aws-solution-architect-2-3"
+                    },
+                    {
+                        "id": 3,
+                        "topic_name": "What Is the Well-Architected Framework?",
+                        "publish_date": "2024-10-15",
+                        "description": "Data centers within each AWS region that are physically separated and isolated. Each AZ has its own power, cooling, and networking infrastructure. AZs are connected with low-latency, high throughput, highly redundant networking. Data centers within each AWS region that are physically separated and isolated. Each AZ has its own power, cooling, and networking infrastructure. AZs are connected with low-latency, high throughput, highly redundant networking. ",
+                        "topics": ["aws", "solution-architect"],
+                        "duration": "3:01 mins",
+                        "video_url": "https://www.youtube.com/embed/ejZm0c_OhYM?si=_EDroaJF7rPD1dvL",
+                        "auther_name": "Rahul Aher",
+                        "is_on_youtube": 1,
+                        "file_name": "",
+                        "_path": "aws-solution-architect-2-4"
+                    },
+                    {
+                        "id": 3,
+                        "topic_name": "AWS Fundamentals Exam Tips",
+                        "publish_date": "2024-10-15",
+                        "description": "Data centers within each AWS region that are physically separated and isolated. Each AZ has its own power, cooling, and networking infrastructure. AZs are connected with low-latency, high throughput, highly redundant networking. Data centers within each AWS region that are physically separated and isolated. Each AZ has its own power, cooling, and networking infrastructure. AZs are connected with low-latency, high throughput, highly redundant networking. ",
+                        "topics": ["aws", "solution-architect"],
+                        "duration": "3:44 mins",
+                        "video_url": "https://www.youtube.com/embed/ejZm0c_OhYM?si=_EDroaJF7rPD1dvL",
+                        "auther_name": "Rahul Aher",
+                        "is_on_youtube": 1,
+                        "file_name": "",
+                        "_path": "aws-solution-architect-2-5"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "title": "System design",
+        "description": "Systems design is the use of computer engineering principles to build large scale distributed systems. It involves converting business problems and requirements into technical solutions. Senior engineers use system design patterns to make reliable, scalable and maintainable systems.",
+        "time": "8:43 mins",
+        "tutor": "3",
+        "_path": "beginner-system-design",
+        "topics": ["system-design"],
+        "content": [
+            {
+                "module_id": 1,
+                "module_name": "System design - Introduction",
+                "module_duration": "10 mins",
+                "videos_count": 1,
+                "videos": [
+                    {
+                        "id": 1,
+                        "topic_name": "What is System Design",
+                        "publish_date": "2024-11-5",
+                        "description": "Systems Design is the process of defining the architecture, components, modules, interfaces, and data for a system to satisfy specified requirements. It involves translating user requirements into a detailed blueprint that guides the implementation phase. The goal is to create a well-organized and efficient structure that meets the intended purpose while considering factors like scalability, maintainability, and performance.",
+                        "topics": ["system-design"],
+                        "duration": "8:41 mins",
+                        "video_url": "https://www.youtube.com/embed/K9EFon58_UI?si=95in2rvIl1h6pDxU",
+                        "auther_name": "Rahul Aher",
+                        "is_on_youtube": 1,
+                        "_path": "beginner-system-design-1-1"
+                    }
+                ]
+            }
+        ]
+    }
+]

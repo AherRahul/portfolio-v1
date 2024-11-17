@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import type { ArticlePreview, TalkPreview } from '~/types.js';
+import type { ArticlePreview, TalkPreview, CoursePreview, ProjectPreview } from '~/types.js';
+import courseContent from '../content/courses/courses-list.json';
 
 definePageMeta({
   documentDriven: false
@@ -27,6 +28,8 @@ const { data: talks } = useAsyncData('latest-learning', () => queryContent<TalkP
 const { data: projects } = useAsyncData('latest-projects', () => queryContent('/projects/').sort({
   onStartPage: 1
 }).without(['body', 'excerpt']).limit(3).find())
+
+const courses = courseContent;
 </script>
 
 <template>
@@ -169,7 +172,7 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
     <AppSection style="padding-top: 2.5rem;">
       <LazyParagraphDecoration />
       <AppParagraph class="mr-8 mt-4" tag="h2" look="heading">
-        Projects -Building
+        Projects - Building
       </AppParagraph>
       <div class="flex flex-col gap-8 md:gap-0 md:flex-row justify-between">
         <AppParagraph look="subParagraph" class="mt-8 max-w-xl">
@@ -207,6 +210,26 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
       <div class="flex md:justify-end mt-8">
         <AppButton to="/articles" look="secondary" secondary-after-bg="bg-zinc-900">View all articles</AppButton>
       </div>
+    </AppSection>
+
+    <AppSection style="padding-top: 2.5rem;">
+      <LazyParagraphDecoration />
+      <AppParagraph class="mr-8 mt-4" tag="h2" look="heading">
+        Courses
+      </AppParagraph>
+      <div class="flex flex-col gap-8 md:gap-0 md:flex-row justify-between">
+        <AppParagraph look="subParagraph" class="mt-8 max-w-xl">
+          <span style="font-style: italic;">“Offline-first is not just a feature, it’s a mindset. It’s about 
+            building resilient systems that empower users, no matter their connection status.”</span> — Akshat Paul
+         </AppParagraph>
+        <div>
+          <AppButton to="/courses/" look="secondary">Discover all courses</AppButton>
+        </div>
+      </div>
+      <div class="flex flex-col md:flex-row gap-16 md:gap-8 justify-around mt-8">
+        <LazyCoursePreview class="flex-1" v-for="course in courses" :course="course" />
+      </div> 
+      <ContentDivider anchor="left" class="mt-14" />
     </AppSection>
    
   </div>

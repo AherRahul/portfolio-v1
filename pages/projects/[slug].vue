@@ -12,31 +12,11 @@ useSeoMeta({
 
 onContentNotFound(project)
 
-const requestQuoteLink = computed(() => {
-  const prefix = 'mailto:rahulvijayaher@gmail.com?subject=Project collabration request: '
-  const title = project.value.title
-  const suffix = `&body=Hi Rahul,%0D%0A%0D%0Awe would like to collabrate with you for the ${title} project.%0D%0A%0D%0A
-
-  Desired/Possible time for contribution per week: %0D%0A
-
-  Location: %0D%0A
-
-  Your skill-set: %0D%0A
-
-  linkedin Profile: %0D%0A
-
-  Github Profile:  %0D%0A%0D%0A
-
-  Further comments or info:%0D%0A
-  `
-  return prefix + title + suffix
-})
-
 defineOgImageComponent('Project', {
   title: project.value.title,
   time: project.value.time,
   attendees: project.value.attendees ?? 20,
-  languages: project.value.languages ?? ['English', 'Indian'],
+  languages: project.value.languages ?? ['English'],
   projectGitHubLink: project.value.projectGitHubLink,
 })
 
@@ -54,7 +34,7 @@ defineOgImageComponent('Project', {
         :time="project.time"
         :projectGitHubLink="project.projectGitHubLink"
         :nodePackageLink="project.nodePackageLink"
-        :prjectDemoLink="project.prjectDemoLink"
+        :projectDemoLink="project.projectDemoLink"
         class="mt-8 space-y-2 md:space-y-0 md:flex gap-8"
       />
     </AppSection>
@@ -64,25 +44,7 @@ defineOgImageComponent('Project', {
           <div class="prose md:prose-lg lg:prose-xl pt-0.5">
             <ContentDoc />
           </div>
-          <AppButton :to="requestQuoteLink" class="hidden md:block mt-8 text-xl">Do you want to collabrate?</AppButton>
         </div>
-        <!-- <div>
-          <div class="flex flex-col items-center mt-12">
-            <div>
-              <img id="trainer" class="w-48 h-48 rounded-full mx-auto" width="192" height="192" src="/img/me@2x.jpg"
-                alt="Photo of Rahul Aher">
-              <AppLink to="/about/" class="underline hover:no-underline">
-                <AppParagraph class="mt-4 text-2xl text-center">
-                  Rahul Aher
-                </AppParagraph>
-              </AppLink>
-              <AppParagraph class="mt-2 text-center">
-                <b>Nuxt team member</b> &bull; Consultant &bull; Trainer
-              </AppParagraph>
-            </div>
-            <AppButton :to="requestQuoteLink" class="mt-8 text-xl">Request quote</AppButton>
-          </div>
-        </div> -->
       </div>
     </AppSection>
   </div>

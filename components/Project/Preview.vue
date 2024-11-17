@@ -11,10 +11,8 @@ defineProps<{
     <AppParagraph look="paragraph" class="mt-8 group-hover:text-gray-200">{{ project.description }}</AppParagraph>
     <ProjectDetails
       class="mt-8 space-y-2"
-      :time="project.time"
       :projectGitHubLink="project.projectGitHubLink"
-      :nodePackageLink="project.nodePackageLink"
-      :prjectDemoLink="project.prjectDemoLink"
+      :projectDemoLink="project.projectDemoLink"
     />
   </AppLink>
 </template>
