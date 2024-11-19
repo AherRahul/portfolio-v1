@@ -6,7 +6,6 @@ const route = useRoute()
 const MENU_ITEMS = [
   { text: 'Articles', to: '/articles/', activeRoutes: [] },
   { text: 'Learning', to: '/learning/', activeRoutes: [] },
-  // { text: 'Projects', to: '/projects/', activeRoutes: [] },
   { text: 'Services', to: '/services/', activeRoutes: ['/consulting/'] },
   { text: 'About', to: '/about/', activeRoutes: [] },
   { text: 'Contact', to: '/contact/', activeRoutes: [] },

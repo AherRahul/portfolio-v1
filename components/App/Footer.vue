@@ -13,8 +13,8 @@ const navigation = {
   services: [
     { name: 'Consulting', to: '/consulting/' },
     { name: 'Projects', to: '/projects/' },
-    // { name: 'Projects', to: '/projects/' },
-    // { name: 'Testimonials', to: '/testimonials/' },
+    { name: 'Courses', to: '/courses/' },
+    { name: 'Npm Packages', to: '/packages/' },
   ],
   contact: [
     { name: 'Contact me', to: '/contact/' },
@@ -32,12 +32,12 @@ const navigation = {
       icon: 'mdi:github',
       hoverClass: 'hover:text-gray-200'
     },
-    // {
-    //   name: 'YouTube',
-    //   href: SOCIALS.youtube,
-    //   icon: 'mdi:youtube',
-    //   hoverClass: 'hover:text-red-500'
-    // },
+    {
+      name: 'YouTube',
+      href: SOCIALS.youtube,
+      icon: 'mdi:youtube',
+      hoverClass: 'hover:text-red-500'
+    },
     {
       name: 'LinkedIn',
       href: SOCIALS.linkedin,

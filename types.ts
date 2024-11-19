@@ -55,13 +55,13 @@ type CourseBase = {
 export type Course = CourseBase & ParsedContent
 export type CoursePreview = CourseBase & ParsedContentPreview
 
-type NpmPackageBase = {
+type PackageBase = {
   title: string
   time: string
   topics: string[]
 }
-export type NpmPackage = NpmPackageBase & ParsedContent
-export type NpmPackagePreview = NpmPackageBase & ParsedContentPreview
+export type Package = PackageBase & ParsedContent
+export type PackagePreview = PackageBase & ParsedContentPreview
 
 type BodyBlockLink = {
   type: 'link',

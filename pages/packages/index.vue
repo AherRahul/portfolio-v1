@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { QueryBuilderParams } from '@nuxt/content/dist/runtime/types';
-import type { NpmPackage } from '~/types.js';
+import type { Package } from '~/types.js';
 
 definePageMeta({
   documentDriven: false
@@ -14,9 +14,8 @@ useSeoMeta({
   description,
 })
 
-defineOgImageComponent('Npm_package')
 
-const query: QueryBuilderParams = { path: '/npm-packages', without: ['body', 'excerpt'] }
+const query: QueryBuilderParams = { path: '/packages', without: ['body', 'excerpt'] }
 </script>
 
 <template>
@@ -31,7 +30,7 @@ const query: QueryBuilderParams = { path: '/npm-packages', without: ['body', 'ex
     </AppParagraph>
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-16 md:gap-8 mt-8">
       <ContentList :query="query" v-slot="{ list }">
-        <NpmPackagesPreview v-for="entry in list" :key="entry._path" :npm_package="(entry as NpmPackage)" />
+        <PackagePreview v-for="entry in list" :key="entry._path" :npmPackage="(entry as Package)" />
       </ContentList>
     </div>
   </AppSection>

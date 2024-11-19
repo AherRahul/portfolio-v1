@@ -1,16 +1,14 @@
 ---
 title: "RDS-Icons"
 description: "The RDS Icons package is thoughtfully curated & published on npm, providing a lightweight SVG icon library that integrates seamlessly into any frontend project. We include optimized SVGs in this package, allowing your development team the flexibility to implement icons according to your project needs."
+time: 2 days
 projectGitHubLink: 'https://github.com/AherRahul/rds-icon'
 projectDemoLink: 'https://rds-icons.netlify.app/'
 nodePackageLink: 'https://www.npmjs.com/package/@aherrahul/rds-icons'
 topics:
-  - vue
   - css
   - clean-code
   - html
-  - projects
-  - component-library
 ---
 
 Welcome to the comprehensive guide on how to integrate and use the RDS Icons in your Vue.js projects. In this post, we'll walk you through the steps to get started with RDS-icons, from installation to usage, ensuring a smooth integration process.

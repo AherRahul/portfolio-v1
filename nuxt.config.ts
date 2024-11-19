@@ -34,6 +34,12 @@ export default defineNuxtConfig({
     prerender: {
       routes: [
         '/feed.xml',
+        '/packages/rds-design-system/',
+        '/packages/rds-icons/'
+      ],
+      ignore: [
+        '/packages/rds-icons/',
+        '/packages/rds-design-system/',
       ],
     },
     devProxy: {

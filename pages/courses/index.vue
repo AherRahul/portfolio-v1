@@ -15,7 +15,6 @@ useSeoMeta({
   description,
 })
 
-defineOgImageComponent('Course')
 
 const query: QueryBuilderParams = { path: '/courses', without: ['body', 'excerpt'] }
 </script>

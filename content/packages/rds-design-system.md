@@ -1,16 +1,14 @@
 ---
 title: "Rahul's Design system (RDS)"
 description: "Consistency and standards are important for building a unified design language and help the user know what to expect from our product and how to use it. However, this does not mean sacrificing the user experience. In this sense, the context and needs of our users are priorities when developing our solutions."
+time: 2 days
 projectGitHubLink: 'https://github.com/AherRahul/design-system'
 projectDemoLink: 'https://rds-design-system.netlify.app/'
 nodePackageLink: 'https://www.npmjs.com/package/@aherrahul/design-system'
 topics:
-  - vue
   - css
   - clean-code
   - html
-  - projects
-  - component-library
 ---
 
 Welcome to the comprehensive guide on how to integrate and use the RDS (Rahul's Design System) in your Vue.js projects. In this post, we'll walk you through the steps to get started with RDS, from installation to usage, ensuring a smooth integration process.
