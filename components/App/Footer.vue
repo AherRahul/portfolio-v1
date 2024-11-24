@@ -14,7 +14,7 @@ const navigation = {
     { name: 'Consulting', to: '/consulting/' },
     { name: 'Projects', to: '/projects/' },
     { name: 'Courses', to: '/courses/' },
-    { name: 'Npm Packages', to: '/packages/' },
+    { name: 'Npm Packages', to: '/npmpackages/' },
   ],
   contact: [
     { name: 'Contact me', to: '/contact/' },

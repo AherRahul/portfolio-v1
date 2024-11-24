@@ -6,9 +6,6 @@ projectDemoLink: 'https://rds-icons.netlify.app/'
 nodePackageLink: 'https://www.npmjs.com/package/@aherrahul/rds-icons'
 topics:
   - vue
-  - css
-  - clean-code
-  - html
   - projects
   - component-library
 ---

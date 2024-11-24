@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { ArticlePreview, TalkPreview, CoursePreview, ProjectPreview } from '~/types.js';
-import courseContent from '../content/courses/courses-list.json';
+import courseContent from '../content/courses/content-list/courses-list.json';
 
 definePageMeta({
   documentDriven: false
@@ -205,7 +205,7 @@ const courses = courseContent;
         </div>
       </div>
       <div class="grid md:grid-cols-2 gap-12 justify-around mt-8">
-        <ArticlePreview v-for="article in articles" :key="article._id" :article="article" />
+        <LazyArticlePreview v-for="article in articles" :key="article._id" :article="article" />
       </div>
       <div class="flex md:justify-end mt-8">
         <AppButton to="/articles" look="secondary" secondary-after-bg="bg-zinc-900">View all articles</AppButton>
@@ -227,7 +227,7 @@ const courses = courseContent;
         </div>
       </div>
       <div class="flex flex-col md:flex-row gap-16 md:gap-8 justify-around mt-8">
-        <LazyCoursePreview class="flex-1" v-for="course in courses" :course="course" />
+        <LazyCoursePreview class="flex-1" v-for="course in courses"  :course="course" />
       </div> 
       <ContentDivider anchor="left" class="mt-14" />
     </AppSection>

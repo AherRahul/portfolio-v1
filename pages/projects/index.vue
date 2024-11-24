@@ -17,11 +17,13 @@ useSeoMeta({
 defineOgImageComponent('Project')
 
 const query: QueryBuilderParams = { path: '/projects', without: ['body', 'excerpt'] }
+console.log(query)
 </script>
 
 <template>
   <AppSection>
     <ParagraphDecoration class="mt-16" />
+    <AppLinkBack to="/services/">Go back to services</AppLinkBack>
     <AppParagraph class="mt-4" tag="h1" look="heading">Projects</AppParagraph>
     <AppParagraph class="max-w-3xl mt-8" look="subParagraph">
       I am deeply committed to the ethos of perpetual learning, recognizing it as the cornerstone of personal and 

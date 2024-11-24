@@ -33,14 +33,8 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       routes: [
-        '/feed.xml',
-        '/packages/rds-design-system/',
-        '/packages/rds-icons/'
-      ],
-      ignore: [
-        '/packages/rds-icons/',
-        '/packages/rds-design-system/',
-      ],
+        '/feed.xml'
+      ]
     },
     devProxy: {
       '/api/newsletter': { target: 'https://rahulaher.netlify.app', changeOrigin: true }

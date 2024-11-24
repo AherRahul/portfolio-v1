@@ -6,9 +6,9 @@ projectGitHubLink: 'https://github.com/AherRahul/design-system'
 projectDemoLink: 'https://rds-design-system.netlify.app/'
 nodePackageLink: 'https://www.npmjs.com/package/@aherrahul/design-system'
 topics:
-  - css
-  - clean-code
-  - html
+  - vue
+  - projects
+  - component-library
 ---
 
 Welcome to the comprehensive guide on how to integrate and use the RDS (Rahul's Design System) in your Vue.js projects. In this post, we'll walk you through the steps to get started with RDS, from installation to usage, ensuring a smooth integration process.

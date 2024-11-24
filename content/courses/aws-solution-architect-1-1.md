@@ -1,6 +1,7 @@
 ---
 title: "AWS Certified Solutions Architect - Exam Guide"
 description: "Consistency and standards are important for building a unified design language and help the user know what to expect from our product and how to use it. However, this does not mean sacrificing the user experience. In this sense, the context and needs of our users are priorities when developing our solutions."
+tutor: 1
 topics:
   - aws
   - solution-architect

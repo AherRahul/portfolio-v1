@@ -3,7 +3,6 @@ import { onContentNotFound } from '~/utils/content.js';
 
 const { page: course } = useContent()
 
-console.log(course);
 
 useSeoMeta({
   title: () => course.value.title,
@@ -19,7 +18,6 @@ defineOgImageComponent('Course', {
   time: course.value.time,
   tutor: course.value.tutor ?? 1,
   languages: course.value.languages ?? ['English'],
-  video_url:  course.value.video_url,
 })
 
 </script>

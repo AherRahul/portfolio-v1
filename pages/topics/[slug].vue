@@ -34,6 +34,17 @@ const projectQuery: QueryBuilderParams = {
   path: '/projects/'
 }
 
+
+const npmpackageQuery: QueryBuilderParams = {
+  ...baseQuery,
+  path: '/npmpackages/'
+}
+
+
+const courseQuery: QueryBuilderParams = {
+  ...baseQuery,
+  path: '/courses/'
+}
 const title = `Topic: ${page.value.title}`
 const description = `Being it talks, projects, panels, podcasts or blog posts, here you can find all my content sorted by topic.`
 
@@ -85,6 +96,32 @@ defineOgImageComponent('Learning')
           </AppParagraph>
           <div class="space-y-8 my-8">
             <LearningPreview v-for="entry in list" :key="entry._path" :talk="entry" />
+          </div>
+        </template>
+        <template #not-found></template>
+      </ContentList>
+
+      
+      <ContentList :query="courseQuery">
+        <template #default="{ list }">
+          <AppParagraph class="pt-16 !text-4xl" look="heading" tag="h2">
+            Courses
+          </AppParagraph>
+          <div class="space-y-8 my-8">
+            <CoursePreview v-for="entry in list" :key="entry._path" :course="entry" />
+          </div>
+        </template>
+        <template #not-found></template>
+      </ContentList>
+
+      
+      <ContentList :query="npmpackageQuery">
+        <template #default="{ list }">
+          <AppParagraph class="pt-16 !text-4xl" look="heading" tag="h2">
+            Npm Packages
+          </AppParagraph>
+          <div class="space-y-8 my-8">
+            <NpmpackagePreview v-for="entry in list" :key="entry._path" :npmpackage="entry" />
           </div>
         </template>
         <template #not-found></template>

@@ -1,20 +1,20 @@
 <script setup lang="ts">
 import { onContentNotFound } from '~/utils/content.js';
 
-const { page: npmPackage } = useContent()
+const { page: npmpackage } = useContent()
 
 useSeoMeta({
-  title: () => npmPackage.value.title,
-  description: () => npmPackage.value.description,  
-  ogTitle: () => npmPackage.value.title,
-  ogDescription: () => npmPackage.value.description,
+  title: () => npmpackage.value.title,
+  description: () => npmpackage.value.description,  
+  ogTitle: () => npmpackage.value.title,
+  ogDescription: () => npmpackage.value.description,
 })
 
-onContentNotFound(npmPackage)
+onContentNotFound(npmpackage)
 
 const requestQuoteLink = computed(() => {
   const prefix = 'mailto:rahulvijayaher@gmail.com?subject=Npm_package collabration request: '
-  const title = npmPackage.value.title
+  const title = npmpackage.value.title
   const suffix = `&body=Hi Rahul,%0D%0A%0D%0Awe would like to collabrate with you for the ${title} npm_package.%0D%0A%0D%0A
 
   Desired/Possible time for contribution per week: %0D%0A
@@ -32,9 +32,9 @@ const requestQuoteLink = computed(() => {
   return prefix + title + suffix
 })
 
-defineOgImageComponent('Package', {
-  title: npmPackage.value.title,
-  projectGitHubLink: npmPackage.value.projectGitHubLink,
+defineOgImageComponent('Npmpackage', {
+  title: npmpackage.value.title,
+  projectGitHubLink: npmpackage.value.projectGitHubLink,
 })
 
 </script>
@@ -42,15 +42,15 @@ defineOgImageComponent('Package', {
 <template>
   <div>
     <AppSection class="bg-gradient-to-b from-black to-zinc-900 !pb-4">
-      <AppLinkBack to="/packages/">All Npm Packages</AppLinkBack>
+      <AppLinkBack to="/npmpackages/">All Npm Packages</AppLinkBack>
       <ParagraphDecoration class="mt-4" />
       <AppParagraph class="mt-4" look="heading" tag="h1">
-        {{ npmPackage.title }}
+        {{ npmpackage.title }}
       </AppParagraph>
-      <PackageDetails 
-        :projectGitHubLink="npmPackage.projectGitHubLink"
-        :nodePackageLink="npmPackage.nodePackageLink"
-        :projectDemoLink="npmPackage.projectDemoLink"
+      <NpmpackageDetails 
+        :projectGitHubLink="npmpackage.projectGitHubLink"
+        :nodePackageLink="npmpackage.nodePackageLink"
+        :projectDemoLink="npmpackage.projectDemoLink"
         class="mt-8 space-y-2 md:space-y-0 md:flex gap-8"
       />
     </AppSection>

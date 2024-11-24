@@ -18,6 +18,7 @@ defineOgImageComponent('General')
 <template>
   <div>
     <AppSection>
+      <AppLinkBack to="/services/">Go back to services</AppLinkBack>
       <ParagraphDecoration />
       <AppParagraph look="heading" class="mt-4" tag="h1">Consulting</AppParagraph>
       <div class="md:flex md:gap-16">

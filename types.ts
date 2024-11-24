@@ -42,26 +42,17 @@ type CourseBase = {
   title: string
   time: string
   topics: string[]
-  id: Number
-  topic_name: string
-  sub_topic: string
-  publish_date: string
-  duration: string
-  video_url: string
-  auther_name: string
-  is_on_youtube: Number
-  _path: string
 }
 export type Course = CourseBase & ParsedContent
 export type CoursePreview = CourseBase & ParsedContentPreview
 
-type PackageBase = {
+type NpmpackageBase = {
   title: string
   time: string
   topics: string[]
 }
-export type Package = PackageBase & ParsedContent
-export type PackagePreview = PackageBase & ParsedContentPreview
+export type Npmpackage = NpmpackageBase & ParsedContent
+export type NpmpackagePreview = NpmpackageBase & ParsedContentPreview
 
 type BodyBlockLink = {
   type: 'link',

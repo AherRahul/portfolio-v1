@@ -7,9 +7,6 @@ projectDemoLink: 'https://rds-design-system.netlify.app/'
 nodePackageLink: 'https://www.npmjs.com/package/@aherrahul/design-system'
 topics:
   - vue
-  - css
-  - clean-code
-  - html
   - projects
   - component-library
 ---

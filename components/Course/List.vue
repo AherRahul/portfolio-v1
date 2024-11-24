@@ -1,9 +1,8 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import type { CoursePreview } from '~/types.js';
 
 const props = defineProps<{
-  course: CoursePreview
+  course: any
 }>();
 
 // Make isCheck reactive
@@ -12,14 +11,6 @@ const isCheck = ref(false);
 const onClick = () => {
   isCheck.value = !isCheck.value; // Update the reactive value
 };
-
-const isHoveringOverLink = ref(false)
-function handleMouseOver() {
-  isHoveringOverLink.value = true;
-}
-function handleMouseLeave() {
-  isHoveringOverLink.value = false;
-}
 </script>
 
 <template>

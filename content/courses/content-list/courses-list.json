@@ -4,7 +4,7 @@
         "title": "AWS Certified Solutions Architect - Associate (SAA-C03)",
         "description": "AWS Certified Solutions Architect is among the most valuable and sought-after cloud computing certifications in the world. We designed this cloud architect certification training for anyone seeking to learn the major components of Amazon Web Services (AWS). By the end of the course, you'll be prepared to pass the associate-level AWS Certified Solutions Architect certification exam.",
         "time": "1 hr/day",
-        "tutor": "3",
+        "tutor": 1,
         "topics": ["aws", "solution-architect"],
         "_path": "aws-solution-architect",
         "content": [
@@ -14,6 +14,7 @@
                 "module_duration": "10 mins",
                 "videos_count": 2,
                 "expanded": 1,
+                "tutor": 1,
                 "videos": [
                     {
                         "id": 1,
@@ -23,6 +24,7 @@
                         "description": "AWS Certified Solutions Architect is one of the most popular cloud computing certifications. In this full course taught by an expert trainer, you will learn the major parts of Amazon Web Services, and prepare for the associate-level AWS Certified Solutions Architect exam. By the end of this course, you will be ready to take the AWS Certified Solutions Architect Associate exam - and pass!",
                         "topics": ["aws", "solution-architect"],
                         "duration": "6:54 mins",
+                        "tutor": 1,
                         "video_url": "https://www.youtube.com/embed/ejZm0c_OhYM?si=_EDroaJF7rPD1dvL",
                         "auther_name": "Rahul Aher",
                         "is_on_youtube": 1,
@@ -35,6 +37,7 @@
                 "module_name": "AWS Fundamentals",
                 "module_duration": "44 mins",
                 "videos_count": 3,
+                "tutor": 1,
                 "videos": [
                     {
                         "id": 1,
@@ -43,6 +46,7 @@
                         "description": "Data centers within each AWS region that are physically separated and isolated. Each AZ has its own power, cooling, and networking infrastructure. AZs are connected with low-latency, high throughput, highly redundant networking. Data centers within each AWS region that are physically separated and isolated. Each AZ has its own power, cooling, and networking infrastructure. AZs are connected with low-latency, high throughput, highly redundant networking. ",
                         "topics": ["aws", "solution-architect"],
                         "duration": "8:27 mins",
+                        "tutor": 1,
                         "video_url": "https://www.youtube.com/embed/SVW2HBZ3QNA?si=TsD1JykWf5LYzBil",
                         "auther_name": "Rahul Aher",
                         "is_on_youtube": 1,
@@ -56,6 +60,7 @@
                         "description": "Data centers within each AWS region that are physically separated and isolated. Each AZ has its own power, cooling, and networking infrastructure. AZs are connected with low-latency, high throughput, highly redundant networking. Data centers within each AWS region that are physically separated and isolated. Each AZ has its own power, cooling, and networking infrastructure. AZs are connected with low-latency, high throughput, highly redundant networking. ",
                         "topics": ["aws", "solution-architect"],
                         "duration": "5:44 mins",
+                        "tutor": 1,
                         "video_url": "https://www.youtube.com/embed/izQlU1sZkNg?si=q_GceoOp1N6nWdNZ",
                         "auther_name": "Rahul Aher",
                         "is_on_youtube": 1,
@@ -69,6 +74,7 @@
                         "description": "Data centers within each AWS region that are physically separated and isolated. Each AZ has its own power, cooling, and networking infrastructure. AZs are connected with low-latency, high throughput, highly redundant networking. Data centers within each AWS region that are physically separated and isolated. Each AZ has its own power, cooling, and networking infrastructure. AZs are connected with low-latency, high throughput, highly redundant networking. ",
                         "topics": ["aws", "solution-architect"],
                         "duration": "8:27 mins",
+                        "tutor": 1,
                         "video_url": "https://www.youtube.com/embed/ULfTWvsHw20?si=O7d0O9g4OH5sZHRS",
                         "auther_name": "Rahul Aher",
                         "is_on_youtube": 1,
@@ -82,6 +88,7 @@
                         "description": "Data centers within each AWS region that are physically separated and isolated. Each AZ has its own power, cooling, and networking infrastructure. AZs are connected with low-latency, high throughput, highly redundant networking. Data centers within each AWS region that are physically separated and isolated. Each AZ has its own power, cooling, and networking infrastructure. AZs are connected with low-latency, high throughput, highly redundant networking. ",
                         "topics": ["aws", "solution-architect"],
                         "duration": "3:01 mins",
+                        "tutor": 1,
                         "video_url": "https://www.youtube.com/embed/ejZm0c_OhYM?si=_EDroaJF7rPD1dvL",
                         "auther_name": "Rahul Aher",
                         "is_on_youtube": 1,
@@ -95,6 +102,7 @@
                         "description": "Data centers within each AWS region that are physically separated and isolated. Each AZ has its own power, cooling, and networking infrastructure. AZs are connected with low-latency, high throughput, highly redundant networking. Data centers within each AWS region that are physically separated and isolated. Each AZ has its own power, cooling, and networking infrastructure. AZs are connected with low-latency, high throughput, highly redundant networking. ",
                         "topics": ["aws", "solution-architect"],
                         "duration": "3:44 mins",
+                        "tutor": 1,
                         "video_url": "https://www.youtube.com/embed/ejZm0c_OhYM?si=_EDroaJF7rPD1dvL",
                         "auther_name": "Rahul Aher",
                         "is_on_youtube": 1,
@@ -110,7 +118,7 @@
         "title": "System design",
         "description": "Systems design is the use of computer engineering principles to build large scale distributed systems. It involves converting business problems and requirements into technical solutions. Senior engineers use system design patterns to make reliable, scalable and maintainable systems.",
         "time": "8:43 mins",
-        "tutor": "3",
+        "tutor": 1,
         "_path": "beginner-system-design",
         "topics": ["system-design"],
         "content": [
@@ -119,6 +127,7 @@
                 "module_name": "System design - Introduction",
                 "module_duration": "10 mins",
                 "videos_count": 1,
+                "tutor": 1,
                 "videos": [
                     {
                         "id": 1,
@@ -130,6 +139,7 @@
                         "video_url": "https://www.youtube.com/embed/K9EFon58_UI?si=95in2rvIl1h6pDxU",
                         "auther_name": "Rahul Aher",
                         "is_on_youtube": 1,
+                        "tutor": 1,
                         "_path": "beginner-system-design-1-1"
                     }
                 ]

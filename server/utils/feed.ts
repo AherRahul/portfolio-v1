@@ -12,7 +12,7 @@ export async function generateBlogFeed(event: H3Event) {
     id: url,
     link: url,
     language: currentLocale,
-    // image: withSiteUrl(event, `/__og-image__/image/articles/og.png`),
+    image: withSiteUrl(event, `/__og-image__/image/articles/og.png`),
     favicon: withSiteUrl(event, `/img/logo/glyph-white-colored.svg`),
     generator: ';)',
     copyright: `Code licensed under MIT, written content licensed under CC-BY-NC-SA 4.0 - Rahul Aher`,

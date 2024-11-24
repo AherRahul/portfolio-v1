@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { QueryBuilderParams } from '@nuxt/content/dist/runtime/types';
-import type { Package } from '~/types.js';
+import type { Npmpackage } from '~/types.js';
 
 definePageMeta({
   documentDriven: false
@@ -14,13 +14,15 @@ useSeoMeta({
   description,
 })
 
+defineOgImageComponent('Npmpackage')
 
-const query: QueryBuilderParams = { path: '/packages', without: ['body', 'excerpt'] }
+const query: QueryBuilderParams = { path: '/npmpackages', without: ['body', 'excerpt'] }
 </script>
 
 <template>
   <AppSection>
     <ParagraphDecoration class="mt-16" />
+    <AppLinkBack to="/services/">Go back to services</AppLinkBack>
     <AppParagraph class="mt-4" tag="h1" look="heading">NPM Packages</AppParagraph>
     <AppParagraph class="max-w-3xl mt-8" look="subParagraph">
       I am deeply committed to the ethos of perpetual learning, recognizing it as the cornerstone of personal and 
@@ -30,7 +32,7 @@ const query: QueryBuilderParams = { path: '/packages', without: ['body', 'excerp
     </AppParagraph>
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-16 md:gap-8 mt-8">
       <ContentList :query="query" v-slot="{ list }">
-        <PackagePreview v-for="entry in list" :key="entry._path" :npmPackage="(entry as Package)" />
+        <NpmpackagePreview v-for="entry in list" :key="entry._path" :npmpackage="(entry as Npmpackage)" />
       </ContentList>
     </div>
   </AppSection>
