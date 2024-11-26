@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { ArticlePreview, TalkPreview, CoursePreview, ProjectPreview } from '~/types.js';
-import courseContent from '../content/courses/content-list/courses-list.json';
+// import courseContent from '../content/courses/content-list/courses-list.json';
 
 definePageMeta({
   documentDriven: false
@@ -29,7 +29,7 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
   onStartPage: 1
 }).without(['body', 'excerpt']).limit(3).find())
 
-const courses = courseContent;
+// const courses = courseContent;
 </script>
 
 <template>
@@ -212,7 +212,7 @@ const courses = courseContent;
       </div>
     </AppSection>
 
-    <AppSection style="padding-top: 2.5rem;">
+    <!-- <AppSection style="padding-top: 2.5rem;">
       <LazyParagraphDecoration />
       <AppParagraph class="mr-8 mt-4" tag="h2" look="heading">
         Courses
@@ -230,7 +230,7 @@ const courses = courseContent;
         <LazyCoursePreview class="flex-1" v-for="course in courses"  :course="course" />
       </div> 
       <ContentDivider anchor="left" class="mt-14" />
-    </AppSection>
+    </AppSection> -->
    
   </div>
 </template>

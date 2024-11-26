@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { QueryBuilderParams } from '@nuxt/content/dist/runtime/types';
 import type { Course } from '~/types.js';
-import courseContent from '../../content/courses/content-list/courses-list.json';
+// import courseContent from '../../content/courses/content-list/courses-list.json';
 
 definePageMeta({
   documentDriven: false
@@ -18,7 +18,6 @@ useSeoMeta({
 defineOgImageComponent('Course')
 
 const query: QueryBuilderParams = { path: '/courses', without: ['body', 'excerpt'] }
-
 console.log(query);
 </script>
 <template>
@@ -34,7 +33,7 @@ console.log(query);
     </AppParagraph>
     <div class="grid md:grid-cols-1 lg:grid-cols-1 gap-16 md:gap-8 mt-8">
       <ContentList :query="query" v-slot="{ list }">
-        <CourseList v-for="entry in courseContent" :key="entry._path"  :course="(entry as Course)" />
+        <CoursePreview v-for="entry in list" :key="entry._path" :course="(entry as Course)" />
       </ContentList>
     </div>
   </AppSection>

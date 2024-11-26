@@ -1,12 +1,58 @@
 ---
-title: "AWS Certified Solutions Architect - Exam Guide"
-description: "Consistency and standards are important for building a unified design language and help the user know what to expect from our product and how to use it. However, this does not mean sacrificing the user experience. In this sense, the context and needs of our users are priorities when developing our solutions."
+title: "AWS Certified Solutions Architect"
+description: "AWS Certified Solutions Architect is among the most valuable and sought-after cloud computing certifications in the world. We designed this cloud architect certification training for anyone seeking to learn the major components of Amazon Web Services (AWS). By the end of the course, you'll be prepared to pass the associate-level AWS Certified Solutions Architect certification exam."
 tutor: 1
 topics:
   - aws
   - solution-architect
-time: "6:54 mins"
-video_url: "https://www.youtube.com/embed/ejZm0c_OhYM?si=_EDroaJF7rPD1dvL"
+time: 6:54 mins
+content:
+        -   module_id: 1
+            module_name: Introduction
+            module_duration: 10 mins
+            videos_count: 2
+            expanded: 1
+            tutor: 1
+            videos: 
+                -   id: 1
+                    topic_name: Exam Guide
+                    sub_topic: Associate SAA C03 Exam Guide
+                    description: AWS Certified Solutions Architect is one of the most popular cloud computing certifications. In this full course taught by an expert trainer you will learn the major parts of Amazon Web Services and prepare for the associate-level AWS Certified Solutions Architect exam. By the end of this course you will be ready to take the AWS Certified Solutions Architect Associate exam - and pass!
+                    topics: [aws solution-architect]
+                    duration: 6:54 mins
+                    tutor: 1
+                    video_url: https://www.youtube.com/embed/ejZm0c_OhYM?si=_EDroaJF7rPD1dvL
+                    auther_name: Rahul Aher
+                    is_on_youtube: 1
+        -   module_id: 2
+            module_name: AWS Fundamentals
+            module_duration: 10 mins
+            videos_count: 2
+            expanded: 1
+            tutor: 1
+            videos: 
+                -   id: 1
+                    topic_name: Exam Guide
+                    sub_topic: Associate SAA C03 Exam Guide
+                    description: AWS Certified Solutions Architect is one of the most popular cloud computing certifications. In this full course taught by an expert trainer you will learn the major parts of Amazon Web Services and prepare for the associate-level AWS Certified Solutions Architect exam. By the end of this course you will be ready to take the AWS Certified Solutions Architect Associate exam - and pass!
+                    topics: [aws solution-architect]
+                    duration: 6:54 mins
+                    tutor: 1
+                    video_url: https://www.youtube.com/embed/SVW2HBZ3QNA?si=TsD1JykWf5LYzBil
+                    auther_name: Rahul Aher
+                    is_on_youtube: 1
+                    _path: aws-solution-architect-1-1
+                -   id: 1
+                    topic_name: Exam Guide
+                    sub_topic: Associate SAA C03 Exam Guide
+                    description: AWS Certified Solutions Architect is one of the most popular cloud computing certifications. In this full course taught by an expert trainer you will learn the major parts of Amazon Web Services and prepare for the associate-level AWS Certified Solutions Architect exam. By the end of this course you will be ready to take the AWS Certified Solutions Architect Associate exam - and pass!
+                    topics: [aws solution-architect]
+                    duration: 6:54 mins
+                    tutor: 1
+                    video_url: https://www.youtube.com/embed/izQlU1sZkNg?si=q_GceoOp1N6nWdNZ
+                    auther_name: Rahul Aher
+                    is_on_youtube: 1
+                    _path: aws-solution-architect-1-1
 ---
 
 ## AWS Certified Solutions Architect - Exam Guide

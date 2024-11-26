@@ -31,8 +31,8 @@ function useAppSeo() {
         addressCountry: 'India',
         addressLocality: 'Mumbai, Maharastra',
         addressRegion: 'Ambernath, Thane',
-        postalCode: '704, H wing, Balaji Apartment, ZP Hills, Near Krishna marriage hall',
-        streetAddress: 'Chinchpada, Ambernath (West) 421505'
+        postalCode: 'abc',
+        streetAddress: 'Ambernath'
       },
       name: 'Rahul Aher',
       image: '/img/me@2x.jpg',
