@@ -15,7 +15,7 @@ const formattedCreatedAt = computed(() => formatDateStringToHumanReadable(props.
     <div class="mt-4 md:mt-2 md:flex gap-4">
       <div>{{ formattedCreatedAt }}</div>
       <ul class="flex gap-2">
-        <li v-for="topic in article.topics">#{{topic}}</li>
+        <li v-for="topic in article.topics" class="bg-zinc-800 text-sm px-3 py-1 rounded-md border border-gray-1000">#{{topic}}</li>
       </ul>
     </div>
     <AppParagraph v-if="article.description" look="subParagraph"

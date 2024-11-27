@@ -78,7 +78,7 @@ defineOgImageComponent('Learning', {
           <li class="text-sm md:text-base" v-if="page.date">{{ formattedDate }}</li>
         </ul>
         <ul class="flex gap-8">
-          <li v-for="topic in page.topics">
+          <li v-for="topic in page.topics" class="bg-zinc-800 text-sm px-3 py-1 rounded-md border border-gray-700">
             <AppLink class="hover:underline" :to="`/topics/${topic}`">#{{ topic }}</AppLink>
           </li>
         </ul>

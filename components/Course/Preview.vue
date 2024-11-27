@@ -39,7 +39,7 @@ const onClick = () => {
           <li class="text-sm md:text-base" v-if="course.date">{{ course.date }}</li>
         </ul>
         <ul class="flex flex-wrap md:flex-nowrap gap-8 mt-4">
-          <li v-for="topic in course.topics.slice(0, 3)" :key="topic">
+          <li v-for="topic in course.topics.slice(0, 3)" :key="topic" class="bg-zinc-800 text-sm px-3 py-1 rounded-md border border-gray-1000">
             <AppLink class="hover:underline" :to="`/topics/${topic}`">#{{ topic }}</AppLink>
           </li>
         </ul>
