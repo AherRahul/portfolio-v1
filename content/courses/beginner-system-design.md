@@ -7,9 +7,9 @@ topics:
   - system-design
 content:
   - module_id: 1
-    module_name: System Design - Introduction
-    module_duration: "10 mins"
-    videos_count: 1
+    module_name: Introduction
+    module_duration: "40 mins"
+    videos_count: 3
     tutor: 1
     expanded: true
     videos:
@@ -18,34 +18,73 @@ content:
         sub_topic: System Design Basics
         publish_date: 2024-11-05
         description: >
-          Systems Design is the process of defining the architecture, components, modules, interfaces, and data for a system to satisfy specified requirements. It involves translating user requirements into a detailed blueprint that guides the implementation phase. The goal is to create a well-organized and efficient structure that meets the intended purpose while considering factors like scalability, maintainability, and performance.
+          Systems Design involves creating a detailed blueprint for a system’s architecture, components, modules, interfaces, and data to meet specific requirements. It translates user needs into an organized structure, guiding implementation. The goal is to ensure scalability, maintainability, and performance while building an efficient system.
         topics:
           - system-design
         duration: "8:43 mins"
         video_url: "https://www.youtube.com/embed/K9EFon58_UI?si=95in2rvIl1h6pDxU"
         auther_name: Rahul Aher
         is_on_youtube: true
-        _path: beginner-system-design-1-1
-  - module_id: 1
-    module_name: Basic Building Blocks
-    module_duration: "25 mins"
-    videos_count: 1
-    tutor: 1
-    expanded: false
-    videos:
+        _path: what-is-system-design
       - id: 2
         topic_name: How to approach system design?
         sub_topic: System Design Basics
         publish_date: 2024-11-27
         description: >
-          It outlines a structured process for tackling system design problems. Start by understanding the functional and non-functional requirements, then break the system down into key components like databases, frontend, backend, and caching layers. Choose the appropriate tools and design for scalability, reliability, and performance. Visualize the architecture with diagrams, and iterate on the design to optimize and address bottlenecks.
+          Learn a structured approach to system design. Start by understanding functional and non-functional requirements, then break the system into components like databases, frontend, backend, and caching. Select tools for scalability, reliability, and performance. Visualize the architecture with diagrams and iterate to optimize and resolve bottlenecks effectively.
         topics:
           - system-design
-        duration: "16:22 mins"
+        duration: "16:23 mins"
         video_url: "https://www.youtube.com/embed/JqcpMz3TykA?si=-rjiVhzMKwsMC9gr"
         auther_name: Rahul Aher
         is_on_youtube: true
-        _path: beginner-system-design-1-1
+        _path: what-is-system-design
+      - id: 3
+        topic_name: How do you evaluate that you have built a good system?
+        sub_topic: System Design Basics
+        publish_date: 2024-11-29
+        description: >
+          In this video, we explore the key metrics, strategies, and frameworks to evaluate whether your system is well-designed, efficient, and scalable. Learn how to assess user satisfaction, performance, maintainability, and more!. Learn how to assess user satisfaction, performance, maintainability, and more!
+        topics:
+          - system-design
+        duration: "8:10 mins"
+        video_url: "https://www.youtube.com/embed/F5mNbnsT12E?si=hF5yLA4XZ5XFV-vk"
+        auther_name: Rahul Aher
+        is_on_youtube: true
+        _path: what-is-system-design
+  - module_id: 2
+    module_name: Databases designing
+    module_duration: "25 mins"
+    videos_count: 2
+    tutor: 1
+    expanded: false
+    videos:
+      - id: 4
+        topic_name: Relational Databases for System Design
+        sub_topic: System Design Basics
+        publish_date: 2024-11-30
+        description: >
+          Learn everything you need to know relational databases in system design? This video explains how relational databases work, their importance, and best practices for integrating them into scalable systems. Explore key metrics, strategies, and frameworks to evaluate if your system is efficient, scalable, and well-designed. 
+        topics:
+          - system-design
+        duration: "19:39 mins"
+        video_url: "https://www.youtube.com/embed/g7C8ahBzoRA?si=n4wPLZky6xVqUl4u"
+        auther_name: Rahul Aher
+        is_on_youtube: true
+        _path: what-is-system-design
+      - id: 5
+        topic_name: Database Transaction Isolation Levels Explained
+        sub_topic: System Design Basics
+        publish_date: 2024-12-01
+        description: >
+          Learn everything you need to know about database transaction isolation levels! Understand how they prevent issues like dirty reads, phantom reads, and write conflicts, and when to use each level. Confused by terms like Read Uncommitted, Repeatable Read, or Serializable? This video has clear examples to help you manage concurrency and maintain data integrity.
+        topics:
+          - system-design
+        duration: "18.17 mins"
+        video_url: "https://www.youtube.com/embed/edejC34kkBk?si=xRzr-kS7oN9LQpMY"
+        auther_name: Rahul Aher
+        is_on_youtube: true
+        _path: what-is-system-design
 ---
 
 ## What is System Design?

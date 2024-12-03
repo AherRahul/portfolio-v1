@@ -27,7 +27,7 @@ content:
         video_url: "https://www.youtube.com/embed/ejZm0c_OhYM?si=_EDroaJF7rPD1dvL"
         auther_name: Rahul Aher
         is_on_youtube: true
-        _path: aws-solution-architect-1-1
+        _path: aws-solution-architect-exam-guid
   - module_id: 2
     module_name: AWS Fundamentals
     module_duration: 44 mins
@@ -38,7 +38,7 @@ content:
         topic_name: The Building Blocks of AWS - Availability Zones and Regions
         publish_date: 2024-10-15
         description: >
-          Availability Zones (AZs) and Regions are the fundamental building blocks of AWS's global infrastructure, designed to ensure high availability, fault tolerance, and low latency for applications. AWS Regions consist of geographically isolated locations, each containing multiple Availability Zones.
+          Learn about AWS Regions and Availability Zones (AZs), the foundation of AWS's global infrastructure. Regions are geographically isolated locations, each containing multiple AZs. These AZs are designed for high availability, fault tolerance, and low latency, enabling applications to stay resilient and perform efficiently across the globe.
         topics:
           - aws
           - solution-architect
@@ -46,7 +46,7 @@ content:
         video_url: "https://www.youtube.com/embed/SVW2HBZ3QNA?si=TsD1JykWf5LYzBil"
         auther_name: Rahul Aher
         is_on_youtube: true
-        _path: aws-solution-architect-2-1
+        _path: aws-solution-architect-exam-guid
       - id: 2
         topic_name: Who Owns What in the Cloud?
         publish_date: 2024-10-15
@@ -59,7 +59,7 @@ content:
         video_url: "https://www.youtube.com/embed/izQlU1sZkNg?si=q_GceoOp1N6nWdNZ"
         auther_name: Rahul Aher
         is_on_youtube: true
-        _path: aws-solution-architect-2-2
+        _path: aws-solution-architect-exam-guid
       - id: 3
         topic_name: Compute, Storage, Databases, and Networking
         publish_date: 2024-10-15
@@ -72,7 +72,7 @@ content:
         video_url: "https://www.youtube.com/embed/ULfTWvsHw20?si=O7d0O9g4OH5sZHRS"
         auther_name: Rahul Aher
         is_on_youtube: true
-        _path: aws-solution-architect-2-3
+        _path: aws-solution-architect-exam-guid
 ---
 
 ## AWS Certified Solutions Architect Exam Preparation Guide  

@@ -29,7 +29,10 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
   onStartPage: 1
 }).without(['body', 'excerpt']).limit(3).find())
 
-// const courses = courseContent;
+
+const { data: courses } = useAsyncData('latest-courses', () => queryContent('/courses/').sort({
+  onStartPage: 1
+}).without(['body', 'excerpt']).limit(3).find())
 </script>
 
 <template>
@@ -69,24 +72,24 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
             <AppLink title="To the Vue topic page" to="/topics/vue">
               <Icon class="" name="logos:vue" />
             </AppLink>
-            <AppLink title="To the javascript topic page" to="/topics/javascript">
+            <!-- <AppLink title="To the javascript topic page" to="/topics/javascript">
               <Icon class="" name="logos:javascript" />
-            </AppLink>
-            <AppLink title="To the java topic page" to="/topics/java">
-              <Icon class="" name="logos:java" />
-            </AppLink>
+            </AppLink> -->
             <AppLink title="To the NodeJs topic page" to="/topics/nodejs">
               <Icon class="" name="logos:nodejs-icon" />
             </AppLink>
+            <!-- <AppLink title="To the java topic page" to="/topics/java">
+              <Icon class="" name="logos:java" />
+            </AppLink> -->
             <AppLink title="To the javascript topic page" to="/topics/spring">
               <Icon class="" name="logos:spring-icon" />
             </AppLink>
             <AppLink title="To the aws topic page" to="/topics/aws">
               <Icon class="" name="logos:aws" />
             </AppLink>
-            <AppLink title="To the java topic page" to="/topics/mysql">
+            <!-- <AppLink title="To the java topic page" to="/topics/mysql">
               <Icon class="" name="logos:mysql" />
-            </AppLink>
+            </AppLink> -->
             <AppLink title="To the aws topic page" to="/topics/mongodb">
               <Icon class="" name="logos:mongodb-icon" />
             </AppLink>
@@ -212,7 +215,7 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
       </div>
     </AppSection>
 
-    <!-- <AppSection style="padding-top: 2.5rem;">
+    <AppSection style="padding-top: 2.5rem;">
       <LazyParagraphDecoration />
       <AppParagraph class="mr-8 mt-4" tag="h2" look="heading">
         Courses
@@ -226,11 +229,11 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
           <AppButton to="/courses/" look="secondary">Discover all courses</AppButton>
         </div>
       </div>
-      <div class="flex flex-col md:flex-row gap-16 md:gap-8 justify-around mt-8">
+      <div class="flex flex-col space-y-8 mt-8">
         <LazyCoursePreview class="flex-1" v-for="course in courses"  :course="course" />
       </div> 
       <ContentDivider anchor="left" class="mt-14" />
-    </AppSection> -->
+    </AppSection>
    
   </div>
 </template>

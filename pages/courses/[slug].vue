@@ -87,6 +87,16 @@ defineOgImageComponent('Course', {
                       </li>
                     </ul>
                     <p class="mt-4 text-gray-300">{{ lecture.description }}</p>
+                    
+                    <div class="md:grid md:grid-cols-2 gap-10 flex justify-end justify-items-end content-end items-end" v-if="lecture._path">
+                      <div></div>
+                      <div>
+                        <AppButton class="mt-5" :to="'https://rahulaher.netlify.app/articles/' + lecture._path" >
+                          View Learning
+                          <Icon name="material-symbols:double-arrow" style="margin-bottom: 2px;" />
+                        </AppButton>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

@@ -18,7 +18,7 @@ const onClick = () => {
     <div class="md:grid md:grid-cols-2 gap-8">
       <div>
         <header class="flex-grow">
-          <AppParagraph tag="h3" class="inline text-2xl font-semibold">
+          <AppParagraph tag="h3" class="inline text-2xl font-semibold ">
             {{ course.title }}
           </AppParagraph>
         </header>
@@ -48,10 +48,15 @@ const onClick = () => {
         {{ course.description }}
       </p>
     </div>
-    <AppButton class="mt-10 mr-4" :to="course._path" >
-      Explore the course
-      <Icon name="material-symbols:double-arrow" style="margin-bottom: 2px;" />
-    </AppButton>
+    <div class="md:grid md:grid-cols-2 gap-10 flex justify-end justify-items-end content-end items-end">
+      <div></div>
+      <div>
+        <AppButton class="mt-10 mr-4 " :to="course._path" >
+          Explore the course
+          <Icon name="material-symbols:double-arrow" style="margin-bottom: 2px;" />
+        </AppButton>
+      </div>
+    </div>
   </div>
 </template>
 
