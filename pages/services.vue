@@ -17,7 +17,7 @@ defineOgImageComponent('General')
 <template>
   <div>
     <AppSection>
-      <ParagraphDecoration />
+      <ParagraphDecoration  class="mt-16" />
       <AppParagraph look="heading" class="mt-4" tag="h1">Services</AppParagraph>
       <div class="flex flex-col items-center md:flex-row my-16 gap-16">
         <ServicePreview class="max-w-xl bg-zinc-900 p-8" icon="fluent-mdl2:publish-course" title="Courses" to="/courses">

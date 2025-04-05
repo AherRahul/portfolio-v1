@@ -4,6 +4,7 @@ description: "Latency and throughput are two metrics that measure the performanc
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles/throughput-and-latency.md"
 dateModified: "2024-05-20"
 datePublished: "2024-05-20"
+showOnArticles: true
 topics:
   - system-design
   - aws

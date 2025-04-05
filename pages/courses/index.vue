@@ -22,16 +22,16 @@ console.log(query);
 </script>
 <template>
   <AppSection>
-    <ParagraphDecoration class="mt-16" />
-    <AppLinkBack to="/services/">Go back to services</AppLinkBack>
-    <AppParagraph class="mt-4" tag="h1" look="heading">Courses</AppParagraph>
+    <AppLinkBack class="mt-16" to="/services/">Go back to services</AppLinkBack>
+    <ParagraphDecoration class="mt-2" />
+    <AppParagraph class="mt-1"  tag="h1" look="heading">Courses</AppParagraph>
     <AppParagraph class="max-w-3xl mt-8" look="subParagraph">
       I am deeply committed to the ethos of perpetual learning, recognizing it as the cornerstone of personal and 
       professional growth. In my journey, I embrace an immersive approach to knowledge acquisition, where I not only
        absorb new concepts but actively integrate them into tangible, real-world courses. This dynamic fusion between 
        theory and practice serves as the crucible where my understanding is honed and fortified. 
     </AppParagraph>
-    <div class="grid md:grid-cols-1 lg:grid-cols-1 gap-16 md:gap-8 mt-8">
+    <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-16 md:gap-8 mt-8">
       <ContentList :query="query" v-slot="{ list }">
         <CoursePreview v-for="entry in list" :key="entry._path" :course="(entry as Course)" />
       </ContentList>

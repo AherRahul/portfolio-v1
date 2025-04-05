@@ -10,10 +10,10 @@ content:
   - module_id: 1
     module_name: Introduction
     module_duration: 10 mins
-    videos_count: 2
+    topics_count: 2
     expanded: true
     tutor: 1
-    videos:
+    topics:
       - id: 1
         topic_name: Exam Guide
         sub_topic: Associate SAA C03 Exam Guide
@@ -27,13 +27,13 @@ content:
         video_url: "https://www.youtube.com/embed/ejZm0c_OhYM?si=_EDroaJF7rPD1dvL"
         auther_name: Rahul Aher
         is_on_youtube: true
-        _path: aws-solution-architect-exam-guid
+        _path: aws-solution-architect-1-1
   - module_id: 2
     module_name: AWS Fundamentals
     module_duration: 44 mins
-    videos_count: 3
+    topics_count: 3
     tutor: 1
-    videos:
+    topics:
       - id: 1
         topic_name: The Building Blocks of AWS - Availability Zones and Regions
         publish_date: 2024-10-15
@@ -46,7 +46,7 @@ content:
         video_url: "https://www.youtube.com/embed/SVW2HBZ3QNA?si=TsD1JykWf5LYzBil"
         auther_name: Rahul Aher
         is_on_youtube: true
-        _path: aws-solution-architect-exam-guid
+        _path: aws-solution-architect-2-1
       - id: 2
         topic_name: Who Owns What in the Cloud?
         publish_date: 2024-10-15
@@ -59,7 +59,7 @@ content:
         video_url: "https://www.youtube.com/embed/izQlU1sZkNg?si=q_GceoOp1N6nWdNZ"
         auther_name: Rahul Aher
         is_on_youtube: true
-        _path: aws-solution-architect-exam-guid
+        _path: aws-solution-architect-2-2
       - id: 3
         topic_name: Compute, Storage, Databases, and Networking
         publish_date: 2024-10-15
@@ -72,7 +72,7 @@ content:
         video_url: "https://www.youtube.com/embed/ULfTWvsHw20?si=O7d0O9g4OH5sZHRS"
         auther_name: Rahul Aher
         is_on_youtube: true
-        _path: aws-solution-architect-exam-guid
+        _path: aws-solution-architect-2-3
 ---
 
 ## AWS Certified Solutions Architect Exam Preparation Guide  

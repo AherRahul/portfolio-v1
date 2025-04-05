@@ -50,6 +50,7 @@ const links = computed(() => {
   }
 })
 
+
 const { addNotification } = useNotifications()
 async function copyLinkToClipboard(): Promise<void> {
   await navigator.clipboard.writeText(linkToCurrentPage.value);
@@ -77,28 +78,25 @@ defineOgImageComponent('Article', {
 <template>
   <div>
     <AppSection class="bg-gradient-to-b from-black to-zinc-900 !pb-4">
-      <AppLinkBack to="/articles/">All articles</AppLinkBack>
+      <AppLinkBack v-if="!article.showOnArticles" :to="`/courses/${article.courseName}`">Back to course</AppLinkBack>
+      <AppLinkBack v-else to="/articles/">All articles</AppLinkBack>
       <ParagraphDecoration class="mt-4" />
       <AppParagraph class="mt-4" look="heading" tag="h1">
         {{ article.title }}
       </AppParagraph>
       <div class="flex flex-col md:flex-row gap-4 md:gap-0 justify-between mt-8">
-        <div class="flex">
+        <div class="flex gap-3">
           <p class="mr-2">Updated at {{ formattedUpdateAt }}</p>
-          <p>&mdash; {{ article.readingTime.text }}</p>
+          <p class="mr-2"><Icon name="heroicons:clock" /> {{ article.readingTime.text }}</p>
+          <p v-if="article.slidesUrl">
+            <AppLink class="border-b-4 border-white/75 hover:border-white transition-all pr-1 pb-1" :to="article.slidesUrl">
+              <Icon name="heroicons:bookmark" /> Want to edit 
+            </AppLink>
+          </p>
         </div>
         <ul class="flex gap-8">
           <li v-for="topic in article.topics" class="bg-zinc-800 text-sm px-3 py-1 rounded-md border border-gray-700">
             <AppLink class="hover:underline" :to="`/topics/${topic}`">#{{ topic }}</AppLink>
-          </li>
-        </ul>
-      </div>
-      <div class="mt-16">
-        <ul class="flex flex-row gap-4 md:gap-8">
-          <li v-if="article.slidesUrl">
-            <AppLink class="border-b-4 border-white/75 hover:border-white transition-all pr-1 pb-1" :to="article.slidesUrl">
-              <Icon name="heroicons:bookmark" /> Want to edit 
-            </AppLink>
           </li>
         </ul>
       </div>
@@ -149,7 +147,7 @@ defineOgImageComponent('Article', {
         <div class="col-span-4 text-center md:text-left">
           <h4 class="font-medium text-lg">Written by Rahul Aher</h4>
           <p class="max-w-xl text-lg mt-4 text-gray-400">
-            I'm Rahul, a Indian <b>Sr. Software Engineer (SDE II)</b> and passionate content creator. 
+            I'm Rahul, <b>Sr. Software Engineer (SDE II)</b> and passionate content creator. 
             Sharing my expertise in software development to assist learners.
           </p>
           <AppLink to="/about/" class="underline hover:no-underline mt-2 inline-block">More about me</AppLink>

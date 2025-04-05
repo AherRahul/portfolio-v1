@@ -4,6 +4,7 @@ description: "While consistency is vital, it’s essential to understand that ac
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles/eventual-vs-strong-consistency-in-distributed-databases.md"
 dateModified: "2024-05-25"
 datePublished: "2024-05-25"
+showOnArticles: true
 topics:
   - system-design
   - aws

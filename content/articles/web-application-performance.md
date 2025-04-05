@@ -4,6 +4,7 @@ description: "In today's fast-paced digital world, user experience plays a cruci
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles/web-application-performance.md"
 dateModified: "2024-06-01"
 datePublished: "2024-06-01"
+showOnArticles: true
 topics:
   - system-design
   - interview-prep

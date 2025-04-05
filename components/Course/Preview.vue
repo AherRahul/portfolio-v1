@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-defineProps<{
+const props = defineProps<{
   course: any
 }>();
 
@@ -11,40 +11,39 @@ const isCheck = ref(false);
 const onClick = () => {
   isCheck.value = !isCheck.value; // Update the reactive value
 };
+
+const formattedLanguages = computed(() => {
+  const languages = props.course.languages ? props.course.languages : ['English'];
+  if (languages.length === 1) {
+    return languages[0]
+  }
+  return `${languages.slice(0, -1).join(', ')} or ${languages.slice(-1)}`
+})
+
 </script>
 
 <template>
-  <div class="bg-zinc-800 p-8 transition-all border border-transparent">
-    <div class="md:grid md:grid-cols-2 gap-8">
+  <div class="inline-block group border-l-4 border-red-500 relative flex flex-col justify-between hover:bg-gradient-to-r hover:-translate-y-2 hover:border-zinc-300 transition-all duration-500 from-red-500/60 to-pink-600/60 p-8 bg-zinc-800">
+    <div class="">
       <div>
         <header class="flex-grow">
           <AppParagraph tag="h3" class="inline text-2xl font-semibold ">
             {{ course.title }}
           </AppParagraph>
         </header>
-        <ul class="flex flex-col md:flex-row mt-4">
-          <li v-if="course.eventName">
-            <AppLink v-if="course.eventUrl" rel="noindex nofollow"
-              class="inline-block underline decoration-white hover:decoration-transparent transition-all mr-1"
-              :to="course.eventUrl">
-              {{ course.eventName }}
-            </AppLink>
-            <span v-else class="mr-1">{{ course.eventName }}</span>
-            <span v-if="course.location || course.date" class="hidden md:inline-block" aria-hidden>&bull;&nbsp;</span>
-          </li>
-          <li class="text-sm md:text-base mt-4 md:mt-0" v-if="course.location">
-            {{ course.location }}
-            <span v-if="course.date" class="hidden md:inline-block" aria-hidden>&bull;&nbsp;</span>
-          </li>
-          <li class="text-sm md:text-base" v-if="course.date">{{ course.date }}</li>
-        </ul>
-        <ul class="flex flex-wrap md:flex-nowrap gap-8 mt-4">
-          <li v-for="topic in course.topics.slice(0, 3)" :key="topic" class="bg-zinc-800 text-sm px-3 py-1 rounded-md border border-gray-1000">
-            <AppLink class="hover:underline" :to="`/topics/${topic}`">#{{ topic }}</AppLink>
-          </li>
-        </ul>
+        <div class="flex flex-col md:flex-row gap-4 mt-2">
+          <p>
+            <Icon class="text-2xl mr-1" name="heroicons:clock" /> {{ course.time }}
+          </p>
+          <p>
+            <Icon class="text-2xl mr-1" name="heroicons:user-group" /> {{ course.tutor }} tutor
+          </p>
+          <p>
+            <Icon class="text-2xl mr-1" v-if="formattedLanguages" name="heroicons:language" /> {{ formattedLanguages }}
+          </p>
+        </div>
       </div>
-      <p class="mt-8 prose md:mt-0">
+      <p class="mt-8 prose md:mt-4">
         {{ course.description }}
       </p>
     </div>

@@ -4,6 +4,7 @@ description: "REST which stands for Representational State Transfer is an archit
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles/api-architecture.md"
 dateModified: "2024-05-26"
 datePublished: "2024-05-26"
+showOnArticles: true
 topics:
   - system-design
   - aws

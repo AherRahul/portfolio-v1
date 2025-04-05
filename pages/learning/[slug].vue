@@ -61,7 +61,7 @@ defineOgImageComponent('Learning', {
         {{ page.title }}
       </AppParagraph>
       <div class="flex flex-col md:flex-row gap-4 md:gap-0 justify-between mt-8">
-        <ul class="flex flex-col md:flex-row">
+        <ul class="flex flex-col md:flex-row gap-3">
           <li v-if="page.eventName">
             <AppLink v-if="page.eventUrl" rel="noindex nofollow"
               class="inline-block underline decoration-white hover:decoration-transparent transition-all mr-1"
@@ -69,13 +69,18 @@ defineOgImageComponent('Learning', {
               {{ page.eventName }}
             </AppLink>
             <span v-else class="mr-1">{{ page.eventName }}</span>
-            <span v-if="page.location || page.date" class="hidden md:inline-block" aria-hidden>&bull;&nbsp;</span>
+            <!-- <span v-if="page.location || page.date" class="hidden md:inline-block" aria-hidden>&bull;&nbsp;</span> -->
           </li>
           <li class="text-sm md:text-base mt-4 md:mt-0" v-if="page.location">
             {{ page.location }}
             <span v-if="page.date" class="hidden md:inline-block" aria-hidden>&bull;&nbsp;</span>
           </li>
           <li class="text-sm md:text-base" v-if="page.date">{{ formattedDate }}</li>
+          <li v-if="page.slidesUrl">
+            <AppLink class="border-b-4 border-white/75 hover:border-white transition-all pr-1 pb-1" :to="page.slidesUrl">
+              <Icon name="heroicons:bookmark" /> Want to edit 
+            </AppLink>
+          </li>
         </ul>
         <ul class="flex gap-8">
           <li v-for="topic in page.topics" class="bg-zinc-800 text-sm px-3 py-1 rounded-md border border-gray-700">
@@ -83,7 +88,7 @@ defineOgImageComponent('Learning', {
           </li>
         </ul>
       </div>
-      <div class="mt-16">
+      <!-- <div class="mt-16">
         <ul class="flex flex-row gap-4 md:gap-8">
           <li v-if="page.slidesUrl">
             <AppLink class="border-b-4 border-white/75 hover:border-white transition-all pr-1 pb-1" :to="page.slidesUrl">
@@ -101,7 +106,7 @@ defineOgImageComponent('Learning', {
             </AppLink>
           </li>
         </ul>
-      </div>
+      </div> -->
     </AppSection>
     <AppSection class="justify-center bg-zinc-900 pb-8">
       <div>

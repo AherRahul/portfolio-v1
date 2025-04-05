@@ -4,6 +4,7 @@ description: "In computer science, the CAP theorem, sometimes called CAP theorem
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles/cap-theorem.md"
 dateModified: "2024-05-21"
 datePublished: "2024-05-21"
+showOnArticles: true
 topics:
   - system-design
   - aws

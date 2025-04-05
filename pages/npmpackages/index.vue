@@ -21,9 +21,9 @@ const query: QueryBuilderParams = { path: '/npmpackages', without: ['body', 'exc
 
 <template>
   <AppSection>
+    <AppLinkBack class="mt-4" to="/services/">Go back to services</AppLinkBack>
     <ParagraphDecoration class="mt-16" />
-    <AppLinkBack to="/services/">Go back to services</AppLinkBack>
-    <AppParagraph class="mt-4" tag="h1" look="heading">NPM Packages</AppParagraph>
+    <AppParagraph class="mt-1" tag="h1" look="heading">NPM Packages</AppParagraph>
     <AppParagraph class="max-w-3xl mt-8" look="subParagraph">
       I am deeply committed to the ethos of perpetual learning, recognizing it as the cornerstone of personal and 
       professional growth. In my journey, I embrace an immersive approach to knowledge acquisition, where I not only

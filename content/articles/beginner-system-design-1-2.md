@@ -1,7 +1,7 @@
 ---
-title: "What is System Design?"
-description: "Systems Design is a critical discipline in software engineering, focused on creating a detailed blueprint for a system’s architecture, components, modules, interfaces, and data. It is a structured approach to designing complex systems that meet specific requirements and perform efficiently under varying conditions. The primary goal of systems design is to translate user needs, business goals, and technical constraints into a well-organized and effective system structure. Systems design bridges the gap between these requirements and the actual implementation, ensuring the system is both usable and efficient."
-slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles/what-is-system-design.md"
+title: "What is System Design"
+description: "Systems Design is the process of defining the architecture, components, modules, interfaces, and data for a system to satisfy specified requirements. It involves translating user requirements into a detailed blueprint that guides the implementation phase. The goal is to create a well-organized and efficient structure that meets the intended purpose while considering factors like scalability, maintainability, and performance."
+time: "8:43 mins"
 dateModified: "2024-05-22"
 datePublished: "2024-05-22"
 showOnArticles: false
@@ -10,6 +10,7 @@ topics:
   - system-design
   - aws
   - lld
+video_url: "https://www.youtube.com/embed/K9EFon58_UI?si=95in2rvIl1h6pDxU"
 ---
 
 ## What is System Design?

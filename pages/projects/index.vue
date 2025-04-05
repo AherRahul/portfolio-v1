@@ -22,9 +22,9 @@ console.log(query)
 
 <template>
   <AppSection>
-    <ParagraphDecoration class="mt-16" />
-    <AppLinkBack to="/services/">Go back to services</AppLinkBack>
-    <AppParagraph class="mt-4" tag="h1" look="heading">Projects</AppParagraph>
+    <AppLinkBack class="mt-16" to="/services/">Go back to services</AppLinkBack>
+    <ParagraphDecoration class="mt-4" />
+    <AppParagraph class="mt-1" tag="h1" look="heading">Projects</AppParagraph>
     <AppParagraph class="max-w-3xl mt-8" look="subParagraph">
       I am deeply committed to the ethos of perpetual learning, recognizing it as the cornerstone of personal and 
       professional growth. In my journey, I embrace an immersive approach to knowledge acquisition, where I not only

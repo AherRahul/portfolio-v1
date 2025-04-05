@@ -131,17 +131,17 @@ const { data: courses } = useAsyncData('latest-courses', () => queryContent('/co
 
     <AppSection class="my-32" style="margin-bottom: 4.5rem;" >
       <div class="flex flex-col gap-16 md:gap-8 md:flex-row justify-around">
-        <LazyServicePreview icon="eos-icons:machine-learning-outlined" title="Learn" to="/learning">
+        <LazyServicePreview class="max-w-xl bg-zinc-900 p-8" icon="eos-icons:machine-learning-outlined" title="Learn" to="/learning">
           I'm passionate about continuous learning and believe in the value of hands-on experience. I actively 
           learn new concepts, ensuring a deeper understanding of each topic. This proactive approach fuels my 
           growth mindset and fosters ongoing professional development.
         </LazyServicePreview>
-        <LazyServicePreview icon="ph:chalkboard-teacher-light" title="Build" to="/projects">
+        <LazyServicePreview class="max-w-xl bg-zinc-900 p-8" icon="ph:chalkboard-teacher-light" title="Build" to="/projects">
           I am dedicated to continuous learning, and I reinforce my understanding of new concepts by applying them
            to real-world projects. This approach not only enhances my skills but also allows me to delve 
            deeper into each concept, ensuring a comprehensive understanding.
         </LazyServicePreview>
-        <LazyServicePreview icon="mdi:lightbulb-on-outline" title="Share" to="/articles">
+        <LazyServicePreview class="max-w-xl bg-zinc-900 p-8" icon="mdi:lightbulb-on-outline" title="Share" to="/articles">
           I love to share my knowledge and experience with the community. I mentor CDAC students, guiding them into 
           the software world. I enjoy collaborating on problem-solving, discussing optimal abstractions, and refining 
           architecture to ensure successful outcomes.

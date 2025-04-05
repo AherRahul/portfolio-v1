@@ -1,5 +1,5 @@
 ---
-title: "What is System Design"
+title: "System Design"
 description: "Systems Design is the process of defining the architecture, components, modules, interfaces, and data for a system to satisfy specified requirements. It involves translating user requirements into a detailed blueprint that guides the implementation phase. The goal is to create a well-organized and efficient structure that meets the intended purpose while considering factors like scalability, maintainability, and performance."
 time: "8:43 mins"
 tutor: 1
@@ -9,10 +9,10 @@ content:
   - module_id: 1
     module_name: Introduction
     module_duration: "40 mins"
-    videos_count: 3
+    topics_count: 3
     tutor: 1
     expanded: true
-    videos:
+    topics:
       - id: 1
         topic_name: What is System Design?
         sub_topic: System Design Basics
@@ -25,7 +25,7 @@ content:
         video_url: "https://www.youtube.com/embed/K9EFon58_UI?si=95in2rvIl1h6pDxU"
         auther_name: Rahul Aher
         is_on_youtube: true
-        _path: what-is-system-design
+        _path: beginner-system-design-1-1
       - id: 2
         topic_name: How to approach system design?
         sub_topic: System Design Basics
@@ -38,7 +38,7 @@ content:
         video_url: "https://www.youtube.com/embed/JqcpMz3TykA?si=-rjiVhzMKwsMC9gr"
         auther_name: Rahul Aher
         is_on_youtube: true
-        _path: what-is-system-design
+        _path: beginner-system-design-1-2
       - id: 3
         topic_name: How do you evaluate that you have built a good system?
         sub_topic: System Design Basics
@@ -51,14 +51,14 @@ content:
         video_url: "https://www.youtube.com/embed/F5mNbnsT12E?si=hF5yLA4XZ5XFV-vk"
         auther_name: Rahul Aher
         is_on_youtube: true
-        _path: what-is-system-design
+        _path: beginner-system-design-1-3
   - module_id: 2
     module_name: Databases designing
     module_duration: "25 mins"
-    videos_count: 2
+    topics_count: 2
     tutor: 1
     expanded: false
-    videos:
+    topics:
       - id: 4
         topic_name: Relational Databases for System Design
         sub_topic: System Design Basics
@@ -71,7 +71,7 @@ content:
         video_url: "https://www.youtube.com/embed/g7C8ahBzoRA?si=n4wPLZky6xVqUl4u"
         auther_name: Rahul Aher
         is_on_youtube: true
-        _path: what-is-system-design
+        _path: beginner-system-design-2-1
       - id: 5
         topic_name: Database Transaction Isolation Levels Explained
         sub_topic: System Design Basics
@@ -84,7 +84,7 @@ content:
         video_url: "https://www.youtube.com/embed/edejC34kkBk?si=xRzr-kS7oN9LQpMY"
         auther_name: Rahul Aher
         is_on_youtube: true
-        _path: what-is-system-design
+        _path: beginner-system-design-2-2
 ---
 
 ## What is System Design?

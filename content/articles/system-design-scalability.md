@@ -4,6 +4,7 @@ description: "Scalability is a crucial aspect of system design, especially in to
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles/system-design-scalability.md"
 dateModified: "2024-05-19"
 datePublished: "2024-05-19"
+showOnArticles: true
 topics:
   - system-design
   - aws
