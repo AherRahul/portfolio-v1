@@ -11,7 +11,7 @@ const bgGradientStyle = {
 </script>
 <template>
   <div class="p-4 h-full w-full flex justify-center items-center" :style="bgGradientStyle">
-    <div class="p-10 bg-zinc-900 h-full w-full" style="background-image: url(https://img.rahulaher.netlify.app/website-og/main-article.png); display: flex; flex-direction: column; justify-content: space-between;">
+    <div class="p-10 bg-zinc-900 h-full w-full" style="background-image: url(https://img.lichter.io/website-og/workshop.png); display: flex; flex-direction: column; justify-content: space-between;">
       <h1 class="font-extrabold text-transparent text-8xl" :style="{ ...bgGradientStyle, backgroundClip: 'text' }">
         Build <span class="px-[50px]">//</span> Lead <span class="px-[50px]">//</span> Teach
       </h1>
