@@ -16,10 +16,17 @@ useSeoMeta({
 
 defineOgImageComponent('Main')
 
-const { data: articles } = useAsyncData('latest-articles', () => queryContent<ArticlePreview>('/articles').sort({
-  dateModified: -1,
-  datePublished: -1
-}).without(['body', 'excerpt']).limit(4).find())
+const { data: articles } = useAsyncData('latest-articles', () =>
+  queryContent<ArticlePreview>('/articles')
+    .where({ showOnArticles: true }) // Filter only those with showOnArticles = true
+    .sort({
+      dateModified: -1,
+      datePublished: -1
+    })
+    .without(['body', 'excerpt'])
+    .limit(4)
+    .find()
+)
 
 const { data: talks } = useAsyncData('latest-learning', () => queryContent<TalkPreview>('/learning/').sort({
   date: -1

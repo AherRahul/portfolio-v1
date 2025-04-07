@@ -29,7 +29,7 @@ props.title.length > 30 ? 'text-5xl' : 'text-6xl')
       <!-- Weird hack so the lower line is correct when rendering svg -->
       <div style="display: flex; margin-top: -6rem;">
         <div class="mr-auto" style="display: flex;">
-          <img width="64" height="64" class="mr-4 rounded-full mt-2" src="/img/me@2x.jpg" />
+          <img width="64" height="64" class="mr-4 rounded-full mt-2" src="/img/me@2x.png" />
           <div style="display: flex; flex-direction: column; justify-content: center;">
             <div class="text-2xl leading-none text-white">Rahul Aher</div>
             <div class="text-white/50 text-lg leading-none mt-2">https://rahulaher.netlify.app</div>

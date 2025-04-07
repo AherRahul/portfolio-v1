@@ -17,7 +17,7 @@ const bgGradientStyle = {
       </h1>
       <div style="display: flex;">
         <div class="mr-auto" style="display: flex;">
-          <img width="64" height="64" class="mr-4 rounded-full mt-2" src="/img/me@2x.jpg" />
+          <img width="64" height="64" class="mr-4 rounded-full mt-2" src="/img/me@2x.png" />
           <div style="display: flex; flex-direction: column; justify-content: center;">
             <div class="text-2xl leading-none text-white">Rahul Aher</div>
             <div class="text-white/50 text-lg leading-none mt-2">https://rahulaher.netlify.app</div>

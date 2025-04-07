@@ -16,10 +16,17 @@ useSeoMeta({
 
 defineOgImageComponent('General')
 
-const { data: articles } = useAsyncData('latest-articles', () => queryContent<ArticlePreview>('/articles').sort({
-  dateModified: -1,
-  datePublished: -1
-}).without(['body', 'excerpt']).limit(4).find())
+const { data: articles } = useAsyncData('latest-articles', () =>
+  queryContent<ArticlePreview>('/articles')
+    .where({ showOnArticles: true }) // Filter only those with showOnArticles = true
+    .sort({
+      dateModified: -1,
+      datePublished: -1
+    })
+    .without(['body', 'excerpt'])
+    .limit(4)
+    .find()
+)
 
 const { data: projects } = useAsyncData('latest-projects', () => queryContent('/projects/').sort({
   onStartPage: 1
@@ -33,7 +40,7 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
       <AppParagraph look="heading" class="mt-4" tag="h1">About me</AppParagraph>
       <div class="lg:grid grid-cols-2 lg:items-end mt-16 lg:mt-0">
         <div class="lg:hidden">
-          <img class="w-48 h-48 rounded-full mx-auto" width="192" height="192" src="/img/me@2x.jpg"
+          <img class="w-48 h-48 rounded-full mx-auto" width="192" height="192" src="/img/me@2x.png"
             alt="Photo of Rahul Aher">
         </div>
         <div class="-mt-16 lg:mt-0">
