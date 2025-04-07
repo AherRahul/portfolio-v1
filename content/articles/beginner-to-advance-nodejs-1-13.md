@@ -1,7 +1,7 @@
 ---
 title: "Create MongoDB database using Node JS"
 description: "Okay, it’s time to create a database. Go to the database website by clicking here. There are two ways to install the database"
-time: "8:43 mins"
+slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-04-17"
 datePublished: "2025-04-17"
 showOnArticles: false
@@ -9,7 +9,6 @@ courseName: beginner-to-advance-nodejs
 topics:
   - nodejs
   - javascript
-video_url: ""
 ---
 
 

@@ -24,7 +24,7 @@ content:
           - aws
           - solution-architect
         duration: 6:54 mins
-        video_url: "https://www.youtube.com/embed/ejZm0c_OhYM?si=_EDroaJF7rPD1dvL"
+        videoUrl: "https://www.youtube.com/embed/ejZm0c_OhYM?si=_EDroaJF7rPD1dvL"
         auther_name: Rahul Aher
         is_on_youtube: true
         _path: aws-solution-architect-1-1
@@ -43,7 +43,7 @@ content:
           - aws
           - solution-architect
         duration: 8:27 mins
-        video_url: "https://www.youtube.com/embed/SVW2HBZ3QNA?si=TsD1JykWf5LYzBil"
+        videoUrl: "https://www.youtube.com/embed/SVW2HBZ3QNA?si=TsD1JykWf5LYzBil"
         auther_name: Rahul Aher
         is_on_youtube: true
         _path: aws-solution-architect-2-1
@@ -56,7 +56,7 @@ content:
           - aws
           - solution-architect
         duration: 5:44 mins
-        video_url: "https://www.youtube.com/embed/izQlU1sZkNg?si=q_GceoOp1N6nWdNZ"
+        videoUrl: "https://www.youtube.com/embed/izQlU1sZkNg?si=q_GceoOp1N6nWdNZ"
         auther_name: Rahul Aher
         is_on_youtube: true
         _path: aws-solution-architect-2-2
@@ -69,7 +69,7 @@ content:
           - aws
           - solution-architect
         duration: 8:27 mins
-        video_url: "https://www.youtube.com/embed/ULfTWvsHw20?si=O7d0O9g4OH5sZHRS"
+        videoUrl: "https://www.youtube.com/embed/ULfTWvsHw20?si=O7d0O9g4OH5sZHRS"
         auther_name: Rahul Aher
         is_on_youtube: true
         _path: aws-solution-architect-2-3

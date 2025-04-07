@@ -62,9 +62,9 @@ defineOgImageComponent('Course', {
                   class="md:grid md:grid-cols-2 gap-8 bg-zinc-700 p-4 mt-4"
                 >
                   <!-- Video Section -->
-                  <div v-if="lecture.video_url" class="video-container overflow-hidden shadow-sm">
+                  <div v-if="lecture.videoUrl" class="video-container overflow-hidden shadow-sm">
                     <iframe
-                      :src="lecture.video_url"
+                      :src="lecture.videoUrl"
                       frameborder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowfullscreen

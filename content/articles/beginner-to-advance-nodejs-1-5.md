@@ -1,7 +1,7 @@
 ---
 title: "Diving into the NodpeJS Github repo"
 description: "As we know, each module in Node.js has its own scope. How does Node.js achieve this? In JavaScript, we follow the Principle of Least Privilege (PoLP), which is related to functions and scope. If you're unfamiliar, you can Google it. The idea is to only expose what is necessary to the global scope, keeping everything else private. To achieve PoLP, wrap your code in a function or immediately invoke it (IIFE)."
-time: "8:43 mins"
+slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-04-09"
 datePublished: "2025-04-09"
 showOnArticles: false
@@ -9,7 +9,6 @@ courseName: beginner-to-advance-nodejs
 topics:
   - nodejs
   - javascript
-video_url: ""
 ---
 
 

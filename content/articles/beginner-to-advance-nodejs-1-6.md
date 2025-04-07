@@ -1,7 +1,7 @@
 ---
 title: "libuv & async IO in Node.js"
 description: "If you read Node.js's definition, it mentions an event-driven architecture and its ability to handle asynchronous I/O. These two concepts are crucial to understand, so take your time to read and grasp them thoroughly. We know JavaScript is a synchronous, single-threaded language, meaning the code runs in one direction like a one-way road, with one task executing at a time."
-time: "8:00 mins"
+slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-04-10"
 datePublished: "2025-04-10"
 showOnArticles: false
@@ -9,7 +9,6 @@ courseName: beginner-to-advance-nodejs
 topics:
   - nodejs
   - javascript
-video_url: ""
 ---
 
 

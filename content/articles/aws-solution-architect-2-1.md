@@ -11,7 +11,7 @@ topics:
   - system-design
   - aws
   - lld
-video_url: "https://www.youtube.com/embed/SVW2HBZ3QNA?si=TsD1JykWf5LYzBil"
+videoUrl: "https://www.youtube.com/embed/SVW2HBZ3QNA?si=TsD1JykWf5LYzBil"
 ---
 
 ## The Building Blocks of AWS: Availability Zones and Regions

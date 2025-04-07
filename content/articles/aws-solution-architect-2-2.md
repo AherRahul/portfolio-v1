@@ -11,7 +11,7 @@ topics:
   - system-design
   - aws
   - lld
-video_url: "https://www.youtube.com/embed/izQlU1sZkNg?si=q_GceoOp1N6nWdNZ"
+videoUrl: "https://www.youtube.com/embed/izQlU1sZkNg?si=q_GceoOp1N6nWdNZ"
 ---
 
 ## Who Owns What in the Cloud? Understanding AWS Shared Responsibility Model

@@ -11,7 +11,7 @@ topics:
   - system-design
   - aws
   - lld
-video_url: "https://www.youtube.com/embed/ejZm0c_OhYM?si=_EDroaJF7rPD1dvL"
+videoUrl: "https://www.youtube.com/embed/ejZm0c_OhYM?si=_EDroaJF7rPD1dvL"
 ---
 
 ## AWS Fundamentals Exam Tips

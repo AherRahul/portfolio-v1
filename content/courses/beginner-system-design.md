@@ -22,7 +22,7 @@ content:
         topics:
           - system-design
         duration: "8:43 mins"
-        video_url: "https://www.youtube.com/embed/K9EFon58_UI?si=95in2rvIl1h6pDxU"
+        videoUrl: "https://www.youtube.com/embed/K9EFon58_UI?si=95in2rvIl1h6pDxU"
         auther_name: Rahul Aher
         is_on_youtube: true
         _path: beginner-system-design-1-1
@@ -35,7 +35,7 @@ content:
         topics:
           - system-design
         duration: "16:23 mins"
-        video_url: "https://www.youtube.com/embed/JqcpMz3TykA?si=-rjiVhzMKwsMC9gr"
+        videoUrl: "https://www.youtube.com/embed/JqcpMz3TykA?si=-rjiVhzMKwsMC9gr"
         auther_name: Rahul Aher
         is_on_youtube: true
         _path: beginner-system-design-1-2
@@ -48,7 +48,7 @@ content:
         topics:
           - system-design
         duration: "8:10 mins"
-        video_url: "https://www.youtube.com/embed/F5mNbnsT12E?si=hF5yLA4XZ5XFV-vk"
+        videoUrl: "https://www.youtube.com/embed/F5mNbnsT12E?si=hF5yLA4XZ5XFV-vk"
         auther_name: Rahul Aher
         is_on_youtube: true
         _path: beginner-system-design-1-3
@@ -68,7 +68,7 @@ content:
         topics:
           - system-design
         duration: "19:39 mins"
-        video_url: "https://www.youtube.com/embed/g7C8ahBzoRA?si=n4wPLZky6xVqUl4u"
+        videoUrl: "https://www.youtube.com/embed/g7C8ahBzoRA?si=n4wPLZky6xVqUl4u"
         auther_name: Rahul Aher
         is_on_youtube: true
         _path: beginner-system-design-2-1
@@ -81,7 +81,7 @@ content:
         topics:
           - system-design
         duration: "18.17 mins"
-        video_url: "https://www.youtube.com/embed/edejC34kkBk?si=xRzr-kS7oN9LQpMY"
+        videoUrl: "https://www.youtube.com/embed/edejC34kkBk?si=xRzr-kS7oN9LQpMY"
         auther_name: Rahul Aher
         is_on_youtube: true
         _path: beginner-system-design-2-2

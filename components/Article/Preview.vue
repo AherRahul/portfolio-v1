@@ -9,7 +9,7 @@ const formattedCreatedAt = computed(() => formatDateStringToHumanReadable(props.
 </script>
 
 <template>
-  <AppLink v-if="article.showOnArticles" :to="article._path"
+  <AppLink :style="!article.showOnArticles ? 'display: none' : ''" :to="article._path"
     class="inline-block group border-l-4 border-red-500 relative flex flex-col justify-between hover:bg-gradient-to-r hover:-translate-y-2 hover:border-zinc-300 transition-all duration-500 from-red-500/60 to-pink-600/60 p-8 bg-zinc-800">
     <AppParagraph tag="h3" class="text-2xl font-semibold">{{ article.title }}</AppParagraph>
     <div class="mt-4 md:mt-2 md:flex gap-4">

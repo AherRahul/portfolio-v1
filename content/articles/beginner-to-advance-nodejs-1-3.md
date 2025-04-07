@@ -1,7 +1,7 @@
 ---
 title: "Let's write code"
 description: "Systems Design is the process of defining the architecture, components, modules, interfaces, and data for a system to satisfy specified requirements. It involves translating user requirements into a detailed blueprint that guides the implementation phase. The goal is to create a well-organized and efficient structure that meets the intended purpose while considering factors like scalability, maintainability, and performance."
-time: "7:00 mins"
+slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-04-07"
 datePublished: "2025-04-07"
 showOnArticles: false
@@ -9,7 +9,7 @@ courseName: beginner-to-advance-nodejs
 topics:
   - nodejs
   - javascript
-video_url: ""
+
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1743856039/Portfolio/nodeJsCourse/3_hl0jqs.png)

@@ -1,7 +1,7 @@
 ---
 title: "JavaScript on Server"
 description: "Discover how JavaScript powers server-side development with Node.js, transforming the way web applications are built. Node.js is a fast, scalable runtime that enables asynchronous, event-driven programming, making it ideal for real-time applications like chat apps and streaming services. You'll also learn to build server-side applications from scratch, manage dependencies with npm, and use frameworks like Express.js."
-readingTime: "07:00 mins"
+slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-04-06"
 datePublished: "2025-04-06"
 showOnArticles: false
@@ -9,7 +9,7 @@ courseName: beginner-to-advance-nodejs
 topics:
   - nodejs
   - javascript
-video_url: ""
+
 ---
 
 

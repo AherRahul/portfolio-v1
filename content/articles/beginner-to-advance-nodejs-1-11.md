@@ -1,7 +1,7 @@
 ---
 title: "Create a http server using Node JS"
 description: "We covered a lot of theory, investigating Node.js from its beginnings to 2025, and now it’s time to take action. But be patient — we'll start with some theory to set the context of what a server is, and then write something. Today, your VS Code or code editor won’t be alone. Node.js will be part of your code base, and we will write something. So, what are we waiting for? Let's begin! We'll read about servers, what development means, what a proxy server is, and what DNS is. Then, we’ll create a server"
-time: "8:43 mins"
+slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-04-15"
 datePublished: "2025-04-15"
 showOnArticles: false
@@ -9,7 +9,6 @@ courseName: beginner-to-advance-nodejs
 topics:
   - nodejs
   - javascript
-video_url: ""
 ---
 
 

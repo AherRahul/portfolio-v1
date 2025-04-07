@@ -11,7 +11,7 @@ topics:
   - system-design
   - aws
   - lld
-video_url: "https://www.youtube.com/embed/ULfTWvsHw20?si=O7d0O9g4OH5sZHRS"
+videoUrl: "https://www.youtube.com/embed/ULfTWvsHw20?si=O7d0O9g4OH5sZHRS"
 ---
 
 ## AWS Core Services: Compute, Storage, Databases, and Networking Explained
