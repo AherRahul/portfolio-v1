@@ -5,7 +5,7 @@ slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
 dateModified: "2024-05-22"
 datePublished: "2024-05-22"
 showOnArticles: false
-courseName: beginner-to-advance-nodejs
+courseName: 01-beginner-to-advance-nodejs
 topics:
   - nodejs
   - javascript

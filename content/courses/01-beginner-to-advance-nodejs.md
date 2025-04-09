@@ -196,13 +196,13 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: beginner-to-advance-nodejs-1-13
-  - module_id: 2
-    module_name: Module 2
-    module_duration: "25 mins read"
-    topics_count: 2
-    tutor: 1
-    expanded: false
-    topics:
+  # - module_id: 2
+  #   module_name: Module 2
+  #   module_duration: "25 mins read"
+  #   topics_count: 2
+  #   tutor: 1
+  #   expanded: false
+  #   topics:
       
 ---
 

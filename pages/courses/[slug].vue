@@ -98,7 +98,7 @@ defineOgImageComponent('Course', {
                         </AppLink>
                       </li>
                     </ul>
-                    <p class="mt-4 text-gray-300">{{ lecture.description }}</p>
+                    <p class="mt-4 text-gray-300 text-justify">{{ lecture.description }}</p>
                     
                     <div class="md:grid md:grid-cols-2 gap-10 flex justify-end justify-items-end content-end items-end" v-if="lecture._path">
                       <div></div>

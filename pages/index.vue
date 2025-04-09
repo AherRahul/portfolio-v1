@@ -220,6 +220,8 @@ const { data: courses } = useAsyncData('latest-courses', () => queryContent('/co
       <div class="flex md:justify-end mt-8">
         <AppButton to="/articles" look="secondary" secondary-after-bg="bg-zinc-900">View all articles</AppButton>
       </div>
+      
+      <ContentDivider anchor="right" class="mt-14" />
     </AppSection>
 
     <AppSection style="padding-top: 2.5rem;">
