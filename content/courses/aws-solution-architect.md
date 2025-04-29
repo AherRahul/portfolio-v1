@@ -1,7 +1,8 @@
 ---
 title: "AWS Certified Solutions Architect"
-description: "AWS Certified Solutions Architect is among the most valuable and sought-after cloud computing certifications in the world. We designed this cloud architect certification training for anyone seeking to learn the major components of Amazon Web Services (AWS). By the end of the course, you'll be prepared to pass the associate-level AWS Certified Solutions Architect certification exam."
+description: "The AWS Certified Solutions Architect certification is one of the most prestigious and in-demand credentials in cloud computing. This course is thoughtfully designed for anyone looking to master the core components of Amazon Web Services (AWS) and build a strong foundation in cloud architecture. Through comprehensive lessons and hands-on practice, you'll gain the skills needed to design scalable, secure, and cost-efficient cloud solutions. By the end of this training, you'll be fully prepared to pass the associate-level AWS Certified Solutions Architect exam with confidence."
 tutor: 1
+video: true
 topics:
   - aws
   - solution-architect

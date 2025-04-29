@@ -1,8 +1,9 @@
 ---
 title: "Frontend System Design"
-description: "The mission of this course is to take you from Zero to Hero in Frontend System Design. During this journey, you will learn everything by watching video tutorials and learning through practical examples from real-world applications. The curriculum is designed with the principle of `learn with real application examples`, so there will be a lot of knowledge heavy topics that you'll learn from. So only register if you are ready for a grind. Frontend System Design course will help you with all the knowledge you need to design scalable Frontend web application and will also help you crack your next Frontend System Design Interview. Register Now."
+description: "This course is designed to take you from Zero to Hero in Frontend System Design. Through a combination of in-depth tutorials and practical, real-world examples, you’ll gain hands-on experience in designing scalable and efficient frontend architectures. The curriculum follows a ‘learn by doing’ approach, ensuring that even the most complex topics are grounded in real application scenarios. Whether you're aiming to build robust frontend systems or preparing for your next Frontend System Design interview, this course equips you with the skills and confidence to succeed. Start your journey today."
 tutor: 1
-time: "5hr 30 mins read"
+time: "5hr 30 mins"
+video: false
 topics:
   - nodejs
   - javascript

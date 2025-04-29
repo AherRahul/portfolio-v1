@@ -31,15 +31,21 @@ const formattedLanguages = computed(() => {
             {{ course.title }}
           </AppParagraph>
         </header>
-        <div class="flex flex-col md:flex-row gap-4 mt-2">
+        <div class="flex flex-col md:flex-row gap-5 mt-2">
           <p>
-            <Icon class="text-2xl mr-1" name="heroicons:clock" /> {{ course.time }}
+            <Icon class="text-2xl" name="heroicons:clock" /> {{ course.time }}
           </p>
           <p>
-            <Icon class="text-2xl mr-1" name="heroicons:user-group" /> {{ course.tutor }} tutor
+            <Icon class="text-2xl" name="heroicons:user-group" /> {{ course.tutor }} tutor
           </p>
           <p>
-            <Icon class="text-2xl mr-1" v-if="formattedLanguages" name="heroicons:language" /> {{ formattedLanguages }}
+            <Icon class="text-2xl" v-if="formattedLanguages" name="heroicons:language" /> {{ formattedLanguages }}
+          </p>
+          <p v-if="course.video">
+            <Icon class="text-2xl" name="heroicons:video-camera" /> Video Tutorials
+          </p>
+          <p  v-else>
+            <Icon class="text-2xl" name="heroicons:book-open" /> Reading Tutorials
           </p>
         </div>
       </div>

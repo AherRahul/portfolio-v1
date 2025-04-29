@@ -3,10 +3,12 @@ const props = withDefaults(defineProps<{
   time?: string
   tutor?: number
   languages?: string[]
+  video?: boolean
 }>(), {
   time: '2 days',
   tutor: 1,
-  languages: () => ['English']
+  languages: () => ['English'],
+  video: false
 })
 
 const formattedLanguages = computed(() => {
@@ -19,7 +21,7 @@ const formattedLanguages = computed(() => {
 </script>
 
 <template>
-  <div>
+  <div class="flex flex-col md:flex-row gap-5 mt-2">
     <p>
       <Icon class="text-2xl mr-2" name="heroicons:clock" /> {{ time }}
     </p>
@@ -28,6 +30,12 @@ const formattedLanguages = computed(() => {
     </p>
     <p>
       <Icon class="text-2xl mr-2" name="heroicons:language" /> {{ formattedLanguages }}
+    </p>
+    <p v-if="video">
+      <Icon class="text-2xl" name="heroicons:video-camera" /> Video Tutorials
+    </p>
+    <p  v-else>
+      <Icon class="text-2xl" name="heroicons:book-open" /> Reading Tutorials
     </p>
   </div>
 </template>

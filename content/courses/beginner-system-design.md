@@ -1,8 +1,9 @@
 ---
 title: "System Design"
-description: "Systems Design is the process of defining the architecture, components, modules, interfaces, and data for a system to satisfy specified requirements. It involves translating user requirements into a detailed blueprint that guides the implementation phase. The goal is to create a well-organized and efficient structure that meets the intended purpose while considering factors like scalability, maintainability, and performance."
+description: "System Design is the art of architecting robust, scalable, and efficient systems by defining their structure, components, modules, interfaces, and data flow. It transforms user requirements into a detailed technical blueprint that drives the development process. The ultimate goal is to build systems that not only fulfill functional needs but also excel in scalability, maintainability, and performance—ensuring long-term reliability and adaptability in real-world environments."
 time: "8:43 mins"
 tutor: 1
+video: true
 topics:
   - system-design
 content:

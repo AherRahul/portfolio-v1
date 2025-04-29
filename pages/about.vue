@@ -246,7 +246,7 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
               <rds-grid style="margin-top: 0px;">
                 <rds-row>
                   <rds-col cols="12" offset="0" colsAtS="12" colsAtM="12" colsAtL="12" colsAtXl="12">
-                    <p>
+                    <p class="text-justify">
                       With a strong foundation in software development and a comprehensive understanding of modern 
                       technologies, I have successfully combined academic knowledge with hands-on experience to deliver 
                       impactful solutions. My education has provided me with a solid grasp of advanced software development 
@@ -266,7 +266,7 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
                       <div data-v-1e303c13 class="rds-timeline-item mb-0 flex">
                         <div data-v-1e303c13 class="rds-timeline-item__opposite" style="width: 25%; margin-top: 1.5rem !important;"> Oct 2021 - Present </div>
                         <div data-v-1e303c13 class="rds-timeline-item__timeline-container">
-                          <Icon class="text-sm md:text-base" name="vaadin:workplace" style="font-size: 1.5rem;" />
+                          <Icon class="text-sm md:text-base" name="vaadin:workplace" style="font-size: 2.5rem;" />
                           <span data-v-1e303c13 class="rds-timeline-item__pin--red bg-gradient-to-b from-red-600 to-pink-700 z-10" style="min-height: 1.375rem !important; min-width: 1.375rem !important; position: relative !important; top: 0.375rem !important;"></span>
                           <div data-v-1e303c13 class="tail w-1.5 h-20 bg-gradient-to-b from-red-600 to-pink-700 z-10" style="width: 5px !important;"></div>
                         </div>
@@ -314,7 +314,7 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
                                   <span data-v-1e303c13="" class="rds-timeline-item__text"> Oct 2021 - Dec - 2022 </span>
                                 </div>
                                 <rds-collapsible-container
-                                  :modelValue="false"
+                                  :modelValue="true"
                                   title="Responsibility"
                                   style="color: white;"
                                 >
@@ -355,7 +355,7 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
                                   <span data-v-1e303c13="" class="rds-timeline-item__text"> Sept 2020 - Oct 2021 </span>
                                 </div>
                                 <rds-collapsible-container
-                                  :modelValue="false"
+                                  :modelValue="true"
                                   title="Responsibility"
                                   style="color: white;"
                                 >
@@ -382,7 +382,7 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
                                   <span data-v-1e303c13="" class="rds-timeline-item__text"> Sept 2020 - Sept 2020 </span>
                                 </div>
                                 <rds-collapsible-container
-                                  :modelValue="false"
+                                  :modelValue="true"
                                   title="Responsibility"
                                   style="color: white;"
                                 >
@@ -421,7 +421,7 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
                                   <span data-v-1e303c13="" class="rds-timeline-item__text"> Feb 2018 - Feb 2019 </span>
                                 </div>
                                 <rds-collapsible-container
-                                  :modelValue="false"
+                                  :modelValue="true"
                                   title="Responsibility"
                                   style="color: white;"
                                 >
@@ -447,7 +447,7 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
                       <div data-v-1e303c13 class="rds-timeline-item mb-0 flex">
                         <div data-v-1e303c13 class="rds-timeline-item__opposite" style="width: 25%; margin-top: 1.5rem !important;"> Feb 2023 - Feb 2025 </div>
                         <div data-v-1e303c13 class="rds-timeline-item__timeline-container">
-                          <Icon class="text-sm md:text-base" name="vaadin:academy-cap"  style="font-size: 1.5rem;" />
+                          <Icon class="text-sm md:text-base" name="vaadin:academy-cap"  style="font-size: 2.5rem;" />
                           <span data-v-1e303c13 class="rds-timeline-item__pin--red bg-gradient-to-b from-red-600 to-pink-700 z-10" style="min-height: 1.375rem !important; min-width: 1.375rem !important; position: relative !important; top: 0.375rem !important;"></span>
                           <div data-v-1e303c13 class="tail w-1.5 h-20 bg-gradient-to-b from-red-600 to-pink-700 z-10" style="width: 5px !important;"></div>
                         </div>
@@ -492,7 +492,7 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
 
                           <div class="rds-timeline pl-0" style="--e7dc6904: column; --8a08cf80: 49.25px;">
                             <rds-collapsible-container
-                              :modelValue="false"
+                              :modelValue="true"
                               title="Objective"
                               style="color: white;"
                             >
@@ -529,7 +529,7 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
 
                           <div class="rds-timeline pl-0" style="--e7dc6904: column; --8a08cf80: 49.25px;">
                             <rds-collapsible-container
-                              :modelValue="false"
+                              :modelValue="true"
                               title="Objective"
                               style="color: white;"
                             >

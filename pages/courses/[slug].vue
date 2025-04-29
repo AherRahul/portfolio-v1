@@ -36,6 +36,7 @@ defineOgImageComponent('Course', {
           :time="course.time"
           :tutor="course.tutor"
           :languages="course.languages"
+          :video="course.video"
           class="mt-6 flex flex-wrap gap-8"
         />
       </div>
@@ -53,7 +54,7 @@ defineOgImageComponent('Course', {
           >
             <rds-collapsible-container
               :modelValue="module.expanded"
-              :title="(index + 1) + '. ' + module.module_name + ' (' + module.module_duration + ')'"
+              :title="module.module_name + ' (' + module.module_duration + ')'"
             >
               <div class="mt-4">
                 <div
@@ -87,7 +88,7 @@ defineOgImageComponent('Course', {
                     <p v-if="lecture.sub_topic" class="text-gray-400 mt-2">
                       <Icon class="text-xl ml-1" name="heroicons:book-open" /> {{ lecture.sub_topic }} <Icon class="text-xl ml-1" name="heroicons:clock" /> {{ lecture.duration }}
                     </p>
-                    <ul class="flex flex-wrap gap-2 mt-4">
+                    <ul class="flex flex-wrap gap-2 mt-2 md:flex-row gap-5">
                       <li
                         v-for="topic in lecture.topics.slice(0, 3)"
                         :key="topic"
@@ -98,7 +99,7 @@ defineOgImageComponent('Course', {
                         </AppLink>
                       </li>
                     </ul>
-                    <p class="mt-4 text-gray-300 text-justify">{{ lecture.description }}</p>
+                    <p class="mt-5 pt-3 text-gray-300 ">{{ lecture.description }}</p>
                     
                     <div class="md:grid md:grid-cols-2 gap-10 flex justify-end justify-items-end content-end items-end" v-if="lecture._path">
                       <div></div>

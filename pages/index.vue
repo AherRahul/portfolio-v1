@@ -52,7 +52,7 @@ const { data: courses } = useAsyncData('latest-courses', () => queryContent('/co
               <AppParagraph tag="h1" look="superHeading"
                 class="flex flex-col sm:justify-start font-mono mt-8 md:mt-0 ml-4 md:ml-0">
                 <span>Learn <span class="hidden md:inline md:ml-5 pl-8">//</span></span>
-                <span>Build <span class="hidden md:inline md:ml-5 pl-8">//</span></span>
+                <span>Build <span class="hidden md:inline md:ml-5 pl-4">//</span></span>
                 <span>Share</span>
               </AppParagraph>
             </div>
@@ -61,7 +61,7 @@ const { data: courses } = useAsyncData('latest-courses', () => queryContent('/co
                 src="/img/rahul-main.png" alt="Photo of Rahul Aher" />
             </div>
           </div>
-          <AppParagraph look="subParagraph" class="mt-8">
+          <AppParagraph look="subParagraph" class="mt-8 ">
             Hello! I'm Rahul Aher, a seasoned Sr. Software Engineer at
             <AppLink to="https://www.morningstar.com/" style="color: #dc2626 var(--tw-gradient-from-position);"><b>Morningstar</b></AppLink>, 
             passionate about architecting transformative software solutions. With a results-oriented mindset, I pursue complex 
@@ -90,7 +90,7 @@ const { data: courses } = useAsyncData('latest-courses', () => queryContent('/co
             </AppLink> -->
             <AppLink title="To the javascript topic page" to="/topics/spring">
               <Icon class="" name="logos:spring-icon" />
-            </AppLink>
+            </AppLink>  
             <AppLink title="To the aws topic page" to="/topics/aws">
               <Icon class="" name="logos:aws" />
             </AppLink>
@@ -137,7 +137,7 @@ const { data: courses } = useAsyncData('latest-courses', () => queryContent('/co
     </AppSection>
 
     <AppSection class="my-32" style="margin-bottom: 4.5rem;" >
-      <div class="flex flex-col gap-16 md:gap-8 md:flex-row justify-around">
+      <div class="flex flex-col gap-16 md:gap-8 md:flex-row justify-around ">
         <LazyServicePreview class="max-w-xl bg-zinc-900 p-8" icon="eos-icons:machine-learning-outlined" title="Learn" to="/learning">
           I'm passionate about continuous learning and believe in the value of hands-on experience. I actively 
           learn new concepts, ensuring a deeper understanding of each topic. This proactive approach fuels my 
