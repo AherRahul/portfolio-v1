@@ -29,11 +29,14 @@
     "feed": "^4.2.2",
     "nuxt": "^3.10.1",
     "nuxt-icon": "^0.6.8",
+    "nuxt-og-image": "3.0.3",
     "remark-reading-time": "^2.0.1",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "unenv": "1.10.0"
   },
   "packageManager": "pnpm@8.10.5",
+  
   "dependencies": {
     "@aherrahul/design-system": "1.2.2",
     "@heroicons/vue": "^2.1.3",

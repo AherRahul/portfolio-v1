@@ -3,18 +3,18 @@ import { onContentNotFound } from '~/utils/content.js';
 
 const { page: npmpackage } = useContent()
 
-useSeoMeta({
-  title: () => npmpackage.value.title,
-  description: () => npmpackage.value.description,  
-  ogTitle: () => npmpackage.value.title,
-  ogDescription: () => npmpackage.value.description,
-})
+// useSeoMeta({
+//   title: () => npmpackage.value.title,
+//   description: () => npmpackage.value.description,  
+//   ogTitle: () => npmpackage.value.title,
+//   ogDescription: () => npmpackage.value.description,
+// })
 
 onContentNotFound(npmpackage)
 
 const requestQuoteLink = computed(() => {
   const prefix = 'mailto:rahulvijayaher@gmail.com?subject=Npm_package collabration request: '
-  const title = npmpackage.value.title
+  const title = npmpackage.value?.title || ''
   const suffix = `&body=Hi Rahul,%0D%0A%0D%0Awe would like to collabrate with you for the ${title} npm_package.%0D%0A%0D%0A
 
   Desired/Possible time for contribution per week: %0D%0A
@@ -32,10 +32,12 @@ const requestQuoteLink = computed(() => {
   return prefix + title + suffix
 })
 
-defineOgImageComponent('Npmpackage', {
-  title: npmpackage.value.title,
-  projectGitHubLink: npmpackage.value.projectGitHubLink,
-})
+try {
+  defineOgImageComponent('Npmpackage', {
+    title: npmpackage.value.title,
+    projectGitHubLink: npmpackage.value.projectGitHubLink,
+  })
+} catch {}
 
 </script>
 
@@ -48,9 +50,9 @@ defineOgImageComponent('Npmpackage', {
         {{ npmpackage.title }}
       </AppParagraph>
       <NpmpackageDetails 
-        :projectGitHubLink="npmpackage.projectGitHubLink"
-        :nodePackageLink="npmpackage.nodePackageLink"
-        :projectDemoLink="npmpackage.projectDemoLink"
+        :projectGitHubLink="npmpackage?.projectGitHubLink"
+        :nodePackageLink="npmpackage?.nodePackageLink"
+        :projectDemoLink="npmpackage?.projectDemoLink"
         class="mt-8 space-y-2 md:space-y-0 md:flex gap-8"
       />
     </AppSection>

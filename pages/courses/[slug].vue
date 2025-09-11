@@ -3,12 +3,12 @@ import { onContentNotFound } from '~/utils/content.js';
 
 const { page: course } = useContent();
 
-useSeoMeta({
-  title: () => course.value.title,
-  description: () => course.value.description,
-  ogTitle: () => course.value.title,
-  ogDescription: () => course.value.description,
-});
+// useSeoMeta({
+//   title: () => course.value.title,
+//   description: () => course.value.description,
+//   ogTitle: () => course.value.title,
+//   ogDescription: () => course.value.description,
+// });
 
 onContentNotFound(course);
 
@@ -21,7 +21,7 @@ defineOgImageComponent('Course', {
 </script>
 
 <template>
-  <div cla>
+  <div>
     <!-- Hero Section -->
     <AppSection class="bg-gradient-to-b from-black to-zinc-900 text-white pb-12">
       <div class="container mx-auto">
@@ -48,7 +48,7 @@ defineOgImageComponent('Course', {
         <h2 class="text-3xl font-semibold mb-6">Course Content</h2>
         <div>
           <div
-            v-for="(module, index) in course.content"
+            v-for="(module, index) in (course.content || [])"
             :key="module.id"
             class="bg-zinc-800  shadow-md p-6 mb-4 transition-all hover:shadow-lg border-l-4 border-red-500"
           >
@@ -58,7 +58,7 @@ defineOgImageComponent('Course', {
             >
               <div class="mt-4">
                 <div
-                  v-for="(lecture, l_index) in module.topics"
+                  v-for="(lecture, l_index) in (module.topics || [])"
                   :key="lecture.id"
                   class="md:grid md:grid-cols-2 gap-8 bg-zinc-700 p-4 mt-4"
                 >
@@ -90,7 +90,7 @@ defineOgImageComponent('Course', {
                     </p>
                     <ul class="flex flex-wrap gap-2 mt-2 md:flex-row gap-5">
                       <li
-                        v-for="topic in lecture.topics.slice(0, 3)"
+                        v-for="topic in (lecture.topics || []).slice(0, 3)"
                         :key="topic"
                         class="bg-zinc-800 text-sm px-3 py-1 rounded-md border border-gray-700"
                       >

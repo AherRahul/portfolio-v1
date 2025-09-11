@@ -291,7 +291,7 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
                                   title="Responsibility"
                                   style="color: white;"
                                 >
-                                  <p data-v-1e303c13="" class="rds-timeline-item__text"> 
+                                  <div data-v-1e303c13="" class="rds-timeline-item__text"> 
                                     <ul>
                                       <li>Creating REST APIs with Spring MVC, Hibernate, and JPA, ensuring compliance with coding standards and best practices.</li>
                                       <li>Implementing Microservices architecture to enhance modularity, scalability, and performance.</li>
@@ -300,7 +300,7 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
                                       <li>Orchestrating legacy project migrations to Vue.js for modernized user interfaces and improved functionality.</li>
                                       <li>Enforcing security measures against SQL Injection and XSS vulnerabilities to protect data and application integrity.</li>
                                     </ul>
-                                  </p>
+                                  </div>
                                 </rds-collapsible-container>
                               </div>
                             </div>
@@ -318,7 +318,7 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
                                   title="Responsibility"
                                   style="color: white;"
                                 >
-                                  <p data-v-1e303c13="" class="rds-timeline-item__text"> 
+                                  <div data-v-1e303c13="" class="rds-timeline-item__text"> 
                                     <ul>
                                       <li>Improved product stability and scalability through autoscaling and worker optimization.</li>
                                       <li>Enhanced development efficiency with a generic pipeline for Java applications.</li>
@@ -326,7 +326,7 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
                                       <li>Successfully migrated critical infrastructure and data with zero downtime.</li>
                                       <li>Effectively led team through major production incidents and proposed innovative solutions.</li>
                                     </ul>
-                                  </p>
+                                  </div>
                                 </rds-collapsible-container>
                               </div>
                             </div>
@@ -359,7 +359,7 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
                                   title="Responsibility"
                                   style="color: white;"
                                 >
-                                  <p data-v-1e303c13="" class="rds-timeline-item__text"> 
+                                  <div data-v-1e303c13="" class="rds-timeline-item__text"> 
                                     <ul>
                                       <li>Honed skills in essential technologies and methodologies as an associate developer.</li>
                                       <li>Deep understanding of SQL for designing efficient databases and data-driven applications.</li>
@@ -367,7 +367,7 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
                                       <li>Expertise in front-end technologies (Angular, HTML5, CSS) for building user-friendly, responsive interfaces.</li>
                                       <li>Experienced in client requirements gathering to meet client needs effectively.</li>
                                     </ul>
-                                  </p>
+                                  </div>
                                 </rds-collapsible-container>
                                 
                               </div>
@@ -386,13 +386,13 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
                                   title="Responsibility"
                                   style="color: white;"
                                 >
-                                  <p data-v-1e303c13="" class="rds-timeline-item__text"> 
+                                  <div data-v-1e303c13="" class="rds-timeline-item__text"> 
                                     <ul>
                                       <li>Full Stack Developer skilled in Java, Angular, Node.js, and AWS services.</li>
                                       <li>Track record of delivering standardized code for products and applications, blending technical and business knowledge.</li>
                                       <li>Experienced in building complex, time-critical applications from scratch using Agile methodologies and resolving critical production bugs.</li>
                                     </ul>
-                                  </p>
+                                  </div>
                                 </rds-collapsible-container>
                               </div>
                             </div>
@@ -425,7 +425,7 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
                                   title="Responsibility"
                                   style="color: white;"
                                 >
-                                  <p data-v-1e303c13="" class="rds-timeline-item__text" style="margin-bottom: 0px !important;"> 
+                                  <div data-v-1e303c13="" class="rds-timeline-item__text" style="margin-bottom: 0px !important;"> 
                                     <ul>
                                       <li>Capturing and structuring data to create product content for e-commerce organizations.</li>
                                       <li>Upon request or as specified by Supervisor, update client on project deliverables and schedules.</li>
@@ -433,7 +433,7 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
                                       <li>Prioritize project tasks and seek assistance from Supervisor as applicable.</li>
                                       <li>As part of the Tata Cliq electronics category, handle product data and manage the inventories of products.</li>
                                     </ul>
-                                  </p>
+                                  </div>
                                 </rds-collapsible-container>
                               </div>
                             </div>
@@ -462,7 +462,7 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
                               title="Objective"
                               style="color: white;"
                             >
-                              <p data-v-1e303c13="" class="rds-timeline-item__text"> 
+                              <div data-v-1e303c13="" class="rds-timeline-item__text"> 
                                 I am currently pursuing a Master of Science in Software Engineering at Scaler. This advanced program is designed to 
                                 deepen my understanding of software development principles, enhance my technical skills, and prepare me for leadership
                                   roles in the tech industry. Throughout my coursework, I am engaging with cutting-edge technologies and methodologies,
@@ -474,7 +474,7 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
                                     <li>High-Level and Low-Level Design: Gaining expertise in robust system design at both high and detailed levels.</li>
                                     <li>Cloud Computing and DevOps: Understanding cloud infrastructure, deployment strategies, and CI/CD pipelines.</li>
                                   </ul>
-                              </p>
+                              </div>
                             </rds-collapsible-container>
                           </div>
                         </div>
@@ -496,7 +496,7 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
                               title="Objective"
                               style="color: white;"
                             >
-                              <p data-v-1e303c13="" class="rds-timeline-item__text"> 
+                              <div data-v-1e303c13="" class="rds-timeline-item__text"> 
                                 PG-DAC is the most popular PG Diploma course of C-DAC. The course is targeted towards Engineering Graduates and MCA/MSc 
                                 who wish to venture into the domain of advanced computing. The course aims to groom the students to enable them to work 
                                 on current technology scenarios as well as prepare them to keep pace with the changing face of technology and the requirements 
@@ -511,7 +511,7 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
                                     with Servlets, JSPs, and databases in J2EE applications.</li>
                                   <li>Understand .NET architecture, and develop and maintain applications within this framework.</li>
                                 </ul>
-                              </p>
+                              </div>
                             </rds-collapsible-container>
                           </div>
                         </div>
@@ -533,7 +533,7 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
                               title="Objective"
                               style="color: white;"
                             >
-                              <p data-v-1e303c13="" class="rds-timeline-item__text"> 
+                              <div data-v-1e303c13="" class="rds-timeline-item__text"> 
                                 PG-DAC is the most popular PG Diploma course of C-DAC. The course is targeted towards Engineering Graduates and MCA/MSc 
                                 who wish to venture into the domain of advanced computing. The course aims to groom the students to enable them to work 
                                 on current technology scenarios as well as prepare them to keep pace with the changing face of technology and the requirements 
@@ -548,7 +548,7 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
                                     with Servlets, JSPs, and databases in J2EE applications.</li>
                                   <li>Understand .NET architecture, and develop and maintain applications within this framework.</li>
                                 </ul>
-                              </p>
+                              </div>
                             </rds-collapsible-container>
                           </div>
                         </div>

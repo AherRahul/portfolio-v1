@@ -22,7 +22,7 @@ console.log(query);
 </script>
 <template>
   <AppSection>
-    <AppLinkBack class="mt-16" to="/services/">Go back to services</AppLinkBack>
+    <!-- <AppLinkBack class="mt-16" to="/services/">Go back to services</AppLinkBack> -->
     <ParagraphDecoration class="mt-2" />
     <AppParagraph class="mt-1"  tag="h1" look="heading">Courses</AppParagraph>
     <AppParagraph class="max-w-3xl mt-8" look="subParagraph">

@@ -8,10 +8,10 @@ const { page: article, next, prev } = useContent()
 onContentNotFound(article)
 
 // TODO: Do we need this here?
-useSeoMeta({
-  title: () => article.value.title,
-  description: () => article.value.description,
-})
+// useSeoMeta({
+//   title: () => article.value.title,
+//   description: () => article.value.description,
+// })
 
 useSchemaOrg([
   defineArticle({

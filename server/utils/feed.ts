@@ -27,10 +27,16 @@ export async function generateBlogFeed(event: H3Event) {
     if (post._path === '/articles')
       continue
     // this will return the SSR content of the post
-    const content = await $fetch<string>(`${post._path}/`)
+    let content = ''
+    try {
+      content = await $fetch<string>(`${post._path}/`)
+    } catch (_) {
+      // Skip posts that fail to fetch during prerender
+      continue
+    }
     let $ = cheerio.load(content)
-    const prose = $('.prose').html()
-    $ = cheerio.load(prose!)
+    const prose = $('.prose').html() || ''
+    $ = cheerio.load(prose)
     // remove all attributes from all elements
     $('*').each(function () {
       // @ts-ignore

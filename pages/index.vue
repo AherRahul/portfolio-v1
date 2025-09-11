@@ -138,7 +138,7 @@ const { data: courses } = useAsyncData('latest-courses', () => queryContent('/co
 
     <AppSection class="my-32" style="margin-bottom: 4.5rem;" >
       <div class="flex flex-col gap-16 md:gap-8 md:flex-row justify-around ">
-        <LazyServicePreview class="max-w-xl bg-zinc-900 p-8" icon="eos-icons:machine-learning-outlined" title="Learn" to="/learning">
+        <LazyServicePreview class="max-w-xl bg-zinc-900 p-8" icon="eos-icons:machine-learning-outlined" title="Learn" to="/courses">
           I'm passionate about continuous learning and believe in the value of hands-on experience. I actively 
           learn new concepts, ensuring a deeper understanding of each topic. This proactive approach fuels my 
           growth mindset and fosters ongoing professional development.
@@ -157,7 +157,7 @@ const { data: courses } = useAsyncData('latest-courses', () => queryContent('/co
       <ContentDivider class="mt-32" anchor="left" />
     </AppSection>
 
-    <AppSection class="bg-zinc-900">
+    <!-- <AppSection class="bg-zinc-900">
       <LazyParagraphDecoration class="mt-16" />
       <AppParagraph class="mr-8 mt-4" tag="h2" look="heading">
         Concepts - Learning
@@ -177,9 +177,29 @@ const { data: courses } = useAsyncData('latest-courses', () => queryContent('/co
         <AppButton to="/learning/" look="secondary">View all Learning's</AppButton>
       </div>
       <ContentDivider class="mt-14" />
+    </AppSection> -->
+
+    <AppSection class="bg-zinc-900" style="padding-top: 2.5rem;">
+      <LazyParagraphDecoration />
+      <AppParagraph class="mr-8 mt-4" tag="h2" look="heading">
+        Courses - Learning
+      </AppParagraph>
+      <div class="flex flex-col gap-8 md:gap-0 md:flex-row justify-between">
+        <AppParagraph look="subParagraph" class="mt-8 max-w-xl">
+          <span style="font-style: italic;">“Offline-first is not just a feature, it’s a mindset. It’s about 
+            building resilient systems that empower users, no matter their connection status.”</span> — Akshat Paul
+         </AppParagraph>
+        <div>
+          <AppButton to="/courses/" look="secondary">Discover all courses</AppButton>
+        </div>
+      </div>
+      <div class="flex flex-col space-y-8 mt-8">
+        <LazyCoursePreview class="flex-1" v-for="course in courses"  :course="course" />
+      </div> 
+      <ContentDivider anchor="right" class="mt-14" />
     </AppSection>
 
-    <AppSection style="padding-top: 2.5rem;">
+    <AppSection  style="padding-top: 2.5rem;">
       <LazyParagraphDecoration />
       <AppParagraph class="mr-8 mt-4" tag="h2" look="heading">
         Projects - Building
@@ -222,26 +242,6 @@ const { data: courses } = useAsyncData('latest-courses', () => queryContent('/co
       </div>
       
       <ContentDivider anchor="right" class="mt-14" />
-    </AppSection>
-
-    <AppSection style="padding-top: 2.5rem;">
-      <LazyParagraphDecoration />
-      <AppParagraph class="mr-8 mt-4" tag="h2" look="heading">
-        Courses
-      </AppParagraph>
-      <div class="flex flex-col gap-8 md:gap-0 md:flex-row justify-between">
-        <AppParagraph look="subParagraph" class="mt-8 max-w-xl">
-          <span style="font-style: italic;">“Offline-first is not just a feature, it’s a mindset. It’s about 
-            building resilient systems that empower users, no matter their connection status.”</span> — Akshat Paul
-         </AppParagraph>
-        <div>
-          <AppButton to="/courses/" look="secondary">Discover all courses</AppButton>
-        </div>
-      </div>
-      <div class="flex flex-col space-y-8 mt-8">
-        <LazyCoursePreview class="flex-1" v-for="course in courses"  :course="course" />
-      </div> 
-      <ContentDivider anchor="left" class="mt-14" />
     </AppSection>
    
   </div>

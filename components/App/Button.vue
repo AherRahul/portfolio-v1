@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { computed, resolveComponent } from 'vue';
 import type { RouteRecordRaw } from 'vue-router';
 
 const STYLES = {

@@ -3,22 +3,24 @@ import { onContentNotFound } from '~/utils/content.js';
 
 const { page: project } = useContent()
 
-useSeoMeta({
-  title: () => project.value.title,
-  description: () => project.value.description,  
-  ogTitle: () => project.value.title,
-  ogDescription: () => project.value.description,
-})
+// useSeoMeta({
+//   title: () => project.value.title,
+//   description: () => project.value.description,  
+//   ogTitle: () => project.value.title,
+//   ogDescription: () => project.value.description,
+// })
 
 onContentNotFound(project)
 
-defineOgImageComponent('Project', {
-  title: project.value.title,
-  time: project.value.time,
-  attendees: project.value.attendees ?? 20,
-  languages: project.value.languages ?? ['English'],
-  projectGitHubLink: project.value.projectGitHubLink,
-})
+try {
+  defineOgImageComponent('Project', {
+    title: project.value.title,
+    time: project.value.time,
+    attendees: project.value.attendees ?? 20,
+    languages: project.value.languages ?? ['English'],
+    projectGitHubLink: project.value.projectGitHubLink,
+  })
+} catch {}
 
 </script>
 
@@ -31,10 +33,10 @@ defineOgImageComponent('Project', {
         {{ project.title }}
       </AppParagraph>
       <ProjectDetails 
-        :time="project.time"
-        :projectGitHubLink="project.projectGitHubLink"
-        :nodePackageLink="project.nodePackageLink"
-        :projectDemoLink="project.projectDemoLink"
+        :time="project?.time"
+        :projectGitHubLink="project?.projectGitHubLink"
+        :nodePackageLink="project?.nodePackageLink"
+        :projectDemoLink="project?.projectDemoLink"
         class="mt-8 space-y-2 md:space-y-0 md:flex gap-8"
       />
     </AppSection>
