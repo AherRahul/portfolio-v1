@@ -58,7 +58,8 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     'nuxt-icon',
     '@nuxt/content',
-    'nuxt-og-image',
+    // Temporarily disable OG image module to fix build issues
+    // 'nuxt-og-image',
     '@nuxtjs/seo',
     '@nuxt/image',
     '@nuxtjs/plausible',
@@ -69,7 +70,8 @@ export default defineNuxtConfig({
       routes: [
         '/feed.xml',
         ...discoverContentRoutes(['articles', 'projects', 'courses', 'npmpackages']),
-        ...discoverOgImageRoutes(),
+        // Temporarily disable OG image generation to fix build issues
+        // ...discoverOgImageRoutes(),
       ],
       failOnError: false,
       ignore: []
