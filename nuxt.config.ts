@@ -41,7 +41,7 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     // Server-side environment variables
-    anthropicApiKey: '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',
+    anthropicApiKey: process.env.ANTHROPIC_API_KEY,
     public: {
       site: {
         url: 'https://rahulaher.netlify.app',
