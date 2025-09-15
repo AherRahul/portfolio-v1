@@ -12,7 +12,7 @@ topics:
 ---
 
 
-![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1743855998/Portfolio/nodeJsCourse/9_h2ypok.png)
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1757930709/Portfolio/nodeJsCourse/9.png)
 
 As we know, Node.js has two main parts, like the duo Jai and Veeru: the V8 engine and **libuv**. Let’s take a closer look at **libuv**. Just like the V8 engine has its hidden parts, you can learn more about it by [clicking here.](https://heyashu.in/digital-garden/notes/namaste-node-js/e-8-deep-dive-into-v8-js-engine) Now, let’s focus on **libuv**. Whenever V8 (Jai) can’t handle something—like file access, network calls, or timers—it gives the task to **libuv**. Also, when these tasks run, we often use callback functions, which are executed after **libuv** finishes the job.
 

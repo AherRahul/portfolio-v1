@@ -12,7 +12,7 @@ topics:
 ---
 
 
-![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1743856065/Portfolio/nodeJsCourse/8_rletjy.png)
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1757930704/Portfolio/nodeJsCourse/8.png)
 
 
 Now, let's focus on one of Node.js's best friends, the V8 Engine. It takes the code and runs it. Before doing anything, I just want you to read this carefully.

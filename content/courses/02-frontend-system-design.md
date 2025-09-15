@@ -13,7 +13,7 @@ content:
     module_duration: "40 mins read"
     topics_count: 5
     tutor: 1
-    expanded: true
+    expanded: false
     topics:
       - id: 1
         topic_name: How the Web Works

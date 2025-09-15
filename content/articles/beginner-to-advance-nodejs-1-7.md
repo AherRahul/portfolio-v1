@@ -12,7 +12,7 @@ topics:
 ---
 
 
-![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1743856062/Portfolio/nodeJsCourse/7_tpf9q8.png)
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1757930704/Portfolio/nodeJsCourse/7.png)
 
 
 In the last few sessions, we have seen how Node.js code runs. If something is synchronous, the V8 engine handles it, or in case of asynchronous tasks, libUV steps in. You can think of Node.js having two best friends, like Jai and Veeru. Whenever a problem (or code) comes in, they handle it accordingly.

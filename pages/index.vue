@@ -39,7 +39,9 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
 
 const { data: courses } = useAsyncData('latest-courses', () => queryContent('/courses/').sort({
   onStartPage: 1
-}).without(['body', 'excerpt']).limit(3).find())
+}).without(['body', 'excerpt']).limit(4).find())
+
+const latestArticles = computed<ArticlePreview[]>(() => (articles.value as unknown as ArticlePreview[]) ?? [])
 </script>
 
 <template>
@@ -193,9 +195,9 @@ const { data: courses } = useAsyncData('latest-courses', () => queryContent('/co
           <AppButton to="/courses/" look="secondary">Discover all courses</AppButton>
         </div>
       </div>
-      <div class="flex flex-col space-y-8 mt-8">
+      <div class="grid md:grid-cols-2 gap-12 mt-8">
         <LazyCoursePreview class="flex-1" v-for="course in courses"  :course="course" />
-      </div> 
+      </div>
       <ContentDivider anchor="right" class="mt-14" />
     </AppSection>
 
@@ -235,7 +237,7 @@ const { data: courses } = useAsyncData('latest-courses', () => queryContent('/co
         </div>
       </div>
       <div class="grid md:grid-cols-2 gap-12 justify-around mt-8">
-        <LazyArticlePreview v-for="article in articles" :key="article._id" :article="article" />
+        <LazyArticlePreview v-for="article in latestArticles" :key="article._id" :article="article" />
       </div>
       <div class="flex md:justify-end mt-8">
         <AppButton to="/articles" look="secondary" secondary-after-bg="bg-zinc-900">View all articles</AppButton>

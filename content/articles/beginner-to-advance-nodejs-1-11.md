@@ -12,7 +12,7 @@ topics:
 ---
 
 
-![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1743856073/Portfolio/nodeJsCourse/11_rvj12a.png)
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1757930710/Portfolio/nodeJsCourse/11.png)
 
 We covered a lot of theory, investigating Node.js from its beginnings to 2025, and now it’s time to take action. But be patient — we'll start with some theory to set the context of what a server is, and then write something. Today, your VS Code or code editor won’t be alone. Node.js will be part of your code base, and we will write something. So, what are we waiting for? Let's begin! We'll read about servers, what development means, what a proxy server is, and what DNS is. Then, we’ll create a server
 

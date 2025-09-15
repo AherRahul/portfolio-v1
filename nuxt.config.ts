@@ -40,6 +40,8 @@ export default defineNuxtConfig({
     '/timeline/': { redirect: { to: '/about/', statusCode: 301 } },
   },
   runtimeConfig: {
+    // Server-side environment variables
+    anthropicApiKey: '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',
     public: {
       site: {
         url: 'https://rahulaher.netlify.app',
@@ -102,6 +104,11 @@ export default defineNuxtConfig({
         'rehype-external-links': false
       }
     },
+    // Enable global components
+    components: {
+      global: true,
+      dirs: ['~/components/content']
+    }
   },
 
   tailwindcss: {

@@ -12,7 +12,7 @@ content:
     module_duration: "40 mins"
     topics_count: 3
     tutor: 1
-    expanded: true
+    expanded: false
     topics:
       - id: 1
         topic_name: What is System Design?

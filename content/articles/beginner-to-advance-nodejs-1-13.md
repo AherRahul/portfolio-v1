@@ -12,7 +12,7 @@ topics:
 ---
 
 
-![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1743856078/Portfolio/nodeJsCourse/13_mowzmg.png)
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1757930710/Portfolio/nodeJsCourse/13.png)
 
 
 Okay, it’s time to create a database. Go to the database website by clicking here. There are two ways to install the database:
