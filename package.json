@@ -9,8 +9,7 @@
     "dev": "nuxt dev",
     "build": "nuxt build",
     "generate": "nuxt generate",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "postinstall": "nuxt prepare"
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
   },
   "devDependencies": {
     "@headlessui/vue": "^1.7.19",
