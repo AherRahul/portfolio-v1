@@ -94,6 +94,7 @@ Requirements:
 Important: Return ONLY the JSON object, no additional text or formatting.
 `
 
+    console.log('Making API call to Anthropic...')
     const message = await anthropic.messages.create({
       model: 'claude-3-haiku-20240307',
       max_tokens: 3000,
@@ -103,6 +104,7 @@ Important: Return ONLY the JSON object, no additional text or formatting.
         content: prompt
       }]
     })
+    console.log('API call successful, processing response...')
 
     const responseText = message.content[0].type === 'text' ? message.content[0].text : ''
     
@@ -161,11 +163,28 @@ Important: Return ONLY the JSON object, no additional text or formatting.
     console.error('Error details:', {
       message: error.message,
       stack: error.stack,
-      name: error.name
+      name: error.name,
+      status: error.status,
+      statusCode: error.statusCode
     })
     
-    // Check if it's an API key issue
-    if (error.message?.includes('authentication') || error.message?.includes('API key')) {
+    // Handle specific Anthropic API errors
+    if (error.status === 400) {
+      return {
+        statusCode: 400,
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*'
+        },
+        body: JSON.stringify({ 
+          message: 'Bad request to Anthropic API',
+          error: error.message,
+          details: 'The request format or content may be invalid'
+        })
+      }
+    }
+    
+    if (error.status === 401 || error.message?.includes('authentication') || error.message?.includes('API key')) {
       return {
         statusCode: 500,
         headers: {
@@ -173,7 +192,21 @@ Important: Return ONLY the JSON object, no additional text or formatting.
           'Access-Control-Allow-Origin': '*'
         },
         body: JSON.stringify({ 
-          message: 'Authentication failed - please check API key configuration',
+          message: 'Authentication failed - API key may be invalid',
+          error: error.message 
+        })
+      }
+    }
+    
+    if (error.status === 429) {
+      return {
+        statusCode: 429,
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*'
+        },
+        body: JSON.stringify({ 
+          message: 'Rate limit exceeded - please try again later',
           error: error.message 
         })
       }
@@ -188,7 +221,9 @@ Important: Return ONLY the JSON object, no additional text or formatting.
       body: JSON.stringify({ 
         message: 'Failed to generate summary',
         error: error.message,
-        hasApiKey: !!process.env.ANTHROPIC_API_KEY
+        errorType: error.name,
+        hasApiKey: !!process.env.ANTHROPIC_API_KEY,
+        anthropicStatus: error.status || 'unknown'
       })
     }
   }
