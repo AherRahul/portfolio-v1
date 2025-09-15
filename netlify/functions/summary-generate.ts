@@ -158,6 +158,26 @@ Important: Return ONLY the JSON object, no additional text or formatting.
 
   } catch (error: any) {
     console.error('Summary generation error:', error)
+    console.error('Error details:', {
+      message: error.message,
+      stack: error.stack,
+      name: error.name
+    })
+    
+    // Check if it's an API key issue
+    if (error.message?.includes('authentication') || error.message?.includes('API key')) {
+      return {
+        statusCode: 500,
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*'
+        },
+        body: JSON.stringify({ 
+          message: 'Authentication failed - please check API key configuration',
+          error: error.message 
+        })
+      }
+    }
     
     return {
       statusCode: 500,
@@ -165,7 +185,11 @@ Important: Return ONLY the JSON object, no additional text or formatting.
         'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': '*'
       },
-      body: JSON.stringify({ message: 'Failed to generate summary' })
+      body: JSON.stringify({ 
+        message: 'Failed to generate summary',
+        error: error.message,
+        hasApiKey: !!process.env.ANTHROPIC_API_KEY
+      })
     }
   }
 }
