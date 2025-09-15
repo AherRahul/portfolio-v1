@@ -12,7 +12,7 @@ topics:
 ---
 
 
-![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1743856057/Portfolio/nodeJsCourse/6_luk27f.png)
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1757930703/Portfolio/nodeJsCourse/6.png)
 
 If you read Node.js's definition, it mentions an event-driven architecture and its ability to handle asynchronous I/O. These two concepts are crucial to understand, so take your time to read and grasp them thoroughly. We know JavaScript is a synchronous, single-threaded language, meaning the code runs in one direction like a one-way road, with one task executing at a time. JavaScript code executes line by line, which is what makes it synchronous and single-threaded.
 

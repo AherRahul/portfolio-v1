@@ -18,7 +18,7 @@ const props = withDefaults(defineProps<{
     <p>
       <NuxtLink v-if="projectDemoLink" :to="projectDemoLink" class="group" target="_blank">
         <Icon class="text-2xl mr-2" name="oui:documentation" /> <span
-          class="underline group-hover:no-underline">Documentaion</span>
+          class="underline group-hover:no-underline">Documentation</span>
       </NuxtLink>
     </p>
     <p>

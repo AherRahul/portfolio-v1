@@ -13,7 +13,7 @@ topics:
 ---
 
 
-![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1743855306/Portfolio/nodeJsCourse/2_tt100i.png)
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1757930701/Portfolio/nodeJsCourse/2_zzsbpy.png)
 
 As we know now JS can also run outside of browsers on server.
 

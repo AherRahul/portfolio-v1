@@ -12,7 +12,7 @@ content:
     module_name: Introduction
     module_duration: 10 mins
     topics_count: 2
-    expanded: true
+    expanded: false
     tutor: 1
     topics:
       - id: 1

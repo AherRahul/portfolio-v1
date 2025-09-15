@@ -1,9 +1,13 @@
 <script setup lang="ts">
-import type { ParsedContent } from '@nuxt/content/dist/runtime/types/index.js';
+// Using loose typing to avoid build-time type resolution issues in dev
+type ParsedContent = any;
 import { joinURL } from 'ufo'
 import { onContentNotFound } from '~/utils/content.js';
+import { parseResourcesFromContent } from '~/utils/resources';
 
 const { page: article, next, prev } = useContent()
+const router = useRouter()
+import { queryContent } from '#imports'
 
 onContentNotFound(article)
 
@@ -74,13 +78,107 @@ defineOgImageComponent('Article', {
   readingTime: article.value.readingTime.text,
   datePublished: formattedUpdateAt.value
 })
+
+// --- Course-aware navigation (only when article belongs to a course) ---
+const isCourseArticle = computed(() => !article.value.showOnArticles && Boolean(article.value.courseName))
+
+const courseDoc = ref<any | null>(null)
+
+watchEffect(async () => {
+  if (!isCourseArticle.value) {
+    courseDoc.value = null
+    return
+  }
+  const slug = String(article.value.courseName || '')
+  if (!slug) return
+  const doc = await queryContent('/courses').where({ _path: `/courses/${slug}` }).findOne()
+  courseDoc.value = doc
+})
+
+const courseLectures = computed(() => {
+  const arr: any[] = []
+  const modules: any[] = courseDoc.value?.content || []
+  modules.forEach((mod: any) => {
+    (mod.topics || []).forEach((lec: any) => {
+      arr.push({ ...lec, module_name: mod.module_name })
+    })
+  })
+  return arr
+})
+
+const currentLectureIndex = computed(() => {
+  const slug = String(article.value._path || '').split('/').pop()
+  return courseLectures.value.findIndex(l => String(l._path) === slug)
+})
+
+const currentLecture = computed(() => courseLectures.value[currentLectureIndex.value])
+const prevLecture = computed(() => courseLectures.value[currentLectureIndex.value - 1])
+const nextLecture = computed(() => courseLectures.value[currentLectureIndex.value + 1])
+
+function markComplete() {
+  if (!courseDoc.value?.title || !currentLecture.value?.id) return
+  const key = `course-${courseDoc.value.title}-progress`
+  let map: Record<string, boolean> = {}
+  try { map = JSON.parse(localStorage.getItem(key) || '{}') } catch {}
+  map[String(currentLecture.value.id)] = true
+  try { localStorage.setItem(key, JSON.stringify(map)) } catch {}
+}
+
+function goToNextTopic() {
+  const n = nextLecture.value
+  if (!n) return
+  markComplete()
+  router.push(`/articles/${n._path}`)
+}
+
+function goToPrevTopic() {
+  const p = prevLecture.value
+  if (!p) return
+  router.push(`/articles/${p._path}`)
+}
+
+// Helpful booleans to disable/hide navigation at bounds
+const isFirstTopic = computed(() => currentLectureIndex.value <= 0)
+const isLastTopic = computed(() => courseLectures.value.length ? currentLectureIndex.value >= courseLectures.value.length - 1 : false)
+
+// Content extraction functions for tabs
+function extractContentText(body: any): string {
+  if (!body?.children) return ''
+  
+  function extractText(node: any): string {
+    if (typeof node === 'string') return node
+    if (node.value) return node.value
+    if (node.children) {
+      return node.children.map(extractText).join('')
+    }
+    return ''
+  }
+  
+  return body.children.map(extractText).join('\n')
+}
+
+function extractResources(body: any): any[] {
+  const contentText = extractContentText(body)
+  return parseResourcesFromContent(contentText)
+}
 </script>
 <template>
   <div>
-    <AppSection class="bg-gradient-to-b from-black to-zinc-900 !pb-4">
+    <AppSection class="bg-gradient-to-b from-black to-zinc-900 !pb-4">  
       <AppLinkBack v-if="!article.showOnArticles" :to="`/courses/${article.courseName}`">Back to course</AppLinkBack>
       <AppLinkBack v-else to="/articles/">All articles</AppLinkBack>
       <ParagraphDecoration class="mt-4" />
+
+      <!-- Course navigation (top) -->
+      <div v-if="isCourseArticle && courseLectures.length" class="flex items-center justify-between mb-8 mt-8">
+        <AppButton look="secondary" :disabled="isFirstTopic" @click="goToPrevTopic">
+          <Icon name="heroicons:chevron-left" class="mr-1"/> Previous topic
+        </AppButton>
+        <AppButton :disabled="isLastTopic" @click="goToNextTopic">
+          Next topic <Icon name="heroicons:chevron-right" class="ml-1"/>
+        </AppButton>
+      </div>
+
       <AppParagraph class="mt-4" look="heading" tag="h1">
         {{ article.title }}
       </AppParagraph>
@@ -102,10 +200,23 @@ defineOgImageComponent('Article', {
       </div>
     </AppSection>
     <AppSection class="justify-center bg-zinc-900 pb-8">
-      <div>
+      <!-- Enhanced Course Tabs for course articles OR regular content for standalone articles -->
+      <div v-if="isCourseArticle">
+        <LazyCourseTabsContainer 
+          :topic-title="article.title || 'Course Topic'"
+          :content="extractContentText(article.body)"
+          :resources="extractResources(article.body)"
+          :difficulty="'medium'"
+          :is-older-than-one-year="isOlderThanOneYear"
+        />
+      </div>
+      
+      <!-- Regular article content for standalone articles -->
+      <div v-else>
         <ArticleAgeWarning v-if="isOlderThanOneYear" />
         <ContentDoc class="prose md:prose-lg lg:prose-xl" :class="isOlderThanOneYear ? 'pt-8' : 'pt-4'" />
       </div>
+
       <div class="mt-16 md:mt-32">
         <div class="flex flex-col md:flex-row justify-between items-center gap-y-2 md:gap-0 mt-2">
           <div class="order-1">
@@ -138,6 +249,17 @@ defineOgImageComponent('Article', {
           </div>
         </div>
       </div>
+      
+      <!-- Course navigation (bottom) -->
+      <div v-if="isCourseArticle && courseLectures.length" class="flex items-center justify-between mt-8 mb-8">
+        <AppButton look="secondary" :disabled="!prevLecture" @click="goToPrevTopic">
+          <Icon name="heroicons:chevron-left" class="mr-1"/> Previous topic
+        </AppButton>
+        <AppButton :disabled="!nextLecture" @click="goToNextTopic">
+          Next topic <Icon name="heroicons:chevron-right" class="ml-1"/>
+        </AppButton>
+      </div>
+
       <div
         class="flex flex-col md:flex-row gap-8 justify-center md:justify-start items-center mt-4 pt-8 md:pt-16 border-t border-t-gray-500/50">
         <div class="shrink-0">
@@ -154,11 +276,14 @@ defineOgImageComponent('Article', {
         </div>
       </div>
     </AppSection>
+    
     <AppSection>
-      <div class="flex flex-col gap-8 justify-between mt-16 md:flex-row md:gap-32 md:mt-24">
-        <LazyArticlePreview v-if="isArticle(prev)" :article="prev" />
-        <LazyArticlePreview v-if="isArticle(next)" :article="next" />
+      <div v-if="isCourseArticle && courseLectures.length" class="flex flex-col gap-8 justify-between mt-16 md:flex-row md:gap-32 md:mt-24">
+        <LazyArticlePreview v-if="isArticle(prev)" :article="(prev as any)" />
+        <LazyArticlePreview v-if="isArticle(next)" :article="(next as any)" />
       </div>
     </AppSection>
+
+    
   </div>
 </template>

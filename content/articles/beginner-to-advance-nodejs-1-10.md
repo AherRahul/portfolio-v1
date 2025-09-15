@@ -12,7 +12,7 @@ topics:
 ---
 
 
-![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1743856071/Portfolio/nodeJsCourse/10_h45buj.png)
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1757930716/Portfolio/nodeJsCourse/10.png)
 
 Welcome back! If you haven’t read the previous blog about the two friends, go and check that out first because things are getting more interesting. We’ve received an official FIR against Node.js, and when Node.js faced trouble, it called in its two best friends for help. One of them, V8, was already investigated in our last episode. Now, it’s time to bring in the second friend: **Libuv**.
 

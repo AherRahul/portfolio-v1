@@ -12,7 +12,7 @@ topics:
 
 ---
 
-![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1743856039/Portfolio/nodeJsCourse/3_hl0jqs.png)
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1757930702/Portfolio/nodeJsCourse/3_xveryy.png)
 
 ### Download Node.js
 

@@ -12,7 +12,7 @@ topics:
 ---
 
 
-![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1743856044/Portfolio/nodeJsCourse/4_q5ssbu.png)
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1757930702/Portfolio/nodeJsCourse/4.png)
 
 As you saw in the last episode, we wrote our first line of code in Node.js. Now, we could just keep adding whatever we want to `app.js`, and technically, it would work. But that's not the best way to do things because the file would get cluttered and hard to manage. Instead, we need multiple files. Basically, there should be one main entry file that runs the code, and other files will be connected to it. So, you'll use `require` to include different modules into your main file.
 

@@ -12,7 +12,7 @@ topics:
 ---
 
 
-![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1743856050/Portfolio/nodeJsCourse/5_nqk4a4.png)
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1757930703/Portfolio/nodeJsCourse/5.png)
 
 ### The principle of leave privilege (PoLP)
 

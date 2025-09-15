@@ -12,7 +12,7 @@ topics:
 ---
 
 
-![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1743856076/Portfolio/nodeJsCourse/12_uwfcwo.png)
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1757930709/Portfolio/nodeJsCourse/12.png)
 
 In computer science, a **database** is an organized collection of data, a structured way of collecting and storing information. It is based on the **DBMS** (Database Management System), which means you can create, delete, edit, and retrieve data. The DBMS software manages everything, including the storage.
 

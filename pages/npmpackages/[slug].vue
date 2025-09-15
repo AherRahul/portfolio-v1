@@ -13,7 +13,7 @@ const { page: npmpackage } = useContent()
 onContentNotFound(npmpackage)
 
 const requestQuoteLink = computed(() => {
-  const prefix = 'mailto:rahulvijayaher@gmail.com?subject=Npm_package collabration request: '
+  const prefix = 'mailto:rahulvijayaher@gmail.com?subject=Npm_package collaboration request: '
   const title = npmpackage.value?.title || ''
   const suffix = `&body=Hi Rahul,%0D%0A%0D%0Awe would like to collabrate with you for the ${title} npm_package.%0D%0A%0D%0A
 
