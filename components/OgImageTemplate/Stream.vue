@@ -12,7 +12,7 @@ const bgGradientStyle = {
 <template>
   <div class="p-4 h-full w-full flex justify-center items-center" :style="bgGradientStyle">
     <div class="p-10 bg-zinc-900 h-full w-full"
-      style="background-image: url(https://img.lichter.io/website-og/workshop.png); display: flex; flex-direction: column; justify-content: space-between;">
+      style="display: flex; flex-direction: column; justify-content: space-between;">
       <div class="w-full h-full flex flex-col">
         <h1 class="font-bold text-white text-5xl">
           LIVE NOW - Open Source Launch
