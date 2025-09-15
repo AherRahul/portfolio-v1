@@ -75,8 +75,10 @@ async function generateSummary() {
   summaryLoading.value = true
   summaryError.value = ''
   
+  const { makeApiCall } = useApiEndpoints()
+  
   try {
-    const response = await $fetch('/api/summary/generate', {
+    const response = await makeApiCall('/api/summary/generate', {
       method: 'POST',
       body: {
         content: props.content,
@@ -107,8 +109,10 @@ async function generateQuiz() {
   quizLoading.value = true
   quizError.value = ''
   
+  const { makeApiCall } = useApiEndpoints()
+  
   try {
-    const response = await $fetch('/api/quiz/generate', {
+    const response = await makeApiCall('/api/quiz/generate', {
       method: 'POST',
       body: {
         content: props.content,

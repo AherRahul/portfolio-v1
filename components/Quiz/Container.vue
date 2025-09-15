@@ -79,8 +79,10 @@ async function generateQuiz() {
   isLoading.value = true
   error.value = ''
   
+  const { makeApiCall } = useApiEndpoints()
+  
   try {
-    const response = await $fetch('/api/quiz/generate', {
+    const response = await makeApiCall('/api/quiz/generate', {
       method: 'POST',
       body: {
         content: props.content,

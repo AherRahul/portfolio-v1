@@ -1,12 +1,10 @@
 [build]
   publish = ".output/public"
-  command = "npm install && npm run generate"
-  functions = "netlify/functions"
+  command = "cd netlify/functions && npm install && cd ../../ && npm install && npm run generate"
 
 [build.environment]
   NODE_VERSION = "20"
   NPM_FLAGS = "--legacy-peer-deps"
-  NETLIFY_NEXT_RUNTIME = "nodejs20.x"
 
 [functions]
   directory = "netlify/functions"
