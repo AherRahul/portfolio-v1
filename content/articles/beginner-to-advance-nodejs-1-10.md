@@ -9,12 +9,25 @@ courseName: 01-beginner-to-advance-nodejs
 topics:
   - nodejs
   - javascript
+resources:
+  - title: "Node.js Thread Pool"
+    type: "documentation"
+    url: "https://nodejs.org/en/learn/asynchronous-work/nodejs-worker-threads"
+    description: "Worker threads and when to use them vs libuv threads"
+  - title: "libuv Thread Pool"
+    type: "documentation"
+    url: "https://github.com/libuv/libuv/blob/v1.x/docs/threadpool.rst"
+    description: "How libuv executes filesystem/crypto work off the main thread"
+  - title: "UV_THREADPOOL_SIZE"
+    type: "documentation"
+    url: "https://nodejs.org/api/cli.html#uv_threadpool_size_size"
+    description: "Tuning the libuv thread pool size"
 ---
 
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1757930716/Portfolio/nodeJsCourse/10.png)
 
-Welcome back! If you haven’t read the previous blog about the two friends, go and check that out first because things are getting more interesting. We’ve received an official FIR against Node.js, and when Node.js faced trouble, it called in its two best friends for help. One of them, V8, was already investigated in our last episode. Now, it’s time to bring in the second friend: **Libuv**.
+Welcome back! It’s time to look at libuv’s thread pool. This is the piece that handles “blocking” OS-style work (like crypto and filesystem) away from the single JavaScript thread so your API stays responsive.
 
 Libuv is full of secrets, and this investigation won’t be easy. There are many things we don’t know yet. So, what are we waiting for? Let’s head to the police station and question Libuv until we find the answers. It’s time to close this case for Season 1!
 
@@ -56,17 +69,17 @@ A thread is like a container that runs code. If you want to block it to perform 
 
 Libuv uses multiple threads. For example, if one file system request comes in, it will use one thread, and if another request comes in, it will use another thread. Requests keep coming, and these threads handle them by blocking and processing them as needed.
 
-### Size of Thread Pool (UV Thread Pool)
+### Size of thread pool (UV thread pool)
 
 By default, there are 4 threads in the UV thread pool. But what happens if we make 5 file system calls? It means the first 4 requests will block the 4 threads. Each thread will transfer its task to the OS, and once that task is handled, the thread becomes available again to take on the next request. The 5th request will wait until one of the threads is free and available in the UV thread pool.
 
 ![image.png](https://heyashu.in/images/blogs/threaadpoool.png)
 
-### DNS Lookups / Crypto
+### DNS lookups / Crypto (why they use the pool)
 
 Suppose a request comes for a DNS lookup. A DNS lookup is a heavy task, so it blocks one of the threads in the thread pool. If you request a cryptography task, it also uses the thread pool. Additionally, if anything else comes up that requires C++ code execution, it will also block one of the threads in the pool.
 
-### Is Node.js Single-Threaded?
+### Is Node.js single-threaded?
 
 Come on! If you say Node.js is single-threaded, I’ll have to laugh, haha! Node.js can handle both asynchronous and synchronous code. While it runs JavaScript on a single main thread, it can use multiple threads for other tasks through libuv. So, it depends on what you're doing. You can't define Node.js simply as single or multi-threaded—it’s more flexible than that!
 
@@ -90,7 +103,7 @@ crypto.pbkdf2('password', 'salt', 5000000, 50, "sha512", function(err, key){
 2: CRYPTO PRIVATE KEY DONE
 ```
 
-### Let's See What Happens with 5 Crypto Calls
+### What happens with 5 crypto calls
 
 If you make 5 cryptography calls, one request will be delayed because there are only 4 threads in the pool. The first 4 tasks will run on the available threads, and the 5th one will have to wait until a thread is free. The order of execution is not guaranteed, as the tasks finish based on when threads become available, and that depends on the complexity of each task.
 
@@ -123,7 +136,7 @@ crypto.pbkdf2('password', 'salt', 5000000, 50, "sha512", function(err, key){
 5: CRYPTO PRIVATE KEY DONE
 ```
 
-### Can We Change the Thread Pool Size?
+### Can we change the thread pool size?
 
 The answer is **YES**! You can change the thread pool size by setting the `UV_THREADPOOL_SIZE` at the top of your file like this:
 
@@ -131,13 +144,13 @@ The answer is **YES**! You can change the thread pool size by setting the `UV_TH
 process.env.UV_THREADPOOL_SIZE=2
 ```
 
-### Networking in Node.js (45)
+### Networking in Node.js (not the thread pool)
 
 If a user sends an API request to your server, does that API request use the thread pool? The answer is **no**. API requests use **sockets**. For each incoming connection or API request, a new socket is created, not a thread. Unlike the "thread per connection" model, where each connection would require a new thread, Node.js uses a more efficient model.
 
 Instead of creating a new thread for each request, Node.js uses scalable I/O event notification mechanisms like **epoll** (Linux) or **kqueue** (MacOS) to handle multiple requests at the same time without the need for hundreds of threads. This is what makes Node.js very efficient in handling high numbers of API requests.
 
-### Scalable I/O Event Notification Mechanism (epoll/kqueue)
+### Scalable I/O event notification (epoll/kqueue)
 
 **epoll** (for Linux) and **kqueue** (for MacOS) are algorithms that handle multiple connections efficiently. When multiple connections are made, **epoll** keeps track of all of them. If there is any activity, like data to read or write on a connection, epoll will notify **libuv**. Libuv then triggers the appropriate callback, and V8 runs the callback.
 
@@ -165,6 +178,3 @@ Take care, Good Bye :) [](https://rahulaher.netlify.app/contact/)
 
 
 Thank you so much for reading. If you found it valuable, consider subscribing for more such content every week. If you have any questions or suggestions, please email me your comments or feel free to improve it.
-
-
-- [YouTube Resource (Cloud world)](https://www.youtube.com/embed/K9EFon58_UI?si=95in2rvIl1h6pDxU)

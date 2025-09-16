@@ -9,15 +9,24 @@ courseName: 01-beginner-to-advance-nodejs
 topics:
   - nodejs
   - javascript
+resources:
+  - title: "Timers, setImmediate, and nextTick"
+    type: "documentation"
+    url: "https://nodejs.org/en/learn/asynchronous-work/event-loop-timers-and-nexttick"
+    description: "Official docs comparing timers and microtasks in Node"
+  - title: "Node.js fs module"
+    type: "documentation"
+    url: "https://nodejs.org/api/fs.html"
+    description: "Asynchronous and synchronous file I/O APIs"
 ---
 
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1757930704/Portfolio/nodeJsCourse/7.png)
 
 
-In the last few sessions, we have seen how Node.js code runs. If something is synchronous, the V8 engine handles it, or in case of asynchronous tasks, libUV steps in. You can think of Node.js having two best friends, like Jai and Veeru. Whenever a problem (or code) comes in, they handle it accordingly.
+In the last few sessions, we saw how Node.js code runs. If something is synchronous, the V8 engine handles it; for asynchronous work, libuv steps in. Below is a compact example that mixes sync logs, network I/O, timers, and file reads so you can see the ordering clearly—and then we’ll explain why that order happens.
 
-Now, it’s time to look at a small example to see how these two friends—V8 engine (Jai) and libUV (Veeru)—manage the code.
+Why this example: it shows that synchronous logs and function calls run immediately, while I/O and timers queue callbacks that run later through the event loop.
 
 Create file.txt and write something in it, and then in any JS file for example app.js right whatever I have written below in code block
 
@@ -51,7 +60,7 @@ function kitneAadmiThe(a, b) {
 console.log('Sarkar kul aadmi the ...?', kitneAadmiThe(num1, num2));
 ```
 
-Let's understand what's happening here. In this code, both asynchronous and synchronous operations are present, which means both "Jai" (the V8 engine) and "Veeru" (libUV) will come into play. Here's how:
+Let’s understand what's happening here. In this code, both asynchronous and synchronous operations are present. Here’s how the ordering plays out and why:
 
 1. The first two lines import the `https` and `fs` modules of Node.js. Got it?
 2. Then, there's a console log: "Kitne aadmi the?". This is a synchronous operation, so Jai (the V8 engine) will handle it. It will print immediately.
@@ -72,7 +81,7 @@ Outout of above code
 // I will after 5 seconds Sarkaar
 ```
 
-### readFileSync
+### readFileSync (why it blocks and when to avoid it)
 
 
 We saw that `readFile` is asynchronous, meaning it doesn't block the main thread. But what if you want the next line of code to run only after the file is read? In that case, you'll need to wait for the file to be read. To do this, instead of using `readFile` (which doesn't wait), you can use `readFileSync`, which is synchronous and blocks the main thread. It will pause and wait until the file is read before moving to the next line of code.
@@ -93,13 +102,13 @@ console.log("This will get printed after file read");
 //I will after 5 seconds Sarkaar!
 ```
 
-**Note:** Whenever you see "sync," it means the code will block and wait until the task is finished before moving on to the next line. and its not recommended to use
+Note: "sync" methods block the main thread. Use them only in short scripts or startup paths where blocking is acceptable.
 
 Now I hope you have understood how sync and async works in NodeJs
 
 ![image.png](https://heyashu.in/images/blogs/e82.png)
 
-### setTimeout in Node.js
+### setTimeout in Node.js (why 0ms is not immediate)
 
 Remember this: I often ask this question in interviews about the order of `setTimeout`, even if it has 0 milliseconds. Just keep in mind, no matter if it's set to 0 milliseconds or 10 seconds, it won’t run immediately. `setTimeout` will be handled by libUV and will only execute after the main thread has finished everything. It doesn’t block the main thread. I am putting one JS question here, because I think you know  JS which runs on web thats why you are here,  read below snippets and guess the output send me Yes  [here](https://x.com/JavaScripterrr)  if you have guessed it correct . 
 

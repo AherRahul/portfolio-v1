@@ -9,11 +9,37 @@ courseName: 01-beginner-to-advance-nodejs
 topics:
   - nodejs
   - javascript
+resources:
+  - title: "Official Node.js Documentation"
+    type: "documentation"
+    url: "https://nodejs.org/en/docs"
+    description: "Complete guide to Node.js APIs, features, and usage with official references"
+
+  - title: "npm Registry"
+    type: "tool"
+    url: "https://www.npmjs.com/"
+    description: "The world's largest package registry for JavaScript and Node.js libraries"
+
+  - title: "Ryan Dahl’s Original Talk (JSConf 2009)"
+    type: "video"
+    url: "https://www.youtube.com/watch?v=ztspvPYybIY"
+    description: "The famous talk where Ryan Dahl introduced Node.js to the world"
+    duration: "27:29"
+
+  - title: "History of Node.js – FreeCodeCamp"
+    type: "article"
+    url: "https://www.freecodecamp.org/news/the-history-of-node-js/"
+    description: "An in-depth article exploring the history and evolution of Node.js"
+
+  - title: "OpenJS Foundation"
+    type: "organization"
+    url: "https://openjsf.org/"
+    description: "The foundation that maintains Node.js and other major JavaScript projects"
+
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1757930701/Portfolio/nodeJsCourse/1_dekvuz.png)
 
-# 📖 Notes – History of Node.js
 
 ## What is Node.js?
 
@@ -125,39 +151,3 @@ With backing from the OpenJS Foundation and contributions from thousands of deve
 
 If asked in an interview: *"Why was Node.js created?"*  
 The answer is: *Node.js was created to allow JavaScript to run on the server and to handle thousands of concurrent connections efficiently using non-blocking I/O.*  
-
----
-
-## 🔗 Learning Resources
-
-### Official Documentation
-- **[Node.js Official Documentation](https://nodejs.org/docs/)** - Complete official documentation covering all APIs and features
-- **[Node.js Guides](https://nodejs.org/en/learn/)** - Comprehensive learning guides for beginners to advanced
-- **[npm Documentation](https://docs.npmjs.com/)** - Everything about package management
-
-### Video Content
-- **[Node.js Crash Course by Traversy Media](https://www.youtube.com/watch?v=fBNz5xF-Kx4)** - 1.5 hour comprehensive introduction
-- **[Ryan Dahl's Original Node.js Presentation](https://www.youtube.com/watch?v=ztspvPYybIY)** - Historic 2009 JSConf presentation where Node.js was introduced
-- **[The Story of Node.js by Ryan Dahl](https://www.youtube.com/watch?v=SAc0vQCC6UQ)** - Later reflection on Node.js creation
-
-### Articles & Blog Posts
-- **[Understanding the Node.js Event Loop](https://nodejs.org/en/learn/asynchronous-work/event-loop-timers-and-nexttick)** - Deep dive into Node.js internals
-- **[History of Node.js Timeline](https://blog.risingstack.com/history-of-node-js/)** - Detailed timeline of Node.js evolution
-- **[Why Node.js?](https://www.toptal.com/nodejs/why-the-hell-would-i-use-node-js)** - Comprehensive explanation of Node.js advantages
-
-### Interactive Learning
-- **[NodeSchool](https://nodeschool.io/)** - Interactive tutorials for Node.js
-- **[Learn Node.js - Codecademy](https://www.codecademy.com/learn/learn-node-js)** - Structured course with hands-on exercises
-- **[Node.js Tutorial - W3Schools](https://www.w3schools.com/nodejs/)** - Step-by-step tutorial with examples
-
-### Books
-- **"Node.js Design Patterns" by Mario Casciaro** - Advanced patterns and best practices
-- **"Learning Node.js Development" by Andrew Mead** - Comprehensive beginner to intermediate guide
-- **"Node.js in Action" by Mike Cantelon** - Practical approach to Node.js development
-
-### Tools & Utilities
-- **[Node Version Manager (nvm)](https://github.com/nvm-sh/nvm)** - Manage multiple Node.js versions
-- **[Nodemon](https://www.npmjs.com/package/nodemon)** - Auto-restart development server
-- **[Node.js Profiler](https://nodejs.org/en/learn/getting-started/profiling)** - Performance analysis tools
-
-

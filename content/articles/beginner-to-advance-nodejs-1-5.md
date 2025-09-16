@@ -1,5 +1,5 @@
 ---
-title: "Diving into the NodpeJS Github repo"
+title: "Diving into the NodeJS GitHub repo"
 description: "As we know, each module in Node.js has its own scope. How does Node.js achieve this? In JavaScript, we follow the Principle of Least Privilege (PoLP), which is related to functions and scope. If you're unfamiliar, you can Google it. The idea is to only expose what is necessary to the global scope, keeping everything else private. To achieve PoLP, wrap your code in a function or immediately invoke it (IIFE)."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-04-09"
@@ -9,20 +9,41 @@ courseName: 01-beginner-to-advance-nodejs
 topics:
   - nodejs
   - javascript
+resources:
+  - title: "Node.js Modules: CommonJS"
+    type: "documentation"
+    url: "https://nodejs.org/api/modules.html"
+    description: "Official docs on how require/module.exports work"
+  - title: "ES Modules in Node.js"
+    type: "documentation"
+    url: "https://nodejs.org/api/esm.html"
+    description: "Using import/export with Node (ESM)"
+  - title: "IIFE (Immediately Invoked Function Expression)"
+    type: "article"
+    url: "https://developer.mozilla.org/en-US/docs/Glossary/IIFE"
+    description: "Why JavaScript uses function wrappers"
+  - title: "Node.js Source – Module Wrapper"
+    type: "documentation"
+    url: "https://github.com/nodejs/node/blob/main/lib/internal/modules/cjs/loader.js"
+    description: "See how Node wraps modules under the hood"
 ---
 
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1757930703/Portfolio/nodeJsCourse/5.png)
 
-### The principle of leave privilege (PoLP)
+Before looking at code, it helps to understand why Node gives each file its own scope. Private-by-default modules prevent accidental leaks and hard-to-track bugs. You explicitly choose what to share with other files, which keeps boundaries clean as projects grow.
+
+### The Principle of Least Privilege (PoLP)
 
 As we know, each module in Node.js has its own scope. How does Node.js achieve this? In JavaScript, we follow the Principle of Least Privilege (PoLP), which is related to functions and scope. If you're unfamiliar, you can Google it. The idea is to only expose what is necessary to the global scope, keeping everything else private. To achieve PoLP, wrap your code in a function or immediately invoke it (IIFE). This is how modules in Node.js work. You can learn more about PoLP from [this Stack Overflow post](https://stackoverflow.com/questions/6010211/in-node-js-how-would-i-follow-the-principle-of-least-privilege) or watch [this YouTube video](https://www.youtube.com/watch?v=lW_erSjyMeM&t=10s&pp=ygUYYmxvY2sgc2NvcGUgYW5kIHNob2FkaW5n). Here's a tip: mention PoLP in your next interview to impress the interviewer. Want a mock interview with me? [Click here to schedule one now](https://topmate.io/aat/).
 
 [](https://topmate.io/aat/)
 
-### How modules and require work ?
+### How modules and require work
 
 Now you understand that when you `require` something in Node.js, the entire code is wrapped in a function (essentially an IIFE). This is how PoLP works, making the code private and inaccessible to other modules unless explicitly exported. The `module` keyword in your file is available because Node.js passes it as an object to the IIFE while converting your module code. Below are two examples: one without PoLP and one with PoLP. Remember, PoLP is just about hiding code from the outside environment.
+
+Why this example: first we show code without any privacy so you can see how values leak; then we contrast with a protected version.
 
 Without PoLP
 
@@ -35,7 +56,7 @@ var x=10;
 console.log(x) // 10; but here also you are getting x access thats not good
 ```
 
-So to hide this we can wrap it in a function
+So to hide this we can wrap it in a function (classic IIFE)
 
 ```jsx
 function() {  // <--- Add this
@@ -53,7 +74,7 @@ function() {  // <--- Add this
   )
 ```
 
-Lets see how this works with modules in node js
+Let’s see how this maps to modules in Node.js
 
 ```jsx
 function() {  
@@ -129,14 +150,6 @@ const wrapper = [
 
 1. Open any GitHub repository and press the . (full stop) key on your keyboard to open it in a VS Code-like editor directly in your browser.
 2. Alternatively, add 1s before the URL in the repository link to open it in a browser-based editor. For example, https://github1s.com/.
-
-
-
-And that's all for this episode!
-
-I'm Rahul Aher, and I'm writing digital notes on Node.js. If you enjoy these notes, please share them with your friends. If you find any errors or have improvements, feel free to contribute by forking the repo. If you're interested in writing the next episode's notes, [fork the repo and contribute](https://github.com/AherRahul/portfolio-v1). Let's learn together! Also, please consider giving a star to [this repo](https://github.com/AherRahul/portfolio-v1). For any queries, [let's connect here](https://rahulaher.netlify.app/contact/).
-
-Take care, Good Bye :) [](https://rahulaher.netlify.app/contact/)
 
 
 

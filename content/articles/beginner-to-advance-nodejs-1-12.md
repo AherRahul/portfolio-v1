@@ -9,6 +9,19 @@ courseName: 01-beginner-to-advance-nodejs
 topics:
   - nodejs
   - javascript
+resources:
+  - title: "Relational vs NoSQL"
+    type: "article"
+    url: "https://martinfowler.com/articles/nosql-intro.html"
+    description: "Trade-offs between relational and NoSQL stores"
+  - title: "PostgreSQL Official Docs"
+    type: "documentation"
+    url: "https://www.postgresql.org/docs/"
+    description: "Authoritative reference for Postgres"
+  - title: "MongoDB Official Docs"
+    type: "documentation"
+    url: "https://www.mongodb.com/docs/"
+    description: "Data modeling and CRUD in MongoDB"
 ---
 
 
@@ -88,9 +101,11 @@ Relational databases store data in rows and columns. "Relational" means that the
 
 In **MongoDB**, we have **collections** that function like JavaScript objects or JSON data, but in MongoDB, they are called **Documents**. The keys in MongoDB are referred to as **fields**. In MongoDB, there is no need for **[data normalization](https://www.google.com/search?q=whatis+databse+normalization&sca_esv=0ee23696230f4fd0&sxsrf=ADLYWIJgBePNz9IXbOL4fpJ7-tgXmIkeHA%3A1726342963897&ei=M-flZt-9NsnR2roPn5nV6QM&ved=0ahUKEwifo_7YmMOIAxXJqFYBHZ9MNT0Q4dUDCA8&uact=5&oq=whatis+databse+normalization&gs_lp=Egxnd3Mtd2l6LXNlcnAiHHdoYXRpcyBkYXRhYnNlIG5vcm1hbGl6YXRpb24yBxAAGIAEGA0yBxAAGIAEGA0yBxAAGIAEGA0yBxAAGIAEGA0yBxAAGIAEGA0yBxAAGIAEGA0yBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yCBAAGBYYHhgPSJwqUABY3yhwAHgBkAEAmAHQA6ABjC2qAQowLjkuMTcuMC4xuAEDyAEA-AEBmAIboAKSLsICBBAjGCfCAgoQABiABBhDGIoFwgIQEAAYgAQYsQMYQxiDARiKBcICCxAAGIAEGLEDGIMBwgIIEAAYgAQYsQPCAgsQABiABBiRAhiKBcICDRAAGIAEGLEDGEMYigXCAg0QABiABBixAxjJAxgKwgIHEAAYgAQYCsICChAAGIAEGAIYywHCAgcQLhiABBgKwgIFEAAYgATCAgsQABiABBiSAxiKBcICDhAAGIAEGJECGLEDGIoFwgIKEAAYgAQYsQMYCsICChAAGIAEGLEDGA3CAgYQABgNGB6YAwDiAwUSATEgQJIHCjAuNy4xOS4wLjGgB_f2AQ&sclient=gws-wiz-serp)**  or joins, and there can be multiple collections.
 
-### Difference between RDBMS and NoSQL
+### Difference between RDBMS and NoSQL (how I choose)
 
-I am just pasting the image. Please Google it to learn more. To be honest, I’m tired today as I just came back from somewhere and don’t have the energy right now. Sorry this time, I’ve written quite a lot already.
+Very short rule of thumb I use:
+- Use a relational DB (Postgres/MySQL) when data has strong relationships and you need joins, constraints, and transactions.
+- Use a document store (MongoDB) when schemas are fluid, documents are naturally nested, and you want developer speed over strict structure.
 
 ![image.png](https://heyashu.in/images/blogs/7e12db.png)
 
@@ -99,12 +114,6 @@ I am just pasting the image. Please Google it to learn more. To be honest, I’m
 1. Why NoSQL recommended for social media Databses
 2. [Read uber schemaless Databse blog](https://www.uber.com/en-IN/blog/schemaless-part-one-mysql-datastore/)
 
-
-And that's all for this episode!
-
-I'm Rahul Aher, and I'm writing digital notes on Node.js. If you enjoy these notes, please share them with your friends. If you find any errors or have improvements, feel free to contribute by forking the repo. If you're interested in writing the next episode's notes, [fork the repo and contribute](https://github.com/AherRahul/portfolio-v1). Let's learn together! Also, please consider giving a star to [this repo](https://github.com/AherRahul/portfolio-v1). For any queries, [let's connect here](https://rahulaher.netlify.app/contact/).
-
-Take care, Good Bye :) [](https://rahulaher.netlify.app/contact/)
 
 
 

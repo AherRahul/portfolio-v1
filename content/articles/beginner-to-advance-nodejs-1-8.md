@@ -9,13 +9,26 @@ courseName: 01-beginner-to-advance-nodejs
 topics:
   - nodejs
   - javascript
+resources:
+  - title: "V8 – Ignition and Turbofan"
+    type: "documentation"
+    url: "https://v8.dev/blog/launching-ignition-and-turbofan"
+    description: "How V8 interprets, optimizes, and deoptimizes JavaScript"
+  - title: "V8 Bytecode"
+    type: "article"
+    url: "https://medium.com/dailyjs/understanding-v8s-bytecode-317d46c94775"
+    description: "Readable intro to V8 bytecode"
+  - title: "You Don’t Know JS – Scope & Closures"
+    type: "book"
+    url: "https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/scope-closures/README.md"
+    description: "Foundational mental models for how JS runs"
 ---
 
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1757930704/Portfolio/nodeJsCourse/8.png)
 
 
-Now, let's focus on one of Node.js's best friends, the V8 Engine. It takes the code and runs it. Before doing anything, I just want you to read this carefully.
+Now, let's focus on one of Node.js's best friends, the V8 engine. V8 turns your JavaScript into something the CPU can execute efficiently. The big idea: V8 first interprets code into bytecode (Ignition), then optimizes hot paths into fast machine code (Turbofan), and sometimes deoptimizes when assumptions break. Understanding this explains “why did my snippet suddenly get slow?” moments.
 
 ![image.png](https://heyashu.in/images/blogs/eoi82.png)
 
@@ -31,11 +44,11 @@ Alright, let’s move on to the session now. When the V8 engine processes the co
 
 ![](https://heyashu.in/images/blogs/epi86.png)
 
-### Interpreted Language vs. Compiled Language
+### Interpreted language vs. compiled language (and where V8 fits)
 
 An interpreter reads and executes code line by line, while a compiler reads the entire code, compiles it, and then passes it to the engine for execution. JavaScript uses both a compiler and an interpreter to run the code, along with several optimizations like **JIT (Just-in-Time Compiler)**.
 
-I highly recommend reading **[Scope and Closures by Kyle Simpson](https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/scope-closures/README.md)** to dive deeper into these concepts. I am covering digital notes of these books seeding soon in the garden [here](https://heyashu.in/digital-garden/notes). The compiler used by V8 is called **Turbofan**, and its job is to optimize the code so that it runs faster, especially if the same section of code is executed multiple times.
+The compiler used by V8 is called **Turbofan**, and its job is to optimize the code so that it runs faster, especially if the same section of code is executed multiple times. If code changes shape (e.g., objects with different hidden classes), V8 may deopt and re-optimize—this is why consistent shapes and predictable types matter for performance.
 
 Also, remember that **Garbage Collection** happens in parallel to free up memory. Below, I’ve listed the names of some garbage collectors used in the V8 engine—make sure to look them up and read about them.
 
@@ -86,6 +99,3 @@ And thats all for this session, I'm **Ashutosh Anand Tiwari,** and I'm writing d
 
 
 Thank you so much for reading. If you found it valuable, consider subscribing for more such content every week. If you have any questions or suggestions, please email me your comments or feel free to improve it.
-
-
-- [YouTube Resource (Cloud world)](https://www.youtube.com/embed/K9EFon58_UI?si=95in2rvIl1h6pDxU)

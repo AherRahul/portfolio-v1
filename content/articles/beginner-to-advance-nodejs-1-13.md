@@ -9,6 +9,19 @@ courseName: 01-beginner-to-advance-nodejs
 topics:
   - nodejs
   - javascript
+resources:
+  - title: "MongoDB Atlas"
+    type: "documentation"
+    url: "https://www.mongodb.com/atlas/database"
+    description: "Managed MongoDB in the cloud"
+  - title: "MongoDB Compass"
+    type: "tool"
+    url: "https://www.mongodb.com/products/tools/compass"
+    description: "GUI to visualize and query your data"
+  - title: "MongoDB Node.js Driver"
+    type: "documentation"
+    url: "https://www.mongodb.com/docs/drivers/node/current/"
+    description: "Official Node driver usage and examples"
 ---
 
 
@@ -87,7 +100,7 @@ city
 "ayodhya"
 ```
 
-### Now lets read using code
+### Now let’s read using code (why we structure the script this way)
 
 So lets go to editor wherever you have pasted your connection string install MonoDb node js driver using NPM, [what is npm](https://www.w3schools.com/whatis/whatis_npm.asp)
 
@@ -169,7 +182,7 @@ main()
 ] */
 ```
 
-### Insert the data
+### Insert the data (then re-read to verify)
 
 Now you read the data suppose you want to insert the data now in our Collection
 
@@ -210,16 +223,4 @@ Later, we will see:
 * How to delete the data
 * Read what is **FindCursor**
 
-
-And that's all for this episode!
-
-I'm Rahul Aher, and I'm writing digital notes on Node.js. If you enjoy these notes, please share them with your friends. If you find any errors or have improvements, feel free to contribute by forking the repo. If you're interested in writing the next episode's notes, [fork the repo and contribute](https://github.com/AherRahul/portfolio-v1). Let's learn together! Also, please consider giving a star to [this repo](https://github.com/AherRahul/portfolio-v1). For any queries, [let's connect here](https://rahulaher.netlify.app/contact/).
-
-Take care, Good Bye :) [](https://rahulaher.netlify.app/contact/)
-
-
-
 Thank you so much for reading. If you found it valuable, consider subscribing for more such content every week. If you have any questions or suggestions, please email me your comments or feel free to improve it.
-
-
-- [YouTube Resource (Cloud world)](https://www.youtube.com/embed/K9EFon58_UI?si=95in2rvIl1h6pDxU)

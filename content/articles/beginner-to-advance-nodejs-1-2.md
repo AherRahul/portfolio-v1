@@ -9,91 +9,127 @@ courseName: 01-beginner-to-advance-nodejs
 topics:
   - nodejs
   - javascript
-
+resources:
+  - title: "Official Node.js Documentation"
+    type: "documentation"
+    url: "https://nodejs.org/en/docs"
+    description: "The official reference for Node.js APIs, guides, and usage examples."
+  - title: "Chrome V8 Engine Documentation"
+    type: "documentation"
+    url: "https://v8.dev/docs"
+    description: "Comprehensive technical details about the V8 JavaScript engine."
+  - title: "How V8 Works Internally"
+    type: "article"
+    url: "https://deepu.tech/memory-management-in-v8/"
+    description: "An in-depth article explaining how Google’s V8 engine executes and optimizes JavaScript."
+  - title: "JavaScript Engines Overview"
+    type: "article"
+    url: "https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey/Introduction_to_the_SpiderMonkey_JavaScript_engine"
+    description: "MDN article introducing JavaScript engines, using SpiderMonkey as an example."
+  - title: "Ryan Dahl’s Node.js Introduction (JSConf 2009)"
+    type: "video"
+    url: "https://www.youtube.com/watch?v=ztspvPYybIY"
+    description: "The original presentation where Node.js was introduced to the developer community."
+    duration: "27:29"
 ---
-
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1757930701/Portfolio/nodeJsCourse/2_zzsbpy.png)
 
-As we know now JS can also run outside of browsers on server.
 
-### What is server ?
+## Understanding Server-Side JavaScript with Node.js
 
-JavaScript runs on a server, but what exactly is a server? A server is simply a remote computer. When you run your React app locally, you call it a "local server" because your system is serving the page. A server is just a machine that provides a service or serves a page. If the computer providing this service is in a different location, like another country, it's called a remote or cloud server. Hope that makes sense! Now, let's move on…
-
-### Client Server Communication
-
-Now, we know a server is just a computer located far from us that can handle requests. Suppose you're reading this blog on [heyashu.in](http://heyashu.in/). When you type this URL into your browser, your local computer sends a request. The internet processes this request and directs it to the server. Every domain is linked to an IP address through DNS because humans can't easily remember IP addresses like "54.161.234.33." DNS translates the domain name to the correct IP address, and the server serves your page. Domain name is what you buy from GoDady and Hostinger and other websites.
-
-Running JavaScript on a server is a big advantage because it allows a single developer with JavaScript knowledge to manage both the frontend and backend. If you know JavaScript, you can become a full-stack engineer. Don't worry; you'll get there with this course or by reading the notes!
-
-![image.png](https://i.ibb.co/brf7D7h/1.jpg)
-
-[Image Credit](https://heyashu.in/tech/notes)
-
-### Story about JS Engine and Node.js
-
-You know how JavaScript runs in browsers? Guess, guess! It’s the JavaScript engine! 🧠 Every browser has its own JS engine. It takes the JS code and converts it. But wait, isn’t the JS engine also software? Yep, it’s a program! And what language is it written in? Hmm, what comes after C? D? Nope, it’s C++! 🤓. Most JS engines, like the V8 engine in Chrome, are written in C++. Check out the [GitHub repo of V8 JS engine](https://github.com/v8/v8). Over 70% of the code is in C++! 🚀
-![image.png](https://i.ibb.co/w7kyPnm/2.jpg)
-
-![image.png](https://i.ibb.co/BLNRTmS/3.jpg)
-
-Image Credit :  [Guithub repo of v8 JS engine](https://github.com/v8/v8) 
-
-### Story of v8 the chrome’s Engine
-
-V8 is written in C++ and helps run JavaScript and WebAssembly. It executes JavaScript code, but it’s not the whole story! 🤔 You can learn more about WebAssembly by Googling it. V8 follows [ECMA standards](https://stackoverflow.com/questions/4269150/what-is-ecmascript) (they decide what features to add!). Every JS engine is written differently, converting JS code to machine code.
-
-Imagine this: **Your JS code** ➡️ **V8 Engine (C++)** ➡️ **Machine Code**.
-
-And guess what? V8 can be embedded in any C++ application. So, if your system runs C++, you can run JavaScript through V8! 🖥️ But wait, if V8 is the hero, what’s Node.js? 🤷‍♂️ Isn’t V8 enough? Well, V8 is just for JavaScript (ECMAScript) and is designed for the web. Node.js wraps around V8, giving it superpowers! Node.js adds the ability to handle HTTP requests, access databases, and more. It makes JavaScript capable of doing things beyond just running code.
-
-And remember, Node.js is also written in... what comes after C? Yep, C++! Not D, haha! So, Node.js is built in C++, with V8 as a dependency, making it all powerful! 💥
-
-### Node.Js Runtime
-
-V8 + Node.js together create the **Node.js runtime** environment. This runtime allows JavaScript to run outside the browser, like on a server.
-
-**NOTE**: Node.js isn't just C++ code. About 25% of its code is written in JavaScript, which you can see in the screenshot above. It also uses various JavaScript APIs and capabilities, combining both C++ and JavaScript to give developers the power to build versatile applications. 🚀
-
-![image.png](https://i.ibb.co/J5M4TNX/4.jpg)
+As we’ve learned, Node.js allows JavaScript to run outside of the browser—specifically on a server. But what does this actually mean in practice? To answer this, let’s explore the fundamental concepts of server-side JavaScript and the technologies that make it possible.
 
 
-### Why Node Js and v8 is written  C++ ?
+## What is a Server?
 
-As we know, computers understand only binary code—010101010! This is the language that directly talks to computer hardware. If you’re lost, just remember: binary (010101) is called a low-level or machine-level language. 🖥️
+At its core, a **server is simply a computer that provides a service**. When you open an application on your own machine and it responds to your inputs, your machine is effectively acting as a server—sometimes called a **local server**.  
 
-Then came middle-level languages, also called assembly languages, like \`ADD A, B\`. Now, let's talk about high-level languages—what comes after B? Tell, tell! Don’t say B++! 😂 No such language! After B, it’s C, then C++, and then Java, JavaScript, etc. These high-level languages are human-friendly.
+Servers can range from a standard desktop computer in your home to powerful machines housed in large-scale data centers. When these computers are located remotely, possibly even in a different country, they are commonly referred to as **remote servers** or **cloud servers**.  
 
-V8 and other JS engines take JavaScript (high-level) and convert it into machine code. If you’re curious, Google assembly languages and get familiar with high, middle, and low-level languages. Enjoy learning!
-
-![image.png](https://i.ibb.co/BCSK3VF/5.jpg)
-
-[Image credit](https://www.cs.mtsu.edu/~xyang/2170/computerLanguages.html)
-
-### Browsers and their engines
-
-Here is an overview of popular browsers and their corresponding JavaScript engines:
-
-![image.png](https://i.ibb.co/vLZWXVD/6.jpg)
-
-[Image Credit](https://www.lambdatest.com/blog/browser-engines-the-crux-of-cross-browser-compatibility/)
-
-### Other use full words
-
-Remember and google these words to know more
-
-- Web Assembly
-- Crosss Platform
-- ECMAScript ( ES6)
-- Guthub repo of node js and v8 its dependency
-- Arm Processor  and x86
-- Microprocessor
+The essential role of a server is to **serve**—whether that means delivering a web page, processing an API request, or making a file available to a client. In simple terms, a server exists to respond to requests and provide the requested resource.
 
 
-And that's a wrap for this episode! 🎬 Now take a break, spread the word, and share this blog with your friends! Don’t forget to ⭐️ star [this repo](https://github.com/AherRahul/portfolio-v1) if you found it helpful. And if you spot anything wrong, feel free to fork the repo and contribute!
+## Understanding Client-Server Communication
 
-Let's meet in the next episode!
+Whenever you type a URL like `https://www.example.com` into your browser, you are acting as the **client**. Your browser sends an **HTTP request** across the internet to a server.  
+
+But how does your request know which server to reach? This is where the **Domain Name System (DNS)** comes in. Think of DNS as the internet’s phonebook. It translates the human-friendly domain name (like `www.example.com`) into a unique **IP address** (e.g., `54.161.234.33`). The request is then routed to the correct server using this IP address.  
+
+The server receives your request, processes it, and responds with the appropriate resource—often an HTML page, a JSON response, or some other form of data.  
+
+This client-server interaction forms the backbone of the modern internet. With Node.js, JavaScript can participate in this communication not only in the browser (client side) but also on the server. This unification of frontend and backend development makes it possible for developers to become **full-stack engineers**, using a single language across the entire stack.
+
+![Client-Server Model](https://i.ibb.co/brf7D7h/1.jpg)
 
 
-Thank you so much for reading. If you found it valuable, consider subscribing for more such content every week. If you have any questions or suggestions, please email me your comments or feel free to improve it.
+## The Role of the JavaScript Engine
+
+The ability to run JavaScript—whether in a browser or on a server—depends on the presence of a **JavaScript engine**. A JavaScript engine is a program that takes JavaScript code and translates it into a form the computer can understand and execute.  
+
+Every browser has its own engine:  
+- Chrome, Edge, Opera, and Vivaldi use **V8**  
+- Firefox uses **SpiderMonkey**  
+- Safari uses **JavaScriptCore**  
+
+These engines are not themselves written in JavaScript. Instead, they are typically implemented in **C++**, a language chosen for its speed and efficiency. For example, Google’s **V8 engine**—which powers both Chrome and Node.js—has over 70% of its implementation written in C++.
+
+![JavaScript Engine Overview](https://i.ibb.co/w7kyPnm/2.jpg)
+
+
+## The Story of V8 and Node.js
+
+The **V8 engine** plays a critical role in modern JavaScript execution. Written in C++, it follows the official **ECMAScript standards**, ensuring consistency across platforms. V8 is designed to compile high-level JavaScript directly into **machine code**, enabling extremely fast execution.  
+
+Importantly, V8 is not tied to browsers alone—it is a **standalone library**. This means it can be embedded into any C++ application to add JavaScript execution capabilities.  
+
+This is where **Node.js** enters the picture. Node.js is essentially a **C++ application that embeds the V8 engine**, giving it the ability to execute JavaScript outside of the browser. But Node.js goes further—it adds powerful APIs for server-side operations like handling HTTP requests, reading and writing files, or connecting to databases.  
+
+In other words:  
+- **V8** makes JavaScript execution possible.  
+- **Node.js** builds on V8 and equips it with the tools required for backend development.  
+
+Thus, the **Node.js runtime** is the combination of the V8 engine and additional C++ and JavaScript code that together provide the features developers need to build full server-side applications.
+
+![Node.js and V8](https://i.ibb.co/J5M4TNX/4.jpg)
+
+> **Note:** While Node.js is built on C++, many of its built-in modules and APIs are written in JavaScript. This hybrid nature ensures that developers can work in JavaScript while benefiting from the performance and system-level capabilities of C++.
+
+
+## Why C++? Understanding the Language Hierarchy
+
+The choice of **C++** for building JavaScript engines and the Node.js runtime is deliberate. To understand why, consider the hierarchy of programming languages:  
+
+- At the **lowest level**, computers only understand **binary code (0s and 1s)**—also called **machine code**.  
+- Slightly higher are **assembly languages**, which are closer to machine code but slightly more human-readable.  
+- At the **highest level**, we have languages like **JavaScript**, **Python**, and **Java**, which are designed to be easy for humans to read and write.  
+
+JavaScript engines like V8 act as the **bridge** between high-level JavaScript and low-level machine code. For this bridge to be efficient, the engine itself must be written in a **fast, low-level language**. C++ is a natural fit because it combines performance with the ability to manage system-level resources directly.
+
+![Language Hierarchy](https://i.ibb.co/BCSK3VF/5.jpg)
+
+
+## Browsers and Their Engines
+
+Here’s a quick reference table of browsers and the JavaScript engines they use:
+
+- **Chrome, Edge, Opera, Vivaldi:** V8  
+- **Firefox:** SpiderMonkey  
+- **Safari:** JavaScriptCore  
+
+Each of these engines implements the same ECMAScript standard, but their internal optimizations differ, which is why the same JavaScript code can sometimes perform differently across browsers.
+
+![Browser Engines](https://i.ibb.co/vLZWXVD/6.jpg)
+
+
+## Further Exploration and Key Terms
+
+If you want to go deeper into this subject, here are some key concepts to research further:
+
+- **WebAssembly (Wasm):** A low-level binary format that runs alongside JavaScript in the browser, delivering near-native performance for web apps.  
+- **ECMAScript (ES6 and beyond):** The standardized specification for JavaScript that defines its features and syntax.  
+- **Cross-Platform Development:** The ability of Node.js to run seamlessly on Windows, macOS, and Linux, making applications portable.  
+- **Processor Architectures (ARM vs. x86):** Understanding how different hardware architectures influence performance and compatibility of software.  
+
+These concepts not only deepen your understanding of Node.js but also provide valuable insights into the broader world of software engineering.
+

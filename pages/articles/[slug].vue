@@ -161,6 +161,15 @@ function extractResources(body: any): any[] {
   const contentText = extractContentText(body)
   return parseResourcesFromContent(contentText)
 }
+
+// Prefer frontmatter resources if present; fallback to parsing content
+const resourcesForTabs = computed(() => {
+  const fmResources = (article.value as any)?.resources
+  if (Array.isArray(fmResources) && fmResources.length > 0) {
+    return fmResources
+  }
+  return extractResources((article.value as any).body)
+})
 </script>
 <template>
   <div>
@@ -205,7 +214,7 @@ function extractResources(body: any): any[] {
         <LazyCourseTabsContainer 
           :topic-title="article.title || 'Course Topic'"
           :content="extractContentText(article.body)"
-          :resources="extractResources(article.body)"
+          :resources="resourcesForTabs"
           :difficulty="'medium'"
           :is-older-than-one-year="isOlderThanOneYear"
         />

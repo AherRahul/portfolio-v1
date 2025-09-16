@@ -9,12 +9,25 @@ courseName: 01-beginner-to-advance-nodejs
 topics:
   - nodejs
   - javascript
+resources:
+  - title: "Node.js Event Loop Phases"
+    type: "documentation"
+    url: "https://nodejs.org/en/learn/asynchronous-work/event-loop-timers-and-nexttick"
+    description: "Authoritative explanation of phases and microtasks"
+  - title: "libuv – Event Loop"
+    type: "documentation"
+    url: "https://github.com/libuv/libuv/blob/v1.x/docs/design.rst#the-i-o-loop"
+    description: "libuv’s I/O loop design notes"
+  - title: "setImmediate vs setTimeout"
+    type: "article"
+    url: "https://nodejs.org/en/learn/asynchronous-work/understanding-setimmediate"
+    description: "Trade-offs between timer and check phases"
 ---
 
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1757930709/Portfolio/nodeJsCourse/9.png)
 
-As we know, Node.js has two main parts, like the duo Jai and Veeru: the V8 engine and **libuv**. Let’s take a closer look at **libuv**. Just like the V8 engine has its hidden parts, you can learn more about it by [clicking here.](https://heyashu.in/digital-garden/notes/namaste-node-js/e-8-deep-dive-into-v8-js-engine) Now, let’s focus on **libuv**. Whenever V8 (Jai) can’t handle something—like file access, network calls, or timers—it gives the task to **libuv**. Also, when these tasks run, we often use callback functions, which are executed after **libuv** finishes the job.
+As we know, Node.js has two main parts: the V8 engine and **libuv**. Whenever V8 can’t handle something—like file access, network calls, or timers—it hands the task to **libuv**. When the work completes, callbacks are queued to be executed by JavaScript on the main thread. Below we’ll connect those pieces to the event loop’s phases.
 
 ```jsx
 const fs = require('fs');
@@ -43,7 +56,7 @@ But how does **libuv** ask the V8 engine to run this callback? That’s what we�
 
 ![image.png](https://heyashu.in/images/blogs/ake9im1.png)
 
-### Callback Quue
+### Callback Queue (what is actually waiting)
 
 In **libuv**, there’s something called the callback queue (Veeru's responsibility), where all the callback functions wait in line. It’s like when the food is ready, but the food court is full, so you can’t enter directly because others are already eating. You have to wait in line—that’s the callback queue. Got it?
 
@@ -53,7 +66,7 @@ Now, what if someone skips the line and starts eating? That would create chaos, 
 
 Guess who does that? Yes, it’s **Shree Shree Event Loop ji**, one of the important friends of **libuv**, who keeps everything in line and makes sure the callbacks are executed in the right order.
 
-### Event loop
+### Event loop (outer phases)
 
 The Event Loop’s job is to keep an eye on both the **call stack** and the **callback queue**. It ensures that no callback function can break the queue. Let’s leave the food court example for now, but imagine multiple callbacks waiting at the same time. What happens if two `setTimeout` functions finish at the same time?
 
@@ -63,7 +76,7 @@ There’s a proper mechanism and algorithm in place to handle this situation. Bu
 
 Now, let’s dive deeper into how the **Event Loop** operates!
 
-### Outside Cycle of Event loop
+### Outside cycle of the event loop
 
 The Event Loop operates in different **phases** during its cycle, each phase having a specific priority for handling tasks. Here's a simplified breakdown of the phases:
 
@@ -74,7 +87,7 @@ The Event Loop operates in different **phases** during its cycle, each phase hav
 
 Each of these phases has its own role in making sure the Event Loop operates smoothly and efficiently!
 
-### Inside Cycles of Event Loop
+### Inside cycle (microtasks first)
 
 There are a few things we’ll cover later, but just know this: before each phase of the event loop’s outer cycle, two special tasks always run. Think of it like this—every time one person enters the "food court" (the call stack) from the queue, there's a special guest area that needs to be checked first.
 
@@ -82,8 +95,8 @@ These "special guests" are **process.nextTick()** and **promise callbacks**. Bef
 
 So, before checking `setTimeout` in the Timer phase, it first looks if there are any `nextTick` or promise callbacks. Before entering the Poll phase, it checks again if any of these special tasks are waiting. These tasks always happen **before** the regular phases of the event loop. Got it?
 
-1. process.nextTick()
-2. promise callabck
+1. `process.nextTick()`
+2. Promise callbacks (microtasks)
 
 ![image.png](https://heyashu.in/images/blogs/ake9im4.png)
 
@@ -205,6 +218,3 @@ Take care, Good Bye :) [](https://rahulaher.netlify.app/contact/)
 
 
 Thank you so much for reading. If you found it valuable, consider subscribing for more such content every week. If you have any questions or suggestions, please email me your comments or feel free to improve it.
-
-
-- [YouTube Resource (Cloud world)](https://www.youtube.com/embed/K9EFon58_UI?si=95in2rvIl1h6pDxU)
