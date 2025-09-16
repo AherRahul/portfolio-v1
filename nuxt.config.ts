@@ -183,11 +183,8 @@ export default defineNuxtConfig({
   },
 
   image: {
-    providers: {
-      cloudinary: {
-        baseURL: 'https://res.cloudinary.com/duojkrgue/image/upload/'
-      }
-    },
+    // Disable image optimization for external domains to prevent Netlify processing
+    provider: 'none',
     domains: ['res.cloudinary.com', 'i.ytimg.com']
   },
 

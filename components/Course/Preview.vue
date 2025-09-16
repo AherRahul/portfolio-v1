@@ -59,19 +59,11 @@ const hasVideo = computed(() => Boolean(videoId.value))
     <!-- Image/Video Section -->
     <div class="relative w-full sm:w-80 h-48 flex-shrink-0 overflow-hidden">
       <div v-if="imageSrc" class="relative w-full h-full">
-        <NuxtImg 
-          v-if="imageSrc?.startsWith('https://res.cloudinary.com')"
-          provider="cloudinary"
-          :src="imageSrc.replace('https://res.cloudinary.com/duojkrgue/image/upload/', '')" 
-          alt="Course cover" 
-          format="webp" 
-          class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-300" 
-        />
         <img 
-          v-else
           :src="imageSrc" 
           alt="Course cover" 
-          class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-300" 
+          class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-300"
+          loading="lazy"
         />
         <div class="absolute inset-0 bg-gradient-to-r from-transparent to-zinc-900/40" />
         <div v-if="hasVideo" class="absolute inset-0 flex items-center justify-center">
