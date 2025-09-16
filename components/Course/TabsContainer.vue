@@ -53,6 +53,7 @@ const tabs = [
 const summaryData = ref<SummaryData | null>(null)
 const summaryLoading = ref(false)
 const summaryError = ref('')
+const downloadingPdf = ref(false)
 
 // Quiz state
 const quizData = ref<QuizQuestion[]>([])
@@ -98,10 +99,25 @@ async function generateSummary() {
 
 async function downloadSummary() {
   if (!summaryData.value) return
+  downloadingPdf.value = true
   try {
     await downloadSummaryPDF(props.topicTitle, summaryData.value)
+    // Show success feedback on mobile
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator?.userAgent || '')) {
+      // For mobile, show a brief success message
+      setTimeout(() => {
+        // You could implement a toast notification here
+        console.log('PDF download initiated for mobile device')
+      }, 500)
+    }
   } catch (error) {
     console.error('Error downloading PDF:', error)
+    summaryError.value = 'Failed to download PDF. Please try again.'
+    setTimeout(() => {
+      summaryError.value = ''
+    }, 3000)
+  } finally {
+    downloadingPdf.value = false
   }
 }
 
@@ -274,17 +290,27 @@ onMounted(() => {
               <p class="text-zinc-300 mb-3 sm:mb-4">
                 Smart summary and key insights powered by AI
               </p>
+              <p v-if="summaryData" class="text-xs text-zinc-500 sm:hidden">
+                Tap PDF to download or view in browser
+              </p>
             </div>
             <!-- Download button for mobile/desktop -->
             <div v-if="summaryData" class="flex-shrink-0">
               <AppButton 
                 @click="downloadSummary" 
+                :disabled="downloadingPdf"
                 look="secondary" 
-                class="text-xs sm:text-sm px-3 py-2 sm:px-4 sm:py-2"
+                class="text-xs sm:text-sm px-3 py-2 sm:px-4 sm:py-2 min-w-[80px] sm:min-w-[120px]"
               >
-                <Icon name="heroicons:arrow-down-tray" class="text-sm mr-1 sm:mr-2" />
-                <span class="hidden sm:inline">Download PDF</span>
-                <span class="sm:hidden">PDF</span>
+                <Icon 
+                  :name="downloadingPdf ? 'heroicons:arrow-path' : 'heroicons:arrow-down-tray'" 
+                  :class="[
+                    'text-sm mr-1 sm:mr-2',
+                    downloadingPdf ? 'animate-spin' : ''
+                  ]" 
+                />
+                <span class="hidden sm:inline">{{ downloadingPdf ? 'Downloading...' : 'Download PDF' }}</span>
+                <span class="sm:hidden">{{ downloadingPdf ? '...' : 'PDF' }}</span>
               </AppButton>
             </div>
           </div>

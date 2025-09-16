@@ -418,16 +418,72 @@ class PDFGenerator {
 }
 
 export async function downloadSummaryPDF(topicTitle: string, summaryData: SummaryData) {
-  const generator = new PDFGenerator()
-  const pdfDataUri = await generator.generateSummaryPDF(topicTitle, summaryData)
+  try {
+    const generator = new PDFGenerator()
+    const pdfDataUri = await generator.generateSummaryPDF(topicTitle, summaryData)
+    
+    const fileName = `${topicTitle.replace(/[^a-zA-Z0-9]/g, '_')}_AI_Summary.pdf`
+    
+    // Better mobile browser support
+    if (typeof window !== 'undefined') {
+      // For mobile devices - try different approaches
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+      
+      if (isMobile) {
+        // For mobile: Try to open in new tab if download doesn't work
+        const blob = dataURItoBlob(pdfDataUri)
+        const url = URL.createObjectURL(blob)
+        
+        // Try programmatic download first
+        const link = document.createElement('a')
+        link.href = url
+        link.download = fileName
+        link.style.display = 'none'
+        document.body.appendChild(link)
+        
+        // Add event listeners to handle success/failure
+        const cleanup = () => {
+          document.body.removeChild(link)
+          URL.revokeObjectURL(url)
+        }
+        
+        try {
+          link.click()
+          setTimeout(cleanup, 1000)
+        } catch (e) {
+          // Fallback: Open in new tab
+          window.open(url, '_blank')
+          cleanup()
+        }
+      } else {
+        // Desktop: Standard approach
+        const link = document.createElement('a')
+        link.href = pdfDataUri
+        link.download = fileName
+        link.style.display = 'none'
+        document.body.appendChild(link)
+        link.click()
+        document.body.removeChild(link)
+      }
+    }
+  } catch (error) {
+    console.error('Error downloading PDF:', error)
+    throw error
+  }
+}
+
+// Helper function to convert data URI to blob
+function dataURItoBlob(dataURI: string): Blob {
+  const byteString = atob(dataURI.split(',')[1])
+  const mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0]
+  const ab = new ArrayBuffer(byteString.length)
+  const ia = new Uint8Array(ab)
   
-  // Create download link
-  const link = document.createElement('a')
-  link.href = pdfDataUri
-  link.download = `${topicTitle.replace(/[^a-zA-Z0-9]/g, '_')}_AI_Summary.pdf`
-  document.body.appendChild(link)
-  link.click()
-  document.body.removeChild(link)
+  for (let i = 0; i < byteString.length; i++) {
+    ia[i] = byteString.charCodeAt(i)
+  }
+  
+  return new Blob([ab], { type: mimeString })
 }
 
 export async function downloadQuizAnalysisPDF(
@@ -436,14 +492,56 @@ export async function downloadQuizAnalysisPDF(
   userAnswers: QuizResult[], 
   score: number
 ) {
-  const generator = new PDFGenerator()
-  const pdfDataUri = await generator.generateQuizAnalysisPDF(topicTitle, questions, userAnswers, score)
-  
-  // Create download link
-  const link = document.createElement('a')
-  link.href = pdfDataUri
-  link.download = `${topicTitle.replace(/[^a-zA-Z0-9]/g, '_')}_Quiz_Analysis.pdf`
-  document.body.appendChild(link)
-  link.click()
-  document.body.removeChild(link)
+  try {
+    const generator = new PDFGenerator()
+    const pdfDataUri = await generator.generateQuizAnalysisPDF(topicTitle, questions, userAnswers, score)
+    
+    const fileName = `${topicTitle.replace(/[^a-zA-Z0-9]/g, '_')}_Quiz_Analysis.pdf`
+    
+    // Better mobile browser support
+    if (typeof window !== 'undefined') {
+      // For mobile devices - try different approaches
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+      
+      if (isMobile) {
+        // For mobile: Try to open in new tab if download doesn't work
+        const blob = dataURItoBlob(pdfDataUri)
+        const url = URL.createObjectURL(blob)
+        
+        // Try programmatic download first
+        const link = document.createElement('a')
+        link.href = url
+        link.download = fileName
+        link.style.display = 'none'
+        document.body.appendChild(link)
+        
+        // Add event listeners to handle success/failure
+        const cleanup = () => {
+          document.body.removeChild(link)
+          URL.revokeObjectURL(url)
+        }
+        
+        try {
+          link.click()
+          setTimeout(cleanup, 1000)
+        } catch (e) {
+          // Fallback: Open in new tab
+          window.open(url, '_blank')
+          cleanup()
+        }
+      } else {
+        // Desktop: Standard approach
+        const link = document.createElement('a')
+        link.href = pdfDataUri
+        link.download = fileName
+        link.style.display = 'none'
+        document.body.appendChild(link)
+        link.click()
+        document.body.removeChild(link)
+      }
+    }
+  } catch (error) {
+    console.error('Error downloading quiz analysis PDF:', error)
+    throw error
+  }
 }
