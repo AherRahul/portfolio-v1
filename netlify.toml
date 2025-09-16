@@ -1,6 +1,6 @@
 [build]
-  command = "npm run generate"
   publish = ".output/public"
+  command = "node build-netlify.js"
 
 [build.environment]
   NODE_VERSION = "20"
