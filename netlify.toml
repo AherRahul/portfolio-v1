@@ -5,6 +5,7 @@
 [build.environment]
   NODE_VERSION = "20"
   NPM_FLAGS = "--legacy-peer-deps"
+  NITRO_PRESET = "netlify"
 
 [functions]
   directory = "netlify/functions"
