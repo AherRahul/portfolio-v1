@@ -8,7 +8,7 @@
   NITRO_PRESET = "netlify"
 
 [functions]
-  directory = "netlify/functions"
+  directory = "functions"
   node_bundler = "esbuild"
 
 # Redirect API calls to functions
