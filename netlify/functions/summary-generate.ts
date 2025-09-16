@@ -1,5 +1,16 @@
-import type { Handler } from '@netlify/functions'
+import type { Handler, HandlerEvent, HandlerContext } from '@netlify/functions'
 import Anthropic from '@anthropic-ai/sdk'
+
+// Helper function to create consistent response headers
+function createHeaders(additionalHeaders: Record<string, string> = {}) {
+  return {
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Headers': 'Content-Type',
+    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    ...additionalHeaders
+  }
+}
 
 interface SummaryResponse {
   summary: string
@@ -9,17 +20,12 @@ interface SummaryResponse {
   estimatedReadTime: number
 }
 
-export const handler: Handler = async (event, context) => {
+export const handler: Handler = async (event: HandlerEvent, context: HandlerContext) => {
   // Only allow POST requests
   if (event.httpMethod !== 'POST') {
     return {
       statusCode: 405,
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Headers': 'Content-Type',
-        'Access-Control-Allow-Methods': 'POST, OPTIONS'
-      },
+      headers: createHeaders(),
       body: JSON.stringify({ message: 'Method Not Allowed' })
     }
   }
@@ -149,12 +155,7 @@ Important: Return ONLY the JSON object, no additional text or formatting.
 
     return {
       statusCode: 200,
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Headers': 'Content-Type',
-        'Access-Control-Allow-Methods': 'POST, OPTIONS'
-      },
+      headers: createHeaders(),
       body: JSON.stringify(summaryData)
     }
 
@@ -172,10 +173,7 @@ Important: Return ONLY the JSON object, no additional text or formatting.
     if (error.status === 400) {
       return {
         statusCode: 400,
-        headers: {
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': '*'
-        },
+          headers: createHeaders(),
         body: JSON.stringify({ 
           message: 'Bad request to Anthropic API',
           error: error.message,
@@ -187,10 +185,7 @@ Important: Return ONLY the JSON object, no additional text or formatting.
     if (error.status === 401 || error.message?.includes('authentication') || error.message?.includes('API key')) {
       return {
         statusCode: 500,
-        headers: {
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': '*'
-        },
+          headers: createHeaders(),
         body: JSON.stringify({ 
           message: 'Authentication failed - API key may be invalid',
           error: error.message 
@@ -201,10 +196,7 @@ Important: Return ONLY the JSON object, no additional text or formatting.
     if (error.status === 429) {
       return {
         statusCode: 429,
-        headers: {
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': '*'
-        },
+          headers: createHeaders(),
         body: JSON.stringify({ 
           message: 'Rate limit exceeded - please try again later',
           error: error.message 
@@ -214,10 +206,7 @@ Important: Return ONLY the JSON object, no additional text or formatting.
     
     return {
       statusCode: 500,
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*'
-      },
+          headers: createHeaders(),
       body: JSON.stringify({ 
         message: 'Failed to generate summary',
         error: error.message,
