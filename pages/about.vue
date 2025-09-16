@@ -227,10 +227,15 @@ const { data: projects } = useAsyncData('latest-projects', () => queryContent('/
           </div>
         </div>
         <div class="hidden sticky bottom-0 lg:block">
-          <NuxtPicture width="608" height="931" format="avif,webp,png" densities="x1 x2" placeholder
-            :img-attrs="{ class: 'z-20 ml-24 -mb-24' }" src="/img/rahul-main.png" alt=""
-            aria-hidden />
-          </div>
+          <img 
+            src="/img/rahul-main.png" 
+            alt="" 
+            aria-hidden
+            class="z-20 ml-24 -mb-24 w-full h-auto object-cover"
+            style="min-height: 700px; max-height: 700px; min-width: 400px;"
+            loading="lazy"
+          />
+        </div>
         </div>
         <ContentDivider anchor="right" class="mt-14 hidden lg:block" />
     </AppSection>

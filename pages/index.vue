@@ -62,7 +62,8 @@ const latestArticles = computed<ArticlePreview[]>(() => (articles.value as unkno
               <img 
                 src="/img/rahul-main.png" 
                 alt="Photo of Rahul Aher"
-                class="z-20 relative w-full h-auto max-w-[300px] sm:max-w-[358px] object-cover rounded-lg"
+                class="z-20 relative w-full h-auto object-cover"
+                style="min-height: 300px; max-height: 400px;"
                 loading="lazy"
               />
             </div>
@@ -138,7 +139,8 @@ const latestArticles = computed<ArticlePreview[]>(() => (articles.value as unkno
           <img 
             src="/img/rahul-main.png" 
             alt="Photo of Rahul Aher"
-            class="z-20 relative w-full h-auto max-w-[450px] lg:max-w-[544px] object-cover rounded-lg"
+            class="z-20 relative w-full h-auto object-cover"
+            style="min-height: 635px; max-height: 700px; min-width: 400px;"
             loading="lazy"
           />
         </div>
