@@ -8,6 +8,6 @@ sw.*
 .env
 .env.production
 .output
+deploy-package
 # Local Netlify folder
 .netlify
-deploy-package

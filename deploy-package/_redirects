@@ -1,6 +1,0 @@
-# API redirects for manual deployment
-/api/quiz/generate /.netlify/functions/quiz-generate 200
-/api/summary/generate /.netlify/functions/summary-generate 200
-
-# SPA fallback
-/* /200.html 200
