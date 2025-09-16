@@ -1,5 +1,5 @@
 [build]
-  publish = "dist"
+  publish = ".output/public"
   command = "cd netlify/functions && npm install && cd ../../ && npm install && npm run generate"
 
 [build.environment]
