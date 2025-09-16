@@ -122,21 +122,37 @@ try {
       copyFileSync(functionsPackageJson, path.join(altFunctionsDir, 'package.json'));
       console.log('📁 Copied functions package.json');
     }
+
+    // Copy node_modules for function dependencies (critical for manual deployment)
+    const functionsNodeModules = path.join(functionsDir, 'node_modules');
+    if (existsSync(functionsNodeModules)) {
+      console.log('📁 Copying functions node_modules...');
+      copyDirectory(functionsNodeModules, path.join(altFunctionsDir, 'node_modules'));
+      console.log('📁 Copied functions node_modules');
+    } else {
+      console.log('⚠️ Functions node_modules not found - installing dependencies...');
+      try {
+        runCommand('npm install', { cwd: functionsDir });
+        if (existsSync(functionsNodeModules)) {
+          copyDirectory(functionsNodeModules, path.join(altFunctionsDir, 'node_modules'));
+          console.log('📁 Copied functions node_modules after install');
+        }
+      } catch (error) {
+        console.log('⚠️ Could not install function dependencies, continuing...');
+      }
+    }
   }
 
   // Create netlify.toml for manual deployment
   const netlifyConfig = `[build]
   publish = "."
   command = "echo 'Manual deployment - no build needed'"
+  functions = "functions"
 
 [build.environment]
   NODE_VERSION = "20"
   NPM_FLAGS = "--legacy-peer-deps"
   NITRO_PRESET = "netlify"
-
-[functions]
-  directory = "functions"
-  node_bundler = "esbuild"
 
 # Redirect API calls to functions
 [[redirects]]

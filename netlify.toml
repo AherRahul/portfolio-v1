@@ -1,6 +1,6 @@
 [build]
   publish = ".output/public"
-  command = "node build-netlify.js"
+  command = "node build-simple.js"
 
 [build.environment]
   NODE_VERSION = "20"
@@ -8,7 +8,7 @@
   NITRO_PRESET = "netlify"
 
 [functions]
-  directory = "functions"
+  directory = "netlify/functions"
   node_bundler = "esbuild"
 
 # Redirect API calls to functions

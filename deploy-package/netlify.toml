@@ -1,15 +1,12 @@
 [build]
   publish = "."
   command = "echo 'Manual deployment - no build needed'"
+  functions = "functions"
 
 [build.environment]
   NODE_VERSION = "20"
   NPM_FLAGS = "--legacy-peer-deps"
   NITRO_PRESET = "netlify"
-
-[functions]
-  directory = "functions"
-  node_bundler = "esbuild"
 
 # Redirect API calls to functions
 [[redirects]]
