@@ -182,6 +182,15 @@ export default defineNuxtConfig({
     }
   },
 
+  image: {
+    providers: {
+      cloudinary: {
+        baseURL: 'https://res.cloudinary.com/duojkrgue/image/upload/'
+      }
+    },
+    domains: ['res.cloudinary.com', 'i.ytimg.com']
+  },
+
   devtools: {
     enabled: false
   },

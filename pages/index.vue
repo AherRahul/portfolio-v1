@@ -58,9 +58,17 @@ const latestArticles = computed<ArticlePreview[]>(() => (articles.value as unkno
                 <span>Share</span>
               </AppParagraph>
             </div>
-            <div class="md:hidden w-1/2">
-              <NuxtPicture format="avif,webp,png" width="358" height="468" densities="x1 x2" placeholder :img-attrs="{ class: 'z-20 relative' }"
-                src="/img/rahul-main.png" alt="Photo of Rahul Aher" />
+            <div class="md:hidden w-1/2 flex justify-center">
+              <NuxtPicture 
+                format="avif,webp,png" 
+                width="358" 
+                height="468" 
+                densities="x1 x2" 
+                placeholder 
+                :img-attrs="{ class: 'z-20 relative w-full h-auto max-w-[358px] object-contain' }"
+                src="/img/rahul-main.png" 
+                alt="Photo of Rahul Aher" 
+              />
             </div>
           </div>
           <AppParagraph look="subParagraph" class="mt-8 ">
@@ -131,8 +139,16 @@ const latestArticles = computed<ArticlePreview[]>(() => (articles.value as unkno
           </div> -->
         </div>
         <div class="w-1/2 md:w-2/5 md:flex-1 h-full hidden md:flex justify-end items-center md:ml-32 md:mt-8">
-          <NuxtPicture format="avif,webp,png" width="544" height="710" densities="x1 x2" placeholder :img-attrs="{ class: 'z-20 relative' }"
-            src="/img/rahul-main.png" alt="Photo of Rahul Aher" />
+          <NuxtPicture 
+            format="avif,webp,png" 
+            width="544" 
+            height="710" 
+            densities="x1 x2" 
+            placeholder 
+            :img-attrs="{ class: 'z-20 relative w-full h-auto max-w-[544px] object-contain' }"
+            src="/img/rahul-main.png" 
+            alt="Photo of Rahul Aher" 
+          />
         </div>
       </div>
       <ContentDivider class="mt-16 md:-mt-10" />
