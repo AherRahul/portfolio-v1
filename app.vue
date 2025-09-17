@@ -35,7 +35,7 @@ function useAppSeo() {
         streetAddress: 'Ambernath'
       },
       name: 'Rahul Aher',
-      image: '/img/me@2x.png',
+      image: '/img/me@2x.jpg',
       email: 'mailto:rahulvijayaher@gmail.com',
       nationality: "Indian",
       jobTitle: 'Software Engineer and Web Engineering Consultant',

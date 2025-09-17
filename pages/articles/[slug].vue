@@ -272,7 +272,7 @@ const resourcesForTabs = computed(() => {
       <div
         class="flex flex-col md:flex-row gap-8 justify-center md:justify-start items-center mt-4 pt-8 md:pt-16 border-t border-t-gray-500/50">
         <div class="shrink-0">
-          <img class="rounded-full mx-auto" width="192" height="192" src="/img/me@2x.png"
+          <img class="rounded-full mx-auto" width="192" height="192" src="/img/me@2x.jpg"
             alt="Photo of Rahul Aher">
         </div>
         <div class="col-span-4 text-center md:text-left">
