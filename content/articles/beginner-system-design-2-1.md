@@ -57,7 +57,7 @@ Data storage is critical for system design. You can choose between:
 - **Relational Databases (RDBMS)**: Such as MySQL, PostgreSQL, or Oracle. These are ideal for structured data and complex queries.
 - **NoSQL Databases**: Such as MongoDB, Cassandra, or Redis. These are optimized for unstructured or semi-structured data and scalability.
 
-### 3. **APIs and Interfaces**
+### 3. **API and Interfaces**
 Defines how components communicate. Common API designs include:
 - **REST**: Based on HTTP methods like GET, POST, PUT, and DELETE.
 - **GraphQL**: Allows clients to request specific data.
@@ -86,13 +86,13 @@ System design can be broadly classified into two categories:
 Focuses on the overall architecture and major components. It addresses:
 - The choice of architecture (e.g., monolithic or microservices).
 - Database selection and schema design.
-- Key APIs and external integrations.
+- Key API and external integrations.
 
 ### 2. **Low-Level Design (LLD)**
 Deals with the detailed design of components, modules, and classes. It includes:
 - Data structures and algorithms.
 - Specific database queries.
-- Implementation details of APIs and interfaces.
+- Implementation details of API and interfaces.
 
 Both HLD and LLD are essential for building a comprehensive system.
 
@@ -109,7 +109,7 @@ Begin by gathering and analyzing the requirements:
 ### 2. **Define Key Components**
 Break the system into smaller, manageable components. For instance:
 - **Frontend**: The user interface.
-- **Backend**: Business logic and APIs.
+- **Backend**: Business logic and API.
 - **Database**: Storage and retrieval of data.
 
 ### 3. **Choose the Right Tools**

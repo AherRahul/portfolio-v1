@@ -125,12 +125,13 @@ defineOgImageComponent('Course', {
           :tutor="course.tutor"
           :languages="course.languages"
           :video="course.video"
-          class="mt-6 flex flex-wrap gap-8"
+          class="mt-6 flex flex-wrap gap-8 hidden lg:flex"
         />
         <!-- <div class="mt-6">
           <AppButton :to="enrollMailto" class="mr-3">Enroll / Contact</AppButton>
           <AppButton to="/contact/" look="secondary">Contact form</AppButton>
         </div> -->
+
       </div>
     </AppSection>
 
@@ -211,7 +212,7 @@ defineOgImageComponent('Course', {
                   <!-- Progress bar -->
                   <div class="mt-2 w-full bg-zinc-700 h-1">
                     <div 
-                      class="h-1 bg-gradient-to-r from-green-500 to-green-600 transition-all duration-300"
+                      class="h-1 bg-gradient-to-r from-red-500 to-pink-600 transition-all duration-300"
                       :style="{ width: `${getModuleProgress(module)}%` }"
                     ></div>
                   </div>
@@ -377,7 +378,13 @@ defineOgImageComponent('Course', {
 
     <!-- Additional Information Section -->
     <AppSection class="bg-zinc-900 pb-8 border-t border-gray-700">
-      <div class="container mx-auto prose md:prose-lg lg:prose-xl text-gray-300">
+      <!-- Content Reader positioned below heading -->
+      <div class="mt-8 ">
+        <ClientOnly>
+          <LazyContentReader :prepend="course.title" content-selector=".course-content" />
+        </ClientOnly>
+      </div>
+      <div class="container mx-auto prose md:prose-lg lg:prose-xl text-gray-300 course-content">
         <ContentDoc />
       </div>
     </AppSection>

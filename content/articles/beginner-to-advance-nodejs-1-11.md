@@ -1,6 +1,6 @@
 ---
 title: "Create a http server using Node JS"
-description: "We covered a lot of theory, investigating Node.js from its beginnings to 2025, and now it’s time to take action. But be patient — we'll start with some theory to set the context of what a server is, and then write something. Today, your VS Code or code editor won’t be alone. Node.js will be part of your code base, and we will write something. So, what are we waiting for? Let's begin! We'll read about servers, what development means, what a proxy server is, and what DNS is. Then, we’ll create a server"
+description: "We covered a lot of theory, investigating Nodejs from its beginnings to 2025, and now it’s time to take action. But be patient — we'll start with some theory to set the context of what a server is, and then write something. Today, your VS Code or code editor won’t be alone. Nodejs will be part of your code base, and we will write something. So, what are we waiting for? Let's begin! We'll read about servers, what development means, what a proxy server is, and what DNS is. Then, we’ll create a server"
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-04-15"
 datePublished: "2025-04-15"
@@ -31,9 +31,9 @@ resources:
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1757930710/Portfolio/nodeJsCourse/11.png)
 
-<!-- # 📖 My Personal Notes – Create an HTTP server using Node.js -->
+<!-- # 📖 My Personal Notes – Create an HTTP server using Nodejs -->
 
-We covered a lot of theory, investigating Node.js from its beginnings to 2025, and now it’s time to take action. But be patient — we'll start with some theory to set the context of what a server is, and then write something. Today, your VS Code or code editor won’t be alone. Node.js will be part of your code base, and we will write something. So, what are we waiting for? Let's begin! We'll read about servers, what development means, what a proxy server is, and what DNS is. Then, we’ll create a server
+We covered a lot of theory, investigating Nodejs from its beginnings to 2025, and now it’s time to take action. But be patient — we'll start with some theory to set the context of what a server is, and then write something. Today, your VS Code or code editor won’t be alone. Nodejs will be part of your code base, and we will write something. So, what are we waiting for? Let's begin! We'll read about servers, what development means, what a proxy server is, and what DNS is. Then, we’ll create a server
 
 ### What is a server (and why we care here)
 
@@ -49,17 +49,17 @@ A system can be identified by one address. For your computer, this address might
 
 ### Node server (what we’re actually building)
 
-What we do now and in the future is create servers that can handle requests from the outside world. That’s what Node.js is all about. Now, let’s discuss the architecture and dive deeper into it.
+What we do now and in the future is create servers that can handle requests from the outside world. That’s what Nodejs is all about. Now, let’s discuss the architecture and dive deeper into it.
 
 ### Client–server architecture (the request/response loop)
 
-A client is simply a person or system trying to access your server. For example, if someone opens a browser on their laptop and tries to access a file, whenever a client hits a URL (e.g., [www.heyashu.com](http://www.heyashu.com/)), the browser (the client) wants to access files from Heyashu. A socket connection is opened, and there is something on the server side listening to these requests. An application deployed somewhere listens for these requests, and that machine or app is called the server. There might be multiple clients making similar requests to the server's assets. As we've seen with libuv and Node.js, the server handles these requests by receiving data through the socket connection and sending it back to the client. And that's the whole process.
+A client is simply a person or system trying to access your server. For example, if someone opens a browser on their laptop and tries to access a file, whenever a client hits a URL (e.g., [www.heyashu.com](http://www.heyashu.com/)), the browser (the client) wants to access files from Heyashu. A socket connection is opened, and there is something on the server side listening to these requests. An application deployed somewhere listens for these requests, and that machine or app is called the server. There might be multiple clients making similar requests to the server's assets. As we've seen with libuv and Nodejs, the server handles these requests by receiving data through the socket connection and sending it back to the client. And that's the whole process.
 
 ![image.png](https://heyashu.in/images/blogs/e11p2.png)
 
 ### TCP/IP in one minute (rules of communication)
 
-Whenever data is sent, it uses the **Transfer Control Protocol (TCP)**. Again, this falls under the academic side of computer networking, so you can learn more about it by looking up **TCP/IP connections** on the internet. Multiple computers are connected to each other using the internet, which is why it’s called the web, and each has an address. But what does "protocol" mean? It means rules. Communication must follow some rules, that’s all. For example, if I start writing these notes in Chinese, you wouldn’t understand. By the way, I’m writing digital notes on Node.js in **Hinglish** — check here. So, rules are set, and that’s how communication works.
+Whenever data is sent, it uses the **Transfer Control Protocol (TCP)**. Again, this falls under the academic side of computer networking, so you can learn more about it by looking up **TCP/IP connections** on the internet. Multiple computers are connected to each other using the internet, which is why it’s called the web, and each has an address. But what does "protocol" mean? It means rules. Communication must follow some rules, that’s all. For example, if I start writing these notes in Chinese, you wouldn’t understand. By the way, I’m writing digital notes on Nodejs in **Hinglish** — check here. So, rules are set, and that’s how communication works.
 
 ### Other common protocols
 
@@ -71,7 +71,7 @@ HTTP, FTP, SMTP are different types of request protocols. Depending on the type 
 
 Data is not sent in bulk; it is sent in chunks, which in computer network language are called **packets**.
 
-There is also the concept of **streams** and **buffers**. A stream means a continuous connection, and a buffer means chunks of data. We will learn more about this later, but for now, just remember that **TCP/IP** is the protocol used to send data from server to client. In Node.js, the concept of **streams and buffers** is important, so go and learn it!
+There is also the concept of **streams** and **buffers**. A stream means a continuous connection, and a buffer means chunks of data. We will learn more about this later, but for now, just remember that **TCP/IP** is the protocol used to send data from server to client. In Nodejs, the concept of **streams and buffers** is important, so go and learn it!
 
 ### Domain names and DNS (why not just IPs)
 
@@ -83,7 +83,7 @@ It means **google.com** is mapped to this IP address. Got it? You are using doma
 
 ### Can we have multiple HTTP servers?
 
-Can we create multiple applications on the same server? Multiple servers on multiple machines? Confusing, right? Haha, I mean, is it possible to have multiple servers running to handle different things? Yes, it's possible! Now, suppose you have two HTTP servers, meaning two Node.js instances. Which server will handle the incoming request? It will be decided based on the **port**
+Can we create multiple applications on the same server? Multiple servers on multiple machines? Confusing, right? Haha, I mean, is it possible to have multiple servers running to handle different things? Yes, it's possible! Now, suppose you have two HTTP servers, meaning two Nodejs instances. Which server will handle the incoming request? It will be decided based on the **port**
 
 ### Ports in IP addresses (who handles the request)
 
@@ -111,7 +111,7 @@ When we request something, a socket connection is opened, and data is received, 
 
 We’ll use Node’s built-in `http` module first because it shows the core building blocks clearly: listening on a port, reading the request, and writing a response. Frameworks like Express make this easier, but it’s worth seeing the primitives.
 
-Node.js has multiple built-in modules. **https** is one of them, and it's used to create a server. The **https** module has a function called `createServer`. Here’s a list of modules — whatever you see in this list are called **native modules** of Node.js. Sometimes, they are imported like `node:http` in the code. Wait and see!
+Nodejs has multiple built-in modules. **https** is one of them, and it's used to create a server. The **https** module has a function called `createServer`. Here’s a list of modules — whatever you see in this list are called **native modules** of Nodejs. Sometimes, they are imported like `node:http` in the code. Wait and see!
 
 ```jsx
 const http = require('http')
@@ -153,11 +153,11 @@ server.listen(7777)
 
 ![image.png](https://heyashu.in/images/blogs/e11p8.png)
 
-Creating servers with the bare `http` module gets verbose as requirements grow (routing, middleware, error handling). That’s where **Express.js** helps: it layers convenient APIs on top of these primitives so you can focus on application logic.
+Creating servers with the bare `http` module gets verbose as requirements grow (routing, middleware, error handling). That’s where **Express.js** helps: it layers convenient API on top of these primitives so you can focus on application logic.
 
 ### Express JS
 
-It’s a framework for **Node.js**. We will discuss it later.
+It’s a framework for **Nodejs**. We will discuss it later.
 
 ### Things to Learn
 

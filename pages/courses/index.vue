@@ -100,7 +100,7 @@ function filterClient(items: any[]): any[] {
        theory and practice serves as the crucible where my understanding is honed and fortified. 
     </AppParagraph>
     <!-- Filters & search -->
-    <div class="mt-8 bg-zinc-900/60 rounded-md p-4 border border-zinc-800">
+    <div class="mt-8 bg-zinc-900/60 rounded-md p-4 border border-zinc-800 hidden lg:block">
       <div class="grid md:grid-cols-4 gap-4">
         <div>
           <label class="block text-sm text-zinc-300 mb-1">Search</label>

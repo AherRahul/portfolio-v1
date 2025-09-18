@@ -127,7 +127,7 @@ For engineers, system design demonstrates the ability to think holistically and 
      - **Serverless Architecture**: Relies on third-party cloud services to execute code.
 
 ### 2. **Components**
-   - Key building blocks like databases, servers, APIs, and load balancers.
+   - Key building blocks like databases, servers, API, and load balancers.
    - These components work together to achieve system functionality.
 
 ### 3. **Scalability**
@@ -136,7 +136,7 @@ For engineers, system design demonstrates the ability to think holistically and 
 
 ### 4. **Data Flow**
    - How data moves within the system, including:
-     - **User requests** (e.g., via REST APIs or GraphQL).
+     - **User requests** (e.g., via REST API or GraphQL).
      - **Backend processing**.
      - **Database interactions**.
 

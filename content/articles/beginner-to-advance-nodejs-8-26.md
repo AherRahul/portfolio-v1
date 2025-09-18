@@ -1,6 +1,6 @@
 ---
 title: "Streams & Buffers"
-description: "Efficiently process large data with Node.js streams: readable/writable/duplex/transform, backpressure, piping, and Buffer usage."
+description: "Efficiently process large data with Nodejs streams: readable/writable/duplex/transform, backpressure, piping, and Buffer usage."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-09-15"
 datePublished: "2025-09-15"
@@ -13,7 +13,7 @@ resources:
   - title: "Stream API"
     type: "documentation"
     url: "https://nodejs.org/api/stream.html"
-    description: "Official Node.js Stream API"
+    description: "Official Nodejs Stream API"
   - title: "Buffer"
     type: "documentation"
     url: "https://nodejs.org/api/buffer.html"
@@ -24,7 +24,7 @@ resources:
 
 <!-- # 📖 My Personal Notes – Streams & Buffers -->
 
-Streams confused me at first until I realized they're like pipes in your house—data flows through them chunk by chunk instead of dumping everything at once. Here's how I learned to work with large data efficiently in Node.js.
+Streams confused me at first until I realized they're like pipes in your house—data flows through them chunk by chunk instead of dumping everything at once. Here's how I learned to work with large data efficiently in Nodejs.
 
 ## Why Streams Matter
 
@@ -65,7 +65,7 @@ async function processLargeFileWithStreams() {
 }
 ```
 
-## 🚰 Understanding Node.js Streams
+## 🚰 Understanding Nodejs Streams
 
 ### The Four Types of Streams
 1. **Readable**: You can read data from it (like a file)
@@ -701,7 +701,7 @@ setInterval(() => {
 
 ---
 
-Streams are one of Node.js's superpowers. Once you understand them, you can process files of any size, handle real-time data, and build memory-efficient applications that scale beautifully.
+Streams are one of Nodejs's superpowers. Once you understand them, you can process files of any size, handle real-time data, and build memory-efficient applications that scale beautifully.
 
 The key is thinking in terms of data flow rather than data storage. Let the data stream through your application like water through pipes!
 

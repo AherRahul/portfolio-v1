@@ -18,7 +18,7 @@ resources:
     type: "tool"
     url: "https://www.mongodb.com/products/tools/compass"
     description: "GUI to visualize and query your data"
-  - title: "MongoDB Node.js Driver"
+  - title: "MongoDB Nodejs Driver"
     type: "documentation"
     url: "https://www.mongodb.com/docs/drivers/node/current/"
     description: "Official Node driver usage and examples"

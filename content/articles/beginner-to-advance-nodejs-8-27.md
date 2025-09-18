@@ -1,6 +1,6 @@
 ---
 title: "Clustering & Scaling"
-description: "Scale Node.js across CPU cores with cluster and worker threads; horizontal scaling patterns, sticky sessions, and stateless design."
+description: "Scale Nodejs across CPU cores with cluster and worker threads; horizontal scaling patterns, sticky sessions, and stateless design."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-09-15"
 datePublished: "2025-09-15"
@@ -24,15 +24,15 @@ resources:
 
 <!-- # 📖 My Personal Notes – Clustering & Scaling -->
 
-Single-threaded Node.js always bugged me until I learned about clustering. Here's how I scale Node.js apps from one core to many cores, and from one server to many servers.
+Single-threaded Nodejs always bugged me until I learned about clustering. Here's how I scale Nodejs apps from one core to many cores, and from one server to many servers.
 
-## Understanding Node.js Single-Threading
+## Understanding Nodejs Single-Threading
 
-Node.js runs JavaScript on a single thread, but that doesn't mean it can't use multiple CPU cores. Here's the distinction:
+Nodejs runs JavaScript on a single thread, but that doesn't mean it can't use multiple CPU cores. Here's the distinction:
 
 - **Event Loop**: Single-threaded (your JavaScript code)
 - **libuv Thread Pool**: Multi-threaded (file I/O, DNS, some crypto)
-- **Cluster Module**: Creates multiple Node.js processes
+- **Cluster Module**: Creates multiple Nodejs processes
 
 ## 🖥️ Cluster Module - Multi-Core on One Machine
 
@@ -237,7 +237,7 @@ async function benchmark() {
 
 ### 2. Start Simple, Scale Gradually
 ```
-1. Single Node.js process
+1. Single Nodejs process
 2. Add clustering (same machine)
 3. Add load balancer + multiple servers
 4. Add microservices (if needed)

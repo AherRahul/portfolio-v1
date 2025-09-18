@@ -1,6 +1,6 @@
 ---
 title: "Integration Testing with Supertest"
-description: "Test Express APIs end-to-end with Supertest. Learn setup, lifecycle hooks, test database strategies, and writing assertions for routes, status codes, and payloads."
+description: "Test Express API end-to-end with Supertest. Learn setup, lifecycle hooks, test database strategies, and writing assertions for routes, status codes, and payloads."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-09-15"
 datePublished: "2025-09-15"
@@ -14,7 +14,7 @@ resources:
   - title: "Supertest"
     type: "documentation"
     url: "https://github.com/ladjs/supertest"
-    description: "HTTP assertions made easy for Node.js"
+    description: "HTTP assertions made easy for Nodejs"
   - title: "Jest Docs"
     type: "documentation"
     url: "https://jestjs.io/docs/getting-started"
@@ -29,7 +29,7 @@ resources:
 
 <!-- # 📖 My Personal Notes – Integration Testing with Supertest -->
 
-Integration tests give me confidence that my API actually works when all the pieces come together. Supertest makes testing Express apps feel natural—like using the API from a client's perspective. Here's how I test my APIs properly.
+Integration tests give me confidence that my API actually works when all the pieces come together. Supertest makes testing Express apps feel natural—like using the API from a client's perspective. Here's how I test my API properly.
 
 ## Why Integration Tests Matter
 
@@ -534,7 +534,7 @@ __tests__/
 
 ---
 
-Integration testing with Supertest gives me the confidence to ship code knowing that my APIs work as expected. The key is testing the happy path, error cases, and edge conditions while keeping tests fast and isolated.
+Integration testing with Supertest gives me the confidence to ship code knowing that my API work as expected. The key is testing the happy path, error cases, and edge conditions while keeping tests fast and isolated.
 
 Remember: integration tests are your safety net for refactoring and your documentation for how the API should behave!
 

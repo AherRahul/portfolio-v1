@@ -41,7 +41,7 @@ The purpose of @aherrahul/rds-icons is to provide developers with a vast selecti
 
 Before you begin, make sure you have the following installed:
 
-- Node.js (v12 or higher)
+- Nodejs (v12 or higher)
 - npm (v6 or higher) or Yarn (v1.22 or higher)
 - Vue.js (v2.x or v3.x)
 

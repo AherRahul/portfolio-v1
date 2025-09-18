@@ -1,6 +1,6 @@
 ---
-title: "sync, async, setTimeoutZero in Node.js"
-description: "In the last few sessions, we have seen how Node.js code runs. If something is synchronous, the V8 engine handles it, or in case of asynchronous tasks, libUV steps in. You can think of Node.js having two best friends, like Jai and Veeru. Whenever a problem (or code) comes in, they handle it accordingly."
+title: "sync, async, setTimeoutZero in Nodejs"
+description: "In the last few sessions, we have seen how Nodejs code runs. If something is synchronous, the V8 engine handles it, or in case of asynchronous tasks, libUV steps in. You can think of Nodejs having two best friends, like Jai and Veeru. Whenever a problem (or code) comes in, they handle it accordingly."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-04-11"
 datePublished: "2025-04-11"
@@ -14,17 +14,17 @@ resources:
     type: "documentation"
     url: "https://nodejs.org/en/learn/asynchronous-work/event-loop-timers-and-nexttick"
     description: "Official docs comparing timers and microtasks in Node"
-  - title: "Node.js fs module"
+  - title: "Nodejs fs module"
     type: "documentation"
     url: "https://nodejs.org/api/fs.html"
-    description: "Asynchronous and synchronous file I/O APIs"
+    description: "Asynchronous and synchronous file I/O API"
 ---
 
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1757930704/Portfolio/nodeJsCourse/7.png)
 
 
-In the last few sessions, we saw how Node.js code runs. If something is synchronous, the V8 engine handles it; for asynchronous work, libuv steps in. Below is a compact example that mixes sync logs, network I/O, timers, and file reads so you can see the ordering clearly—and then we’ll explain why that order happens.
+In the last few sessions, we saw how Nodejs code runs. If something is synchronous, the V8 engine handles it; for asynchronous work, libuv steps in. Below is a compact example that mixes sync logs, network I/O, timers, and file reads so you can see the ordering clearly—and then we’ll explain why that order happens.
 
 Why this example: it shows that synchronous logs and function calls run immediately, while I/O and timers queue callbacks that run later through the event loop.
 
@@ -62,9 +62,9 @@ console.log('Sarkar kul aadmi the ...?', kitneAadmiThe(num1, num2));
 
 Let’s understand what's happening here. In this code, both asynchronous and synchronous operations are present. Here’s how the ordering plays out and why:
 
-1. The first two lines import the `https` and `fs` modules of Node.js. Got it?
+1. The first two lines import the `https` and `fs` modules of Nodejs. Got it?
 2. Then, there's a console log: "Kitne aadmi the?". This is a synchronous operation, so Jai (the V8 engine) will handle it. It will print immediately.
-3. Next, we have `https.get()`. Remember, this is asynchronous code, so Jai can't handle it. Veeru (libUV) steps in, and Node.js will ask libUV to fetch data from the API (`/todos/1`) without blocking the main thread. Once the data is ready, the callback function runs.
+3. Next, we have `https.get()`. Remember, this is asynchronous code, so Jai can't handle it. Veeru (libUV) steps in, and Nodejs will ask libUV to fetch data from the API (`/todos/1`) without blocking the main thread. Once the data is ready, the callback function runs.
 4. After that, there's `setTimeout()`. Again, this is asynchronous code, so Veeru (libUV) takes over. It waits for 5 seconds and runs the callback once the time is up, without blocking the main thread.
 5. Now, we have `fs.readFile()`. Since reading files is also asynchronous, Veeru (libUV) handles it. The file is read, and once done, the callback runs, printing the file contents.
 6. Finally, there's the `kitneAadmiThe()` function, which is synchronous. This is handled by the V8 engine (Jai) and runs immediately when called. The result is printed as "Sarkar kul aadmi the ...? 6".
@@ -108,13 +108,13 @@ Now I hope you have understood how sync and async works in NodeJs
 
 ![image.png](https://heyashu.in/images/blogs/e82.png)
 
-### setTimeout in Node.js (why 0ms is not immediate)
+### setTimeout in Nodejs (why 0ms is not immediate)
 
 Remember this: I often ask this question in interviews about the order of `setTimeout`, even if it has 0 milliseconds. Just keep in mind, no matter if it's set to 0 milliseconds or 10 seconds, it won’t run immediately. `setTimeout` will be handled by libUV and will only execute after the main thread has finished everything. It doesn’t block the main thread. I am putting one JS question here, because I think you know  JS which runs on web thats why you are here,  read below snippets and guess the output send me Yes  [here](https://x.com/JavaScripterrr)  if you have guessed it correct . 
 
 ![image.png](https://heyashu.in/images/blogs/e83.png)
 
-And thats all for this session, I'm **Ashutosh Anand Tiwari,** and I'm writing digital notes on Node.js. If you enjoy these notes, please share them with your friends. If you find any errors or have improvements, feel free to contribute by clicking edit icon on top bar of this page[.](https://heyashu.in/admin) If you're interested in writing the next episode's notes, [visit this link](https://heyashu.in/admin). Let's learn together! Also, please consider giving a star to [this repo](https://github.com/ashumsd7/heyashu/tree/main/src/data). For any queries, [let's connect here](https://topmate.io/aat/1148709/pay). Thank you…
+And thats all for this session, I'm **Ashutosh Anand Tiwari,** and I'm writing digital notes on Nodejs. If you enjoy these notes, please share them with your friends. If you find any errors or have improvements, feel free to contribute by clicking edit icon on top bar of this page[.](https://heyashu.in/admin) If you're interested in writing the next episode's notes, [visit this link](https://heyashu.in/admin). Let's learn together! Also, please consider giving a star to [this repo](https://github.com/ashumsd7/heyashu/tree/main/src/data). For any queries, [let's connect here](https://topmate.io/aat/1148709/pay). Thank you…
 
 ### New words to search
 

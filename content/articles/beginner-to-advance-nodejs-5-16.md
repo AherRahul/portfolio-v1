@@ -30,7 +30,7 @@ resources:
   - title: "Express Rate Limit"
     type: "tool"
     url: "https://github.com/nfriedly/express-rate-limit"
-    description: "Rate limiting middleware to protect your APIs"
+    description: "Rate limiting middleware to protect your API"
 ---
 
 ![Middleware in Express.js](https://res.cloudinary.com/duojkrgue/image/upload/v1757930697/Portfolio/nodeJsCourse/16_dtvljr.png)
@@ -658,6 +658,6 @@ app.listen(3000, () => {
 
 Awesome! Now I understand how middleware powers Express.js applications! 🔧
 
-I'm Rahul Aher, and these are my learning notes on Node.js. If you find these notes helpful, please share them with your friends. If you spot any errors or have improvements, feel free to contribute by [forking the repo](https://github.com/AherRahul/portfolio-v1). Let's learn together! Also, please consider giving a star ⭐ to [this repo](https://github.com/AherRahul/portfolio-v1). For any queries, [let's connect here](https://rahulaher.netlify.app/contact/).
+I'm Rahul Aher, and these are my learning notes on Nodejs. If you find these notes helpful, please share them with your friends. If you spot any errors or have improvements, feel free to contribute by [forking the repo](https://github.com/AherRahul/portfolio-v1). Let's learn together! Also, please consider giving a star ⭐ to [this repo](https://github.com/AherRahul/portfolio-v1). For any queries, [let's connect here](https://rahulaher.netlify.app/contact/).
 
 Take care, see you in the next lesson! 😊

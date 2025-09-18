@@ -1,6 +1,6 @@
 ---
-title: "Building REST APIs with Express.js"
-description: "Learn to create RESTful APIs with Express.js - handling JSON payloads, query parameters, route parameters, status codes, and CRUD operations. This comprehensive guide covers practical examples with proper API design principles and error handling."
+title: "Building REST API with Express.js"
+description: "Learn to create RESTful API with Express.js - handling JSON payloads, query parameters, route parameters, status codes, and CRUD operations. This comprehensive guide covers practical examples with proper API design principles and error handling."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-09-15"
 datePublished: "2025-09-15"
@@ -16,7 +16,7 @@ resources:
     type: "documentation"
     url: "https://restfulapi.net/"
     description: "Comprehensive REST API design guide and best practices"
-  - title: "Building a REST API with Node.js"
+  - title: "Building a REST API with Nodejs"
     type: "video"
     url: "https://www.youtube.com/watch?v=0oXYLzuucwE"
     description: "Complete REST API tutorial by Academind"
@@ -29,16 +29,16 @@ resources:
     type: "documentation"
     url: "https://httpstatuses.com/"
     description: "Complete reference for HTTP status codes"
-  - title: "RESTful Web APIs"
+  - title: "RESTful Web API"
     type: "book"
-    url: "https://www.amazon.com/RESTful-Web-APIs-Leonard-Richardson/dp/1449358063"
+    url: "https://www.amazon.com/RESTful-Web-API-Leonard-Richardson/dp/1449358063"
     description: "In-depth guide to REST API design"
     author: "Leonard Richardson"
 ---
 
-![Building REST APIs with Express.js](https://res.cloudinary.com/duojkrgue/image/upload/v1757930716/Portfolio/nodeJsCourse/15.png)
+![Building REST API with Express.js](https://res.cloudinary.com/duojkrgue/image/upload/v1757930716/Portfolio/nodeJsCourse/15.png)
 
-# 📖 Notes – Building REST APIs with Express.js
+# 📖 Notes – Building REST API with Express.js
 
 ## What is a REST API?
 
@@ -590,8 +590,8 @@ GET    /user/delete/123
 
 ---
 
-Great! Now I understand how to build REST APIs with Express.js! 🎯
+Great! Now I understand how to build REST API with Express.js! 🎯
 
-I'm Rahul Aher, and these are my learning notes on Node.js. If you find these notes helpful, please share them with your friends. If you spot any errors or have improvements, feel free to contribute by [forking the repo](https://github.com/AherRahul/portfolio-v1). Let's learn together! Also, please consider giving a star ⭐ to [this repo](https://github.com/AherRahul/portfolio-v1). For any queries, [let's connect here](https://rahulaher.netlify.app/contact/).
+I'm Rahul Aher, and these are my learning notes on Nodejs. If you find these notes helpful, please share them with your friends. If you spot any errors or have improvements, feel free to contribute by [forking the repo](https://github.com/AherRahul/portfolio-v1). Let's learn together! Also, please consider giving a star ⭐ to [this repo](https://github.com/AherRahul/portfolio-v1). For any queries, [let's connect here](https://rahulaher.netlify.app/contact/).
 
 Take care, see you in the next lesson! 😊

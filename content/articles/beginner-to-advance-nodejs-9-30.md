@@ -24,7 +24,7 @@ resources:
 
 <!-- # 📖 My Personal Notes – npm & Package Management -->
 
-npm confused me early on until I realized it's the backbone of Node.js development. Here's everything I've learned about managing packages, dependencies, and publishing code effectively.
+npm confused me early on until I realized it's the backbone of Nodejs development. Here's everything I've learned about managing packages, dependencies, and publishing code effectively.
 
 ## Understanding npm Ecosystem
 
@@ -458,6 +458,6 @@ npm audit --json > security-report.json
 
 ---
 
-npm is more than just a package manager—it's the foundation of the Node.js ecosystem. Master these concepts and you'll build more reliable, maintainable, and secure applications. The key is understanding not just how to install packages, but how to manage them throughout your application's lifecycle.
+npm is more than just a package manager—it's the foundation of the Nodejs ecosystem. Master these concepts and you'll build more reliable, maintainable, and secure applications. The key is understanding not just how to install packages, but how to manage them throughout your application's lifecycle.
 
 

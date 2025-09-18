@@ -1,6 +1,6 @@
 ---
 title: "Advanced Routing & Parameter Handling in Express.js"
-description: "Master advanced routing patterns in Express.js including nested routers, route parameters, query string parsing, regular expressions in routes, route validation, and input sanitization strategies for building robust APIs."
+description: "Master advanced routing patterns in Express.js including nested routers, route parameters, query string parsing, regular expressions in routes, route validation, and input sanitization strategies for building robust API."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-09-15"
 datePublished: "2025-09-15"
@@ -744,6 +744,6 @@ app.use(compression({ filter: shouldCompress }));
 
 Perfect! Now I'm a routing master! 🛣️
 
-I'm Rahul Aher, and these are my learning notes on Node.js. If you find these notes helpful, please share them with your friends. If you spot any errors or have improvements, feel free to contribute by [forking the repo](https://github.com/AherRahul/portfolio-v1). Let's learn together! Also, please consider giving a star ⭐ to [this repo](https://github.com/AherRahul/portfolio-v1). For any queries, [let's connect here](https://rahulaher.netlify.app/contact/).
+I'm Rahul Aher, and these are my learning notes on Nodejs. If you find these notes helpful, please share them with your friends. If you spot any errors or have improvements, feel free to contribute by [forking the repo](https://github.com/AherRahul/portfolio-v1). Let's learn together! Also, please consider giving a star ⭐ to [this repo](https://github.com/AherRahul/portfolio-v1). For any queries, [let's connect here](https://rahulaher.netlify.app/contact/).
 
 Take care, see you in the next lesson! 😊

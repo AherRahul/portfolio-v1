@@ -1,6 +1,6 @@
 ---
 title: "HTTP Headers Methods Status Codes and Rest API Deep Dive"
-description: "If you are a junior developer, a senior developer, or just a complete newbie, this is going to be a great place to learn about REST APIs—what they are, why they are used, and how they work. This is going to be a long blog, so it’s for serious readers. If you prefer short TikTok-like videos for instant information, this might not be for you. Let’s get started!"
+description: "If you are a junior developer, a senior developer, or just a complete newbie, this is going to be a great place to learn about REST API—what they are, why they are used, and how they work. This is going to be a long blog, so it’s for serious readers. If you prefer short TikTok-like videos for instant information, this might not be for you. Let’s get started!"
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-03-03"
 datePublished: "2025-03-03"
@@ -14,7 +14,7 @@ topics:
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1744045770/Portfolio/FrontendSystemDesignCourse/3_sskfuy.png)
 
-If you are a junior developer, a senior developer, or just a complete newbie, this is going to be a great place to learn about REST APIs—what they are, why they are used, and how they work. This is going to be a long blog, so it’s for serious readers. If you prefer short TikTok-like videos for instant information, this might not be for you. Let’s get started!
+If you are a junior developer, a senior developer, or just a complete newbie, this is going to be a great place to learn about REST API—what they are, why they are used, and how they work. This is going to be a long blog, so it’s for serious readers. If you prefer short TikTok-like videos for instant information, this might not be for you. Let’s get started!
 
 ### What We Will Learn in This Blog
 
@@ -54,9 +54,9 @@ Now, we have three separate blocks: the dining area (frontend), the kitchen (bac
 
 ![image.png](https://heyashu.in/images/blogs/rest_3.jpg)
 
-So, coming to the API part—communication between the client (frontend) and server (backend) happens through an intermediary, much like how a waiter communicates between customers and the kitchen. This intermediary is called an **API (Application Programming Interface)**. There are different types of APIs, and one of the most widely used is the **REST API**.
+So, coming to the API part—communication between the client (frontend) and server (backend) happens through an intermediary, much like how a waiter communicates between customers and the kitchen. This intermediary is called an **API (Application Programming Interface)**. There are different types of API, and one of the most widely used is the **REST API**.
 
-**REST (Representational State Transfer)**: It refers to transferring the "state" of a resource in a representational format. Essentially, the data (state) is represented and transferred using APIs.
+**REST (Representational State Transfer)**: It refers to transferring the "state" of a resource in a representational format. Essentially, the data (state) is represented and transferred using API.
 
 
 ### My Rules and Protocols
@@ -66,20 +66,20 @@ Think about how we present different dishes in a restaurant. Each dish is served
 In web terms, these rules are called **protocols**, and one such protocol is **HTTP (HyperText Transfer Protocol)**. It’s the standard set of rules for transferring data over a network.
 
 
-### Benefits of REST APIs
+### Benefits of REST API
 
-* **Ease of Use**: REST APIs are simple and straightforward to implement.
+* **Ease of Use**: REST API are simple and straightforward to implement.
 * **Stateless**: The server does not retain any previous information; it simply processes the current request and provides a response.
-* **Scalability**: REST APIs can easily handle increasing loads and scale effectively.
+* **Scalability**: REST API can easily handle increasing loads and scale effectively.
 * **Flexibility**: Supports different formats like JSON or XML, making it highly adaptable.
 * **Uniform Interface**: Provides a consistent way to identify resources (via URLs) and interact with them.
-* **Caching**: REST APIs support caching, improving performance and reducing server load.
+* **Caching**: REST API support caching, improving performance and reducing server load.
 * **Separation of Concerns**: Frontend and backend can use different technologies.
 * **Interoperability**: Language-agnostic, allowing different programming languages to work together.
-* **Ease of Testing**: REST APIs are simple to test using tools like Postman.
-* **Security**: REST APIs provide built-in security features like HTTPS for secure communication.
+* **Ease of Testing**: REST API are simple to test using tools like Postman.
+* **Security**: REST API provide built-in security features like HTTPS for secure communication.
 
-[Explore some dummy and free APIs here!](https://dummyjson.com/docs) 
+[Explore some dummy and free API here!](https://dummyjson.com/docs) 
 Now, it’s time to dive into HTTP requests and explore their key components.
 
 [Image credits](https://softuni.org/dev-concepts/everything-you-need-to-know-about-http-protocol/) 
@@ -100,7 +100,7 @@ We will dive deeper into each of these later. For now, just keep in mind that th
 
 ### Let’s Create a Server
 
-We will use **Express.js**, which is built on **Node.js**.
+We will use **Express.js**, which is built on **Nodejs**.
 
 1. Open any folder of your choice.
 2. Open **VS Code**, **Cursive**, or any of your favorite editors.
@@ -137,7 +137,7 @@ In your **package.json** file (which you got after running `npm init`), you need
 1. Add a script to run your project.
 2. Specify the project type as **module** because you are using **ES6 syntax**. This tells your project to follow **ESM (ECMAScript Modules)** instead of **CJS (CommonJS)**.
 
-It’s important to learn about these topics to understand how modules work in Node.js.
+It’s important to learn about these topics to understand how modules work in Nodejs.
 
 ```
 {

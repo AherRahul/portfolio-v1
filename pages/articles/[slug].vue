@@ -188,10 +188,10 @@ const resourcesForTabs = computed(() => {
         </AppButton>
       </div>
 
-      <AppParagraph class="mt-4" look="heading" tag="h1">
+      <AppParagraph class="mt-4 mb-4" look="heading" tag="h1">
         {{ article.title }}
       </AppParagraph>
-      <div class="flex flex-col md:flex-row gap-4 md:gap-0 justify-between mt-8">
+      <div class="flex flex-col md:flex-row gap-4 md:gap-0 justify-between mt-8 hidden lg:flex">
         <div class="flex gap-3">
           <p class="mr-2">Updated at {{ formattedUpdateAt }}</p>
           <p class="mr-2"><Icon name="heroicons:clock" /> {{ article.readingTime.text }}</p>
@@ -207,6 +207,13 @@ const resourcesForTabs = computed(() => {
           </li>
         </ul>
       </div>
+      
+      <!-- Content Reader positioned below heading -->
+      <div v-if="!isCourseArticle" class="mt-8">
+        <ClientOnly>
+          <LazyContentReader :prepend="article.title" content-selector=".article-content" />
+        </ClientOnly>
+      </div>
     </AppSection>
     <AppSection class="justify-center bg-zinc-900 pb-8">
       <!-- Enhanced Course Tabs for course articles OR regular content for standalone articles -->
@@ -221,7 +228,7 @@ const resourcesForTabs = computed(() => {
       </div>
       
       <!-- Regular article content for standalone articles -->
-      <div v-else>
+      <div v-else class="article-content">
         <ArticleAgeWarning v-if="isOlderThanOneYear" />
         <ContentDoc class="prose md:prose-lg lg:prose-xl" :class="isOlderThanOneYear ? 'pt-8' : 'pt-4'" />
       </div>

@@ -1,5 +1,5 @@
 ---
-title: "Debugging & Inspecting Node.js"
+title: "Debugging & Inspecting Nodejs"
 description: "Use Node inspector, Chrome DevTools, VS Code debugger; breakpoints, watch expressions, CPU profiling, and memory tools."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-09-15"
@@ -10,7 +10,7 @@ topics:
   - nodejs
   - debugging
 resources:
-  - title: "Debugging Node.js"
+  - title: "Debugging Nodejs"
     type: "documentation"
     url: "https://nodejs.org/en/learn/getting-started/debugging"
     description: "Official debugging guide"
@@ -20,11 +20,11 @@ resources:
     description: "Chrome DevTools reference"
 ---
 
-![Debugging & Inspecting Node.js](https://res.cloudinary.com/duojkrgue/image/upload/v1757930700/Portfolio/nodeJsCourse/31_tfmesl.png)
+![Debugging & Inspecting Nodejs](https://res.cloudinary.com/duojkrgue/image/upload/v1757930700/Portfolio/nodeJsCourse/31_tfmesl.png)
 
-<!-- # 📖 My Personal Notes – Debugging & Inspecting Node.js -->
+<!-- # 📖 My Personal Notes – Debugging & Inspecting Nodejs -->
 
-Debugging used to be my biggest frustration until I learned the right tools and techniques. Here's how I debug Node.js apps efficiently, from simple console.log to advanced profiling.
+Debugging used to be my biggest frustration until I learned the right tools and techniques. Here's how I debug Nodejs apps efficiently, from simple console.log to advanced profiling.
 
 ## 🔍 Debugging Fundamentals
 
@@ -75,7 +75,7 @@ debugAuth('User %s attempting login', req.body.email)
 // DEBUG=app:database,app:auth node server.js
 ```
 
-## 🛠️ Node.js Inspector
+## 🛠️ Nodejs Inspector
 
 ### Starting the Inspector
 ```bash

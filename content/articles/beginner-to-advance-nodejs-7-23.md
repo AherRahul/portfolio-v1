@@ -1,6 +1,6 @@
 ---
 title: "Unit Testing with Jest"
-description: "Write fast unit tests for Node.js apps with Jest: setup, test structure, assertions, mocks/spies, coverage, and practical patterns for pure functions and modules."
+description: "Write fast unit tests for Nodejs apps with Jest: setup, test structure, assertions, mocks/spies, coverage, and practical patterns for pure functions and modules."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-09-15"
 datePublished: "2025-09-15"
@@ -33,19 +33,19 @@ resources:
 
 <!-- # 📖 My Personal Notes – Unit Testing with Jest -->
 
-Testing used to feel like a chore until I realized it's my safety net for refactoring and my documentation for how code should behave. Jest makes testing in Node.js actually enjoyable. Here's everything I've learned about writing effective unit tests.
+Testing used to feel like a chore until I realized it's my safety net for refactoring and my documentation for how code should behave. Jest makes testing in Nodejs actually enjoyable. Here's everything I've learned about writing effective unit tests.
 
 ## Why Jest Over Other Testing Frameworks?
 
 Jest won me over because it's:
-- **Zero config** for most Node.js projects
+- **Zero config** for most Nodejs projects
 - **Built-in mocking** without extra libraries
 - **Snapshot testing** for UI components
 - **Great error messages** that actually help debug
 - **Parallel test execution** for speed
 - **Coverage reports** out of the box
 
-## 🚀 Setting Up Jest for Node.js
+## 🚀 Setting Up Jest for Nodejs
 
 ### Basic Setup
 ```bash

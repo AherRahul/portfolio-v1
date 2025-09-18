@@ -1,6 +1,6 @@
 ---
 title: "JavaScript on Server"
-description: "Discover how JavaScript powers server-side development with Node.js, transforming the way web applications are built. Node.js is a fast, scalable runtime that enables asynchronous, event-driven programming, making it ideal for real-time applications like chat apps and streaming services. You'll also learn to build server-side applications from scratch, manage dependencies with npm, and use frameworks like Express.js."
+description: "Discover how JavaScript powers server-side development with Nodejs, transforming the way web applications are built. Nodejs is a fast, scalable runtime that enables asynchronous, event-driven programming, making it ideal for real-time applications like chat apps and streaming services. You'll also learn to build server-side applications from scratch, manage dependencies with npm, and use frameworks like Express.js."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-04-06"
 datePublished: "2025-04-06"
@@ -10,10 +10,10 @@ topics:
   - nodejs
   - javascript
 resources:
-  - title: "Official Node.js Documentation"
+  - title: "Official Nodejs Documentation"
     type: "documentation"
     url: "https://nodejs.org/en/docs"
-    description: "The official reference for Node.js APIs, guides, and usage examples."
+    description: "The official reference for Nodejs API, guides, and usage examples."
   - title: "Chrome V8 Engine Documentation"
     type: "documentation"
     url: "https://v8.dev/docs"
@@ -26,19 +26,19 @@ resources:
     type: "article"
     url: "https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey/Introduction_to_the_SpiderMonkey_JavaScript_engine"
     description: "MDN article introducing JavaScript engines, using SpiderMonkey as an example."
-  - title: "Ryan Dahl’s Node.js Introduction (JSConf 2009)"
+  - title: "Ryan Dahl’s Nodejs Introduction (JSConf 2009)"
     type: "video"
     url: "https://www.youtube.com/watch?v=ztspvPYybIY"
-    description: "The original presentation where Node.js was introduced to the developer community."
+    description: "The original presentation where Nodejs was introduced to the developer community."
     duration: "27:29"
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1757930701/Portfolio/nodeJsCourse/2_zzsbpy.png)
 
 
-## Understanding Server-Side JavaScript with Node.js
+## Understanding Server-Side JavaScript with Nodejs
 
-As we’ve learned, Node.js allows JavaScript to run outside of the browser—specifically on a server. But what does this actually mean in practice? To answer this, let’s explore the fundamental concepts of server-side JavaScript and the technologies that make it possible.
+As we’ve learned, Nodejs allows JavaScript to run outside of the browser—specifically on a server. But what does this actually mean in practice? To answer this, let’s explore the fundamental concepts of server-side JavaScript and the technologies that make it possible.
 
 
 ## What is a Server?
@@ -58,7 +58,7 @@ But how does your request know which server to reach? This is where the **Domain
 
 The server receives your request, processes it, and responds with the appropriate resource—often an HTML page, a JSON response, or some other form of data.  
 
-This client-server interaction forms the backbone of the modern internet. With Node.js, JavaScript can participate in this communication not only in the browser (client side) but also on the server. This unification of frontend and backend development makes it possible for developers to become **full-stack engineers**, using a single language across the entire stack.
+This client-server interaction forms the backbone of the modern internet. With Nodejs, JavaScript can participate in this communication not only in the browser (client side) but also on the server. This unification of frontend and backend development makes it possible for developers to become **full-stack engineers**, using a single language across the entire stack.
 
 ![Client-Server Model](https://i.ibb.co/brf7D7h/1.jpg)
 
@@ -72,33 +72,33 @@ Every browser has its own engine:
 - Firefox uses **SpiderMonkey**  
 - Safari uses **JavaScriptCore**  
 
-These engines are not themselves written in JavaScript. Instead, they are typically implemented in **C++**, a language chosen for its speed and efficiency. For example, Google’s **V8 engine**—which powers both Chrome and Node.js—has over 70% of its implementation written in C++.
+These engines are not themselves written in JavaScript. Instead, they are typically implemented in **C++**, a language chosen for its speed and efficiency. For example, Google’s **V8 engine**—which powers both Chrome and Nodejs—has over 70% of its implementation written in C++.
 
 ![JavaScript Engine Overview](https://i.ibb.co/w7kyPnm/2.jpg)
 
 
-## The Story of V8 and Node.js
+## The Story of V8 and Nodejs
 
 The **V8 engine** plays a critical role in modern JavaScript execution. Written in C++, it follows the official **ECMAScript standards**, ensuring consistency across platforms. V8 is designed to compile high-level JavaScript directly into **machine code**, enabling extremely fast execution.  
 
 Importantly, V8 is not tied to browsers alone—it is a **standalone library**. This means it can be embedded into any C++ application to add JavaScript execution capabilities.  
 
-This is where **Node.js** enters the picture. Node.js is essentially a **C++ application that embeds the V8 engine**, giving it the ability to execute JavaScript outside of the browser. But Node.js goes further—it adds powerful APIs for server-side operations like handling HTTP requests, reading and writing files, or connecting to databases.  
+This is where **Nodejs** enters the picture. Nodejs is essentially a **C++ application that embeds the V8 engine**, giving it the ability to execute JavaScript outside of the browser. But Nodejs goes further—it adds powerful API for server-side operations like handling HTTP requests, reading and writing files, or connecting to databases.  
 
 In other words:  
 - **V8** makes JavaScript execution possible.  
-- **Node.js** builds on V8 and equips it with the tools required for backend development.  
+- **Nodejs** builds on V8 and equips it with the tools required for backend development.  
 
-Thus, the **Node.js runtime** is the combination of the V8 engine and additional C++ and JavaScript code that together provide the features developers need to build full server-side applications.
+Thus, the **Nodejs runtime** is the combination of the V8 engine and additional C++ and JavaScript code that together provide the features developers need to build full server-side applications.
 
-![Node.js and V8](https://i.ibb.co/J5M4TNX/4.jpg)
+![Nodejs and V8](https://i.ibb.co/J5M4TNX/4.jpg)
 
-> **Note:** While Node.js is built on C++, many of its built-in modules and APIs are written in JavaScript. This hybrid nature ensures that developers can work in JavaScript while benefiting from the performance and system-level capabilities of C++.
+> **Note:** While Nodejs is built on C++, many of its built-in modules and API are written in JavaScript. This hybrid nature ensures that developers can work in JavaScript while benefiting from the performance and system-level capabilities of C++.
 
 
 ## Why C++? Understanding the Language Hierarchy
 
-The choice of **C++** for building JavaScript engines and the Node.js runtime is deliberate. To understand why, consider the hierarchy of programming languages:  
+The choice of **C++** for building JavaScript engines and the Nodejs runtime is deliberate. To understand why, consider the hierarchy of programming languages:  
 
 - At the **lowest level**, computers only understand **binary code (0s and 1s)**—also called **machine code**.  
 - Slightly higher are **assembly languages**, which are closer to machine code but slightly more human-readable.  
@@ -128,8 +128,8 @@ If you want to go deeper into this subject, here are some key concepts to resear
 
 - **WebAssembly (Wasm):** A low-level binary format that runs alongside JavaScript in the browser, delivering near-native performance for web apps.  
 - **ECMAScript (ES6 and beyond):** The standardized specification for JavaScript that defines its features and syntax.  
-- **Cross-Platform Development:** The ability of Node.js to run seamlessly on Windows, macOS, and Linux, making applications portable.  
+- **Cross-Platform Development:** The ability of Nodejs to run seamlessly on Windows, macOS, and Linux, making applications portable.  
 - **Processor Architectures (ARM vs. x86):** Understanding how different hardware architectures influence performance and compatibility of software.  
 
-These concepts not only deepen your understanding of Node.js but also provide valuable insights into the broader world of software engineering.
+These concepts not only deepen your understanding of Nodejs but also provide valuable insights into the broader world of software engineering.
 

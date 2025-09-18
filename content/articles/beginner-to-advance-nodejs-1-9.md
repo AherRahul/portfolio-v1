@@ -1,6 +1,6 @@
 ---
 title: "libuv & Event Loop"
-description: "As we know, Node.js has two main parts, like the duo Jai and Veeru: the V8 engine and libuv. Let’s take a closer look at libuv. Just like the V8 engine has its hidden parts, you can learn more about it by clicking here. Now, let’s focus on libuv. Whenever V8 (Jai) can’t handle something—like file access, network calls, or timers—it gives the task to libuv. Also, when these tasks run, we often use callback functions, which are executed after libuv finishes the job."
+description: "As we know, Nodejs has two main parts, like the duo Jai and Veeru: the V8 engine and libuv. Let’s take a closer look at libuv. Just like the V8 engine has its hidden parts, you can learn more about it by clicking here. Now, let’s focus on libuv. Whenever V8 (Jai) can’t handle something—like file access, network calls, or timers—it gives the task to libuv. Also, when these tasks run, we often use callback functions, which are executed after libuv finishes the job."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-04-13"
 datePublished: "2025-04-13"
@@ -10,7 +10,7 @@ topics:
   - nodejs
   - javascript
 resources:
-  - title: "Node.js Event Loop Phases"
+  - title: "Nodejs Event Loop Phases"
     type: "documentation"
     url: "https://nodejs.org/en/learn/asynchronous-work/event-loop-timers-and-nexttick"
     description: "Authoritative explanation of phases and microtasks"
@@ -27,7 +27,7 @@ resources:
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1757930709/Portfolio/nodeJsCourse/9.png)
 
-As we know, Node.js has two main parts: the V8 engine and **libuv**. Whenever V8 can’t handle something—like file access, network calls, or timers—it hands the task to **libuv**. When the work completes, callbacks are queued to be executed by JavaScript on the main thread. Below we’ll connect those pieces to the event loop’s phases.
+As we know, Nodejs has two main parts: the V8 engine and **libuv**. Whenever V8 can’t handle something—like file access, network calls, or timers—it hands the task to **libuv**. When the work completes, callbacks are queued to be executed by JavaScript on the main thread. Below we’ll connect those pieces to the event loop’s phases.
 
 ```jsx
 const fs = require('fs');
@@ -102,7 +102,7 @@ So, before checking `setTimeout` in the Timer phase, it first looks if there are
 
 ### Callback in NodeJs
 
-Below, I am pasting a code snippet that will show you how callbacks look in Node.js. Most of the time, they go and wait in the callback queue, get checked by the Event Loop, and are executed by the V8 engine. All callbacks wait there in the callback queue. Now, with this example, you can simply check the inner loop first, then the Timer phase, then again the inner loop (`nextTick` and promise callbacks), then the Poll phase, and then again the inner loop, followed by the Check phase, the inner loop again, then the Close phase, and then back to the inner loop. This process continues, creating an infinite loop of checks.
+Below, I am pasting a code snippet that will show you how callbacks look in Nodejs. Most of the time, they go and wait in the callback queue, get checked by the Event Loop, and are executed by the V8 engine. All callbacks wait there in the callback queue. Now, with this example, you can simply check the inner loop first, then the Timer phase, then again the inner loop (`nextTick` and promise callbacks), then the Poll phase, and then again the inner loop, followed by the Check phase, the inner loop again, then the Close phase, and then back to the inner loop. This process continues, creating an infinite loop of checks.
 
 And here, also remember that for **nextTick** and Promises, two queues are maintained. Just think of it like two types of guests waiting in different rooms, and it's different from the callback queue, and remembers readig file might take time so order can be changed of output.
 
@@ -159,7 +159,7 @@ normalFunction();
 
 ### Wait Wait ! yes party is not over yet
 
-If there is nothing in the V8 engine’s call stack, and everything has run, including the `nextTick` queue, callback queues, and all phases except the Poll phase, and if a file is still being read with an I/O callback pending execution, then the Event Loop will not keep running. It will stop and wait at the Poll phase instead of continuously running. This is an important concept to understand in Node.js, which is different from the Event Loop in web browsers
+If there is nothing in the V8 engine’s call stack, and everything has run, including the `nextTick` queue, callback queues, and all phases except the Poll phase, and if a file is still being read with an I/O callback pending execution, then the Event Loop will not keep running. It will stop and wait at the Poll phase instead of continuously running. This is an important concept to understand in Nodejs, which is different from the Event Loop in web browsers
 
 ### Improtant to know
 
@@ -211,7 +211,7 @@ And thats all..
 
 1. Practice output based questions
 
-I'm Rahul Aher, and I'm writing digital notes on Node.js. If you enjoy these notes, please share them with your friends. If you find any errors or have improvements, feel free to contribute by forking the repo. If you're interested in writing the next episode's notes, [fork the repo and contribute](https://github.com/AherRahul/portfolio-v1). Let's learn together! Also, please consider giving a star to [this repo](https://github.com/AherRahul/portfolio-v1). For any queries, [let's connect here](https://rahulaher.netlify.app/contact/).
+I'm Rahul Aher, and I'm writing digital notes on Nodejs. If you enjoy these notes, please share them with your friends. If you find any errors or have improvements, feel free to contribute by forking the repo. If you're interested in writing the next episode's notes, [fork the repo and contribute](https://github.com/AherRahul/portfolio-v1). Let's learn together! Also, please consider giving a star to [this repo](https://github.com/AherRahul/portfolio-v1). For any queries, [let's connect here](https://rahulaher.netlify.app/contact/).
 
 Take care, Good Bye :) [](https://rahulaher.netlify.app/contact/)
 

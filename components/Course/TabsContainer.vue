@@ -273,7 +273,9 @@ onMounted(() => {
         <div v-if="activeTab === 'content'" :id="'panel-content'" role="tabpanel" aria-labelledby="tab-content">
           <div>
             <ArticleAgeWarning v-if="isOlderThanOneYear" />
-            <ContentDoc class="prose md:prose-lg lg:prose-xl" :class="isOlderThanOneYear ? 'pt-8' : 'pt-4'" />
+            <ClientOnly>
+              <LazyContentReader :prepend="topicTitle" :doc-class="'prose md:prose-lg lg:prose-xl ' + (isOlderThanOneYear ? 'pt-8' : 'pt-4')" />
+            </ClientOnly>
           </div>
         </div>
 

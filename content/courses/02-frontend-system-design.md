@@ -48,7 +48,7 @@ content:
         sub_topic: Networking
         publish_date: 2025-03-03
         description: >
-          If you are a junior developer, a senior developer, or just a complete newbie, this is going to be a great place to learn about REST APIs—what they are, why they are used, and how they work. This is going to be a long blog, so it’s for serious readers. If you prefer short TikTok-like videos for instant information, this might not be for you. Let’s get started!
+          If you are a junior developer, a senior developer, or just a complete newbie, this is going to be a great place to learn about REST API—what they are, why they are used, and how they work. This is going to be a long blog, so it’s for serious readers. If you prefer short TikTok-like videos for instant information, this might not be for you. Let’s get started!
         topics:
           - nodejs
           - javascript
@@ -58,11 +58,11 @@ content:
         is_on_youtube: false
         _path: frontend-system-design-1-3
       - id: 4
-        topic_name: Why GraphQL over Rest APIs
+        topic_name: Why GraphQL over Rest API
         sub_topic: Networking
         publish_date: 2025-03-04
         description: >
-          Many companies today use GraphQL. In this blog, we’ll explore what GraphQL is, its benefits, and why it’s so popular. Suppose your app needs information about continents, countries, and languages. If you’re using REST APIs, you’ll likely call multiple APIs to fetch this data and then organize it for your frontend. Be patient—it’s not an Instagram Reel, but for serious learners, it’ll be worth the read.
+          Many companies today use GraphQL. In this blog, we’ll explore what GraphQL is, its benefits, and why it’s so popular. Suppose your app needs information about continents, countries, and languages. If you’re using REST API, you’ll likely call multiple API to fetch this data and then organize it for your frontend. Be patient—it’s not an Instagram Reel, but for serious learners, it’ll be worth the read.
         topics:
           - nodejs
           - javascript
@@ -280,7 +280,7 @@ For engineers, system design demonstrates the ability to think holistically and 
      - **Serverless Architecture**: Relies on third-party cloud services to execute code.
 
 ### 2. **Components**
-   - Key building blocks like databases, servers, APIs, and load balancers.
+   - Key building blocks like databases, servers, API, and load balancers.
    - These components work together to achieve system functionality.
 
 ### 3. **Scalability**
@@ -289,7 +289,7 @@ For engineers, system design demonstrates the ability to think holistically and 
 
 ### 4. **Data Flow**
    - How data moves within the system, including:
-     - **User requests** (e.g., via REST APIs or GraphQL).
+     - **User requests** (e.g., via REST API or GraphQL).
      - **Backend processing**.
      - **Database interactions**.
 

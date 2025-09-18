@@ -1,6 +1,6 @@
 ---
 title: "Diving into the NodeJS GitHub repo"
-description: "As we know, each module in Node.js has its own scope. How does Node.js achieve this? In JavaScript, we follow the Principle of Least Privilege (PoLP), which is related to functions and scope. If you're unfamiliar, you can Google it. The idea is to only expose what is necessary to the global scope, keeping everything else private. To achieve PoLP, wrap your code in a function or immediately invoke it (IIFE)."
+description: "As we know, each module in Nodejs has its own scope. How does Nodejs achieve this? In JavaScript, we follow the Principle of Least Privilege (PoLP), which is related to functions and scope. If you're unfamiliar, you can Google it. The idea is to only expose what is necessary to the global scope, keeping everything else private. To achieve PoLP, wrap your code in a function or immediately invoke it (IIFE)."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-04-09"
 datePublished: "2025-04-09"
@@ -10,11 +10,11 @@ topics:
   - nodejs
   - javascript
 resources:
-  - title: "Node.js Modules: CommonJS"
+  - title: "Nodejs Modules: CommonJS"
     type: "documentation"
     url: "https://nodejs.org/api/modules.html"
     description: "Official docs on how require/module.exports work"
-  - title: "ES Modules in Node.js"
+  - title: "ES Modules in Nodejs"
     type: "documentation"
     url: "https://nodejs.org/api/esm.html"
     description: "Using import/export with Node (ESM)"
@@ -22,7 +22,7 @@ resources:
     type: "article"
     url: "https://developer.mozilla.org/en-US/docs/Glossary/IIFE"
     description: "Why JavaScript uses function wrappers"
-  - title: "Node.js Source – Module Wrapper"
+  - title: "Nodejs Source – Module Wrapper"
     type: "documentation"
     url: "https://github.com/nodejs/node/blob/main/lib/internal/modules/cjs/loader.js"
     description: "See how Node wraps modules under the hood"
@@ -35,13 +35,13 @@ Before looking at code, it helps to understand why Node gives each file its own 
 
 ### The Principle of Least Privilege (PoLP)
 
-As we know, each module in Node.js has its own scope. How does Node.js achieve this? In JavaScript, we follow the Principle of Least Privilege (PoLP), which is related to functions and scope. If you're unfamiliar, you can Google it. The idea is to only expose what is necessary to the global scope, keeping everything else private. To achieve PoLP, wrap your code in a function or immediately invoke it (IIFE). This is how modules in Node.js work. You can learn more about PoLP from [this Stack Overflow post](https://stackoverflow.com/questions/6010211/in-node-js-how-would-i-follow-the-principle-of-least-privilege) or watch [this YouTube video](https://www.youtube.com/watch?v=lW_erSjyMeM&t=10s&pp=ygUYYmxvY2sgc2NvcGUgYW5kIHNob2FkaW5n). Here's a tip: mention PoLP in your next interview to impress the interviewer. Want a mock interview with me? [Click here to schedule one now](https://topmate.io/aat/).
+As we know, each module in Nodejs has its own scope. How does Nodejs achieve this? In JavaScript, we follow the Principle of Least Privilege (PoLP), which is related to functions and scope. If you're unfamiliar, you can Google it. The idea is to only expose what is necessary to the global scope, keeping everything else private. To achieve PoLP, wrap your code in a function or immediately invoke it (IIFE). This is how modules in Nodejs work. You can learn more about PoLP from [this Stack Overflow post](https://stackoverflow.com/questions/6010211/in-node-js-how-would-i-follow-the-principle-of-least-privilege) or watch [this YouTube video](https://www.youtube.com/watch?v=lW_erSjyMeM&t=10s&pp=ygUYYmxvY2sgc2NvcGUgYW5kIHNob2FkaW5n). Here's a tip: mention PoLP in your next interview to impress the interviewer. Want a mock interview with me? [Click here to schedule one now](https://topmate.io/aat/).
 
 [](https://topmate.io/aat/)
 
 ### How modules and require work
 
-Now you understand that when you `require` something in Node.js, the entire code is wrapped in a function (essentially an IIFE). This is how PoLP works, making the code private and inaccessible to other modules unless explicitly exported. The `module` keyword in your file is available because Node.js passes it as an object to the IIFE while converting your module code. Below are two examples: one without PoLP and one with PoLP. Remember, PoLP is just about hiding code from the outside environment.
+Now you understand that when you `require` something in Nodejs, the entire code is wrapped in a function (essentially an IIFE). This is how PoLP works, making the code private and inaccessible to other modules unless explicitly exported. The `module` keyword in your file is available because Nodejs passes it as an object to the IIFE while converting your module code. Below are two examples: one without PoLP and one with PoLP. Remember, PoLP is just about hiding code from the outside environment.
 
 Why this example: first we show code without any privacy so you can see how values leak; then we contrast with a protected version.
 
@@ -74,7 +74,7 @@ function() {  // <--- Add this
   )
 ```
 
-Let’s see how this maps to modules in Node.js
+Let’s see how this maps to modules in Nodejs
 
 ```jsx
 function() {  
@@ -92,7 +92,7 @@ function() {
   )
 ```
 
-Behind the scenes, Node.js uses its capabilities, like wrapping code in an IIFE, and then the V8 engine executes the code. When you `require('./sum.js')` in another module, Node.js performs several steps to load and execute the module. There are five key steps involved in this process to ensure the module is properly loaded, compiled, and executed. Let's explore what these five steps are.
+Behind the scenes, Nodejs uses its capabilities, like wrapping code in an IIFE, and then the V8 engine executes the code. When you `require('./sum.js')` in another module, Nodejs performs several steps to load and execute the module. There are five key steps involved in this process to ensure the module is properly loaded, compiled, and executed. Let's explore what these five steps are.
 
 ### 5 Steps to Load and Execute a Module
 
@@ -138,13 +138,13 @@ const wrapper = [
 1. How do you make a set of variables private?
 2. What are the use cases for IIFEs?
 3. Besides IIFEs, are there other methods to achieve the same functionality?
-4. Find the code in the Node.js repository where modules are wrapped in IIFE.
+4. Find the code in the Nodejs repository where modules are wrapped in IIFE.
 
 ### Useful Links
 
 1. [NodeJS GitHub Repository (V8 Code)](https://github.com/nodejs/node/tree/main/deps/v8)
 2. [LibUV Code - The Powerhouse of NodeJS](https://github.com/nodejs/node/tree/main/deps/uv)
-3. [Require Function in Node.js Repository](https://github1s.com/nodejs/node/blob/main/lib/internal/modules/helpers.js#L128)
+3. [Require Function in Nodejs Repository](https://github1s.com/nodejs/node/blob/main/lib/internal/modules/helpers.js#L128)
 
 ### Tips
 

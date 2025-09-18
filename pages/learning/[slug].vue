@@ -88,6 +88,13 @@ defineOgImageComponent('Learning', {
           </li>
         </ul>
       </div>
+      
+      <!-- Content Reader positioned below heading -->
+      <div class="mt-8">
+        <ClientOnly>
+          <LazyContentReader :prepend="page.title" content-selector=".learning-content" />
+        </ClientOnly>
+      </div>
       <!-- <div class="mt-16">
         <ul class="flex flex-row gap-4 md:gap-8">
           <li v-if="page.slidesUrl">
@@ -109,7 +116,7 @@ defineOgImageComponent('Learning', {
       </div> -->
     </AppSection>
     <AppSection class="justify-center bg-zinc-900 pb-8">
-      <div>
+      <div class="learning-content">
         <ContentDoc class="prose md:prose-lg lg:prose-xl pt-4" />
       </div>
       <div class="mt-16 md:mt-32">

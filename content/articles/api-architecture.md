@@ -1,6 +1,6 @@
 ---
-title: "API Architecture - Design Best Practices for REST APIs"
-description: "REST which stands for Representational State Transfer is an architectural style that governs how APIs are designed and built. REST’s popularity and ease of implementation make it the most preferred API architectural style for modern-day software development as compared to other protocols such as SOAP (simple object access protocol). REST APIs or RESTful web services have become the backbone for efficient communication between client and server in modern-day software development. However, to build efficient and robust REST APIs, it is crucial to follow some standard best practices. In this blog, we’ll explore REST API best practices that can help you build scalable, maintainable, secure, and robust APIs."
+title: "API Architecture - Design Best Practices for REST API"
+description: "REST which stands for Representational State Transfer is an architectural style that governs how API are designed and built. REST’s popularity and ease of implementation make it the most preferred API architectural style for modern-day software development as compared to other protocols such as SOAP (simple object access protocol). REST API or RESTful web services have become the backbone for efficient communication between client and server in modern-day software development. However, to build efficient and robust REST API, it is crucial to follow some standard best practices. In this blog, we’ll explore REST API best practices that can help you build scalable, maintainable, secure, and robust API."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles/api-architecture.md"
 dateModified: "2024-05-26"
 datePublished: "2024-05-26"
@@ -11,38 +11,38 @@ topics:
   - lld
 ---
 
-REST which stands for Representational State Transfer is an architectural style that governs how APIs are designed and built. REST’s popularity and ease of implementation make it the most preferred API architectural style for modern-day software development as compared to other protocols such as SOAP (simple object access protocol).
+REST which stands for Representational State Transfer is an architectural style that governs how API are designed and built. REST’s popularity and ease of implementation make it the most preferred API architectural style for modern-day software development as compared to other protocols such as SOAP (simple object access protocol).
 
-REST APIs or RESTful web services have become the backbone for efficient communication between client and server in modern-day software development. However, to build efficient and robust REST APIs, it is crucial to follow some standard best practices.
+REST API or RESTful web services have become the backbone for efficient communication between client and server in modern-day software development. However, to build efficient and robust REST API, it is crucial to follow some standard best practices.
 
-In this blog, we’ll explore REST API best practices that can help you build scalable, maintainable, secure, and robust APIs.
+In this blog, we’ll explore REST API best practices that can help you build scalable, maintainable, secure, and robust API.
 
 
-## API Architecture - Design Best Practices for REST APIs
+## API Architecture - Design Best Practices for REST API
 
 In general, web services have been in existence for just as long as the HTTP protocol has existed. But, since the advent of cloud computing, they have become the ubiquitous method of enabling client interaction with services and data.
 
-As a developer, I have been lucky enough to work with some SOAP services that are still around @ work. But, I’ve largely played with REST, which is a resource-based architectural style for developing APIs and web services.
+As a developer, I have been lucky enough to work with some SOAP services that are still around @ work. But, I’ve largely played with REST, which is a resource-based architectural style for developing API and web services.
 
-For a great chunk of my career, **I have been involved in projects either building, designing, and using APIs.**
+For a great chunk of my career, **I have been involved in projects either building, designing, and using API.**
 
-Most of the APIs I have seen “claimed” to be **“RESTful”** — _meaning compliant with the principles and constraints of REST architecture_.
+Most of the API I have seen “claimed” to be **“RESTful”** — _meaning compliant with the principles and constraints of REST architecture_.
 
 Yet, there are a few handful I have worked with that give **REST a very, very bad rep.**
 
 Inaccurate usage of HTTP status codes, plain text responses, inconsistent schemas, verbs inserted in the endpoints… **I feel like I’ve seen it all** (or at least, a good chunk).
 
-So, I decided to write up a piece describing what I personally think are some **best practices when it comes to designing REST APIs.**
+So, I decided to write up a piece describing what I personally think are some **best practices when it comes to designing REST API.**
 
 Just so we’re clear…
 
-I do not claim to be the authority, or mean to infer that the following practices are 100% in sync with any “holy REST principles” (_if there even is such a thing in existence_). I have pieced these thoughts from my own experiences building, and working with different APIs throughout my career.
+I do not claim to be the authority, or mean to infer that the following practices are 100% in sync with any “holy REST principles” (_if there even is such a thing in existence_). I have pieced these thoughts from my own experiences building, and working with different API throughout my career.
 
 Also, I do not pretend to have mastered REST API design, either! I believe it is an **art/sport** — the more you practice, the better you get.
 
 I will list out some code snippets as “examples of bad design”. If they look like something you would write, that’s fine! 🙂 The only thing that matters is that we learn together.
 
-Here are some tips, advice, and guidance to designing great REST APIs that will make your consumers (and developers) happy.
+Here are some tips, advice, and guidance to designing great REST API that will make your consumers (and developers) happy.
 
 
 

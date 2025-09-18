@@ -36,7 +36,7 @@ Compute services are at the heart of cloud computing, enabling you to run applic
 - **AWS Lambda:**
   - A serverless compute service that lets you run code without provisioning or managing servers.
   - Automatically scales based on the number of requests.
-  - Perfect for event-driven applications like APIs, IoT backends, and automation scripts.
+  - Perfect for event-driven applications like API, IoT backends, and automation scripts.
 
 - **Amazon ECS and EKS:**
   - **ECS (Elastic Container Service):** A fully managed container orchestration service.

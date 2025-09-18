@@ -1,6 +1,6 @@
 ---
 title: "LibUV Thread Pool: Deep Dive"
-description: "Welcome back! If you haven’t read the previous blog about the two friends, go and check that out first because things are getting more interesting. We’ve received an official FIR against Node.js, and when Node.js faced trouble, it called in its two best friends for help. One of them, V8, was already investigated in our last episode. Now, it’s time to bring in the second friend: Libuv."
+description: "Welcome back! If you haven’t read the previous blog about the two friends, go and check that out first because things are getting more interesting. We’ve received an official FIR against Nodejs, and when Nodejs faced trouble, it called in its two best friends for help. One of them, V8, was already investigated in our last episode. Now, it’s time to bring in the second friend: Libuv."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-04-14"
 datePublished: "2025-04-14"
@@ -10,7 +10,7 @@ topics:
   - nodejs
   - javascript
 resources:
-  - title: "Node.js Thread Pool"
+  - title: "Nodejs Thread Pool"
     type: "documentation"
     url: "https://nodejs.org/en/learn/asynchronous-work/nodejs-worker-threads"
     description: "Worker threads and when to use them vs libuv threads"
@@ -33,7 +33,7 @@ Libuv is full of secrets, and this investigation won’t be easy. There are many
 
 We’ve already talked a lot about Libuv, but there are still a few questions we need answers to. Specifically, we haven't looked at the **idle**, **prepare**, and **pending callback** phases  These are important, and today, we’re going to clear them up.
 
-Ready, detectives? Let’s dive in and solve these mysteries. You can also check the official Node.js documentation here: https://nodejs.org/en/learn/asynchronous-work/event-loop-timers-and-nexttick
+Ready, detectives? Let’s dive in and solve these mysteries. You can also check the official Nodejs documentation here: https://nodejs.org/en/learn/asynchronous-work/event-loop-timers-and-nexttick
 
 ### Pending callback
 
@@ -43,7 +43,7 @@ This phase is not super important in everyday work, but academically, you should
 
 ### idle/prepare
 
-In this phase, checks take place within the event loop, and it is performed internally. As I mentioned earlier, this phase is more for academic understanding. If you're interested, go ahead and read the [official Node.js documentation on the event loop](https://nodejs.org/en/learn/asynchronous-work/event-loop-timers-and-nexttick). Keep in mind that the official docs might have different diagrams or images, but don’t get confused. Just focus on understanding the concept. You can also read more about libuv design here.
+In this phase, checks take place within the event loop, and it is performed internally. As I mentioned earlier, this phase is more for academic understanding. If you're interested, go ahead and read the [official Nodejs documentation on the event loop](https://nodejs.org/en/learn/asynchronous-work/event-loop-timers-and-nexttick). Keep in mind that the official docs might have different diagrams or images, but don’t get confused. Just focus on understanding the concept. You can also read more about libuv design here.
 
 The **poll phase** is the most important phase of the event loop, and **idle/prepare** takes place right before it.
 
@@ -51,7 +51,7 @@ The **poll phase** is the most important phase of the event loop, and **idle/pre
 
 ### What is a Tick?
 
-In Node.js, one complete cycle of the event loop is called a **tick**.
+In Nodejs, one complete cycle of the event loop is called a **tick**.
 
 ### Logic of Waiting in Poll Phase
 
@@ -79,9 +79,9 @@ By default, there are 4 threads in the UV thread pool. But what happens if we ma
 
 Suppose a request comes for a DNS lookup. A DNS lookup is a heavy task, so it blocks one of the threads in the thread pool. If you request a cryptography task, it also uses the thread pool. Additionally, if anything else comes up that requires C++ code execution, it will also block one of the threads in the pool.
 
-### Is Node.js single-threaded?
+### Is Nodejs single-threaded?
 
-Come on! If you say Node.js is single-threaded, I’ll have to laugh, haha! Node.js can handle both asynchronous and synchronous code. While it runs JavaScript on a single main thread, it can use multiple threads for other tasks through libuv. So, it depends on what you're doing. You can't define Node.js simply as single or multi-threaded—it’s more flexible than that!
+Come on! If you say Nodejs is single-threaded, I’ll have to laugh, haha! Nodejs can handle both asynchronous and synchronous code. While it runs JavaScript on a single main thread, it can use multiple threads for other tasks through libuv. So, it depends on what you're doing. You can't define Nodejs simply as single or multi-threaded—it’s more flexible than that!
 
 ### Code Demo of Thread Pool
 
@@ -144,17 +144,17 @@ The answer is **YES**! You can change the thread pool size by setting the `UV_TH
 process.env.UV_THREADPOOL_SIZE=2
 ```
 
-### Networking in Node.js (not the thread pool)
+### Networking in Nodejs (not the thread pool)
 
-If a user sends an API request to your server, does that API request use the thread pool? The answer is **no**. API requests use **sockets**. For each incoming connection or API request, a new socket is created, not a thread. Unlike the "thread per connection" model, where each connection would require a new thread, Node.js uses a more efficient model.
+If a user sends an API request to your server, does that API request use the thread pool? The answer is **no**. API requests use **sockets**. For each incoming connection or API request, a new socket is created, not a thread. Unlike the "thread per connection" model, where each connection would require a new thread, Nodejs uses a more efficient model.
 
-Instead of creating a new thread for each request, Node.js uses scalable I/O event notification mechanisms like **epoll** (Linux) or **kqueue** (MacOS) to handle multiple requests at the same time without the need for hundreds of threads. This is what makes Node.js very efficient in handling high numbers of API requests.
+Instead of creating a new thread for each request, Nodejs uses scalable I/O event notification mechanisms like **epoll** (Linux) or **kqueue** (MacOS) to handle multiple requests at the same time without the need for hundreds of threads. This is what makes Nodejs very efficient in handling high numbers of API requests.
 
 ### Scalable I/O event notification (epoll/kqueue)
 
 **epoll** (for Linux) and **kqueue** (for MacOS) are algorithms that handle multiple connections efficiently. When multiple connections are made, **epoll** keeps track of all of them. If there is any activity, like data to read or write on a connection, epoll will notify **libuv**. Libuv then triggers the appropriate callback, and V8 runs the callback.
 
-This mechanism is scalable and efficient because it doesn’t create a new thread for every connection. Instead, **epoll** manages all the connections using file descriptors. This is what makes Node.js capable of handling a large number of requests without using too many system resources.
+This mechanism is scalable and efficient because it doesn’t create a new thread for every connection. Instead, **epoll** manages all the connections using file descriptors. This is what makes Nodejs capable of handling a large number of requests without using too many system resources.
 
 This is more on the academic side, related to operating systems, so it can take some time to fully understand. You can read more about it here and [here](https://medium.com/@avocadi/what-is-epoll-9bbc74272f7c).
 
@@ -171,7 +171,7 @@ This is more on the academic side, related to operating systems, so it can take 
 
 And that's all for this episode!
 
-I'm Rahul Aher, and I'm writing digital notes on Node.js. If you enjoy these notes, please share them with your friends. If you find any errors or have improvements, feel free to contribute by forking the repo. If you're interested in writing the next episode's notes, [fork the repo and contribute](https://github.com/AherRahul/portfolio-v1). Let's learn together! Also, please consider giving a star to [this repo](https://github.com/AherRahul/portfolio-v1). For any queries, [let's connect here](https://rahulaher.netlify.app/contact/).
+I'm Rahul Aher, and I'm writing digital notes on Nodejs. If you enjoy these notes, please share them with your friends. If you find any errors or have improvements, feel free to contribute by forking the repo. If you're interested in writing the next episode's notes, [fork the repo and contribute](https://github.com/AherRahul/portfolio-v1). Let's learn together! Also, please consider giving a star to [this repo](https://github.com/AherRahul/portfolio-v1). For any queries, [let's connect here](https://rahulaher.netlify.app/contact/).
 
 Take care, Good Bye :) [](https://rahulaher.netlify.app/contact/)
 

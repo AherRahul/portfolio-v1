@@ -18,7 +18,7 @@ Network is a core part of software, as the frontend needs data and the backend s
 
 We need to understand what happens when we type "[google.com](http://google.com/)," what DNS is, and its role in the process.
 
-We commonly use REST APIs, but we'll also explore how the web works, including GraphQL, gRPC protocols, and more. We'll dive into networking fundamentals, how the internet works, frontend-backend interactions, REST concepts, HTTP methods, headers, CORS, and other key aspects.
+We commonly use REST API, but we'll also explore how the web works, including GraphQL, gRPC protocols, and more. We'll dive into networking fundamentals, how the internet works, frontend-backend interactions, REST concepts, HTTP methods, headers, CORS, and other key aspects.
 
 ### How the Web Works
 
@@ -219,7 +219,7 @@ The **Document Object Model (DOM)** is a programming interface that represents t
 
 After parsing CSS, the **CSS Object Model (CSSOM)** is created.
 
-**CSSOM** stands for **CSS Object Model**. It is a set of APIs that enables reading and modifying a document's CSS information. While the DOM is for HTML, the CSSOM serves the same purpose for CSS.
+**CSSOM** stands for **CSS Object Model**. It is a set of API that enables reading and modifying a document's CSS information. While the DOM is for HTML, the CSSOM serves the same purpose for CSS.
 
 ![image.png](https://heyashu.in/images/blogs/web_works_10.jpg)
 

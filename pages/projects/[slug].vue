@@ -39,11 +39,18 @@ try {
         :projectDemoLink="project?.projectDemoLink"
         class="mt-8 space-y-2 md:space-y-0 md:flex gap-8"
       />
+      
+      <!-- Content Reader positioned below heading -->
+      <div class="mt-8">
+        <ClientOnly>
+          <LazyContentReader :prepend="project.title" content-selector=".project-content" />
+        </ClientOnly>
+      </div>
     </AppSection>
     <AppSection class="bg-zinc-900 !pb-0" inner-class="border-b border-zinc-800">
       <div class="justify-center gap-8 pb-16">
         <div>
-          <div class="prose md:prose-lg lg:prose-xl pt-0.5">
+          <div class="prose md:prose-lg lg:prose-xl pt-0.5 project-content">
             <ContentDoc />
           </div>
         </div>

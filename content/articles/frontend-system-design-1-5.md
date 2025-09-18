@@ -21,9 +21,9 @@ Suppose there are two machines—one is the client (any machine) and the other i
 
 ![image.png](https://heyashu.in/images/blogs/grpc_2.jpg)
 
-In REST APIs, data is transferred in **JSON** format, but in gRPC, it happens using **Protocol Buffers (Protobuf)**, which is an **IDL (Interface Definition Language)**. To use gRPC, we need **HTTP/2**.
+In REST API, data is transferred in **JSON** format, but in gRPC, it happens using **Protocol Buffers (Protobuf)**, which is an **IDL (Interface Definition Language)**. To use gRPC, we need **HTTP/2**.
 
-Just like REST APIs send **serialized data** over the network, gRPC also transmits **protocol-serialized data**. However, gRPC maintains a **single long-lived connection** and supports **bidirectional streaming**.
+Just like REST API send **serialized data** over the network, gRPC also transmits **protocol-serialized data**. However, gRPC maintains a **single long-lived connection** and supports **bidirectional streaming**.
 
 ![image.png](https://heyashu.in/images/blogs/grpc_3.jpg)
 
@@ -36,7 +36,7 @@ We already discussed that gRPC uses **Protocol Buffers (Protobuf)** instead of *
 **Protocol Buffer (ProtoBuf)** is developed by Google.
 
 * ProtoBuf is an **IDL (Interface Definition Language)** and also provides **serialization and deserialization**.
-* It supports **binary data transfer**, unlike REST APIs, where we use `.json()`, in gRPC, we use `.proto` (also called **proto3**).
+* It supports **binary data transfer**, unlike REST API, where we use `.json()`, in gRPC, we use `.proto` (also called **proto3**).
 * The **.proto file** defines the request and response structure. This file enables **code conversion**, making it compatible with multiple languages.
 * The response can be **deserialized in any language**, which makes gRPC highly flexible.
 
@@ -61,11 +61,11 @@ You can either **clone the repo** or **follow the documentation** to set up the 
 ### **Comparison with REST API**
 
 * In **REST API**, we use **HTTP/HTTPS**, but in **gRPC**, we use **HTTP/2** as the default transport protocol.
-* REST APIs use **JSON**, whereas gRPC uses **Protocol Buffers**.
-* **No standard language** is required for REST APIs, but gRPC enforces **ProtoBuf IDL** as a standard.
-* REST APIs transfer data in **JSON/XML/Text**, while gRPC uses **binary serialization** for efficiency.
+* REST API use **JSON**, whereas gRPC uses **Protocol Buffers**.
+* **No standard language** is required for REST API, but gRPC enforces **ProtoBuf IDL** as a standard.
+* REST API transfer data in **JSON/XML/Text**, while gRPC uses **binary serialization** for efficiency.
 * **JSON is more flexible**, but **ProtoBuf ensures a strict contract** between the client and server.
-* REST APIs often rely on **third-party code generation tools**, whereas gRPC provides **automatic code generation**.
+* REST API often rely on **third-party code generation tools**, whereas gRPC provides **automatic code generation**.
 
 
 ### **Advantages and Disadvantages**
@@ -94,7 +94,7 @@ You can either **clone the repo** or **follow the documentation** to set up the 
 
 ❌ **No edge caching** (Due to the use of POST requests)
 
-❌ **Steeper learning curve** compared to REST APIs
+❌ **Steeper learning curve** compared to REST API
 
 Hey your feedback is required for me , please give  [this repo](https://github.com/aherrahul/portfolio-v1/) a star 🌟 if you liked the blog
 if you want to contribute in it please feel free to fork , You can see github link on top right corner of top bar or  [click here](https://github.com/aherrahul/portfolio-v1/)

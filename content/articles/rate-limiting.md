@@ -22,7 +22,7 @@ Essentially, a rate-limited application will say, "Hey, slow down," to unique us
 
 Rate limiting is a technique to limit network traffic to prevent users from exhausting system resources. Rate limiting makes it harder for malicious actors to overburden the system and cause attacks like _Denial of Service (DoS)_. This involves attackers flooding a target system with requests and consuming too much network capacity, storage, and memory.
 
-APIs that use rate limiting can throttle or temporarily block any client that tries to make too many API calls. It might slow down a throttled user’s requests for a specified time or deny them altogether. Rate limiting ensures that legitimate requests can reach the system and access information without impacting the overall application’s performance.
+API that use rate limiting can throttle or temporarily block any client that tries to make too many API calls. It might slow down a throttled user’s requests for a specified time or deny them altogether. Rate limiting ensures that legitimate requests can reach the system and access information without impacting the overall application’s performance.
 
 This is part of a series of articles about _website security_.
 
@@ -86,9 +86,9 @@ Sliding-window rate limiting algorithms are similar to fixed-window algorithms e
 Sliding-window algorithms help solve the issues affecting requests in fixed-window rate limiting. They also mitigate the starvation issue facing leaky bucket rate limiting by providing more flexibility.
 
 ### Rate Limiting with Imperva
-Imperva _Advanced Bot Protection_ enforces rate limiting for websites, mobile apps and APIs, and can prevent business logic attacks from all access points. Gain seamless visibility and control over bot traffic to stop online fraud through account takeover or competitive price scraping.
+Imperva _Advanced Bot Protection_ enforces rate limiting for websites, mobile apps and API, and can prevent business logic attacks from all access points. Gain seamless visibility and control over bot traffic to stop online fraud through account takeover or competitive price scraping.
 
-Beyond bot protection, Imperva provides comprehensive protection for applications, APIs, and microservices:
+Beyond bot protection, Imperva provides comprehensive protection for applications, API, and microservices:
 
 _Web Application Firewall_ – Prevent attacks with world-class analysis of web traffic to your applications.
 

@@ -16,12 +16,12 @@ topics:
 
 <!-- # 📖 My Personal Notes – Let’s write code -->
 
-This session is about getting something working end‑to‑end: installing Node.js, verifying your setup, trying the REPL, and running a file with `node`. Each step includes a short explanation so you understand not only what to do, but why it works.
+This session is about getting something working end‑to‑end: installing Nodejs, verifying your setup, trying the REPL, and running a file with `node`. Each step includes a short explanation so you understand not only what to do, but why it works.
 
-### Install Node.js (once)
+### Install Nodejs (once)
 
 Download the LTS installer from the official site: [nodejs.org](https://nodejs.org/). The installer adds two things:
-- the Node.js runtime (`node`) used to execute JavaScript outside the browser
+- the Nodejs runtime (`node`) used to execute JavaScript outside the browser
 - the Node Package Manager (`npm`) used to install and manage dependencies
 
 ### Verify your installation
@@ -38,7 +38,7 @@ npm -v                 //9.x.x
 
 Node ships with a REPL (Read–Eval–Print–Loop). It’s a quick sandbox where you can run JavaScript line by line—perfect for testing expressions and small snippets before putting them into files.
 
-Type `node` and press Enter to enter the REPL. Try simple expressions like `2 + 2` or `['a','b'].join('-')`. This is similar to the browser console, but instead of the browser’s Web APIs, you have Node’s APIs available.
+Type `node` and press Enter to enter the REPL. Try simple expressions like `2 + 2` or `['a','b'].join('-')`. This is similar to the browser console, but instead of the browser’s Web API, you have Node’s API available.
 
 ![image.png](https://i.ibb.co/fDHCd6p/3.jpg)
 
@@ -54,7 +54,7 @@ node app.js
 
 ### The global object: server vs browser (why `window` is undefined)
 
-In the browser, the global object is `window`. On the server with Node.js, there is no `window`—instead, the global object is `global`. These objects come from their environments (browser vs Node), not from the JavaScript engine (V8) itself. That’s why functions like `setTimeout` are provided by the environment and attached to the global object, not part of the ECMAScript language spec.
+In the browser, the global object is `window`. On the server with Nodejs, there is no `window`—instead, the global object is `global`. These objects come from their environments (browser vs Node), not from the JavaScript engine (V8) itself. That’s why functions like `setTimeout` are provided by the environment and attached to the global object, not part of the ECMAScript language spec.
 
 If you will try to access window in node js you will get an error, same you will write global in chrome’s console you will get error , here is the screenshot when you type window in node js
 
@@ -66,9 +66,9 @@ But if you will write global you will get something like yoyou get when you cons
 
 ![image.png](https://i.ibb.co/47PH8Ch/7.jpg)
 
-### `this` in Node.js and `globalThis`
+### `this` in Nodejs and `globalThis`
 
-At the top level of a Node.js module, `this` is an empty object (`{}`), not the global object. To avoid confusion across environments, use `globalThis`. It’s a standard alias that points to the global object everywhere: `window` in the browser and `global` in Node.
+At the top level of a Nodejs module, `this` is an empty object (`{}`), not the global object. To avoid confusion across environments, use `globalThis`. It’s a standard alias that points to the global object everywhere: `window` in the browser and `global` in Node.
 
 ### Explore further
 
@@ -77,8 +77,8 @@ If you want to go deeper, look up these terms:
 - REPL (Read–Eval–Print–Loop)
 - `globalThis`
 - Web Workers (browser)
-- Node.js source on GitHub
+- Nodejs source on GitHub
 
 
-That’s it—you’ve run your first Node.js code and learned how the environment differs from the browser. In the next session, we’ll split code into modules and import/export properly.
+That’s it—you’ve run your first Nodejs code and learned how the environment differs from the browser. In the next session, we’ll split code into modules and import/export properly.
 

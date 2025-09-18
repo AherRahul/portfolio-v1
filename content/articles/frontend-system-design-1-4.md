@@ -1,6 +1,6 @@
 ---
-title: "Why GraphQL over Rest APIs"
-description: "Many companies today use GraphQL. In this blog, we’ll explore what GraphQL is, its benefits, and why it’s so popular. Suppose your app needs information about continents, countries, and languages. If you’re using REST APIs, you’ll likely call multiple APIs to fetch this data and then organize it for your frontend. Be patient—it’s not an Instagram Reel, but for serious learners, it’ll be worth the read."
+title: "Why GraphQL over Rest API"
+description: "Many companies today use GraphQL. In this blog, we’ll explore what GraphQL is, its benefits, and why it’s so popular. Suppose your app needs information about continents, countries, and languages. If you’re using REST API, you’ll likely call multiple API to fetch this data and then organize it for your frontend. Be patient—it’s not an Instagram Reel, but for serious learners, it’ll be worth the read."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-03-04"
 datePublished: "2025-03-04"
@@ -30,9 +30,9 @@ Here’s what we’ll cover:
 
 ### What is GraphQL?
 
-Suppose your app needs information about continents, countries, and languages. If you’re using REST APIs, you’ll likely call multiple APIs to fetch this data and then organize it for your frontend.
+Suppose your app needs information about continents, countries, and languages. If you’re using REST API, you’ll likely call multiple API to fetch this data and then organize it for your frontend.
 
-(Read: [Deep Dive into REST APIs](https://heyashu.in/digital-garden/notes/front-end-design-system/http-headers-methods-status-codes-and-rest-api-deep-dive))
+(Read: [Deep Dive into REST API](https://heyashu.in/digital-garden/notes/front-end-design-system/http-headers-methods-status-codes-and-rest-api-deep-dive))
 
 In GraphQL, however, you define **exactly** what data you need, and the **GraphQL server acts as a middle layer** to handle the request efficiently. This means the frontend gets only the data it asks for, reducing unnecessary load and improving performance.
 
@@ -56,7 +56,7 @@ The biggest benefit of GraphQL is that it allows you to fetch only the required 
 
 Even if additional information like `userVillage` or `pincode` is available on the server, it won’t be sent unless explicitly requested. This avoids unnecessary data transfer, keeping the frontend clean and optimized.
 
-This level of control is one of the key advantages of GraphQL over REST APIs.
+This level of control is one of the key advantages of GraphQL over REST API.
 
 You can try it out yourself using tools like GraphQL playground or GraphiQL!
 
@@ -74,7 +74,7 @@ https://studio.apollographql.com/sandbox/explorer
 6. **Structured and Hierarchical Data:** GraphQL organizes data in a structured and logical way.
 7. **Strongly Typed Language:** GraphQL uses a schema that defines data types, reducing errors.
 8. **Fewer Mistakes:** With type checking, there’s less room for errors in requests and responses.
-9. **Introspection:** Unlike REST APIs, where you need to document endpoints, GraphQL comes with built-in introspection for easy exploration.
+9. **Introspection:** Unlike REST API, where you need to document endpoints, GraphQL comes with built-in introspection for easy exploration.
 10. **Real-Time Capabilities:** GraphQL supports subscriptions for real-time updates.
 
 
@@ -255,7 +255,7 @@ Here’s a screenshot for reference: (Insert your screenshot here)
 
 ![image.png](https://heyashu.in/images/blogs/g_5.jpg)
 
-If you inspect the network tab and click the play button to run a query, you'll see headers and payload, similar to REST APIs.
+If you inspect the network tab and click the play button to run a query, you'll see headers and payload, similar to REST API.
 
 ```jsx
 fetch("http://localhost:4000/", {
@@ -279,7 +279,7 @@ fetch("http://localhost:4000/", {
 });
 ```
 
-So, like this, you can create relationships between different data sets. You need to learn GraphQL properly, but the goal of this note was to make you familiar with these topics and help you become interview-ready when someone asks you about the difference between REST APIs and GraphQL. Similarly, you can add mutations into resolvers and typeDefs to handle updates.
+So, like this, you can create relationships between different data sets. You need to learn GraphQL properly, but the goal of this note was to make you familiar with these topics and help you become interview-ready when someone asks you about the difference between REST API and GraphQL. Similarly, you can add mutations into resolvers and typeDefs to handle updates.
 
 For the frontend, there are client libraries like Apollo Client that can make things more efficient. There’s a lot more to learn, but that’s all for now.
 

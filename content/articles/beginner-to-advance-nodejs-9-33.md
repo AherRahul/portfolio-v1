@@ -13,7 +13,7 @@ resources:
   - title: "Prometheus Client"
     type: "tool"
     url: "https://github.com/siimon/prom-client"
-    description: "Prometheus metrics for Node.js"
+    description: "Prometheus metrics for Nodejs"
   - title: "OpenTelemetry"
     type: "documentation"
     url: "https://opentelemetry.io/docs/instrumentation/js/"
@@ -24,7 +24,7 @@ resources:
 
 <!-- # 📖 My Personal Notes – Monitoring & Observability -->
 
-When things break in production, good observability turns a mystery into a checklist. Here’s how I make Node.js apps observable with logs, metrics, traces, and health checks—plus exactly what I alert on and why.
+When things break in production, good observability turns a mystery into a checklist. Here’s how I make Nodejs apps observable with logs, metrics, traces, and health checks—plus exactly what I alert on and why.
 
 ## First: Health vs. Readiness (what each endpoint really means)
 
