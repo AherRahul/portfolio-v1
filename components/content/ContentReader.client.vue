@@ -3,6 +3,18 @@ import { ref, onMounted, onBeforeUnmount, watch, computed } from 'vue'
 
 const props = defineProps<{ docClass?: string; prepend?: string; contentSelector?: string }>()
 
+// Google TTS integration
+const { 
+  isGoogleTTSAvailable, 
+  googleVoices, 
+  checkGoogleTTSAvailability, 
+  synthesizeWithGoogle, 
+  getRecommendedVoice 
+} = useTTS()
+
+// Global TTS manager for cleanup
+const { registerReader } = useTTSManager()
+
 const contentRoot = ref<HTMLElement | null>(null)
 const isSupported = ref<boolean>(false)
 const isPlaying = ref<boolean>(false)
@@ -14,6 +26,9 @@ const voices = ref<SpeechSynthesisVoice[]>([])
 const selectedVoice = ref<string>('')
 const isContentReady = ref<boolean>(false)
 const isOpen = ref<boolean>(false)
+const useGoogleTTS = ref<boolean>(false)
+const googleVoiceName = ref<string>('hi-IN-Wavenet-A')
+const isLoadingAudio = ref<boolean>(false)
 
 // Enhanced features
 const currentSentence = ref<number>(0)
@@ -33,6 +48,22 @@ let isInitializing = false
 let mutationObserver: MutationObserver | null = null
 let refreshTimer: number | null = null
 let utterance: SpeechSynthesisUtterance | null = null
+let currentAudio: HTMLAudioElement | null = null
+let isCleaningUp = false
+let unregisterFromManager: (() => void) | null = null
+
+// Event handlers for cleanup (defined at module level for proper cleanup)
+const handlePageUnload = (event: Event) => {
+  console.log('Page unload detected, stopping TTS playback')
+  stopAllPlayback()
+}
+
+const handleVisibilityChange = () => {
+  if (document.hidden && isPlaying.value) {
+    console.log('Page hidden, stopping TTS playback')
+    stopAllPlayback()
+  }
+}
 
 // Progress tracking
 const progressPercentage = computed(() => {
@@ -187,6 +218,61 @@ function clearHighlights() {
   globalCharIndex.value = 0
 }
 
+function stopAllPlayback() {
+  if (isCleaningUp) return
+  isCleaningUp = true
+  
+  try {
+    console.log('🛑 ContentReader: Stopping all playback')
+    
+    // Stop browser TTS aggressively
+    if (typeof window !== 'undefined' && window.speechSynthesis) {
+      window.speechSynthesis.cancel()
+      // Force stop by setting rate to 0 and canceling again
+      if (window.speechSynthesis.speaking) {
+        window.speechSynthesis.pause()
+        window.speechSynthesis.cancel()
+      }
+    }
+    
+    // Stop Google TTS audio
+    if (currentAudio) {
+      currentAudio.pause()
+      currentAudio.currentTime = 0
+      currentAudio.src = ''
+      currentAudio.onended = null
+      currentAudio.onerror = null
+      currentAudio.onloadedmetadata = null
+      currentAudio = null
+    }
+    
+    // Clear utterance reference and its events
+    if (utterance) {
+      utterance.onend = null
+      utterance.onerror = null
+      utterance.onboundary = null
+      utterance = null
+    }
+    
+    // Reset all state immediately
+    isPlaying.value = false
+    isPaused.value = false
+    isLoadingAudio.value = false
+    progress.value = 0
+    currentSentence.value = 0
+    currentIndex = 0
+    
+    // Clear highlights
+    clearHighlights()
+    
+    console.log('✅ ContentReader: All TTS playback stopped and cleaned up')
+  } catch (error) {
+    console.warn('❌ Error during TTS cleanup:', error)
+  } finally {
+    isCleaningUp = false
+  }
+}
+
 function prepareTextForHighlighting() {
   if (!isHighlighting.value || !props.contentSelector) return
   
@@ -328,6 +414,130 @@ function highlightWordByWord(sentenceIndex: number, charIndexInSentence: number)
   }
 }
 
+async function buildAndSpeakWithGoogle(fromIndex = 0) {
+  if (!useGoogleTTS.value || !isGoogleTTSAvailable.value) {
+    return buildAndSpeak(fromIndex)
+  }
+
+  currentIndex = fromIndex
+  currentSentence.value = fromIndex
+  isLoadingAudio.value = true
+  
+  if (!sentences.length) {
+    isPlaying.value = false
+    isPaused.value = false
+    isLoadingAudio.value = false
+    return
+  }
+
+  const playNextSentence = async () => {
+    if (currentIndex >= sentences.length) {
+      isPlaying.value = false
+      isPaused.value = false
+      currentSentence.value = 0
+      progress.value = 100
+      isLoadingAudio.value = false
+      clearHighlights()
+      return
+    }
+    
+    currentSentence.value = currentIndex
+    progress.value = (currentIndex / sentences.length) * 100
+    updateTimeEstimates()
+    
+    try {
+      isLoadingAudio.value = true
+      
+      // Get recommended voice based on content
+      const recommendedVoice = await getRecommendedVoice(sentences[currentIndex])
+      const voiceToUse = googleVoiceName.value || recommendedVoice
+      
+      // Synthesize audio with Google TTS
+      const audioUrl = await synthesizeWithGoogle(
+        sentences[currentIndex], 
+        voiceToUse, 
+        parseFloat(selectedRate.value)
+      )
+      
+      isLoadingAudio.value = false
+      
+      if (audioUrl) {
+        // Create audio element for playback with word highlighting simulation
+        currentAudio = new Audio(audioUrl)
+        
+        // Simulate word-by-word highlighting during Google TTS playback
+        const sentence = sentences[currentIndex]
+        const words = sentence.split(/\s+/)
+        const avgWordDuration = (currentAudio.duration || 3) / words.length // Estimate word timing
+        
+        currentAudio.onloadedmetadata = () => {
+          const actualDuration = currentAudio!.duration
+          const wordDuration = actualDuration / words.length
+          
+          // Start word highlighting simulation
+          let wordIndex = 0
+          const highlightInterval = setInterval(() => {
+            if (!isPlaying.value || !currentAudio || currentAudio.paused) {
+              clearInterval(highlightInterval)
+              return
+            }
+            
+            if (wordIndex < words.length) {
+              // Simulate word boundary event for highlighting
+              const charIndex = words.slice(0, wordIndex).join(' ').length + (wordIndex > 0 ? 1 : 0)
+              highlightWordByWord(currentIndex, charIndex)
+              wordIndex++
+            } else {
+              clearInterval(highlightInterval)
+            }
+          }, wordDuration * 1000)
+        }
+        
+        currentAudio.onended = () => {
+          currentIndex += 1
+          currentAudio = null
+          playNextSentence()
+        }
+        
+        currentAudio.onerror = (error) => {
+          console.error('Google TTS audio playback error:', error)
+          currentAudio = null
+          // Fallback to browser TTS
+          useGoogleTTS.value = false
+          buildAndSpeak(currentIndex)
+        }
+        
+        // Play the audio
+        try {
+          await currentAudio.play()
+        } catch (error) {
+          console.error('Failed to play Google TTS audio:', error)
+          currentAudio = null
+          // Fallback to browser TTS
+          useGoogleTTS.value = false
+          buildAndSpeak(currentIndex)
+        }
+      } else {
+        // Fallback to browser TTS
+        console.warn('Google TTS failed, falling back to browser TTS')
+        useGoogleTTS.value = false
+        buildAndSpeak(currentIndex)
+      }
+    } catch (error) {
+      console.error('Google TTS playback error:', error)
+      isLoadingAudio.value = false
+      
+      // Fallback to browser TTS
+      useGoogleTTS.value = false
+      buildAndSpeak(currentIndex)
+    }
+  }
+
+  isPlaying.value = true
+  isPaused.value = false
+  await playNextSentence()
+}
+
 function buildAndSpeak(fromIndex = 0) {
   if (typeof window === 'undefined') return
   const synth = window.speechSynthesis
@@ -454,7 +664,11 @@ function playPause() {
       refreshContentSentences()
       if (!isPlaying.value && sentences.length) {
         prepareTextForHighlighting()
-        buildAndSpeak(0)
+        if (useGoogleTTS.value && isGoogleTTSAvailable.value) {
+          buildAndSpeakWithGoogle(0)
+        } else {
+          buildAndSpeak(0)
+        }
       }
     }, 100)
     return
@@ -476,21 +690,16 @@ function playPause() {
   prepareTextForHighlighting()
   
   // Start reading from current position or beginning
-  buildAndSpeak(currentSentence.value)
+  if (useGoogleTTS.value && isGoogleTTSAvailable.value) {
+    buildAndSpeakWithGoogle(currentSentence.value)
+  } else {
+    buildAndSpeak(currentSentence.value)
+  }
 }
 
 function resetReading() {
   if (!isSupported.value) return
-  try { 
-    window.speechSynthesis.cancel() 
-    utterance = null
-  } catch {}
-  isPlaying.value = false
-  isPaused.value = false
-  currentSentence.value = 0
-  progress.value = 0
-  currentWordIndex.value = 0
-  clearHighlights()
+  stopAllPlayback()
   updateTimeEstimates()
 }
 
@@ -561,13 +770,26 @@ function onKeydown(e: KeyboardEvent) {
   }
 }
 
-onMounted(() => {
+onMounted(async () => {
+  // Immediately stop any existing TTS when this component mounts
+  const { stopAllReaders } = useTTSManager()
+  stopAllReaders()
+  
   isSupported.value = typeof window !== 'undefined' && 'speechSynthesis' in window
   if (!isSupported.value) return
 
   // Load voices
   loadVoices()
   try { window.speechSynthesis.onvoiceschanged = loadVoices } catch {}
+
+  // Check Google TTS availability
+  const googleAvailable = await checkGoogleTTSAvailability()
+  if (googleAvailable) {
+    useGoogleTTS.value = true
+    console.log('Google Cloud TTS is available and enabled')
+  } else {
+    console.log('Using browser TTS as fallback')
+  }
 
   // Initialize content
   isInitializing = true
@@ -577,8 +799,21 @@ onMounted(() => {
   }, 0)
   selectedRate.value = String(rate.value)
 
+  // Register with global TTS manager for cleanup
+  unregisterFromManager = registerReader(stopAllPlayback)
+  
   // Keyboard shortcuts
   window.addEventListener('keydown', onKeydown)
+  
+  // Page lifecycle events for cleanup - Multiple event listeners for different scenarios
+  window.addEventListener('beforeunload', handlePageUnload, { capture: true })
+  window.addEventListener('unload', handlePageUnload, { capture: true })
+  window.addEventListener('pagehide', handlePageUnload, { capture: true })
+  document.addEventListener('visibilitychange', handleVisibilityChange)
+  
+  // Additional cleanup for navigation
+  window.addEventListener('popstate', handlePageUnload)
+  window.addEventListener('hashchange', handlePageUnload)
 
   // Observe content changes
   try {
@@ -600,16 +835,57 @@ onMounted(() => {
 })
 
 onBeforeUnmount(() => {
+  // Stop all playback
+  stopAllPlayback()
+  
+  // Unregister from global manager
+  if (unregisterFromManager) {
+    unregisterFromManager()
+    unregisterFromManager = null
+  }
+  
+  // Remove event listeners
   try { window.speechSynthesis.onvoiceschanged = null as any } catch {}
-  window.removeEventListener('keydown', onKeydown)
-  resetReading()
+  try { window.removeEventListener('keydown', onKeydown) } catch {}
+  try { window.removeEventListener('beforeunload', handlePageUnload) } catch {}
+  try { window.removeEventListener('unload', handlePageUnload) } catch {}
+  try { window.removeEventListener('pagehide', handlePageUnload) } catch {}
+  try { window.removeEventListener('popstate', handlePageUnload) } catch {}
+  try { window.removeEventListener('hashchange', handlePageUnload) } catch {}
+  try { document.removeEventListener('visibilitychange', handleVisibilityChange) } catch {}
+  
+  // Cleanup observers and timers
   try { mutationObserver?.disconnect() } catch {}
+  try { if (refreshTimer) window.clearTimeout(refreshTimer) } catch {}
 })
 
 watch(() => contentRoot.value, (el) => {
+  // Stop any ongoing playback when content changes
+  if (isPlaying.value) {
+    stopAllPlayback()
+  }
+  
   if (!el && !props.contentSelector) return
   refreshContentSentences()
 }, { flush: 'post' })
+
+// Watch for route changes to stop playback using Nuxt router
+if (process.client) {
+  const router = useRouter()
+  const route = useRoute()
+  
+  // Watch route changes
+  watch(() => route.path, (newPath, oldPath) => {
+    if (oldPath && newPath !== oldPath) {
+      console.log(`🔄 Route changed from ${oldPath} to ${newPath}, stopping TTS`)
+      stopAllPlayback()
+      
+      // Also trigger global cleanup
+      const { stopAllReaders } = useTTSManager()
+      stopAllReaders()
+    }
+  }, { immediate: false })
+}
 </script>
 
 <template>
@@ -620,7 +896,8 @@ watch(() => contentRoot.value, (el) => {
         <Icon name="heroicons:speaker-wave" class="text-red-400 text-base sm:text-sm flex-shrink-0" />
         <span class="text-sm sm:text-xs text-zinc-300 font-medium">Content Reader</span>
         <span class="text-xs sm:text-[10px] text-zinc-500 truncate">
-          {{ isPlaying ? (isPaused ? 'Paused' : `Reading ${progressPercentage}%`) : (isContentReady ? `${wordCount} words • ${estimatedTime}` : 'Loading') }}
+          {{ isLoadingAudio ? 'Generating audio...' : isPlaying ? (isPaused ? 'Paused' : `Reading ${progressPercentage}%`) : (isContentReady ? `${wordCount} words • ${estimatedTime}` : 'Loading') }}
+          {{ useGoogleTTS && isGoogleTTSAvailable ? ' • Google TTS' : ' • Browser TTS' }}
         </span>
       </div>
       <button
@@ -769,23 +1046,37 @@ watch(() => contentRoot.value, (el) => {
           </div>
 
           <!-- Settings Row -->
-          <div class="flex items-center justify-center gap-6">
-            <label class="flex items-center gap-2 text-sm text-zinc-400">
-              <input
-                type="checkbox"
-                v-model="isHighlighting"
-                class="w-4 h-4 text-red-500 bg-zinc-900 border-zinc-700 rounded focus:ring-red-500"
-              />
-              <span>Highlight Words</span>
-            </label>
-            <label class="flex items-center gap-2 text-sm text-zinc-400">
-              <input
-                type="checkbox"
-                v-model="autoScroll"
-                class="w-4 h-4 text-red-500 bg-zinc-900 border-zinc-700 rounded focus:ring-red-500"
-              />
-              <span>Auto Scroll</span>
-            </label>
+          <div class="flex flex-col gap-3">
+            <div class="flex items-center justify-center gap-6">
+              <label class="flex items-center gap-2 text-sm text-zinc-400">
+                <input
+                  type="checkbox"
+                  v-model="isHighlighting"
+                  class="w-4 h-4 text-red-500 bg-zinc-900 border-zinc-700 rounded focus:ring-red-500"
+                />
+                <span>Highlight Words</span>
+              </label>
+              <label class="flex items-center gap-2 text-sm text-zinc-400">
+                <input
+                  type="checkbox"
+                  v-model="autoScroll"
+                  class="w-4 h-4 text-red-500 bg-zinc-900 border-zinc-700 rounded focus:ring-red-500"
+                />
+                <span>Auto Scroll</span>
+              </label>
+            </div>
+            
+            <!-- Google TTS Toggle -->
+            <div v-if="isGoogleTTSAvailable" class="flex items-center justify-center">
+              <label class="flex items-center gap-2 text-sm text-zinc-400">
+                <input
+                  type="checkbox"
+                  v-model="useGoogleTTS"
+                  class="w-4 h-4 text-red-500 bg-zinc-900 border-zinc-700 rounded focus:ring-red-500"
+                />
+                <span>Use Google TTS (Better Quality)</span>
+              </label>
+            </div>
           </div>
         </div>
 
@@ -838,6 +1129,14 @@ watch(() => contentRoot.value, (el) => {
                 class="w-3 h-3 text-red-500 bg-zinc-900 border-zinc-700 rounded focus:ring-red-500"
               />
               <span>Scroll</span>
+            </label>
+            <label v-if="isGoogleTTSAvailable" class="flex items-center gap-1 text-xs text-zinc-400">
+              <input
+                type="checkbox"
+                v-model="useGoogleTTS"
+                class="w-3 h-3 text-red-500 bg-zinc-900 border-zinc-700 rounded focus:ring-red-500"
+              />
+              <span>Google TTS</span>
             </label>
           </div>
         </div>
