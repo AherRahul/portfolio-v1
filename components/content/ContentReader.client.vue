@@ -809,6 +809,8 @@ onMounted(async () => {
   window.addEventListener('beforeunload', handlePageUnload, { capture: true })
   window.addEventListener('unload', handlePageUnload, { capture: true })
   window.addEventListener('pagehide', handlePageUnload, { capture: true })
+  // On mobile, switching apps or locking screen often triggers blur/visibilitychange
+  window.addEventListener('blur', handlePageUnload, { capture: true })
   document.addEventListener('visibilitychange', handleVisibilityChange)
   
   // Additional cleanup for navigation
@@ -850,6 +852,7 @@ onBeforeUnmount(() => {
   try { window.removeEventListener('beforeunload', handlePageUnload) } catch {}
   try { window.removeEventListener('unload', handlePageUnload) } catch {}
   try { window.removeEventListener('pagehide', handlePageUnload) } catch {}
+  try { window.removeEventListener('blur', handlePageUnload) } catch {}
   try { window.removeEventListener('popstate', handlePageUnload) } catch {}
   try { window.removeEventListener('hashchange', handlePageUnload) } catch {}
   try { document.removeEventListener('visibilitychange', handleVisibilityChange) } catch {}

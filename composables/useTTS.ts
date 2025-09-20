@@ -36,14 +36,21 @@ export const useTTS = () => {
   // Check if Google Cloud TTS is available
   const checkGoogleTTSAvailability = async () => {
     try {
+      console.log('🔍 Checking Google TTS availability...')
       const response = await $fetch<VoicesResponse>('/api/tts/voices')
+      console.log('📡 Google TTS API Response:', { success: response.success, voiceCount: response.voices?.all?.length })
+      
       isGoogleTTSAvailable.value = response.success
       if (response.success) {
         googleVoices.value = response.voices.all
+        console.log('✅ Google TTS is available with', response.voices.all.length, 'voices')
+        console.log('🎯 Recommended voices:', response.recommended)
+      } else {
+        console.warn('❌ Google TTS API returned success=false:', response.error)
       }
       return response.success
     } catch (error) {
-      console.warn('Google TTS not available:', error)
+      console.warn('❌ Google TTS not available:', error)
       isGoogleTTSAvailable.value = false
       return false
     }
