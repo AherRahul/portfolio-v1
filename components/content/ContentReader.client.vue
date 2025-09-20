@@ -100,22 +100,65 @@ function loadVoices() {
   try {
     voices.value = window.speechSynthesis.getVoices()
     if (!selectedVoice.value && voices.value.length) {
-      // Prefer Google Hindi if available, then any Hindi voice, then English
+      // Enhanced voice selection for mobile compatibility
       const byName = (predicate: (name: string) => boolean) => voices.value.find(v => predicate(v.name))
       const byLang = (regex: RegExp) => voices.value.find(v => regex.test(v.lang))
+      const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent)
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
 
-      const googleHindi = byName(name => /google/i.test(name) && /(हिन्दी|hindi)/i.test(name))
-        || byLang(/^(hi([-_][A-Z]{2})?)$/i)
-        || byLang(/^hi[-_]IN$/i)
-      const anyHindi = googleHindi
-        || byName(name => /(हिन्दी|hindi)/i.test(name))
-        || byLang(/^hi([-_].*)?$/i)
+      // For iOS, prefer system voices that work well
+      if (isIOS) {
+        // iOS Hindi voices (system built-in)
+        const iosHindi = byName(name => /lekha|kanya/i.test(name)) // iOS Hindi voice names
+          || byLang(/^hi[-_]IN$/i)
+          || byName(name => /(hindi|हिन्दी)/i.test(name))
+        
+        // iOS English voices (high quality)
+        const iosEnglish = byName(name => /samantha|alex|victoria|karen|daniel/i.test(name))
+          || byLang(/^en[-_]US$/i)
+          || byLang(/^en[-_]GB$/i)
+        
+        selectedVoice.value = (iosHindi || iosEnglish || voices.value[0])?.name || ''
+      }
+      // For Android, prefer Google voices
+      else if (isMobile && /Android/i.test(navigator.userAgent)) {
+        const androidHindi = byName(name => /google/i.test(name) && /(hindi|हिन्दी)/i.test(name))
+          || byLang(/^hi[-_]IN$/i)
+          || byName(name => /(hindi|हिन्दी)/i.test(name))
+        
+        const androidEnglish = byName(name => /google/i.test(name) && /english/i.test(name))
+          || byLang(/^en[-_]US$/i)
+          || byLang(/^en[-_]GB$/i)
+        
+        selectedVoice.value = (androidHindi || androidEnglish || voices.value[0])?.name || ''
+      }
+      // Desktop - original logic with Google preference
+      else {
+        const googleHindi = byName(name => /google/i.test(name) && /(हिन्दी|hindi)/i.test(name))
+          || byLang(/^hi[-_]IN$/i)
+        const anyHindi = googleHindi
+          || byName(name => /(हिन्दी|hindi)/i.test(name))
+          || byLang(/^hi([-_].*)?$/i)
+        const enVoice = byLang(/^en([-_].*)?$/i)
 
-      const enVoice = byLang(/^en([-_].*)?$/i)
+        selectedVoice.value = (anyHindi || enVoice || voices.value[0])?.name || ''
+      }
 
-      selectedVoice.value = (anyHindi || enVoice || voices.value[0])?.name || ''
+      console.log('Voice selected:', selectedVoice.value, 'Platform:', isIOS ? 'iOS' : isMobile ? 'Mobile' : 'Desktop')
+      
+      // Debug: Log available voices on mobile for troubleshooting
+      if (isMobile) {
+        console.log('Available voices on mobile:', voices.value.map(v => ({
+          name: v.name,
+          lang: v.lang,
+          localService: v.localService,
+          default: v.default
+        })))
+      }
     }
-  } catch {}
+  } catch (e) {
+    console.warn('Voice loading failed:', e)
+  }
 }
 
 function getTargetElement(): HTMLElement | null {
@@ -317,18 +360,62 @@ function buildAndSpeak(fromIndex = 0) {
     updateTimeEstimates()
     
     utterance = new SpeechSynthesisUtterance(sentences[currentIndex])
+    
+    // Enhanced mobile configuration
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent)
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+    
     utterance.rate = rate.value
+    utterance.pitch = 1
+    utterance.volume = 1
+    
     const voice = voices.value.find(v => v.name === selectedVoice.value)
-    if (voice) utterance.voice = voice
+    if (voice) {
+      utterance.voice = voice
+      
+      // iOS-specific optimizations
+      if (isIOS) {
+        // iOS works better with slightly slower rates
+        utterance.rate = Math.min(rate.value, 1.5)
+        // Ensure proper language setting for iOS
+        utterance.lang = voice.lang || (/(hindi|हिन्दी)/i.test(selectedVoice.value) ? 'hi-IN' : 'en-US')
+      }
+      // Android optimizations
+      else if (isMobile && /Android/i.test(navigator.userAgent)) {
+        // Android handles higher rates better
+        utterance.rate = rate.value
+        utterance.lang = voice.lang || 'en-US'
+      }
+    } else if (isMobile) {
+      // Fallback language setting for mobile when no voice is found
+      utterance.lang = 'en-US'
+    }
     
     utterance.onend = () => {
       currentIndex += 1
-      speakNext()
+      // Small delay for mobile stability
+      if (isMobile) {
+        setTimeout(() => speakNext(), 50)
+      } else {
+        speakNext()
+      }
     }
-    utterance.onerror = () => {
-      // Skip problematic segment
-      currentIndex += 1
-      speakNext()
+    utterance.onerror = (event) => {
+      console.error('Speech synthesis error:', event)
+      
+      // On mobile, try to recover by reloading voices
+      if (isMobile) {
+        setTimeout(() => {
+          loadVoices()
+          // Skip problematic segment and continue
+          currentIndex += 1
+          speakNext()
+        }, 1000)
+      } else {
+        // Skip problematic segment
+        currentIndex += 1
+        speakNext()
+      }
     }
     utterance.onboundary = (event) => {
       // Real-time word highlighting and progress
@@ -339,6 +426,11 @@ function buildAndSpeak(fromIndex = 0) {
         // Highlight current word being spoken with proper sentence tracking
         highlightWordByWord(currentIndex, event.charIndex)
       }
+    }
+    
+    // iOS Safari requires user interaction to start speech
+    if (isIOS && synth.paused) {
+      synth.resume()
     }
     
     synth.speak(utterance)
@@ -670,7 +762,7 @@ watch(() => contentRoot.value, (el) => {
                 aria-label="Select reading voice"
               >
                 <option v-for="v in voices" :key="v.name" :value="v.name">
-                  {{ v.name.split(' ')[0] }}
+                  {{ v.name.split(' ')[0] }}{{ v.localService ? ' 📱' : ' ☁️' }}
                 </option>
               </select>
             </div>
@@ -724,7 +816,7 @@ watch(() => contentRoot.value, (el) => {
               aria-label="Select reading voice"
             >
               <option v-for="v in voices" :key="v.name" :value="v.name">
-                {{ v.name.split(' ')[0] }} ({{ v.lang }})
+                {{ v.name.split(' ')[0] }} ({{ v.lang }}){{ v.localService ? ' 📱' : ' ☁️' }}
               </option>
             </select>
           </div>
