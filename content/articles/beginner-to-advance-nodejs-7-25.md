@@ -1,5 +1,5 @@
 ---
-title: "Deploying Nodejs Apps (Heroku, Vercel/Netlify, AWS)"
+title: "Deploying NodeJs Apps (Heroku, Vercel/Netlify, AWS)"
 description: "Deploy Express/Node apps: build outputs, env vars/secrets, process managers (PM2), health checks, logs, and basic CI/CD."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-09-15"
@@ -13,7 +13,7 @@ resources:
   - title: "PM2"
     type: "tool"
     url: "https://pm2.keymetrics.io/"
-    description: "Production process manager for Nodejs"
+    description: "Production process manager for NodeJs"
   - title: "12-Factor App"
     type: "article"
     url: "https://12factor.net/"
@@ -28,11 +28,11 @@ resources:
     description: "Build, functions, redirects"
 ---
 
-![Deploying Nodejs Apps](https://res.cloudinary.com/duojkrgue/image/upload/v1757930696/Portfolio/nodeJsCourse/25_xgwyej.png)
+![Deploying NodeJs Apps](https://res.cloudinary.com/duojkrgue/image/upload/v1757930696/Portfolio/nodeJsCourse/25_xgwyej.png)
 
-<!-- # 📖 My Personal Notes – Deploying Nodejs Apps -->
+<!-- # 📖 My Personal Notes – Deploying NodeJs Apps -->
 
-Deployment used to terrify me until I learned that it's just making your local app work somewhere else. Here's everything I've learned about getting Nodejs apps into production reliably.
+Deployment used to terrify me until I learned that it's just making your local app work somewhere else. Here's everything I've learned about getting NodeJs apps into production reliably.
 
 ## Why Deployment Strategy Matters
 
@@ -394,7 +394,7 @@ app.get('/health', async (req, res) => {
 ### 1. Environment Parity
 Keep development, staging, and production as similar as possible:
 ```bash
-# Use exact Nodejs versions
+# Use exact NodeJs versions
 echo "18.17.0" > .nvmrc
 
 # Pin dependencies

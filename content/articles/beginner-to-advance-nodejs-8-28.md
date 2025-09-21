@@ -10,21 +10,21 @@ topics:
   - nodejs
   - performance
 resources:
-  - title: "Nodejs Profiling"
+  - title: "NodeJs Profiling"
     type: "documentation"
     url: "https://nodejs.org/en/learn/getting-started/profiling"
     description: "CPU profiles and heap snapshots"
   - title: "clinic.js"
     type: "tool"
     url: "https://clinicjs.org/"
-    description: "Performance analysis toolkit for Nodejs"
+    description: "Performance analysis toolkit for NodeJs"
 ---
 
 ![Performance Optimization](https://res.cloudinary.com/duojkrgue/image/upload/v1757930700/Portfolio/nodeJsCourse/28_mladc3.png)
 
 <!-- # 📖 My Personal Notes – Performance Optimization -->
 
-Performance problems used to frustrate me until I learned to measure first, optimize second. Here's my systematic approach to making Nodejs apps fast and efficient.
+Performance problems used to frustrate me until I learned to measure first, optimize second. Here's my systematic approach to making NodeJs apps fast and efficient.
 
 ## Why Performance Matters
 

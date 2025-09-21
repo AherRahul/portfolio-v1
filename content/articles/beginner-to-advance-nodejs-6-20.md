@@ -1,6 +1,6 @@
 ---
-title: "Password Hashing with bcrypt in Nodejs"
-description: "Learn how to securely store and verify passwords using bcrypt in Nodejs applications. Understand salting, cost factors, password verification, migration strategies, and best practices for password security in production applications."
+title: "Password Hashing with bcrypt in NodeJs"
+description: "Learn how to securely store and verify passwords using bcrypt in NodeJs applications. Understand salting, cost factors, password verification, migration strategies, and best practices for password security in production applications."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-09-15"
 datePublished: "2025-09-15"
@@ -19,7 +19,7 @@ resources:
   - title: "bcrypt (native)"
     type: "documentation"
     url: "https://github.com/kelektiv/node.bcrypt.js"
-    description: "Native bcrypt bindings for Nodejs"
+    description: "Native bcrypt bindings for NodeJs"
   - title: "OWASP Password Storage"
     type: "article"
     url: "https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html"
@@ -33,7 +33,7 @@ resources:
 
 ![Password Hashing with bcrypt](https://res.cloudinary.com/duojkrgue/image/upload/v1757930699/Portfolio/nodeJsCourse/20_saq9rh.png)
 
-# 📖 Notes – Password Hashing with bcrypt in Nodejs
+# 📖 Notes – Password Hashing with bcrypt in NodeJs
 
 ## Why Never Store Plain Text Passwords
 
@@ -799,8 +799,8 @@ app.post('/api/auth/login', async (req, res) => {
 
 ---
 
-Excellent! Now I know how to securely handle passwords in Nodejs! 🔒
+Excellent! Now I know how to securely handle passwords in NodeJs! 🔒
 
-I'm Rahul Aher, and these are my learning notes on Nodejs. If you find these notes helpful, please share them with your friends. If you spot any errors or have improvements, feel free to contribute by [forking the repo](https://github.com/AherRahul/portfolio-v1). Let's learn together! Also, please consider giving a star ⭐ to [this repo](https://github.com/AherRahul/portfolio-v1). For any queries, [let's connect here](https://rahulaher.netlify.app/contact/).
+I'm Rahul Aher, and these are my learning notes on NodeJs. If you find these notes helpful, please share them with your friends. If you spot any errors or have improvements, feel free to contribute by [forking the repo](https://github.com/AherRahul/portfolio-v1). Let's learn together! Also, please consider giving a star ⭐ to [this repo](https://github.com/AherRahul/portfolio-v1). For any queries, [let's connect here](https://rahulaher.netlify.app/contact/).
 
 Take care, see you in the next lesson! 😊

@@ -1,6 +1,6 @@
 ---
 title: "Introduction to Express.js Framework"
-description: "Express.js is the most popular, minimal, and flexible web framework for Nodejs. These notes cover what Express.js is, why we need it over vanilla Nodejs, how it simplifies server development, and the fundamental concepts like routing, middleware, and the request/response lifecycle."
+description: "Express.js is the most popular, minimal, and flexible web framework for NodeJs. These notes cover what Express.js is, why we need it over vanilla NodeJs, how it simplifies server development, and the fundamental concepts like routing, middleware, and the request/response lifecycle."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-09-15"
 datePublished: "2025-09-15"
@@ -41,21 +41,21 @@ resources:
 
 ## What is Express.js?
 
-Express.js is a **minimal and flexible web application framework for Nodejs**. Think of it as a layer on top of Nodejs that makes building web servers and API much easier and faster than using vanilla Nodejs.
+Express.js is a **minimal and flexible web application framework for NodeJs**. Think of it as a layer on top of NodeJs that makes building web servers and API much easier and faster than using vanilla NodeJs.
 
-While Nodejs gives us the capability to create HTTP servers, doing everything manually can be quite tedious. Express.js provides a set of tools and features that simplify common web development tasks like:
+While NodeJs gives us the capability to create HTTP servers, doing everything manually can be quite tedious. Express.js provides a set of tools and features that simplify common web development tasks like:
 - **Routing** - Handling different URL paths
 - **Middleware** - Processing requests before they reach your handlers  
 - **Request/Response helpers** - Easier ways to send JSON, handle forms, etc.
 - **Static file serving** - Serving CSS, JS, images, etc.
 
-***My takeaway: Express.js is to Nodejs what React is to JavaScript - it makes development faster and more organized!***
+***My takeaway: Express.js is to NodeJs what React is to JavaScript - it makes development faster and more organized!***
 
 ## Why Do We Need Express.js?
 
 Let me show you the difference with a simple example.
 
-### Creating a Server with Vanilla Nodejs:
+### Creating a Server with Vanilla NodeJs:
 ```javascript
 const http = require('http');
 const url = require('url');
@@ -343,17 +343,17 @@ router.post('/', createUser);
 
 ## My Key Learnings
 
-- **Express.js simplifies Nodejs development** by providing a clean, organized way to handle routes and middleware
+- **Express.js simplifies NodeJs development** by providing a clean, organized way to handle routes and middleware
 - **Middleware is powerful** - it's like a pipeline where each function can modify the request/response or stop the chain
 - **Organization matters** - As apps grow, proper structure with routes, controllers, and middleware separation is crucial
 - **Express is minimal** - You add only what you need, keeping applications lightweight
-- **It's just JavaScript** - All Nodejs capabilities are still available when using Express
+- **It's just JavaScript** - All NodeJs capabilities are still available when using Express
 
 
 ---
 
 And that's my introduction to Express.js! 🚀
 
-I'm Rahul Aher, and these are my learning notes on Nodejs. If you find these notes helpful, please share them with your friends. If you spot any errors or have improvements, feel free to contribute by [forking the repo](https://github.com/AherRahul/portfolio-v1). Let's learn together! Also, please consider giving a star ⭐ to [this repo](https://github.com/AherRahul/portfolio-v1). For any queries, [let's connect here](https://rahulaher.netlify.app/contact/).
+I'm Rahul Aher, and these are my learning notes on NodeJs. If you find these notes helpful, please share them with your friends. If you spot any errors or have improvements, feel free to contribute by [forking the repo](https://github.com/AherRahul/portfolio-v1). Let's learn together! Also, please consider giving a star ⭐ to [this repo](https://github.com/AherRahul/portfolio-v1). For any queries, [let's connect here](https://rahulaher.netlify.app/contact/).
 
 Take care, see you in the next lesson! 😊

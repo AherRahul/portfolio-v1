@@ -19,7 +19,7 @@ resources:
   - title: "Winston"
     type: "tool"
     url: "https://github.com/winstonjs/winston"
-    description: "Popular logging library for Nodejs"
+    description: "Popular logging library for NodeJs"
   - title: "Morgan"
     type: "tool"
     url: "https://github.com/expressjs/morgan"
@@ -27,7 +27,7 @@ resources:
   - title: "Pino"
     type: "tool"
     url: "https://github.com/pinojs/pino"
-    description: "High-performance logger for Nodejs"
+    description: "High-performance logger for NodeJs"
   - title: "80/20 Guide to Express Error Handling"
     type: "article"
     url: "https://thecodebarbarian.com/80-20-guide-to-express-error-handling"
@@ -691,6 +691,6 @@ process.on('SIGTERM', () => {
 
 Excellent! Now I know how to handle errors and logging like a pro! 🛡️
 
-I'm Rahul Aher, and these are my learning notes on Nodejs. If you find these notes helpful, please share them with your friends. If you spot any errors or have improvements, feel free to contribute by [forking the repo](https://github.com/AherRahul/portfolio-v1). Let's learn together! Also, please consider giving a star ⭐ to [this repo](https://github.com/AherRahul/portfolio-v1). For any queries, [let's connect here](https://rahulaher.netlify.app/contact/).
+I'm Rahul Aher, and these are my learning notes on NodeJs. If you find these notes helpful, please share them with your friends. If you spot any errors or have improvements, feel free to contribute by [forking the repo](https://github.com/AherRahul/portfolio-v1). Let's learn together! Also, please consider giving a star ⭐ to [this repo](https://github.com/AherRahul/portfolio-v1). For any queries, [let's connect here](https://rahulaher.netlify.app/contact/).
 
 Take care, see you in the next lesson! 😊

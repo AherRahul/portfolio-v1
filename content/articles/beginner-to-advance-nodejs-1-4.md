@@ -1,6 +1,6 @@
 ---
 title: "Module.exports & require"
-description: "As you saw in the last episode, we wrote our first line of code in Nodejs. Now, we could just keep adding whatever we want to app.js, and technically, it would work. But that's not the best way to do things because the file would get cluttered and hard to manage. Instead, we need multiple files.So, you'll use require to include different modules into your main file."
+description: "As you saw in the last episode, we wrote our first line of code in NodeJs. Now, we could just keep adding whatever we want to app.js, and technically, it would work. But that's not the best way to do things because the file would get cluttered and hard to manage. Instead, we need multiple files.So, you'll use require to include different modules into your main file."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-04-08"
 datePublished: "2025-04-08"
@@ -110,7 +110,7 @@ Practical advice: libraries and older codebases still use CJS; new apps and tool
 
 ![image.png](https://i.ibb.co/Ypv7mBL/3.jpg)
 
-Nodejs also comes with built-in modules that you can require and import directly into your code. These modules are pre-installed with Nodejs and provide various functionalities like file handling, HTTP requests, and more. 
+NodeJs also comes with built-in modules that you can require and import directly into your code. These modules are pre-installed with NodeJs and provide various functionalities like file handling, HTTP requests, and more. 
 
 ### What “module” means in practice
 

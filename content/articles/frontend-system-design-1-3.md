@@ -100,7 +100,7 @@ We will dive deeper into each of these later. For now, just keep in mind that th
 
 ### Let’s Create a Server
 
-We will use **Express.js**, which is built on **Nodejs**.
+We will use **Express.js**, which is built on **NodeJs**.
 
 1. Open any folder of your choice.
 2. Open **VS Code**, **Cursive**, or any of your favorite editors.
@@ -137,7 +137,7 @@ In your **package.json** file (which you got after running `npm init`), you need
 1. Add a script to run your project.
 2. Specify the project type as **module** because you are using **ES6 syntax**. This tells your project to follow **ESM (ECMAScript Modules)** instead of **CJS (CommonJS)**.
 
-It’s important to learn about these topics to understand how modules work in Nodejs.
+It’s important to learn about these topics to understand how modules work in NodeJs.
 
 ```
 {

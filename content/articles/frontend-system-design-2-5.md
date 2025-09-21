@@ -62,7 +62,7 @@ If you visit the GitHub Webhook page, you will see a similar definition:
 
 **Webhooks provide a way for notifications to be delivered to an external web server whenever certain events occur on GitHub. You can add a webhook after watching some tutorials on Google.**
 
-If you want to create a webhook in Nodejs or enable something on GitHub, you can try it. But for now, I’m stopping the writing. We’ll meet in another blog.
+If you want to create a webhook in NodeJs or enable something on GitHub, you can try it. But for now, I’m stopping the writing. We’ll meet in another blog.
 
 So that's all for this article. Let's meet in the next one.  Take care, bye-bye!
 

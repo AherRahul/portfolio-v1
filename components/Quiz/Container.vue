@@ -4,10 +4,10 @@ import { downloadQuizAnalysisPDF } from '~/utils/pdfGenerator'
 
 interface QuizQuestion {
   id: string
-  type: 'single-choice' | 'multiple-choice' | 'true-false' | 'fill-blank' | 'short-answer'
+  type: 'single-choice' | 'multiple-choice' | 'true-false' | 'fill-blank' | 'fill-in-blank'
   question: string
   options?: string[]
-  correctAnswers: string[] | boolean[]
+  correctAnswers: string[]
   explanation: string
   difficulty: 'easy' | 'medium' | 'hard'
 }
@@ -26,6 +26,14 @@ const props = defineProps<{
   preGeneratedQuestions?: QuizQuestion[]
 }>()
 
+const emit = defineEmits<{
+  'quiz-completed': [{ score: number, userAnswers: any[], totalQuestions: number }]
+}>()
+
+// Quiz configuration state
+const selectedDifficulty = ref(props.difficulty || 'medium')
+const selectedQuestionCount = ref(props.questionCount || 10)
+
 // Quiz state
 const isLoading = ref(false)
 const isStarted = ref(false)
@@ -39,7 +47,6 @@ const error = ref('')
 // Current question state
 const selectedAnswers = ref<string[]>([])
 const fillBlankAnswer = ref('')
-const shortAnswer = ref('')
 
 // Computed properties
 const currentQuestion = computed(() => questions.value[currentQuestionIndex.value])
@@ -54,9 +61,8 @@ const canProceed = computed(() => {
     case 'true-false':
       return selectedAnswers.value.length > 0
     case 'fill-blank':
+    case 'fill-in-blank':
       return fillBlankAnswer.value.trim().length > 0
-    case 'short-answer':
-      return shortAnswer.value.trim().length > 0
     default:
       return false
   }
@@ -87,12 +93,12 @@ async function generateQuiz() {
       body: {
         content: props.content,
         topicTitle: props.topicTitle,
-        difficulty: props.difficulty || 'medium',
-        questionCount: props.questionCount || 10
+        difficulty: selectedDifficulty.value,
+        questionCount: selectedQuestionCount.value
       }
     })
     
-    questions.value = response.questions
+    questions.value = (response as any).questions
     isStarted.value = true
   } catch (err: any) {
     error.value = err.data?.message || 'Failed to generate quiz. Please try again.'
@@ -125,7 +131,6 @@ function restartQuiz() {
 function resetCurrentAnswers() {
   selectedAnswers.value = []
   fillBlankAnswer.value = ''
-  shortAnswer.value = ''
 }
 
 function selectAnswer(option: string) {
@@ -153,30 +158,30 @@ function checkAnswer(): boolean {
     case 'single-choice':
     case 'multiple-choice':
       userAnswer = [...selectedAnswers.value]
-      isCorrect = arraysEqual(userAnswer.sort(), (currentQuestion.value.correctAnswers as string[]).sort())
+      const correctAnswers = currentQuestion.value.correctAnswers
+      // Check if both arrays have the same length and contain the same elements
+      isCorrect = userAnswer.length === correctAnswers.length && 
+                  userAnswer.every(answer => correctAnswers.includes(answer)) &&
+                  correctAnswers.every(answer => userAnswer.includes(answer))
       break
       
     case 'true-false':
       userAnswer = [...selectedAnswers.value]
-      const boolAnswer = userAnswer[0] === 'True'
-      isCorrect = boolAnswer === (currentQuestion.value.correctAnswers as boolean[])[0]
+      isCorrect = userAnswer[0] === currentQuestion.value.correctAnswers[0]
       break
       
     case 'fill-blank':
+    case 'fill-in-blank':
       userAnswer = [fillBlankAnswer.value.trim()]
-      const expectedAnswers = currentQuestion.value.correctAnswers as string[]
-      isCorrect = expectedAnswers.some(expected => 
-        userAnswer[0].toLowerCase().includes(expected.toLowerCase()) ||
-        expected.toLowerCase().includes(userAnswer[0].toLowerCase())
-      )
-      break
-      
-    case 'short-answer':
-      userAnswer = [shortAnswer.value.trim()]
-      // For short answers, we'll be more lenient and check for key terms
-      const keyTerms = (currentQuestion.value.correctAnswers as string[])[0].toLowerCase().split(' ')
-      const userText = userAnswer[0].toLowerCase()
-      isCorrect = keyTerms.some(term => userText.includes(term) && term.length > 2)
+      const expectedAnswers = currentQuestion.value.correctAnswers
+      const userText = userAnswer[0].toLowerCase().trim()
+      isCorrect = expectedAnswers.some(expected => {
+        const expectedText = expected.toLowerCase().trim()
+        // Check for exact match or if user answer contains the expected answer (or vice versa)
+        return userText === expectedText || 
+               userText.includes(expectedText) || 
+               expectedText.includes(userText)
+      })
       break
   }
   
@@ -197,10 +202,8 @@ function nextQuestion() {
       userAnswerValue = [...selectedAnswers.value]
       break
     case 'fill-blank':
+    case 'fill-in-blank':
       userAnswerValue = [fillBlankAnswer.value.trim()]
-      break
-    case 'short-answer':
-      userAnswerValue = [shortAnswer.value.trim()]
       break
   }
   
@@ -213,6 +216,13 @@ function nextQuestion() {
   if (isLastQuestion.value) {
     isCompleted.value = true
     showResults.value = true
+    
+    // Emit completion event for caching
+    emit('quiz-completed', {
+      score: score.value,
+      userAnswers: userAnswers.value,
+      totalQuestions: userAnswers.value.length
+    })
   } else {
     currentQuestionIndex.value++
     resetCurrentAnswers()
@@ -275,13 +285,16 @@ async function downloadQuizAnalysis() {
             AI Generated Quiz
           </h2>
           <p class="text-zinc-300 mt-1">{{ topicTitle }}</p>
+          <!-- <span class="ml-2 text-xs mt-1 px-2 py-1 bg-zinc-700 rounded capitalize">{{ currentQuestion?.type || 'unknown' }}</span> -->
         </div>
-        <div v-if="isStarted && !showResults" class="text-right">
-          <div class="text-sm text-zinc-400">Question {{ currentQuestionIndex + 1 }} of {{ questions.length }}</div>
+        <div v-if="isStarted && !showResults" class="text-center">
+          <div class="text-sm text-zinc-400">
+            Question {{ currentQuestionIndex + 1 }} of {{ questions.length }}
+          </div>
           <div class="w-32 bg-zinc-700 h-2 mt-1">
             <div 
-              class="bg-gradient-to-r from-red-500 to-pink-600 h-2 transition-all duration-300"
-              :style="{ width: `${progress}%` }"
+            class="bg-gradient-to-r from-red-500 to-pink-600 h-2 transition-all duration-300"
+            :style="{ width: `${progress}%` }"
             ></div>
           </div>
         </div>
@@ -316,14 +329,58 @@ async function downloadQuizAnalysis() {
         Take this AI-generated quiz based on the content you just read. The quiz includes various question types 
         to thoroughly test your understanding of the topic.
       </p>
+      
+      <!-- Quiz Configuration (only show if no pre-generated questions) -->
+      <div v-if="!preGeneratedQuestions || preGeneratedQuestions.length === 0" class="max-w-md mx-auto mb-8 space-y-4">
+        <!-- Difficulty Selection -->
+        <div>
+          <label class="block text-sm font-medium text-zinc-300 mb-2">Difficulty Level</label>
+          <div class="grid grid-cols-3 gap-2">
+            <button
+              v-for="diff in (['easy', 'medium', 'hard'] as const)"
+              :key="diff"
+              @click="selectedDifficulty = diff as 'easy' | 'medium' | 'hard'"
+              :class="[
+                'px-4 py-2 text-sm font-medium rounded-lg border-2 transition-all duration-200 capitalize',
+                selectedDifficulty === diff
+                  ? 'border-red-500 bg-red-500/20 text-red-400'
+                  : 'border-zinc-600 bg-zinc-800 text-zinc-300 hover:border-zinc-500'
+              ]"
+            >
+              {{ diff }}
+            </button>
+          </div>
+        </div>
+
+        <!-- Question Count Selection -->
+        <div>
+          <label class="block text-sm font-medium text-zinc-300 mb-2">Number of Questions</label>
+          <div class="grid grid-cols-4 gap-2">
+            <button
+              v-for="count in [5, 10, 15, 17]"
+              :key="count"
+              @click="selectedQuestionCount = count"
+              :class="[
+                'px-4 py-2 text-sm font-medium rounded-lg border-2 transition-all duration-200',
+                selectedQuestionCount === count
+                  ? 'border-red-500 bg-red-500/20 text-red-400'
+                  : 'border-zinc-600 bg-zinc-800 text-zinc-300 hover:border-zinc-500'
+              ]"
+            >
+              {{ count }}
+            </button>
+          </div>
+        </div>
+      </div>
+
       <div class="flex flex-wrap gap-4 justify-center mb-6 text-sm">
         <div class="flex items-center gap-2 text-zinc-400">
           <Icon name="heroicons:clock" />
-          <span>{{ questionCount || 10 }} Questions</span>
+          <span>{{ questions.length || selectedQuestionCount }} Questions</span>
         </div>
         <div class="flex items-center gap-2 text-zinc-400">
           <Icon name="heroicons:chart-bar" />
-          <span class="capitalize" :class="getDifficultyColor(difficulty || 'medium')">{{ difficulty || 'medium' }} Level</span>
+          <span class="capitalize" :class="getDifficultyColor(difficulty || selectedDifficulty)">{{ difficulty || selectedDifficulty }} Level</span>
         </div>
         <div class="flex items-center gap-2 text-zinc-400">
           <Icon name="heroicons:light-bulb" />
@@ -383,24 +440,21 @@ async function downloadQuizAnalysis() {
         </div>
 
         <!-- Fill in the Blank -->
-        <div v-else-if="currentQuestion.type === 'fill-blank'" class="mt-6">
+        <div v-else-if="currentQuestion.type === 'fill-blank' || currentQuestion.type === 'fill-in-blank'" class="mt-6">
+          <label class="block text-sm font-medium text-zinc-300 mb-3">Fill in the blank:</label>
           <input
             v-model="fillBlankAnswer"
             type="text"
             placeholder="Type your answer here..."
-            class="w-full p-4 bg-zinc-700 border border-zinc-600 text-white placeholder-zinc-400 focus:border-red-500 focus:outline-none transition-colors"
+            class="w-full p-4 bg-zinc-700 border-2 border-zinc-600 text-white placeholder-zinc-400 focus:border-red-500 focus:outline-none transition-colors rounded-lg text-lg"
+            autocomplete="off"
           />
+          <p class="text-xs text-zinc-500 mt-2">
+            <Icon name="heroicons:pencil" class="inline mr-1" />
+            Enter your answer in the text field above
+          </p>
         </div>
 
-        <!-- Short Answer -->
-        <div v-else-if="currentQuestion.type === 'short-answer'" class="mt-6">
-          <textarea
-            v-model="shortAnswer"
-            placeholder="Write your answer here..."
-            rows="4"
-            class="w-full p-4 bg-zinc-700 border border-zinc-600 text-white placeholder-zinc-400 focus:border-red-500 focus:outline-none transition-colors resize-none"
-          ></textarea>
-        </div>
 
         <!-- Navigation -->
         <div class="flex items-center justify-between mt-8 pt-6 border-t border-zinc-700">

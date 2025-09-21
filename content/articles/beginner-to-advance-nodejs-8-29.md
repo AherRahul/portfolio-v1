@@ -13,7 +13,7 @@ resources:
   - title: "Heap Snapshots"
     type: "documentation"
     url: "https://nodejs.org/en/learn/diagnostics/memory/using-heap-snapshot"
-    description: "Debug memory usage in Nodejs"
+    description: "Debug memory usage in NodeJs"
   - title: "Chrome DevTools Memory"
     type: "documentation"
     url: "https://developer.chrome.com/docs/devtools/memory-problems/heap-snapshots/"
@@ -396,6 +396,6 @@ const resourceManager = new ResourceManager()
 
 ---
 
-Memory management in Nodejs is about being proactive. Monitor regularly, clean up resources, use appropriate data structures, and always test under load. A small leak in development becomes a big problem in production!
+Memory management in NodeJs is about being proactive. Monitor regularly, clean up resources, use appropriate data structures, and always test under load. A small leak in development becomes a big problem in production!
 
 

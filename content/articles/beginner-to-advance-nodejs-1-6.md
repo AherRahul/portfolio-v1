@@ -1,6 +1,6 @@
 ---
-title: "libuv & async IO in Nodejs"
-description: "If you read Nodejs's definition, it mentions an event-driven architecture and its ability to handle asynchronous I/O. These two concepts are crucial to understand, so take your time to read and grasp them thoroughly. We know JavaScript is a synchronous, single-threaded language, meaning the code runs in one direction like a one-way road, with one task executing at a time."
+title: "libuv & async IO in NodeJs"
+description: "If you read NodeJs's definition, it mentions an event-driven architecture and its ability to handle asynchronous I/O. These two concepts are crucial to understand, so take your time to read and grasp them thoroughly. We know JavaScript is a synchronous, single-threaded language, meaning the code runs in one direction like a one-way road, with one task executing at a time."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-04-10"
 datePublished: "2025-04-10"
@@ -27,7 +27,7 @@ resources:
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1757930703/Portfolio/nodeJsCourse/6.png)
 
-If you read Nodejs's definition, it mentions an event-driven architecture and its ability to handle asynchronous I/O. These two ideas explain why Node can handle thousands of requests with minimal resources. The mental model: JavaScript runs on one main thread (simple and predictable), while libuv handles the waiting (timers, files, sockets) off the main thread.
+If you read NodeJs's definition, it mentions an event-driven architecture and its ability to handle asynchronous I/O. These two ideas explain why Node can handle thousands of requests with minimal resources. The mental model: JavaScript runs on one main thread (simple and predictable), while libuv handles the waiting (timers, files, sockets) off the main thread.
 
 ![](/public/images/blogs/2.png)
 
@@ -39,7 +39,7 @@ Imagine a restaurant where you can get Coke, pizza, and noodles, which take 0 mi
 
 ### Asynchronous Way of Running Things (what Node actually does)
 
-In an asynchronous way, tasks that take time (like preparing pizza or noodles) are handled separately, allowing the restaurant to serve quick orders (like Coke) immediately. So, A gets Coke instantly, while B and C (who ordered pizza and noodles) are moved to a different queue to wait. Meanwhile, D, who also wants Coke, gets served right away. This prevents unnecessary waiting. The completion of B and C's orders depends on the preparation time. Asynchronous operations in Nodejs prevent blocking, improving efficiency, especially for quick tasks. JS Engines loves synchronous code because it can run that code in milliseconds. we will see some examples soon.
+In an asynchronous way, tasks that take time (like preparing pizza or noodles) are handled separately, allowing the restaurant to serve quick orders (like Coke) immediately. So, A gets Coke instantly, while B and C (who ordered pizza and noodles) are moved to a different queue to wait. Meanwhile, D, who also wants Coke, gets served right away. This prevents unnecessary waiting. The completion of B and C's orders depends on the preparation time. Asynchronous operations in NodeJs prevent blocking, improving efficiency, especially for quick tasks. JS Engines loves synchronous code because it can run that code in milliseconds. we will see some examples soon.
 
 ### How synchronous code runs in the JS engine (what V8 handles)
 
@@ -69,25 +69,23 @@ When the JS engine executes code, it goes through several steps, such as parsing
 
 Let me tell you something: JavaScript isn't just limited to running code. As a scripting language, it has many tasks it's not inherently capable of handling, such as interacting with the outside world, accessing files, or databases. A great example is managing time with `setTimeout`—this isn't actually a feature of JavaScript itself. Really? Yes! The JS engine can't inherently wait; it's not designed for that. The JS engine's responsibility is simply to take JavaScript code and convert it, that's it—no time management or other logic involved.
 
-That's where Nodejs comes into play with its superpowers. Node asks libuv to handle timers, file I/O, networking, and crypto. When those complete, the results come back to JavaScript as callbacks or promise resolutions. V8 only runs JavaScript; libuv talks to the OS.
+That's where NodeJs comes into play with its superpowers. Node asks libuv to handle timers, file I/O, networking, and crypto. When those complete, the results come back to JavaScript as callbacks or promise resolutions. V8 only runs JavaScript; libuv talks to the OS.
 
-In simple terms, this is how Nodejs operates.
+In simple terms, this is how NodeJs operates.
 
 ![image.png](https://heyashu.in/images/blogs/6.png)
 
 ### What is libuv (and why I care)
 
-libuv is a C library that provides Nodejs with an event-driven, asynchronous I/O model. It helps manage tasks like file reading, writing, networking, and timers in a non-blocking way, making it possible for Nodejs to handle many tasks simultaneously without slowing down. Essentially, Libuv is what enables Nodejs to be fast and efficient, handling multiple operations at once without waiting for each to finish. Libuv acts as a middleware b/w JS engine and Operating System. Libuv has thread pool and event loop will discuss in later blogs. just know if anything comes async or engine can’t handle it ask libuv to do it. find the libuv exact link to check the code of it written in c for your reference. actually libuv does so many things.
+libuv is a C library that provides NodeJs with an event-driven, asynchronous I/O model. It helps manage tasks like file reading, writing, networking, and timers in a non-blocking way, making it possible for NodeJs to handle many tasks simultaneously without slowing down. Essentially, Libuv is what enables NodeJs to be fast and efficient, handling multiple operations at once without waiting for each to finish. Libuv acts as a middleware b/w JS engine and Operating System. Libuv has thread pool and event loop will discuss in later blogs. just know if anything comes async or engine can’t handle it ask libuv to do it. find the libuv exact link to check the code of it written in c for your reference. actually libuv does so many things.
 
-### Nodejs is asynchronous (precisely stated)
+### NodeJs is asynchronous (precisely stated)
 
-If someone asks about Nodejs behavior, tell them Nodejs is overall asynchronous. However, V8, which is its JavaScript engine, operates synchronously. Nodejs gains its asynchronous nature from superpowers like `libuv`, which enables non-blocking I/O operations. This is why Nodejs is known for its non-blocking behavior, allowing I/O operations to be performed asynchronously. And don't forget to give a shoutout to the creator of Nodejs, Ryan Dahl!
+If someone asks about NodeJs behavior, tell them NodeJs is overall asynchronous. However, V8, which is its JavaScript engine, operates synchronously. NodeJs gains its asynchronous nature from superpowers like `libuv`, which enables non-blocking I/O operations. This is why NodeJs is known for its non-blocking behavior, allowing I/O operations to be performed asynchronously. And don't forget to give a shoutout to the creator of NodeJs, Ryan Dahl!
 
 
 
 And that's all for this episode!
-
-I'm Ashutosh Anand Tiwari, and I'm writing digital notes on Nodejs. If you enjoy these notes, please share them with your friends. If you find any errors or have improvements, feel free to contribute by [visiting this link.](https://heyashu.in/admin) If you're interested in writing the next episode's notes, [visit this link](https://heyashu.in/admin). Let's learn together! Also, please consider giving a star to [this repo](https://github.com/ashumsd7/heyashu/tree/main/src/data). For any queries, [let's connect here](https://topmate.io/aat/1148709/pay).
 
 
 

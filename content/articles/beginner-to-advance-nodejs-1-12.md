@@ -93,7 +93,7 @@ MongoDB was created in 2009 by a company called **10gen**. The name **Mongo** co
 
 ![image.png](https://heyashu.in/images/blogs/6e12db.png)
 
- MongoDB quickly evolved and became popular, as it emerged around the same time as **Nodejs**. It felt like Nodejs and MongoDB were made for each other, which increased developer productivity. MongoDB is built using **C++** with some JavaScript code as well.
+ MongoDB quickly evolved and became popular, as it emerged around the same time as **NodeJs**. It felt like NodeJs and MongoDB were made for each other, which increased developer productivity. MongoDB is built using **C++** with some JavaScript code as well.
 
 ### Presentation of Database Tables
 

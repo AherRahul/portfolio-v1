@@ -1,6 +1,6 @@
 ---
-title: "Security Best Practices for Nodejs & Express"
-description: "A practical checklist of security best practices for Nodejs and Express apps: secure headers, input validation, auth, secrets management, CORS, rate limiting, safe logging, dependency hygiene, and production-hardening tips."
+title: "Security Best Practices for NodeJs & Express"
+description: "A practical checklist of security best practices for NodeJs and Express apps: secure headers, input validation, auth, secrets management, CORS, rate limiting, safe logging, dependency hygiene, and production-hardening tips."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-09-15"
 datePublished: "2025-09-15"
@@ -11,10 +11,10 @@ topics:
   - security
   - express
 resources:
-  - title: "Nodejs Security Best Practices"
+  - title: "NodeJs Security Best Practices"
     type: "article"
     url: "https://nodejs.org/en/learn/security"
-    description: "Official Nodejs guidance on secure coding and configuration"
+    description: "Official NodeJs guidance on secure coding and configuration"
   - title: "Helmet"
     type: "tool"
     url: "https://helmetjs.github.io/"
@@ -35,13 +35,13 @@ resources:
 
 ![Security Best Practices](https://res.cloudinary.com/duojkrgue/image/upload/v1757930698/Portfolio/nodeJsCourse/21_o3zhhx.png)
 
-<!-- # 📖 My Personal Notes – Security Best Practices for Nodejs & Express -->
+<!-- # 📖 My Personal Notes – Security Best Practices for NodeJs & Express -->
 
-Security isn't an afterthought—it's something I build into every Nodejs app from day one. These are my battle-tested practices that have saved me from security nightmares in production.
+Security isn't an afterthought—it's something I build into every NodeJs app from day one. These are my battle-tested practices that have saved me from security nightmares in production.
 
-## Why Security Matters in Nodejs
+## Why Security Matters in NodeJs
 
-I learned this the hard way: Nodejs apps are prime targets because they often handle sensitive data, user authentication, and business logic. A single vulnerability can expose your entire database or let attackers take over user accounts.
+I learned this the hard way: NodeJs apps are prime targets because they often handle sensitive data, user authentication, and business logic. A single vulnerability can expose your entire database or let attackers take over user accounts.
 
 ## 🛡️ 1. HTTP Security Headers with Helmet
 

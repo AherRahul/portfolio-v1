@@ -16,7 +16,7 @@ resources:
     type: "documentation"
     url: "https://restfulapi.net/"
     description: "Comprehensive REST API design guide and best practices"
-  - title: "Building a REST API with Nodejs"
+  - title: "Building a REST API with NodeJs"
     type: "video"
     url: "https://www.youtube.com/watch?v=0oXYLzuucwE"
     description: "Complete REST API tutorial by Academind"
@@ -592,6 +592,6 @@ GET    /user/delete/123
 
 Great! Now I understand how to build REST API with Express.js! 🎯
 
-I'm Rahul Aher, and these are my learning notes on Nodejs. If you find these notes helpful, please share them with your friends. If you spot any errors or have improvements, feel free to contribute by [forking the repo](https://github.com/AherRahul/portfolio-v1). Let's learn together! Also, please consider giving a star ⭐ to [this repo](https://github.com/AherRahul/portfolio-v1). For any queries, [let's connect here](https://rahulaher.netlify.app/contact/).
+I'm Rahul Aher, and these are my learning notes on NodeJs. If you find these notes helpful, please share them with your friends. If you spot any errors or have improvements, feel free to contribute by [forking the repo](https://github.com/AherRahul/portfolio-v1). Let's learn together! Also, please consider giving a star ⭐ to [this repo](https://github.com/AherRahul/portfolio-v1). For any queries, [let's connect here](https://rahulaher.netlify.app/contact/).
 
 Take care, see you in the next lesson! 😊

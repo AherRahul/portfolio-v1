@@ -14,7 +14,7 @@ resources:
   - title: "Supertest"
     type: "documentation"
     url: "https://github.com/ladjs/supertest"
-    description: "HTTP assertions made easy for Nodejs"
+    description: "HTTP assertions made easy for NodeJs"
   - title: "Jest Docs"
     type: "documentation"
     url: "https://jestjs.io/docs/getting-started"

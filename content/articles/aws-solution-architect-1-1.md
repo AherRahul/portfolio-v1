@@ -125,15 +125,6 @@ Good luck with your certification!
 
 Have any questions or want to share your experience? Drop a comment below, and let’s discuss!
 
-Happy coding!
-
-
-
-
-
-
-
-
 ---
 
 Thank you so much for reading. If you found it valuable, consider subscribing for more such content every week. If you have any questions or suggestions, please email me your comments or feel free to improve it.

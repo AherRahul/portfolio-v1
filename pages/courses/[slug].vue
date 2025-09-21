@@ -207,7 +207,7 @@ defineOgImageComponent('Course', {
                     <span>{{ module.topics?.length || 0 }} lectures</span>
                     <span v-if="module.topics_count">{{ module.topics_count }} topics</span>
                     <span class="hidden sm:inline">{{ module.tutor }} instructor{{ module.tutor > 1 ? 's' : '' }}</span>
-                    <span class="text-green-400">{{ getModuleProgress(module) }}% complete</span>
+                    <span class="text-green-600">{{ getModuleProgress(module) }}% complete</span>
                   </div>
                   <!-- Progress bar -->
                   <div class="mt-2 w-full bg-zinc-700 h-1">

@@ -2,10 +2,10 @@ import Anthropic from '@anthropic-ai/sdk'
 
 interface QuizQuestion {
   id: string
-  type: 'single-choice' | 'multiple-choice' | 'true-false' | 'fill-blank' | 'short-answer'
+  type: 'single-choice' | 'multiple-choice' | 'true-false' | 'fill-blank' | 'fill-in-blank'
   question: string
   options?: string[]
-  correctAnswers: string[] | boolean[]
+  correctAnswers: string[]
   explanation: string
   difficulty: 'easy' | 'medium' | 'hard'
 }
@@ -14,6 +14,115 @@ interface QuizResponse {
   questions: QuizQuestion[]
   totalQuestions: number
   estimatedTime: number
+}
+
+// Helper function to fix common JSON issues
+function fixJsonResponse(jsonStr: string): string {
+  // First, try to find and extract just the JSON part
+  const jsonStart = jsonStr.indexOf('{')
+  if (jsonStart > 0) {
+    // Remove everything before the first {
+    jsonStr = jsonStr.substring(jsonStart)
+    console.log(`Removed ${jsonStart} characters of prefix text`)
+  }
+  
+  // Remove any trailing comma before closing braces/brackets
+  jsonStr = jsonStr.replace(/,(\s*[}\]])/g, '$1')
+  
+  // Ensure the response ends properly
+  if (!jsonStr.trim().endsWith('}')) {
+    // Find the last complete question and truncate there
+    const lastCompleteQuestion = jsonStr.lastIndexOf('},')
+    if (lastCompleteQuestion > 0) {
+      jsonStr = jsonStr.substring(0, lastCompleteQuestion + 1) + '\n  ],\n  "totalQuestions": 0,\n  "estimatedTime": 0\n}'
+    }
+  }
+  
+  return jsonStr
+}
+
+// Helper function to salvage partial JSON responses
+function salvagePartialJson(jsonStr: string): string | null {
+  try {
+    // First, find the JSON start if there's prefix text
+    const jsonStart = jsonStr.indexOf('{')
+    if (jsonStart > 0) {
+      jsonStr = jsonStr.substring(jsonStart)
+    }
+    
+    // Try to find the start of the questions array
+    const questionsStart = jsonStr.indexOf('"questions":')
+    if (questionsStart === -1) return null
+    
+    // Extract everything from questions onwards
+    const questionsSection = jsonStr.substring(questionsStart)
+    
+    // Find complete question objects using a more robust approach
+    const questions: string[] = []
+    let braceCount = 0
+    let inString = false
+    let escape = false
+    let currentQuestion = ''
+    let questionStart = -1
+    
+    for (let i = 0; i < questionsSection.length; i++) {
+      const char = questionsSection[i]
+      
+      if (escape) {
+        escape = false
+        continue
+      }
+      
+      if (char === '\\') {
+        escape = true
+        continue
+      }
+      
+      if (char === '"') {
+        inString = !inString
+        continue
+      }
+      
+      if (inString) continue
+      
+      if (char === '{') {
+        if (braceCount === 0) {
+          questionStart = i
+          currentQuestion = ''
+        }
+        braceCount++
+        currentQuestion += char
+      } else if (char === '}') {
+        currentQuestion += char
+        braceCount--
+        if (braceCount === 0 && questionStart !== -1) {
+          // Try to parse the question to validate it
+          try {
+            const parsed = JSON.parse(currentQuestion)
+            if (parsed.id && parsed.type && parsed.question && parsed.correctAnswers && parsed.explanation) {
+              questions.push(currentQuestion)
+            }
+          } catch {
+            // Invalid question, skip it
+          }
+        }
+      } else if (braceCount > 0) {
+        currentQuestion += char
+      }
+    }
+    
+    if (questions.length === 0) return null
+    
+    // Construct a valid response with the salvaged questions
+    return `{
+  "questions": [${questions.join(',')}],
+  "totalQuestions": ${questions.length},
+  "estimatedTime": ${Math.ceil(questions.length * 1.5)}
+}`
+  } catch (err) {
+    console.error('Error in salvagePartialJson:', err)
+    return null
+  }
 }
 
 export default defineEventHandler(async (event) => {
@@ -28,6 +137,17 @@ export default defineEventHandler(async (event) => {
       })
     }
 
+    // Limit content length to prevent token overflow
+    const maxContentLength = 8000 // Approximate character limit
+    const truncatedContent = content.length > maxContentLength 
+      ? content.substring(0, maxContentLength) + '...[content truncated]'
+      : content
+
+    // Initial question count - let token calculation handle the limits
+    // Claude 3 Haiku can handle ~17 questions max with current token allocation
+    let adjustedQuestionCount = Math.min(questionCount, 17)
+    console.log(`Quiz generation: Requested ${questionCount}, Initial adjusted to ${adjustedQuestionCount}`)
+
     const anthropicApiKey = useRuntimeConfig().anthropicApiKey
     if (!anthropicApiKey) {
       throw createError({
@@ -40,84 +160,65 @@ export default defineEventHandler(async (event) => {
       apiKey: anthropicApiKey,
     })
 
-    const prompt = `
-You are an expert educational content creator. Based on the following topic content, create ${questionCount} diverse quiz questions.
+    const prompt = `Generate ${adjustedQuestionCount} quiz questions in JSON format.
 
 Topic: ${topicTitle}
+Content: ${truncatedContent}
 
-Content:
-${content}
+Return valid JSON only. No text before or after. Format:
 
-Requirements:
-1. Create exactly ${questionCount} questions
-2. Mix different question types: single-choice, multiple-choice, true-false, fill-blank, and short-answer
-3. Difficulty level: ${difficulty}
-4. Include clear explanations for each answer
-5. Ensure questions test understanding, not just memorization
-
-Return ONLY a valid JSON object with this exact structure:
 {
   "questions": [
     {
-      "id": "q1",
+      "id": "q1", 
       "type": "single-choice",
-      "question": "Question text here?",
-      "options": ["Option A", "Option B", "Option C", "Option D"],
-      "correctAnswers": ["Option A"],
-      "explanation": "Detailed explanation of why this is correct...",
-      "difficulty": "medium"
+      "question": "Question text?",
+      "options": ["A", "B", "C", "D"],
+      "correctAnswers": ["A"],
+      "explanation": "Brief explanation.",
+      "difficulty": "${difficulty}"
     },
     {
       "id": "q2", 
       "type": "true-false",
-      "question": "Statement to evaluate",
+      "question": "Statement to evaluate?",
       "options": ["True", "False"],
-      "correctAnswers": [true],
-      "explanation": "Explanation...",
-      "difficulty": "medium"
-    },
-    {
-      "id": "q3",
-      "type": "multiple-choice",
-      "question": "Question allowing multiple correct answers?",
-      "options": ["Option A", "Option B", "Option C", "Option D"],
-      "correctAnswers": ["Option A", "Option C"],
-      "explanation": "Explanation...",
-      "difficulty": "medium"
-    },
-    {
-      "id": "q4",
-      "type": "fill-blank", 
-      "question": "Complete this sentence: The main concept is ______.",
-      "correctAnswers": ["expected answer"],
-      "explanation": "Explanation...",
-      "difficulty": "medium"
-    },
-    {
-      "id": "q5",
-      "type": "short-answer",
-      "question": "Explain the key concept in 2-3 sentences.",
-      "correctAnswers": ["Sample expected answer focusing on key points"],
-      "explanation": "Explanation...",
-      "difficulty": "medium"
+      "correctAnswers": ["True"],
+      "explanation": "Brief explanation.",
+      "difficulty": "${difficulty}"
     }
   ],
-  "totalQuestions": ${questionCount},
-  "estimatedTime": 10
+  "totalQuestions": ${adjustedQuestionCount},
+  "estimatedTime": ${Math.ceil(adjustedQuestionCount * 1.5)}
 }
 
-Important: 
-- For single-choice: correctAnswers array should contain exactly one option
-- For multiple-choice: correctAnswers array can contain multiple options
-- For true-false: correctAnswers should be [true] or [false]
-- For fill-blank and short-answer: correctAnswers should contain expected answers
-- All questions must be directly related to the provided content
-- Ensure JSON is valid and properly formatted
+Generate exactly ${adjustedQuestionCount} questions. Mix types: single-choice, multiple-choice, true-false, fill-blank.
+For true-false questions, always use options: ["True", "False"] and correctAnswers as ["True"] or ["False"].
+For fill-in-the-blank questions, use type: "fill-blank" (not "fill-in-blank").
 `
+
+    // Adjust max_tokens based on question count to prevent truncation
+    // Claude 3 Haiku has a maximum of 4096 output tokens
+    const CLAUDE_HAIKU_MAX_TOKENS = 4096
+    const tokensPerQuestion = 200  // Reduced from 250 to fit more questions
+    const baseTokens = 500         // Reduced base tokens
+    // Calculate final token allocation
+    let finalMaxTokens = baseTokens + (adjustedQuestionCount * tokensPerQuestion)
+    
+    // If calculated tokens exceed limit, further reduce question count
+    if (finalMaxTokens > CLAUDE_HAIKU_MAX_TOKENS) {
+      const maxQuestionsForModel = Math.floor((CLAUDE_HAIKU_MAX_TOKENS - baseTokens) / tokensPerQuestion)
+      const previousCount = adjustedQuestionCount
+      adjustedQuestionCount = Math.min(adjustedQuestionCount, maxQuestionsForModel)
+      finalMaxTokens = baseTokens + (adjustedQuestionCount * tokensPerQuestion)
+      console.log(`Token limit exceeded: Reduced from ${previousCount} to ${adjustedQuestionCount} questions (${finalMaxTokens}/${CLAUDE_HAIKU_MAX_TOKENS} tokens)`)
+    } else {
+      console.log(`Token allocation OK: ${adjustedQuestionCount} questions using ${finalMaxTokens}/${CLAUDE_HAIKU_MAX_TOKENS} tokens`)
+    }
 
     const message = await anthropic.messages.create({
       model: 'claude-3-haiku-20240307',
-      max_tokens: 4000,
+      max_tokens: Math.min(finalMaxTokens, CLAUDE_HAIKU_MAX_TOKENS),
       temperature: 0.7,
       messages: [{
         role: 'user',
@@ -126,6 +227,10 @@ Important:
     })
 
     const responseText = message.content[0].type === 'text' ? message.content[0].text : ''
+    
+    // Debug logging
+    console.log(`Raw response starts with: "${responseText.substring(0, 100)}..."`)
+    console.log(`Raw response ends with: "...${responseText.slice(-100)}"`)
     
     // Clean and parse the response
     let cleanedResponse = responseText.trim()
@@ -137,16 +242,47 @@ Important:
       cleanedResponse = cleanedResponse.replace(/^```\s*/, '').replace(/\s*```$/, '')
     }
 
+    // Try to fix common JSON issues
+    const beforeCleanup = cleanedResponse.length
+    cleanedResponse = fixJsonResponse(cleanedResponse)
+    const afterCleanup = cleanedResponse.length
+    
+    if (beforeCleanup !== afterCleanup) {
+      console.log(`Cleanup removed ${beforeCleanup - afterCleanup} characters`)
+      console.log(`Cleaned response now starts with: "${cleanedResponse.substring(0, 50)}..."`)
+    }
+
     let quizData: QuizResponse
     try {
       quizData = JSON.parse(cleanedResponse)
+      console.log('✅ Successfully parsed JSON response')
     } catch (parseError) {
-      console.error('Failed to parse AI response:', parseError)
-      console.error('Raw response:', responseText)
-      throw createError({
-        statusCode: 500,
-        statusMessage: 'Failed to generate valid quiz format'
-      })
+      console.error('❌ Failed to parse AI response:', parseError)
+      console.error('Raw response length:', responseText.length)
+      console.error('Cleaned response starts with:', cleanedResponse.substring(0, 100))
+      console.error('Cleaned response ends with:', cleanedResponse.slice(-200))
+      
+      // Try to salvage partial response
+      console.log('🔄 Attempting to salvage partial JSON...')
+      const salvaged = salvagePartialJson(cleanedResponse)
+      if (salvaged) {
+        try {
+          quizData = JSON.parse(salvaged)
+          console.log('✅ Successfully salvaged partial response')
+        } catch (salvageError) {
+          console.error('❌ Salvage attempt also failed:', salvageError)
+          throw createError({
+            statusCode: 500,
+            statusMessage: 'Failed to generate valid quiz format. Please try with fewer questions.'
+          })
+        }
+      } else {
+        console.error('❌ Could not salvage any valid JSON')
+        throw createError({
+          statusCode: 500,
+          statusMessage: 'Failed to generate valid quiz format. Please try with fewer questions.'
+        })
+      }
     }
 
     // Validate the response structure
@@ -157,22 +293,76 @@ Important:
       })
     }
 
-    // Ensure all questions have required fields
-    quizData.questions = quizData.questions.map((q, index) => ({
-      id: q.id || `q${index + 1}`,
-      type: q.type || 'single-choice',
-      question: q.question || 'Question not provided',
-      options: q.options || [],
-      correctAnswers: q.correctAnswers || [],
-      explanation: q.explanation || 'No explanation provided',
-      difficulty: q.difficulty || difficulty
-    }))
+    // Filter out incomplete questions and ensure all questions have required fields
+    const originalCount = quizData.questions.length
+    console.log(`Raw AI response contained ${originalCount} questions`)
+    
+    quizData.questions = quizData.questions
+      .filter(q => q.question && q.correctAnswers && q.explanation) // Remove incomplete questions
+      .map((q, index) => {
+        let options = q.options || []
+        let correctAnswers = Array.isArray(q.correctAnswers) ? q.correctAnswers : [String(q.correctAnswers)]
+        
+        // Ensure true-false questions have proper options
+        if (q.type === 'true-false') {
+          options = ['True', 'False']
+          // Normalize the correct answer for true-false questions
+          if (correctAnswers.length > 0) {
+            const answer = String(correctAnswers[0]).toLowerCase()
+            correctAnswers = [answer === 'true' || answer === '1' ? 'True' : 'False']
+          }
+        }
+        
+        // Normalize question type (AI sometimes returns 'fill-in-blank' instead of 'fill-blank')
+        let normalizedType = q.type || 'single-choice'
+        if (normalizedType === 'fill-in-blank') {
+          normalizedType = 'fill-blank'
+        }
+        
+        return {
+          id: q.id || `q${index + 1}`,
+          type: normalizedType,
+          question: q.question,
+          options,
+          correctAnswers,
+          explanation: q.explanation,
+          difficulty: q.difficulty || difficulty
+        }
+      })
+    
+    const filteredCount = quizData.questions.length
+    if (filteredCount < originalCount) {
+      console.log(`Filtered out ${originalCount - filteredCount} incomplete questions, ${filteredCount} remain`)
+    }
+
+    // Ensure we have at least some questions
+    if (quizData.questions.length < 3) {
+      throw createError({
+        statusCode: 500,
+        statusMessage: `Only ${quizData.questions.length} valid questions generated. Please try again with simpler content or fewer questions.`
+      })
+    }
 
     // Set metadata
     quizData.totalQuestions = quizData.questions.length
-    quizData.estimatedTime = Math.ceil(quizData.questions.length * 2) // 2 minutes per question
+    quizData.estimatedTime = Math.ceil(quizData.questions.length * 1.5) // 1.5 minutes per question
 
-    return quizData
+    // Add notification if question count was automatically reduced
+    const finalQuestionCount = quizData.questions.length
+    console.log(`Successfully generated ${finalQuestionCount} quiz questions (requested: ${questionCount})`)
+    
+    // Include metadata about adjustments made
+    const result = {
+      ...quizData,
+      metadata: {
+        requestedQuestions: questionCount,
+        actualQuestions: finalQuestionCount,
+        contentTruncated: content.length > maxContentLength,
+        questionCountAdjusted: finalQuestionCount !== questionCount
+      }
+    }
+    
+    return result
 
   } catch (error: any) {
     console.error('Quiz generation error:', error)

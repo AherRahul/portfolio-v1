@@ -1,6 +1,6 @@
 ---
 title: "Deep dive into v8 JS Engine"
-description: "Now, let's focus on one of Nodejs's best friends, the V8 Engine. It takes the code and runs it. Before doing anything, I just want you to read this carefully."
+description: "Now, let's focus on one of NodeJs's best friends, the V8 Engine. It takes the code and runs it. Before doing anything, I just want you to read this carefully."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-04-12"
 datePublished: "2025-04-12"
@@ -28,7 +28,7 @@ resources:
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1757930704/Portfolio/nodeJsCourse/8.png)
 
 
-Now, let's focus on one of Nodejs's best friends, the V8 engine. V8 turns your JavaScript into something the CPU can execute efficiently. The big idea: V8 first interprets code into bytecode (Ignition), then optimizes hot paths into fast machine code (Turbofan), and sometimes deoptimizes when assumptions break. Understanding this explains “why did my snippet suddenly get slow?” moments.
+Now, let's focus on one of NodeJs's best friends, the V8 engine. V8 turns your JavaScript into something the CPU can execute efficiently. The big idea: V8 first interprets code into bytecode (Ignition), then optimizes hot paths into fast machine code (Turbofan), and sometimes deoptimizes when assumptions break. Understanding this explains “why did my snippet suddenly get slow?” moments.
 
 ![image.png](https://heyashu.in/images/blogs/eoi82.png)
 
@@ -95,7 +95,7 @@ https://medium.com/dailyjs/understanding-v8s-bytecode-317d46c94775
 1. JavaScript is both an interpreted and compiled language, benefiting from various optimizations.
 2. Read blogs of v8 website
 
-And thats all for this session, I'm **Ashutosh Anand Tiwari,** and I'm writing digital notes on Nodejs. If you enjoy these notes, please share them with your friends. If you find any errors or have improvements, feel free to contribute by clicking edit icon on top bar of this page[.](https://heyashu.in/admin) If you're interested in writing the next episode's notes, [visit this link](https://heyashu.in/admin). Let's learn together! Also, please consider giving a star to [this repo](https://github.com/ashumsd7/heyashu/tree/main/src/data). For any queries, [let's connect here](https://topmate.io/aat/1148709/pay). Thank you…
+And thats all for this session, I'm **Ashutosh Anand Tiwari,** and I'm writing digital notes on NodeJs. If you enjoy these notes, please share them with your friends. If you find any errors or have improvements, feel free to contribute by clicking edit icon on top bar of this page[.](https://heyashu.in/admin) If you're interested in writing the next episode's notes, [visit this link](https://heyashu.in/admin). Let's learn together! Also, please consider giving a star to [this repo](https://github.com/ashumsd7/heyashu/tree/main/src/data). For any queries, [let's connect here](https://topmate.io/aat/1148709/pay). Thank you…
 
 
 Thank you so much for reading. If you found it valuable, consider subscribing for more such content every week. If you have any questions or suggestions, please email me your comments or feel free to improve it.

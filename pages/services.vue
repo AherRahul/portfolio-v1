@@ -31,8 +31,8 @@ defineOgImageComponent('General')
         </ServicePreview>
 
         <ServicePreview class="max-w-xl bg-zinc-900 p-8" icon="cib:npm" title="Packages" to="/npmpackages">
-          My drive to innovate led me to create and publish npm packages that simplify development and enhance functionality. 
-          Explore my packages to see how they can empower your projects.
+          My drive to innovate led me to create and publish npm packages that simplify development & enhance functionality. 
+          Explore to see how they can empower your projects.
         </ServicePreview>
       </div>
       <div class="flex flex-col items-center md:flex-row my-16 gap-16">

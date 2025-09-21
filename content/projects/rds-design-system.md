@@ -37,7 +37,7 @@ The idea for RDS came from my own experience as a frontend developer. I found my
 
 Before you begin, make sure you have the following installed:
 
-- Nodejs (v12 or higher)
+- NodeJs (v12 or higher)
 - npm (v6 or higher) or Yarn (v1.22 or higher)
 - Vue.js (v2.x or v3.x)
 

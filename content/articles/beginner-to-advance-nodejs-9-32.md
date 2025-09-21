@@ -1,5 +1,5 @@
 ---
-title: "TypeScript with Nodejs"
+title: "TypeScript with NodeJs"
 description: "Add TypeScript to Node projects: tsconfig, typing Node/Express, build pipelines, and DX tips."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-09-15"
@@ -17,14 +17,14 @@ resources:
   - title: "ts-node"
     type: "tool"
     url: "https://typestrong.org/ts-node/"
-    description: "TypeScript execution engine for Nodejs"
+    description: "TypeScript execution engine for NodeJs"
 ---
 
-![TypeScript with Nodejs](https://res.cloudinary.com/duojkrgue/image/upload/v1757930701/Portfolio/nodeJsCourse/32_ci1c0b.png)
+![TypeScript with NodeJs](https://res.cloudinary.com/duojkrgue/image/upload/v1757930701/Portfolio/nodeJsCourse/32_ci1c0b.png)
 
-<!-- # 📖 My Personal Notes – TypeScript with Nodejs -->
+<!-- # 📖 My Personal Notes – TypeScript with NodeJs -->
 
-When I switched my Nodejs projects to TypeScript, two things changed immediately: I stopped shipping silly runtime errors, and big refactors stopped being scary. Below is how I set it up and the patterns I actually use, with clear explanations before each example so it reads like notes, not a wall of code.
+When I switched my NodeJs projects to TypeScript, two things changed immediately: I stopped shipping silly runtime errors, and big refactors stopped being scary. Below is how I set it up and the patterns I actually use, with clear explanations before each example so it reads like notes, not a wall of code.
 
 ## Why I use TypeScript in Node
 

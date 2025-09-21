@@ -1,6 +1,6 @@
 ---
 title: "OAuth & Social Login (Overview)"
-description: "Understand OAuth 2.0 flows, when to use Authorization Code with PKCE vs other grants, and how to integrate social login providers (Google, GitHub) safely in a Nodejs/Express backend."
+description: "Understand OAuth 2.0 flows, when to use Authorization Code with PKCE vs other grants, and how to integrate social login providers (Google, GitHub) safely in a NodeJs/Express backend."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-09-15"
 datePublished: "2025-09-15"
