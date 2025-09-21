@@ -2,7 +2,7 @@ import Anthropic from '@anthropic-ai/sdk'
 
 interface QuizQuestion {
   id: string
-  type: 'single-choice' | 'multiple-choice' | 'true-false' | 'fill-blank' | 'fill-in-blank'
+  type: 'single-choice' | 'multiple-choice' | 'true-false' | 'fill-blank' // Only UI-supported types
   question: string
   options?: string[]
   correctAnswers: string[]
@@ -192,9 +192,15 @@ Return valid JSON only. No text before or after. Format:
   "estimatedTime": ${Math.ceil(adjustedQuestionCount * 1.5)}
 }
 
-Generate exactly ${adjustedQuestionCount} questions. Mix types: single-choice, multiple-choice, true-false, fill-blank.
+IMPORTANT: Generate exactly ${adjustedQuestionCount} questions using ONLY these 4 types:
+1. "single-choice" - one correct answer from multiple options
+2. "multiple-choice" - multiple correct answers from options  
+3. "true-false" - boolean statement with options ["True", "False"]
+4. "fill-blank" - fill in missing word/phrase (no options array)
+
+DO NOT generate any other question types. Use ONLY: single-choice, multiple-choice, true-false, fill-blank.
 For true-false questions, always use options: ["True", "False"] and correctAnswers as ["True"] or ["False"].
-For fill-in-the-blank questions, use type: "fill-blank" (not "fill-in-blank").
+For fill-blank questions, use type: "fill-blank" with no options array.
 `
 
     // Adjust max_tokens based on question count to prevent truncation
@@ -293,30 +299,54 @@ For fill-in-the-blank questions, use type: "fill-blank" (not "fill-in-blank").
       })
     }
 
+    // Define supported question types - must match frontend UI
+    const SUPPORTED_QUESTION_TYPES = ['single-choice', 'multiple-choice', 'true-false', 'fill-blank']
+    
     // Filter out incomplete questions and ensure all questions have required fields
     const originalCount = quizData.questions.length
     console.log(`Raw AI response contained ${originalCount} questions`)
     
     quizData.questions = quizData.questions
-      .filter(q => q.question && q.correctAnswers && q.explanation) // Remove incomplete questions
+      .filter(q => {
+        // Remove incomplete questions
+        if (!q.question || !q.correctAnswers || !q.explanation) {
+          console.log(`⚠️ Filtered out incomplete question: ${q.question || 'No question text'}`)
+          return false
+        }
+        
+        // Normalize and validate question type
+        let normalizedType = (q as any).type || 'single-choice'
+        if (normalizedType === 'fill-in-blank') {
+          normalizedType = 'fill-blank'
+        }
+        
+        // Remove questions with unsupported types
+        if (!SUPPORTED_QUESTION_TYPES.includes(normalizedType)) {
+          console.log(`⚠️ Filtered out unsupported question type "${(q as any).type}" (normalized: "${normalizedType}")`)
+          console.log(`   Question: ${q.question?.substring(0, 50)}...`)
+          return false
+        }
+        
+        return true
+      })
       .map((q, index) => {
         let options = q.options || []
         let correctAnswers = Array.isArray(q.correctAnswers) ? q.correctAnswers : [String(q.correctAnswers)]
         
+        // Normalize question type (AI sometimes returns 'fill-in-blank' instead of 'fill-blank')
+        let normalizedType = (q as any).type || 'single-choice'
+        if (normalizedType === 'fill-in-blank') {
+          normalizedType = 'fill-blank'
+        }
+        
         // Ensure true-false questions have proper options
-        if (q.type === 'true-false') {
+        if (normalizedType === 'true-false') {
           options = ['True', 'False']
           // Normalize the correct answer for true-false questions
           if (correctAnswers.length > 0) {
             const answer = String(correctAnswers[0]).toLowerCase()
             correctAnswers = [answer === 'true' || answer === '1' ? 'True' : 'False']
           }
-        }
-        
-        // Normalize question type (AI sometimes returns 'fill-in-blank' instead of 'fill-blank')
-        let normalizedType = q.type || 'single-choice'
-        if (normalizedType === 'fill-in-blank') {
-          normalizedType = 'fill-blank'
         }
         
         return {
@@ -332,7 +362,7 @@ For fill-in-the-blank questions, use type: "fill-blank" (not "fill-in-blank").
     
     const filteredCount = quizData.questions.length
     if (filteredCount < originalCount) {
-      console.log(`Filtered out ${originalCount - filteredCount} incomplete questions, ${filteredCount} remain`)
+      console.log(`Filtered out ${originalCount - filteredCount} incomplete/unsupported questions, ${filteredCount} remain`)
     }
 
     // Ensure we have at least some questions
