@@ -330,7 +330,7 @@ defineOgImageComponent('Course', {
                     
                     <!-- Action buttons -->
                     <div v-if="lecture._path || lecture.slidesUrl || lecture.videoUrl" class="flex flex-wrap justify-end gap-2 pt-3">
-                      <AppButton v-if="lecture._path" :to="`/articles/${lecture._path}`" look="secondary">
+                      <AppButton v-if="lecture._path" :to="`/articles/${$route.params.slug}/${lecture._path}`" look="secondary">
                         <Icon name="heroicons:document-text" class="text-lg mr-1" />
                         Read Article
                       </AppButton>

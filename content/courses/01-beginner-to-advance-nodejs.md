@@ -650,13 +650,12 @@ content:
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1757930701/Portfolio/nodeJsCourse/34_qsyubv.png)
 
-## NodeJS Deep Dive – From Beginner to Advanced
 
-### Course Overview  
+## Course Overview  
 The **NodeJS Deep Dive** is a structured, hands-on journey designed to take you from **zero to production-ready backend developer**.  
 You’ll not only learn how to use NodeJS but also **understand its internals**, enabling you to design scalable, secure, and high-performance applications.  
 
-#### This course blends:  
+### This course blends:  
 - **Detailed Article-based explanations** for conceptual clarity.  
 - **AI-generated study notes** for revision and quick learning.  
 - **AI-powered quizzes** (Easy, Medium, Hard) to test your knowledge.  
@@ -665,7 +664,7 @@ You’ll not only learn how to use NodeJS but also **understand its internals**,
 By the end, you’ll have the **skills, mindset, and confidence** to build real-world backend applications.
 
 
-### What You’ll Learn  
+## What You’ll Learn  
 This course is divided into carefully crafted modules covering both **theory and practice**:
 
 1. **Getting Started with NodeJS**  
@@ -701,7 +700,7 @@ This course is divided into carefully crafted modules covering both **theory and
    - Strategies for scaling real-world applications.  
 
 
-### Key Outcomes  
+## Key Outcomes  
 After completing this course, you will:  
 
 Build **real-world backend applications** from scratch.  
@@ -712,7 +711,7 @@ Master **testing, debugging, and scaling techniques**.
 Gain confidence to work as a **Backend Developer** or **Full-Stack Engineer**.  
 
 
-### Who Should Take This Course?  
+## Who Should Take This Course?  
 This course is perfect for:  
 - **JavaScript beginners** ready to move into backend development.  
 - **Frontend developers** looking to become full-stack.  
@@ -720,21 +719,21 @@ This course is perfect for:
 - **Anyone curious** about event loops, async programming, and server design.  
 
 
-### Why This Course Stands Out  
+## Why This Course Stands Out  
 - **Practical First** – You’ll be coding and deploying real projects, not just reading theory.  
 - **AI-Enhanced Learning** – Generate notes, take adaptive quizzes, and reinforce knowledge interactively.  
 - **Full Stack Foundation** – Learn how NodeJS connects frontend, backend, and databases.  
 - **Future-Ready Skills** – Build a strong base for microservices, GraphQL, and serverless.  
 
 
-### Course Format  
+## Course Format  
 - **Blogs** – Deep explanations for each topic.  
 - **AI Notes** – Auto-generated concise study notes.  
 - **Quizzes** – Easy, Medium, Hard difficulty levels.  
 - **Resources** – Curated docs, videos, books, and tools for each module.  
 
 
-### Final Takeaway  
+## Final Takeaway  
 By the end of this course, you won’t just know **how to use NodeJS** —  you’ll truly **understand NodeJS**.  
 
 This understanding is what transforms you from someone who *writes code* into someone who can *design and scale backend systems like a pro*.  

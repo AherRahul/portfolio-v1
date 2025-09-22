@@ -9,16 +9,31 @@ import { join, basename } from 'node:path'
 function discoverContentRoutes(directories: string[]): string[] {
   const projectRoot = process.cwd()
   const routes: string[] = []
-  for (const dir of directories) {
+  
+  function scanDirectory(baseDir: string, subPath: string = ''): void {
     try {
-      const contentDir = join(projectRoot, 'content', dir)
-      const files = readdirSync(contentDir, { withFileTypes: true })
+      const fullPath = join(baseDir, subPath)
+      const files = readdirSync(fullPath, { withFileTypes: true })
+      
       for (const entry of files) {
         if (entry.isFile() && entry.name.endsWith('.md')) {
           const slug = basename(entry.name, '.md')
-          routes.push(`/${dir}/${slug}`)
+          const routePath = subPath ? `${subPath}/${slug}` : slug
+          routes.push(`/${basename(baseDir)}/${routePath}`)
+        } else if (entry.isDirectory() && !entry.name.startsWith('.')) {
+          const nextSubPath = subPath ? `${subPath}/${entry.name}` : entry.name
+          scanDirectory(baseDir, nextSubPath)
         }
       }
+    } catch {
+      // ignore missing directories or files
+    }
+  }
+  
+  for (const dir of directories) {
+    try {
+      const contentDir = join(projectRoot, 'content', dir)
+      scanDirectory(contentDir)
     } catch {
       // ignore missing directories
     }
