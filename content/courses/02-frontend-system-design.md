@@ -169,9 +169,9 @@ content:
   #   tutor: 1
   #   expanded: false
   #   topics:
-  #     - id: 6
-  #       topic_name: What is short polling? Learn with example
-  #       sub_topic: Networking
+  #     - id: 11
+  #       topic_name: Security - Overview
+  #       sub_topic: Security
   #       publish_date: 2025-03-06
   #       description: >
   #         Dive into short polling methodologies. Explore the technique of frequent requests to servers at fixed intervals, enabling frontend applications to obtain recent data updates for dynamic content.
@@ -182,10 +182,10 @@ content:
   #       photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1744108647/Portfolio/FrontendSystemDesignCourse/6_llcndo.png"
   #       auther_name: Rahul Aher
   #       is_on_youtube: false
-  #       _path: frontend-system-design-2-1
-  #     - id: 7
-  #       topic_name: Practical Guide Long Polling
-  #       sub_topic: Networking
+  #       _path: frontend-system-design-3-1
+  #     - id: 12
+  #       topic_name: Cross Site Scripting (XSS)
+  #       sub_topic: Security
   #       publish_date: 2025-03-07
   #       description: >
   #         Explore long polling techniques. Learn how continuous connections to servers facilitate real-time data updates, enabling frontend applications to receive immediate data upon availability, optimizing user experiences.
@@ -196,10 +196,10 @@ content:
   #       photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1744108670/Portfolio/FrontendSystemDesignCourse/7_y3axa8.png"
   #       auther_name: Rahul Aher
   #       is_on_youtube: false
-  #       _path: frontend-system-design-2-2
-  #     - id: 8
-  #       topic_name: Web Socket
-  #       sub_topic: Networking
+  #       _path: frontend-system-design-3-2
+  #     - id: 13
+  #       topic_name: Cross-Site Request Forgery (CSRF)
+  #       sub_topic: Security
   #       publish_date: 2025-03-08
   #       description: >
   #         Discover the power of Web Sockets. Learn to establish persistent connections facilitating real-time, bidirectional communication between clients and servers, enhancing interactivity and responsiveness in frontend applications.
@@ -210,10 +210,10 @@ content:
   #       photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1744108685/Portfolio/FrontendSystemDesignCourse/8_botlhe.png"
   #       auther_name: Rahul Aher
   #       is_on_youtube: false
-  #       _path: frontend-system-design-2-3
-  #     - id: 9
-  #       topic_name: Server Sent Events - A Real time communication
-  #       sub_topic: Networking
+  #       _path: frontend-system-design-3-3
+  #     - id: 14
+  #       topic_name: iFrame Protection
+  #       sub_topic: Security
   #       publish_date: 2025-03-09
   #       description: >
   #         Delve into Server-Sent Events. Understand how servers push data to clients, enabling continuous updates in frontend applications without the need for repeated requests, optimizing data streaming.
@@ -224,13 +224,13 @@ content:
   #       photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1744108696/Portfolio/FrontendSystemDesignCourse/9_fvmoja.png"
   #       auther_name: Rahul Aher
   #       is_on_youtube: false
-  #       _path: frontend-system-design-2-4
-  #     - id: 10
-  #       topic_name: Introduction to Web hooks
-  #       sub_topic: Networking
+  #       _path: frontend-system-design-3-4
+  #     - id: 15
+  #       topic_name: Authentication/Authorization
+  #       sub_topic: Security
   #       publish_date: 2025-03-10
   #       description: >
-  #         Understand WebHooks' functionalities. Learn how they trigger instant notifications and events, allowing frontend systems to react promptly to external changes or specific actions, ensuring responsiveness and agility.
+  #         Understand WebHooks' functionalities. Learn how they trigger instant notifications and events, allowing frontend systems to react promptly to external changes or specific actions, ensuring responsiveness   and agility.
   #       topics:
   #         - nodejs
   #         - javascript
@@ -238,7 +238,161 @@ content:
   #       photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1744108709/Portfolio/FrontendSystemDesignCourse/10_ahspdw.png"
   #       auther_name: Rahul Aher
   #       is_on_youtube: false
-  #       _path: frontend-system-design-2-5
+  #       _path: frontend-system-design-3-5
+  #     - id: 16
+  #       topic_name: Security Headers
+  #       sub_topic: Security
+  #       publish_date: 2025-03-06
+  #       description: >
+  #         Dive into short polling methodologies. Explore the technique of frequent requests to servers at fixed intervals, enabling frontend applications to obtain recent data updates for dynamic content.
+  #       topics:
+  #         - nodejs
+  #         - javascript
+  #       duration: "14:00 mins read"
+  #       photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1744108647/Portfolio/FrontendSystemDesignCourse/6_llcndo.png"
+  #       auther_name: Rahul Aher
+  #       is_on_youtube: false
+  #       _path: frontend-system-design-3-6
+  #     - id: 17
+  #       topic_name: Client Side Security
+  #       sub_topic: Security
+  #       publish_date: 2025-03-07
+  #       description: >
+  #         Explore long polling techniques. Learn how continuous connections to servers facilitate real-time data updates, enabling frontend applications to receive immediate data upon availability, optimizing user experiences.
+  #       topics:
+  #         - nodejs
+  #         - javascript
+  #       duration: "3:00 mins read"
+  #       photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1744108670/Portfolio/FrontendSystemDesignCourse/7_y3axa8.png"
+  #       auther_name: Rahul Aher
+  #       is_on_youtube: false
+  #       _path: frontend-system-design-3-7
+  #     - id: 18
+  #       topic_name: Secure Communication(HTTPS)
+  #       sub_topic: Security
+  #       publish_date: 2025-03-08
+  #       description: >
+  #         Discover the power of Web Sockets. Learn to establish persistent connections facilitating real-time, bidirectional communication between clients and servers, enhancing interactivity and responsiveness in frontend applications.
+  #       topics:
+  #         - nodejs
+  #         - javascript
+  #       duration: "22:00 mins read"
+  #       photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1744108685/Portfolio/FrontendSystemDesignCourse/8_botlhe.png"
+  #       auther_name: Rahul Aher
+  #       is_on_youtube: false
+  #       _path: frontend-system-design-3-8
+  #     - id: 19
+  #       topic_name: Dependency Security
+  #       sub_topic: Security
+  #       publish_date: 2025-03-09
+  #       description: >
+  #         Delve into Server-Sent Events. Understand how servers push data to clients, enabling continuous updates in frontend applications without the need for repeated requests, optimizing data streaming.
+  #       topics:
+  #         - nodejs
+  #         - javascript
+  #       duration: "11:00 mins read"
+  #       photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1744108696/Portfolio/FrontendSystemDesignCourse/9_fvmoja.png"
+  #       auther_name: Rahul Aher
+  #       is_on_youtube: false
+  #       _path: frontend-system-design-3-9
+  #     - id: 20
+  #       topic_name: Compliance & Regulation
+  #       sub_topic: Security
+  #       publish_date: 2025-03-10
+  #       description: >
+  #         Understand WebHooks' functionalities. Learn how they trigger instant notifications and events, allowing frontend systems to react promptly to external changes or specific actions, ensuring responsiveness   and agility.
+  #       topics:
+  #         - nodejs
+  #         - javascript
+  #       duration: "6.00 mins read"
+  #       photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1744108709/Portfolio/FrontendSystemDesignCourse/10_ahspdw.png"
+  #       auther_name: Rahul Aher
+  #       is_on_youtube: false
+  #       _path: frontend-system-design-3-10
+  #     - id: 21
+  #       topic_name: Input Validation and Sanitization
+  #       sub_topic: Security
+  #       publish_date: 2025-03-06
+  #       description: >
+  #         Dive into short polling methodologies. Explore the technique of frequent requests to servers at fixed intervals, enabling frontend applications to obtain recent data updates for dynamic content.
+  #       topics:
+  #         - nodejs
+  #         - javascript
+  #       duration: "14:00 mins read"
+  #       photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1744108647/Portfolio/FrontendSystemDesignCourse/6_llcndo.png"
+  #       auther_name: Rahul Aher
+  #       is_on_youtube: false
+  #       _path: frontend-system-design-3-11
+  #     - id: 22
+  #       topic_name: Server-Side Request Forgery (SSRF)
+  #       sub_topic: Security
+  #       publish_date: 2025-03-07
+  #       description: >
+  #         Explore long polling techniques. Learn how continuous connections to servers facilitate real-time data updates, enabling frontend applications to receive immediate data upon availability, optimizing user experiences.
+  #       topics:
+  #         - nodejs
+  #         - javascript
+  #       duration: "3:00 mins read"
+  #       photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1744108670/Portfolio/FrontendSystemDesignCourse/7_y3axa8.png"
+  #       auther_name: Rahul Aher
+  #       is_on_youtube: false
+  #       _path: frontend-system-design-3-12
+  #     - id: 23
+  #       topic_name: Server-side JavaScript Injection (SSJI)
+  #       sub_topic: Security
+  #       publish_date: 2025-03-08
+  #       description: >
+  #         Discover the power of Web Sockets. Learn to establish persistent connections facilitating real-time, bidirectional communication between clients and servers, enhancing interactivity and responsiveness in frontend applications.
+  #       topics:
+  #         - nodejs
+  #         - javascript
+  #       duration: "22:00 mins read"
+  #       photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1744108685/Portfolio/FrontendSystemDesignCourse/8_botlhe.png"
+  #       auther_name: Rahul Aher
+  #       is_on_youtube: false
+  #       _path: frontend-system-design-3-13
+  #     - id: 24
+  #       topic_name: Feature Policy | Permissions-Policy
+  #       sub_topic: Security
+  #       publish_date: 2025-03-09
+  #       description: >
+  #         Delve into Server-Sent Events. Understand how servers push data to clients, enabling continuous updates in frontend applications without the need for repeated requests, optimizing data streaming.
+  #       topics:
+  #         - nodejs
+  #         - javascript
+  #       duration: "11:00 mins read"
+  #       photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1744108696/Portfolio/FrontendSystemDesignCourse/9_fvmoja.png"
+  #       auther_name: Rahul Aher
+  #       is_on_youtube: false
+  #       _path: frontend-system-design-3-14
+  #     - id: 25
+  #       topic_name: Subresource Integrity (SRI)
+  #       sub_topic: Security
+  #       publish_date: 2025-03-10
+  #       description: >
+  #         Understand WebHooks' functionalities. Learn how they trigger instant notifications and events, allowing frontend systems to react promptly to external changes or specific actions, ensuring responsiveness   and agility.
+  #       topics:
+  #         - nodejs
+  #         - javascript
+  #       duration: "6.00 mins read"
+  #       photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1744108709/Portfolio/FrontendSystemDesignCourse/10_ahspdw.png"
+  #       auther_name: Rahul Aher
+  #       is_on_youtube: false
+  #       _path: frontend-system-design-3-15
+  #     - id: 26
+  #       topic_name: Cross-Origin Resource Sharing (CORS)
+  #       sub_topic: Security
+  #       publish_date: 2025-03-06
+  #       description: >
+  #         Dive into short polling methodologies. Explore the technique of frequent requests to servers at fixed intervals, enabling frontend applications to obtain recent data updates for dynamic content.
+  #       topics:
+  #         - nodejs
+  #         - javascript
+  #       duration: "14:00 mins read"
+  #       photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1744108647/Portfolio/FrontendSystemDesignCourse/6_llcndo.png"
+  #       auther_name: Rahul Aher
+  #       is_on_youtube: false
+  #       _path: frontend-system-design-3-16
 ---
 
 ## What is System Design?
