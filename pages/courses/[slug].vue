@@ -55,6 +55,8 @@ function getModuleProgress(module: any): number {
   return Math.round((completed / module.topics.length) * 100)
 }
 
+const { setupContentImages } = useContentImages()
+
 // Load progress from localStorage
 onMounted(() => {
   const savedProgress = localStorage.getItem(`course-${course.value.title}-progress`)
@@ -65,6 +67,9 @@ onMounted(() => {
       console.error('Failed to load progress:', e)
     }
   }
+  
+  // Setup image modal for content images
+  setupContentImages('.course-content')
 })
 
 function toggleModule(moduleId: string, event?: Event) {

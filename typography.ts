@@ -60,6 +60,15 @@ export function typographyStyles({ theme }: PluginUtils) {
         // Images
         img: {
           borderRadius: theme('borderRadius.3xl'),
+          width: '100%',
+          maxWidth: theme('spacing.96'), // 384px (24rem)
+          height: theme('spacing.64'), // 256px (16rem)
+          objectFit: 'cover',
+          cursor: 'pointer',
+          transition: 'opacity 0.2s ease',
+          '&:hover': {
+            opacity: '0.8',
+          },
         },
 
         // Inline elements

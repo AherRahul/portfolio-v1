@@ -2,6 +2,7 @@
 import { onContentNotFound } from '~/utils/content.js';
 
 const { page: project } = useContent()
+const { setupContentImages } = useContentImages()
 
 // useSeoMeta({
 //   title: () => project.value.title,
@@ -21,6 +22,11 @@ try {
     projectGitHubLink: project.value.projectGitHubLink,
   })
 } catch {}
+
+// Setup image modal for content images
+onMounted(() => {
+  setupContentImages('.project-content')
+})
 
 </script>
 

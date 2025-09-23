@@ -78,6 +78,7 @@ const latestArticles = computed<ArticlePreview[]>(() => (articles.value as unkno
             I excel in web development, mastering Java, JS, and cloud technologies. Committed to innovation, I leverage expertise to
              boost team performance in dynamic environments.
           </AppParagraph>
+          
           <div class="mt-8 flex">
             <AppButton to="https://asset.cloudinary.com/duojkrgue/a10e4a933b02a109d8d638d906054e5e" class="mr-4">Resume <Icon name="icons8:file" style="margin-bottom: 2px;" /></AppButton>
             <AppButton to="/about/" look="secondary">About <span class="hidden sm:inline">me</span></AppButton>

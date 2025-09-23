@@ -142,6 +142,9 @@ function useSiteNotifications() {
     </svg>
     <LazyAppFooter />
     <LazyAppNotificationArea />
+    <ClientOnly>
+      <ImageModal />
+    </ClientOnly>
   </div>
 </template>
 

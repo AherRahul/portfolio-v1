@@ -79,6 +79,13 @@ defineOgImageComponent('Article', {
   datePublished: formattedUpdateAt.value
 })
 
+const { setupContentImages } = useContentImages()
+
+// Setup image modal for content images
+onMounted(() => {
+  setupContentImages('.article-content')
+})
+
 // --- Course-aware navigation (only when article belongs to a course) ---
 const isCourseArticle = computed(() => !article.value.showOnArticles && Boolean(article.value.courseName))
 

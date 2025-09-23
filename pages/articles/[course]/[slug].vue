@@ -178,6 +178,13 @@ defineOgImageComponent('Article', {
   readingTime: article.value?.readingTime?.text,
   datePublished: formattedUpdateAt.value
 })
+
+const { setupContentImages } = useContentImages()
+
+// Setup image modal for course topic content
+onMounted(() => {
+  setupContentImages('.prose')
+})
 </script>
 
 <template>

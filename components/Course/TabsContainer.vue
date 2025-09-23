@@ -51,6 +51,9 @@ const props = defineProps<{
   isOlderThanOneYear?: boolean
 }>()
 
+// Setup image modal for course topic content
+const { setupContentImages } = useContentImages()
+
 // Tab state
 const activeTab = ref('content')
 const tabs = [
@@ -83,6 +86,14 @@ function setActiveTab(tabId: string) {
   // Load data when tab is activated
   if (tabId === 'notes' && !summaryData.value && !summaryLoading.value) {
     generateSummary()
+  }
+  
+  // Setup image modal when content tab is activated
+  if (tabId === 'content') {
+    // Small delay to ensure content is rendered
+    setTimeout(() => {
+      setupContentImages('.prose')
+    }, 100)
   }
   
   if (tabId === 'quiz' && !quizData.value.length && !quizLoading.value) {
@@ -379,6 +390,18 @@ onMounted(() => {
   if (activeTab.value === 'notes') {
     generateSummary()
   }
+  
+  // Setup image modal for course topic content - with retry for lazy-loaded content
+  const cleanup = setupContentImages('.prose')
+  
+  // Retry setup after a delay to catch lazy-loaded content
+  setTimeout(() => {
+    setupContentImages('.prose')
+  }, 1000)
+  
+  setTimeout(() => {
+    setupContentImages('.prose')
+  }, 3000)
 })
 </script>
 
