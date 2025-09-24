@@ -31,6 +31,10 @@ resources:
     url: "https://www.youtube.com/watch?v=ztspvPYybIY"
     description: "The original presentation where NodeJs was introduced to the developer community."
     duration: "27:29"
+  - title: "Namaste Dev - NodeJS course PDF - 2"
+    type: "PDF"
+    url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758693733/Portfolio/nodeJsCourse/PDF-Notes/Episode-02_compressed_zftm5l.pdf"
+    description: "A PDF Notes on JavaScript on Server"
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1757930701/Portfolio/nodeJsCourse/2_zzsbpy.png)

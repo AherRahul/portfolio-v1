@@ -9,76 +9,134 @@ courseName: 01-beginner-to-advance-nodejs
 topics:
   - nodejs
   - javascript
-
+resources:
+  - title: "Window VS Global Object in Node JS | Node JS Tutorial"
+    type: "video"
+    url: "https://www.youtube.com/watch?v=AHXbmB_-7Vw"
+    description: "This video further explores the difference between the window and global objects in Node.js."
+    duration: "2:21"
+  - title: "Global object - MDN Web Docs"
+    type: "Article"
+    url: "https://developer.mozilla.org/en-US/docs/Glossary/Global_object"
+    description: "A comprehensive explanation of the global object in JavaScript, its variations across different environments (browser, Node.js, Web Workers), and its importance."
+  - title: "globalThis - MDN Web Docs"
+    type: "Article"
+    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/globalThis"
+    description: "Details on the globalThis property, why it was introduced, and how it provides a standardized way to access the global object in any JavaScript environment."
+  - title: "What is the 'this' keyword in JavaScript?"
+    type: "Article"
+    url: "https://javascript.info/object-methods#this"
+    description: "An in-depth guide to understanding the this keyword in JavaScript, its context, and how it behaves differently in various scenarios, including the global scope."
+  - title: "Namaste Dev - NodeJS course PDF - 3"
+    type: "PDF"
+    url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758694684/Portfolio/nodeJsCourse/PDF-Notes/Episode-03_compressed_qc6s1a.pdf"
+    description: "A PDF Notes on Let's write code"
+  
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1757930702/Portfolio/nodeJsCourse/3_xveryy.png)
 
-<!-- # 📖 My Personal Notes – Let’s write code -->
 
-This session is about getting something working end‑to‑end: installing NodeJs, verifying your setup, trying the REPL, and running a file with `node`. Each step includes a short explanation so you understand not only what to do, but why it works.
+A Developer's First Quest: Setting Up Node.js
+---------------------------------------------
 
-### Install NodeJs (once)
+Welcome, future Node.js master! This session is your first quest: to set up your environment and run your very first piece of code. Think of this as preparing your workshop. We won't just tell you what to do, but why you're doing it, because every great hero understands their tools. Let's begin!
 
-Download the LTS installer from the official site: [nodejs.org](https://nodejs.org/). The installer adds two things:
-- the NodeJs runtime (`node`) used to execute JavaScript outside the browser
-- the Node Package Manager (`npm`) used to install and manage dependencies
+### Step 1: Installing the Tools (The Apprentice's Gear)
 
-### Verify your installation
+Before you can craft anything, you need the right gear. Our main tool is **Node.js**, which is the special runtime that lets you use JavaScript outside of a web browser. It's like a forge for your code.
 
-Open your terminal (or VS Code terminal) and check the versions. Seeing versions confirms your PATH is set correctly.
+*   **Download Node.js**: Head to the official [Node.js website](https://nodejs.org/) and download the **LTS (Long-Term Support)** installer. The LTS version is stable and recommended for most users.
+    
+*   **The Two Tools**: The installer gives you two powerful tools:
+    
+    *   node: This is the Node.js runtime itself. It's the engine that will execute your JavaScript code.
+        
+    *   npm: This is the **Node Package Manager**. It's like a library catalog for JavaScript, allowing you to easily download and manage pre-written code from other developers (called "packages" or "dependencies").
+        
 
-```jsx
-node -v                //v18.12.0
-npm -v                 //9.x.x
+### Step 2: Verifying Your Setup (Testing the Gear)
+
+Now that you have your tools, let's make sure they're in the right place and ready to go. Open your terminal (or the integrated terminal in a code editor like VS Code) and type in a couple of commands.
+
+*   To check the Node.js version, type node -v and press Enter.
+    
+*   To check the npm version, type npm -v and press Enter.
+    
+
+Seeing a version number for both commands confirms that the installers did their job correctly and added the programs to your system's **PATH**, which is the list of directories your terminal searches for commands.
+
+```   
+$ node -v  
+v18.12.0  
+
+
+$ npm -v  
+9.x.x
 ```
 
+### Step 3: A Quick Sandbox (The Practice Room)
 
-### Let’s write code (REPL first)
+Every apprentice needs a place to practice. Node.js comes with a built-in sandbox called the **REPL** (Read-Eval-Print-Loop). It's a quick, interactive environment where you can type a line of JavaScript and see the result immediately.
 
-Node ships with a REPL (Read–Eval–Print–Loop). It’s a quick sandbox where you can run JavaScript line by line—perfect for testing expressions and small snippets before putting them into files.
+To enter the REPL, just type node in your terminal and press Enter.
 
-Type `node` and press Enter to enter the REPL. Try simple expressions like `2 + 2` or `['a','b'].join('-')`. This is similar to the browser console, but instead of the browser’s Web API, you have Node’s API available.
+Bash
 
-![image.png](https://i.ibb.co/fDHCd6p/3.jpg)
-
-### Run a file with node
-
-Create a folder, add a file named `app.js`, and write some JavaScript. Then run it using the Node runtime:
-
-```jsx
-node app.js
+```
+$ node
+> 2 + 2
+4
+> ['a', 'b'].join('-')
+'a-b'
+>   
 ```
 
-![image.png](https://i.ibb.co/vHyGmq6/4.jpg)
+This feels a lot like the browser's developer console. The key difference is that while the browser console gives you access to the **Web APIs** (like document and window), the Node.js REPL gives you access to **Node's APIs** (for things like file system and network operations).
 
-### The global object: server vs browser (why `window` is undefined)
+### Step 4: Running Your First File (The First Creation)
 
-In the browser, the global object is `window`. On the server with NodeJs, there is no `window`—instead, the global object is `global`. These objects come from their environments (browser vs Node), not from the JavaScript engine (V8) itself. That’s why functions like `setTimeout` are provided by the environment and attached to the global object, not part of the ECMAScript language spec.
+Practice is over; it's time to build something for real. Let's create a simple JavaScript file and run it using the node command.
 
-If you will try to access window in node js you will get an error, same you will write global in chrome’s console you will get error , here is the screenshot when you type window in node js
+1.  **Create a Folder**: Make a new folder for your project.
+    
+2.  **Create a File**: Inside that folder, create a new file and name it app.js.
+    
+3.  **Write Code**: Add some JavaScript to your app.js file.
+    
+4.  **Run the File**: Go back to your terminal, navigate to your new folder, and run your file with the node command followed by the filename:
+    
+```   
+$ node app.js
+```
 
-![image.png](https://i.ibb.co/Ykr7dy2/5.jpg)
-
-But if you will write global you will get something like yoyou get when you console window in browsers , I am pasting both screenshots you can visualize for you reference. the first screenshot below is from the terminal of vs code and 2nd one is from the browsers console what yoyou get from inspect mode.
-
-![image.png](https://i.ibb.co/5sySj04/6.jpg)
-
-![image.png](https://i.ibb.co/47PH8Ch/7.jpg)
-
-### `this` in NodeJs and `globalThis`
-
-At the top level of a NodeJs module, `this` is an empty object (`{}`), not the global object. To avoid confusion across environments, use `globalThis`. It’s a standard alias that points to the global object everywhere: `window` in the browser and `global` in Node.
-
-### Explore further
-
-If you want to go deeper, look up these terms:
-
-- REPL (Read–Eval–Print–Loop)
-- `globalThis`
-- Web Workers (browser)
-- NodeJs source on GitHub
+Node.js will execute all the code in that file from top to bottom.
 
 
-That’s it—you’ve run your first NodeJs code and learned how the environment differs from the browser. In the next session, we’ll split code into modules and import/export properly.
+### The Global Object: Your Code's Environment
 
+Think of the global object as the main hub or central control room for your code's environment. It's the top-level container where all the built-in functions, variables, and objects live, making them accessible from anywhere in your code. The key takeaway is that the name of this control room changes depending on where your JavaScript is running.
+
+Imagine you're a spy with different gadgets for different missions. Your tools for a mission on a boat will be different from those you use in a desert. In the same way, the **JavaScript global object** is the set of tools available to your code, and these tools are determined by the environment it runs in.
+
+The Browser's Control Room: 'window' 🌐:
+---------------------------------------------
+- In a web browser, the global object is called window. This object is your direct connection to everything related to the browser. It holds all the web-specific APIs   that let you manipulate the web page, handle events, and interact with the user. Things like document (which represents the entire HTML page), alert() for pop-up messages, and localStorage are all properties of the window object. If you're in a browser and type console.log(window.document), you're essentially asking the control room for the document tool.
+    
+Node.js's Control Room: 'global' 💻 :
+---------------------------------------------
+- On the server, with Node.js, there is no web page or a user interface. Therefore, the global object is not window. Instead, it's a different object called global. This object gives you access to APIs for server-side tasks like working with the file system (fs), managing child processes, and handling network requests. If you tried to use window.document in Node.js, you'd get an error because the global object doesn't have a document property. The window and global objects are distinct control rooms for different jobs.
+    
+
+### this vs. globalThis: Finding the Right Reference
+
+This difference in global objects has historically created confusion, especially when trying to write code that works in both environments. This is where globalThis comes in.
+
+*   **The Problem with this**:The behavior of the this keyword can be inconsistent. In a web browser's global scope, this refers to the window object. However, in a Node.js module, this is often an empty object ({}). This difference means that a single line of code using this can behave unexpectedly depending on the environment.
+    
+*   **The Universal Key: globalThis** 🔑 To solve this, a new, universal property called **globalThis** was introduced in modern JavaScript. It is a standardized way to access the global object, regardless of the environment your code is running in. It's like a master key that works on any control room door. globalThis will always point to window in a browser and global in Node.js. By using globalThis, you can write more consistent and portable code that works seamlessly across different platforms.
+    
+
+### Your Adventure Continues!
+
+Congratulations, you've completed your first quest! You've successfully installed and run Node.js, learned the difference between the browser and server environments, and understood the role of the global object. In the next session, we'll learn how to organize our code by splitting it into modules and sharing functionality.

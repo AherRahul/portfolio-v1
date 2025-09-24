@@ -36,7 +36,7 @@ resources:
     url: "https://openjsf.org/"
     description: "The foundation that maintains NodeJs and other major JavaScript projects"
 
-  - title: "Namaste Dev - NodeJS course PDF"
+  - title: "Namaste Dev - NodeJS course PDF - 1"
     type: "PDF"
     url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758530390/Portfolio/nodeJsCourse/PDF-Notes/Episode-01_compressed_1_ys6iyx.pdf"
     description: "A PDF Notes on History of NodeJs in Depth topic"
