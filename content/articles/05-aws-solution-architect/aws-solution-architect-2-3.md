@@ -3,8 +3,8 @@ title: "Compute, Storage, Databases, and Networking"
 description: "Consistency and standards are important for building a unified design language and help the user know what to expect from our product and how to use it. However, this does not mean sacrificing the user experience. In this sense, the context and needs of our users are priorities when developing our solutions."
 tutor: 1
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles/aws-solution-architect-exam-guide.md"
-dateModified: "2024-05-22"
-datePublished: "2024-05-22"
+dateModified: "2025-05-22"
+datePublished: "2025-05-22"
 showOnArticles: false
 courseName: aws-solution-architect
 topics:

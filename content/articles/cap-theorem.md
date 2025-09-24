@@ -2,8 +2,8 @@
 title: "CAP Theorem for Databases: Consistency, Availability & Partition Tolerance"
 description: "In computer science, the CAP theorem, sometimes called CAP theorem model or Brewer’s theorem after its originator, Eric Brewer, states that any distributed system or data store can simultaneously provide only two of three guarantees: consistency, availability, and partition tolerance (CAP). During times of normal operations, a data store covers all three. However, according to the CAP theorem, a distributed database system can provide either consistency or availability when it experiences a network failure. In other words, in case of a network failure, it’s a tradeoff between consistency or availability, and that choice must be made in advance."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles/cap-theorem.md"
-dateModified: "2024-05-21"
-datePublished: "2024-05-21"
+dateModified: "2025-05-21"
+datePublished: "2025-05-21"
 showOnArticles: true
 topics:
   - system-design

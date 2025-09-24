@@ -2,8 +2,8 @@
 title: "A quick overview of gRPC"
 description: "It's kind of like a sibling to REST API or GraphQL, enabling communication with the server in a unique way. RPC stands for Remote Procedure Call, and the 'g' in gRPC stands for Google, as it was created by Google."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2024-05-22"
-datePublished: "2024-05-22"
+dateModified: "2025-05-22"
+datePublished: "2025-05-22"
 showOnArticles: false
 courseName: 02-frontend-system-design
 topics:

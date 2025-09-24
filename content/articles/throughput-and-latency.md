@@ -2,8 +2,8 @@
 title: "What’s the Difference Between Throughput and Latency?"
 description: "Latency and throughput are two metrics that measure the performance of a computer network. Latency is the delay in network communication. It shows the time that data takes to transfer across the network. Networks with a longer delay or lag have high latency, while those with fast response times have lower latency. In contrast, throughput refers to the average volume of data that can actually pass through the network over a specific time. It indicates the number of data packets that arrive at their destinations successfully and the data packet loss."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles/throughput-and-latency.md"
-dateModified: "2024-05-20"
-datePublished: "2024-05-20"
+dateModified: "2025-05-20"
+datePublished: "2025-05-20"
 showOnArticles: true
 topics:
   - system-design

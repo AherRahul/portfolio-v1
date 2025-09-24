@@ -2,8 +2,8 @@
 title: "API Architecture - Design Best Practices for REST API"
 description: "REST which stands for Representational State Transfer is an architectural style that governs how API are designed and built. REST’s popularity and ease of implementation make it the most preferred API architectural style for modern-day software development as compared to other protocols such as SOAP (simple object access protocol). REST API or RESTful web services have become the backbone for efficient communication between client and server in modern-day software development. However, to build efficient and robust REST API, it is crucial to follow some standard best practices. In this blog, we’ll explore REST API best practices that can help you build scalable, maintainable, secure, and robust API."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles/api-architecture.md"
-dateModified: "2024-05-26"
-datePublished: "2024-05-26"
+dateModified: "2025-05-26"
+datePublished: "2025-05-26"
 showOnArticles: true
 topics:
   - system-design

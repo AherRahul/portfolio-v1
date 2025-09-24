@@ -17,7 +17,7 @@ content:
       - id: 1
         topic_name: What is System Design?
         sub_topic: System Design Basics
-        publish_date: 2024-11-05
+        publish_date: 2025-11-05
         description: >
           Systems Design involves creating a detailed blueprint for a system’s architecture, components, modules, interfaces, and data to meet specific requirements. It translates user needs into an organized structure, guiding implementation. The goal is to ensure scalability, maintainability, and performance while building an efficient system.
         topics:
@@ -30,7 +30,7 @@ content:
       - id: 2
         topic_name: How to approach system design?
         sub_topic: System Design Basics
-        publish_date: 2024-11-27
+        publish_date: 2025-11-27
         description: >
           Learn a structured approach to system design. Start by understanding functional and non-functional requirements, then break the system into components like databases, frontend, backend, and caching. Select tools for scalability, reliability, and performance. Visualize the architecture with diagrams and iterate to optimize and resolve bottlenecks effectively.
         topics:
@@ -43,7 +43,7 @@ content:
       - id: 3
         topic_name: How do you evaluate that you have built a good system?
         sub_topic: System Design Basics
-        publish_date: 2024-11-29
+        publish_date: 2025-11-29
         description: >
           In this video, we explore the key metrics, strategies, and frameworks to evaluate whether your system is well-designed, efficient, and scalable. Learn how to assess user satisfaction, performance, maintainability, and more!. Learn how to assess user satisfaction, performance, maintainability, and more!
         topics:
@@ -63,7 +63,7 @@ content:
       - id: 4
         topic_name: Relational Databases for System Design
         sub_topic: System Design Basics
-        publish_date: 2024-11-30
+        publish_date: 2025-11-30
         description: >
           Learn everything you need to know relational databases in system design? This video explains how relational databases work, their importance, and best practices for integrating them into scalable systems. Explore key metrics, strategies, and frameworks to evaluate if your system is efficient, scalable, and well-designed. 
         topics:
@@ -76,7 +76,7 @@ content:
       - id: 5
         topic_name: Database Transaction Isolation Levels Explained
         sub_topic: System Design Basics
-        publish_date: 2024-12-01
+        publish_date: 2025-12-01
         description: >
           Learn everything you need to know about database transaction isolation levels! Understand how they prevent issues like dirty reads, phantom reads, and write conflicts, and when to use each level. Confused by terms like Read Uncommitted, Repeatable Read, or Serializable? This video has clear examples to help you manage concurrency and maintain data integrity.
         topics:

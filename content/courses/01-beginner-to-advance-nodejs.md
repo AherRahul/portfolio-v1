@@ -18,7 +18,7 @@ content:
       - id: 1
         topic_name: Introduction to NodeJS
         sub_topic: NodeJS Basics - Module 1
-        publish_date: 2025-04-05
+        publish_date: 2025-09-21
         description: >
           NodeJs is a high-performance JavaScript runtime designed for building fast, scalable server-side applications. With its event-driven, non-blocking architecture, it efficiently handles multiple requests, making it ideal for real-time applications like chat apps and streaming services. By the end, you'll have a strong foundation in NodeJs, enabling you to build scalable, high-performance applications from scratch.
         topics:
@@ -29,38 +29,10 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: beginner-to-advance-nodejs-1-1
-        resources:
-          - title: "NodeJs Official Documentation"
-            type: "documentation"
-            url: "https://nodejs.org/docs/"
-            description: "Complete official documentation covering all API and features"
-          - title: "NodeJs Complete Course 2024"
-            type: "video"
-            url: "https://www.youtube.com/watch?v=f2EqECiTBL8"
-            description: "FreeCodeCamp 8-hour comprehensive course"
-            duration: "8:00:00"
-          - title: "Ryan Dahl's Original NodeJs Presentation"
-            type: "video"
-            url: "https://www.youtube.com/watch?v=ztspvPYybIY"
-            description: "Historic 2009 JSConf presentation where NodeJs was introduced"
-            duration: "45:00"
-          - title: "NodeSchool.io"
-            type: "course"
-            url: "https://nodeschool.io/"
-            description: "Free interactive NodeJs tutorials"
-          - title: "NodeJs Design Patterns"
-            type: "book"
-            url: "https://www.amazon.com/Node-js-Design-Patterns-Mario-Casciaro/dp/1785885588"
-            description: "Advanced patterns and best practices by Mario Casciaro"
-            author: "Mario Casciaro & Luciano Mammino"
-          - title: "Node Version Manager (nvm)"
-            type: "tool"
-            url: "https://github.com/nvm-sh/nvm"
-            description: "Manage multiple NodeJs versions easily"
       - id: 2
         topic_name: JavaScript on Server
         sub_topic: NodeJS Basics - Module 1
-        publish_date: 2025-04-06
+        publish_date: 2025-09-22
         description: >
           Discover how JavaScript powers server-side development with NodeJs, transforming the way web applications are built. NodeJs is a fast, scalable runtime that enables asynchronous, event-driven programming, making it ideal for real-time applications like chat apps and streaming services. You'll also learn to build server-side applications from scratch, manage dependencies with npm, and use frameworks like Express.js.
         topics:
@@ -74,7 +46,7 @@ content:
       - id: 3
         topic_name: Let's write code
         sub_topic: NodeJS Basics - Module 1
-        publish_date: 2025-04-07
+        publish_date: 2025-09-23
         description: >
           Go to NodeJs website and download the latest version, If you are struggling in installing feel free to contact me , we can schedule a 5min meeting I will help you to download NodeJs in to your system , Best way to download it , Go to Prebuilt installer and download a file and install it by executing by dowload file.
         topics:
@@ -88,7 +60,7 @@ content:
       - id: 4
         topic_name: Module.export & require
         sub_topic: NodeJS Basics - Module 1
-        publish_date: 2025-04-08
+        publish_date: 2025-09-24
         description: >
           As you saw in the last episode, we wrote our first line of code in NodeJs. Now, we could just keep adding whatever we want to app.js, and technically, it would work. But that's not the best way to do things because the file would get cluttered and hard to manage. Instead, we need multiple files.So, you'll use require to include different modules into your main file.
         topics:

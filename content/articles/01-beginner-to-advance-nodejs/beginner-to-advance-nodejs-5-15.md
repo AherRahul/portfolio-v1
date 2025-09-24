@@ -541,7 +541,7 @@ curl -X DELETE http://localhost:3000/users/1
   "message": "Operation successful",
   "data": { /* actual data */ },
   "metadata": {
-    "timestamp": "2024-01-15T10:30:00Z",
+    "timestamp": "2025-01-15T10:30:00Z",
     "version": "1.0.0"
   }
 }
@@ -552,7 +552,7 @@ curl -X DELETE http://localhost:3000/users/1
   "message": "Error description",
   "errors": ["Specific error details"],
   "metadata": {
-    "timestamp": "2024-01-15T10:30:00Z",
+    "timestamp": "2025-01-15T10:30:00Z",
     "version": "1.0.0"
   }
 }

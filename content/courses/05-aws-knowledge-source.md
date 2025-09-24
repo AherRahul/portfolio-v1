@@ -1,5 +1,5 @@
 ---
-title: "AWS Certified Solutions Architect"
+title: "AWS Knowledge Source"
 description: "The AWS Certified Solutions Architect certification is one of the most prestigious and in-demand credentials in cloud computing. This course is thoughtfully designed for anyone looking to master the core components of Amazon Web Services (AWS) and build a strong foundation in cloud architecture. Through comprehensive lessons and hands-on practice, you'll gain the skills needed to design scalable, secure, and cost-efficient cloud solutions. By the end of this training, you'll be fully prepared to pass the associate-level AWS Certified Solutions Architect exam with confidence."
 tutor: 1
 video: true
@@ -18,7 +18,7 @@ content:
       - id: 1
         topic_name: Exam Guide
         sub_topic: Associate SAA C03 Exam Guide
-        publish_date: 2024-09-28
+        publish_date: 2025-09-28
         description: >
           AWS Certified Solutions Architect is one of the most popular cloud computing certifications. In this full course taught by an expert trainer, you will learn the major parts of Amazon Web Services, and prepare for the associate-level AWS Certified Solutions Architect exam. By the end of this course, you will be ready to take the AWS Certified Solutions Architect Associate exam - and pass!
         topics:
@@ -37,7 +37,7 @@ content:
     topics:
       - id: 1
         topic_name: The Building Blocks of AWS - Availability Zones and Regions
-        publish_date: 2024-10-15
+        publish_date: 2025-10-15
         description: >
           Learn about AWS Regions and Availability Zones (AZs), the foundation of AWS's global infrastructure. Regions are geographically isolated locations, each containing multiple AZs. These AZs are designed for high availability, fault tolerance, and low latency, enabling applications to stay resilient and perform efficiently across the globe.
         topics:
@@ -50,7 +50,7 @@ content:
         _path: aws-solution-architect-2-1
       - id: 2
         topic_name: Who Owns What in the Cloud?
-        publish_date: 2024-10-15
+        publish_date: 2025-10-15
         description: >
           It explores the shared responsibility model of cloud computing. In this model, AWS manages the infrastructure's security, such as physical hardware, networking, and global infrastructure, while customers are responsible for securing their applications, data, and access configurations. Understanding this division is crucial for designing secure and compliant cloud architectures.
         topics:
@@ -63,7 +63,7 @@ content:
         _path: aws-solution-architect-2-2
       - id: 3
         topic_name: Compute, Storage, Databases, and Networking
-        publish_date: 2024-10-15
+        publish_date: 2025-10-15
         description: >
           It covers the core AWS services that power cloud applications. Compute services like EC2 and Lambda handle processing, while storage solutions like S3 and EBS manage data. Databases such as RDS and DynamoDB ensure efficient data management, and networking tools like VPC and CloudFront enable secure and scalable connectivity. These services form the foundation of any AWS architecture.
         topics:
