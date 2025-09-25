@@ -28,6 +28,20 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-1-1
+      - id: 2
+        topic_name: Execution Context
+        sub_topic: Javascript
+        publish_date: 2025-09-24
+        description: >
+          Network is a core part of software, as the frontend needs data and the backend sends it. All of this happens through the network. How is data transferred over the internet? How does it reach the client, and what protocols are required? These are essential concepts for software development. We need to understand what happens when we type "google.com," what DNS is, and its role in the process.
+        topics:
+          - nodejs
+          - javascript
+        duration: "10:00 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758785691/Portfolio/javaScriptCourse/images/02/Javascript_f1fl8c.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: understand-javascript-complete-1-2
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758725512/Portfolio/javaScriptCourse/images/0_eestcm.png)

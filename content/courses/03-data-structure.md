@@ -25,7 +25,7 @@ content:
           - nodejs
           - javascript
         duration: "14:00 mins read"
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: data-structure-1-1

@@ -25,7 +25,7 @@ content:
           - nodejs
           - javascript
         duration: "14:00 mins read"
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777282/Portfolio/aiCourse/Learn_AI_eyag79.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: learn-ai-with-me-1-1

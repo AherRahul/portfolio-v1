@@ -59,9 +59,9 @@ export function typographyStyles({ theme }: PluginUtils) {
 
         // Images
         img: {
-          borderRadius: theme('borderRadius.3xl'),
+          borderRadius: theme('borderRadius.lg'),
           width: '100%',
-          maxWidth: theme('spacing.96'), // 384px (24rem)
+          maxWidth: '28rem', // 448px (28rem)
           height: theme('spacing.64'), // 256px (16rem)
           objectFit: 'cover',
           cursor: 'pointer',

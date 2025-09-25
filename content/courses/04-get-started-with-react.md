@@ -25,7 +25,7 @@ content:
           - nodejs
           - javascript
         duration: "14:00 mins read"
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777298/Portfolio/reactJsCourse/ReactJS_c0mbk8.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: get-started-with-react-1-1
