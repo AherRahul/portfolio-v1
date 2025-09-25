@@ -5,7 +5,7 @@ slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
 dateModified: "2025-05-22"
 datePublished: "2025-05-22"
 showOnArticles: false
-courseName: beginner-system-design
+courseName: 07-system-design
 topics:
   - system-design
   - aws

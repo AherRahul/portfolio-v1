@@ -16,7 +16,7 @@ resources:
 
 ---
 
-![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758725513/Portfolio/javaScriptCourse/images/01/1_vfte7v.png)
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758795081/Portfolio/javaScriptCourse/images/01/1_t9gtmc.png)
 
 How JavaScript Works?
 --------------------------------------

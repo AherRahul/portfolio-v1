@@ -10,7 +10,7 @@ topics:
   - lld
 tutor: 1
 showOnArticles: false
-courseName: aws-solution-architect
+courseName: 05-aws-solution-architect
 videoUrl: "https://www.youtube.com/embed/ejZm0c_OhYM?si=_EDroaJF7rPD1dvL"
 ---
 
