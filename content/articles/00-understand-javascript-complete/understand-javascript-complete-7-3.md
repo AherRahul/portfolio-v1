@@ -8,7 +8,6 @@ showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
   - javascript
-  - es6
 resources:
   - title: "MDN - Symbol"
     type: "documentation"

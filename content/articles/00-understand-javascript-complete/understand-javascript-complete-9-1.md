@@ -8,7 +8,6 @@ showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
   - javascript
-  - patterns
 resources:
   - title: "JavaScript Design Patterns"
     type: "book"

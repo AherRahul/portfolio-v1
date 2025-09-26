@@ -8,8 +8,6 @@ showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
   - javascript
-  - performance
-  - optimization
 resources:
   - title: "Debouncing and Throttling Explained"
     type: "article"

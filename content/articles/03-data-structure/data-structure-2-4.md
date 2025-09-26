@@ -7,8 +7,6 @@ datePublished: "2025-09-26"
 showOnArticles: false
 courseName: 03-data-structure
 topics:
-  - javascript
-  - stacks
   - data-structures
 resources:
   - title: "Stack Visualizations"

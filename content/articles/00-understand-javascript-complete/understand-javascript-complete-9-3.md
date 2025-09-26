@@ -8,7 +8,6 @@ showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
   - javascript
-  - patterns
 resources:
   - title: "Factory Pattern - GoF Design Patterns"
     type: "reference"

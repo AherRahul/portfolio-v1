@@ -8,7 +8,6 @@ showOnArticles: false
 courseName: 01-beginner-to-advance-nodejs
 topics:
   - nodejs
-  - npm
 resources:
   - title: "npm Docs"
     type: "documentation"

@@ -7,9 +7,7 @@ datePublished: "2025-09-26"
 showOnArticles: false
 courseName: 03-data-structure
 topics:
-  - javascript
-  - strings
-  - algorithms
+  - data-structures
 resources:
   - title: "String Algorithm Visualizations"
     type: "tool"

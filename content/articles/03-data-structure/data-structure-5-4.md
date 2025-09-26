@@ -7,11 +7,7 @@ datePublished: "2025-09-26"
 showOnArticles: false
 courseName: 03-data-structure
 topics:
-  - javascript
-  - shortest-path
-  - dijkstra
-  - bellman-ford
-  - floyd-warshall
+  - data-structures
 resources:
   - title: "Shortest Path Visualizations"
     type: "tool"

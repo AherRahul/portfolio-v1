@@ -8,9 +8,6 @@ showOnArticles: false
 courseName: 01-beginner-to-advance-nodejs
 topics:
   - nodejs
-  - authentication
-  - jwt
-  - security
 resources:
   - title: "JWT.io"
     type: "tool"

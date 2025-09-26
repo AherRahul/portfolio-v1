@@ -8,8 +8,6 @@ showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
   - javascript
-  - performance
-  - concurrency
 resources:
   - title: "Web Workers API - MDN"
     type: "reference"

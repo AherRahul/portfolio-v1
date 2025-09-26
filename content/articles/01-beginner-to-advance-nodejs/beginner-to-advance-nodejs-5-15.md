@@ -8,9 +8,6 @@ showOnArticles: false
 courseName: 01-beginner-to-advance-nodejs
 topics:
   - nodejs
-  - express
-  - rest
-  - api
 resources:
   - title: "REST API Tutorial"
     type: "documentation"

@@ -8,8 +8,6 @@ showOnArticles: false
 courseName: 01-beginner-to-advance-nodejs
 topics:
   - nodejs
-  - testing
-  - jest
 resources:
   - title: "Jest Docs"
     type: "documentation"

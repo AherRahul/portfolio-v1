@@ -7,9 +7,7 @@ datePublished: "2025-09-26"
 showOnArticles: false
 courseName: 03-data-structure
 topics:
-  - javascript
-  - maps
-  - key-value
+  - data-structures
 resources:
   - title: "Map Visualizations"
     type: "tool"

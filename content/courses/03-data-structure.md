@@ -5,8 +5,6 @@ tutor: 1
 time: "28hr 45 mins"
 video: false
 topics:
-  - javascript
-  - algorithms
   - data-structures
 content:
   - module_id: 1
@@ -23,8 +21,7 @@ content:
         description: >
           Understanding the importance of data structures and algorithms in programming. Learn systematic problem-solving approaches, algorithmic thinking, and how DSA impacts software performance and efficiency.
         topics:
-          - javascript
-          - algorithms
+          - data-structures
         duration: "45:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/01/dsa_intro.png"
         auther_name: Rahul Aher
@@ -37,8 +34,7 @@ content:
         description: >
           Master the language of algorithmic efficiency. Learn to analyze time and space complexity, understand Big O, Big Theta, and Big Omega notations, and make informed decisions about algorithm performance.
         topics:
-          - javascript
-          - complexity
+          - data-structures
         duration: "55:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/02/big_o_notation.png"
         auther_name: Rahul Aher
@@ -51,8 +47,7 @@ content:
         description: >
           Unlock the power of recursive problem-solving. Learn to break complex problems into smaller subproblems, understand base cases and recursive cases, and master tail recursion optimization.
         topics:
-          - javascript
-          - recursion
+          - data-structures
         duration: "50:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/03/recursion.png"
         auther_name: Rahul Aher
@@ -65,8 +60,7 @@ content:
         description: >
           Build essential mathematical intuition for algorithms. Learn modular arithmetic, combinatorics, probability theory, and discrete mathematics concepts crucial for advanced algorithmic problem-solving.
         topics:
-          - javascript
-          - mathematics
+          - data-structures
         duration: "40:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/04/math_foundations.png"
         auther_name: Rahul Aher
@@ -86,8 +80,7 @@ content:
         description: >
           Master the foundation of all data structures. Learn array operations, dynamic resizing, multi-dimensional arrays, and advanced array manipulation techniques essential for algorithmic problem-solving.
         topics:
-          - javascript
-          - arrays
+          - data-structures
         duration: "50:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/05/arrays.png"
         auther_name: Rahul Aher
@@ -100,8 +93,7 @@ content:
         description: >
           Dive deep into string manipulation and pattern matching. Learn string operations, substring algorithms, palindrome detection, and advanced string processing techniques.
         topics:
-          - javascript
-          - strings
+          - data-structures
         duration: "45:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/06/strings.png"
         auther_name: Rahul Aher
@@ -114,8 +106,7 @@ content:
         description: >
           Understand dynamic memory allocation and pointer manipulation. Master singly linked lists, doubly linked lists, circular lists, and advanced linked list operations and algorithms.
         topics:
-          - javascript
-          - linked-lists
+          - data-structures
         duration: "55:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/07/linked_lists.png"
         auther_name: Rahul Aher
@@ -128,8 +119,7 @@ content:
         description: >
           Master the Last-In-First-Out (LIFO) principle. Learn stack operations, expression evaluation, backtracking algorithms, and real-world applications of stack data structures.
         topics:
-          - javascript
-          - stacks
+          - data-structures
         duration: "45:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/08/stacks.png"
         auther_name: Rahul Aher
@@ -142,8 +132,7 @@ content:
         description: >
           Understand First-In-First-Out (FIFO) processing. Learn queue operations, circular queues, priority queues, deques, and queue applications in algorithms and system design.
         topics:
-          - javascript
-          - queues
+          - data-structures
         duration: "40:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/09/queues.png"
         auther_name: Rahul Aher
@@ -163,8 +152,7 @@ content:
         description: >
           Enter the world of hierarchical data structures. Learn tree terminology, binary tree operations, tree traversals (inorder, preorder, postorder), and fundamental tree algorithms.
         topics:
-          - javascript
-          - trees
+          - data-structures
         duration: "60:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/10/binary_trees.png"
         auther_name: Rahul Aher
@@ -177,8 +165,7 @@ content:
         description: >
           Master the most important search tree. Learn BST properties, insertion, deletion, searching, and advanced BST operations. Understand balanced vs unbalanced trees and their performance implications.
         topics:
-          - javascript
-          - bst
+          - data-structures
         duration: "55:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/11/bst.png"
         auther_name: Rahul Aher
@@ -191,8 +178,7 @@ content:
         description: >
           Learn self-balancing trees for guaranteed performance. Master AVL tree rotations, balance factors, and understand how balanced trees maintain optimal search times.
         topics:
-          - javascript
-          - avl-trees
+          - data-structures
         duration: "50:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/12/avl_trees.png"
         auther_name: Rahul Aher
@@ -205,8 +191,7 @@ content:
         description: >
           Understand efficient priority-based data access. Learn min-heaps, max-heaps, heap operations, heapify algorithms, and applications in scheduling and graph algorithms.
         topics:
-          - javascript
-          - heaps
+          - data-structures
         duration: "50:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/13/heaps.png"
         auther_name: Rahul Aher
@@ -219,8 +204,7 @@ content:
         description: >
           Explore specialized tree structures for string processing. Learn trie construction, prefix matching, auto-complete systems, and advanced tree variants like B-trees and segment trees.
         topics:
-          - javascript
-          - tries
+          - data-structures
         duration: "50:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/14/tries.png"
         auther_name: Rahul Aher
@@ -240,8 +224,7 @@ content:
         description: >
           Master constant-time data access. Learn hash function design, collision resolution techniques, load factors, and advanced hashing strategies for optimal performance.
         topics:
-          - javascript
-          - hashing
+          - data-structures
         duration: "55:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/15/hash_tables.png"
         auther_name: Rahul Aher
@@ -254,8 +237,7 @@ content:
         description: >
           Understand mathematical set operations in programming. Learn set implementations, union-find data structures, and advanced set algorithms for efficient membership testing.
         topics:
-          - javascript
-          - sets
+          - data-structures
         duration: "40:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/16/sets.png"
         auther_name: Rahul Aher
@@ -268,8 +250,7 @@ content:
         description: >
           Master associative data structures. Learn map implementations, ordered maps, multi-maps, and advanced key-value storage techniques for efficient data retrieval.
         topics:
-          - javascript
-          - maps
+          - data-structures
         duration: "45:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/17/maps.png"
         auther_name: Rahul Aher
@@ -282,8 +263,7 @@ content:
         description: >
           Learn efficient connectivity algorithms. Master union-find operations, path compression, union by rank, and applications in network connectivity and graph algorithms.
         topics:
-          - javascript
-          - union-find
+          - data-structures
         duration: "40:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/18/union_find.png"
         auther_name: Rahul Aher
@@ -303,8 +283,7 @@ content:
         description: >
           Enter the world of graph algorithms. Learn graph representations (adjacency matrix, adjacency list), graph types, and fundamental graph properties essential for network algorithms.
         topics:
-          - javascript
-          - graphs
+          - data-structures
         duration: "50:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/19/graphs.png"
         auther_name: Rahul Aher
@@ -317,8 +296,7 @@ content:
         description: >
           Master deep exploration algorithms. Learn DFS implementation, applications in cycle detection, topological sorting, and connected components analysis.
         topics:
-          - javascript
-          - dfs
+          - data-structures
         duration: "55:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/20/dfs.png"
         auther_name: Rahul Aher
@@ -331,8 +309,7 @@ content:
         description: >
           Learn level-by-level exploration. Master BFS for shortest path finding, level-order traversal, and applications in social networks and web crawling algorithms.
         topics:
-          - javascript
-          - bfs
+          - data-structures
         duration: "50:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/21/bfs.png"
         auther_name: Rahul Aher
@@ -345,8 +322,7 @@ content:
         description: >
           Find optimal paths in weighted graphs. Master Dijkstra's algorithm, Bellman-Ford algorithm, and Floyd-Warshall algorithm for various shortest path scenarios.
         topics:
-          - javascript
-          - shortest-path
+          - data-structures
         duration: "60:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/22/shortest_path.png"
         auther_name: Rahul Aher
@@ -359,8 +335,7 @@ content:
         description: >
           Learn to connect all vertices with minimum cost. Master Kruskal's and Prim's algorithms for finding minimum spanning trees and their applications in network design.
         topics:
-          - javascript
-          - mst
+          - data-structures
         duration: "45:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/23/mst.png"
         auther_name: Rahul Aher
@@ -380,8 +355,7 @@ content:
         description: >
           Build sorting fundamentals. Learn bubble sort, selection sort, insertion sort, and understand their complexities, use cases, and optimization techniques.
         topics:
-          - javascript
-          - basic-sorting
+          - data-structures
         duration: "50:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/24/basic_sorting.png"
         auther_name: Rahul Aher
@@ -394,7 +368,7 @@ content:
   #       description: >
   #         Master efficient sorting techniques. Learn merge sort, quick sort, heap sort, and understand divide-and-conquer approaches to achieve optimal sorting performance.
   #       topics:
-  #         - javascript
+  #         - data-structures
   #         - advanced-sorting
   #       duration: "60:00 mins read"
   #       photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/25/advanced_sorting.png"
@@ -408,7 +382,7 @@ content:
   #       description: >
   #         Explore non-comparison based sorting. Learn counting sort, radix sort, bucket sort, and understand when linear time sorting is possible and practical.
   #       topics:
-  #         - javascript
+  #         - data-structures
   #         - specialized-sorting
   #       duration: "45:00 mins read"
   #       photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/26/specialized_sorting.png"
@@ -422,7 +396,7 @@ content:
   #       description: >
   #         Apply sorting knowledge to real problems. Learn external sorting, stability analysis, adaptive sorting, and choose optimal sorting algorithms for different scenarios.
   #       topics:
-  #         - javascript
+  #         - data-structures
   #         - sorting-applications
   #       duration: "50:00 mins read"
   #       photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/27/sorting_applications.png"
@@ -443,7 +417,7 @@ content:
   #       description: >
   #         Master fundamental search techniques. Learn linear search, binary search variants, interpolation search, and exponential search for different data distributions.
   #       topics:
-  #         - javascript
+  #         - data-structures
   #         - searching
   #       duration: "45:00 mins read"
   #       photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/28/binary_search.png"
@@ -457,7 +431,7 @@ content:
   #       description: >
   #         Explore sophisticated search algorithms. Learn ternary search, jump search, Fibonacci search, and understand search optimization techniques for various scenarios.
   #       topics:
-  #         - javascript
+  #         - data-structures
   #         - advanced-search
   #       duration: "50:00 mins read"
   #       photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/29/advanced_search.png"
@@ -471,7 +445,7 @@ content:
   #       description: >
   #         Master string searching algorithms. Learn naive pattern matching, KMP algorithm, Rabin-Karp algorithm, and Boyer-Moore algorithm for efficient text processing.
   #       topics:
-  #         - javascript
+  #         - data-structures
   #         - pattern-matching
   #       duration: "55:00 mins read"
   #       photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/30/pattern_matching.png"
@@ -485,7 +459,7 @@ content:
   #       description: >
   #         Apply pattern matching to real-world text processing. Learn regular expression algorithms, automata theory, and advanced text manipulation techniques.
   #       topics:
-  #         - javascript
+  #         - data-structures
   #         - text-processing
   #       duration: "45:00 mins read"
   #       photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/31/regex.png"
@@ -506,7 +480,7 @@ content:
   #       description: >
   #         Unlock the power of optimal substructure. Learn dynamic programming principles, memoization techniques, and how to identify and solve overlapping subproblems efficiently.
   #       topics:
-  #         - javascript
+  #         - data-structures
   #         - dynamic-programming
   #       duration: "55:00 mins read"
   #       photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/32/dp_fundamentals.png"
@@ -520,7 +494,7 @@ content:
   #       description: >
   #         Master fundamental DP patterns. Learn to solve Fibonacci sequence, climbing stairs, coin change, and longest common subsequence problems with optimal efficiency.
   #       topics:
-  #         - javascript
+  #         - data-structures
   #         - classic-dp
   #       duration: "50:00 mins read"
   #       photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/33/classic_dp.png"
@@ -534,7 +508,7 @@ content:
   #       description: >
   #         Solve complex optimization challenges. Master 0/1 knapsack, unbounded knapsack, and subset sum problems using dynamic programming approaches.
   #       topics:
-  #         - javascript
+  #         - data-structures
   #         - knapsack
   #       duration: "55:00 mins read"
   #       photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/34/knapsack.png"
@@ -548,7 +522,7 @@ content:
   #       description: >
   #         Apply DP to string manipulation. Learn edit distance, longest palindromic subsequence, and string transformation algorithms using dynamic programming.
   #       topics:
-  #         - javascript
+  #         - data-structures
   #         - string-dp
   #       duration: "50:00 mins read"
   #       photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/35/string_dp.png"
@@ -562,7 +536,7 @@ content:
   #       description: >
   #         Master sophisticated DP techniques. Learn interval DP, digit DP, tree DP, and bitmask DP for solving complex algorithmic challenges.
   #       topics:
-  #         - javascript
+  #         - data-structures
   #         - advanced-dp
   #       duration: "50:00 mins read"
   #       photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/36/advanced_dp.png"
@@ -583,7 +557,7 @@ content:
   #       description: >
   #         Learn locally optimal decision making. Master greedy algorithm design, activity selection, Huffman coding, and understand when greedy approaches guarantee global optimality.
   #       topics:
-  #         - javascript
+  #         - data-structures
   #         - greedy
   #       duration: "55:00 mins read"
   #       photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/37/greedy.png"
@@ -597,7 +571,7 @@ content:
   #       description: >
   #         Master systematic solution space exploration. Learn backtracking principles, N-Queens problem, Sudoku solver, and permutation generation algorithms.
   #       topics:
-  #         - javascript
+  #         - data-structures
   #         - backtracking
   #       duration: "55:00 mins read"
   #       photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/38/backtracking.png"
@@ -611,7 +585,7 @@ content:
   #       description: >
   #         Master problem decomposition strategies. Learn divide and conquer principles, merge sort analysis, closest pair problems, and maximum subarray algorithms.
   #       topics:
-  #         - javascript
+  #         - data-structures
   #         - divide-conquer
   #       duration: "50:00 mins read"
   #       photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/39/divide_conquer.png"
@@ -625,7 +599,7 @@ content:
   #       description: >
   #         Explore sophisticated graph techniques. Learn network flow algorithms, strongly connected components, articulation points, and advanced graph theory applications.
   #       topics:
-  #         - javascript
+  #         - data-structures
   #         - advanced-graphs
   #       duration: "60:00 mins read"
   #       photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/40/advanced_graphs.png"

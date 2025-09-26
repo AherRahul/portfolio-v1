@@ -7,9 +7,7 @@ datePublished: "2025-09-26"
 showOnArticles: false
 courseName: 03-data-structure
 topics:
-  - javascript
-  - union-find
-  - connectivity
+  - data-structures
 resources:
   - title: "Union-Find Visualizations"
     type: "tool"

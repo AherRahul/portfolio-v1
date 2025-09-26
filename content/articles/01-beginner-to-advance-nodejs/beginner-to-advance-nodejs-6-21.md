@@ -8,8 +8,6 @@ showOnArticles: false
 courseName: 01-beginner-to-advance-nodejs
 topics:
   - nodejs
-  - security
-  - express
 resources:
   - title: "NodeJs Security Best Practices"
     type: "article"

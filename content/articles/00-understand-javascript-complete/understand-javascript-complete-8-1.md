@@ -8,7 +8,6 @@ showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
   - javascript
-  - dom
 resources:
   - title: "MDN - Document Object Model (DOM)"
     type: "documentation"

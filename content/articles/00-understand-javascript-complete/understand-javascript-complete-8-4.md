@@ -8,7 +8,6 @@ showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
   - javascript
-  - storage
 resources:
   - title: "MDN - Web Storage API"
     type: "documentation"

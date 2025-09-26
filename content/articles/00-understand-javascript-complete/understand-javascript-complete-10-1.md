@@ -8,8 +8,6 @@ showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
   - javascript
-  - performance
-  - memory
 resources:
   - title: "V8 Memory Management"
     type: "reference"

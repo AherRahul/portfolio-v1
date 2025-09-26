@@ -8,8 +8,6 @@ showOnArticles: false
 courseName: 01-beginner-to-advance-nodejs
 topics:
   - nodejs
-  - security
-  - oauth
 resources:
   - title: "OAuth 2.0 (RFC 6749)"
     type: "documentation"

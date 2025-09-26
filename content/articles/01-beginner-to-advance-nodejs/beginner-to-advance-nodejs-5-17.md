@@ -8,9 +8,6 @@ showOnArticles: false
 courseName: 01-beginner-to-advance-nodejs
 topics:
   - nodejs
-  - express
-  - logging
-  - error-handling
 resources:
   - title: "Express Error Handling"
     type: "documentation"

@@ -7,11 +7,7 @@ datePublished: "2025-09-26"
 showOnArticles: false
 courseName: 03-data-structure
 topics:
-  - javascript
-  - sorting
-  - bubble-sort
-  - selection-sort
-  - insertion-sort
+  - data-structures
 resources:
   - title: "Sorting Visualizations"
     type: "tool"

@@ -8,7 +8,6 @@ showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
   - javascript
-  - api
 resources:
   - title: "MDN - Fetch API"
     type: "documentation"

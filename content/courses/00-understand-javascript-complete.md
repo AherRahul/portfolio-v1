@@ -21,7 +21,6 @@ content:
         description: >
           To truly understand JavaScript, you have to look beyond the code you write and into the engine that runs it. At its heart, JavaScript is a single-threaded, non-blocking, asynchronous language. This fundamental nature is what makes it so efficient and powerful for building responsive applications, especially on the web.
         topics:
-          - nodejs
           - javascript
         duration: "10:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758795081/Portfolio/javaScriptCourse/images/01/1_t9gtmc.png"
@@ -35,7 +34,6 @@ content:
         description: >
           An Execution Context is the abstract environment where JavaScript code is evaluated and executed. Think of it as a container or a sandbox that manages all the variables, functions, and code that's currently running. It's the central concept that determines what a function can access and what the value of this is.
         topics:
-          - nodejs
           - javascript
         duration: "10:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758785691/Portfolio/javaScriptCourse/images/02/Javascript_f1fl8c.png"
@@ -391,7 +389,6 @@ content:
           Master the art of extracting values from arrays and objects with destructuring assignment, and learn to spread and collect elements efficiently. These modern syntax features make your code more readable and concise.
         topics:
           - javascript
-          - es6
         duration: "45:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758811621/Portfolio/javaScriptCourse/images/all%20title%20images/27_hmmpq5.png"
         auther_name: Rahul Aher
@@ -405,7 +402,6 @@ content:
           Explore the power of template literals for string interpolation and multiline strings, plus advanced tagged template functions for custom string processing and domain-specific languages.
         topics:
           - javascript
-          - es6
         duration: "40:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758811621/Portfolio/javaScriptCourse/images/all%20title%20images/28_czivkn.png"
         auther_name: Rahul Aher
@@ -419,7 +415,6 @@ content:
           Discover modern data structures and primitive types in JavaScript. Learn when and how to use Symbols for unique identifiers, Sets for unique collections, Maps for key-value pairs, and WeakMaps for memory-efficient associations.
         topics:
           - javascript
-          - es6
         duration: "50:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758811622/Portfolio/javaScriptCourse/images/all%20title%20images/29_kfasgd.png"
         auther_name: Rahul Aher
@@ -433,7 +428,6 @@ content:
           Master the iterator protocol and generator functions to create custom iteration behavior, lazy evaluation, and powerful control flow patterns that can pause and resume execution.
         topics:
           - javascript
-          - es6
         duration: "55:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758811622/Portfolio/javaScriptCourse/images/all%20title%20images/30_gvpkuz.png"
         auther_name: Rahul Aher
@@ -447,7 +441,6 @@ content:
           Learn the modern module system that replaced the chaos of global variables and script tags. Master static imports/exports and dynamic imports for code splitting and lazy loading.
         topics:
           - javascript
-          - modules
         duration: "45:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758811623/Portfolio/javaScriptCourse/images/all%20title%20images/31_jca3sy.png"
         auther_name: Rahul Aher
@@ -468,7 +461,6 @@ content:
           Master the Document Object Model with modern techniques for selecting, creating, modifying, and removing elements. Learn performance-optimized DOM manipulation patterns used in real applications.
         topics:
           - javascript
-          - dom
         duration: "50:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758811622/Portfolio/javaScriptCourse/images/all%20title%20images/32_eheuqw.png"
         auther_name: Rahul Aher
@@ -482,7 +474,6 @@ content:
           Deep dive into the event system that powers interactive web applications. Learn event delegation, custom events, and advanced patterns for building responsive user interfaces.
         topics:
           - javascript
-          - events
         duration: "45:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758811625/Portfolio/javaScriptCourse/images/all%20title%20images/33_lw5vgb.png"
         auther_name: Rahul Aher
@@ -496,7 +487,6 @@ content:
           Master modern HTTP communication with the Fetch API. Learn to handle different request types, manage headers, process responses, and implement robust error handling for network operations.
         topics:
           - javascript
-          - api
         duration: "45:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758811627/Portfolio/javaScriptCourse/images/all%20title%20images/34_ij8qbd.png"
         auther_name: Rahul Aher
@@ -510,7 +500,6 @@ content:
           Explore client-side storage options from simple localStorage to powerful IndexedDB. Learn when to use each storage method and how to build offline-capable applications.
         topics:
           - javascript
-          - storage
         duration: "50:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758811625/Portfolio/javaScriptCourse/images/all%20title%20images/35_rcxzgq.png"
         auther_name: Rahul Aher
@@ -524,7 +513,6 @@ content:
           Build progressive web applications with service workers for offline functionality, background sync, and push notifications. Transform web apps into app-like experiences.
         topics:
           - javascript
-          - pwa
         duration: "60:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758811627/Portfolio/javaScriptCourse/images/all%20title%20images/36_cbrn79.png"
         auther_name: Rahul Aher
@@ -545,7 +533,6 @@ content:
           Learn classical design patterns for organizing code into reusable modules. Master techniques for creating clean namespaces and avoiding global scope pollution in large applications.
         topics:
           - javascript
-          - patterns
         duration: "40:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758811628/Portfolio/javaScriptCourse/images/all%20title%20images/37_wk5qdw.png"
         auther_name: Rahul Aher
@@ -559,7 +546,6 @@ content:
           Implement the observer pattern to create loosely coupled, event-driven architectures. Build custom event systems and understand how modern frameworks use this pattern internally.
         topics:
           - javascript
-          - patterns
         duration: "45:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758811625/Portfolio/javaScriptCourse/images/all%20title%20images/38_s8fo3c.png"
         auther_name: Rahul Aher
@@ -573,7 +559,6 @@ content:
           Master creational patterns for object construction. Learn when to use factory functions vs constructors vs classes, and how the builder pattern simplifies complex object creation.
         topics:
           - javascript
-          - patterns
         duration: "40:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758811626/Portfolio/javaScriptCourse/images/all%20title%20images/39_qbdpup.png"
         auther_name: Rahul Aher
@@ -587,7 +572,6 @@ content:
           Explore structural patterns for managing object instances and extending functionality. Learn the singleton pattern's pros and cons, and how decorators add behavior without inheritance.
         topics:
           - javascript
-          - patterns
         duration: "40:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758811626/Portfolio/javaScriptCourse/images/all%20title%20images/40_fhahlc.png"
         auther_name: Rahul Aher
@@ -601,7 +585,6 @@ content:
           Understand architectural patterns that separate concerns in large applications. Learn how MVC, MVP, and MVVM patterns influence modern framework design and application structure.
         topics:
           - javascript
-          - architecture
         duration: "45:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758811608/Portfolio/javaScriptCourse/images/all%20title%20images/41_tpbsvz.png"
         auther_name: Rahul Aher
@@ -622,7 +605,6 @@ content:
           Deep dive into JavaScript's memory model, garbage collection algorithms, and memory leak prevention. Learn to profile memory usage and optimize applications for better performance.
         topics:
           - javascript
-          - performance
         duration: "50:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758811611/Portfolio/javaScriptCourse/images/all%20title%20images/42_jubiga.png"
         auther_name: Rahul Aher
@@ -636,7 +618,6 @@ content:
           Master the art of measuring and improving JavaScript performance. Learn to use browser DevTools, identify bottlenecks, and apply optimization techniques for faster applications.
         topics:
           - javascript
-          - performance
         duration: "45:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758811611/Portfolio/javaScriptCourse/images/all%20title%20images/43_vigden.png"
         auther_name: Rahul Aher
@@ -650,7 +631,6 @@ content:
           Implement essential performance patterns for handling frequent events and loading resources efficiently. Master debouncing, throttling, and lazy loading techniques for responsive UIs.
         topics:
           - javascript
-          - performance
         duration: "40:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758811611/Portfolio/javaScriptCourse/images/all%20title%20images/44_jf6ftw.png"
         auther_name: Rahul Aher
@@ -664,7 +644,6 @@ content:
           Optimize application loading with strategic code splitting and bundle analysis. Learn to reduce initial bundle size and implement smart loading strategies for better user experience.
         topics:
           - javascript
-          - optimization
         duration: "45:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758811611/Portfolio/javaScriptCourse/images/all%20title%20images/45_dmgmu1.png"
         auther_name: Rahul Aher
@@ -678,7 +657,6 @@ content:
           Unlock parallel processing in JavaScript with Web Workers. Learn to offload heavy computations, implement background data processing, and keep your main thread responsive.
         topics:
           - javascript
-          - workers
         duration: "40:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758811614/Portfolio/javaScriptCourse/images/all%20title%20images/46_uyspil.png"
         auther_name: Rahul Aher

@@ -7,9 +7,7 @@ datePublished: "2025-09-26"
 showOnArticles: false
 courseName: 03-data-structure
 topics:
-  - javascript
-  - mathematics
-  - algorithms
+  - data-structures
 resources:
   - title: "Discrete Mathematics for Computer Science"
     type: "book"

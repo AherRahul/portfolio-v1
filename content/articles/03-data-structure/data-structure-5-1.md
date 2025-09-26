@@ -7,9 +7,7 @@ datePublished: "2025-09-26"
 showOnArticles: false
 courseName: 03-data-structure
 topics:
-  - javascript
-  - graphs
-  - graph-representation
+  - data-structures
 resources:
   - title: "Graph Visualizations"
     type: "tool"

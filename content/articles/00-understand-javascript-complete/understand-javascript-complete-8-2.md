@@ -8,7 +8,6 @@ showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
   - javascript
-  - events
 resources:
   - title: "MDN - Event Reference"
     type: "documentation"

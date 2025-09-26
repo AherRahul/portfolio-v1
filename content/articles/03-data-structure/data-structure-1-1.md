@@ -7,8 +7,6 @@ datePublished: "2025-09-26"
 showOnArticles: false
 courseName: 03-data-structure
 topics:
-  - javascript
-  - algorithms
   - data-structures
 resources:
   - title: "Introduction to Algorithms - MIT"

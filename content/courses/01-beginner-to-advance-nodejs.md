@@ -237,7 +237,6 @@ content:
           What is Express.js and why it's the most popular minimal and flexible web framework for NodeJs. Overview of routing, middleware, request/response lifecycle, and folder structure for small-to-medium apps.
         topics:
           - nodejs
-          - express
         duration: "8:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1757931579/Portfolio/nodeJsCourse/14_te0pyp.png"
         auther_name: Rahul Aher
@@ -274,8 +273,6 @@ content:
           Learn to create RESTful routes, handle JSON payloads, query parameters, route parameters, and status codes. Includes a simple CRUD example with controllers and router separation.
         topics:
           - nodejs
-          - express
-          - rest
         duration: "10:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1757930716/Portfolio/nodeJsCourse/15.png"
         auther_name: Rahul Aher
@@ -312,8 +309,6 @@ content:
           Understand middleware types, execution order, built-in middleware, third-party middleware and how to build custom middleware for logging, validation, and authentication checks.
         topics:
           - nodejs
-          - express
-          - middleware
         duration: "6:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1757930697/Portfolio/nodeJsCourse/16_dtvljr.png"
         auther_name: Rahul Aher
@@ -327,8 +322,6 @@ content:
           Best practices for centralized error handling in Express, custom error classes, capturing stack traces, structured logging and integrating with logging libraries.
         topics:
           - nodejs
-          - express
-          - logging
         duration: "6:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1757930696/Portfolio/nodeJsCourse/17_wgo1tp.png"
         auther_name: Rahul Aher
@@ -342,8 +335,6 @@ content:
           Advanced routing patterns, nested routers, route params and query string parsing, validation and sanitization strategies for route inputs.
         topics:
           - nodejs
-          - express
-          - routing
         duration: "5:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1757930697/Portfolio/nodeJsCourse/18_tfarkq.png"
         auther_name: Rahul Aher
@@ -365,8 +356,6 @@ content:
           Learn how to secure API with JSON Web Tokens: token creation, verification, refresh tokens, and secure storage on client-side. Patterns for protecting routes and role-based access control.
         topics:
           - nodejs
-          - security
-          - auth
         duration: "8:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1757930697/Portfolio/nodeJsCourse/19_jnchd1.png"
         auther_name: Rahul Aher
@@ -403,8 +392,6 @@ content:
           Securely store passwords using bcrypt: salting, rounds cost, verifying passwords, and safe migration strategies.
         topics:
           - nodejs
-          - security
-          - auth
         duration: "6:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1757930699/Portfolio/nodeJsCourse/20_saq9rh.png"
         auther_name: Rahul Aher
@@ -418,7 +405,6 @@ content:
           Prevent common vulnerabilities like XSS, CSRF, SQL/NoSQL injection, input validation, safe headers, CORS, and secure configuration patterns.
         topics:
           - nodejs
-          - security
         duration: "8:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1757930698/Portfolio/nodeJsCourse/21_o3zhhx.png"
         auther_name: Rahul Aher
@@ -432,8 +418,6 @@ content:
           Overview of OAuth2 flows, when to use Authorization Code vs Implicit, and integrating common social login providers.
         topics:
           - nodejs
-          - security
-          - oauth
         duration: "5:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1757930698/Portfolio/nodeJsCourse/22_r9mr86.png"
         auther_name: Rahul Aher
@@ -455,7 +439,6 @@ content:
           Write unit tests for NodeJs applications using Jest: assertions, mocks, spies and coverage reporting.
         topics:
           - nodejs
-          - testing
         duration: "8:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1757930698/Portfolio/nodeJsCourse/23_ztwhz3.png"
         auther_name: Rahul Aher
@@ -469,8 +452,6 @@ content:
           Test your Express API end-to-end with Supertest. Set up test databases, run lifecycle hooks, and assert responses and side-effects.
         topics:
           - nodejs
-          - testing
-          - supertest
         duration: "7:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1757930699/Portfolio/nodeJsCourse/24_stv3gh.png"
         auther_name: Rahul Aher
@@ -484,7 +465,6 @@ content:
           Learn to deploy NodeJs applications to Heroku, Vercel, and AWS; understand environment variables, process managers and basic CI/CD concepts.
         topics:
           - nodejs
-          - deployment
         duration: "10:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1757930696/Portfolio/nodeJsCourse/25_xgwyej.png"
         auther_name: Rahul Aher
@@ -506,7 +486,6 @@ content:
           Learn how to handle large data efficiently with NodeJs streams, readable/writable/transform streams and Buffer usage patterns.
         topics:
           - nodejs
-          - streams
         duration: "8:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1757930697/Portfolio/nodeJsCourse/26_rhaomt.png"
         auther_name: Rahul Aher
@@ -520,7 +499,6 @@ content:
           Scale NodeJs applications using the cluster module, worker threads and horizontal scaling patterns.
         topics:
           - nodejs
-          - scaling
         duration: "8:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1757930700/Portfolio/nodeJsCourse/27_q39y2j.png"
         auther_name: Rahul Aher
@@ -534,7 +512,6 @@ content:
           Tips & tricks to optimize NodeJs performance: profiling, hot paths, event-loop monitoring and caching strategies.
         topics:
           - nodejs
-          - performance
         duration: "8:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1757930700/Portfolio/nodeJsCourse/28_mladc3.png"
         auther_name: Rahul Aher
@@ -548,7 +525,6 @@ content:
           Detect and fix memory leaks, use NodeJs profiler and heap snapshots, and learn allocation tracking techniques.
         topics:
           - nodejs
-          - profiling
         duration: "8:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1757930700/Portfolio/nodeJsCourse/29_hjtwky.png"
         auther_name: Rahul Aher
@@ -570,7 +546,6 @@ content:
           Understand npm, package.json, semantic versioning, lockfiles, and package publishing basics.
         topics:
           - nodejs
-          - npm
         duration: "6:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1757930700/Portfolio/nodeJsCourse/30_np8kwf.png"
         auther_name: Rahul Aher
@@ -584,7 +559,6 @@ content:
           Use NodeJs inspector, Chrome DevTools, and VS Code debugging to diagnose issues and step through code.
         topics:
           - nodejs
-          - debugging
         duration: "6:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1757930700/Portfolio/nodeJsCourse/31_tfmesl.png"
         auther_name: Rahul Aher
@@ -598,7 +572,6 @@ content:
           Introduction to using TypeScript in NodeJs projects: tsconfig, compiling, typing Node API and build workflows.
         topics:
           - nodejs
-          - typescript
         duration: "6:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1757930701/Portfolio/nodeJsCourse/32_ci1c0b.png"
         auther_name: Rahul Aher
@@ -612,7 +585,6 @@ content:
           Basic monitoring concepts for NodeJs apps: metrics, health checks, logs aggregation, and integrating observability tools.
         topics:
           - nodejs
-          - monitoring
         duration: "6:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1757930700/Portfolio/nodeJsCourse/33_ihknbh.png"
         auther_name: Rahul Aher

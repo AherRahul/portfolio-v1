@@ -7,9 +7,7 @@ datePublished: "2025-09-26"
 showOnArticles: false
 courseName: 03-data-structure
 topics:
-  - javascript
-  - complexity
-  - big-o
+  - data-structures
 resources:
   - title: "Big O Cheat Sheet"
     type: "reference"

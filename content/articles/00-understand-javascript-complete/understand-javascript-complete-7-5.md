@@ -8,7 +8,6 @@ showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
   - javascript
-  - modules
 resources:
   - title: "MDN - JavaScript Modules"
     type: "documentation"

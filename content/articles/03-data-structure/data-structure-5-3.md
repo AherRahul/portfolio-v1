@@ -7,9 +7,7 @@ datePublished: "2025-09-26"
 showOnArticles: false
 courseName: 03-data-structure
 topics:
-  - javascript
-  - bfs
-  - graph-traversal
+  - data-structures
 resources:
   - title: "BFS Visualizations"
     type: "tool"

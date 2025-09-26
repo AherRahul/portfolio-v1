@@ -7,9 +7,7 @@ datePublished: "2025-09-26"
 showOnArticles: false
 courseName: 03-data-structure
 topics:
-  - javascript
-  - tries
-  - prefix-trees
+  - data-structures
 resources:
   - title: "Trie Visualizations"
     type: "tool"

@@ -8,7 +8,6 @@ showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
   - javascript
-  - pwa
 resources:
   - title: "MDN - Service Worker API"
     type: "documentation"

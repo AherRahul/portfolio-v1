@@ -8,7 +8,6 @@ showOnArticles: false
 courseName: 01-beginner-to-advance-nodejs
 topics:
   - nodejs
-  - profiling
 resources:
   - title: "Heap Snapshots"
     type: "documentation"
