@@ -6,6 +6,8 @@
   NODE_VERSION = "20"
   NPM_FLAGS = "--legacy-peer-deps"
   NITRO_PRESET = "netlify"
+  NODE_ENV = "production"
+  NODE_OPTIONS = "--max-old-space-size=4096"
 
 [functions]
   directory = "netlify/functions"
