@@ -85,6 +85,20 @@ export default defineNuxtConfig({
     prerender: {
       routes: [
         '/feed.xml',
+        // Core pages
+        '/',
+        '/about/',
+        '/contact/',
+        '/services/',
+        '/consulting/',
+        '/sponsors/',
+        // Index pages
+        '/articles/',
+        '/courses/',
+        '/projects/',
+        '/npmpackages/',
+        '/learning/',
+        // Content routes
         ...discoverContentRoutes(['articles', 'projects', 'courses', 'npmpackages']),
         // Temporarily disable OG image generation to fix build issues
         // ...discoverOgImageRoutes(),
@@ -95,7 +109,12 @@ export default defineNuxtConfig({
         '/projects/-',
         '/npmpackages/-',
         '/articles/-_',
-        '/courses/-'
+        '/courses/-',
+        // Ignore potential memory-heavy routes
+        '/__og-image__/**',
+        '/api/_content/query/**',
+        // Ignore topic pages that are extremely slow to render
+        '/topics/**'
       ]
     },
     devProxy: {
