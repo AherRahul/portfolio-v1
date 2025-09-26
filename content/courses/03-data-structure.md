@@ -361,251 +361,251 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: data-structure-6-1
-  #     - id: 25
-  #       topic_name: Advanced Sorting Algorithms
-  #       sub_topic: Sorting
-  #       publish_date: 2025-09-26
-  #       description: >
-  #         Master efficient sorting techniques. Learn merge sort, quick sort, heap sort, and understand divide-and-conquer approaches to achieve optimal sorting performance.
-  #       topics:
-  #         - data-structures
-  #         - advanced-sorting
-  #       duration: "60:00 mins read"
-  #       photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/25/advanced_sorting.png"
-  #       auther_name: Rahul Aher
-  #       is_on_youtube: false
-  #       _path: data-structure-6-2
-  #     - id: 26
-  #       topic_name: Specialized Sorting Algorithms
-  #       sub_topic: Sorting
-  #       publish_date: 2025-09-26
-  #       description: >
-  #         Explore non-comparison based sorting. Learn counting sort, radix sort, bucket sort, and understand when linear time sorting is possible and practical.
-  #       topics:
-  #         - data-structures
-  #         - specialized-sorting
-  #       duration: "45:00 mins read"
-  #       photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/26/specialized_sorting.png"
-  #       auther_name: Rahul Aher
-  #       is_on_youtube: false
-  #       _path: data-structure-6-3
-  #     - id: 27
-  #       topic_name: Sorting Applications & Analysis
-  #       sub_topic: Sorting
-  #       publish_date: 2025-09-26
-  #       description: >
-  #         Apply sorting knowledge to real problems. Learn external sorting, stability analysis, adaptive sorting, and choose optimal sorting algorithms for different scenarios.
-  #       topics:
-  #         - data-structures
-  #         - sorting-applications
-  #       duration: "50:00 mins read"
-  #       photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/27/sorting_applications.png"
-  #       auther_name: Rahul Aher
-  #       is_on_youtube: false
-  #       _path: data-structure-6-4
-  # - module_id: 7
-  #   module_name: Searching & Pattern Matching
-  #   module_duration: "3hr 15 mins read"
-  #   topics_count: 4
-  #   tutor: 1
-  #   expanded: false
-  #   topics:
-  #     - id: 28
-  #       topic_name: Linear & Binary Search
-  #       sub_topic: Searching
-  #       publish_date: 2025-09-26
-  #       description: >
-  #         Master fundamental search techniques. Learn linear search, binary search variants, interpolation search, and exponential search for different data distributions.
-  #       topics:
-  #         - data-structures
-  #         - searching
-  #       duration: "45:00 mins read"
-  #       photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/28/binary_search.png"
-  #       auther_name: Rahul Aher
-  #       is_on_youtube: false
-  #       _path: data-structure-7-1
-  #     - id: 29
-  #       topic_name: Advanced Search Techniques
-  #       sub_topic: Searching
-  #       publish_date: 2025-09-26
-  #       description: >
-  #         Explore sophisticated search algorithms. Learn ternary search, jump search, Fibonacci search, and understand search optimization techniques for various scenarios.
-  #       topics:
-  #         - data-structures
-  #         - advanced-search
-  #       duration: "50:00 mins read"
-  #       photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/29/advanced_search.png"
-  #       auther_name: Rahul Aher
-  #       is_on_youtube: false
-  #       _path: data-structure-7-2
-  #     - id: 30
-  #       topic_name: String Pattern Matching
-  #       sub_topic: Pattern Matching
-  #       publish_date: 2025-09-26
-  #       description: >
-  #         Master string searching algorithms. Learn naive pattern matching, KMP algorithm, Rabin-Karp algorithm, and Boyer-Moore algorithm for efficient text processing.
-  #       topics:
-  #         - data-structures
-  #         - pattern-matching
-  #       duration: "55:00 mins read"
-  #       photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/30/pattern_matching.png"
-  #       auther_name: Rahul Aher
-  #       is_on_youtube: false
-  #       _path: data-structure-7-3
-  #     - id: 31
-  #       topic_name: Regular Expressions & Text Processing
-  #       sub_topic: Text Algorithms
-  #       publish_date: 2025-09-26
-  #       description: >
-  #         Apply pattern matching to real-world text processing. Learn regular expression algorithms, automata theory, and advanced text manipulation techniques.
-  #       topics:
-  #         - data-structures
-  #         - text-processing
-  #       duration: "45:00 mins read"
-  #       photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/31/regex.png"
-  #       auther_name: Rahul Aher
-  #       is_on_youtube: false
-  #       _path: data-structure-7-4
-  # - module_id: 8
-  #   module_name: Dynamic Programming
-  #   module_duration: "4hr 20 mins read"
-  #   topics_count: 5
-  #   tutor: 1
-  #   expanded: false
-  #   topics:
-  #     - id: 32
-  #       topic_name: DP Fundamentals & Memoization
-  #       sub_topic: Dynamic Programming
-  #       publish_date: 2025-09-26
-  #       description: >
-  #         Unlock the power of optimal substructure. Learn dynamic programming principles, memoization techniques, and how to identify and solve overlapping subproblems efficiently.
-  #       topics:
-  #         - data-structures
-  #         - dynamic-programming
-  #       duration: "55:00 mins read"
-  #       photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/32/dp_fundamentals.png"
-  #       auther_name: Rahul Aher
-  #       is_on_youtube: false
-  #       _path: data-structure-8-1
-  #     - id: 33
-  #       topic_name: Classic DP Problems
-  #       sub_topic: Dynamic Programming
-  #       publish_date: 2025-09-26
-  #       description: >
-  #         Master fundamental DP patterns. Learn to solve Fibonacci sequence, climbing stairs, coin change, and longest common subsequence problems with optimal efficiency.
-  #       topics:
-  #         - data-structures
-  #         - classic-dp
-  #       duration: "50:00 mins read"
-  #       photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/33/classic_dp.png"
-  #       auther_name: Rahul Aher
-  #       is_on_youtube: false
-  #       _path: data-structure-8-2
-  #     - id: 34
-  #       topic_name: Knapsack & Optimization Problems
-  #       sub_topic: DP Optimization
-  #       publish_date: 2025-09-26
-  #       description: >
-  #         Solve complex optimization challenges. Master 0/1 knapsack, unbounded knapsack, and subset sum problems using dynamic programming approaches.
-  #       topics:
-  #         - data-structures
-  #         - knapsack
-  #       duration: "55:00 mins read"
-  #       photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/34/knapsack.png"
-  #       auther_name: Rahul Aher
-  #       is_on_youtube: false
-  #       _path: data-structure-8-3
-  #     - id: 35
-  #       topic_name: String DP & Edit Distance
-  #       sub_topic: String DP
-  #       publish_date: 2025-09-26
-  #       description: >
-  #         Apply DP to string manipulation. Learn edit distance, longest palindromic subsequence, and string transformation algorithms using dynamic programming.
-  #       topics:
-  #         - data-structures
-  #         - string-dp
-  #       duration: "50:00 mins read"
-  #       photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/35/string_dp.png"
-  #       auther_name: Rahul Aher
-  #       is_on_youtube: false
-  #       _path: data-structure-8-4
-  #     - id: 36
-  #       topic_name: Advanced DP Patterns
-  #       sub_topic: Advanced DP
-  #       publish_date: 2025-09-26
-  #       description: >
-  #         Master sophisticated DP techniques. Learn interval DP, digit DP, tree DP, and bitmask DP for solving complex algorithmic challenges.
-  #       topics:
-  #         - data-structures
-  #         - advanced-dp
-  #       duration: "50:00 mins read"
-  #       photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/36/advanced_dp.png"
-  #       auther_name: Rahul Aher
-  #       is_on_youtube: false
-  #       _path: data-structure-8-5
-  # - module_id: 9
-  #   module_name: Advanced Algorithm Techniques
-  #   module_duration: "3hr 40 mins read"
-  #   topics_count: 4
-  #   tutor: 1
-  #   expanded: false
-  #   topics:
-  #     - id: 37
-  #       topic_name: Greedy Algorithms
-  #       sub_topic: Greedy Techniques
-  #       publish_date: 2025-09-26
-  #       description: >
-  #         Learn locally optimal decision making. Master greedy algorithm design, activity selection, Huffman coding, and understand when greedy approaches guarantee global optimality.
-  #       topics:
-  #         - data-structures
-  #         - greedy
-  #       duration: "55:00 mins read"
-  #       photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/37/greedy.png"
-  #       auther_name: Rahul Aher
-  #       is_on_youtube: false
-  #       _path: data-structure-9-1
-  #     - id: 38
-  #       topic_name: Backtracking Algorithms
-  #       sub_topic: Backtracking
-  #       publish_date: 2025-09-26
-  #       description: >
-  #         Master systematic solution space exploration. Learn backtracking principles, N-Queens problem, Sudoku solver, and permutation generation algorithms.
-  #       topics:
-  #         - data-structures
-  #         - backtracking
-  #       duration: "55:00 mins read"
-  #       photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/38/backtracking.png"
-  #       auther_name: Rahul Aher
-  #       is_on_youtube: false
-  #       _path: data-structure-9-2
-  #     - id: 39
-  #       topic_name: Divide & Conquer
-  #       sub_topic: Divide Conquer
-  #       publish_date: 2025-09-26
-  #       description: >
-  #         Master problem decomposition strategies. Learn divide and conquer principles, merge sort analysis, closest pair problems, and maximum subarray algorithms.
-  #       topics:
-  #         - data-structures
-  #         - divide-conquer
-  #       duration: "50:00 mins read"
-  #       photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/39/divide_conquer.png"
-  #       auther_name: Rahul Aher
-  #       is_on_youtube: false
-  #       _path: data-structure-9-3
-  #     - id: 40
-  #       topic_name: Advanced Graph Algorithms
-  #       sub_topic: Advanced Graphs
-  #       publish_date: 2025-09-26
-  #       description: >
-  #         Explore sophisticated graph techniques. Learn network flow algorithms, strongly connected components, articulation points, and advanced graph theory applications.
-  #       topics:
-  #         - data-structures
-  #         - advanced-graphs
-  #       duration: "60:00 mins read"
-  #       photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/40/advanced_graphs.png"
-  #       auther_name: Rahul Aher
-  #       is_on_youtube: false
-  #       _path: data-structure-9-4
+      - id: 25
+        topic_name: Advanced Sorting Algorithms
+        sub_topic: Sorting
+        publish_date: 2025-09-26
+        description: >
+          Master efficient sorting techniques. Learn merge sort, quick sort, heap sort, and understand divide-and-conquer approaches to achieve optimal sorting performance.
+        topics:
+          - data-structures
+          - advanced-sorting
+        duration: "60:00 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/25/advanced_sorting.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: data-structure-6-2
+      - id: 26
+        topic_name: Specialized Sorting Algorithms
+        sub_topic: Sorting
+        publish_date: 2025-09-26
+        description: >
+          Explore non-comparison based sorting. Learn counting sort, radix sort, bucket sort, and understand when linear time sorting is possible and practical.
+        topics:
+          - data-structures
+          - specialized-sorting
+        duration: "45:00 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/26/specialized_sorting.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: data-structure-6-3
+      - id: 27
+        topic_name: Sorting Applications & Analysis
+        sub_topic: Sorting
+        publish_date: 2025-09-26
+        description: >
+          Apply sorting knowledge to real problems. Learn external sorting, stability analysis, adaptive sorting, and choose optimal sorting algorithms for different scenarios.
+        topics:
+          - data-structures
+          - sorting-applications
+        duration: "50:00 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/27/sorting_applications.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: data-structure-6-4
+  - module_id: 7
+    module_name: Searching & Pattern Matching
+    module_duration: "3hr 15 mins read"
+    topics_count: 4
+    tutor: 1
+    expanded: false
+    topics:
+      - id: 28
+        topic_name: Linear & Binary Search
+        sub_topic: Searching
+        publish_date: 2025-09-26
+        description: >
+          Master fundamental search techniques. Learn linear search, binary search variants, interpolation search, and exponential search for different data distributions.
+        topics:
+          - data-structures
+          - searching
+        duration: "45:00 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/28/binary_search.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: data-structure-7-1
+      - id: 29
+        topic_name: Advanced Search Techniques
+        sub_topic: Searching
+        publish_date: 2025-09-26
+        description: >
+          Explore sophisticated search algorithms. Learn ternary search, jump search, Fibonacci search, and understand search optimization techniques for various scenarios.
+        topics:
+          - data-structures
+          - advanced-search
+        duration: "50:00 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/29/advanced_search.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: data-structure-7-2
+      - id: 30
+        topic_name: String Pattern Matching
+        sub_topic: Pattern Matching
+        publish_date: 2025-09-26
+        description: >
+          Master string searching algorithms. Learn naive pattern matching, KMP algorithm, Rabin-Karp algorithm, and Boyer-Moore algorithm for efficient text processing.
+        topics:
+          - data-structures
+          - pattern-matching
+        duration: "55:00 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/30/pattern_matching.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: data-structure-7-3
+      - id: 31
+        topic_name: Regular Expressions & Text Processing
+        sub_topic: Text Algorithms
+        publish_date: 2025-09-26
+        description: >
+          Apply pattern matching to real-world text processing. Learn regular expression algorithms, automata theory, and advanced text manipulation techniques.
+        topics:
+          - data-structures
+          - text-processing
+        duration: "45:00 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/31/regex.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: data-structure-7-4
+  - module_id: 8
+    module_name: Dynamic Programming
+    module_duration: "4hr 20 mins read"
+    topics_count: 5
+    tutor: 1
+    expanded: false
+    topics:
+      - id: 32
+        topic_name: DP Fundamentals & Memoization
+        sub_topic: Dynamic Programming
+        publish_date: 2025-09-26
+        description: >
+          Unlock the power of optimal substructure. Learn dynamic programming principles, memoization techniques, and how to identify and solve overlapping subproblems efficiently.
+        topics:
+          - data-structures
+          - dynamic-programming
+        duration: "55:00 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/32/dp_fundamentals.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: data-structure-8-1
+      - id: 33
+        topic_name: Classic DP Problems
+        sub_topic: Dynamic Programming
+        publish_date: 2025-09-26
+        description: >
+          Master fundamental DP patterns. Learn to solve Fibonacci sequence, climbing stairs, coin change, and longest common subsequence problems with optimal efficiency.
+        topics:
+          - data-structures
+          - classic-dp
+        duration: "50:00 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/33/classic_dp.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: data-structure-8-2
+      - id: 34
+        topic_name: Knapsack & Optimization Problems
+        sub_topic: DP Optimization
+        publish_date: 2025-09-26
+        description: >
+          Solve complex optimization challenges. Master 0/1 knapsack, unbounded knapsack, and subset sum problems using dynamic programming approaches.
+        topics:
+          - data-structures
+          - knapsack
+        duration: "55:00 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/34/knapsack.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: data-structure-8-3
+      - id: 35
+        topic_name: String DP & Edit Distance
+        sub_topic: String DP
+        publish_date: 2025-09-26
+        description: >
+          Apply DP to string manipulation. Learn edit distance, longest palindromic subsequence, and string transformation algorithms using dynamic programming.
+        topics:
+          - data-structures
+          - string-dp
+        duration: "50:00 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/35/string_dp.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: data-structure-8-4
+      - id: 36
+        topic_name: Advanced DP Patterns
+        sub_topic: Advanced DP
+        publish_date: 2025-09-26
+        description: >
+          Master sophisticated DP techniques. Learn interval DP, digit DP, tree DP, and bitmask DP for solving complex algorithmic challenges.
+        topics:
+          - data-structures
+          - advanced-dp
+        duration: "50:00 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/36/advanced_dp.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: data-structure-8-5
+  - module_id: 9
+    module_name: Advanced Algorithm Techniques
+    module_duration: "3hr 40 mins read"
+    topics_count: 4
+    tutor: 1
+    expanded: false
+    topics:
+      - id: 37
+        topic_name: Greedy Algorithms
+        sub_topic: Greedy Techniques
+        publish_date: 2025-09-26
+        description: >
+          Learn locally optimal decision making. Master greedy algorithm design, activity selection, Huffman coding, and understand when greedy approaches guarantee global optimality.
+        topics:
+          - data-structures
+          - greedy
+        duration: "55:00 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/37/greedy.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: data-structure-9-1
+      - id: 38
+        topic_name: Backtracking Algorithms
+        sub_topic: Backtracking
+        publish_date: 2025-09-26
+        description: >
+          Master systematic solution space exploration. Learn backtracking principles, N-Queens problem, Sudoku solver, and permutation generation algorithms.
+        topics:
+          - data-structures
+          - backtracking
+        duration: "55:00 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/38/backtracking.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: data-structure-9-2
+      - id: 39
+        topic_name: Divide & Conquer
+        sub_topic: Divide Conquer
+        publish_date: 2025-09-26
+        description: >
+          Master problem decomposition strategies. Learn divide and conquer principles, merge sort analysis, closest pair problems, and maximum subarray algorithms.
+        topics:
+          - data-structures
+          - divide-conquer
+        duration: "50:00 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/39/divide_conquer.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: data-structure-9-3
+      - id: 40
+        topic_name: Advanced Graph Algorithms
+        sub_topic: Advanced Graphs
+        publish_date: 2025-09-26
+        description: >
+          Explore sophisticated graph techniques. Learn network flow algorithms, strongly connected components, articulation points, and advanced graph theory applications.
+        topics:
+          - data-structures
+          - advanced-graphs
+        duration: "60:00 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/40/advanced_graphs.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: data-structure-9-4
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png)
