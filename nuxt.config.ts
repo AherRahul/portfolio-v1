@@ -89,6 +89,7 @@ export default defineNuxtConfig({
         // Temporarily disable OG image generation to fix build issues
         // ...discoverOgImageRoutes(),
       ],
+      crawlLinks: false, // Disable crawling to prevent memory issues
       failOnError: false,
       ignore: [
         '/projects/-',
