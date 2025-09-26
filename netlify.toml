@@ -5,9 +5,10 @@
 [build.environment]
   NODE_VERSION = "20"
   NPM_FLAGS = "--legacy-peer-deps"
-  NITRO_PRESET = "netlify"
+  NITRO_PRESET = "netlify-static"
   NODE_ENV = "production"
-  NODE_OPTIONS = "--max-old-space-size=4096"
+  NODE_OPTIONS = "--max-old-space-size=8192"
+  NUXT_GENERATE_CONCURRENCY = "5"
 
 [functions]
   directory = "netlify/functions"
