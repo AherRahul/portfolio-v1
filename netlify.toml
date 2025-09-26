@@ -1,6 +1,6 @@
 [build]
   publish = "dist"
-  command = "cd netlify/functions && npm install && npm run build && cd ../.. && npm run generate"
+  command = "cd netlify/functions && npm ci && npm run build && cd ../.. && npm ci && npm run generate"
 
 [build.environment]
   NODE_VERSION = "20"
