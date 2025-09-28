@@ -12,7 +12,7 @@ topics:
 
 ---
 
-![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1744045766/Portfolio/FrontendSystemDesignCourse/2_qlrcpc.png)
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1759048342/Portfolio/FrontendSystemDesignCourse/titleImages/2_wofvp2.png)
 
 ### HTTP (Hypertext Transfer Protocol)
 

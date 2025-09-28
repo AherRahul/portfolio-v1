@@ -12,7 +12,7 @@ topics:
 
 ---
 
-![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1744108696/Portfolio/FrontendSystemDesignCourse/9_fvmoja.png)
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1759048348/Portfolio/FrontendSystemDesignCourse/titleImages/9_u31xep.png)
 
 Let’s talk about a modern way of real-time communication on the web: **Server-Sent Events (SSE)**. It’s supported by most modern browsers. So, let’s understand what this is.
 

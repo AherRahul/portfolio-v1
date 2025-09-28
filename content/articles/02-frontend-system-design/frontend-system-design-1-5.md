@@ -11,7 +11,7 @@ topics:
   - javascript
 ---
 
-![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1744045783/Portfolio/FrontendSystemDesignCourse/5_uc5xlf.png)
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1759048343/Portfolio/FrontendSystemDesignCourse/titleImages/5_s9pppv.png)
 
 It's kind of like a sibling to REST API or GraphQL, enabling communication with the server in a unique way. RPC stands for **Remote Procedure Call**, and the "g" in gRPC stands for **Google**, as it was created by Google.
 

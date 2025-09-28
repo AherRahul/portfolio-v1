@@ -12,7 +12,7 @@ topics:
 
 ---
 
-![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1744045770/Portfolio/FrontendSystemDesignCourse/3_sskfuy.png)
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1759048342/Portfolio/FrontendSystemDesignCourse/titleImages/3_soe4cl.png)
 
 If you are a junior developer, a senior developer, or just a complete newbie, this is going to be a great place to learn about REST API—what they are, why they are used, and how they work. This is going to be a long blog, so it’s for serious readers. If you prefer short TikTok-like videos for instant information, this might not be for you. Let’s get started!
 

@@ -28,7 +28,7 @@ resources:
 
 ---
 
-![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/01/dsa_intro.png)
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png)
 
 Introduction to DSA & Problem Solving – The Foundation of Efficient Programming
 ===============================================================================

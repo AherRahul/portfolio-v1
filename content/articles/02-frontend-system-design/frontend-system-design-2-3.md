@@ -12,7 +12,7 @@ topics:
 
 ---
 
-![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1744108685/Portfolio/FrontendSystemDesignCourse/8_botlhe.png)
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1759048347/Portfolio/FrontendSystemDesignCourse/titleImages/8_rzf6su.png)
 
 Let’s learn about WebSockets. This is another way to communicate from the client to the server, just like short polling and long polling, but it is more commonly used. It supports full-duplex communication. Now you might wonder, what is full-duplex? Full-duplex means data can be transmitted in both directions simultaneously—both parties can send data to each other without any interruption. Here, the parties are the backend and the frontend, or the client and the server.
 

@@ -12,7 +12,7 @@ topics:
 
 ---
 
-![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1744108647/Portfolio/FrontendSystemDesignCourse/6_llcndo.png)
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1759048345/Portfolio/FrontendSystemDesignCourse/titleImages/6_wuthq9.png)
 
 
 Ah, I see! Let’s imagine this scenario: You’re super hungry, but the kitchen is closed. You can’t just go in and make something yourself, so you’ve ordered food, but you’re not sure when it’ll be ready. What do you do? You can’t wait forever, so you keep knocking on the kitchen door at regular intervals, hoping to see if your food is ready yet.

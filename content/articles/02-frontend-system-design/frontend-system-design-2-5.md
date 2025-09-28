@@ -12,7 +12,7 @@ topics:
 
 ---
 
-![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1744108709/Portfolio/FrontendSystemDesignCourse/10_ahspdw.png)
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1759048349/Portfolio/FrontendSystemDesignCourse/titleImages/10_v9xfit.png)
 
 This is another technique used for real-time communication, commonly used in applications without being noticed. We use multiple services, and one such service is **Webhooks**. In this blog, we’ll understand Webhooks using the example of payment processing—how a payment is initiated from the browser and the confirmation received.
 

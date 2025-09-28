@@ -12,7 +12,7 @@ topics:
 
 ---
 
-![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1744045763/Portfolio/FrontendSystemDesignCourse/1_lxnuab.png)
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1759048339/Portfolio/FrontendSystemDesignCourse/titleImages/1_jejqod.png)
 
 ## Understanding the Web: A Journey from Your Browser to the World Wide Web
 

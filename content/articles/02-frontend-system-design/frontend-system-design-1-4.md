@@ -12,7 +12,7 @@ topics:
 
 ---
 
-![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1744045780/Portfolio/FrontendSystemDesignCourse/4_iildzs.png)
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1759048343/Portfolio/FrontendSystemDesignCourse/titleImages/4_jzpcly.png)
 
 Many companies today use **GraphQL**. In this blog, we’ll explore what GraphQL is, its benefits, and why it’s so popular. Be patient—it’s not an Instagram Reel, but for serious learners, it’ll be worth the read.
 

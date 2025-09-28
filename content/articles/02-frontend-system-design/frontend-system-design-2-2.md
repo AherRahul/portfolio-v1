@@ -12,7 +12,7 @@ topics:
 
 ---
 
-![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1744108670/Portfolio/FrontendSystemDesignCourse/7_y3axa8.png)
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1759048345/Portfolio/FrontendSystemDesignCourse/titleImages/7_hdklpt.png)
 
 As the name suggests, **Long Polling** means something is long, delayed, or not happening instantly.
 
