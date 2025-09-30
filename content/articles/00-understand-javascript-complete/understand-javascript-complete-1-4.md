@@ -11,7 +11,7 @@ topics:
 resources:
   - title: "JS course PDF - 4"
     type: "PDF"
-    url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758792130/Portfolio/javaScriptCourse/pdf/JavaScript-day4_Scope_compressed.pdf"
+    url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758791648/Portfolio/javaScriptCourse/pdf/JavaScript-day4_Arguments_keyword_and_scope_chain_hdf0wc.pdf"
     description: "A PDF Notes on Scope and Lexical Environment topic"
   - title: "MDN - Scope"
     type: "documentation"
@@ -31,7 +31,7 @@ resources:
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758809904/Portfolio/javaScriptCourse/images/5/5_pkpbj3.png)
 
 Scope and Lexical Environment – The Neighborhood Rules of JavaScript
-====================================================================
+--------------------------------------------------------------------
 
 Imagine you live in a **gated community** with multiple neighborhoods, each with its own rules about who can access what. Some resources are available to everyone (like the community pool), some are only for your neighborhood (like the neighborhood park), and some are private to your house (like your personal garage).
 
@@ -41,11 +41,9 @@ But here's where it gets interesting: JavaScript doesn't just decide access rand
 
 ## What is Scope?
 
-**Scope** is the accessibility of variables, functions, and objects in your code. It answers the fundamental question: *"Can I access this variable from here?"*
+**Scope** is the accessibility of variables, functions, and objects in your code. It answers the fundamental question: *"Can I access this variable from here?"*. There are three main types of scope in JavaScript:
 
-There are three main types of scope in JavaScript:
-
-### 1. Global Scope – The Public Plaza 🌍
+### 1. Global Scope – The Public Plaza
 
 Variables declared in global scope are like the **town square** – accessible from anywhere in your program.
 
@@ -62,7 +60,7 @@ function neighborhood2() {
 }
 ```
 
-### 2. Function Scope – The Private Neighborhood 🏘️
+### 2. Function Scope – The Private Neighborhood
 
 Variables declared inside a function are like **gated neighborhoods** – only accessible within that function.
 
@@ -78,7 +76,7 @@ privateNeighborhood();
 console.log(neighborhoodSecret); // ReferenceError: neighborhoodSecret is not defined
 ```
 
-### 3. Block Scope – The Individual Houses 🏠
+### 3. Block Scope – The Individual Houses
 
 Variables declared with `let` or `const` inside blocks (anything between `{}`) are like **private houses** – only accessible within that block.
 
@@ -92,13 +90,11 @@ if (true) {
 console.log(houseSecret); // ReferenceError: houseSecret is not defined
 ```
 
-![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758803789/Portfolio/javaScriptCourse/images/04/scope_levels.png)
-
 ## What is Lexical Environment?
 
 While **scope** tells us *what* can be accessed, **lexical environment** is the internal mechanism that *makes it possible*. Think of lexical environment as the **blueprint** that JavaScript creates during the creation phase of execution contexts.
 
-### The Architecture Blueprint 📋
+### The Architecture Blueprint
 
 Every execution context has a lexical environment that contains:
 
@@ -129,13 +125,13 @@ function outerFunction() {
 outerFunction();
 ```
 
-![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758804012/Portfolio/javaScriptCourse/images/04/lexical_environment.png)
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1759248376/Portfolio/javaScriptCourse/images/4/3962d54b-e579-4ebb-84ef-04cd74ef24d0.png)
 
-## The Scope Chain – Following the Breadcrumbs 🍞
+## The Scope Chain – Following the Breadcrumbs
 
 When JavaScript looks for a variable, it follows the **scope chain** – like following breadcrumbs from your current location back to the town square.
 
-### The Search Process 🔍
+### The Search Process
 
 1. **Start Local**: Look in the current lexical environment
 2. **Go Up One Level**: If not found, check the outer (parent) environment
@@ -164,11 +160,13 @@ function level2() {
 level2();
 ```
 
-## Lexical vs Dynamic Scoping 📍
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1759248809/Portfolio/javaScriptCourse/images/4/bcddcad9-f8fb-433d-97a1-fd10b9eff1fa.png)
+
+## Lexical vs Dynamic Scoping
 
 JavaScript uses **lexical scoping** (also called static scoping), which means the scope is determined by **where variables are declared** in the code, not where they are called from.
 
-### The Neighborhood Map is Fixed 🗺️
+### The Neighborhood Map is Fixed
 
 ```javascript
 let message = "Global message";
@@ -194,9 +192,9 @@ somewhere();
 
 **Why "Outer message"?** Because `inner()` was **defined** inside `outer()`, so it has access to `outer()`'s lexical environment, regardless of where it's **called** from.
 
-![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758804234/Portfolio/javaScriptCourse/images/04/lexical_vs_dynamic.png)
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1759249330/Portfolio/javaScriptCourse/images/4/31d67a9e-94d8-477b-8743-303c54c06e2e.png)
 
-## Variable Shadowing – When Names Collide 👥
+## Variable Shadowing – When Names Collide
 
 When variables in different scopes have the same name, the inner scope "shadows" (hides) the outer scope variable.
 
@@ -222,7 +220,7 @@ outer();
 console.log(name); // "Global Alice"
 ```
 
-### The Window Trick (Only in Browsers) 🪟
+### The Window Trick (Only in Browsers)
 
 In browsers, you can access shadowed global variables using the `window` object:
 
@@ -241,7 +239,7 @@ paint();
 
 ## Practical Examples – Scope in the Wild
 
-### Example 1: The Counter Dilemma 🔢
+### Example 1: The Counter Dilemma
 
 ```javascript
 // Problem: This doesn't work as expected
@@ -268,7 +266,7 @@ for (var i = 0; i < 3; i++) {
 }
 ```
 
-### Example 2: The Module Pattern 📦
+### Example 2: The Module Pattern
 
 ```javascript
 const counter = (function() {
@@ -297,7 +295,7 @@ console.log(counter.getCount()); // 2
 console.log(count); // ReferenceError: count is not defined
 ```
 
-### Example 3: Event Handler Gotcha 🎯
+### Example 3: Event Handler Gotcha
 
 ```javascript
 // Problem: All buttons alert the same value
@@ -317,7 +315,7 @@ for (let i = 0; i < buttons.length; i++) {
 }
 ```
 
-## Understanding Closures Through Scope 🔐
+## Understanding Closures Through Scope
 
 A **closure** is when an inner function has access to variables from its outer scope even after the outer function has finished executing.
 
@@ -341,11 +339,11 @@ sayHi('Bob');      // "Hi, Bob!"
 // 'greeting' variables are still accessible through closures!
 ```
 
-![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758804567/Portfolio/javaScriptCourse/images/04/closure_example.png)
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1759251093/Portfolio/javaScriptCourse/images/4/4931ad1f-581f-4bb4-986f-20835ed02be3.png)
 
 ## Best Practices for Scope Management
 
-### 1. Minimize Global Variables 🌍
+### 1. Minimize Global Variables
 ```javascript
 // Avoid this
 var userName = 'Alice';
@@ -360,7 +358,7 @@ const user = {
 };
 ```
 
-### 2. Use `let` and `const` Instead of `var` 📝
+### 2. Use `let` and `const` Instead of `var`
 ```javascript
 // Avoid var (function-scoped)
 for (var i = 0; i < 3; i++) {
@@ -375,7 +373,7 @@ for (let j = 0; j < 3; j++) {
 console.log(j); // ReferenceError
 ```
 
-### 3. Create Modules for Organization 📦
+### 3. Create Modules for Organization
 ```javascript
 // User module
 const UserModule = (function() {
