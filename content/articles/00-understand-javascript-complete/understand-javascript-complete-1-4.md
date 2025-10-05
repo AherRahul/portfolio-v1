@@ -31,7 +31,7 @@ resources:
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758809904/Portfolio/javaScriptCourse/images/5/5_pkpbj3.png)
 
 Scope and Lexical Environment – The Neighborhood Rules of JavaScript
---------------------------------------------------------------------
+-----------------------------------------------------------------------
 
 Imagine you live in a **gated community** with multiple neighborhoods, each with its own rules about who can access what. Some resources are available to everyone (like the community pool), some are only for your neighborhood (like the neighborhood park), and some are private to your house (like your personal garage).
 
