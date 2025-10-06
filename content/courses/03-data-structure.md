@@ -7,6 +7,52 @@ video: false
 topics:
   - data-structures
 content:
+  - module_id: 0
+    module_name: Warm Up
+    module_duration: "1hr 30 mins read"
+    topics_count: 1
+    tutor: 1
+    expanded: false
+    topics:
+      - id: 1
+        topic_name: Problem - Count Digits in a Number
+        sub_topic: Fundamentals
+        publish_date: 2025-09-26
+        description: >
+          Understanding the importance of data structures and algorithms in programming. Learn systematic problem-solving approaches, algorithmic thinking, and how DSA impacts software performance and efficiency.
+        topics:
+          - data-structures
+        duration: "5:00 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: data-structure-0-1
+      - id: 2
+        topic_name: Problem - Reverse Integer with Overflow Check
+        sub_topic: Fundamentals
+        publish_date: 2025-09-26
+        description: >
+          Understanding the importance of data structures and algorithms in programming. Learn systematic problem-solving approaches, algorithmic thinking, and how DSA impacts software performance and efficiency.
+        topics:
+          - data-structures
+        duration: "5:00 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: data-structure-0-2
+      - id: 3
+        topic_name: Problem - Reverse Integer with Overflow Check
+        sub_topic: Fundamentals
+        publish_date: 2025-09-26
+        description: >
+          Understanding the importance of data structures and algorithms in programming. Learn systematic problem-solving approaches, algorithmic thinking, and how DSA impacts software performance and efficiency.
+        topics:
+          - data-structures
+        duration: "5:00 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: data-structure-0-3
   - module_id: 1
     module_name: Fundamentals & Complexity Analysis
     module_duration: "3hr 30 mins read"
