@@ -33,50 +33,68 @@ export default defineEventHandler(async (event) => {
     })
 
     const prompt = `
-You are an expert educational content analyst. Based on the following topic content, create a comprehensive summary with structured notes.
+You are an expert educator creating study notes for students. Based on the following topic content, create comprehensive, student-friendly notes.
 
 Topic: ${topicTitle}
 
 Content:
 ${content}
 
-Create a detailed summary with the following structure. Return ONLY a valid JSON object:
+Create detailed, easy-to-understand notes with the following structure. Return ONLY a valid JSON object:
 
 {
-  "summary": "A comprehensive 2-3 paragraph summary that captures the main essence of the topic and its importance",
+  "summary": "A friendly 2-3 paragraph summary that explains what this topic is about, why it matters, and what students will learn. Use simple, conversational language that any student can understand.",
   "keyPoints": [
-    "First key point explained in detail",
-    "Second key point with practical implications",
-    "Third key point with real-world applications",
-    "Fourth key point covering important concepts",
-    "Fifth key point about best practices"
+    "Detailed explanation of the first important concept with examples (2-3 sentences each)",
+    "Second major idea explained in simple terms with real-world connections",
+    "Third key concept broken down step-by-step in an easy way",
+    "Fourth important point with practical examples students can relate to",
+    "Fifth main idea with clear, simple explanations",
+    "Sixth concept explained like you're teaching a friend",
+    "Seventh point with helpful examples and context"
   ],
   "concepts": [
-    "Core concept 1 with brief explanation",
-    "Core concept 2 with definition",
-    "Core concept 3 with context",
-    "Core concept 4 with examples"
+    "Technical Term 1: Simple definition in plain English with an analogy or example",
+    "Important Concept 2: What it means in everyday language, how it works",
+    "Key Term 3: Easy explanation with practical use case",
+    "Core Idea 4: Break it down simply, relate to something familiar",
+    "Definition 5: Explain like teaching a beginner, include why it's important"
   ],
   "takeaways": [
-    "Practical takeaway for immediate application",
-    "Strategic insight for long-term understanding",
-    "Common pitfall to avoid",
-    "Best practice recommendation"
+    "Quick action students can take right away to apply this knowledge",
+    "Simple tip or trick to remember this topic better",
+    "Common mistake to watch out for, explained simply",
+    "How this topic connects to other things they might know",
+    "One sentence summary of why this topic is useful in real life"
   ],
   "estimatedReadTime": 3
 }
 
-Requirements:
-1. Summary should be engaging and comprehensive (150-200 words)
-2. Key points should be detailed and actionable (5-7 points)
-3. Concepts should cover technical terms and definitions (4-6 items)
-4. Takeaways should be practical and implementable (3-5 items)
-5. Estimate reading time in minutes
-6. Focus on practical understanding and application
-7. Use clear, professional language
-8. Ensure JSON is valid and properly formatted
+CRITICAL REQUIREMENTS:
+1. Summary: Write 150-200 words in simple, friendly language. Avoid jargon. Explain like teaching a classmate.
+2. Key Points: Create 6-8 detailed points (2-3 sentences each). Focus on main concepts with clear examples.
+   - Each point should be detailed and explanatory
+   - Use simple words and short sentences
+   - Include "how" and "why" explanations
+   - Add relatable examples
+3. Concepts: List 5-7 important terms/ideas with student-friendly definitions
+   - Define in simple, everyday language
+   - Avoid technical jargon or explain it clearly
+   - Add analogies, examples, or use cases
+   - Make it relatable to students' experiences
+4. Takeaways: Provide 4-6 practical, actionable insights
+   - Different from key points - these are about application and memory
+   - Include study tips, practical uses, and connections
+   - Keep them short (1-2 sentences) but actionable
+5. Use conversational, encouraging tone throughout
+6. Avoid complex vocabulary - use high school level English
+7. Ensure JSON is valid and properly formatted
 
-Important: Return ONLY the JSON object, no additional text or formatting.
+Important: Key Points should be DIFFERENT from Takeaways:
+- Key Points = detailed content explanations (what to learn)
+- Takeaways = practical applications and study tips (how to use/remember it)
+
+Return ONLY the JSON object, no additional text or formatting.
 `
 
     const message = await anthropic.messages.create({

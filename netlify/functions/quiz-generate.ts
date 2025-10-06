@@ -3,7 +3,7 @@ import Anthropic from '@anthropic-ai/sdk'
 
 interface QuizQuestion {
   id: string
-  type: 'single-choice' | 'multiple-choice' | 'true-false' | 'fill-blank' | 'short-answer'
+  type: 'single-choice' | 'multiple-choice' | 'true-false' | 'fill-blank' // Only supported types
   question: string
   options?: string[]
   correctAnswers: string[] | boolean[]
@@ -71,12 +71,17 @@ Topic: ${topicTitle}
 Content:
 ${content}
 
-Requirements:
+CRITICAL REQUIREMENTS:
 1. Create exactly ${questionCount} questions
-2. Mix different question types: single-choice, multiple-choice, true-false, fill-blank, and short-answer
-3. Difficulty level: ${difficulty}
-4. Include clear explanations for each answer
-5. Ensure questions test understanding, not just memorization
+2. Use ONLY these 4 question types:
+   - "single-choice": One correct answer from multiple options
+   - "multiple-choice": Multiple correct answers from options
+   - "true-false": Boolean statement with ["True", "False"] options
+   - "fill-blank": Fill in missing word/phrase (no options array)
+3. DO NOT use any other question types (NO short-answer, essay, or other types)
+4. Difficulty level: ${difficulty}
+5. Include clear, simple explanations for each answer
+6. Ensure questions test understanding, not just memorization
 
 Return ONLY a valid JSON object with this exact structure:
 {
@@ -88,16 +93,16 @@ Return ONLY a valid JSON object with this exact structure:
       "options": ["Option A", "Option B", "Option C", "Option D"],
       "correctAnswers": ["Option A"],
       "explanation": "Detailed explanation of why this is correct...",
-      "difficulty": "medium"
+      "difficulty": "${difficulty}"
     },
     {
       "id": "q2", 
       "type": "true-false",
       "question": "Statement to evaluate",
       "options": ["True", "False"],
-      "correctAnswers": [true],
+      "correctAnswers": ["True"],
       "explanation": "Explanation...",
-      "difficulty": "medium"
+      "difficulty": "${difficulty}"
     },
     {
       "id": "q3",
@@ -106,7 +111,7 @@ Return ONLY a valid JSON object with this exact structure:
       "options": ["Option A", "Option B", "Option C", "Option D"],
       "correctAnswers": ["Option A", "Option C"],
       "explanation": "Explanation...",
-      "difficulty": "medium"
+      "difficulty": "${difficulty}"
     },
     {
       "id": "q4",
@@ -114,28 +119,21 @@ Return ONLY a valid JSON object with this exact structure:
       "question": "Complete this sentence: The main concept is ______.",
       "correctAnswers": ["expected answer"],
       "explanation": "Explanation...",
-      "difficulty": "medium"
-    },
-    {
-      "id": "q5",
-      "type": "short-answer",
-      "question": "Explain the key concept in 2-3 sentences.",
-      "correctAnswers": ["Sample expected answer focusing on key points"],
-      "explanation": "Explanation...",
-      "difficulty": "medium"
+      "difficulty": "${difficulty}"
     }
   ],
   "totalQuestions": ${questionCount},
-  "estimatedTime": 10
+  "estimatedTime": ${Math.ceil(questionCount * 1.5)}
 }
 
-Important: 
-- For single-choice: correctAnswers array should contain exactly one option
-- For multiple-choice: correctAnswers array can contain multiple options
-- For true-false: correctAnswers should be [true] or [false]
-- For fill-blank and short-answer: correctAnswers should contain expected answers
+Important formatting rules: 
+- For single-choice: correctAnswers array must contain exactly one option from the options array
+- For multiple-choice: correctAnswers array must contain 2+ options from the options array
+- For true-false: options must be ["True", "False"] and correctAnswers must be ["True"] or ["False"]
+- For fill-blank: NO options array, only correctAnswers with expected text answers
 - All questions must be directly related to the provided content
 - Ensure JSON is valid and properly formatted
+- Mix question types evenly across the quiz
 `
 
     console.log('Making API call to Anthropic...')
@@ -182,16 +180,55 @@ Important:
       }
     }
 
-    // Ensure all questions have required fields
-    quizData.questions = quizData.questions.map((q, index) => ({
-      id: q.id || `q${index + 1}`,
-      type: q.type || 'single-choice',
-      question: q.question || 'Question not provided',
-      options: q.options || [],
-      correctAnswers: q.correctAnswers || [],
-      explanation: q.explanation || 'No explanation provided',
-      difficulty: q.difficulty || difficulty
-    }))
+    // Define supported question types - must match frontend UI
+    const SUPPORTED_QUESTION_TYPES = ['single-choice', 'multiple-choice', 'true-false', 'fill-blank']
+    
+    // Filter out unsupported question types and ensure all questions have required fields
+    const originalCount = quizData.questions.length
+    quizData.questions = quizData.questions
+      .filter(q => {
+        // Normalize question type
+        let normalizedType = (q as any).type || 'single-choice'
+        if (normalizedType === 'fill-in-blank') {
+          normalizedType = 'fill-blank'
+        }
+        
+        // Remove questions with unsupported types (like short-answer)
+        if (!SUPPORTED_QUESTION_TYPES.includes(normalizedType)) {
+          console.log(`⚠️ Filtered out unsupported question type: ${(q as any).type}`)
+          return false
+        }
+        
+        // Remove incomplete questions
+        if (!q.question || !q.correctAnswers || !q.explanation) {
+          console.log(`⚠️ Filtered out incomplete question`)
+          return false
+        }
+        
+        return true
+      })
+      .map((q, index) => {
+        // Normalize question type
+        let normalizedType = (q as any).type || 'single-choice'
+        if (normalizedType === 'fill-in-blank') {
+          normalizedType = 'fill-blank'
+        }
+        
+        return {
+          id: q.id || `q${index + 1}`,
+          type: normalizedType,
+          question: q.question || 'Question not provided',
+          options: q.options || [],
+          correctAnswers: q.correctAnswers || [],
+          explanation: q.explanation || 'No explanation provided',
+          difficulty: q.difficulty || difficulty
+        }
+      })
+    
+    const filteredCount = quizData.questions.length
+    if (filteredCount < originalCount) {
+      console.log(`Filtered out ${originalCount - filteredCount} unsupported/incomplete questions, ${filteredCount} remain`)
+    }
 
     // Set metadata
     quizData.totalQuestions = quizData.questions.length
