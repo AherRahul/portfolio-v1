@@ -54,9 +54,9 @@ onMounted(() => {
       </div>
     </AppSection>
     <AppSection class="bg-zinc-900 !pb-0" inner-class="border-b border-zinc-800">
-      <div class="justify-center gap-8 pb-16">
+      <div class="justify-center gap-4 md:gap-6 lg:gap-8 pb-8 md:pb-12 lg:pb-16">
         <div>
-          <div class="prose md:prose-lg lg:prose-xl pt-0.5 project-content">
+          <div class="prose md:prose-lg lg:prose-xl pt-2 md:pt-3 lg:pt-4 project-content">
             <ContentDoc />
           </div>
         </div>

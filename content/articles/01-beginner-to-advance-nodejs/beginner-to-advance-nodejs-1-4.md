@@ -9,133 +9,355 @@ courseName: 01-beginner-to-advance-nodejs
 topics:
   - nodejs
   - javascript
+resources:
+  - title: "Namaste Dev - NodeJS course PDF - 4"
+    type: "PDF"
+    url: "https://res.cloudinary.com/duojkrgue/image/upload/v1759758282/Portfolio/nodeJsCourse/PDF-Notes/Episode-04_compressed_o6ddgj.pdf"
+    description: "A PDF Notes on Module.exports & require"
 ---
 
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1757930702/Portfolio/nodeJsCourse/4.png)
 
-<!-- # 📖 My Personal Notes – module.exports & require -->
+Node.js Modules — `require` & `module.exports` Explained
+-----------------------------------------------------------
 
-Putting everything in one file becomes unmanageable fast. Node’s module system fixes that by giving every file its own private scope. You decide exactly what to expose via `module.exports`, and other files import that public surface using `require`. Below I explain what’s happening before each example so the “why” is clear.
+When you start writing Node.js applications, you’ll quickly realize that putting everything into one file becomes chaotic. Node.js solves this problem beautifully with its **module system**, which lets you split your code into separate files, each with its **own private scope**.
 
-![image.png](https://i.ibb.co/s567zyG/11.jpg)
 
-### Why `require` doesn’t expose everything by default
+### Why Modules?
 
-When you `require('./sum.js')`, Node executes that file, but your current file can only access what `sum.js` explicitly exports. That’s because Node wraps every module in a function (private scope) and passes `module`, `exports`, and `require` to it. You opt‑in to sharing by writing to `module.exports`.
+Modules help you:
 
-Modules protect their code by default. that one module be like: 
+- Keep code **organized and reusable**
+- Avoid **naming conflicts**
+- Define clear **boundaries** between different parts of your application
 
-![image.png](https://i.ibb.co/j4bYskd/Capture.jpg)
+Think of each file as a **mini-universe** where your variables and functions live safely — invisible to other files unless you explicitly choose to share them.
 
-Arey aise kaise nahi btayega, So to know variable and functions of that module, you have to export and import in the file you  want to import.
 
-sum module (we expose one function)
+### The Role of `require` and `module.exports`
 
-```jsx
+When you include a file using `require('./sum.js')`, Node.js runs that file **inside a special function wrapper** that gives it its own scope. That’s why your variables from `sum.js` aren’t directly visible to the file that required it.
+
+To share data, functions, or objects with other files, you use `module.exports`.
+
+```
+// sum.js
 console.log('I am sum module');
 
- function calculateSum(a,b){
-  console.log("Sum is", a+b);
+function calculateSum(a, b) {
+  console.log('Sum is', a + b);
 }
 
-module.exports =calculateSum  // the way you export  ( remember its export+s not export )
+module.exports = calculateSum; // Exporting a single function
 ```
 
-app.js (entry file)
+Node.js will:
+- Locate the file (sum.js).
+- Execute it **once**.
+- Return whatever is assigned to module.exports.
+    
+So you don’t get _everything_ from that file — only what’s explicitly exported.
 
-```jsx
-const calculateSum= require('./sum.js')  // the way you import
-console.log("I am entry files");
 
-calculateSum(4,5)   // 9 is the output
+### Why Not Everything is Exposed by Default?
+Node keeps each file in a **private scope** to prevent conflicts and accidental overwrites. Internally, Node wraps your code like this:
+
+```   
+(function (exports, require, module, __filename, __dirname) {
+  // Your module code lives here  
+});   
 ```
 
-Now app.js be like
+That’s why you can use require, exports, and module inside your file without declaring them — they’re passed automatically by Node.
 
-![image.png](https://i.ibb.co/gtXGg9j/2.jpg)
+### Visual: Module Wrapping in Action
 
-### Exporting multiple things
+Each file → its own “container.”Variables inside one module can’t leak into another. ✅
 
-If you want to expose more than one item, export an object. Then import and use object destructuring on the other side.
+#### Example: Exporting a Single Function
 
-```jsx
-var name ='Mohan'
+**sum.js**
 
-function sayHello(name){
-    console.log(`Hello ${`name`}!`);
-}
+```   
+console.log('I am the sum module');  
 
-module.exports= {               // this is the way you export multiple things
-  sayHello,
-  name,
-}
+function calculateSum(a, b) {    
+  console.log('Sum is', a + b);  
+}  
+
+module.exports = calculateSum; // note: export*s*   
 ```
 
-and this is the way you import in app.js
 
-```jsx
-// destructured : learn Destructuring
-const {sayHello, name} = require('./multipleExport..js')   // this is the way you imported
+**app.js**
+```   
+const calculateSum = require('./sum.js');  
 
-sayHello('Ashutosh')    // Hello Ashutosh
-console.log("Exported name is", name);   // Mohan
-
-// what will you get if you print modile
-console.log(module.export) // {}  emoty object 
+console.log('I am the entry file');  
+calculateSum(4, 5); // Output: Sum is 9   
 ```
 
-### CommonJS vs ES Modules (when to use which)
+- app.js imports the function from sum.js.  
+- Only the exported function is accessible — not any other variable in that file.
+    
 
-Everything above uses CommonJS (CJS), Node’s classic module system: `require` + `module.exports`. Modern JavaScript also has ES Modules (ESM): `import`/`export`. You can enable ESM by adding `"type": "module"` in `package.json`.
+### Visual: How require() Works
 
-```json
-// package.json
-{
-  "type" : "module"
-}
+Think of require() as asking,
+
+> “Hey, what do you want to share?” And the other module responds with only what’s exported.
+
+#### Exporting Multiple Things
+
+You can export multiple values by using an **object**.
+
+**multipleExports.js**
+
+```   
+const name = 'Albert';  
+
+function sayHello(person) {    
+  console.log(`Hello ${person}!`);  
+}  
+
+module.exports = { sayHello, name };   
 ```
 
-and now you can import/export like in frontend projects
+**app.js**
 
-```jsx
-// in sum js
-export function calculateSum(){....}
+```   
+const { sayHello, name } = require('./multipleExports.js');  
 
-// in app js
-import {calculateSum) from './sum.js'  or './sum'
+sayHello('Jhon'); // Hello Jhon  
+
+console.log('Exported name is', name); // Albert   
 ```
 
-Practical advice: libraries and older codebases still use CJS; new apps and tooling increasingly use ESM. Pick one per project to avoid interop headaches, unless you know the mixed setup you need.
+If you log module.exports before assigning anything: You’ll get {} — an empty object.
 
-![image.png](https://i.ibb.co/Ypv7mBL/3.jpg)
-
-NodeJs also comes with built-in modules that you can require and import directly into your code. These modules are pre-installed with NodeJs and provide various functionalities like file handling, HTTP requests, and more. 
-
-### What “module” means in practice
-
-A module is just a file with its own private scope. Nothing leaks unless you export it. This keeps codebases maintainable by controlling boundaries and dependencies explicitly.
-
-### Keys to learn
-
-1. Object destructuring
-2. Modules in JS
-3. Strict mode
-4. Difference between ES6 modules and CJS
-5. In-built Modules
-
-### Question to search
-
-1. Reasons why modules are protected by default ?
-2. Whats the difference between require and import and export vs module.exports
-
-### Key findings
-
-* Modules are protected by default after requiring it will run bu can't be access until you export
-* These are protected to avoid conflicts from other modules
-* Common Js, EJS  / ESModule , ESM,  MJS ES6 Modules are two module patterns to access data within modules
-* In CJS code runs in non strict mode, but in ESM pattern code runs in strict mode
+```  
+console.log(module.exports);   
+```
 
 
-Thank you so much for reading. If you found it valuable, consider subscribing for more such content every week. If you have any questions or suggestions, please email me your comments or feel free to improve it.
+#### Creating a Folder as a Module
 
+You can make a **folder act as a module**.Node will automatically look for an index.js inside that folder.
+
+Example:
+
+```   
+math/   
+  ├── index.js   
+  ├── sum.js   
+  └── multiply.js   
+```
+
+**math/index.js**
+```   
+const sum = require('./sum');  
+const multiply = require('./multiply');  
+
+module.exports = { sum, multiply };   
+```
+
+Now:
+```   
+const math = require('./math');  
+
+math.sum(2, 3); // 5   
+```
+This approach is common in npm packages — where a folder serves as a “module package.”
+
+### Visual: Folder as a Module
+
+Node looks for:
+
+- index.js
+- or "main" field in package.json
+    
+
+#### What Happens Internally When You Require a Module?
+Here’s the behind-the-scenes breakdown:
+
+- Node locates the file.
+- Wraps it in a private function.
+- Passes exports, require, module, etc.
+- Executes the file.
+- Returns whatever’s assigned to module.exports.
+- Caches the result — next require() is instant.
+    
+
+This is why you can log module and see metadata like:
+
+```   
+{    
+  id: '.',    
+  exports: {},    
+  filename: '/path/app.js',    
+  loaded: false,    
+  ...  
+}   
+```
+
+#### How Modules Protect Variables
+Because each module runs inside its own closure:
+
+- Local variables are private.  
+- Only exported items are public.
+    
+
+Example:
+
+```   
+// sum.js  
+let secret = 'abc123';  
+
+function add(a, b) { 
+  return a + b; 
+}  
+
+module.exports = add;  
+
+// app.js  
+const add = require('./sum');  
+
+console.log(secret); // ❌ ReferenceError   
+```
+
+This keeps your code **safe from external modification** — like private properties in OOP.
+
+#### CommonJS vs ES Modules (CJS vs ESM)
+Node originally used **CommonJS** (require, module.exports).Modern JS uses **ES Modules** (import, export).
+
+### CommonJS (CJS)
+
+```   
+// sum.js  
+module.exports = function(a, b) { 
+  return a + b; 
+};  // app.js  
+
+const sum = require('./sum');   
+```
+
+### ES Modules (ESM)
+
+```   
+// package.json  
+{    
+  "type": "module"  
+}     
+
+
+// sum.js  
+export function sum(a, b) { 
+  return a + b; 
+}  
+
+// app.js  
+import { sum } from './sum.js';   
+```
+
+### Key Differences
+
+| Feature | CommonJS (CJS) | ES Modules (ESM) |
+|----------|----------------|------------------|
+| **Syntax** | `require`, `module.exports` | `import`, `export` |
+| **Execution** | Synchronous | Asynchronous |
+| **Mode** | Non-strict by default | Strict mode by default |
+| **File Type** | `.js` | `.mjs` or `"type": "module"` in `package.json` |
+| **Used In** | Node.js (legacy / libraries) | Modern JavaScript & hybrid (Node + Browser) apps |
+
+> **Tip:** Use **CommonJS (CJS)** for older Node.js projects and libraries.  
+> Use **ES Modules (ESM)** for modern, full-stack, or browser-compatible applications.
+
+
+#### Example: console.log(module.exports)
+
+If you log it inside any file before exporting:
+
+```   
+console.log(module.exports);   
+```
+
+You’ll see:
+```   
+{}   
+```
+
+Every module starts with an empty object.As you attach properties, they become part of your exported interface.
+
+#### Modules and OOP Concept
+
+Modules naturally support OOP principles like **encapsulation**.
+
+Example:
+
+```   
+// counter.js  
+let count = 0;  
+function increment() {
+  count++;
+  console.log(count);  
+}  
+
+function reset() {    
+  count = 0;  
+}  
+
+module.exports = { increment, reset };   
+```
+- count is private.  
+- increment and reset are public.
+- The module behaves like a class with private and public members.
+    
+
+### Visual: OOP Encapsulation with Module Pattern
+
+Modules = Classes with hidden properties and exposed methods.
+
+### Node.js Built-in Modules
+
+Node ships with powerful built-in modules that you can use instantly — no installation needed.
+
+```   
+const fs = require('fs');          // File system  
+const path = require('path');      // Path utilities  
+const os = require('os');          // Operating system info  
+const http = require('http');      // HTTP server  
+const events = require('events');  // Event emitter   
+```
+
+Each of these modules is structured the same way — they export functions, classes, or objects that you can directly use.
+
+### Visual: Node Built-in Modules
+
+What Files Can You Require?
+
+#### You can require():
+
+- **.js** → JavaScript files  
+- **.json** → Parsed into an object  
+- **.node** → Compiled C++ add-ons  
+- **Folders** → If they contain index.js or "main" entry  
+
+#### Key Takeaways
+
+- Every file in Node.js is a **module** with a private scope.  
+- You **export** functionality using module.exports.  
+- You **import** it using require().  
+- Node wraps each file in a function to isolate variables.  
+- CommonJS and ES Modules are two systems — don’t mix them carelessly.  
+- Modules promote clean, reusable, and secure code organization.  
+
+#### Questions to Explore
+
+- Why are modules protected by default?  
+- What’s the difference between require vs import, and module.exports vs export?  
+- What happens internally when Node loads a module?  
+- Why does console.log(module.exports) show {} initially?  
+
+> **Final Thought:**Each module is like a self-contained “mini program.”It runs privately, shares selectively, and keeps your app modular and safe.That’s the beauty of Node.js — **organized, maintainable, and scalable** from the ground up.

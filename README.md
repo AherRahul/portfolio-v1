@@ -16,8 +16,8 @@ Here's the link [Rahul Aher](https://rahulaher.netlify.app)
 
 1. You need to install Node.js, as well as enable corepack to install pnpm.
 1. Clone this repo via `git clone`
-1. Run `pnpm i` to install the dependencies
-1. Run `pnpm dev` to start the local Nuxt dev server
+1. Run `npm i` to install the dependencies
+1. Run `npm run dev` to start the local Nuxt dev server
 
 ## Security
 

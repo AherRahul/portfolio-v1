@@ -28,12 +28,12 @@ export function typographyStyles({ theme }: PluginUtils) {
         color: 'var(--tw-prose-body)',
         lineHeight: theme('lineHeight.7'),
         '> *': {
-          marginTop: theme('spacing.10'),
-          marginBottom: theme('spacing.10'),
+          marginTop: theme('spacing.6'),
+          marginBottom: theme('spacing.6'),
         },
         p: {
-          marginTop: theme('spacing.7'),
-          marginBottom: theme('spacing.7'),
+          marginTop: theme('spacing.2'),
+          marginBottom: theme('spacing.4'),
         },
 
         // Headings
@@ -44,14 +44,14 @@ export function typographyStyles({ theme }: PluginUtils) {
         h2: {
           fontSize: theme('fontSize.xl')[0],
           lineHeight: theme('lineHeight.7'),
-          marginTop: theme('spacing.20'),
-          marginBottom: theme('spacing.4'),
+          marginTop: theme('spacing.15'),
+          marginBottom: theme('spacing.3'),
         },
         h3: {
           fontSize: theme('fontSize.base')[0],
           lineHeight: theme('lineHeight.7'),
-          marginTop: theme('spacing.16'),
-          marginBottom: theme('spacing.4'),
+          marginTop: theme('spacing.12'),
+          marginBottom: theme('spacing.3'),
         },
         ':is(h2, h3) + *': {
           marginTop: 0,
@@ -106,10 +106,13 @@ export function typographyStyles({ theme }: PluginUtils) {
 
         // Quotes
         blockquote: {
-          paddingLeft: theme('spacing.6'),
+          paddingLeft: theme('spacing.4'),
           borderLeftWidth: theme('borderWidth.2'),
           borderLeftColor: 'var(--tw-prose-quote-borders)',
           fontStyle: 'italic',
+          '@screen md': {
+            paddingLeft: theme('spacing.6'),
+          },
         },
 
         // Figures
@@ -131,12 +134,11 @@ export function typographyStyles({ theme }: PluginUtils) {
           listStyleType: 'decimal',
         },
         'ul, ol': {
-          paddingLeft: theme('spacing.6'),
+          paddingLeft: theme('spacing.5'),
         },
         li: {
-          marginTop: theme('spacing.2'),
-          marginBottom: theme('spacing.2'),
-          paddingLeft: theme('spacing[3.5]'),
+          marginBottom: theme('spacing.1'),
+          paddingLeft: theme('spacing.2'),
         },
         'li::marker': {
           fontSize: theme('fontSize.sm')[0],
@@ -164,15 +166,21 @@ export function typographyStyles({ theme }: PluginUtils) {
           fontWeight: theme('fontWeight.medium'),
           backgroundColor: 'var(--tw-prose-pre-bg)',
           borderRadius: theme('borderRadius.lg'),
-          paddingLeft: theme('spacing.8'),
-          paddingRight: theme('spacing.8'),
-          paddingTop: theme('spacing.4'),
-          paddingBottom: theme('spacing.4'),
+          paddingLeft: theme('spacing.4'),
+          paddingRight: theme('spacing.4'),
+          paddingTop: theme('spacing.3'),
+          paddingBottom: theme('spacing.3'),
           overflowX: 'auto',
           border: '1px solid',
           display: 'flex',
           flex: '1',
           borderColor: 'var(--tw-prose-pre-border)',
+          '@screen md': {
+            paddingLeft: theme('spacing.6'),
+            paddingRight: theme('spacing.6'),
+            paddingTop: theme('spacing.4'),
+            paddingBottom: theme('spacing.4'),
+          },
         },
         'pre code': {
           display: 'flex',
@@ -188,13 +196,13 @@ export function typographyStyles({ theme }: PluginUtils) {
 
         // Horizontal rules
         hr: {
-          marginTop: theme('spacing.20'),
-          marginBottom: theme('spacing.20'),
+          marginTop: theme('spacing.12'),
+          marginBottom: theme('spacing.12'),
           borderTopWidth: '1px',
           borderColor: 'var(--tw-prose-hr)',
           '@screen lg': {
-            marginLeft: `calc(${theme('spacing.12')} * -1)`,
-            marginRight: `calc(${theme('spacing.12')} * -1)`,
+            marginLeft: `calc(${theme('spacing.8')} * -1)`,
+            marginRight: `calc(${theme('spacing.8')} * -1)`,
           },
         },
 

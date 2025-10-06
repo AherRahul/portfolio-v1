@@ -237,7 +237,7 @@ const resourcesForTabs = computed(() => {
       <!-- Regular article content for standalone articles -->
       <div v-else class="article-content">
         <ArticleAgeWarning v-if="isOlderThanOneYear" />
-        <ContentDoc class="prose md:prose-lg lg:prose-xl" :class="isOlderThanOneYear ? 'pt-8' : 'pt-4'" />
+        <ContentDoc class="prose md:prose-lg lg:prose-xl" :class="isOlderThanOneYear ? 'pt-4 md:pt-6 lg:pt-8' : 'pt-2 md:pt-3 lg:pt-4'" />
       </div>
 
       <div class="mt-16 md:mt-32">

@@ -119,11 +119,11 @@ Think of the global object as the main hub or central control room for your code
 
 Imagine you're a spy with different gadgets for different missions. Your tools for a mission on a boat will be different from those you use in a desert. In the same way, the **JavaScript global object** is the set of tools available to your code, and these tools are determined by the environment it runs in.
 
-The Browser's Control Room: 'window' 🌐:
+The Browser's Control Room: 'window':
 ---------------------------------------------
 - In a web browser, the global object is called window. This object is your direct connection to everything related to the browser. It holds all the web-specific APIs   that let you manipulate the web page, handle events, and interact with the user. Things like document (which represents the entire HTML page), alert() for pop-up messages, and localStorage are all properties of the window object. If you're in a browser and type console.log(window.document), you're essentially asking the control room for the document tool.
     
-Node.js's Control Room: 'global' 💻 :
+Node.js's Control Room: 'global' :
 ---------------------------------------------
 - On the server, with Node.js, there is no web page or a user interface. Therefore, the global object is not window. Instead, it's a different object called global. This object gives you access to APIs for server-side tasks like working with the file system (fs), managing child processes, and handling network requests. If you tried to use window.document in Node.js, you'd get an error because the global object doesn't have a document property. The window and global objects are distinct control rooms for different jobs.
     
@@ -134,9 +134,5 @@ This difference in global objects has historically created confusion, especially
 
 *   **The Problem with this**:The behavior of the this keyword can be inconsistent. In a web browser's global scope, this refers to the window object. However, in a Node.js module, this is often an empty object ({}). This difference means that a single line of code using this can behave unexpectedly depending on the environment.
     
-*   **The Universal Key: globalThis** 🔑 To solve this, a new, universal property called **globalThis** was introduced in modern JavaScript. It is a standardized way to access the global object, regardless of the environment your code is running in. It's like a master key that works on any control room door. globalThis will always point to window in a browser and global in Node.js. By using globalThis, you can write more consistent and portable code that works seamlessly across different platforms.
+*   **The Universal Key: globalThis**  To solve this, a new, universal property called **globalThis** was introduced in modern JavaScript. It is a standardized way to access the global object, regardless of the environment your code is running in. It's like a master key that works on any control room door. globalThis will always point to window in a browser and global in Node.js. By using globalThis, you can write more consistent and portable code that works seamlessly across different platforms.
     
-
-### Your Adventure Continues!
-
-Congratulations, you've completed your first quest! You've successfully installed and run Node.js, learned the difference between the browser and server environments, and understood the role of the global object. In the next session, we'll learn how to organize our code by splitting it into modules and sharing functionality.

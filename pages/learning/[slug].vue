@@ -117,7 +117,7 @@ defineOgImageComponent('Learning', {
     </AppSection>
     <AppSection class="justify-center bg-zinc-900 pb-8">
       <div class="learning-content">
-        <ContentDoc class="prose md:prose-lg lg:prose-xl pt-4" />
+        <ContentDoc class="prose md:prose-lg lg:prose-xl pt-2 md:pt-3 lg:pt-4" />
       </div>
       <div class="mt-16 md:mt-32">
         <div class="flex flex-col md:flex-row justify-between items-center gap-y-2 md:gap-0 mt-2">
