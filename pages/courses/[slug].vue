@@ -384,12 +384,12 @@ defineOgImageComponent('Course', {
     <!-- Additional Information Section -->
     <AppSection class="bg-zinc-900 pb-8 border-t border-gray-700">
       <!-- Content Reader positioned below heading -->
-      <div class="mt-4 md:mt-6 lg:mt-8">
+      <div class="mt-8 ">
         <ClientOnly>
           <LazyContentReader :prepend="course.title" content-selector=".course-content" />
         </ClientOnly>
       </div>
-      <div class="prose md:prose-lg lg:prose-xl text-gray-300 course-content">
+      <div class="container mx-auto prose md:prose-lg lg:prose-xl text-gray-300 course-content">
         <ContentDoc />
       </div>
     </AppSection>

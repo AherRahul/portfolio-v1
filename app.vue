@@ -157,20 +157,9 @@ function useSiteNotifications() {
 /* TODO: Move to ProseCode component? */
 .line {
   display: inline-table;
-  @apply -mx-4 px-4;
+  @apply -mx-8 px-8;
 }
 
-@screen md {
-  .line {
-    @apply -mx-6 px-6;
-  }
-}
-
-@screen lg {
-  .line {
-    @apply -mx-8 px-8;
-  }
-}
 
 .line.highlight {
   @apply bg-white/5;
@@ -180,48 +169,6 @@ p {
     /* text-align: justify; */
 }
 
-/* Enhanced prose spacing for content areas */
-.prose {
-  @apply max-w-none;
-}
 
-/* Responsive prose containers */
-.article-content,
-.project-content,
-.npm-content,
-.learning-content,
-.course-content {
-  @apply w-full;
-}
-
-@screen sm {
-  .article-content,
-  .project-content,
-  .npm-content,
-  .learning-content,
-  .course-content {
-    @apply max-w-full;
-  }
-}
-
-@screen md {
-  .article-content,
-  .project-content,
-  .npm-content,
-  .learning-content,
-  .course-content {
-    @apply max-w-4xl mx-auto;
-  }
-}
-
-@screen lg {
-  .article-content,
-  .project-content,
-  .npm-content,
-  .learning-content,
-  .course-content {
-    @apply max-w-5xl;
-  }
-}
 
 </style>

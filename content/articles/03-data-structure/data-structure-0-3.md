@@ -1,5 +1,5 @@
 ---
-title: "Problem: Reverse Integer with Overflow Check"
+title: "Problem: Count Digits in a Number"
 description: "Understanding the importance of data structures and algorithms in programming. Learn systematic problem-solving approaches, algorithmic thinking, and how DSA impacts software performance and efficiency."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-09-26"
@@ -26,109 +26,91 @@ resources:
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png)
 
-Introduction to DSA & Problem Solving – Reverse Integer with Overflow Check
-------------------------------------------------------------------------------------------
+Introduction to DSA & Problem Solving – Count Digits in a Number
+------------------------------------------------------------------------------
+
+###  Problem Statement
+Write a function `countDigits(n)` that takes an integer `n` and returns how many digits it contains.
+
+###  Requirements
+- Should handle both **positive** and **negative** integers.  
+- Should return **1** if `n` is `0` (since `0` is a single-digit number).
 
 
-### Problem Statement
-Write a function `reverse(x)` that takes a **32-bit signed integer** and returns its digits reversed.  
-If the reversed value **overflows** the 32-bit integer range, return `0`.
-
-### Requirements
-- Reverse the digits of the integer (both **positive** and **negative** values).
-- Return `0` if the reversed number **exceeds** the range of a 32-bit signed integer.
-- The 32-bit signed integer range is **[-2³¹, 2³¹ − 1]** → **[-2147483648, 2147483647]**.
-
-### Constraints
-- **Time Complexity:** `O(d)` where `d` = number of digits.  
-- **Space Complexity:** `O(1)` — only a few extra variables.
-
-### Examples
+###  Examples
 
 | Input | Output | Explanation |
 |--------|---------|-------------|
-| `123` | `321` | Digits reversed normally. |
-| `-123` | `-321` | Sign preserved, digits reversed. |
-| `1534236469` | `0` | Overflow occurs after reversal. |
+| `259` | `3` | There are three digits: 2, 5, 9 |
+| `-1035` | `4` | Sign doesn’t count; digits are 1, 0, 3, 5 |
+| `0` | `1` | Zero is considered a single-digit number |
 
-### Step-by-Step Approach
 
-1. **Preserve the Original Number:**  
-   Store the input value in `xCopy` to remember its original sign.
 
-2. **Work with Absolute Value:**  
-   Use `Math.abs(x)` (or `abs(x)` in other languages) to simplify digit extraction.
+###  Approach
 
-3. **Reverse the Digits:**
-   - Initialize `rev = 0`.  
-   - Loop while `x != 0`:
-     1. Extract the last digit: `last = x % 10`
-     2. Append it to `rev`: `rev = rev * 10 + last`
-     3. Drop the last digit: `x = Math.floor(x / 10)`
+1. **Handle Zero:**  
+   If `n == 0`, return `1` immediately since zero has one digit.
 
-4. **Check for Overflow:**  
-   Before returning, check if `rev` exceeds the 32-bit signed integer limit.  
-   If yes → return `0`.
+2. **Ignore Sign:**  
+   Convert the number to positive using `Math.abs(n)`.
+ 
+3. **Initialize a Counter:**  
+   Start a variable `count = 0`.
 
-5. **Restore the Sign:**  
-   If the original number (`xCopy`) was negative, return `-rev`; otherwise, return `rev`.
+4. **Loop Until the Number Becomes Zero:**  
+   - Divide `n` by 10 (integer division) to remove the last digit.  
+   - Increment the counter each time.
+
+5. **Return the Count** after the loop finishes.
+
+
 
 ### Visualization
 
-Let’s trace **x = 123**
 
-| Step | x | last | rev (after step) |
-|------|----|------|-----------------|
-| Start | 123 | - | 0 |
-| 1 | 12 | 3 | 3 |
-| 2 | 1 | 2 | 32 |
-| 3 | 0 | 1 | 321 |
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1759763477/Portfolio/dsa/images/00/6456018e-4d04-4ec1-aac9-fc62392b4143.png)
 
-Output → **321**
+Let’s trace the input **259**:
 
-Now for **x = -123**  
-We take the absolute value → 123  
-Reverse it → 321  
-Then reapply the sign → **-321**
+| Step | n (current) | Count |
+|------|--------------|-------|
+| Start | 259 | 0 |
+| After 1st division | 25 | 1 |
+| After 2nd division | 2 | 2 |
+| After 3rd division | 0 | 3 |
+
+**Output → 3**
+
+
 
 ### Code Implementations
 
+#### JavaScript
+
 ```js
-var reverse = function(x) {
+function countDigits(n) {
   
-  // Preserve the Original Number
-  let xCopy = x;
-  let rev = 0;
+  // If `n == 0`, return `1` immediately since zero has one digit.
+  if (n === 0) return 1;
   
-  // Work with Absolute Value
-  x = Math.abs(x);
-
-  // Reverse the Digits
-  while (x > 0) {
-    let last = x % 10;
-    rev = rev * 10 + last;
-    x = Math.floor(x / 10);
+  // Convert the number to positive using `Math.abs(n)`.
+  n = Math.abs(n);
+  
+  let count = 0;
+  while (n > 0) {
+    n = Math.floor(n / 10);
+    count++;
   }
+  return count;
+}
 
-  // Overflow check
-  if (rev > 2**31 - 1) return 0;
-
-  // Restore sign
-  return xCopy < 0 ? -rev : rev;
-};
-
-console.log(reverse(123));   // 321
-console.log(reverse(-123));  // -321
-console.log(reverse(1534236469)); // 0 (overflow)
-
+console.log(countDigits(259)); // 3
 ```
 
 ## Key Takeaways
-- Always handle overflow for problems involving integer reversal or arithmetic.
-- Use absolute value to simplify digit extraction.
-- Preserve the original sign and reapply it after reversal.
-- The 32-bit integer limit is:
-  - Minimum: -2³¹ = -2147483648
-  - Maximum: 2³¹ − 1 = 2147483647
-- Time Complexity: O(d) where d = number of digits.
-- Space Complexity: O(1)
+- Always handle zero as a special case.
+- Use absolute value to ignore sign.
+- Counting digits can be done mathematically (divide by 10) or using string length (str(n) in Python, toString() in JS).
+- Time Complexity → O(log₁₀(n))
+- Space Complexity → O(1)

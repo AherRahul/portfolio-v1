@@ -15,7 +15,7 @@ content:
     expanded: false
     topics:
       - id: 1
-        topic_name: Problem - Count Digits in a Number
+        topic_name: Problem - Functions, if-else
         sub_topic: Fundamentals
         publish_date: 2025-09-26
         description: >
@@ -28,7 +28,7 @@ content:
         is_on_youtube: false
         _path: data-structure-0-1
       - id: 2
-        topic_name: Problem - Reverse Integer with Overflow Check
+        topic_name: Problem - Loops - 1
         sub_topic: Fundamentals
         publish_date: 2025-09-26
         description: >
@@ -41,7 +41,7 @@ content:
         is_on_youtube: false
         _path: data-structure-0-2
       - id: 3
-        topic_name: Problem - Reverse Integer with Overflow Check
+        topic_name: Problem - Loops - 2
         sub_topic: Fundamentals
         publish_date: 2025-09-26
         description: >
@@ -53,6 +53,71 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: data-structure-0-3
+      - id: 4
+        topic_name: Problem - Second Largest
+        sub_topic: Fundamentals
+        publish_date: 2025-09-26
+        description: >
+          Understanding the importance of data structures and algorithms in programming. Learn systematic problem-solving approaches, algorithmic thinking, and how DSA impacts software performance and efficiency.
+        topics:
+          - data-structures
+        duration: "5:00 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: data-structure-0-4
+      - id: 5
+        topic_name: Problem - Star Pattern
+        sub_topic: Fundamentals
+        publish_date: 2025-09-26
+        description: >
+          Understanding the importance of data structures and algorithms in programming. Learn systematic problem-solving approaches, algorithmic thinking, and how DSA impacts software performance and efficiency.
+        topics:
+          - data-structures
+        duration: "5:00 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: data-structure-0-5
+      - id: 6
+        topic_name: Problem - Count Digit
+        sub_topic: Fundamentals
+        publish_date: 2025-09-26
+        description: >
+          Understanding the importance of data structures and algorithms in programming. Learn systematic problem-solving approaches, algorithmic thinking, and how DSA impacts software performance and efficiency.
+        topics:
+          - data-structures
+        duration: "5:00 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: data-structure-0-6
+      - id: 7
+        topic_name: Problem - Palindrome
+        sub_topic: Fundamentals
+        publish_date: 2025-09-26
+        description: >
+          Understanding the importance of data structures and algorithms in programming. Learn systematic problem-solving approaches, algorithmic thinking, and how DSA impacts software performance and efficiency.
+        topics:
+          - data-structures
+        duration: "5:00 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: data-structure-0-7
+      - id: 8
+        topic_name: Problem - Reverse Integer with Overflow Check
+        sub_topic: Fundamentals
+        publish_date: 2025-09-26
+        description: >
+          Understanding the importance of data structures and algorithms in programming. Learn systematic problem-solving approaches, algorithmic thinking, and how DSA impacts software performance and efficiency.
+        topics:
+          - data-structures
+        duration: "5:00 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: data-structure-0-8
   - module_id: 1
     module_name: Fundamentals & Complexity Analysis
     module_duration: "3hr 30 mins read"
