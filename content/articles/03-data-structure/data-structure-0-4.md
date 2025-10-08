@@ -1,5 +1,5 @@
 ---
-title: "Problem: Count Digits in a Number"
+title: "Problem: Second Largest Number in an Array"
 description: "Understanding the importance of data structures and algorithms in programming. Learn systematic problem-solving approaches, algorithmic thinking, and how DSA impacts software performance and efficiency."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-09-26"
@@ -23,94 +23,106 @@ resources:
     description: "Platform for practicing algorithmic problem solving"
 ---
 
-
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png)
 
-Introduction to DSA & Problem Solving – Count Digits in a Number
+Problem: Find the Second Largest Distinct Number in an Array
 ------------------------------------------------------------------------------
 
-###  Problem Statement
-Write a function `countDigits(n)` that takes an integer `n` and returns how many digits it contains.
+### Problem Statement
+Write a function `secondLargest(arr)` that returns the **second largest distinct number** in a given array of numbers.
 
-###  Requirements
-- Should handle both **positive** and **negative** integers.  
-- Should return **1** if `n` is `0` (since `0` is a single-digit number).
+### Requirements
 
+1. The array must contain **at least two elements**.  
+2. If **all elements are equal**, return:  
+   `"No second largest found"`  
+3. If the array has **fewer than two elements**, return:  
+   `"Array should have at least two numbers"`
 
-###  Examples
+### Examples
 
 | Input | Output | Explanation |
 |--------|---------|-------------|
-| `259` | `3` | There are three digits: 2, 5, 9 |
-| `-1035` | `4` | Sign doesn’t count; digits are 1, 0, 3, 5 |
-| `0` | `1` | Zero is considered a single-digit number |
+| `[0, 3, 5, 2, 7, 9]` | `7` | 9 is the largest, 7 is the second largest |
+| `[4, 4, 4, 4]` | `No second largest found` | All elements are equal |
+| `[5]` | `Array should have at least two numbers` | Only one element present |
+| `[10, 20]` | `10` | 20 is largest, 10 is second largest |
 
+### Constraints
 
+- **Time Complexity:** `O(n)` — Single pass through the array.  
+- **Space Complexity:** `O(1)` — Constant extra space.
 
-###  Approach
+### Approach (Step-by-Step Explanation)
 
-1. **Handle Zero:**  
-   If `n == 0`, return `1` immediately since zero has one digit.
+1. **Check Array Length:**  
+   If the array has fewer than 2 elements, return `"Array should have at least two numbers"`.
 
-2. **Ignore Sign:**  
-   Convert the number to positive using `Math.abs(n)`.
- 
-3. **Initialize a Counter:**  
-   Start a variable `count = 0`.
+2. **Initialize Variables:**  
+   - `first` → stores the largest number (initially `-Infinity`).  
+   - `second` → stores the second largest number (initially `-Infinity`).
 
-4. **Loop Until the Number Becomes Zero:**  
-   - Divide `n` by 10 (integer division) to remove the last digit.  
-   - Increment the counter each time.
+3. **Iterate through the array:**  
+   For each number `num` in the array:
+   - If `num > first`, update both `first` and `second`:
+     ```
+     second = first;
+     first = num;
+     ```
+   - Else if `num` is not equal to `first` **and** greater than `second`, update `second`:
+     ```
+     second = num;
+     ```
 
-5. **Return the Count** after the loop finishes.
+4. **Return Result:**  
+   - If `second` remains `-Infinity`, it means no distinct second largest number was found.  
+     Return `"No second largest found"`.  
+   - Otherwise, return the `second` number.
 
+### Visualization Example
 
+For `arr = [0, 3, 5, 2, 7, 9]`
 
-### Visualization
+| Step | num | first | second |
+|------|-----|--------|---------|
+| 1 | 0 | 0 | -∞ |
+| 2 | 3 | 3 | 0 |
+| 3 | 5 | 5 | 3 |
+| 4 | 2 | 5 | 3 |
+| 5 | 7 | 7 | 5 |
+| 6 | 9 | 9 | 7 |
 
+✅ Final Answer → `7`
 
-![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1759763477/Portfolio/dsa/images/00/6456018e-4d04-4ec1-aac9-fc62392b4143.png)
+### JavaScript Implementation
 
-Let’s trace the input **259**:
-
-| Step | n (current) | Count |
-|------|--------------|-------|
-| Start | 259 | 0 |
-| After 1st division | 25 | 1 |
-| After 2nd division | 2 | 2 |
-| After 3rd division | 0 | 3 |
-
-**Output → 3**
-
-
-
-### Code Implementations
-
-#### JavaScript
-
-```js
-function countDigits(n) {
+```javascript
+function secondLargest(arr) {
+  if (arr.length < 2) return "Array should have at least two numbers";
   
-  // If `n == 0`, return `1` immediately since zero has one digit.
-  if (n === 0) return 1;
+  let first = -Infinity, second = -Infinity;
   
-  // Convert the number to positive using `Math.abs(n)`.
-  n = Math.abs(n);
-  
-  let count = 0;
-  while (n > 0) {
-    n = Math.floor(n / 10);
-    count++;
+  for (let num of arr) {
+    if (num > first) {
+      second = first;
+      first = num;
+    } else if (num > second && num !== first) {
+      second = num;
+    }
   }
-  return count;
+  
+  return second === -Infinity ? "No second largest found" : second;
 }
 
-console.log(countDigits(259)); // 3
+// Example usage
+console.log(secondLargest([0, 3, 5, 2, 7, 9])); // Output: 7
+console.log(secondLargest([4, 4, 4, 4]));       // Output: No second largest found
+console.log(secondLargest([5]));                // Output: Array should have at least two numbers
+console.log(secondLargest([10, 20]));           // Output: 10
+
 ```
 
-## Key Takeaways
-- Always handle zero as a special case.
-- Use absolute value to ignore sign.
-- Counting digits can be done mathematically (divide by 10) or using string length (str(n) in Python, toString() in JS).
-- Time Complexity → O(log₁₀(n))
-- Space Complexity → O(1)
+### Key Takeaways
+- This approach avoids sorting (which is O(n log n)).
+- Works efficiently in a single traversal (O(n)).
+- Handles duplicates gracefully.

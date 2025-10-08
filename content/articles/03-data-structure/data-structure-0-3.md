@@ -1,5 +1,5 @@
 ---
-title: "Problem: Count Digits in a Number"
+title: "Lopps Problems – Negative Count, Smallest, and Largest Number"
 description: "Understanding the importance of data structures and algorithms in programming. Learn systematic problem-solving approaches, algorithmic thinking, and how DSA impacts software performance and efficiency."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-09-26"
@@ -26,91 +26,132 @@ resources:
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png)
 
-Introduction to DSA & Problem Solving – Count Digits in a Number
-------------------------------------------------------------------------------
+Lopps Problems – Negative Count, Smallest, and Largest Number
+-----------------------------------------------------------------
 
-###  Problem Statement
-Write a function `countDigits(n)` that takes an integer `n` and returns how many digits it contains.
+### Problem 1: Count Negative Numbers
+Write a function that returns the number of negative numbers in an array.
 
-###  Requirements
-- Should handle both **positive** and **negative** integers.  
-- Should return **1** if `n` is `0` (since `0` is a single-digit number).
+### Approach
+1. Initialize a counter to `0`.
+2. Loop through the array.
+3. If the element is less than `0`, increment the counter.
+4. Return the final count after the loop ends.
 
+### Example
+**Input:** `arr = [2, -6, 4, 8, 1, -9]`  
+**Output:** `2`
 
-###  Examples
-
-| Input | Output | Explanation |
-|--------|---------|-------------|
-| `259` | `3` | There are three digits: 2, 5, 9 |
-| `-1035` | `4` | Sign doesn’t count; digits are 1, 0, 3, 5 |
-| `0` | `1` | Zero is considered a single-digit number |
-
-
-
-###  Approach
-
-1. **Handle Zero:**  
-   If `n == 0`, return `1` immediately since zero has one digit.
-
-2. **Ignore Sign:**  
-   Convert the number to positive using `Math.abs(n)`.
- 
-3. **Initialize a Counter:**  
-   Start a variable `count = 0`.
-
-4. **Loop Until the Number Becomes Zero:**  
-   - Divide `n` by 10 (integer division) to remove the last digit.  
-   - Increment the counter each time.
-
-5. **Return the Count** after the loop finishes.
-
-
+### Time & Space Complexity
+- **Time Complexity:** O(n) — where *n* is the number of elements in the array.  
+- **Space Complexity:** O(1) — Only a counter variable is used.
 
 ### Visualization
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1759924407/Portfolio/dsa/images/00/8e32a025-205a-4ba0-ba7e-d71aa22aaba0.png)
 
 
-![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1759763477/Portfolio/dsa/images/00/6456018e-4d04-4ec1-aac9-fc62392b4143.png)
-
-Let’s trace the input **259**:
-
-| Step | n (current) | Count |
-|------|--------------|-------|
-| Start | 259 | 0 |
-| After 1st division | 25 | 1 |
-| After 2nd division | 2 | 2 |
-| After 3rd division | 0 | 3 |
-
-**Output → 3**
-
-
-
-### Code Implementations
-
-#### JavaScript
-
-```js
-function countDigits(n) {
-  
-  // If `n == 0`, return `1` immediately since zero has one digit.
-  if (n === 0) return 1;
-  
-  // Convert the number to positive using `Math.abs(n)`.
-  n = Math.abs(n);
-  
+### Code (JavaScript)
+```javascript
+function countNegativeNumbers(arr) {
   let count = 0;
-  while (n > 0) {
-    n = Math.floor(n / 10);
-    count++;
+  
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] < 0) {
+      count++;
+    }
   }
+  
   return count;
 }
 
-console.log(countDigits(259)); // 3
+let arr = [2, -6, 4, 8, 1, -9];
+let result = countNegativeNumbers(arr);
+console.log("Result:", result); // Output: 2
 ```
 
-## Key Takeaways
-- Always handle zero as a special case.
-- Use absolute value to ignore sign.
-- Counting digits can be done mathematically (divide by 10) or using string length (str(n) in Python, toString() in JS).
-- Time Complexity → O(log₁₀(n))
-- Space Complexity → O(1)
+---
+
+### Problem 2: Find Smallest Number
+Write a function that returns the smallest number in an array.
+
+### Approach
+1. Initialize a variable `smallest` to `Infinity`.
+2. Loop through the array.
+3. If the current element is less than `smallest`, update `smallest`.
+4. Return `smallest` after the loop ends.
+
+### Example
+**Input:** `arr = [2, -6, 4, 8, 1, -9]`  
+**Output:** `-9`
+
+### Time & Space Complexity
+- **Time Complexity:** O(n) — where *n* is the number of elements in the array.  
+- **Space Complexity:** O(1) — Only a single variable is used.
+
+### Visualization
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1759924462/Portfolio/dsa/images/00/b9eb4fb6-7257-4bb4-b783-c86c655555bd.png)
+
+
+### Code (JavaScript)
+```javascript
+function findSmallest(arr) {
+  let smallest = Infinity;
+  
+  for (let i = 0; i < arr.length; i++) {
+    
+    if (arr[i] < smallest) {
+      smallest = arr[i];
+    }
+  }
+  
+  return smallest;
+}
+
+let arr = [2, -6, 4, 8, 1, -9];
+let result = findSmallest(arr);
+console.log("Result:", result); // Output: -9
+```
+
+---
+
+### Problem 3: Find Largest Number
+Write a function that returns the largest number in an array.
+
+### Approach
+1. Initialize a variable `largest` to `-Infinity`.
+2. Loop through the array.
+3. If the current element is greater than `largest`, update `largest`.
+4. Return `largest` after the loop ends.
+
+### Example
+**Input:** `arr = [2, -6, 4, 8, 1, -9]`  
+**Output:** `8`
+
+### Time & Space Complexity
+- **Time Complexity:** O(n) — where *n* is the number of elements in the array.  
+- **Space Complexity:** O(1) — Only a counter variable is used.
+
+### Visualization
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1759924497/Portfolio/dsa/images/00/e7bbd40b-14d8-4437-849b-be4b02a1e235.png)
+
+
+### Code (JavaScript)
+```javascript
+function findLargest(arr) {
+  let largest = -Infinity;
+  
+  for (let i = 0; i < arr.length; i++) {
+    
+    if (arr[i] > largest) {
+      largest = arr[i];
+    }
+  }
+  
+  return largest;
+}
+
+let arr = [2, -6, 4, 8, 1, -9];
+let result = findLargest(arr);
+console.log("Result:", result); // Output: 8
+```
+
