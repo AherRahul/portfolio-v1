@@ -1,5 +1,5 @@
 ---
-title: "Problem: Print All Even Numbers from an Array"
+title: "Problem - Loops - 1"
 description: "Understanding the importance of data structures and algorithms in programming. Learn systematic problem-solving approaches, algorithmic thinking, and how DSA impacts software performance and efficiency."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-09-26"
@@ -26,9 +26,10 @@ resources:
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png)
 
-Problem: 1. Print All Even Numbers from an Array
+Problem - Loops - 1
 ---------------------------------------------------
 
+### Problem: 1. Print All Even Numbers from an Array
 
 ### Problem Statement
 Write a program to print all even numbers from an array.

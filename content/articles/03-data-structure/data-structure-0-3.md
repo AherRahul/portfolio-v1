@@ -1,5 +1,5 @@
 ---
-title: "Lopps Problems – Negative Count, Smallest, and Largest Number"
+title: "Problem - Loops - 2"
 description: "Understanding the importance of data structures and algorithms in programming. Learn systematic problem-solving approaches, algorithmic thinking, and how DSA impacts software performance and efficiency."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-09-26"
@@ -26,8 +26,10 @@ resources:
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png)
 
-Lopps Problems – Negative Count, Smallest, and Largest Number
------------------------------------------------------------------
+Problem - Loops - 2
+----------------------
+
+### Loops Problems – Negative Count, Smallest, and Largest Number
 
 ### Problem 1: Count Negative Numbers
 Write a function that returns the number of negative numbers in an array.

@@ -14,8 +14,21 @@ content:
     tutor: 1
     expanded: false
     topics:
+      - id: 0
+        topic_name: Introduction to DSA & Problem Solving
+        sub_topic: Fundamentals
+        publish_date: 2025-09-26
+        description: >
+          Understanding the importance of data structures and algorithms in programming. Learn systematic problem-solving approaches, algorithmic thinking, and how DSA impacts software performance and efficiency.
+        topics:
+          - data-structures
+        duration: "45:00 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: data-structure-1-1
       - id: 1
-        topic_name: Problem - Functions, if-else
+        topic_name: Problem - Sum of Two Integers
         sub_topic: Fundamentals
         publish_date: 2025-09-26
         description: >
@@ -54,7 +67,7 @@ content:
         is_on_youtube: false
         _path: data-structure-0-3
       - id: 4
-        topic_name: Problem - Second Largest
+        topic_name: Problem - Second Largest Number in an Array
         sub_topic: Fundamentals
         publish_date: 2025-09-26
         description: >
@@ -80,7 +93,7 @@ content:
         is_on_youtube: false
         _path: data-structure-0-5
       - id: 6
-        topic_name: Problem - Count Digit
+        topic_name: Problem - Count Digits in a Number
         sub_topic: Fundamentals
         publish_date: 2025-09-26
         description: >
@@ -93,7 +106,7 @@ content:
         is_on_youtube: false
         _path: data-structure-0-6
       - id: 7
-        topic_name: Problem - Palindrome
+        topic_name: Problem - Palindrome Number
         sub_topic: Fundamentals
         publish_date: 2025-09-26
         description: >
@@ -125,19 +138,6 @@ content:
     tutor: 1
     expanded: false
     topics:
-      - id: 1
-        topic_name: Introduction to DSA & Problem Solving
-        sub_topic: Fundamentals
-        publish_date: 2025-09-26
-        description: >
-          Understanding the importance of data structures and algorithms in programming. Learn systematic problem-solving approaches, algorithmic thinking, and how DSA impacts software performance and efficiency.
-        topics:
-          - data-structures
-        duration: "45:00 mins read"
-        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
-        auther_name: Rahul Aher
-        is_on_youtube: false
-        _path: data-structure-1-1
       - id: 2
         topic_name: Big O Notation & Complexity Analysis
         sub_topic: Complexity

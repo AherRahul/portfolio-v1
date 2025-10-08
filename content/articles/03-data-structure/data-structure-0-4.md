@@ -1,5 +1,5 @@
 ---
-title: "Problem: Second Largest Number in an Array"
+title: "Problem - Second Largest Number in an Array"
 description: "Understanding the importance of data structures and algorithms in programming. Learn systematic problem-solving approaches, algorithmic thinking, and how DSA impacts software performance and efficiency."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-09-26"
@@ -25,7 +25,7 @@ resources:
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png)
 
-Problem: Find the Second Largest Distinct Number in an Array
+Problem - Find the Second Largest Distinct Number in an Array
 ------------------------------------------------------------------------------
 
 ### Problem Statement
