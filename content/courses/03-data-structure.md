@@ -2,14 +2,14 @@
 title: "Data Structures & Algorithms Mastery"
 description: "Master Data Structures and Algorithms from fundamentals to advanced concepts. Learn to think algorithmically, analyze complexity, and solve complex problems efficiently using JavaScript. Build a strong foundation for technical interviews and competitive programming."
 tutor: 1
-time: "28hr 45 mins"
+time: "8hr 45 mins"
 video: false
 topics:
   - data-structures
 content:
   - module_id: 0
     module_name: Warm Up
-    module_duration: "1hr 30 mins read"
+    module_duration: "45 mins read"
     topics_count: 1
     tutor: 1
     expanded: false
@@ -166,7 +166,7 @@ content:
         _path: data-structure-1-1
   - module_id: 2
     module_name: Arrays - Easy/Medium
-    module_duration: "1hr 15 mins read"
+    module_duration: "35 mins read"
     topics_count: 9
     tutor: 1
     expanded: false

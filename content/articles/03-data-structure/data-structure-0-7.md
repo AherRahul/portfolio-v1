@@ -26,7 +26,8 @@ resources:
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png)
 
-Introduction to DSA & Problem Solving – Problem: Palindrome Number
+Problem: Palindrome Number
+-----------------------------------------------------------------
 
 ### Problem Statement
 Write a function **`isPalindrome(x)`** that takes an integer `x` and returns `true` if it reads the same backward and forward; otherwise, returns `false`.

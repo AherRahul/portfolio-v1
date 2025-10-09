@@ -26,7 +26,7 @@ resources:
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png)
 
-Introduction to DSA & Problem Solving – Count Digits in a Number
+Problem – Count Digits in a Number
 ------------------------------------------------------------------------------
 
 ###  Problem Statement
