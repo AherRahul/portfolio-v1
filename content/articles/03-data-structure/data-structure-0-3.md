@@ -29,8 +29,6 @@ resources:
 Problem - Loops - 2
 ----------------------
 
-### Loops Problems – Negative Count, Smallest, and Largest Number
-
 ### Problem 1: Count Negative Numbers
 Write a function that returns the number of negative numbers in an array.
 

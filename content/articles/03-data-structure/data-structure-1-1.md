@@ -24,14 +24,14 @@ resources:
 
 ---
 
-![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758827456/Portfolio/dsa/images/02/big_o_notation.png)
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png)
 
 Big O Notation & Complexity Analysis – The Language of Algorithmic Efficiency
 ----------------------------------------------------------------------------------
 
-Imagine you're a **performance consultant hired by the world's busiest airport** ✈️ to analyze different passenger processing systems:
+Imagine you're a **performance consultant hired by the world's busiest airport** to analyze different passenger processing systems:
 
-**🏃‍♂️ Scenario 1: Manual Check-in (Linear Processing)**
+**Scenario 1: Manual Check-in (Linear Processing)**
 - **Small Airport (100 passengers)**: Each passenger takes 2 minutes → 200 minutes total
 - **Medium Airport (1,000 passengers)**: Still 2 minutes each → 2,000 minutes total  
 - **Large Airport (10,000 passengers)**: Still 2 minutes each → 20,000 minutes total
@@ -39,7 +39,7 @@ Imagine you're a **performance consultant hired by the world's busiest airport**
 
 **Pattern**: Processing time grows **directly proportional** to passenger count. Double the passengers = double the time.
 
-**🤖 Scenario 2: Automated Kiosks (Logarithmic Processing)**
+**Scenario 2: Automated Kiosks (Logarithmic Processing)**
 - **Small Airport (100 passengers)**: Smart routing through 7 kiosk stations → 14 minutes
 - **Medium Airport (1,000 passengers)**: Smart routing through 10 kiosk stations → 20 minutes
 - **Large Airport (10,000 passengers)**: Smart routing through 13 kiosk stations → 26 minutes
@@ -47,13 +47,13 @@ Imagine you're a **performance consultant hired by the world's busiest airport**
 
 **Pattern**: Processing time grows **very slowly** even with massive passenger increases. 1000x more passengers = only 2.5x more time!
 
-**⚡ Scenario 3: Biometric Express Lanes (Constant Processing)**
+**Scenario 3: Biometric Express Lanes (Constant Processing)**
 - **Any Airport Size**: Instant facial recognition → 1 second per passenger, parallel processing
 - **Processing Time**: Always 1 second regardless of total passengers (parallel system)
 
 **Pattern**: Processing time **stays constant** no matter how many passengers arrive.
 
-**💥 Scenario 4: Security Interviews (Quadratic Processing)**
+**Scenario 4: Security Interviews (Quadratic Processing)**
 - **Small Airport (100 passengers)**: Interview every pair for suspicious connections → 10,000 checks
 - **Medium Airport (1,000 passengers)**: Same process → 1,000,000 checks  
 - **Large Airport (10,000 passengers)**: Same process → 100,000,000 checks
@@ -69,7 +69,7 @@ Imagine you're a **performance consultant hired by the world's busiest airport**
 
 Understanding Big O helps you choose the right algorithm before your application crashes under real-world load!
 
-## The Theoretical Foundation: What is Complexity Analysis? 📊
+## The Theoretical Foundation: What is Complexity Analysis?
 
 ### Understanding Algorithmic Complexity
 
@@ -115,66 +115,67 @@ Understanding Big O helps you choose the right algorithm before your application
 - **Quick Sort**: O(n²), Θ(n log n), Ω(n log n) - usually good, occasionally bad
 
 ## What is Time Complexity?
-Time complexity measures how **efficient** an algorithm is as the **input size (n)** increases.  
-It tells us **how the runtime grows** with respect to input size — not the actual time a program takes.
 
-> **Time Complexity ≠ Execution Time**
+Time complexity measures how efficient an algorithm is as the input size increases. It's not the same as the actual time taken to run a program.
 
+`Time Complexity != Execution Time`
 
 ## Linear vs Binary Search
 
 ### Linear Search
-- **Best Case:** Element at 1st index → `1` operation  
-- **Average Case:** Element at n/2 index → `n/2` operations  
-- **Worst Case:** Element not found → `n` operations  
-- **Time Complexity:** `O(n)`  
-- **Requirement:** Can work on **unsorted arrays**
 
+*   **Best Case:** Element at 1st index → 1 operation
+*   **Average Case:** Element at n/2 index → n/2 operations
+*   **Worst Case:** Element not found → n operations
+*   **Time Complexity:** O(n)
+*   **Requirement:** Can work on unsorted arrays
+
+![Linear Search Graph](https://namastedev.com/blog/wp-content/uploads/2025/06/Screenshot-2025-06-17-at-3.50.59%E2%80%AFPM.png)
 
 ### Binary Search
-- **Best Case:** Middle element matched → `1` operation  
-- **Average Case:** `log₂(n)` operations  
-- **Worst Case:** `log₂(n)` operations  
-- **Time Complexity:** `O(log n)`  
-- **Requirement:** Works **only on sorted arrays**
 
+*   **Best Case:** Middle element matched → 1 operation
+*   **Average Case:** log₂(n) operations
+*   **Worst Case:** log₂(n) operations
+*   **Time Complexity:** O(log n)
+*   **Requirement:** Only works on sorted arrays
 
-### Comparison Example
-If we use **Linear Search** for an input size of `100`, it may take up to **100 steps**,  
-whereas **Binary Search** only takes about **7 steps** (`log₂(100) ≈ 7`).
+![Binary Search Graph](https://namastedev.com/blog/wp-content/uploads/2025/06/Screenshot-2025-06-17-at-3.51.05%E2%80%AFPM.png)
 
-As the input size increases, **Binary Search** remains much more efficient.
-
+When we use `Linear Search` for an input size of 100, it runs 100 times, whereas `Binary Search` takes only 7 steps. This shows that Binary Search is more efficient. As the input size (n) increases, the way an algorithm behaves helps us understand how efficient it is. Also, the graph helps us understand that Binary Search is more efficient.
 
 ## Big O Notation
 
-**Big O** is a mathematical notation used to describe the **worst-case complexity** of an algorithm.
-
-It helps us express performance **independent of hardware or programming language**.
-
+It is nothing; just a symbol used to represent the worst-case complexity.
 
 ## Code Examples of Time Complexity
 
-### O(1) — Constant Time
-```js
+`O(1)`
+
+```javascript
+
 // Accessing 5th index element
 int value = arr[5];
+    
 ```
-Accessing any index directly takes constant time — **no loops or recursion**.
 
+The time complexity is O(1) because we directly access the 5th index without any iteration.
 
-### O(n) — Linear Time
-```js
+`O(n)`
+
+```javascript
+
 for(int i = 0; i < n; i++) {
     // do something
 }
+    
 ```
-The loop runs `n` times → Time increases **linearly** with input size.
 
+`O(log n)`
 
-### O(log n) — Logarithmic Time
-```js
-// Example: Binary Search
+```javascript
+
+// e.g., Binary Search
 int binarySearch(int arr[], int n, int key) {
     int low = 0, high = n - 1;
     while(low <= high) {
@@ -185,23 +186,25 @@ int binarySearch(int arr[], int n, int key) {
     }
     return -1;
 }
+    
 ```
-Each iteration halves the input size — **logarithmic growth**.
 
+`O(n^2)` – Nested Loop
 
-### O(n²) — Quadratic Time
-```js
+```javascript
+
 for(int i = 0; i < n; i++) {
     for(int j = 0; j < n; j++) {
         // do something
     }
 }
+    
 ```
-Two nested loops → Time grows **quadratically**.
 
+`O(n log n)`
 
-### O(n log n) — Linearithmic Time
-```js
+```javascript
+
 for(int i = 0; i < n; i++) {
     int temp = n;
     while(temp > 1) {
@@ -209,12 +212,13 @@ for(int i = 0; i < n; i++) {
         // do something
     }
 }
+    
 ```
-Combination of linear and logarithmic growth → Often seen in **Merge Sort** or **Quick Sort**.
 
+`O(n^3)` – Triple Nested Loops
 
-### O(n³) — Cubic Time
-```js
+```javascript
+
 for(int i = 0; i < n; i++) {
     for(int j = 0; j < n; j++) {
         for(int k = 0; k < n; k++) {
@@ -222,23 +226,25 @@ for(int i = 0; i < n; i++) {
         }
     }
 }
+    
 ```
-Three nested loops → Growth becomes **very slow** for large inputs.
 
+`O(2^n)`
 
-### O(2ⁿ) — Exponential Time
-```js
+```javascript
+
 // Recursive Fibonacci
 int fib(int n) {
     if(n <= 1) return n;
     return fib(n-1) + fib(n-2);
 }
+    
 ```
-Each call spawns **two new recursive calls** → Exponential growth.
 
+`O(n!)`
 
-### O(n!) — Factorial Time
-```js
+```javascript
+
 // Permutation generator
 void permute(string s, int l, int r) {
     if(l == r) {
@@ -251,9 +257,32 @@ void permute(string s, int l, int r) {
         }
     }
 }
+    
 ```
-Used in **permutation** or **combinatorial** problems — extremely expensive computationally.
 
+## Time Complexity Priorities
+
+*   `O(1)` – Constant time
+*   `O(log n)` – e.g., Binary Search
+*   `O(n)` – e.g., Linear Search
+*   `O(n log n)` – e.g., Merge Sort
+*   `O(n^2)` – e.g., Nested Loops
+*   `O(n^3)` – e.g., Triple Nested Loops
+*   `O(2^n)` – Recursion (e.g., Fibonacci)
+*   `O(n!)` – e.g., Brute-force permutations
+
+![](https://namastedev.com/blog/wp-content/uploads/2025/07/Screenshot-2025-07-25-at-10.31.42 AM.png)
+
+## What is Space Complexity?
+
+Space complexity refers to how much extra memory an algorithm uses.
+
+### Examples:
+
+*   Access 5th element: `O(1)`
+*   Find max with variable: `O(1)`
+*   New array: `O(n)`
+*   2D Matrix: `O(n^2)`
 
 ## Time Complexity Priorities
 
@@ -281,7 +310,7 @@ Used in **permutation** or **combinatorial** problems — extremely expensive co
 | 2D Matrix | O(n²) |
 
 
-> 🧠 **Key Takeaway:**  
+>  **Key Takeaway:**  
 > Optimize algorithms for **both time and space** — efficient code matters as input grows!
 
 
@@ -323,6 +352,6 @@ Used in **permutation** or **combinatorial** problems — extremely expensive co
 - **Practical Optimization**: Real-world performance tuning
 - **Advanced Algorithms**: Dynamic programming and graph algorithms
 
-Understanding Big O notation transforms you from someone who "makes code work" to someone who **"makes code work efficiently at any scale."** This knowledge is what separates junior developers from senior engineers who can architect systems that handle millions of users! 🚀✨
+Understanding Big O notation transforms you from someone who "makes code work" to someone who **"makes code work efficiently at any scale."** This knowledge is what separates junior developers from senior engineers who can architect systems that handle millions of users!
 
 Next up: **Recursion & Recursive Thinking** - Learn to solve complex problems by breaking them into smaller, identical subproblems!

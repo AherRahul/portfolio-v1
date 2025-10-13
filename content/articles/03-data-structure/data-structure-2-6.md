@@ -40,15 +40,15 @@ Given an integer array nums, move all 0’s to the end of it while maintaining t
 
 **Example 1:**
 
-**Input:** nums = \[0,1,0,3,12\]
+**Input:** nums = \[ 0, 1, 0, 3, 12 \]
 
-**Output:**`[1,3,12,0,0]`
+**Output:**`[1, 3, 12, 0, 0]`
 
 <br />
 
 **Example 2:**
 
-**Input:** nums = \[0\]
+**Input:** nums = \[ 0 \]
 
 **Output:**`[0]`
 

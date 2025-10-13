@@ -34,10 +34,8 @@ Write a function `secondLargest(arr)` that returns the **second largest distinct
 ### Requirements
 
 1. The array must contain **at least two elements**.  
-2. If **all elements are equal**, return:  
-   `"No second largest found"`  
-3. If the array has **fewer than two elements**, return:  
-   `"Array should have at least two numbers"`
+2. If **all elements are equal**, return:  `"No second largest found"`  
+3. If the array has **fewer than two elements**, return: `"Array should have at least two numbers"`
 
 ### Examples
 

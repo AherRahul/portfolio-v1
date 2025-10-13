@@ -118,15 +118,32 @@ Output: 5
 
 ```javascript
 
-var maxProfit = function(prices) {
-      let maxProfit = 0;
-      for (let i = 0; i < prices.length; i++) {
-          for (let j = i + 1; j < prices.length; j++) {
-              if ((prices[j] - prices[i]) > maxProfit) {
-                  maxProfit = prices[j] - prices[i];
-              }
-          }
-      }
-      return maxProfit;
-  };     
+function maxProfit(prices) {
+  let minPrice = Infinity;  // Track the minimum price so far
+  let maxProfit = 0;        // Track the maximum profit possible
+
+  for (let price of prices) {
+    // Update minPrice if a lower price is found
+    if (price < minPrice) {
+      minPrice = price;
+    }
+
+    // Calculate potential profit at this price
+    const profit = price - minPrice;
+
+    // Update maxProfit if this profit is higher
+    if (profit > maxProfit) {
+      maxProfit = profit;
+    }
+  }
+
+  return maxProfit;
+}
+    
 ```
+
+### Key Insight
+
+* Keep track of the lowest price so far (minPrice).
+* At each step, calculate the profit if sold today.
+* Keep the maximum profit seen so far.

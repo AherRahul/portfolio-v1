@@ -43,9 +43,9 @@ Then, call this function by passing two integer values as arguments.
 
 ## Example
 
-**Input:** 5, 3
-**Process:** a + b = 5 + 3 = 8
-**Output:** 8
+**Input:** 5, 3  
+**Process:** a + b = 5 + 3 = 8  
+**Output:** 8  
 
 ##  Visualization
 
@@ -66,6 +66,8 @@ The function `sum(a, b)` takes both inputs, adds them, and prints the result.
 
 ```javascript
 function sum(a, b) {
+
+  // adds two inputs and stores the result in a variable named add
   let add = a + b;
   console.log(add);
 }
@@ -129,8 +131,11 @@ Call this function and print the result.
 ### JavaScript
 ```javascript
 function square(x) {
+
+  // calculates the square using x * x
   return x * x;
 }
+
 let result = square(3);
 console.log("The square is:", result);
 ```
@@ -183,6 +188,7 @@ Write a program that accepts a number (**age**) and checks whether the person is
 ```javascript
 let age = 20;
 
+// check eligibility
 if (age >= 18) {
   console.log("You are eligible to vote.");
 } else {
@@ -209,7 +215,6 @@ Write a function that accepts a number and checks whether it is **Even or Odd**.
 - Else return **“Odd”**.
 
 ### Visualisation:
-Even Odd Visual
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1759922900/Portfolio/dsa/images/00/e1203f35-595b-41dd-abac-dc7f61d7f032.png)
 
@@ -223,9 +228,13 @@ Even Odd Visual
 
 ```js
 function checkEvenOrOdd(number) {
+
+  // Check if the number modulo 2 equals 0
   if (number % 2 === 0) {
+    // print or return “Even”
     console.log("Even Number");
   } else {
+    // print or return “Odd”
     console.log("Odd Number");
   }
 }

@@ -90,7 +90,7 @@ Print a right-angled triangle of stars with `n` rows.
 * **Print Row:** Print the string after the inner loop, completes for each row.
 
 ### Time & Space Complexity:
-* **Time Complexity:** `O(n^2)` because the total number of stars printed is `1+2+3+.......+n = n(n+1)/2.`
+* **Time Complexity:** `O(n^2)` because the total number of stars printed is `1 + 2 + 3 +.......+ n = n(n + 1)/2.`
 * **Space Complexity:** `O(n)` for the temporary string variable storing each row.
 
 ### JavaScript Code

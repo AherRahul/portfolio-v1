@@ -30,12 +30,10 @@ Problem - Loops - 1
 ---------------------------------------------------
 
 ### Problem: 1. Print All Even Numbers from an Array
-
-### Problem Statement
 Write a program to print all even numbers from an array.
 
 ### Example
-**Input:** [10, 3, 5, 2, 7, 6, 9]  
+**Input:** \[ 10, 3, 5, 2, 7, 6, 9 \]  
 **Output:** 10 2 6
 
 
