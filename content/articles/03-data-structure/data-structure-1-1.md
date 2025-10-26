@@ -8,6 +8,7 @@ showOnArticles: false
 courseName: 03-data-structure
 topics:
   - data-structures
+  - scaler
 resources:
   - title: "Big O Cheat Sheet"
     type: "reference"
@@ -18,8 +19,16 @@ resources:
     url: "https://visualgo.net/"
     description: "Visual algorithm complexity comparisons"
   - title: "Asymptotic Analysis - Khan Academy"
-    type: "course"
+    type: "reference"
     url: "https://www.khanacademy.org/computing/computer-science/algorithms/asymptotic-notation/a/asymptotic-notation"
+    description: "Mathematical foundations of complexity analysis"
+  - title: "Scaler Notes - Day 34, 20 Apr - DSA: Time Complexity - 1"
+    type: "documentation"
+    url: "https://res.cloudinary.com/duojkrgue/image/upload/v1761497976/Portfolio/scalerNotes/03._Time_Complexity_fztrdl.pdf"
+    description: "Mathematical foundations of complexity analysis"
+  - title: "Scaler Notes - Day 35, 22 Apr - DSA: Time Complexity - 2"
+    type: "documentation"
+    url: "https://res.cloudinary.com/duojkrgue/image/upload/v1761497964/Portfolio/scalerNotes/02._Time_Complexity_1_ioxesh.pdf"
     description: "Mathematical foundations of complexity analysis"
 
 ---
