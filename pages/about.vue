@@ -268,16 +268,38 @@ const getCategoryIcon = (title: string) => {
 // Timeline data for education and experience
 const timelineData = [
   {
+    id: 'zema',
+    type: 'work',
+    company: 'ZEMA Global Data Corporation',
+    period: 'Oct 2024 - Present',
+    duration: '1+ years',
+    location: 'Mumbai, Maharashtra, India',
+    positions: [
+      {
+        title: 'Senior Software Engineer',
+        period: 'Oct 2024 - Present',
+        responsibilities: [
+          'Led end-to-end development as sole full-stack developer delivering production-ready apps on schedule',
+          'Collaborated cross-functionally to ensure smooth execution and coding excellence',
+          'Performed code reviews to improve maintainability and accelerate delivery timelines',
+          'Conducted interviews for entry to mid-level candidates (0–4 years)',
+          'Partnered with founders to align technical decisions with business goals',
+          'Specialized in requirement analysis and solution design for scalable admin portals and enterprise apps'
+        ]
+      }
+    ]
+  },
+  {
     id: 'morningstar',
     type: 'work',
     company: 'Morningstar',
-    period: 'Oct 2021 - Present',
-    duration: '3+ years',
+    period: 'Oct 2021 - Oct 2024',
+    duration: '3 years',
     location: 'Navi Mumbai, India',
     positions: [
       {
         title: 'Senior Software Engineer',
-        period: 'Jan 2023 - Present',
+        period: 'Jan 2023 - Oct 2024',
         responsibilities: [
           'Creating REST APIs with Spring MVC, Hibernate, and JPA, ensuring compliance with coding standards and best practices',
           'Implementing Microservices architecture to enhance modularity, scalability, and performance',
@@ -309,18 +331,17 @@ const timelineData = [
     location: 'Mumbai, India',
     positions: [
       {
-        title: 'Software Engineer',
+        title: 'Software Developer',
         period: 'Sep 2020 - Oct 2021',
         responsibilities: [
-          'Honed skills in essential technologies and methodologies as an associate developer',
-          'Deep understanding of SQL for designing efficient databases and data-driven applications',
-          'Adept at using Microsoft Excel for insights and workflow optimization',
-          'Expertise in front-end technologies (Angular, HTML5, CSS) for building user-friendly, responsive interfaces',
-          'Experienced in client requirements gathering to meet client needs effectively'
+          'Full-stack development of end-to-end components for Microsoft Advisor Workstation',
+          'Built features for a financial research and reporting platform used by ~180,000 advisors',
+          'Delivered performant, maintainable code within Agile sprints across frontend and backend',
+          'Collaborated with stakeholders to refine requirements and ensure timely delivery'
         ]
       },
       {
-        title: 'Associate Software Engineer',
+        title: 'Associate Software Developer',
         period: 'Sep 2019 - Sep 2020',
         responsibilities: [
           'Full Stack Developer skilled in Java, Angular, Node.js, and AWS services',
@@ -373,8 +394,8 @@ const timelineData = [
     id: 'cdac',
     type: 'education',
     company: 'CDAC Mumbai',
-    period: 'Sep 2019 - Oct 2021',
-    duration: '2 years',
+    period: 'Feb 2019 - Aug 2019',
+    duration: '6 months',
     location: 'Mumbai, India',
     degree: 'PG Diploma In Advanced Computing (PG-DAC)',
     field: 'Software Engineering',
@@ -403,23 +424,51 @@ const timelineData = [
 // Combined timeline events for vertical timeline (Latest to Oldest)
 const timelineEvents = [
   {
+    id: 'zema-global',
+    year: '2024',
+    date: 'October 2024',
+    title: 'Senior Software Engineer',
+    subtitle: 'Full-Stack • Architecture & Delivery',
+    org: 'ZEMA Global Data Corporation',
+    period: 'Oct 2024 - Present',
+    location: 'Mumbai, Maharashtra, India',
+    type: 'work',
+    category: 'Full-Stack • Architecture & Delivery',
+    description: 'Leading end-to-end development as sole full-stack developer, delivering production-ready applications while partnering directly with founders to align technical strategy with business goals.',
+    details: [
+      'Leading end-to-end development of multiple projects as the sole full-stack developer, delivering high-quality, production-ready applications on schedule',
+      'Collaborating with cross-functional teams to ensure smooth execution, maintain coding excellence, and achieve consistent project success',
+      'Serving as code reviewer, upholding best practices, improving code maintainability, and accelerating delivery timelines through constructive feedback',
+      'Conducting technical interviews for candidates from entry-level to mid-level (up to 4 years of experience), helping build a strong and capable engineering team',
+      'Partnering directly with company founders to align technical decisions with business goals, driving efficiency and innovation across multiple projects',
+      'Excelling in requirement analysis and solution design for complex admin portals and enterprise applications, delivering scalable and intuitive user experiences'
+    ],
+    skills: ['Vue.js', 'React.js', 'Node.js', 'TypeScript', 'Tailwind CSS', 'AWS', 'Microservices', 'REST APIs', 'Full-Stack Architecture'],
+    icon: 'heroicons:rocket-launch',
+    color: 'primary'
+  },
+  {
     id: 'senior-engineer',
     year: '2023',
     date: 'January 2023',
     title: 'Senior Software Engineer',
-    subtitle: 'Morningstar • 1+ years',
+    subtitle: 'Mentor',
+    org: 'Morningstar',
+    period: 'Jan 2023 - Oct 2024',
+    location: 'Mumbai, Maharashtra, India',
     type: 'work',
-    category: 'Senior Developer • Tech Lead & Mentor',
-    description: 'Promoted to senior role, leading complex projects, mentoring team members, and driving innovation in microservices and automation.',
+    category: 'Senior Developer • Mentor',
+    description: 'Promoted to senior role after demonstrating exceptional technical leadership. Led microservices architecture, automation initiatives reducing manual work by 90%, and maintained 75% client satisfaction through responsive support and innovation.',
     details: [
-      'Leading development of complex microservices and distributed systems architecture',
-      'Mentoring junior developers and conducting code reviews to maintain high-quality standards',
-      'Driving innovation in automation solutions and system optimization initiatives',
-      'Implementing security measures against vulnerabilities including SQL Injection and XSS',
-      'Orchestrating legacy project migrations to modern frameworks like Vue.js for enhanced user experiences',
-      'Collaborating with stakeholders to align technical solutions with business objectives'
+      'Creating REST APIs with Spring MVC, Hibernate, and JPA while ensuring compliance with coding standards and industry best practices to deliver robust and scalable solutions',
+      'Implementing Microservices architecture to enhance modularity and scalability of systems, improving overall application performance and maintainability',
+      'Automating critical tasks through the implementation of job scheduling, reducing manual intervention by 90% with Quartz Job Scheduler for improved operational efficiency',
+      'Maintaining a remarkable 75% client satisfaction rate by providing responsive support and cultivating strong working relationships, fostering trust and loyalty',
+      'Orchestrating the seamless migration of legacy projects to Vue.js, delivering modernized user interfaces with enhanced functionality and user experience',
+      'Enforcing robust security measures against SQL Injection and XSS vulnerabilities, safeguarding sensitive data and preserving application integrity, ensuring compliance with industry security standards',
+      'Mentoring junior developers and conducting thorough code reviews to maintain high-quality standards across the team'
     ],
-    skills: ['Technical Leadership', 'System Architecture', 'Team Mentoring', 'Security Implementation', 'Legacy Migration'],
+    skills: ['Spring Boot', 'Microservices', 'REST APIs', 'Vue.js', 'Hibernate', 'JPA', 'Quartz Scheduler', 'Security', 'Technical Leadership', 'Mentoring'],
     icon: 'heroicons:trophy',
     color: 'primary'
   },
@@ -427,39 +476,47 @@ const timelineEvents = [
     id: 'ms-program',
     year: '2023',
     date: 'February 2023',
-    title: 'Master of Science Program',
-    subtitle: 'Scaler School of Technology • Ongoing',
+    title: 'Master of Science (MS)',
+    subtitle: 'Computer & Software Engineering',
+    org: 'Scaler School of Technology',
+    period: 'Feb 2023 - Feb 2025',
+    location: 'Online',
     type: 'education',
     category: 'MS in Computer & Software Engineering',
-    description: 'Commenced Master\'s program at Scaler to deepen expertise in system design, advanced algorithms, and leadership skills for senior technical roles.',
+    description: 'Pursuing Master of Science in Software Engineering at Scaler to deepen understanding of software development principles, enhance technical skills, and prepare for leadership roles in the tech industry.',
     details: [
-      'Advanced coursework in system design and architecture for scalable, efficient systems',
-      'Deep dive into data structures and algorithms with rigorous problem-solving analysis',
-      'Comprehensive study of high-level and low-level system design principles',
-      'Specialized training in cloud computing, DevOps practices, and CI/CD pipeline implementation',
+      'Advanced Software Development: Mastering modern software development practices and tools',
+      'System Design and Architecture: Learning to design scalable and efficient software systems',
+      'Data Structures and Algorithms: Strengthening problem-solving skills through rigorous analysis and application',
+      'High-Level Design and Low-Level Design: Gaining expertise in designing robust, scalable systems at both high and detailed levels',
+      'Cloud Computing and DevOps: Understanding cloud infrastructure, deployment strategies, and continuous integration/continuous deployment (CI/CD) pipelines',
       'Leadership development and preparation for senior technical roles in the industry'
     ],
-    skills: ['System Design', 'Advanced Algorithms', 'Cloud Architecture', 'DevOps', 'Technical Leadership'],
-    icon: 'heroicons:star',
+    skills: ['System Design', 'Advanced Algorithms', 'HLD & LLD', 'Cloud Computing', 'DevOps', 'CI/CD', 'Distributed Systems', 'Technical Leadership'],
+    icon: 'heroicons:academic-cap',
     color: 'secondary'
   },
   {
     id: 'promotion-milestone',
     year: '2023',
     date: 'January 2023',
-    title: 'Promotion Milestone',
+    title: 'Career Milestone: Promotion',
     subtitle: 'Software Engineer → Senior Software Engineer',
+    org: 'Morningstar',
+    period: 'Jan 2023',
+    location: 'Mumbai, Maharashtra, India',
     type: 'work',
     category: 'Career Advancement • Morningstar',
-    description: 'Achieved promotion from Software Engineer to Senior Software Engineer after demonstrating exceptional technical leadership and project delivery.',
+    description: 'Promoted to Senior Software Engineer after 15 months of exceptional performance, recognized for technical leadership, architectural contributions to microservices, and impactful automation reducing manual effort by 90%.',
     details: [
-      'Recognized for outstanding performance in microservices architecture and automation solutions',
-      'Successfully led critical projects that reduced manual intervention by 90%',
-      'Demonstrated strong mentoring capabilities and code review excellence',
-      'Consistently delivered high-quality solutions with 75% client satisfaction rate',
-      'Showed initiative in legacy system modernization and security implementation'
+      'Recognized for outstanding performance in microservices architecture and automation solutions that transformed operational efficiency',
+      'Successfully led critical projects implementing Quartz Job Scheduler that reduced manual intervention by 90%',
+      'Demonstrated strong mentoring capabilities and code review excellence, elevating team standards',
+      'Consistently delivered high-quality solutions achieving 75% client satisfaction rate through responsive support',
+      'Showed exceptional initiative in legacy system modernization, security implementation, and Vue.js migration projects',
+      'Earned promotion within 15 months of joining, showcasing rapid growth and impact'
     ],
-    skills: ['Performance Excellence', 'Project Leadership', 'Technical Innovation', 'Client Satisfaction', 'Team Collaboration'],
+    skills: ['Performance Excellence', 'Project Leadership', 'Technical Innovation', 'Client Satisfaction', 'Team Collaboration', 'Mentoring'],
     icon: 'heroicons:arrow-trending-up',
     color: 'primary'
   },
@@ -467,97 +524,150 @@ const timelineEvents = [
     id: 'morningstar',
     year: '2021',
     date: 'October 2021',
-    title: 'Joined Morningstar',
-    subtitle: 'Software Engineer • 1.3 years before promotion',
+    title: 'Software Engineer',
+    subtitle: 'API Development & Microservices',
+    org: 'Morningstar',
+    period: 'Oct 2021 - Dec 2022',
+    location: 'Mumbai, Maharashtra, India',
     type: 'work',
     category: 'Software Engineer • API Development & Microservices',
-    description: 'Joined leading financial services company, focusing on REST API development, microservices architecture, and automation solutions.',
+    description: 'Joined leading financial services company Morningstar, focusing on building scalable REST APIs, implementing microservices architecture, and driving system optimization initiatives.',
     details: [
-      'Designed and developed REST APIs using Spring MVC, Hibernate, and JPA with industry best practices',
-      'Implemented microservices architecture to enhance system modularity, scalability, and performance',
-      'Led automation initiatives using Quartz Job Scheduler, reducing manual intervention by 90%',
-      'Maintained exceptional client satisfaction rate of 75% through responsive support and relationship building',
-      'Collaborated on legacy system migrations and modernization projects'
+      'Improved product stability and scalability through autoscaling and worker optimization techniques',
+      'Enhanced development efficiency with a generic CI/CD pipeline for Java applications, streamlining deployment processes',
+      'Increased system observability and proactive issue identification by integrating New Relic monitoring solutions',
+      'Successfully migrated critical infrastructure and data with zero downtime, ensuring business continuity',
+      'Effectively led team through major production incidents, proposed innovative solutions, and implemented preventive measures',
+      'Designed and developed REST APIs using Spring MVC, Hibernate, and JPA following industry best practices'
     ],
-    skills: ['Spring Boot', 'Microservices', 'REST APIs', 'System Design', 'Automation', 'Client Relations'],
+    skills: ['Spring Boot', 'Java', 'Microservices', 'REST APIs', 'Hibernate', 'JPA', 'New Relic', 'CI/CD', 'Autoscaling', 'System Design'],
     icon: 'heroicons:building-office',
     color: 'primary'
   },
   {
-    id: 'software-engineer',
+    id: 'bts-software-developer',
     year: '2020',
     date: 'September 2020',
-    title: 'Software Engineer',
-    subtitle: 'BTS • 1 year',
+    title: 'Career Milestone: Promotion - Software Developer',
+    subtitle: 'Full Stack Developer • Enterprise Applications',
+    org: 'BTS',
+    period: 'Sep 2020 - Oct 2021',
+    location: 'Mumbai, India',
     type: 'work',
     category: 'Full Stack Developer • Enterprise Applications',
-    description: 'Evolved into full-stack development role at BTS, building expertise in Java, Angular, Node.js, and AWS while developing enterprise applications.',
+    description: 'Promoted to Software Developer, working as full-stack developer to develop end-to-end components for Microsoft Advisor Workstation—a financial research, management, and reporting application serving approximately 180,000 advisors.',
     details: [
-      'Developed complex, time-critical applications from scratch using Agile methodologies',
-      'Gained expertise in Java, Angular, Node.js, and AWS services for scalable solutions',
-      'Collaborated with teams to deliver standardized code for products and applications',
-      'Resolved critical production bugs and implemented performance optimizations',
-      'Built comprehensive understanding of both technical and business requirements'
+      'Working as full-stack developer to develop end-to-end components for Microsoft Advisor Workstation, a financial research, management, and reporting application',
+      'Contributing to a large-scale platform serving approximately 180,000 financial advisors with high reliability and performance',
+      'Developed complex, time-critical applications from scratch using Agile methodologies, ensuring timely delivery',
+      'Resolved critical production bugs to ensure seamless product functionality and minimize downtime',
+      'Collaborated with product managers and stakeholders to refine requirements and ship features on schedule',
+      'Delivered optimal, standardized code combining technical expertise with business knowledge'
     ],
-    skills: ['Java', 'Angular', 'Node.js', 'AWS', 'Agile Development', 'Full Stack Development'],
+    skills: ['Java', 'Angular', 'Node.js', 'AWS', 'Agile Development', 'Full Stack Development', 'SQL', 'HTML5', 'CSS'],
     icon: 'heroicons:computer-desktop',
+    color: 'primary'
+  },
+  {
+    id: 'bts-associate',
+    year: '2019',
+    date: 'September 2019',
+    title: 'Associate Software Developer',
+    subtitle: 'Entry Level • Full Stack Development',
+    org: 'BTS',
+    period: 'Sep 2019 - Sep 2020',
+    location: 'Mumbai, India',
+    type: 'work',
+    category: 'Associate Software Developer • Full Stack',
+    description: 'Placed directly from CDAC as Associate Software Developer at BTS. Started professional software development journey working with Angular, Node.js, Java, and AWS services to build scalable enterprise applications.',
+    details: [
+      'Full Stack Developer proficient in Angular, Node.js, Java, and various AWS Services',
+      'Proven track record of delivering optimal, standardized code for various products and applications, combining technical and business knowledge',
+      'Successfully delivered complex and time-critical applications from scratch while following Agile methodologies',
+      'Resolved critical production bugs to ensure seamless product functionality',
+      'Honed skills in essential technologies and methodologies as an associate developer',
+      'Gained deep understanding of SQL for designing efficient databases and data-driven applications',
+      'Developed expertise in front-end technologies (Angular, HTML5, CSS) for building user-friendly, responsive interfaces',
+      'Experienced in client requirements gathering to meet client needs effectively'
+    ],
+    skills: ['Java', 'Angular', 'Node.js', 'AWS', 'SQL', 'HTML5', 'CSS', 'Agile', 'REST APIs', 'Full Stack Development'],
+    icon: 'heroicons:code-bracket-square',
     color: 'primary'
   },
   {
     id: 'pg-dac',
     year: '2019',
-    date: 'September 2019',
-    title: 'Advanced Computing Program',
-    subtitle: 'CDAC Mumbai • 6 months',
+    date: 'February 2019',
+    title: 'PG Diploma in Advanced Computing',
+    subtitle: 'PG-DAC • Software Engineering',
+    org: 'CDAC Mumbai (Vidyanidhi InfoTech)',
+    period: 'Feb 2019 - Aug 2019',
+    location: 'Mumbai, India',
     type: 'education',
     category: 'PG-DAC • Software Engineering',
-    description: 'Enrolled in PG-DAC at CDAC Mumbai to transition into software development, mastering Java, web technologies, and enterprise application development.',
+    description: 'Completed PG-DAC professional diploma course for full-stack development under ACTS flagship programme. Intensive 6-month program covering modern software development technologies and enterprise application architecture. Achieved Grade A+.',
     details: [
-      'Intensive program covering Java, web technologies (HTML5, CSS, JavaScript, Angular), and enterprise development',
+      'PG-DAC is a professional PG Diploma course for Full-stack development under the flagship programme of ACTS',
+      'Intensive program covering Data Structures, Java, JavaScript, PHP, HTML, CSS, C++, C#, .NET and many more technologies',
       'Learned multi-tier architecture for web-based enterprise applications with J2EE',
       'Gained hands-on experience with databases, servlets, JSPs, and Enterprise JavaBeans (EJB)',
+      'Comprehensive training in web technologies: HTML 5.0, CSS, JavaScript, jQuery, and AngularJS',
       'Developed practical skills in .NET architecture and modern software development methodologies',
-      'Completed multiple projects demonstrating full-stack development capabilities'
+      'Completed multiple projects demonstrating full-stack development capabilities',
+      'Successfully placed at BTS as Associate Software Developer upon course completion with Grade A+'
     ],
-    skills: ['Java Programming', 'Web Development', 'Angular', 'Database Design', 'Enterprise Architecture'],
-    icon: 'heroicons:code-bracket',
+    skills: ['Data Structures', 'Java', 'JavaScript', 'Angular', 'C++', 'C#', '.NET', 'Spring Boot', 'MySQL', 'Oracle Database', 'HTML5', 'CSS', 'PHP'],
+    icon: 'heroicons:academic-cap',
     color: 'secondary'
   },
   {
     id: 'first-job',
     year: '2018',
     date: 'February 2018',
-    title: 'Started Professional Career',
-    subtitle: 'CONTEXiO • 1.5 years',
+    title: 'Research Analyst',
+    subtitle: 'Data Management Specialist',
+    org: 'CONTEXiO',
+    period: 'Feb 2018 - Feb 2019',
+    location: 'Mumbai Area, India',
     type: 'work',
-    category: 'Analyst • Data Management Specialist',
-    description: 'Began professional journey as an Analyst at CONTEXiO, diving into data management and e-commerce product cataloging for major clients like Tata Cliq.',
+    category: 'Research Analyst • Data Management',
+    description: 'Started professional career as Research Analyst at CONTEXiO, managing data operations for leading e-commerce platforms. Handled product content creation, data structuring, and inventory management for Tatacliq electronics category.',
     details: [
-      'Managed product data cataloging and inventory systems for leading e-commerce platforms',
+      'Capturing and structuring of data to create product content for e-commerce organizations',
+      'Upon request or as specified by Supervisor, update client on project deliverables and schedules',
+      'Follow work allocation, schedule and project plan to ensure timely delivery',
+      'Prioritize project tasks and seek assistance from Supervisor as applicable',
+      'As a part of Tatacliq electronics category, handled product data and managed the inventories of products',
       'Collaborated with cross-functional teams to ensure data accuracy and consistency',
       'Developed expertise in data analysis, workflow optimization, and client communication',
       'Gained valuable experience in project management and meeting client requirements under tight deadlines'
     ],
-    skills: ['Data Analysis', 'Excel Mastery', 'Project Coordination', 'Client Communication', 'Process Optimization'],
-    icon: 'heroicons:rocket-launch',
+    skills: ['Data Analysis', 'Excel', 'Product Data Management', 'Inventory Management', 'Project Coordination', 'Client Communication', 'Process Optimization'],
+    icon: 'heroicons:chart-bar',
     color: 'primary'
   },
   {
     id: 'graduation',
     year: '2017',
     date: 'June 2017',
-    title: 'Engineering Graduate',
-    subtitle: 'University of Mumbai • 4 years',
+    title: 'Bachelor of Engineering (BE)',
+    subtitle: 'Electrical and Electronics Engineering',
+    org: 'University of Mumbai',
+    period: 'Jun 2013 - Jun 2017',
+    location: 'Mumbai, India',
     type: 'education',
-    category: 'Bachelor of Engineering • Electronics Engineering',
-    description: 'Completed Bachelor of Engineering in Electronics from University of Mumbai, building a strong foundation in technical problem-solving and engineering principles.',
+    category: 'Bachelor of Engineering • Electrical & Electronics',
+    description: 'Completed Bachelor of Engineering in Electrical and Electronics Engineering from University of Mumbai. Built strong foundation in technical problem-solving, engineering principles, and analytical thinking.',
     details: [
-      'Gained comprehensive knowledge in electronics, communication systems, and foundational computer science concepts',
-      'Developed analytical thinking and problem-solving skills through complex engineering projects',
-      'Built strong foundation in mathematics, physics, and core engineering principles',
-      'Participated in various technical workshops and seminars to enhance practical knowledge'
+      'Comprehensive engineering education with focus on Electrical and Electronics Engineering',
+      'Gained knowledge in electronics, communication systems, circuit design, and foundational computer science concepts',
+      'Developed strong analytical thinking and problem-solving skills through complex engineering projects',
+      'Built solid foundation in mathematics, physics, and core engineering principles',
+      'Participated in various technical workshops and seminars to enhance practical knowledge',
+      'Completed 4-year intensive program covering theoretical and practical aspects of electrical and electronics systems',
+      'Graduated with engineering degree, laying the groundwork for transition into software development'
     ],
-    skills: ['Electronics Design', 'Circuit Analysis', 'Signal Processing', 'Mathematical Modeling', 'Technical Documentation'],
+    skills: ['Electronics Design', 'Circuit Analysis', 'Signal Processing', 'Mathematical Modeling', 'Technical Documentation', 'Problem Solving'],
     icon: 'heroicons:academic-cap',
     color: 'secondary'
   }
@@ -967,8 +1077,12 @@ const animateCounter = (element: HTMLElement) => {
         Career & Education Journey
       </AppParagraph>
       
-      <p class="text-gray-300 text-lg mt-8 mb-16 max-w-4xl">
+      <p class="text-gray-300 text-lg mt-8 mb-6 max-w-4xl">
         A comprehensive timeline showcasing my professional growth and educational achievements from engineering graduate to senior software engineer.
+      </p>
+      <p class="text-sm text-gray-400 mb-10 flex items-center justify-center gap-2">
+        <Icon name="heroicons:cursor-arrow-rays" class="w-4 h-4 text-red-400" />
+        Tip: Hover or click the timeline dots to view full details.
       </p>
 
       <!-- Vertical Timeline -->
@@ -993,32 +1107,39 @@ const animateCounter = (element: HTMLElement) => {
                 <!-- Timeline Center Dot with Hover Popup -->
                 <div class="relative z-20">
                   <div 
-                    class="w-16 h-16 rounded-full border-4 border-white flex items-center justify-center transition-all duration-300 cursor-pointer group"
+                    class="w-16 h-16 rounded-full border-4 border-white flex items-center justify-center transition-all duration-300 cursor-pointer group relative"
                     :class="{
-                      'bg-gradient-to-r from-red-500 to-pink-600': event.color === 'primary',
-                      'bg-gradient-to-r from-gray-600 to-gray-700': event.color === 'secondary',
+                      'bg-gradient-to-r from-red-500 to-pink-600': event.type === 'work',
+                      'bg-gradient-to-r from-blue-600 to-indigo-700': event.type === 'education',
                       'ring-4 ring-white/30 scale-110': hoveredEvent?.id === event.id || selectedEvent?.id === event.id
                     }"
                     @click="selectedEvent = selectedEvent?.id === event.id ? null : event"
                     @mouseenter="!selectedEvent && (hoveredEvent = event)"
                     @mouseleave="!selectedEvent && (hoveredEvent = null)"
                   >
+                    <span 
+                      class="absolute inset-0 rounded-full opacity-40 animate-ping"
+                      :class="event.type === 'work' ? 'bg-red-500' : 'bg-blue-500'"
+                      aria-hidden
+                    ></span>
                     <Icon :name="event.icon" class="text-white text-2xl" />
                   </div>
                   
                   <!-- Year and Title - Left Side for Right Popup (Odd indices) -->
                   <div v-if="index % 2 === 1 && (!activeEventId || activeEventId === event.id)" class="absolute right-full mr-6 top-1/2 transform -translate-y-1/2 text-right">
                     <div class="bg-zinc-900 backdrop-blur-sm rounded-lg px-3 py-2 border border-gray-700/50">
-                      <span class="text-xl font-bold text-red-400 block">{{ event.year }}</span>
-                      <span class="text-sm text-gray-300 mt-1 block leading-tight truncate max-w-[12rem]">{{ event.title }}</span>
+                      <span class="text-lg font-bold text-red-400 block">{{ event.org }}</span>
+                      <span class="text-base text-gray-300 mt-1 block leading-tight truncate max-w-[12rem]">{{ event.title }}</span>
+                      <span class="text-sm text-gray-300 mt-1 block leading-tight truncate max-w-[12rem]">{{ event.period }}</span>
                     </div>
                   </div>
                   
                   <!-- Year and Title - Right Side for Left Popup (Even indices) -->
                   <div v-if="index % 2 === 0 && (!activeEventId || activeEventId === event.id)" class="absolute left-full ml-6 top-1/2 transform -translate-y-1/2 text-left">
                     <div class="bg-zinc-900 backdrop-blur-sm rounded-lg px-3 py-2 border border-gray-700/50">
-                      <span class="text-xl font-bold text-red-400 block">{{ event.year }}</span>
-                      <span class="text-sm text-gray-300 mt-1 block leading-tight truncate max-w-[12rem]">{{ event.title }}</span>
+                      <span class="text-lg font-bold text-red-400 block">{{ event.org }}</span>
+                      <span class="text-base text-gray-300 mt-1 block leading-tight truncate max-w-[12rem]">{{ event.title }}</span>
+                      <span class="text-sm text-gray-300 mt-1 block leading-tight truncate max-w-[12rem]">{{ event.period }}</span>
                     </div>
                   </div>
 
@@ -1037,18 +1158,12 @@ const animateCounter = (element: HTMLElement) => {
                     >
                       <div 
                         class="bg-zinc-900 backdrop-blur-md rounded-sm p-6 border shadow-2xl"
-                        :class="{
-                          'border-red-500/70 shadow-red-500/20': event.color === 'primary',
-                          'border-gray-500/70 shadow-gray-500/20': event.color === 'secondary'
-                        }"
+                        :class="event.type === 'work' ? 'border-red-500/70 shadow-red-500/20' : 'border-blue-500/70 shadow-blue-500/20'"
                       >
                         <!-- Popup Arrow -->
                         <div 
                           class="absolute left-full top-1/2 transform -translate-y-1/2 -ml-1 w-4 h-4 rotate-45 border-r border-b bg-gray-900/95"
-                          :class="{
-                            'border-red-500/70': event.color === 'primary',
-                            'border-gray-500/70': event.color === 'secondary'
-                          }"
+                          :class="event.type === 'work' ? 'border-red-500/70' : 'border-blue-500/70'"
                         ></div>
                         
                         <!-- Card Header -->
@@ -1056,38 +1171,29 @@ const animateCounter = (element: HTMLElement) => {
                           <div class="flex items-center space-x-3">
                             <div 
                               class="w-12 h-12 rounded-full flex items-center justify-center"
-                              :class="{
-                              'bg-gradient-to-r from-red-500 to-pink-600': event.color === 'primary',
-                              'bg-gradient-to-r from-gray-500 to-gray-600': event.color === 'secondary'
-                              }"
+                              :class="event.type === 'work' ? 'bg-gradient-to-r from-red-500 to-pink-600' : 'bg-gradient-to-r from-blue-600 to-indigo-700'"
                             >
                               <Icon :name="event.icon" class="text-white text-lg" />
                             </div>
                             <div>
                               <h3 class="text-lg font-bold text-white">{{ event.title }}</h3>
-                              <p class="text-sm" :class="{
-                                'text-blue-400': event.type === 'education' && event.color === 'blue',
-                                'text-purple-400': event.color === 'purple',
-                                'text-red-400': event.color === 'red',
-                                'text-green-400': event.color === 'green',
-                                'text-yellow-400': event.color === 'gold'
-                              }">{{ event.subtitle }}</p>
+                              <p class="text-sm font-semibold" :class="event.type === 'work' ? 'text-red-400' : 'text-blue-400'">{{ event.org }}</p>
+                              <div class="text-sm" :class="event.type === 'work' ? 'text-red-400' : 'text-blue-400'">{{ event.period }}</div>
+                              <p v-if="event.org || event.period" class="text-xs text-gray-400 mt-1">
+                                <span v-if="(event.org || event.period) && event.location"> • </span>
+                                <span v-if="event.location">{{ event.location }}</span>
+                              </p>
                             </div>
                           </div>
                           <div class="text-right">
-                            <div class="text-sm font-semibold" :class="{
-                              'text-red-400': event.color === 'primary',
-                              'text-gray-400': event.color === 'secondary'
-                            }">{{ event.date }}</div>
+                            
                           </div>
                         </div>
                         
                         <!-- Category Badge -->
                         <div class="mb-3">
-                          <span class="inline-block px-3 py-1 text-xs font-semibold rounded-full" :class="{
-                            'bg-red-500/20 text-red-300 border border-red-500/30': event.color === 'primary',
-                            'bg-gray-500/20 text-gray-300 border border-gray-500/30': event.color === 'secondary'
-                          }">
+                          <span class="inline-block px-3 py-1 text-xs font-semibold rounded-full"
+                            :class="event.type === 'work' ? 'bg-red-500/20 text-red-300 border border-red-500/30' : 'bg-blue-500/20 text-blue-300 border border-blue-500/30'">
                             {{ event.category }}
                           </span>
                         </div>
@@ -1097,15 +1203,8 @@ const animateCounter = (element: HTMLElement) => {
                         
                         <!-- Skills Tags -->
                         <div class="flex flex-wrap gap-1 mb-3">
-                          <span 
-                            v-for="skill in event.skills.slice(0, 4)" 
-                            :key="skill"
-                            class="px-2 py-1 text-xs bg-gray-700/50 text-gray-300 rounded border border-gray-600/50"
-                          >
+                          <span v-for="skill in event.skills" :key="skill" class="px-2 py-1 text-xs bg-gray-700/50 text-gray-300 rounded border border-gray-600/50">
                             {{ skill }}
-                          </span>
-                          <span v-if="event.skills.length > 4" class="px-2 py-1 text-xs text-gray-400">
-                            +{{ event.skills.length - 4 }} more
                           </span>
                         </div>
 
@@ -1113,7 +1212,7 @@ const animateCounter = (element: HTMLElement) => {
                         <div>
                           <h4 class="text-sm font-semibold text-white mb-2">Key Highlights:</h4>
                           <ul class="space-y-1">
-                            <li v-for="detail in event.details.slice(0, 3)" :key="detail" class="text-gray-300 text-xs flex items-start">
+                            <li v-for="detail in event.details" :key="detail" class="text-gray-300 text-xs flex items-start">
                               <Icon name="heroicons:check-circle" class="text-green-500 mr-2 mt-0.5 flex-shrink-0 w-3 h-3" />
                               {{ detail }}
                             </li>
@@ -1138,18 +1237,12 @@ const animateCounter = (element: HTMLElement) => {
                     >
                       <div 
                         class="bg-zinc-900 backdrop-blur-md rounded-sm p-6 border shadow-2xl"
-                        :class="{
-                          'border-red-500/70 shadow-red-500/20': event.color === 'primary',
-                          'border-gray-500/70 shadow-gray-500/20': event.color === 'secondary'
-                        }"
+                        :class="event.type === 'work' ? 'border-red-500/70 shadow-red-500/20' : 'border-blue-500/70 shadow-blue-500/20'"
                       >
                         <!-- Popup Arrow -->
                         <div 
                           class="absolute right-full top-1/2 transform -translate-y-1/2 -mr-1 w-4 h-4 rotate-45 border-l border-b bg-gray-900/95"
-                          :class="{
-                            'border-red-500/70': event.color === 'primary',
-                            'border-gray-500/70': event.color === 'secondary'
-                          }"
+                          :class="event.type === 'work' ? 'border-red-500/70' : 'border-blue-500/70'"
                         ></div>
                         
                         <!-- Same content as left side -->
@@ -1157,37 +1250,25 @@ const animateCounter = (element: HTMLElement) => {
                           <div class="flex items-center space-x-3">
                             <div 
                               class="w-12 h-12 rounded-full flex items-center justify-center"
-                              :class="{
-'bg-gradient-to-r from-red-500 to-pink-600': event.color === 'primary',
-                              'bg-gradient-to-r from-gray-500 to-gray-600': event.color === 'secondary'
-                              }"
+                              :class="event.type === 'work' ? 'bg-gradient-to-r from-red-500 to-pink-600' : 'bg-gradient-to-r from-blue-600 to-indigo-700'"
                             >
                               <Icon :name="event.icon" class="text-white text-lg" />
                             </div>
                             <div>
                               <h3 class="text-lg font-bold text-white">{{ event.title }}</h3>
-                              <p class="text-sm" :class="{
-                                'text-blue-400': event.type === 'education' && event.color === 'blue',
-                                'text-purple-400': event.color === 'purple',
-                                'text-red-400': event.color === 'red',
-                                'text-green-400': event.color === 'green',
-                                'text-yellow-400': event.color === 'gold'
-                              }">{{ event.subtitle }}</p>
+                              <p class="text-sm font-semibold" :class="event.type === 'work' ? 'text-red-400' : 'text-blue-400'">{{ event.org }}</p>
+                              <div class="text-sm" :class="event.type === 'work' ? 'text-red-400' : 'text-blue-400'">{{ event.period }}</div>
+                              <p v-if="event.org || event.period" class="text-xs text-gray-400 mt-1">
+                                <span v-if="(event.org || event.period) && event.location"> • </span>
+                                <span v-if="event.location">{{ event.location }}</span>
+                              </p>
                             </div>
-                          </div>
-                          <div class="text-right">
-                            <div class="text-sm font-semibold" :class="{
-                              'text-red-400': event.color === 'primary',
-                              'text-gray-400': event.color === 'secondary'
-                            }">{{ event.date }}</div>
                           </div>
                         </div>
                         
                         <div class="mb-3">
-                          <span class="inline-block px-3 py-1 text-xs font-semibold rounded-full" :class="{
-                            'bg-red-500/20 text-red-300 border border-red-500/30': event.color === 'primary',
-                            'bg-gray-500/20 text-gray-300 border border-gray-500/30': event.color === 'secondary'
-                          }">
+                          <span class="inline-block px-3 py-1 text-xs font-semibold rounded-full"
+                            :class="event.type === 'work' ? 'bg-red-500/20 text-red-300 border border-red-500/30' : 'bg-blue-500/20 text-blue-300 border border-blue-500/30'">
                             {{ event.category }}
                           </span>
                         </div>
@@ -1195,22 +1276,15 @@ const animateCounter = (element: HTMLElement) => {
                         <p class="text-gray-300 text-sm leading-relaxed mb-3">{{ event.description }}</p>
                         
                         <div class="flex flex-wrap gap-1 mb-3">
-                          <span 
-                            v-for="skill in event.skills.slice(0, 4)" 
-                            :key="skill"
-                            class="px-2 py-1 text-xs bg-gray-700/50 text-gray-300 rounded border border-gray-600/50"
-                          >
+                          <span v-for="skill in event.skills" :key="skill" class="px-2 py-1 text-xs bg-gray-700/50 text-gray-300 rounded border border-gray-600/50">
                             {{ skill }}
-                          </span>
-                          <span v-if="event.skills.length > 4" class="px-2 py-1 text-xs text-gray-400">
-                            +{{ event.skills.length - 4 }} more
                           </span>
                         </div>
 
                         <div>
                           <h4 class="text-sm font-semibold text-white mb-2">Key Highlights:</h4>
                           <ul class="space-y-1">
-                            <li v-for="detail in event.details.slice(0, 3)" :key="detail" class="text-gray-300 text-xs flex items-start">
+                            <li v-for="detail in event.details" :key="detail" class="text-gray-300 text-xs flex items-start">
                               <Icon name="heroicons:check-circle" class="text-green-500 mr-2 mt-0.5 flex-shrink-0 w-3 h-3" />
                               {{ detail }}
                             </li>
@@ -1229,12 +1303,14 @@ const animateCounter = (element: HTMLElement) => {
                 <!-- Timeline Dot -->
                 <div class="flex-shrink-0 mt-2 relative z-10">
                   <div 
-                    class="w-12 h-12 rounded-full border-4 border-white flex items-center justify-center"
-                    :class="{
-                      'bg-gradient-to-r from-red-500 to-pink-600': event.color === 'primary',
-                      'bg-gradient-to-r from-gray-500 to-gray-600': event.color === 'secondary'
-                    }"
+                    class="w-12 h-12 rounded-full border-4 border-white flex items-center justify-center relative"
+                    :class="event.type === 'work' ? 'bg-gradient-to-r from-red-500 to-pink-600' : 'bg-gradient-to-r from-blue-600 to-indigo-700'"
                   >
+                    <span 
+                      class="absolute inset-0 rounded-full opacity-40 animate-ping"
+                      :class="event.type === 'work' ? 'bg-red-500' : 'bg-blue-500'"
+                      aria-hidden
+                    ></span>
                     <Icon :name="event.icon" class="text-white text-lg" />
                   </div>
                 </div>
@@ -1246,30 +1322,26 @@ const animateCounter = (element: HTMLElement) => {
                 >
                   <div 
                     class="bg-gradient-to-br backdrop-blur-sm rounded-xl p-5 border transition-all duration-300"
-                    :class="{
-                      'from-red-900/20 to-pink-900/30 border-red-500/30': event.color === 'primary',
-                      'from-gray-900/20 to-gray-800/30 border-gray-500/30': event.color === 'secondary'
-                    }"
+                    :class="event.type === 'work' ? 'from-red-900/20 to-pink-900/30 border-red-500/30' : 'from-blue-900/20 to-indigo-900/30 border-blue-500/30'"
                   >
                     <div class="flex items-start justify-between mb-3">
                       <div class="flex-1">
                         <h3 class="text-lg font-bold text-white mb-1">{{ event.title }}</h3>
-                        <p class="text-sm mb-2" :class="{
-                          'text-red-400': event.color === 'primary',
-                          'text-gray-400': event.color === 'secondary'
-                        }">{{ event.subtitle }}</p>
+                        <p class="text-sm mb-2" :class="event.type === 'work' ? 'text-red-400' : 'text-blue-400'">{{ event.subtitle }}</p>
                         <p class="text-xs text-gray-500">{{ event.date }}</p>
+                        <p v-if="event.org || event.period" class="text-xs text-gray-400 mt-1">
+                          <span v-if="event.org">{{ event.org }}</span>
+                          <span v-if="event.org && event.period"> • </span>
+                          <span v-if="event.period">{{ event.period }}</span>
+                          <span v-if="(event.org || event.period) && event.location"> • </span>
+                          <span v-if="event.location">{{ event.location }}</span>
+                        </p>
                       </div>
-                      <span class="text-sm font-semibold" :class="{
-                        'text-red-400': event.color === 'primary',
-                        'text-gray-400': event.color === 'secondary'
-                      }">{{ event.year }}</span>
+                      <span class="text-sm font-semibold" :class="event.type === 'work' ? 'text-red-400' : 'text-blue-400'">{{ event.year }}</span>
                     </div>
                     
-                    <span class="inline-block px-3 py-1 text-xs font-semibold rounded-full mb-4" :class="{
-                      'bg-red-500/20 text-red-300 border border-red-500/30': event.color === 'primary',
-                      'bg-gray-500/20 text-gray-300 border border-gray-500/30': event.color === 'secondary'
-                    }">
+                    <span class="inline-block px-3 py-1 text-xs font-semibold rounded-full mb-4"
+                      :class="event.type === 'work' ? 'bg-red-500/20 text-red-300 border border-red-500/30' : 'bg-blue-500/20 text-blue-300 border border-blue-500/30'">
                       {{ event.category }}
                     </span>
                     
@@ -1279,29 +1351,19 @@ const animateCounter = (element: HTMLElement) => {
                     <div class="mb-4">
                       <h4 class="text-sm font-semibold text-white mb-2">Key Highlights:</h4>
                       <ul class="space-y-1">
-                        <li v-for="detail in event.details.slice(0, 3)" :key="detail" class="text-gray-300 text-xs flex items-start">
+                        <li v-for="detail in event.details" :key="detail" class="text-gray-300 text-xs flex items-start">
                           <Icon name="heroicons:check-circle" class="text-green-500 mr-2 mt-0.5 flex-shrink-0 w-3 h-3" />
                           {{ detail }}
                         </li>
                       </ul>
-                      <p v-if="event.details.length > 3" class="text-xs text-gray-500 mt-2">
-                        +{{ event.details.length - 3 }} more highlights
-                      </p>
                     </div>
                     
                     <!-- Skills for Mobile -->
                     <div>
                       <h4 class="text-sm font-semibold text-white mb-2">Skills & Technologies:</h4>
                       <div class="flex flex-wrap gap-1">
-                        <span 
-                          v-for="skill in event.skills.slice(0, 4)" 
-                          :key="skill"
-                          class="px-2 py-1 text-xs bg-gray-700/50 text-gray-300 rounded border border-gray-600/50"
-                        >
+                        <span v-for="skill in event.skills" :key="skill" class="px-2 py-1 text-xs bg-gray-700/50 text-gray-300 rounded border border-gray-600/50">
                           {{ skill }}
-                        </span>
-                        <span v-if="event.skills.length > 4" class="px-2 py-1 text-xs text-gray-500">
-                          +{{ event.skills.length - 4 }} more
                         </span>
                       </div>
                     </div>

@@ -46,7 +46,7 @@ const latestArticles = computed<ArticlePreview[]>(() => (articles.value as unkno
 
 <template>
   <div>
-    <AppSection>
+    <AppSection class="mb-16">
       <div class="md:flex md:flex-row items-center">
         <div class="mt-8 md:mt-0 md:w-3/5 md:flex-1">
           <div class="flex gap-8 -mx-4 md:mx-0">
@@ -69,14 +69,16 @@ const latestArticles = computed<ArticlePreview[]>(() => (articles.value as unkno
             </div>
           </div>
           <AppParagraph look="subParagraph" class="mt-8 ">
-            Hello! I'm Rahul Aher, a seasoned Sr. Software Engineer at
-            <AppLink to="https://www.morningstar.com/" style="color: #dc2626 var(--tw-gradient-from-position);"><b>Morningstar</b></AppLink>, 
-            passionate about architecting transformative software solutions. With a results-oriented mindset, I pursue complex 
-            challenges in Software and Product Development.
+            Hello! I'm <b class="text-red-400">Rahul Aher</b>, Sr. Software Engineer at
+            <AppLink to="https://www.zema.global/" class="text-red-400 font-semibold"><b>ZEMA Global</b></AppLink>, 
+            passionate about architecting transformative software solutions. With a results-driven mindset, 
+            I thrive on solving complex challenges in software and product development - creating scalable, efficient, 
+            and impactful digital systems that make a real difference.
           </AppParagraph>
           <AppParagraph look="subParagraph" class="mt-6">
-            I excel in web development, mastering Java, JS, and cloud technologies. Committed to innovation, I leverage expertise to
-             boost team performance in dynamic environments.
+            <b class="text-red-400">Welcome to my digital space</b>, where I share my journey through code, creativity, and continuous exploration. Here, 
+            you’ll find insights on technology, glimpses of my travel experiences, and reflections on the ideas that inspire 
+            me - each piece representing a part of my evolving journey as a creator and engineer.
           </AppParagraph>
           
           <div class="mt-8 flex">
@@ -84,30 +86,30 @@ const latestArticles = computed<ArticlePreview[]>(() => (articles.value as unkno
             <AppButton to="/about/" look="secondary">About <span class="hidden sm:inline">me</span></AppButton>
           </div>
           <div class="hidden md:flex mt-4 filter text-4xl gap-8">
-            <AppLink title="To the Vue topic page" to="/topics/vue">
+            <!-- <AppLink title="To the Vue topic page" to="/topics/vue">
               <Icon class="" name="logos:vue" />
-            </AppLink>
+            </AppLink> -->
             <!-- <AppLink title="To the javascript topic page" to="/topics/javascript">
               <Icon class="" name="logos:javascript" />
             </AppLink> -->
-            <AppLink title="To the NodeJs topic page" to="/topics/nodejs">
+            <!-- <AppLink title="To the NodeJs topic page" to="/topics/nodejs">
               <Icon class="" name="logos:nodejs-icon" />
-            </AppLink>
+            </AppLink> -->
             <!-- <AppLink title="To the java topic page" to="/topics/java">
               <Icon class="" name="logos:java" />
             </AppLink> -->
-            <AppLink title="To the javascript topic page" to="/topics/spring">
+            <!-- <AppLink title="To the javascript topic page" to="/topics/spring">
               <Icon class="" name="logos:spring-icon" />
             </AppLink>  
             <AppLink title="To the aws topic page" to="/topics/aws">
               <Icon class="" name="logos:aws" />
-            </AppLink>
+            </AppLink> -->
             <!-- <AppLink title="To the java topic page" to="/topics/mysql">
               <Icon class="" name="logos:mysql" />
             </AppLink> -->
-            <AppLink title="To the aws topic page" to="/topics/mongodb">
+            <!-- <AppLink title="To the aws topic page" to="/topics/mongodb">
               <Icon class="" name="logos:mongodb-icon" />
-            </AppLink>
+            </AppLink> -->
           </div>
           <!-- <div class="hidden md:flex filter text-4xl gap-8">
             <AppLink title="To the Vue topic page" to="/topics/vue">
@@ -141,7 +143,7 @@ const latestArticles = computed<ArticlePreview[]>(() => (articles.value as unkno
             src="/img/rahul-main.png" 
             alt="Photo of Rahul Aher"
             class="z-20 relative w-full h-auto object-cover"
-            style="min-height: 635px; max-height: 700px; min-width: 400px;"
+            style="min-height: 709px; max-height: 710px; min-width: 400px;"
             loading="lazy"
           />
         </div>
@@ -149,19 +151,24 @@ const latestArticles = computed<ArticlePreview[]>(() => (articles.value as unkno
       <ContentDivider class="mt-16 md:-mt-10" />
     </AppSection>
 
-    <AppSection class="my-32" style="margin-bottom: 4.5rem;" >
+    <AppSection class="mb-32" style="margin-bottom: 4.5rem;" >
+      <div class="flex flex-col gap-16 md:gap-8 md:flex-row justify-around  mb-16">
+        <AppParagraph class="" tag="h3" look="heading">
+          <span>Explore My <span class="text-red-400">Digital World</span></span>
+        </AppParagraph>
+      </div>
       <div class="flex flex-col gap-16 md:gap-8 md:flex-row justify-around ">
-        <LazyServicePreview class="max-w-xl bg-zinc-900 p-8" icon="eos-icons:machine-learning-outlined" title="Learn" to="/courses">
+        <LazyServicePreview class="max-w-xl bg-zinc-900 p-8 hover:bg-zinc-700/50" icon="eos-icons:machine-learning-outlined" title="Learn" to="/courses">
           I'm passionate about continuous learning and believe in the value of hands-on experience. I actively 
           learn new concepts, ensuring a deeper understanding of each topic. This proactive approach fuels my 
           growth mindset and fosters ongoing professional development.
         </LazyServicePreview>
-        <LazyServicePreview class="max-w-xl bg-zinc-900 p-8" icon="ph:chalkboard-teacher-light" title="Build" to="/projects">
+        <LazyServicePreview class="max-w-xl bg-zinc-900 p-8 hover:bg-zinc-700/50" icon="ph:chalkboard-teacher-light" title="Build" to="/projects">
           I am dedicated to continuous learning, and I reinforce my understanding of new concepts by applying them
            to real-world projects. This approach not only enhances my skills but also allows me to delve 
            deeper into each concept, ensuring a comprehensive understanding.
         </LazyServicePreview>
-        <LazyServicePreview class="max-w-xl bg-zinc-900 p-8" icon="mdi:lightbulb-on-outline" title="Share" to="/articles">
+        <LazyServicePreview class="max-w-xl bg-zinc-900 p-8 hover:bg-zinc-700/50" icon="mdi:lightbulb-on-outline" title="Share" to="/articles">
           I love to share my knowledge and experience with the community. I mentor CDAC students, guiding them into 
           the software world. I enjoy collaborating on problem-solving, discussing optimal abstractions, and refining 
           architecture to ensure successful outcomes.
@@ -219,8 +226,7 @@ const latestArticles = computed<ArticlePreview[]>(() => (articles.value as unkno
       </AppParagraph>
       <div class="flex flex-col gap-8 md:gap-0 md:flex-row justify-between">
         <AppParagraph look="subParagraph" class="mt-8 max-w-xl">
-          <span style="font-style: italic;">“Offline-first is not just a feature, it’s a mindset. It’s about 
-            building resilient systems that empower users, no matter their connection status.”</span> — Akshat Paul
+          <span style="font-style: italic;">“Code with clarity. Design with intent. <br/>Deliver with impact”</span> — Dave Ackerman
          </AppParagraph>
         <div>
           <AppButton to="/projects/" look="secondary">Discover all Projects</AppButton>
