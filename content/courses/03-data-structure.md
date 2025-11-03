@@ -172,7 +172,7 @@ content:
     expanded: false
     topics:
       - id: 1
-        topic_name: Remove Duplicates
+        topic_name: Problem - Remove Duplicates
         sub_topic: Arrays - Easy/Medium
         publish_date: 2025-09-26
         description: >
@@ -185,7 +185,7 @@ content:
         is_on_youtube: false
         _path: data-structure-2-1
       - id: 2
-        topic_name: Remove Element
+        topic_name: Problem - Remove Element
         sub_topic: Arrays - Easy/Medium
         publish_date: 2025-09-26
         description: >
@@ -198,7 +198,7 @@ content:
         is_on_youtube: false
         _path: data-structure-2-2
       - id: 3
-        topic_name: Reverse String
+        topic_name: Problem - Reverse String
         sub_topic: Arrays - Easy/Medium
         publish_date: 2025-09-26
         description: >
@@ -211,7 +211,7 @@ content:
         is_on_youtube: false
         _path: data-structure-2-3
       - id: 4
-        topic_name: Best Time to Buy and Sell Stocks
+        topic_name: Problem - Best Time to Buy and Sell Stocks
         sub_topic: Arrays - Easy/Medium
         publish_date: 2025-09-26
         description: >
@@ -224,7 +224,7 @@ content:
         is_on_youtube: false
         _path: data-structure-2-4
       - id: 5
-        topic_name: Merge Sorted Arrays
+        topic_name: Problem - Merge Sorted Arrays
         sub_topic: Arrays - Easy/Medium
         publish_date: 2025-09-26
         description: >
@@ -237,7 +237,7 @@ content:
         is_on_youtube: false
         _path: data-structure-2-5
       - id: 6
-        topic_name: Move Zeros
+        topic_name: Problem - Move Zeros
         sub_topic: Arrays - Easy/Medium
         publish_date: 2025-09-26
         description: >
@@ -250,7 +250,7 @@ content:
         is_on_youtube: false
         _path: data-structure-2-6
       - id: 7
-        topic_name: Max Consecutive Ones
+        topic_name: Problem - Max Consecutive Ones
         sub_topic: Arrays - Easy/Medium
         publish_date: 2025-09-26
         description: >
@@ -263,7 +263,7 @@ content:
         is_on_youtube: false
         _path: data-structure-2-7
       - id: 8
-        topic_name: Missing Number
+        topic_name: Problem - Missing Number
         sub_topic: Arrays - Easy/Medium
         publish_date: 2025-09-26
         description: >
@@ -276,7 +276,7 @@ content:
         is_on_youtube: false
         _path: data-structure-2-8
       - id: 9
-        topic_name: Single Number
+        topic_name: Problem - Single Number
         sub_topic: Arrays - Easy/Medium
         publish_date: 2025-09-26
         description: >
@@ -289,6 +289,126 @@ content:
         is_on_youtube: false
         _path: data-structure-2-9
   - module_id: 3
+    module_name: Carry Forward
+    module_duration: "5 mins read"
+    topics_count: 1
+    tutor: 1
+    expanded: false
+    topics:
+      - id: 1
+        topic_name: Carry Forward
+        sub_topic: Advanced Array Techniques
+        publish_date: 2025-09-26
+        description: >
+          Master the carry forward technique in arrays. Learn how to efficiently process array elements by carrying information forward, reducing redundant calculations and improving algorithm performance.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: data-structure-3-1
+  - module_id: 4
+    module_name: Prefix Sum
+    module_duration: "5 mins read"
+    topics_count: 1
+    tutor: 1
+    expanded: false
+    topics:
+      - id: 1
+        topic_name: Prefix Sum
+        sub_topic: Advanced Array Techniques
+        publish_date: 2025-09-26
+        description: >
+          Master the prefix sum technique for efficient range query operations. Learn how to precompute cumulative sums to answer range sum queries in O(1) time complexity.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: data-structure-4-1
+  - module_id: 5
+    module_name: Subarrays
+    module_duration: "5 mins read"
+    topics_count: 1
+    tutor: 1
+    expanded: false
+    topics:
+      - id: 1
+        topic_name: Subarrays
+        sub_topic: Advanced Array Techniques
+        publish_date: 2025-09-26
+        description: >
+          Deep dive into subarrays - understanding, enumeration, and solving problems efficiently. Learn techniques to work with contiguous subsequences and optimize subarray-related algorithms.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: data-structure-5-1
+  - module_id: 6
+    module_name: Prefix & Subarrays
+    module_duration: "5 mins read"
+    topics_count: 1
+    tutor: 1
+    expanded: false
+    topics:
+      - id: 1
+        topic_name: Prefix & Subarrays
+        sub_topic: Advanced Array Techniques
+        publish_date: 2025-09-26
+        description: >
+          Combine prefix sum technique with subarray problems to solve complex range query and subarray optimization problems efficiently. Master the synergy between these two powerful concepts.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: data-structure-6-1
+  - module_id: 7
+    module_name: Arrays - 2D Matrices 1
+    module_duration: "5 mins read"
+    topics_count: 1
+    tutor: 1
+    expanded: false
+    topics:
+      - id: 1
+        topic_name: Arrays - 2D Matrices 1
+        sub_topic: Advanced Array Techniques
+        publish_date: 2025-09-26
+        description: >
+          Introduction to 2D matrices and fundamental operations. Learn matrix representation, traversal patterns, basic transformations, and essential 2D array manipulation techniques.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: data-structure-7-1
+  - module_id: 8
+    module_name: Arrays - 2D Matrices 2
+    module_duration: "5 mins read"
+    topics_count: 1
+    tutor: 1
+    expanded: false
+    topics:
+      - id: 1
+        topic_name: Arrays - 2D Matrices 2
+        sub_topic: Advanced Array Techniques
+        publish_date: 2025-09-26
+        description: >
+          Advanced 2D matrix algorithms and optimization techniques. Master spiral traversal, matrix multiplication, 2D prefix sums, and complex matrix transformation problems.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: data-structure-8-1
+  - module_id: 9
     module_name: Practice Problems - Arrays - (Easy/Medium)
     module_duration: "45 mins read"
     topics_count: 28
@@ -307,7 +427,7 @@ content:
           photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
           auther_name: Rahul Aher
           is_on_youtube: false
-          _path: data-structure-3-1
+          _path: data-structure-9-1
         - id: 2
           topic_name: Two Sum
           sub_topic: Arrays - Easy/Medium
@@ -320,7 +440,7 @@ content:
           photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
           auther_name: Rahul Aher
           is_on_youtube: false
-          _path: data-structure-3-2
+          _path: data-structure-9-2
         - id: 3
           topic_name: Contains Duplicate
           sub_topic: Arrays - Easy/Medium
@@ -333,7 +453,7 @@ content:
           photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
           auther_name: Rahul Aher
           is_on_youtube: false
-          _path: data-structure-3-3
+          _path: data-structure-9-3
         - id: 4
           topic_name: Find the Duplicate Number
           sub_topic: Arrays - Easy/Medium
@@ -346,7 +466,7 @@ content:
           photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
           auther_name: Rahul Aher
           is_on_youtube: false
-          _path: data-structure-3-4
+          _path: data-structure-9-4
         - id: 5
           topic_name: Union of Two Arrays
           sub_topic: Arrays - Easy/Medium
@@ -356,11 +476,11 @@ content:
           topics:
             - data-structures
           duration: "5 mins read"
-          photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+          photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data-structure_and_algorithms_xibaur.png"
           auther_name: Rahul Aher
           is_on_youtube: false
-          _path: data-structure-3-5
-  - module_id: 4
+          _path: data-structure-9-5
+  - module_id: 10
     module_name: Recursion - Easy/Medium
     module_duration: "30 mins read"
     topics_count: 6
@@ -379,7 +499,7 @@ content:
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
         auther_name: Rahul Aher
         is_on_youtube: false
-        _path: data-structure-4-1
+        _path: data-structure-10-1
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png)
