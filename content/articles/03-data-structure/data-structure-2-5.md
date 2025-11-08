@@ -226,3 +226,62 @@ var merge = function(nums1, m, nums2, n) {
     }
   };     
 ```
+
+### Important Points to Understand:
+
+**1. In-Place Merging:**
+* nums1 has enough space (m + n) to hold both arrays.
+* Last n positions are initially 0 and meant for nums2 elements.
+
+**2. Backward Approach:**
+* Fill from the end to avoid overwriting values.
+* This is the key insight for O(1) space solution.
+
+**3. Three Approaches:**
+* Brute force: Concatenate and sort - O((m+n) log(m+n))
+* Two pointer (forward): Needs extra space - O(m)
+* Two pointer (backward): Optimal - O(m+n) time, O(1) space
+
+### Edge Cases to Consider:
+
+**1. nums2 is empty (n = 0):**
+* Input: nums1 = [1, 2, 3], m = 3, nums2 = [], n = 0
+* Output: [1, 2, 3] (no changes needed)
+
+**2. nums1 valid portion is empty (m = 0):**
+* Input: nums1 = [0, 0, 0], m = 0, nums2 = [1, 2, 3], n = 3
+* Output: [1, 2, 3]
+
+**3. All nums1 elements larger:**
+* Input: nums1 = [4, 5, 6, 0, 0, 0], m = 3, nums2 = [1, 2, 3], n = 3
+* Output: [1, 2, 3, 4, 5, 6]
+
+**4. All nums2 elements larger:**
+* Input: nums1 = [1, 2, 3, 0, 0, 0], m = 3, nums2 = [4, 5, 6], n = 3
+* Output: [1, 2, 3, 4, 5, 6]
+
+**5. Interleaved elements:**
+* Input: nums1 = [1, 3, 5, 0, 0, 0], m = 3, nums2 = [2, 4, 6], n = 3
+* Output: [1, 2, 3, 4, 5, 6]
+
+### Key Takeaways:
+
+1. **Backward filling** is the key insight for optimal space complexity.
+
+2. **Three approaches** show progression from brute force to optimal.
+
+3. **Sorted arrays** property enables efficient merging without extra comparison overhead.
+
+4. **Two-pointer technique** is fundamental for merging operations.
+
+5. **Space optimization:** Backward approach avoids extra array needed in forward approach.
+
+6. **Applications:** Merge sort, external sorting, database merge operations.
+
+7. **Interview strategy:** Always mention all three approaches and their trade-offs.
+
+8. **Common mistakes:** Forgetting to handle cases where one array is exhausted first.
+
+9. **Related problems:** Merge K sorted lists, Merge intervals, Sort colors.
+
+10. **Foundation:** Understanding this prepares for more complex merge problems.

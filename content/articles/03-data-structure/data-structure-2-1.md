@@ -141,3 +141,67 @@ Output: 4 (First 4 elements are unique: [1, 2, 3, 5])
       return x + 1;
   }; 
 ```
+
+### Edge Cases to Consider:
+
+**1. Single Element Array:**
+* Input: nums = [1]
+* Output: 1 (only one unique element)
+
+**2. All Same Elements:**
+* Input: nums = [5, 5, 5, 5]
+* Output: 1 (only one unique element: 5)
+
+**3. All Different Elements:**
+* Input: nums = [1, 2, 3, 4, 5]
+* Output: 5 (all elements are unique)
+
+**4. Two Elements - Same:**
+* Input: nums = [1, 1]
+* Output: 1
+
+**5. Two Elements - Different:**
+* Input: nums = [1, 2]
+* Output: 2
+
+**6. Negative Numbers:**
+* Input: nums = [-3, -3, -2, -1]
+* Output: 3
+
+**7. Large Array:**
+* Arrays up to 3 × 10^4 elements should be handled efficiently.
+
+### Key Takeaways:
+
+1. **Two-pointer technique** is efficient for in-place array modifications.
+
+2. **Sorted array property:** Duplicates are adjacent, making detection simple.
+
+3. **In-place modification** saves space - O(1) extra space vs O(N) for creating new array.
+
+4. **Pointer x tracks position:** x always points to the last unique element's position.
+
+5. **Order preservation:** Relative order of unique elements is maintained.
+
+6. **Applications:**
+   * Data deduplication
+   * Preprocessing for algorithms requiring unique elements
+   * Memory optimization in sorted collections
+
+7. **Interview strategy:**
+   * Explain the two-pointer approach clearly.
+   * Walk through with an example.
+   * Mention that array must be sorted.
+   * Discuss in-place modification benefit.
+
+8. **Common mistakes:**
+   * Not handling empty arrays.
+   * Comparing wrong elements (should compare with last unique, not previous).
+   * Forgetting to return x + 1 (count, not index).
+
+9. **Related problems:**
+   * Remove duplicates allowing at most k occurrences.
+   * Remove duplicates from unsorted array.
+   * Find duplicates in array.
+
+10. **Performance:** O(N) time with O(1) space is optimal for this problem.

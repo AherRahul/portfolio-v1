@@ -49,6 +49,8 @@ const props = defineProps<{
   resources?: ResourceItem[]
   difficulty?: 'easy' | 'medium' | 'hard'
   isOlderThanOneYear?: boolean
+  enableAiNotes?: boolean
+  enableAiQuiz?: boolean
 }>()
 
 // Setup image modal for course topic content
@@ -56,12 +58,21 @@ const { setupContentImages } = useContentImages()
 
 // Tab state
 const activeTab = ref('content')
-const tabs = [
-  { id: 'content', title: 'Content', icon: 'heroicons:document-text' },
-  { id: 'notes', title: 'AI Notes', icon: 'heroicons:light-bulb' },
-  { id: 'quiz', title: 'Quiz', icon: 'heroicons:academic-cap' },
-  { id: 'resources', title: 'Resources', icon: 'heroicons:link' }
-]
+const tabs = computed(() => {
+  const allTabs = [
+    { id: 'content', title: 'Content', icon: 'heroicons:document-text' },
+    { id: 'notes', title: 'AI Notes', icon: 'heroicons:light-bulb' },
+    { id: 'quiz', title: 'Quiz', icon: 'heroicons:academic-cap' },
+    { id: 'resources', title: 'Resources', icon: 'heroicons:link' }
+  ]
+  
+  // Filter tabs based on AI flags (default to true if not specified)
+  return allTabs.filter(tab => {
+    if (tab.id === 'notes' && props.enableAiNotes === false) return false
+    if (tab.id === 'quiz' && props.enableAiQuiz === false) return false
+    return true
+  })
+})
 
 // AI Summary state
 const summaryData = ref<SummaryData | null>(null)

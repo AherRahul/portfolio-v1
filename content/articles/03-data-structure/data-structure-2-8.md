@@ -181,3 +181,31 @@ Output: 2
   };
          
 ```
+
+### Important Points to Understand:
+
+**1. Missing in Range [0, n]:** Array has n elements, range is [0, n], so exactly one number is missing.
+**2. Multiple Approaches:** Sum formula, XOR, sorting, hash set - each with different trade-offs.
+**3. Mathematical Formula:** Sum of 0 to n = n × (n + 1) / 2.
+**4. XOR Property:** a ^ a = 0, a ^ 0 = a, XOR all gives missing number.
+
+### Edge Cases to Consider:
+
+**1. Missing 0:** Input: [1, 2], Output: 0
+**2. Missing n:** Input: [0, 1], Output: 2
+**3. Missing Middle:** Input: [0, 2], Output: 1
+**4. Single Element:** Input: [0], Output: 1 or Input: [1], Output: 0
+**5. Large Array:** n = 10^4, verify no integer overflow.
+
+### Key Takeaways:
+
+1. **XOR approach** is elegant and avoids overflow issues.
+2. **Sum formula** is intuitive but watch for overflow with large numbers.
+3. **Multiple solutions** with different space-time trade-offs.
+4. **Mathematical insight:** Understanding number properties leads to elegant solutions.
+5. **Applications:** Data validation, error detection, checksum verification.
+6. **Interview strategy:** Explain multiple approaches and their pros/cons.
+7. **Common mistakes:** Integer overflow with sum approach, not handling edge cases.
+8. **Related problems:** Find duplicate number, first missing positive.
+9. **XOR properties:** Powerful tool for many array problems.
+10. **Optimization:** XOR approach is O(N) time, O(1) space - optimal!

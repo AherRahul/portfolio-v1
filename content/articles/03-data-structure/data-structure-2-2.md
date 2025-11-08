@@ -114,3 +114,94 @@ var removeElement = function(nums, val) {
   return x;
 };
 ```
+
+### Constraints:
+
+* `0 ≤ nums.length ≤ 100`
+* `0 ≤ nums[i] ≤ 50`
+* `0 ≤ val ≤ 100`
+
+### Important Points to Understand:
+
+**1. In-Place Modification:**
+* Must modify the original array, not create a new one.
+* Use O(1) extra space.
+
+**2. Order Doesn't Matter:**
+* Unlike Remove Duplicates, element order can change.
+* This allows for more optimization opportunities.
+
+**3. Two-Pointer Approach:**
+* Pointer `x` tracks where to place next valid element.
+* Only elements not equal to `val` are kept.
+
+**4. Return Value:**
+* Return k = count of elements ≠ val.
+* First k elements should contain the valid elements.
+
+### Edge Cases to Consider:
+
+**1. Empty Array:**
+* Input: nums = [], val = 0
+* Output: 0
+
+**2. All Elements Equal to val:**
+* Input: nums = [2, 2, 2], val = 2
+* Output: 0 (all removed)
+
+**3. No Elements Equal to val:**
+* Input: nums = [1, 2, 3], val = 4
+* Output: 3 (nothing removed)
+
+**4. Single Element - Match:**
+* Input: nums = [5], val = 5
+* Output: 0
+
+**5. Single Element - No Match:**
+* Input: nums = [5], val = 3
+* Output: 1
+
+**6. val at Beginning:**
+* Input: nums = [3, 3, 1, 2], val = 3
+* Output: 2, nums = [1, 2, _, _]
+
+**7. val at End:**
+* Input: nums = [1, 2, 3, 3], val = 3
+* Output: 2, nums = [1, 2, _, _]
+
+### Key Takeaways:
+
+1. **Two-pointer technique** efficiently removes elements in-place.
+
+2. **No sorting required:** Works on any array order.
+
+3. **Order flexibility:** Since order doesn't matter, we can overwrite freely.
+
+4. **O(N) time, O(1) space:** Optimal solution for this problem.
+
+5. **Applications:**
+   * Filtering arrays
+   * Data cleanup
+   * Preprocessing for algorithms
+
+6. **Interview strategy:**
+   * Clarify that order doesn't matter.
+   * Explain the two-pointer approach.
+   * Walk through an example.
+   * Mention edge cases.
+
+7. **Comparison with Remove Duplicates:**
+   * Remove Element: any order, removes specific value.
+   * Remove Duplicates: preserves order, removes duplicate values.
+
+8. **Common mistakes:**
+   * Creating new array instead of in-place modification.
+   * Not handling empty array.
+   * Forgetting to return count.
+
+9. **Related problems:**
+   * Move Zeroes (move instead of remove).
+   * Partition Array.
+   * Dutch National Flag problem.
+
+10. **Optimization:** This solution is already optimal - single pass, constant space.

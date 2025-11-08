@@ -231,6 +231,8 @@ const resourcesForTabs = computed(() => {
           :resources="resourcesForTabs"
           :difficulty="'medium'"
           :is-older-than-one-year="isOlderThanOneYear"
+          :enable-ai-notes="currentLecture?.enable_ai_notes ?? true"
+          :enable-ai-quiz="currentLecture?.enable_ai_quiz ?? true"
         />
       </div>
       
@@ -240,7 +242,7 @@ const resourcesForTabs = computed(() => {
         <ContentDoc class="prose md:prose-lg lg:prose-xl" :class="isOlderThanOneYear ? 'pt-8' : 'pt-4'" />
       </div>
 
-      <div class="mt-16 md:mt-32">
+      <div v-if="article" class="mt-16 md:mt-32">
         <div class="flex flex-col md:flex-row justify-between items-center gap-y-2 md:gap-0 mt-2">
           <div class="order-1">
             <AppLink

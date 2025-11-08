@@ -118,3 +118,30 @@ var moveZeroes = function(nums) {
   };
     
 ```
+
+### Important Points to Understand:
+
+**1. Order Preservation:** Relative order of non-zero elements must be maintained.
+**2. In-Place Modification:** Must modify the array in-place with O(1) extra space.
+**3. Two-Pointer Approach:** Use pointer x to track position for next non-zero element.
+
+### Edge Cases to Consider:
+
+**1. No Zeros:** Input: [1, 2, 3], Output: [1, 2, 3]
+**2. All Zeros:** Input: [0, 0, 0], Output: [0, 0, 0]
+**3. Single Element:** Input: [0], Output: [0]
+**4. Zeros at Start:** Input: [0, 0, 1, 2], Output: [1, 2, 0, 0]
+**5. Zeros at End:** Input: [1, 2, 0, 0], Output: [1, 2, 0, 0]
+
+### Key Takeaways:
+
+1. **Two-pointer technique** efficiently moves elements in-place.
+2. **Order preservation** distinguishes this from simple partitioning.
+3. **Two-pass solution:** First move non-zeros, then fill zeros.
+4. **O(N) time, O(1) space** is optimal.
+5. **Related problems:** Remove element, partition array.
+6. **Applications:** Data preprocessing, array cleanup.
+7. **Interview tip:** Mention both approaches (swap vs fill zeros).
+8. **Common mistake:** Not maintaining relative order of non-zero elements.
+9. **Optimization:** Can do in single pass with careful swapping.
+10. **Foundation:** Important pattern for array manipulation problems.

@@ -147,3 +147,130 @@ function maxProfit(prices) {
 * Keep track of the lowest price so far (minPrice).
 * At each step, calculate the profit if sold today.
 * Keep the maximum profit seen so far.
+
+### Important Points to Understand:
+
+**1. Single Transaction:**
+* Can only buy once and sell once.
+* Must buy before selling (can't sell then buy).
+
+**2. Greedy Approach:**
+* Track minimum price seen so far.
+* At each day, calculate profit if sold today.
+* Update maximum profit if current profit is higher.
+
+**3. One Pass Solution:**
+* Don't need to check all pairs (would be O(N²)).
+* Single pass with tracking minPrice gives O(N).
+
+**4. Profit Calculation:**
+* Profit = Selling Price - Buying Price
+* If no profit possible, return 0.
+
+### Multiple Optimized Approaches:
+
+**Approach 1: Track Min Price (Optimal)**
+```javascript
+function maxProfit(prices) {
+    let minPrice = Infinity;
+    let maxProfit = 0;
+    
+    for (const price of prices) {
+        minPrice = Math.min(minPrice, price);
+        maxProfit = Math.max(maxProfit, price - minPrice);
+    }
+    
+    return maxProfit;
+}
+```
+
+**Time:** O(N) ✓
+**Space:** O(1) ✓
+
+**Approach 2: Kadane's Algorithm Style**
+```javascript
+function maxProfit(prices) {
+    let maxProfit = 0;
+    let minPrice = prices[0];
+    
+    for (let i = 1; i < prices.length; i++) {
+        if (prices[i] < minPrice) {
+            minPrice = prices[i];
+        } else {
+            const profit = prices[i] - minPrice;
+            maxProfit = Math.max(maxProfit, profit);
+        }
+    }
+    
+    return maxProfit;
+}
+```
+
+### Edge Cases to Consider:
+
+**1. Empty Array:**
+* Input: prices = []
+* Output: 0 (no transactions possible)
+
+**2. Single Day:**
+* Input: prices = [5]
+* Output: 0 (need at least 2 days)
+
+**3. Strictly Decreasing:**
+* Input: prices = [7, 6, 4, 3, 1]
+* Output: 0 (no profit possible)
+
+**4. Strictly Increasing:**
+* Input: prices = [1, 2, 3, 4, 5]
+* Output: 4 (buy at 1, sell at 5)
+
+**5. All Same Price:**
+* Input: prices = [5, 5, 5, 5]
+* Output: 0 (no profit)
+
+**6. Maximum Profit at End:**
+* Input: prices = [2, 1, 2, 1, 0, 1, 2]
+* Output: 2 (buy at 0, sell at 2)
+
+**7. Maximum Profit in Middle:**
+* Input: prices = [3, 1, 4, 1]
+* Output: 3 (buy at 1, sell at 4)
+
+### Key Takeaways:
+
+1. **Greedy algorithm** works perfectly for this single-transaction problem.
+
+2. **Track minimum:** Always track the minimum price seen so far.
+
+3. **Calculate at each step:** For each price, calculate what profit would be if sold today.
+
+4. **One pass solution:** O(N) time is optimal.
+
+5. **No sorting:** Don't sort! Would lose the time ordering.
+
+6. **Applications:**
+   * Stock trading algorithms
+   * Timing optimization
+   * Peak-valley finding
+   * Time series analysis
+
+7. **Interview strategy:**
+   * Start with brute force (nested loops) explanation.
+   * Optimize to single pass with min tracking.
+   * Explain why we track minimum.
+   * Walk through an example.
+   * Discuss edge cases (decreasing prices).
+
+8. **Common mistakes:**
+   * Sorting the array (loses time information).
+   * Not handling decreasing prices.
+   * Selling before buying (checking wrong direction).
+   * Not initializing minPrice properly.
+
+9. **Related problems:**
+   * Best Time to Buy and Sell Stock II (multiple transactions).
+   * Best Time to Buy and Sell Stock III (at most 2 transactions).
+   * Best Time to Buy and Sell Stock with Cooldown.
+   * Best Time to Buy and Sell Stock with Transaction Fee.
+
+10. **Extension:** This is foundation for more complex stock problems with multiple transactions or constraints.

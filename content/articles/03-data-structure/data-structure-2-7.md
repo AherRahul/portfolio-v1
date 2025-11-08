@@ -115,3 +115,33 @@ var findMaxConsecutiveOnes = function(nums) {
   };
     
 ```
+
+### Important Points to Understand:
+
+**1. Consecutive Count:** Track current streak and maximum streak separately.
+**2. Reset on Zero:** When encountering 0, compare and reset current count.
+**3. Final Check:** Don't forget to check current count after loop ends.
+**4. Binary Array:** Only contains 0s and 1s, simplifying the logic.
+
+### Edge Cases to Consider:
+
+**1. All Ones:** Input: [1, 1, 1], Output: 3
+**2. All Zeros:** Input: [0, 0, 0], Output: 0
+**3. Single One:** Input: [1], Output: 1
+**4. Single Zero:** Input: [0], Output: 0
+**5. Alternating:** Input: [1, 0, 1, 0], Output: 1
+**6. Ones at End:** Input: [0, 1, 1, 1], Output: 3
+**7. Ones at Start:** Input: [1, 1, 1, 0], Output: 3
+
+### Key Takeaways:
+
+1. **Single pass solution** with O(N) time, O(1) space.
+2. **Track two values:** Current streak and maximum streak.
+3. **Reset pattern:** Common in consecutive/streak problems.
+4. **Final comparison:** Always check current count after loop.
+5. **Applications:** Streak analysis, pattern detection, time series.
+6. **Interview strategy:** Explain the reset logic clearly.
+7. **Common mistake:** Forgetting final comparison when array ends with 1s.
+8. **Related problems:** Longest consecutive sequence, max consecutive ones III.
+9. **Variation:** Can be extended to find longest subarray with at most k zeros.
+10. **Pattern recognition:** This pattern appears in many sequential problems.

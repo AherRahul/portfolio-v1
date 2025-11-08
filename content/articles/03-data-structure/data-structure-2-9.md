@@ -176,3 +176,31 @@ Output: 2
   };
          
 ```
+
+### Important Points to Understand:
+
+**1. Every Element Appears Twice Except One:** This property makes XOR perfect for this problem.
+**2. XOR Properties:** a ^ a = 0 (same numbers cancel), a ^ 0 = a (identity).
+**3. Commutative and Associative:** Order doesn't matter with XOR.
+**4. Linear Constraint:** Must solve in O(N) time with O(1) space.
+
+### Edge Cases to Consider:
+
+**1. Single Element:** Input: [1], Output: 1
+**2. Three Elements:** Input: [1, 2, 1], Output: 2
+**3. Large Array:** Handle arrays up to 3 × 10^4 elements efficiently.
+**4. Negative Numbers:** Input: [-1, -2, -1], Output: -2
+**5. Zero Present:** Input: [0, 1, 0], Output: 1
+
+### Key Takeaways:
+
+1. **XOR is the key:** Brute force uses hash map (O(N) space), XOR uses O(1) space.
+2. **Bit manipulation:** Understanding bitwise operations unlocks elegant solutions.
+3. **Two approaches:** Hash map (intuitive) vs XOR (optimal).
+4. **Space-time trade-off:** XOR sacrifices code clarity for space efficiency.
+5. **Applications:** Error detection, data deduplication, cryptography basics.
+6. **Interview strategy:** Start with hash map, then optimize to XOR.
+7. **Common mistakes:** Not considering XOR approach, forgetting edge cases.
+8. **Related problems:** Single number II (appears 3 times), single number III (two unique).
+9. **Pattern:** XOR cancellation pattern appears in many bit manipulation problems.
+10. **Foundation:** This problem teaches core bit manipulation concepts for interviews.
