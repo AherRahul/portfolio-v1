@@ -21,6 +21,10 @@ resources:
     type: "practice"
     url: "https://leetcode.com/tag/prefix-sum/"
     description: "Practice prefix sum problems"
+  - title: "Scaler Notes - Day 33, 18 Apr - DSA: Introduction to Problem Solving"
+    type: "documentation"
+    url: "https://res.cloudinary.com/duojkrgue/image/upload/v1761497972/Portfolio/scalerNotes/01-dsa-problem-solving_zudvhj.pdf"
+    description: "DSA Mathematical foundations"
 
 ---
 

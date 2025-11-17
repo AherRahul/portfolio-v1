@@ -108,6 +108,12 @@ function countDigits(n) {
 console.log(countDigits(259)); // 3
 ```
 
+
+### Time Complexity
+- The loop runs once per digit.
+- Time Complexity: O(d) Where d = number of digits in n.
+- Since d = log₁₀(n), you can also say: O(log n) (base 10, but base doesn’t matter in Big-O).
+
 ## Key Takeaways
 - Always handle zero as a special case.
 - Use absolute value to ignore sign.

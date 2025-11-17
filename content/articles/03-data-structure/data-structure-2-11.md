@@ -3,9 +3,26 @@ title: "Problem - IsPrime"
 description: "Master the fundamental concept of prime numbers. Learn efficient algorithms to check if a number is prime, understand the mathematics behind primality testing, and optimize your solution from O(N) to O(√N)."
 dateModified: 2025-02-08
 datePublished: 2025-02-08
+courseName: 03-data-structure
 topics:
   - data-structures
-courseName: 03-data-structure
+resources:
+  - title: "Number Theory Basics"
+    type: "reference"
+    url: "https://www.mathsisfun.com/numbers/factors-divisors.html"
+    description: "Understanding factors and divisors"
+  - title: "Prime Factorization"
+    type: "tool"
+    url: "https://visualgo.net/en"
+    description: "Interactive visualization of number theory concepts"
+  - title: "Factor Problems Practice"
+    type: "practice"
+    url: "https://leetcode.com/tag/math/"
+    description: "Practice problems focusing on mathematical algorithms"
+  - title: "Scaler Notes - Day 33, 18 Apr - DSA: Introduction to Problem Solving"
+    type: "documentation"
+    url: "https://res.cloudinary.com/duojkrgue/image/upload/v1761497972/Portfolio/scalerNotes/01-dsa-problem-solving_zudvhj.pdf"
+    description: "DSA Mathematical foundations"
 --- 
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png)

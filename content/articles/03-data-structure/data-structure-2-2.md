@@ -21,6 +21,10 @@ resources:
     type: "practice"
     url: "https://leetcode.com/tag/string/"
     description: "Comprehensive string algorithm practice problems"
+  - title: "Scaler Notes - Day 33, 18 Apr - DSA: Introduction to Problem Solving"
+    type: "documentation"
+    url: "https://res.cloudinary.com/duojkrgue/image/upload/v1761497972/Portfolio/scalerNotes/01-dsa-problem-solving_zudvhj.pdf"
+    description: "DSA Mathematical foundations"
 
 ---
 
@@ -142,32 +146,32 @@ var removeElement = function(nums, val) {
 ### Edge Cases to Consider:
 
 **1. Empty Array:**
-* Input: nums = [], val = 0
+* Input: nums = `[]`, val = 0
 * Output: 0
 
 **2. All Elements Equal to val:**
-* Input: nums = [2, 2, 2], val = 2
+* Input: nums =  `[2, 2, 2]`, val = 2
 * Output: 0 (all removed)
 
 **3. No Elements Equal to val:**
-* Input: nums = [1, 2, 3], val = 4
+* Input: nums = `[1, 2, 3]`, val = 4
 * Output: 3 (nothing removed)
 
 **4. Single Element - Match:**
-* Input: nums = [5], val = 5
+* Input: nums = `[5]`, val = 5
 * Output: 0
 
 **5. Single Element - No Match:**
-* Input: nums = [5], val = 3
+* Input: nums = `[5]`, val = 3
 * Output: 1
 
 **6. val at Beginning:**
-* Input: nums = [3, 3, 1, 2], val = 3
-* Output: 2, nums = [1, 2, _, _]
+* Input: nums = `[3, 3, 1, 2]`, val = 3
+* Output: 2, nums = `[1, 2, _, _]`
 
 **7. val at End:**
-* Input: nums = [1, 2, 3, 3], val = 3
-* Output: 2, nums = [1, 2, _, _]
+* Input: nums = `[1, 2, 3, 3]`, val = 3
+* Output: 2, nums = `[1, 2, _, _]`
 
 ### Key Takeaways:
 

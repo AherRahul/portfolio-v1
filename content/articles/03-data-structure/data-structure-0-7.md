@@ -117,6 +117,13 @@ var isPalindrome = function(x) {
 console.log(isPalindrome(121)); // true
 ```
 
+
+### Time Complexity
+- The loop runs once per digit.
+- Time Complexity: O(d) Where d = number of digits in n.
+- Since d = log₁₀(n), you can also say: O(log n) (base 10, but base doesn’t matter in Big-O).
+
+
 ## Key Takeaways
 - Negative integers can never be palindromes.
 - Efficient O(1) space and O(d) time.

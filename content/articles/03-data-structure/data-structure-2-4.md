@@ -21,6 +21,10 @@ resources:
     type: "reference"
     url: "https://developer.mozilla.org/en-US/docs/Glossary/Call_stack"
     description: "Understanding function call stacks in JavaScript"
+  - title: "Scaler Notes - Day 33, 18 Apr - DSA: Introduction to Problem Solving"
+    type: "documentation"
+    url: "https://res.cloudinary.com/duojkrgue/image/upload/v1761497972/Portfolio/scalerNotes/01-dsa-problem-solving_zudvhj.pdf"
+    description: "DSA Mathematical foundations"
 
 ---
 
