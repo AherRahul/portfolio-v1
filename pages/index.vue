@@ -69,16 +69,15 @@ const latestArticles = computed<ArticlePreview[]>(() => (articles.value as unkno
             </div>
           </div>
           <AppParagraph look="subParagraph" class="mt-8 ">
-            Hello! I'm <b class="text-red-400">Rahul Aher</b>, Sr. Software Engineer at
-            <AppLink to="https://www.zema.global/" class="text-red-400 font-semibold"><b>ZEMA Global</b></AppLink>, 
-            passionate about architecting transformative software solutions. With a results-driven mindset, 
-            I thrive on solving complex challenges in software and product development - creating scalable, efficient, 
-            and impactful digital systems that make a real difference.
+            Hello! I'm <b class="text-red-400">Rahul Aher</b>, a Senior Software Engineer with <b class="text-red-400">7+ years</b> of experience architecting enterprise-grade web applications. 
+            Currently at <AppLink to="https://www.zema.global/" class="text-red-400 font-semibold"><b>ZEMA Global</b></AppLink>, I lead technical initiatives, design scalable systems, and 
+            mentor teams to deliver high-impact solutions. Through years of hands-on experience, I've mastered the art of transforming complex business requirements into elegant, performant, 
+            and maintainable codebases that drive real-world value.
           </AppParagraph>
           <AppParagraph look="subParagraph" class="mt-6">
-            <b class="text-red-400">Welcome to my digital space</b>, where I share my journey through code, creativity, and continuous exploration. Here, 
-            you’ll find insights on technology, glimpses of my travel experiences, and reflections on the ideas that inspire 
-            me - each piece representing a part of my evolving journey as a creator and engineer.
+            <b class="text-red-400">Welcome to my digital space</b>- a curated collection of knowledge, insights, and experiences from nearly a decade in software development. Here, you'll 
+            discover in-depth technical articles, comprehensive courses, and real-world project case studies that reflect my journey from writing code to architecting systems, from solving 
+            problems to teaching others. Each piece represents lessons learned, patterns discovered, and wisdom gained through years of building software that matters.
           </AppParagraph>
           
           <div class="mt-8 flex">
@@ -143,7 +142,7 @@ const latestArticles = computed<ArticlePreview[]>(() => (articles.value as unkno
             src="/img/rahul-main.png" 
             alt="Photo of Rahul Aher"
             class="z-20 relative w-full h-auto object-cover"
-            style="min-height: 709px; max-height: 710px; min-width: 400px;"
+            style="min-height: 849px; max-height: 710px; min-width: 400px;"
             loading="lazy"
           />
         </div>
@@ -159,19 +158,19 @@ const latestArticles = computed<ArticlePreview[]>(() => (articles.value as unkno
       </div>
       <div class="flex flex-col gap-16 md:gap-8 md:flex-row justify-around ">
         <LazyServicePreview class="max-w-xl bg-zinc-900 p-8 hover:bg-zinc-700/50" icon="eos-icons:machine-learning-outlined" title="Learn" to="/courses">
-          I'm passionate about continuous learning and believe in the value of hands-on experience. I actively 
-          learn new concepts, ensuring a deeper understanding of each topic. This proactive approach fuels my 
-          growth mindset and fosters ongoing professional development.
+          With 7+ years in the field, I've learned that mastery comes from continuous exploration and deep understanding. I create comprehensive courses that 
+          distill complex concepts into actionable knowledge, drawing from real-world experiences and industry best practices. My courses bridge the gap between 
+          theory and practice, helping developers accelerate their growth and avoid common pitfalls.
         </LazyServicePreview>
         <LazyServicePreview class="max-w-xl bg-zinc-900 p-8 hover:bg-zinc-700/50" icon="ph:chalkboard-teacher-light" title="Build" to="/projects">
-          I am dedicated to continuous learning, and I reinforce my understanding of new concepts by applying them
-           to real-world projects. This approach not only enhances my skills but also allows me to delve 
-           deeper into each concept, ensuring a comprehensive understanding.
+          Over the years, I've architected and delivered numerous production systems, from high-traffic web applications to complex enterprise solutions. Each 
+          project represents a journey of problem-solving, technical decision-making, and continuous refinement. I build with purpose creating software that's 
+          not just functional, but scalable, maintainable, and impactful.
         </LazyServicePreview>
         <LazyServicePreview class="max-w-xl bg-zinc-900 p-8 hover:bg-zinc-700/50" icon="mdi:lightbulb-on-outline" title="Share" to="/articles">
-          I love to share my knowledge and experience with the community. I mentor CDAC students, guiding them into 
-          the software world. I enjoy collaborating on problem-solving, discussing optimal abstractions, and refining 
-          architecture to ensure successful outcomes.
+          Knowledge multiplies when shared. Through technical articles, mentorship, and community engagement, I contribute to the collective growth of our industry. 
+          I mentor developers at various stages of their careers, write in-depth technical content, and actively participate in knowledge-sharing initiatives because 
+          the best way to solidify understanding is to teach others.
         </LazyServicePreview>
       </div>
       <ContentDivider class="mt-32" anchor="left" />

@@ -1,5 +1,5 @@
 ---
-title: "Problem - Functions, if-else"
+title: "Problem - Sum of Two Integers"
 description: "Understanding the importance of data structures and algorithms in programming. Learn systematic problem-solving approaches, algorithmic thinking, and how DSA impacts software performance and efficiency."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-09-26"

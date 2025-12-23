@@ -1,6 +1,6 @@
 ---
-title: "Bulbs Problem"
-description: "Master the greedy approach with carry forward technique to solve the bulbs switching problem. Learn how state propagation and toggle mechanics work in array problems."
+title: "Best Time to Buy and Sell Stocks"
+description: "Master the Last-In-First-Out (LIFO) principle. Learn stack operations, expression evaluation, backtracking algorithms, and real-world applications of stack data structures."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-09-26"
 datePublished: "2025-09-26"
@@ -9,406 +9,272 @@ courseName: 03-data-structure
 topics:
   - data-structures
 resources:
-  - title: "Greedy Algorithms"
-    type: "reference"
-    url: "https://www.geeksforgeeks.org/greedy-algorithms/"
-    description: "Understanding greedy algorithmic approaches"
-  - title: "State Toggle Problems"
+  - title: "Stack Visualizations"
     type: "tool"
-    url: "https://visualgo.net/en"
-    description: "Visualize state changes"
-  - title: "Greedy Practice"
+    url: "https://visualgo.net/en/list"
+    description: "Interactive stack operations visualization"
+  - title: "Stack Problems Practice"
     type: "practice"
-    url: "https://leetcode.com/tag/greedy/"
-    description: "Practice greedy algorithm problems"
+    url: "https://leetcode.com/tag/stack/"
+    description: "Practice problems for mastering stack algorithms"
+  - title: "Call Stack Guide"
+    type: "reference"
+    url: "https://developer.mozilla.org/en-US/docs/Glossary/Call_stack"
+    description: "Understanding function call stacks in JavaScript"
+  - title: "Scaler Notes - Day 33, 18 Apr - DSA: Introduction to Problem Solving"
+    type: "documentation"
+    url: "https://res.cloudinary.com/duojkrgue/image/upload/v1761497972/Portfolio/scalerNotes/01-dsa-problem-solving_zudvhj.pdf"
+    description: "DSA Mathematical foundations"
 
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png)
 
-Bulbs Problem
-----------------------------
+
+Best Time to Buy and Sell Stocks 
+-------------------------------------
 
 ### Problem Statement:
+You are given an array `prices` where `prices[i]` is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.
 
-A wire connects `N` light bulbs. Each bulb has a switch associated with it; however, due to **faulty wiring**, a switch also changes the state of **all the bulbs to the right** of the current bulb.
+Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return `0`.
 
-Given an initial state of all bulbs (represented as an array where 0 = OFF and 1 = ON), find the **minimum number of switches** you have to press to turn on all the bulbs.
-
-You can press the same switch multiple times.
-
-**Note:** 
-* 0 represents the bulb is OFF
-* 1 represents the bulb is ON
-
-### Examples:
+<br />
 
 #### Example 1:
 
-**Input:** A = [0, 1, 0, 1]
+**Input:** prices = \[7, 1, 5, 3, 6, 4\]
 
-**Output:** 4
+**Output:** 5
 
-**Explanation:**
-* Press switch at bulb 0: [1, 0, 1, 0] (toggle 0,1,2,3) → 1 press
-* Press switch at bulb 1: [1, 1, 0, 1] (toggle 1,2,3) → 2 presses
-* Press switch at bulb 2: [1, 1, 1, 0] (toggle 2,3) → 3 presses
-* Press switch at bulb 3: [1, 1, 1, 1] (toggle 3) → 4 presses
+`Explanation:` Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6 – 1 = 5.
+
+<br />
 
 #### Example 2:
 
-**Input:** A = [1, 1, 1, 1]
+**Input:** prices = \[7,6,4,3,1\]
 
 **Output:** 0
 
-**Explanation:** All bulbs are already ON, no switches needed.
-
-#### Example 3:
-
-**Input:** A = [0, 0, 0, 0]
-
-**Output:** 1
-
-**Explanation:**
-* Press switch at bulb 0: All bulbs turn ON → 1 press
-
-#### Example 4:
-
-**Input:** A = [1, 0, 1]
-
-**Output:** 2
-
-**Explanation:**
-* Press switch at bulb 1: [1, 1, 0] → 1 press
-* Press switch at bulb 2: [1, 1, 1] → 2 presses
+`Explanation:` Explanation: In this case, no transactions are done and the max profit = 0.
 
 ### Constraints:
 
-* `1 ≤ N ≤ 10^5`
-* `A[i] ∈ {0, 1}`
+*   1 <= prices.length <= 105
+*   0 <= prices\[i\] <= 104
 
-### Important Points to Understand:
+### Approach: Brute Force
 
-**1. Faulty Wiring Effect:**
-* Pressing switch at position i toggles bulbs at positions i, i+1, i+2, ..., N-1.
-* This is a cascading effect to the right.
-
-**2. Greedy Approach:**
-* Process bulbs from left to right.
-* If a bulb is OFF, we MUST press its switch (no other switch affects it from the left).
-* No need to backtrack or check multiple solutions.
-
-**3. State Tracking:**
-* Track the current effective state considering all previous toggles.
-* Use a toggle counter to determine actual state.
-
-**4. Optimization:**
-* Brute force: Try all combinations - exponential time.
-* Greedy: Process left to right - O(N) time.
-
-### Approach:
-
-**Greedy Approach:**
-1. Initialize `switches = 0` and `toggleCount = 0`.
-2. Traverse array from left to right.
-3. For each bulb:
-   * Calculate actual state: `(A[i] + toggleCount) % 2`
-   * If actual state is 0 (OFF):
-     * Press the switch → `switches++`
-     * Increment `toggleCount`
-4. Return `switches`.
-
-**Key Insight:** 
-* When we press a switch, it affects current and all future bulbs.
-* We carry forward the toggle count to know the actual state of each bulb.
+*   Initialize `maxProfit = 0`.
+*   Use two nested loops.
+*   Outer loop picks a day `i`to buy the stock.
+*   Inner loop picks a day `j > i` to sell the stock.
+*   For every pair `(i, j)`, calculate the profit: `prices[j] - prices[i]`.
+*   If this profit is greater than `maxProfit`, update `maxProfit`.
 
 ### Time Complexity:
 
-* **Time Complexity = O(N)** - Single pass through the array.
+*   **Time Complexity = O(n2)** Two nested loops. For every element i, check all j > i. Total comparisons = n(n-1)/2 → O(n²)
+    
 
 ### Space Complexity:
 
-* **Space Complexity = O(1)** - Only using counter variables.
+*   **Space Complexity = O(1)** No extra data structures used. Only uses a variable maxProfit.
+    
 
-### Dry Run:
-
-```
-Input: A = [0, 1, 0, 1]
-
-Initialize: switches = 0, toggleCount = 0
-
-i = 0, A[0] = 0
-    actualState = (0 + 0) % 2 = 0 (OFF)
-    Bulb is OFF → Press switch
-    switches = 1, toggleCount = 1
-
-i = 1, A[1] = 1
-    actualState = (1 + 1) % 2 = 0 (OFF)
-    Bulb is OFF (toggled once) → Press switch
-    switches = 2, toggleCount = 2
-
-i = 2, A[2] = 0
-    actualState = (0 + 2) % 2 = 0 (OFF)
-    Bulb is OFF (toggled twice, back to OFF) → Press switch
-    switches = 3, toggleCount = 3
-
-i = 3, A[3] = 1
-    actualState = (1 + 3) % 2 = 0 (OFF)
-    Bulb is OFF (toggled 3 times) → Press switch
-    switches = 4, toggleCount = 4
-
-Final switches = 4
-
-Output: 4
-```
-
-### Dry Run - Example 2:
+### Dry Run
 
 ```
-Input: A = [1, 1, 1, 1]
+Input: prices = [7, 1, 5, 3, 6, 4]
 
-Initialize: switches = 0, toggleCount = 0
+i = 0, prices[i] = 7
+   j = 1 → 1 - 7 = -6 → maxProfit = 0
+   j = 2 → 5 - 7 = -2 → maxProfit = 0
+   j = 3 → 3 - 7 = -4 → maxProfit = 0
+   j = 4 → 6 - 7 = -1 → maxProfit = 0
+   j = 5 → 4 - 7 = -3 → maxProfit = 0
 
-i = 0, A[0] = 1
-    actualState = (1 + 0) % 2 = 1 (ON)
-    Bulb is ON → No press needed
+i = 1, prices[i] = 1
+   j = 2 → 5 - 1 = 4 → maxProfit = 4
+   j = 3 → 3 - 1 = 2 → maxProfit = 4
+   j = 4 → 6 - 1 = 5 → maxProfit = 5
+   j = 5 → 4 - 1 = 3 → maxProfit = 5
 
-i = 1, A[1] = 1
-    actualState = (1 + 0) % 2 = 1 (ON)
-    Bulb is ON → No press needed
+i = 2, prices[i] = 5
+   j = 3 → 3 - 5 = -2 → maxProfit = 5
+   j = 4 → 6 - 5 = 1 → maxProfit = 5
+   j = 5 → 4 - 5 = -1 → maxProfit = 5
 
-i = 2, A[2] = 1
-    actualState = (1 + 0) % 2 = 1 (ON)
-    Bulb is ON → No press needed
+... and so on.
 
-i = 3, A[3] = 1
-    actualState = (1 + 0) % 2 = 1 (ON)
-    Bulb is ON → No press needed
+Final maxProfit = 5 (buy at 1, sell at 6)
+  
 
-Final switches = 0
-
-Output: 0
+Output: 5
 ```
 
-### Dry Run - Example 3:
+## Visualisation:
 
-```
-Input: A = [0, 0, 0, 0]
+![Stocks](https://namastedev.com/blog/wp-content/uploads/2025/06/Screenshot-2025-06-27-at-12.58.36 PM.png)
 
-Initialize: switches = 0, toggleCount = 0
-
-i = 0, A[0] = 0
-    actualState = (0 + 0) % 2 = 0 (OFF)
-    Bulb is OFF → Press switch
-    switches = 1, toggleCount = 1
-    [This press turns ON all bulbs: 0,1,2,3]
-
-i = 1, A[1] = 0
-    actualState = (0 + 1) % 2 = 1 (ON)
-    Bulb is ON (toggled once) → No press needed
-
-i = 2, A[2] = 0
-    actualState = (0 + 1) % 2 = 1 (ON)
-    Bulb is ON (toggled once) → No press needed
-
-i = 3, A[3] = 0
-    actualState = (0 + 1) % 2 = 1 (ON)
-    Bulb is ON (toggled once) → No press needed
-
-Final switches = 1
-
-Output: 1
-```
-
-### Visualization:
-
-```
-Example: A = [0, 1, 0, 1]
-
-Initial state:
-Index:  0  1  2  3
-State: [0, 1, 0, 1]
-        ↑  OFF (need to press)
-
-After pressing switch 0:
-        [1, 0, 1, 0]  (all toggled)
-           ↑  OFF (need to press)
-Presses: 1
-
-After pressing switch 1:
-        [1, 1, 0, 1]  (1,2,3 toggled)
-              ↑  OFF (need to press)
-Presses: 2
-
-After pressing switch 2:
-        [1, 1, 1, 0]  (2,3 toggled)
-                 ↑  OFF (need to press)
-Presses: 3
-
-After pressing switch 3:
-        [1, 1, 1, 1]  (3 toggled)
-Presses: 4 ✓ All ON!
-
-Visual representation of toggles:
-    Press 0:  ████████████  (affects all)
-    Press 1:     ████████   (affects 1,2,3)
-    Press 2:        ████    (affects 2,3)
-    Press 3:           █    (affects 3)
-```
-
-### Optimal Approach - JavaScript Code:
+### JavaScript Code
 
 ```javascript
-function bulbs(A) {
-    let switches = 0;
-    let toggleCount = 0;
+
+function maxProfit(prices) {
+  let minPrice = Infinity;  // Track the minimum price so far
+  let maxProfit = 0;        // Track the maximum profit possible
+
+  for (let price of prices) {
+    // Update minPrice if a lower price is found
+    if (price < minPrice) {
+      minPrice = price;
+    }
+
+    // Calculate potential profit at this price
+    const profit = price - minPrice;
+
+    // Update maxProfit if this profit is higher
+    if (profit > maxProfit) {
+      maxProfit = profit;
+    }
+  }
+
+  return maxProfit;
+}
     
-    for (let i = 0; i < A.length; i++) {
-        // Calculate actual state considering previous toggles
-        const actualState = (A[i] + toggleCount) % 2;
-        
-        // If bulb is OFF, press the switch
-        if (actualState === 0) {
-            switches++;
-            toggleCount++;
-        }
+```
+
+### Key Insight
+
+* Keep track of the lowest price so far (minPrice).
+* At each step, calculate the profit if sold today.
+* Keep the maximum profit seen so far.
+
+### Important Points to Understand:
+
+**1. Single Transaction:**
+* Can only buy once and sell once.
+* Must buy before selling (can't sell then buy).
+
+**2. Greedy Approach:**
+* Track minimum price seen so far.
+* At each day, calculate profit if sold today.
+* Update maximum profit if current profit is higher.
+
+**3. One Pass Solution:**
+* Don't need to check all pairs (would be O(N²)).
+* Single pass with tracking minPrice gives O(N).
+
+**4. Profit Calculation:**
+* Profit = Selling Price - Buying Price
+* If no profit possible, return 0.
+
+### Multiple Optimized Approaches:
+
+**Approach 1: Track Min Price (Optimal)**
+```javascript
+function maxProfit(prices) {
+    let minPrice = Infinity;
+    let maxProfit = 0;
+    
+    for (const price of prices) {
+        minPrice = Math.min(minPrice, price);
+        maxProfit = Math.max(maxProfit, price - minPrice);
     }
     
-    return switches;
+    return maxProfit;
 }
 ```
 
 **Time:** O(N) ✓
 **Space:** O(1) ✓
 
-### Alternative Approach - Simulating Actual Toggles:
-
+**Approach 2: Kadane's Algorithm Style**
 ```javascript
-function bulbs_Simulation(A) {
-    const state = [...A];  // Copy array
-    let switches = 0;
+function maxProfit(prices) {
+    let maxProfit = 0;
+    let minPrice = prices[0];
     
-    for (let i = 0; i < state.length; i++) {
-        if (state[i] === 0) {
-            // Press switch - toggle all from i to end
-            switches++;
-            for (let j = i; j < state.length; j++) {
-                state[j] = 1 - state[j];  // Toggle
-            }
+    for (let i = 1; i < prices.length; i++) {
+        if (prices[i] < minPrice) {
+            minPrice = prices[i];
+        } else {
+            const profit = prices[i] - minPrice;
+            maxProfit = Math.max(maxProfit, profit);
         }
     }
     
-    return switches;
+    return maxProfit;
 }
 ```
-
-**Time:** O(N²) ❌ (nested loops for toggling)
-**Space:** O(N) ❌ (copy of array)
-
-**Note:** This simulation approach is intuitive but inefficient. The optimal approach uses toggle counting.
-
-### Alternative Approach - Using XOR:
-
-```javascript
-function bulbs_XOR(A) {
-    let switches = 0;
-    let toggle = 0;
-    
-    for (let i = 0; i < A.length; i++) {
-        // XOR to get actual state
-        const actualState = A[i] ^ toggle;
-        
-        if (actualState === 0) {
-            switches++;
-            toggle = toggle ^ 1;  // Flip toggle state
-        }
-    }
-    
-    return switches;
-}
-```
-
-**Time:** O(N) ✓
-**Space:** O(1) ✓
 
 ### Edge Cases to Consider:
 
-**1. All Bulbs ON:**
-* Input: A = [1, 1, 1, 1]
-* Output: 0 (no switches needed)
+**1. Empty Array:**
+* Input: prices = []
+* Output: 0 (no transactions possible)
 
-**2. All Bulbs OFF:**
-* Input: A = [0, 0, 0, 0]
-* Output: 1 (one press at first bulb turns all ON)
+**2. Single Day:**
+* Input: prices = [5]
+* Output: 0 (need at least 2 days)
 
-**3. Single Bulb OFF:**
-* Input: A = [0]
-* Output: 1
+**3. Strictly Decreasing:**
+* Input: prices = [7, 6, 4, 3, 1]
+* Output: 0 (no profit possible)
 
-**4. Single Bulb ON:**
-* Input: A = [1]
-* Output: 0
+**4. Strictly Increasing:**
+* Input: prices = [1, 2, 3, 4, 5]
+* Output: 4 (buy at 1, sell at 5)
 
-**5. Alternating Pattern:**
-* Input: A = [0, 1, 0, 1, 0, 1]
-* Each OFF bulb needs a press → count OFF bulbs considering toggles
+**5. All Same Price:**
+* Input: prices = [5, 5, 5, 5]
+* Output: 0 (no profit)
 
-**6. Two Bulbs:**
-* Input: A = [0, 0]
-* Output: 1 (press first, both turn ON)
+**6. Maximum Profit at End:**
+* Input: prices = [2, 1, 2, 1, 0, 1, 2]
+* Output: 2 (buy at 0, sell at 2)
 
-**7. Large Array:**
-* Input: Array of size 10^5
-* Should handle efficiently in O(N) time
+**7. Maximum Profit in Middle:**
+* Input: prices = [3, 1, 4, 1]
+* Output: 3 (buy at 1, sell at 4)
 
 ### Key Takeaways:
 
-1. **Greedy approach works:** Process left to right, make local optimal decisions.
+1. **Greedy algorithm** works perfectly for this single-transaction problem.
 
-2. **Carry forward toggle count:** Track cumulative toggles to know actual state.
+2. **Track minimum:** Always track the minimum price seen so far.
 
-3. **Modulo arithmetic:** Use `(state + toggles) % 2` to determine actual ON/OFF.
+3. **Calculate at each step:** For each price, calculate what profit would be if sold today.
 
-4. **No backtracking needed:** Once we decide at position i, it's optimal.
+4. **One pass solution:** O(N) time is optimal.
 
-5. **Cascading effect:** Each switch press affects all elements to its right.
+5. **No sorting:** Don't sort! Would lose the time ordering.
 
 6. **Applications:**
-   * Circuit problems
-   * Game state problems
-   * Toggle mechanics in UI
-   * Cascading updates in systems
+   * Stock trading algorithms
+   * Timing optimization
+   * Peak-valley finding
+   * Time series analysis
 
 7. **Interview strategy:**
-   * Start by explaining the faulty wiring behavior.
-   * Show simulation approach (intuitive but slow).
-   * Optimize using toggle counter.
-   * Walk through example showing toggle tracking.
+   * Start with brute force (nested loops) explanation.
+   * Optimize to single pass with min tracking.
+   * Explain why we track minimum.
+   * Walk through an example.
+   * Discuss edge cases (decreasing prices).
 
 8. **Common mistakes:**
-   * Actually modifying the array (unnecessary and slower).
-   * Not tracking toggle count properly.
-   * Trying to optimize with look-ahead (greedy is sufficient).
-   * Forgetting modulo for state calculation.
+   * Sorting the array (loses time information).
+   * Not handling decreasing prices.
+   * Selling before buying (checking wrong direction).
+   * Not initializing minPrice properly.
 
-9. **Mathematical insight:**
-   * Toggle is a binary operation: 0↔1.
-   * Even number of toggles = original state.
-   * Odd number of toggles = flipped state.
+9. **Related problems:**
+   * Best Time to Buy and Sell Stock II (multiple transactions).
+   * Best Time to Buy and Sell Stock III (at most 2 transactions).
+   * Best Time to Buy and Sell Stock with Cooldown.
+   * Best Time to Buy and Sell Stock with Transaction Fee.
 
-10. **Related problems:**
-    * Minimum flips to make binary string alternating.
-    * Light switching problems.
-    * Game of life variations.
-    * Cascading update problems.
-
-11. **Why greedy works:**
-    * For bulb at position i, only its switch can turn it ON from OFF.
-    * Switches to the right don't affect bulb i.
-    * Switches to the left have already been decided.
-    * Hence, greedy decision is optimal.
-
-12. **Extension:** "What if switch affects left and right?"
-    * Answer: Much harder - needs dynamic programming or BFS.
-    * Current problem is special because effect is one-directional.
-
+10. **Extension:** This is foundation for more complex stock problems with multiple transactions or constraints.

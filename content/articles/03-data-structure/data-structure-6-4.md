@@ -1,6 +1,6 @@
 ---
-title: "Suffix Maximum"
-description: "Build suffix maximum array to find maximum element from any index to end. Learn reverse cumulative maximum technique."
+title: "Maximum Subarray Sum"
+description: "Find the subarray with maximum sum using Kadane's algorithm. Master the most elegant dynamic programming technique for array problems."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-09-26"
 datePublished: "2025-09-26"
@@ -13,50 +13,58 @@ topics:
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png)
 
-Suffix Maximum
+Maximum Subarray Sum
 ----------------------------
 
 ### Problem Statement:
 
-Given array `A`, create array `suffixMax` where `suffixMax[i]` is the maximum element from index i to N-1.
+Given an array `A` of integers, find the contiguous subarray with the largest sum.
 
 ### Examples:
 
 #### Example 1:
 
-**Input:** A = [3, 1, 4, 1, 5]
+**Input:** A = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
 
-**Output:** [5, 5, 5, 5, 5]
+**Output:** 6
+
+**Explanation:** Subarray [4, -1, 2, 1] has sum = 6
+
+#### Example 2:
+
+**Input:** A = [1, 2, 3, -2, 5]
+
+**Output:** 9
 
 ### Approach:
 
-Iterate right to left, tracking max seen so far.
+**Kadane's Algorithm:** Track current sum and max sum. If current becomes negative, reset to 0.
 
 ### Time Complexity:
 
-* **Time = O(N)**, **Space = O(N)**
+* **Time = O(N)**, **Space = O(1)**
 
 ### JavaScript Code:
 
 ```javascript
-function suffixMax(A) {
-    const N = A.length;
-    const result = new Array(N);
-    result[N-1] = A[N-1];
+function maxSubarraySum(A) {
+    let maxSum = A[0];
+    let currentSum = A[0];
     
-    for (let i = N-2; i >= 0; i--) {
-        result[i] = Math.max(result[i+1], A[i]);
+    for (let i = 1; i < A.length; i++) {
+        currentSum = Math.max(A[i], currentSum + A[i]);
+        maxSum = Math.max(maxSum, currentSum);
     }
     
-    return result;
+    return maxSum;
 }
 ```
 
 ### Key Takeaways:
 
-1. Reverse of prefix maximum.
-2. Scan from right to left.
-3. Combined with prefix for range queries.
-4. Essential for water trapping.
-5. Used in leader element problems.
+1. **Kadane's algorithm** is optimal O(N) solution.
+2. At each position, decide: start fresh or continue.
+3. Track both current and maximum sums.
+4. Classic dynamic programming problem.
+5. One of most important array algorithms.
 

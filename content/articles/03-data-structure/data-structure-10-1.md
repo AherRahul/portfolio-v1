@@ -1,6 +1,6 @@
 ---
-title: "Two Sum – Optimized Solution (JavaScript)"
-description: "Understand First-In-First-Out (FIFO) processing. Learn queue operations, circular queues, priority queues, deques, and queue applications in algorithms and system design."
+title: "Practice Problems List"
+description: "Understanding the importance of data structures and algorithms in programming. Learn systematic problem-solving approaches, algorithmic thinking, and how DSA impacts software performance and efficiency."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-09-26"
 datePublished: "2025-09-26"
@@ -9,78 +9,63 @@ courseName: 03-data-structure
 topics:
   - data-structures
 resources:
-  - title: "Queue Visualizations"
+  - title: "Algorithm Visualizations"
     type: "tool"
-    url: "https://visualgo.net/en/list"
-    description: "Interactive queue operations visualization"
-  - title: "Queue Problems Practice"
+    url: "https://visualgo.net/"
+    description: "Interactive visualizations of algorithms and data structures"
+  - title: "LeetCode Practice"
     type: "practice"
-    url: "https://leetcode.com/tag/queue/"
-    description: "Practice problems for mastering queue algorithms"
-  - title: "Priority Queue Implementation"
-    type: "reference"
-    url: "https://en.wikipedia.org/wiki/Priority_queue"
-    description: "Understanding priority queue data structures"
-
+    url: "https://leetcode.com/"
+    description: "Platform for practicing algorithmic problem solving"
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png)
 
-Recursion
-------------------
-
-**Recursion is a technique** where a `function calls` itself to solve a problem by **breaking** it down into **smaller sub-problems**.
-
-### Two Parts Of Recursion:
-1. **Base Case:** Stop Condition - When to stop calling itself
-2. **Recursive Case:** Part where functions call itself
+Practice Problems List
+-----------------------
 
 
-### Base Condition:
-*   Every **function call** in `recursion` is stored in the `call stack`. If the recursion is too deep or has no base condition, the call stack keeps growing until memory is exhausted, causing a stack overflow error.
-*   A **base condition** is essential in recursion. It stops the recursion when a certain condition is met. Without it, recursion goes infinite and causes a stack overflow. **`if (num === 0) return;`.**
+### **Arrays — Recommended Problems for This Week - Easy (Confidence Builders)**
+
+| # | Problem                                                                                                                  | Platform      | Key Concept                      |
+| - | ------------------------------------------------------------------------------------------------------------------------ | ------------- | -------------------------------- |
+| 1 | [Two Sum](https://leetcode.com/problems/two-sum/)                                                                        | LeetCode      | HashMap lookup, complement logic |
+| 2 | [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)                                                  | LeetCode      | Using `Set`                      |
+| 3 | [Find the Duplicate Number](https://www.geeksforgeeks.org/find-duplicates-in-on-time-and-constant-extra-space/)          | GeeksforGeeks | In-place marking                 |
+| 4 | [Union of Two Arrays](https://practice.geeksforgeeks.org/problems/union-of-two-arrays3538/1)                             | GeeksforGeeks | HashSet union logic              |
+| 5 | [Cyclically Rotate an Array by One](https://practice.geeksforgeeks.org/problems/cyclically-rotate-an-array-by-one2614/1) | GeeksforGeeks | Rotation fundamentals            |
+| 6 | [Sum of Array Elements](https://www.hackerrank.com/challenges/simple-array-sum/problem)                                  | HackerRank    | Simple iteration                 |
+| 7 | [Equilibrium Point](https://practice.geeksforgeeks.org/problems/equilibrium-point-1587115620/1)                          | GeeksforGeeks | Prefix sums                      |
+| 8 | [Find Maximum and Minimum Element in an Array](https://www.geeksforgeeks.org/maximum-and-minimum-in-an-array/)           | GeeksforGeeks | Basic iteration                  |
 
 
-### Real Life Example: 
-1. Queue of People
-2. Comment Thread
-3. Organisational hierachies
+### **Medium (Pattern Recognition & Optimization) - Focus: Sliding Window, Prefix Sum, Sorting Logic, and HashMap strategies.**
 
-### Note
-1. Base case must be on the top to stop the recursion.
-2. The case of infinite recursion leads to the **STACK OVERFOLW**
+| #  | Problem                                                                                                    | Platform      | Key Concept                     |
+| -- | ---------------------------------------------------------------------------------------------------------- | ------------- | ------------------------------- |
+| 1  | [Maximum Subarray (Kadane’s Algorithm)](https://leetcode.com/problems/maximum-subarray/)                   | LeetCode      | DP, prefix sums                 |
+| 2  | [3Sum](https://leetcode.com/problems/3sum/)                                                                | LeetCode      | Two pointers                    |
+| 3  | [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/)                | LeetCode      | Prefix & suffix product         |
+| 4  | [Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/)                              | LeetCode      | Prefix sum + HashMap            |
+| 5  | [Sort Colors (Dutch National Flag)](https://leetcode.com/problems/sort-colors/)                            | LeetCode      | Three pointers                  |
+| 6  | [Find All Duplicates in an Array](https://leetcode.com/problems/find-all-duplicates-in-an-array/)          | LeetCode      | In-place modification           |
+| 7  | [Missing Ranges](https://leetcode.com/problems/missing-ranges/)                                            | LeetCode      | Edge case handling              |
+| 8  | [Count Pairs with Given Sum](https://practice.geeksforgeeks.org/problems/count-pairs-with-given-sum5022/1) | GeeksforGeeks | HashMap counting                |
+| 9  | [Wave Array](https://practice.geeksforgeeks.org/problems/wave-array-1587115621/1)                          | GeeksforGeeks | Sorting & swapping pattern      |
+| 10 | [Rotate Image (Matrix)](https://leetcode.com/problems/rotate-image/)                                       | LeetCode      | Matrix transpose + reverse rows |
 
-### Commom Mistake's
-1. Missing Base Case - Stack overflow
-2. Not simplyfying the inputs - never reach base case
-3. Too deep recursion - large inputs
-4. Keeping in mind the time complexity
 
-### Approach:
+### **Advanced (Optional Stretch Goals) - Focus: Complex patterns and optimization.**
 
-*   `Problem:` Print numbers from n to 1 using `recursion`.
-*   Print the `number`.
-*   Recurse with `num - 1`.
-*   Stop when `num === 0`.
-
-### Time Complexity: `O(n)`
-
-*   one function call per number from n to 1.
-    
-
-### Space Complexity: `O(n)`
-
-*   Due to recursive call stack frames.
-    
-
-### JavaScript Code
-
-```javascript
-
-function printDescending(num) {
-    if (num === 0) return;
-    console.log(num);
-    printDescending(num - 1);
-}
-printDescending(5);       
-```
+| #  | Problem                                                                                            | Platform   | Key Concept                            |
+| -- | -------------------------------------------------------------------------------------------------- | ---------- | -------------------------------------- |
+| 1  | [Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)                          | LeetCode   | Two-pointer prefix/suffix optimization |
+| 2  | [Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/)                | LeetCode   | Track min/max simultaneously           |
+| 3  | [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/)        | LeetCode   | HashSet & O(n) scan                    |
+| 4  | [First Missing Positive](https://leetcode.com/problems/first-missing-positive/)                    | LeetCode   | Index marking trick                    |
+| 5  | [Spiral Matrix](https://leetcode.com/problems/spiral-matrix/)                                      | LeetCode   | Simulation logic                       |
+| 6  | [Merge Intervals](https://leetcode.com/problems/merge-intervals/)                                  | LeetCode   | Sorting + interval merge               |
+| 7  | [Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/)  | LeetCode   | Heap / QuickSelect                     |
+| 8  | [Max Chunks to Make Sorted](https://leetcode.com/problems/max-chunks-to-make-sorted/)              | LeetCode   | Prefix max = suffix min logic          |
+| 9  | [Subarray with XOR = K](https://www.codingninjas.com/studio/problems/subarrays-with-xor-k_6826258) | CodeStudio | Prefix XOR + HashMap                   |
+| 10 | [4Sum](https://leetcode.com/problems/4sum/)                                                        | LeetCode   | Nested two-pointer technique           |

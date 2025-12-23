@@ -1,6 +1,6 @@
 ---
-title: "Range Sum II - Array Updates"
-description: "Handle multiple range update and query operations efficiently. Learn segment tree lite approach using difference arrays."
+title: "Subarray in Given Range"
+description: "Count subarrays where both start and end indices fall within specified ranges. Learn range intersection technique."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-09-26"
 datePublished: "2025-09-26"
@@ -13,58 +13,56 @@ topics:
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png)
 
-Range Sum II
+Subarray in Given Range
 ----------------------------
 
 ### Problem Statement:
 
-Given array `A` of size `N`, perform `Q` queries of form `(l, r, c)` which adds `c` to every element in range [l, r]. Return final array.
+Given an array and two ranges [L1, R1] and [L2, R2], count subarrays where start index is in [L1, R1] and end index is in [L2, R2].
 
 ### Examples:
 
 #### Example 1:
 
-**Input:** A = [1,2,3], Queries = [[0,1,2], [1,2,3]]
+**Input:** N = 5, L1 = 0, R1 = 2, L2 = 2, R2 = 4
 
-**Output:** [3,7,6]
+**Output:** 9
+
+**Explanation:** Count subarrays starting from 0-2 and ending at 2-4
 
 ### Approach:
 
-Use difference array for O(1) updates, then compute prefix sum.
+Count = (R1 - L1 + 1) × (R2 - L2 + 1), but only if R1 < L2 or overlapping handled.
 
 ### Time Complexity:
 
-* **Time = O(N + Q)**, **Space = O(N)**
+* **Time = O(1)**, **Space = O(1)**
 
 ### JavaScript Code:
 
 ```javascript
-function rangeSumUpdate(A, queries) {
-    const N = A.length;
-    const diff = new Array(N + 1).fill(0);
-    
-    // Apply queries using difference array
-    for (const [l, r, c] of queries) {
-        diff[l] += c;
-        diff[r + 1] -= c;
+function countSubarraysInRange(N, L1, R1, L2, R2) {
+    if (R1 < L2) {
+        // Non-overlapping
+        return (R1 - L1 + 1) * (R2 - L2 + 1);
+    } else {
+        // Overlapping - need careful counting
+        let count = 0;
+        for (let start = L1; start <= R1; start++) {
+            for (let end = Math.max(start, L2); end <= R2; end++) {
+                count++;
+            }
+        }
+        return count;
     }
-    
-    // Compute prefix sum and add to original
-    let sum = 0;
-    for (let i = 0; i < N; i++) {
-        sum += diff[i];
-        A[i] += sum;
-    }
-    
-    return A;
 }
 ```
 
 ### Key Takeaways:
 
-1. Difference array enables O(1) range updates.
-2. Prefix sum converts back to actual values.
-3. Efficient for bulk update operations.
-4. Foundation for segment tree problems.
-5. Essential competitive programming technique.
+1. Handle overlapping ranges carefully.
+2. Non-overlapping: simple multiplication.
+3. Overlapping: ensure start ≤ end constraint.
+4. Mathematical counting reduces complexity.
+5. Pattern for interval problems.
 

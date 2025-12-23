@@ -1,6 +1,6 @@
 ---
-title: "Maximum Subarray Sum"
-description: "Find the subarray with maximum sum using Kadane's algorithm. Master the most elegant dynamic programming technique for array problems."
+title: "Equilibrium Index"
+description: "Find the equilibrium index where sum of left elements equals sum of right elements using prefix sum technique."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-09-26"
 datePublished: "2025-09-26"
@@ -13,32 +13,39 @@ topics:
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png)
 
-Maximum Subarray Sum
+Equilibrium Index
 ----------------------------
 
 ### Problem Statement:
 
-Given an array `A` of integers, find the contiguous subarray with the largest sum.
+Given an array `A`, find the **equilibrium index** where the sum of elements at lower indexes equals the sum of elements at higher indexes.
+
+Return the smallest equilibrium index, or -1 if none exists.
 
 ### Examples:
 
 #### Example 1:
 
-**Input:** A = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
+**Input:** A = [-7, 1, 5, 2, -4, 3, 0]
 
-**Output:** 6
+**Output:** 3
 
-**Explanation:** Subarray [4, -1, 2, 1] has sum = 6
+**Explanation:** At index 3: Left sum = -7+1+5 = -1, Right sum = -4+3+0 = -1
 
 #### Example 2:
 
-**Input:** A = [1, 2, 3, -2, 5]
+**Input:** A = [1, 2, 3]
 
-**Output:** 9
+**Output:** -1
+
+### Constraints:
+
+* `1 ≤ N ≤ 10^5`
+* `-10^9 ≤ A[i] ≤ 10^9`
 
 ### Approach:
 
-**Kadane's Algorithm:** Track current sum and max sum. If current becomes negative, reset to 0.
+Calculate total sum. Iterate and track left sum. At each index, check if `leftSum == totalSum - leftSum - A[i]`
 
 ### Time Complexity:
 
@@ -47,24 +54,27 @@ Given an array `A` of integers, find the contiguous subarray with the largest su
 ### JavaScript Code:
 
 ```javascript
-function maxSubarraySum(A) {
-    let maxSum = A[0];
-    let currentSum = A[0];
+function equilibriumIndex(A) {
+    const totalSum = A.reduce((sum, val) => sum + val, 0);
+    let leftSum = 0;
     
-    for (let i = 1; i < A.length; i++) {
-        currentSum = Math.max(A[i], currentSum + A[i]);
-        maxSum = Math.max(maxSum, currentSum);
+    for (let i = 0; i < A.length; i++) {
+        const rightSum = totalSum - leftSum - A[i];
+        if (leftSum === rightSum) {
+            return i;
+        }
+        leftSum += A[i];
     }
     
-    return maxSum;
+    return -1;
 }
 ```
 
 ### Key Takeaways:
 
-1. **Kadane's algorithm** is optimal O(N) solution.
-2. At each position, decide: start fresh or continue.
-3. Track both current and maximum sums.
-4. Classic dynamic programming problem.
-5. One of most important array algorithms.
+1. **Single pass** solution with running sums.
+2. No need for prefix/suffix arrays.
+3. Check condition: `leftSum == totalSum - leftSum - current`
+4. Return first equilibrium index found.
+5. Useful in load balancing problems.
 

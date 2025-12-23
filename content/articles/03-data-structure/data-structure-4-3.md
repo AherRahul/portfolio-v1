@@ -1,6 +1,6 @@
 ---
-title: "In-place Prefix Sum"
-description: "Learn to build prefix sum arrays in-place without using extra space. Master space-optimized prefix sum technique."
+title: "Leaders in an Array"
+description: "Master the concept of leaders in an array using the carry forward technique. Learn how to find elements that are greater than all elements to their right efficiently in a single pass."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-09-26"
 datePublished: "2025-09-26"
@@ -9,283 +9,407 @@ courseName: 03-data-structure
 topics:
   - data-structures
 resources:
-  - title: "Prefix Sum Technique"
+  - title: "Array Problems"
     type: "reference"
-    url: "https://www.geeksforgeeks.org/prefix-sum-array-implementation-applications-competitive-programming/"
-    description: "Complete guide to prefix sum arrays"
-  - title: "Array Manipulation Visualization"
+    url: "https://www.geeksforgeeks.org/leaders-in-an-array/"
+    description: "Understanding leader elements"
+  - title: "Array Visualization"
     type: "tool"
     url: "https://visualgo.net/en/array"
-    description: "Visualize array operations"
-  - title: "Practice Prefix Sum Problems"
+    description: "Visualize array traversal"
+  - title: "Array Practice"
     type: "practice"
-    url: "https://leetcode.com/tag/prefix-sum/"
-    description: "Practice problems on prefix sum technique"
+    url: "https://leetcode.com/tag/array/"
+    description: "Practice array problems"
 
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png)
 
-In-place Prefix Sum
+Leaders in an Array
 ----------------------------
 
 ### Problem Statement:
 
-Given an array `A` of size `N`, modify the array **in-place** to create a prefix sum array where each element `A[i]` contains the sum of all elements from index 0 to i.
+Given an integer array `A` of size `N`, find all the **leader elements** in the array.
 
-You must solve this problem without using any extra space (O(1) space complexity).
+An element is called a **leader** if it is **greater than all the elements to its right side**. The rightmost element is always a leader.
+
+Return an array containing all leader elements in the order they appear in the original array.
 
 ### Examples:
 
 #### Example 1:
 
-**Input:** A = [1, 2, 3, 4, 5]
+**Input:** A = [16, 17, 4, 3, 5, 2]
 
-**Output:** [1, 3, 6, 10, 15]
+**Output:** [17, 5, 2]
 
 **Explanation:**
-* A[0] = 1 (remains same)
-* A[1] = 1 + 2 = 3
-* A[2] = 1 + 2 + 3 = 6  
-* A[3] = 1 + 2 + 3 + 4 = 10
-* A[4] = 1 + 2 + 3 + 4 + 5 = 15
+* 17 is greater than all elements to its right (4, 3, 5, 2)
+* 5 is greater than all elements to its right (2)
+* 2 is the rightmost element (always a leader)
 
 #### Example 2:
 
-**Input:** A = [2, -1, 3, -4, 5]
+**Input:** A = [5, 4, 3, 2, 1]
 
-**Output:** [2, 1, 4, 0, 5]
+**Output:** [5, 4, 3, 2, 1]
+
+**Explanation:** Since the array is in descending order, every element is a leader.
+
+#### Example 3:
+
+**Input:** A = [1, 2, 3, 4, 5]
+
+**Output:** [5]
+
+**Explanation:** Only the last element is a leader (ascending order).
+
+#### Example 4:
+
+**Input:** A = [7, 10, 4, 3, 6, 5, 2]
+
+**Output:** [10, 6, 5, 2]
 
 **Explanation:**
-* A[0] = 2
-* A[1] = 2 + (-1) = 1
-* A[2] = 2 + (-1) + 3 = 4
-* A[3] = 2 + (-1) + 3 + (-4) = 0
-* A[4] = 2 + (-1) + 3 + (-4) + 5 = 5
+* 10 > all elements to its right
+* 6 > 5, 2
+* 5 > 2
+* 2 is rightmost
 
 ### Constraints:
 
 * `1 ≤ N ≤ 10^5`
 * `-10^9 ≤ A[i] ≤ 10^9`
-* Must modify the array in-place (O(1) extra space)
 
 ### Important Points to Understand:
 
-1. **In-place modification:** We update the original array itself, no extra array needed
-2. **Left-to-right traversal:** Process elements from index 1 to N-1
-3. **Current element dependency:** Each A[i] depends only on A[i-1] (already computed) and original A[i]
-4. **Space optimization:** Trading the ability to access original values for O(1) space
-5. **Formula:** `A[i] = A[i-1] + A[i]` for all i from 1 to N-1
+**1. Leader Definition:**
+* Must be **greater than** (not greater than or equal to) all elements to its right.
+* Rightmost element is always a leader by definition.
+
+**2. Carry Forward from Right:**
+* Traverse from right to left.
+* Track the maximum element seen so far from the right.
+* If current element > max, it's a leader.
+
+**3. Order Preservation:**
+* Output should maintain the original order of leaders.
+* Can reverse at the end if building from right to left.
+
+**4. Optimization:**
+* Brute force: O(N²) - for each element, check all elements to its right.
+* Optimized: O(N) - single pass from right to left.
 
 ### Approach:
 
-**Step 1:** Keep A[0] as is (it's already the prefix sum for index 0)
+**Brute Force Approach:**
+1. For each element at index i.
+2. Check if it's greater than all elements from i+1 to N-1.
+3. If yes, add to result.
 
-**Step 2:** Iterate from index 1 to N-1:
-  - Add previous element to current: `A[i] = A[i-1] + A[i]`
-  
-**Step 3:** Array is now modified to contain prefix sums
+**Optimized Approach (Carry Forward):**
+1. Start from the rightmost element.
+2. Track `maxRight` - maximum element seen so far from right.
+3. If current element > maxRight, it's a leader.
+4. Update maxRight as we move left.
+5. Reverse the result to maintain original order.
 
 ### Time Complexity:
 
-* **Time Complexity: O(N)** - Single pass through the array
-* **Space Complexity: O(1)** - No extra space used, only modifying input array in-place
+**Brute Force:**
+* **Time Complexity = O(N²)** - For each element, scan remaining array.
+
+**Optimized:**
+* **Time Complexity = O(N)** - Single pass from right to left.
 
 ### Space Complexity:
 
-* **O(1)** - Only using a loop variable, no additional data structures
+* **Space Complexity = O(K)** where K = number of leaders.
+* In worst case (descending array), K = N.
 
-### Dry Run:
+### Dry Run - Brute Force:
 
 ```
-Input: A = [3, 1, 2, 4]
+Input: A = [16, 17, 4, 3, 5, 2]
 
-Initial state: [3, 1, 2, 4]
+i = 0 (16):
+    Check if 16 > all of [17, 4, 3, 5, 2]
+    16 < 17 → NOT a leader
 
-Step 1: i = 1
-  A[1] = A[0] + A[1] = 3 + 1 = 4
-  Array: [3, 4, 2, 4]
+i = 1 (17):
+    Check if 17 > all of [4, 3, 5, 2]
+    17 > 4 ✓, 17 > 3 ✓, 17 > 5 ✓, 17 > 2 ✓
+    → IS a leader
 
-Step 2: i = 2
-  A[2] = A[1] + A[2] = 4 + 2 = 6
-  Array: [3, 4, 6, 4]
+i = 2 (4):
+    Check if 4 > all of [3, 5, 2]
+    4 > 3 ✓, but 4 < 5 ✗
+    → NOT a leader
 
-Step 3: i = 3
-  A[3] = A[2] + A[3] = 6 + 4 = 10
-  Array: [3, 4, 6, 10]
+i = 3 (3):
+    Check if 3 > all of [5, 2]
+    3 < 5 → NOT a leader
 
-Final Output: [3, 4, 6, 10]
+i = 4 (5):
+    Check if 5 > all of [2]
+    5 > 2 ✓
+    → IS a leader
+
+i = 5 (2):
+    Rightmost → IS a leader
+
+Leaders = [17, 5, 2]
+
+Output: [17, 5, 2]
 ```
 
-### Brute Force Approach:
+### Dry Run - Optimized:
 
-**Approach:** Create a new array and compute each prefix sum from scratch.
+```
+Input: A = [16, 17, 4, 3, 5, 2]
 
-**Algorithm:**
-1. Create new array `prefix` of size N
-2. For each index i (0 to N-1):
-   - Sum elements from 0 to i
-   - Store in prefix[i]
-3. Copy prefix array back to A
+Initialize: maxRight = -Infinity, leaders = []
 
-**Time Complexity:** O(N²) - Nested loops
-**Space Complexity:** O(N) - Extra array needed
+Traverse RIGHT to LEFT:
 
-**Why it's not optimal:**
-- Recalculates sums repeatedly
-- Uses extra space
-- Much slower for large arrays
+i = 5, A[5] = 2
+    2 > -Infinity → Leader!
+    leaders = [2]
+    maxRight = 2
+
+i = 4, A[4] = 5
+    5 > 2 → Leader!
+    leaders = [2, 5]
+    maxRight = 5
+
+i = 3, A[3] = 3
+    3 < 5 → NOT a leader
+    maxRight = 5
+
+i = 2, A[2] = 4
+    4 < 5 → NOT a leader
+    maxRight = 5
+
+i = 1, A[1] = 17
+    17 > 5 → Leader!
+    leaders = [2, 5, 17]
+    maxRight = 17
+
+i = 0, A[0] = 16
+    16 < 17 → NOT a leader
+    maxRight = 17
+
+Reverse leaders: [17, 5, 2]
+
+Output: [17, 5, 2]
+```
+
+### Brute Force Approach - JavaScript Code:
+
+```javascript
+function findLeaders_BruteForce(A) {
+    const N = A.length;
+    const leaders = [];
+    
+    for (let i = 0; i < N; i++) {
+        let isLeader = true;
+        
+        // Check if A[i] is greater than all elements to its right
+        for (let j = i + 1; j < N; j++) {
+            if (A[i] <= A[j]) {
+                isLeader = false;
+                break;
+            }
+        }
+        
+        if (isLeader) {
+            leaders.push(A[i]);
+        }
+    }
+    
+    return leaders;
+}
+```
+
+**Time:** O(N²) ❌
+**Space:** O(K) where K = number of leaders
 
 ### Visualization:
 
 ```
-Original Array:     [3,    1,    2,    4]
-                     ↓
-Step 1 (i=1):      [3,    4,    2,    4]
-                     ↑-----|
-                     
-Step 2 (i=2):      [3,    4,    6,    4]
-                           ↑-----|
-                           
-Step 3 (i=3):      [3,    4,    6,   10]
-                                 ↑-----|
-                                 
-Prefix Sum Result: [3,    4,    6,   10]
+Array: [16, 17, 4, 3, 5, 2]
 
-Formula at each step: A[i] = A[i-1] + A[i]
+Traverse RIGHT to LEFT, tracking max:
+
+Step 1: Index 5 (value 2)
+    [16, 17, 4, 3, 5, 2]
+                        ↑
+    maxRight = -∞
+    2 > -∞ → LEADER ✓
+    Update maxRight = 2
+
+Step 2: Index 4 (value 5)
+    [16, 17, 4, 3, 5, 2]
+                    ↑
+    maxRight = 2
+    5 > 2 → LEADER ✓
+    Update maxRight = 5
+
+Step 3: Index 3 (value 3)
+    [16, 17, 4, 3, 5, 2]
+                ↑
+    maxRight = 5
+    3 < 5 → NOT leader ✗
+
+Step 4: Index 2 (value 4)
+    [16, 17, 4, 3, 5, 2]
+            ↑
+    maxRight = 5
+    4 < 5 → NOT leader ✗
+
+Step 5: Index 1 (value 17)
+    [16, 17, 4, 3, 5, 2]
+        ↑
+    maxRight = 5
+    17 > 5 → LEADER ✓
+    Update maxRight = 17
+
+Step 6: Index 0 (value 16)
+    [16, 17, 4, 3, 5, 2]
+    ↑
+    maxRight = 17
+    16 < 17 → NOT leader ✗
+
+Leaders found (in reverse): [2, 5, 17]
+Reverse to get: [17, 5, 2]
 ```
 
-### Multiple Optimized Approaches:
+### Optimal Approach - Carry Forward:
 
-#### Approach 1: In-place Modification (Optimal - Current Solution)
-**Time: O(N), Space: O(1)**
 ```javascript
-function inplacePrefixSum(A) {
-    for (let i = 1; i < A.length; i++) {
-        A[i] = A[i-1] + A[i];
+function findLeaders(A) {
+    const N = A.length;
+    const leaders = [];
+    let maxRight = -Infinity;
+    
+    // Traverse from right to left
+    for (let i = N - 1; i >= 0; i--) {
+        if (A[i] > maxRight) {
+            leaders.push(A[i]);
+            maxRight = A[i];
+        }
     }
-    return A;
+    
+    // Reverse to maintain original order
+    return leaders.reverse();
 }
 ```
-**Pros:** Minimal space, simple implementation
-**Cons:** Destroys original array
 
-#### Approach 2: Using Extra Array
-**Time: O(N), Space: O(N)**
+**Time:** O(N) ✓
+**Space:** O(K) ✓
+
+### Alternative Approach - Without Reverse:
+
 ```javascript
-function prefixSumWithExtraSpace(A) {
-    const prefix = [A[0]];
-    for (let i = 1; i < A.length; i++) {
-        prefix[i] = prefix[i-1] + A[i];
+function findLeaders_NoReverse(A) {
+    const N = A.length;
+    const leaders = [];
+    let maxRight = -Infinity;
+    
+    // Traverse from right to left
+    for (let i = N - 1; i >= 0; i--) {
+        if (A[i] > maxRight) {
+            // Insert at beginning to maintain order
+            leaders.unshift(A[i]);
+            maxRight = A[i];
+        }
     }
-    return prefix;
+    
+    return leaders;
 }
 ```
-**Pros:** Preserves original array
-**Cons:** Uses O(N) extra space
 
-#### Approach 3: Functional Programming Style
-**Time: O(N), Space: O(N)**
-```javascript
-function prefixSumFunctional(A) {
-    return A.reduce((acc, curr) => {
-        acc.push((acc[acc.length-1] || 0) + curr);
-        return acc;
-    }, []);
-}
-```
-**Pros:** Declarative, clean code
-**Cons:** Less efficient, uses extra space
+**Note:** `unshift()` is O(K) for each insertion, making total O(N×K) in worst case. Reverse approach is better!
 
 ### Edge Cases to Consider:
 
-1. **Single Element Array:**
-   - Input: [5]
-   - Output: [5]
-   - The element remains unchanged
+**1. Single Element:**
+* Input: A = [5]
+* Output: [5] (always a leader)
 
-2. **All Zeros:**
-   - Input: [0, 0, 0, 0]
-   - Output: [0, 0, 0, 0]
-   - All prefix sums are 0
+**2. All Descending:**
+* Input: A = [5, 4, 3, 2, 1]
+* Output: [5, 4, 3, 2, 1] (all are leaders)
 
-3. **Negative Numbers:**
-   - Input: [-1, -2, -3]
-   - Output: [-1, -3, -6]
-   - Prefix sum decreases
+**3. All Ascending:**
+* Input: A = [1, 2, 3, 4, 5]
+* Output: [5] (only last is leader)
 
-4. **Mixed Positive and Negative:**
-   - Input: [5, -3, 2, -1]
-   - Output: [5, 2, 4, 3]
-   - Sum can increase or decrease
+**4. All Same Elements:**
+* Input: A = [5, 5, 5, 5]
+* Output: [5] (only last, since need strictly greater)
 
-5. **Large Numbers:**
-   - Input: [10^9, 10^9]
-   - Consider integer overflow in some languages
-   - JavaScript handles with Number type
+**5. Negative Numbers:**
+* Input: A = [-1, -5, -3, -2]
+* Output: [-1, -2] (-1 > all right, -2 is last)
 
-6. **Alternating Signs:**
-   - Input: [1, -1, 1, -1]
-   - Output: [1, 0, 1, 0]
-   - Sum oscillates
+**6. Mixed Positive/Negative:**
+* Input: A = [10, -5, 8, -3]
+* Output: [10, 8, -3]
 
-### JavaScript Code:
-
-```javascript
-function inplacePrefixSum(A) {
-    const N = A.length;
-    
-    // Start from index 1 since A[0] is already its own prefix sum
-    for (let i = 1; i < N; i++) {
-        A[i] = A[i-1] + A[i];
-    }
-    
-    return A;
-}
-
-// Example usage:
-const arr1 = [1, 2, 3, 4, 5];
-console.log(inplacePrefixSum(arr1)); // [1, 3, 6, 10, 15]
-
-const arr2 = [2, -1, 3, -4, 5];
-console.log(inplacePrefixSum(arr2)); // [2, 1, 4, 0, 5]
-```
+**7. Two Elements:**
+* Input: A = [10, 5]
+* Output: [10, 5] (first > second, second is last)
 
 ### Key Takeaways:
 
-1. **In-place modification** achieves O(1) space complexity - critical for memory-constrained environments
+1. **Right-to-left traversal** is key for O(N) solution.
 
-2. **Dependency pattern:** Each element only depends on previous element, enabling single-pass solution
+2. **Carry forward maximum:** Track the maximum seen so far from the right.
 
-3. **Trade-off understanding:** Sacrificing original array access for optimal space complexity
+3. **Rightmost is always leader:** Don't forget this special case.
 
-4. **Foundation for advanced techniques:** This pattern appears in dynamic programming and optimization problems
+4. **Reverse for order:** Building from right requires reversal for correct output order.
 
-5. **Interview importance:** Common follow-up question after regular prefix sum problems
+5. **Strictly greater:** Leader must be > not ≥ elements to its right.
 
-6. **Real-world applications:**
-   - Running totals in financial calculations
-   - Cumulative statistics in data analysis
-   - Memory-efficient range query preprocessing
+6. **Applications:**
+   * Stock market analysis (finding price peaks)
+   * Game leaderboards
+   * Performance monitoring
+   * Finding dominant elements
 
-7. **Common mistakes to avoid:**
-   - Starting loop from index 0 instead of 1
-   - Not considering negative numbers
-   - Forgetting that original array is lost
+7. **Interview strategy:**
+   * Start with brute force explanation.
+   * Optimize using right-to-left scan.
+   * Explain why we track maximum from right.
+   * Discuss the reversal step.
 
-8. **Performance characteristics:**
-   - Single pass: O(N) time
-   - No extra allocation: O(1) space
-   - Cache-friendly: sequential access pattern
+8. **Common mistakes:**
+   * Using >= instead of > (wrong comparison).
+   * Forgetting to add rightmost element.
+   * Not reversing the result.
+   * Traversing left-to-right (much harder to optimize).
 
-9. **When to use this approach:**
-   - Space is limited
-   - Original array not needed afterward
-   - Simple prefix sum queries required
+9. **Pattern recognition:** This right-to-left carry forward pattern appears in:
+   * Next greater element problems
+   * Stock span problems
+   * Monotonic stack problems
 
-10. **Related concepts:**
-    - Cumulative frequency arrays
-    - Running sums
-    - Prefix product arrays
-    - Difference arrays (inverse operation)
+10. **Related problems:**
+    * Next greater element
+    * Stock span
+    * Trapping rain water
+    * Maximum element in subarray
+
+11. **Optimization note:** 
+    * Using `reverse()` at end: O(N) + O(K) total
+    * Using `unshift()` during iteration: O(N × K) worst case
+    * Reverse approach is better!
+
+12. **Interview follow-up:** "What if we need leaders from left?" 
+    * Answer: Reverse problem - find elements smaller than all to their left.
+    * Or: Find elements greater than all to their left (easier - left-to-right scan).
 

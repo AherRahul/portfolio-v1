@@ -1,6 +1,6 @@
 ---
-title: "Subsequence-Sum Problem"
-description: "Find if there exists a subsequence with given sum. Learn subset sum problem fundamentals and recursive thinking."
+title: "Unset i-th Bit"
+description: "Learn to unset (turn off) a specific bit position using bitwise AND operation. Master fundamental bit manipulation technique."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-09-26"
 datePublished: "2025-09-26"
@@ -13,51 +13,44 @@ topics:
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png)
 
-Subsequence-Sum Problem
+Unset i-th Bit
 ----------------------------
 
 ### Problem Statement:
 
-Given array `A` and integer `B`, check if there exists a subsequence with sum equal to `B`.
+Given integer `N` and position `i`, unset (turn off/make 0) the bit at position i (0-indexed from right).
 
 ### Examples:
 
 #### Example 1:
 
-**Input:** A = [1, 2, 3], B = 4
+**Input:** N = 13 (binary: 1101), i = 2
 
-**Output:** true (subsequence [1,3] has sum 4)
+**Output:** 9 (binary: 1001)
+
+**Explanation:** Bit at position 2 was 1, now becomes 0
 
 ### Approach:
 
-Recursive: For each element, include or exclude. DP: Use 2D table[i][sum].
+Use AND operation with complement of mask: `N & ~(1 << i)`
 
 ### Time Complexity:
 
-* **Recursive: O(2^N)**, **DP: O(N×Sum)**
+* **Time = O(1)**, **Space = O(1)**
 
 ### JavaScript Code:
 
 ```javascript
-function hasSubsequenceSum(A, B) {
-    function helper(index, sum) {
-        if (sum === 0) return true;
-        if (index >= A.length) return false;
-        
-        // Include or exclude current element
-        return helper(index + 1, sum - A[index]) || 
-               helper(index + 1, sum);
-    }
-    
-    return helper(0, B);
+function unsetBit(N, i) {
+    return N & ~(1 << i);
 }
 ```
 
 ### Key Takeaways:
 
-1. Each element has two choices: include or exclude
-2. Recursive solution explores all possibilities
-3. DP optimizes with memoization
-4. Classic subset sum problem
-5. Foundation for backtracking problems
+1. Create mask with 1 at position i: `(1 << i)`
+2. Complement mask to get all 1s except position i: `~(1 << i)`
+3. AND with N to unset bit: `N & ~(1 << i)`
+4. Works regardless of current bit value
+5. Foundation bit manipulation operation
 

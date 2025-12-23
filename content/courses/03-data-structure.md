@@ -7,16 +7,16 @@ video: false
 topics:
   - data-structures
 content:
-  - module_id: 0
+  - module_id: 1
     module_name: Warm Up
     module_duration: "45 mins read"
-    topics_count: 1
+    topics_count: 10
     tutor: 1
     expanded: false
     enable_ai_notes: true
     enable_ai_quiz: true
     topics:
-      - id: 0
+      - id: 1
         topic_name: Introduction to DSA & Problem Solving
         sub_topic: Fundamentals
         publish_date: 2025-09-26
@@ -30,8 +30,8 @@ content:
         is_on_youtube: false
         enable_ai_notes: true
         enable_ai_quiz: true
-        _path: data-structure-0-0
-      - id: 0.5
+        _path: data-structure-1-0
+      - id: 2
         topic_name: Mathematical Foundations for Algorithms
         sub_topic: Mathematics
         publish_date: 2025-09-26
@@ -45,13 +45,13 @@ content:
         is_on_youtube: false
         enable_ai_notes: true
         enable_ai_quiz: true
-        _path:  data-structure-0-0-1
-      - id: 1
+        _path: data-structure-1-1
+      - id: 3
         topic_name: Problem - Sum of Two Integers
         sub_topic: Fundamentals
         publish_date: 2025-09-26
         description: >
-          Understanding the importance of data structures and algorithms in programming. Learn systematic problem-solving approaches, algorithmic thinking, and how DSA impacts software performance and efficiency.
+          Learn to write functions that take two integers as input and return their sum. This problem introduces function definitions, parameters, and return values - fundamental concepts for building reusable code.
         topics:
           - data-structures
         duration: "5 mins read"
@@ -60,13 +60,13 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-0-1
-      - id: 2
+        _path: data-structure-1-2
+      - id: 4
         topic_name: Problem - Loops - 1
         sub_topic: Fundamentals
         publish_date: 2025-09-26
         description: >
-          Understanding the importance of data structures and algorithms in programming. Learn systematic problem-solving approaches, algorithmic thinking, and how DSA impacts software performance and efficiency.
+          Master the fundamentals of loops by solving problems that require iterative processing. Learn to use for loops, while loops, and understand when to apply each type for efficient problem-solving.
         topics:
           - data-structures
         duration: "5 mins read"
@@ -75,13 +75,13 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-0-2
-      - id: 3
+        _path: data-structure-1-3
+      - id: 5
         topic_name: Problem - Loops - 2
         sub_topic: Fundamentals
         publish_date: 2025-09-26
         description: >
-          Understanding the importance of data structures and algorithms in programming. Learn systematic problem-solving approaches, algorithmic thinking, and how DSA impacts software performance and efficiency.
+          Continue building loop mastery with more complex problems. Practice nested loops, loop optimization, and pattern-based problem solving using iterative approaches.
         topics:
           - data-structures
         duration: "5 mins read"
@@ -90,8 +90,8 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-0-3
-      - id: 4
+        _path: data-structure-1-4
+      - id: 6
         topic_name: Problem - Second Largest Number in an Array
         sub_topic: Fundamentals
         publish_date: 2025-09-26
@@ -105,8 +105,8 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-0-4
-      - id: 5
+        _path: data-structure-1-5
+      - id: 7
         topic_name: Problem - Star Pattern
         sub_topic: Fundamentals
         publish_date: 2025-09-26
@@ -120,8 +120,8 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-0-5
-      - id: 6
+        _path: data-structure-1-6
+      - id: 8
         topic_name: Problem - Count Digits in a Number
         sub_topic: Fundamentals
         publish_date: 2025-09-26
@@ -135,8 +135,8 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-0-6
-      - id: 7
+        _path: data-structure-1-7
+      - id: 9
         topic_name: Problem - Palindrome Number
         sub_topic: Fundamentals
         publish_date: 2025-09-26
@@ -150,8 +150,8 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-0-7
-      - id: 8
+        _path: data-structure-1-8
+      - id: 10
         topic_name: Problem - Reverse Integer with Overflow Check
         sub_topic: Fundamentals
         publish_date: 2025-09-26
@@ -165,8 +165,8 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-0-8
-  - module_id: 1
+        _path: data-structure-1-9
+  - module_id: 2
     module_name: Fundamentals & Complexity Analysis
     module_duration: "10 mins read"
     topics_count: 1
@@ -189,8 +189,8 @@ content:
         is_on_youtube: false
         enable_ai_notes: true
         enable_ai_quiz: true
-        _path: data-structure-1-1
-  - module_id: 2
+        _path: data-structure-2-1
+  - module_id: 3
     module_name: Arrays - Easy/Medium
     module_duration: "80 mins read"
     topics_count: 18
@@ -213,7 +213,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-2-1
+        _path: data-structure-3-1
       - id: 2
         topic_name: Problem - Remove Element
         sub_topic: Arrays - Easy/Medium
@@ -228,7 +228,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-2-2
+        _path: data-structure-3-2
       - id: 3
         topic_name: Problem - Reverse String
         sub_topic: Arrays - Easy/Medium
@@ -243,7 +243,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-2-3
+        _path: data-structure-3-3
       - id: 4
         topic_name: Problem - Best Time to Buy and Sell Stocks
         sub_topic: Arrays - Easy/Medium
@@ -258,7 +258,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-2-4
+        _path: data-structure-3-4
       - id: 5
         topic_name: Problem - Merge Sorted Arrays
         sub_topic: Arrays - Easy/Medium
@@ -273,7 +273,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-2-5
+        _path: data-structure-3-5
       - id: 6
         topic_name: Problem - Move Zeros
         sub_topic: Arrays - Easy/Medium
@@ -288,7 +288,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-2-6
+        _path: data-structure-3-6
       - id: 7
         topic_name: Problem - Max Consecutive Ones
         sub_topic: Arrays - Easy/Medium
@@ -303,7 +303,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-2-7
+        _path: data-structure-3-7
       - id: 8
         topic_name: Problem - Missing Number
         sub_topic: Arrays - Easy/Medium
@@ -318,7 +318,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-2-8
+        _path: data-structure-3-8
       - id: 9
         topic_name: Problem - Single Number
         sub_topic: Arrays - Easy/Medium
@@ -333,7 +333,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-2-9
+        _path: data-structure-3-9
       - id: 10
         topic_name: Problem - Count Factors
         sub_topic: Arrays - Easy/Medium
@@ -348,7 +348,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-2-10
+        _path: data-structure-3-10
       - id: 11
         topic_name: Problem - IsPrime
         sub_topic: Arrays - Easy/Medium
@@ -363,7 +363,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-2-11
+        _path: data-structure-3-11
       - id: 12
         topic_name: Problem - Reverse Array in a Range
         sub_topic: Arrays - Easy/Medium
@@ -378,7 +378,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-2-12
+        _path: data-structure-3-12
       - id: 13
         topic_name: Problem - Reverse the Array
         sub_topic: Arrays - Easy/Medium
@@ -393,7 +393,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-2-13
+        _path: data-structure-3-13
       - id: 14
         topic_name: Problem - Array Rotation
         sub_topic: Arrays - Easy/Medium
@@ -408,7 +408,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-2-14
+        _path: data-structure-3-14
       - id: 15
         topic_name: Problem - Find Perfect Numbers
         sub_topic: Arrays - Easy/Medium
@@ -423,7 +423,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-2-15
+        _path: data-structure-3-15
       - id: 16
         topic_name: Problem - Count of Primes
         sub_topic: Arrays - Easy/Medium
@@ -438,7 +438,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-2-16
+        _path: data-structure-3-16
       - id: 17
         topic_name: Problem - Range Sum Query - II
         sub_topic: Arrays - Easy/Medium
@@ -453,7 +453,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-2-17
+        _path: data-structure-3-17
       - id: 18
         topic_name: Problem - Count of Elements
         sub_topic: Arrays - Easy/Medium
@@ -468,8 +468,8 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-2-18
-  - module_id: 3
+        _path: data-structure-3-18
+  - module_id: 4
     module_name: Carry Forward
     module_duration: "30 mins read"
     topics_count: 6
@@ -492,7 +492,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: true
         enable_ai_quiz: true
-        _path: data-structure-3-1
+        _path: data-structure-4-1
       - id: 2
         topic_name: Problem - Special Subsequences "AG"
         sub_topic: Carry Forward
@@ -507,7 +507,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-3-2
+        _path: data-structure-4-2
       - id: 3
         topic_name: Problem - Leaders in an array
         sub_topic: Carry Forward
@@ -522,7 +522,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-3-3
+        _path: data-structure-4-3
       - id: 4
         topic_name: Problem - Bulbs
         sub_topic: Carry Forward
@@ -537,7 +537,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-3-4
+        _path: data-structure-4-4
       - id: 5
         topic_name: Problem - Best Time to Buy and Sell Stocks I
         sub_topic: Carry Forward
@@ -552,7 +552,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-3-5
+        _path: data-structure-4-5
       - id: 6
         topic_name: Problem - Pick from both sides!
         sub_topic: Carry Forward
@@ -567,8 +567,8 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-3-6
-  - module_id: 4
+        _path: data-structure-4-6
+  - module_id: 5
     module_name: Prefix Sum
     module_duration: "45 mins read"
     topics_count: 9
@@ -591,7 +591,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: true
         enable_ai_quiz: true
-        _path: data-structure-4-1
+        _path: data-structure-5-1
       - id: 2
         topic_name: Problem - Prefix Sum Concept
         sub_topic: Prefix Sum
@@ -606,7 +606,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-4-2
+        _path: data-structure-5-2
       - id: 3
         topic_name: Problem - In-place Prefix Sum
         sub_topic: Prefix Sum
@@ -621,7 +621,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-4-3
+        _path: data-structure-5-3
       - id: 4
         topic_name: Problem - Range Sum Query
         sub_topic: Prefix Sum
@@ -636,7 +636,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-4-4
+        _path: data-structure-5-4
       - id: 5
         topic_name: Problem - Equilibrium index of an array
         sub_topic: Prefix Sum
@@ -651,7 +651,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-4-5
+        _path: data-structure-5-5
       - id: 6
         topic_name: Problem - Even numbers in a range
         sub_topic: Prefix Sum
@@ -666,7 +666,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-4-6
+        _path: data-structure-5-6
       - id: 7
         topic_name: Problem - Sum of even indices
         sub_topic: Prefix Sum
@@ -681,7 +681,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-4-7
+        _path: data-structure-5-7
       - id: 8
         topic_name: Problem - Sum of odd indices
         sub_topic: Prefix Sum
@@ -696,7 +696,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-4-8
+        _path: data-structure-5-8
       - id: 9
         topic_name: Problem - Product array puzzle
         sub_topic: Prefix Sum
@@ -711,8 +711,8 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-4-9
-  - module_id: 5
+        _path: data-structure-5-9
+  - module_id: 6
     module_name: Subarrays
     module_duration: "55 mins read"
     topics_count: 11
@@ -735,7 +735,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: true
         enable_ai_quiz: true
-        _path: data-structure-5-1
+        _path: data-structure-6-1
       - id: 2
         topic_name: Problem - All Subarray
         sub_topic: Subarrays
@@ -750,7 +750,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-5-2
+        _path: data-structure-6-2
       - id: 3
         topic_name: Problem - Generate all subarrays
         sub_topic: Subarrays
@@ -765,7 +765,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-5-3
+        _path: data-structure-6-3
       - id: 4
         topic_name: Problem - Subarray Sums
         sub_topic: Subarrays
@@ -780,7 +780,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-5-4
+        _path: data-structure-6-4
       - id: 5
         topic_name: Problem - Maximum subarray sum
         sub_topic: Subarrays
@@ -795,7 +795,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-5-5
+        _path: data-structure-6-5
       - id: 6
         topic_name: Problem - Sum of All Subarrays
         sub_topic: Subarrays
@@ -810,7 +810,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-5-6
+        _path: data-structure-6-6
       - id: 7
         topic_name: Problem - Total Number of Subarrays
         sub_topic: Subarrays
@@ -825,7 +825,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-5-7
+        _path: data-structure-6-7
       - id: 8
         topic_name: Problem - Subarray in given range
         sub_topic: Subarrays
@@ -840,7 +840,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-5-8
+        _path: data-structure-6-8
       - id: 9
         topic_name: Problem - Count Subarrays starting with 'a'
         sub_topic: Subarrays
@@ -855,7 +855,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-5-9
+        _path: data-structure-6-9
       - id: 10
         topic_name: Problem - Good Subarrays Easy
         sub_topic: Subarrays
@@ -870,7 +870,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-5-10
+        _path: data-structure-6-10
       - id: 11
         topic_name: Problem - Counting Subarrays Easy
         sub_topic: Subarrays
@@ -885,8 +885,8 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-5-11
-  - module_id: 6
+        _path: data-structure-6-11
+  - module_id: 7
     module_name: Prefix & Subarrays
     module_duration: "35 mins read"
     topics_count: 7
@@ -909,7 +909,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: true
         enable_ai_quiz: true
-        _path: data-structure-6-1
+        _path: data-structure-7-1
       - id: 2
         topic_name: Problem - Continuous Sum Query
         sub_topic: Prefix & Subarrays
@@ -924,7 +924,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-6-2
+        _path: data-structure-7-2
       - id: 3
         topic_name: Problem - Prefix maximum
         sub_topic: Prefix & Subarrays
@@ -939,7 +939,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-6-3
+        _path: data-structure-7-3
       - id: 4
         topic_name: Problem - Suffix maximum
         sub_topic: Prefix & Subarrays
@@ -954,7 +954,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-6-4
+        _path: data-structure-7-4
       - id: 5
         topic_name: Problem - Rain Water Trapped
         sub_topic: Prefix & Subarrays
@@ -969,7 +969,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-6-5
+        _path: data-structure-7-5
       - id: 6
         topic_name: Problem - Max Sum Contiguous Subarray
         sub_topic: Prefix & Subarrays
@@ -984,7 +984,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-6-6
+        _path: data-structure-7-6
       - id: 7
         topic_name: Problem - Range Sum - II
         sub_topic: Prefix & Subarrays
@@ -999,8 +999,8 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-6-7
-  - module_id: 7
+        _path: data-structure-7-7
+  - module_id: 8
     module_name: Arrays - 2D Matrices 1
     module_duration: "60 mins read"
     topics_count: 12
@@ -1023,7 +1023,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: true
         enable_ai_quiz: true
-        _path: data-structure-7-1
+        _path: data-structure-8-1
       - id: 2
         topic_name: Problem - Subarray with given sum and length
         sub_topic: 2D Matrices
@@ -1038,7 +1038,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-7-2
+        _path: data-structure-8-2
       - id: 3
         topic_name: Problem - Maximum subarray sum of fixed length
         sub_topic: 2D Matrices
@@ -1053,7 +1053,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-7-3
+        _path: data-structure-8-3
       - id: 4
         topic_name: Problem - Spiral matrix 2
         sub_topic: 2D Matrices
@@ -1068,7 +1068,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-7-4
+        _path: data-structure-8-4
       - id: 5
         topic_name: Problem - Find in matrix
         sub_topic: 2D Matrices
@@ -1083,7 +1083,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-7-5
+        _path: data-structure-8-5
       - id: 6
         topic_name: Problem - Subarray with least average
         sub_topic: 2D Matrices
@@ -1098,7 +1098,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-7-6
+        _path: data-structure-8-6
       - id: 7
         topic_name: Problem - Minimum Swaps
         sub_topic: 2D Matrices
@@ -1113,7 +1113,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-7-7
+        _path: data-structure-8-7
       - id: 8
         topic_name: Problem - Spiral Order Matrix II
         sub_topic: 2D Matrices
@@ -1128,7 +1128,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-7-8
+        _path: data-structure-8-8
       - id: 9
         topic_name: Problem - Matrix Scalar Product
         sub_topic: 2D Matrices
@@ -1143,7 +1143,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-7-9
+        _path: data-structure-8-9
       - id: 10
         topic_name: Problem - Are Matrices Same ?
         sub_topic: 2D Matrices
@@ -1158,7 +1158,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-7-10
+        _path: data-structure-8-10
       - id: 11
         topic_name: Problem - Add the matrices
         sub_topic: 2D Matrices
@@ -1173,7 +1173,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-7-11
+        _path: data-structure-8-11
       - id: 12
         topic_name: Problem - Matrix Subtraction
         sub_topic: 2D Matrices
@@ -1188,8 +1188,8 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-7-12
-  - module_id: 8
+        _path: data-structure-8-12
+  - module_id: 9
     module_name: Arrays - 2D Matrices 2
     module_duration: "30 mins read"
     topics_count: 6
@@ -1212,7 +1212,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: true
         enable_ai_quiz: true
-        _path: data-structure-8-1
+        _path: data-structure-9-1
       - id: 2
         topic_name: Problem - Sub-matrix Sum Queries
         sub_topic: 2D Matrices Advanced
@@ -1227,7 +1227,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-8-2
+        _path: data-structure-9-2
       - id: 3
         topic_name: Problem - Sum of all Submatrices
         sub_topic: 2D Matrices Advanced
@@ -1242,7 +1242,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-8-3
+        _path: data-structure-9-3
       - id: 4
         topic_name: Problem - Row with maximum number of ones
         sub_topic: 2D Matrices Advanced
@@ -1257,7 +1257,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-8-4
+        _path: data-structure-9-4
       - id: 5
         topic_name: Problem - Maximum Submatrix
         sub_topic: 2D Matrices Advanced
@@ -1272,7 +1272,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-8-5
+        _path: data-structure-9-5
       - id: 6
         topic_name: Problem - Search in a row wise and column wise sorted matrix
         sub_topic: 2D Matrices Advanced
@@ -1287,8 +1287,8 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-8-6
-  - module_id: 9
+        _path: data-structure-9-6
+  - module_id: 20
     module_name: Practice Problems - Arrays - (Easy/Medium)
     module_duration: "45 mins read"
     topics_count: 28
@@ -1311,7 +1311,7 @@ content:
           is_on_youtube: false
           enable_ai_notes: true
           enable_ai_quiz: true
-          _path: data-structure-9-1
+          _path: data-structure-10-1
         - id: 2
           topic_name: Two Sum
           sub_topic: Arrays - Easy/Medium
@@ -1326,7 +1326,7 @@ content:
           is_on_youtube: false
           enable_ai_notes: true
           enable_ai_quiz: true
-          _path: data-structure-9-2
+          _path: data-structure-10-2
         - id: 3
           topic_name: Contains Duplicate
           sub_topic: Arrays - Easy/Medium
@@ -1341,7 +1341,7 @@ content:
           is_on_youtube: false
           enable_ai_notes: true
           enable_ai_quiz: true
-          _path: data-structure-9-3
+          _path: data-structure-10-3
         - id: 4
           topic_name: Find the Duplicate Number
           sub_topic: Arrays - Easy/Medium
@@ -1356,7 +1356,7 @@ content:
           is_on_youtube: false
           enable_ai_notes: true
           enable_ai_quiz: true
-          _path: data-structure-9-4
+          _path: data-structure-10-4
         - id: 5
           topic_name: Union of Two Arrays
           sub_topic: Arrays - Easy/Medium
@@ -1371,8 +1371,8 @@ content:
           is_on_youtube: false
           enable_ai_notes: true
           enable_ai_quiz: true
-          _path: data-structure-9-5
-  - module_id: 10
+          _path: data-structure-10-5
+  - module_id: 21
     module_name: Recursion - Easy/Medium
     module_duration: "30 mins read"
     topics_count: 6
@@ -1395,8 +1395,8 @@ content:
         is_on_youtube: false
         enable_ai_notes: true
         enable_ai_quiz: true
-        _path: data-structure-10-1
-  - module_id: 11
+        _path: data-structure-11-1
+  - module_id: 22
     module_name: Bit Manipulation
     module_duration: "35 mins read"
     topics_count: 7
@@ -1419,7 +1419,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-11-1
+        _path: data-structure-12-1
       - id: 2
         topic_name: Problem - Unset i-th bit
         sub_topic: Bit Manipulation
@@ -1434,7 +1434,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-11-2
+        _path: data-structure-12-2
       - id: 3
         topic_name: Problem - Check bit
         sub_topic: Bit Manipulation
@@ -1449,7 +1449,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-11-3
+        _path: data-structure-12-3
       - id: 4
         topic_name: Problem - Number of 1 Bits
         sub_topic: Bit Manipulation
@@ -1464,7 +1464,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-11-4
+        _path: data-structure-12-4
       - id: 5
         topic_name: Problem - Set Bit
         sub_topic: Bit Manipulation
@@ -1479,7 +1479,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-11-5
+        _path: data-structure-12-5
       - id: 6
         topic_name: Problem - Toggle i-th bit
         sub_topic: Bit Manipulation
@@ -1494,7 +1494,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-11-6
+        _path: data-structure-12-6
       - id: 7
         topic_name: Problem - Unset x bits from right
         sub_topic: Bit Manipulation
@@ -1509,8 +1509,8 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-11-7
-  - module_id: 12
+        _path: data-structure-12-7
+  - module_id: 23
     module_name: Subsets & Subsequences
     module_duration: "15 mins read"
     topics_count: 3
@@ -1533,7 +1533,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-12-1
+        _path: data-structure-13-1
       - id: 2
         topic_name: Problem - Sum the Difference
         sub_topic: Subsets & Subsequences
@@ -1548,7 +1548,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-12-2
+        _path: data-structure-13-2
       - id: 3
         topic_name: Problem - A, B and Modulo
         sub_topic: Subsets & Subsequences
@@ -1563,7 +1563,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-12-3
+        _path: data-structure-13-3
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png)

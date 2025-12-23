@@ -1,6 +1,6 @@
 ---
-title: "Continuous Sum Query"
-description: "Handle range update queries efficiently using difference array technique. Learn how to update ranges in O(1) time."
+title: "Generate All Subarrays"
+description: "Learn to generate all possible subarrays of an array. Understand the O(N²) time complexity and nested loop pattern for subarray enumeration."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-09-26"
 datePublished: "2025-09-26"
@@ -13,56 +13,67 @@ topics:
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png)
 
-Continuous Sum Query
+Generate All Subarrays
 ----------------------------
 
 ### Problem Statement:
 
-Given an array `A` of size `N` and `Q` queries of form `[L, R, val]`, add `val` to all elements in range [L, R]. Return final array after all queries.
+Given an array `A` of size `N`, generate and print all possible subarrays.
+
+A subarray is a contiguous part of an array.
 
 ### Examples:
 
 #### Example 1:
 
-**Input:** A = [0,0,0,0,0], Queries = [[1,3,2], [2,4,3]]
+**Input:** A = [1, 2, 3]
 
-**Output:** [0,2,5,5,3]
+**Output:** 
+```
+[1]
+[1, 2]
+[1, 2, 3]
+[2]
+[2, 3]
+[3]
+```
+
+### Constraints:
+
+* `1 ≤ N ≤ 100`
 
 ### Approach:
 
-Use difference array: mark start and end+1 positions, then compute prefix sum.
+Use two nested loops: outer for start index, inner for end index.
 
 ### Time Complexity:
 
-* **Time = O(N + Q)**, **Space = O(N)**
+* **Time = O(N³)** (printing), **Space = O(1)**
 
 ### JavaScript Code:
 
 ```javascript
-function continuousSumQuery(A, queries) {
+function generateSubarrays(A) {
     const N = A.length;
-    const diff = new Array(N + 1).fill(0);
     
-    for (const [L, R, val] of queries) {
-        diff[L] += val;
-        diff[R + 1] -= val;
+    for (let start = 0; start < N; start++) {
+        for (let end = start; end < N; end++) {
+            // Print subarray from start to end
+            const subarray = [];
+            for (let k = start; k <= end; k++) {
+                subarray.push(A[k]);
+            }
+            console.log(subarray);
+        }
     }
-    
-    let sum = 0;
-    for (let i = 0; i < N; i++) {
-        sum += diff[i];
-        A[i] += sum;
-    }
-    
-    return A;
 }
 ```
 
 ### Key Takeaways:
 
-1. **Difference array** optimizes range updates.
-2. O(1) per update query.
-3. Single prefix sum pass to get final values.
-4. Essential for bulk update problems.
-5. Inverse of prefix sum technique.
+1. **Total subarrays** = N × (N+1) / 2
+2. Nested loops enumerate all start-end pairs.
+3. Printing takes O(N³) total time.
+4. Foundation for subarray sum problems.
+5. Important pattern in competitive programming.
 

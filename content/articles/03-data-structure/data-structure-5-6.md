@@ -1,6 +1,6 @@
 ---
-title: "Total Number of Subarrays"
-description: "Calculate the total count of all possible subarrays using mathematical formula. Understand the N×(N+1)/2 pattern."
+title: "Sum of Even Indices"
+description: "Calculate sum of elements at even indices efficiently for multiple range queries using specialized prefix sums."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-09-26"
 datePublished: "2025-09-26"
@@ -13,50 +13,63 @@ topics:
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png)
 
-Total Number of Subarrays
+Sum of Even Indices
 ----------------------------
 
 ### Problem Statement:
 
-Given an array of size `N`, find the total number of possible subarrays.
+Given an array `A` and queries `[L, R]`, find the sum of elements at **even indices** in the range [L, R].
 
 ### Examples:
 
 #### Example 1:
 
-**Input:** N = 3
+**Input:** A = [1, 2, 3, 4, 5, 6], Query = [1, 4]
 
-**Output:** 6
+**Output:** 7
 
-**Explanation:** Array [a,b,c] has subarrays: [a], [a,b], [a,b,c], [b], [b,c], [c]
+**Explanation:** Indices in range [1, 4]: elements at even indices 2, 4 → 3 + 4 = 7
 
-#### Example 2:
+### Constraints:
 
-**Input:** N = 4
-
-**Output:** 10
+* `1 ≤ N ≤ 10^5`
 
 ### Approach:
 
-Formula: N × (N + 1) / 2
+Build prefix sum considering only even indices. Query uses prefix difference.
 
 ### Time Complexity:
 
-* **Time = O(1)**, **Space = O(1)**
+* **Time = O(N + Q)**, **Space = O(N)**
 
 ### JavaScript Code:
 
 ```javascript
-function countSubarrays(N) {
-    return (N * (N + 1)) / 2;
+function sumEvenIndices(A, queries) {
+    const N = A.length;
+    const prefix = new Array(N);
+    prefix[0] = A[0]; // Index 0 is even
+    
+    for (let i = 1; i < N; i++) {
+        prefix[i] = prefix[i-1] + (i % 2 === 0 ? A[i] : 0);
+    }
+    
+    const result = [];
+    for (const [L, R] of queries) {
+        let sum = prefix[R];
+        if (L > 0) sum -= prefix[L-1];
+        result.push(sum);
+    }
+    
+    return result;
 }
 ```
 
 ### Key Takeaways:
 
-1. **Mathematical formula** gives instant answer.
-2. Derived from choosing 2 positions from N+1 gaps.
-3. Sequence: 1, 3, 6, 10, 15, 21... (triangular numbers).
-4. Important for complexity analysis.
-5. Foundation for counting problems.
+1. **Selective prefix sum** - only add elements at even indices.
+2. Pattern extends to odd indices or any filter condition.
+3. O(1) query after preprocessing.
+4. Useful in matrix problems with row/column constraints.
+5. Can combine multiple prefix arrays for complex queries.
 

@@ -1,6 +1,6 @@
 ---
-title: "Minimum Swaps"
-description: "Find minimum swaps needed to bring all elements ≤ K together. Master the two-pointer window technique."
+title: "Range Sum II - Array Updates"
+description: "Handle multiple range update and query operations efficiently. Learn segment tree lite approach using difference arrays."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-09-26"
 datePublished: "2025-09-26"
@@ -13,66 +13,58 @@ topics:
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png)
 
-Minimum Swaps
+Range Sum II
 ----------------------------
 
 ### Problem Statement:
 
-Given array `A` and integer `B`, find minimum swaps to bring all elements ≤ B together.
+Given array `A` of size `N`, perform `Q` queries of form `(l, r, c)` which adds `c` to every element in range [l, r]. Return final array.
 
 ### Examples:
 
 #### Example 1:
 
-**Input:** A = [1,12,10,3,14,10,5], B = 8
+**Input:** A = [1,2,3], Queries = [[0,1,2], [1,2,3]]
 
-**Output:** 2
-
-**Explanation:** Bring [1,3,5] together, need 2 swaps
+**Output:** [3,7,6]
 
 ### Approach:
 
-Count elements ≤ B, use sliding window of that size, find window with minimum elements > B.
+Use difference array for O(1) updates, then compute prefix sum.
 
 ### Time Complexity:
 
-* **Time = O(N)**, **Space = O(1)**
+* **Time = O(N + Q)**, **Space = O(N)**
 
 ### JavaScript Code:
 
 ```javascript
-function minSwaps(A, B) {
-    let goodCount = 0;
-    for (const num of A) {
-        if (num <= B) goodCount++;
+function rangeSumUpdate(A, queries) {
+    const N = A.length;
+    const diff = new Array(N + 1).fill(0);
+    
+    // Apply queries using difference array
+    for (const [l, r, c] of queries) {
+        diff[l] += c;
+        diff[r + 1] -= c;
     }
     
-    if (goodCount === 0) return 0;
-    
-    // Count bad elements in first window
-    let badCount = 0;
-    for (let i = 0; i < goodCount; i++) {
-        if (A[i] > B) badCount++;
+    // Compute prefix sum and add to original
+    let sum = 0;
+    for (let i = 0; i < N; i++) {
+        sum += diff[i];
+        A[i] += sum;
     }
     
-    let minSwaps = badCount;
-    
-    // Slide window
-    for (let i = goodCount; i < A.length; i++) {
-        if (A[i - goodCount] > B) badCount--;
-        if (A[i] > B) badCount++;
-        minSwaps = Math.min(minSwaps, badCount);
-    }
-    
-    return minSwaps;
+    return A;
 }
 ```
 
 ### Key Takeaways:
 
-1. Window size = count of good elements.
-2. Minimum swaps = minimum bad elements in any window.
-3. Sliding window finds optimal position.
-4. O(N) efficient solution.
-5. Creative use of window technique.
+1. Difference array enables O(1) range updates.
+2. Prefix sum converts back to actual values.
+3. Efficient for bulk update operations.
+4. Foundation for segment tree problems.
+5. Essential competitive programming technique.
 

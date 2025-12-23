@@ -1,6 +1,6 @@
 ---
-title: "Subarray with Least Average"
-description: "Find subarray of given size with minimum average using sliding window. Master the window minimum pattern."
+title: "Max Sum Contiguous Subarray"
+description: "Find maximum sum of contiguous subarray using Kadane's algorithm. Master the most important subarray algorithm."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-09-26"
 datePublished: "2025-09-26"
@@ -13,26 +13,26 @@ topics:
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png)
 
-Subarray with Least Average
+Max Sum Contiguous Subarray
 ----------------------------
 
 ### Problem Statement:
 
-Given array `A` of size `N` and integer `B`, find starting index of subarray of size `B` with minimum average.
+Find the contiguous subarray with maximum sum in an integer array.
 
 ### Examples:
 
 #### Example 1:
 
-**Input:** A = [1,2,3,4,5], B = 2
+**Input:** A = [-2,1,-3,4,-1,2,1,-5,4]
 
-**Output:** 0
+**Output:** 6
 
-**Explanation:** Subarray [1,2] has minimum average 1.5
+**Explanation:** Subarray [4,-1,2,1] has largest sum = 6
 
 ### Approach:
 
-Use sliding window to find minimum sum (minimum sum = minimum average for fixed size).
+Kadane's Algorithm: Track current and max sum.
 
 ### Time Complexity:
 
@@ -41,32 +41,24 @@ Use sliding window to find minimum sum (minimum sum = minimum average for fixed 
 ### JavaScript Code:
 
 ```javascript
-function findMinAverageSubarray(A, B) {
-    let sum = 0;
-    for (let i = 0; i < B; i++) {
-        sum += A[i];
+function maxSubArray(A) {
+    let maxSum = A[0];
+    let currentSum = A[0];
+    
+    for (let i = 1; i < A.length; i++) {
+        currentSum = Math.max(A[i], currentSum + A[i]);
+        maxSum = Math.max(maxSum, currentSum);
     }
     
-    let minSum = sum;
-    let minIndex = 0;
-    
-    for (let i = B; i < A.length; i++) {
-        sum += A[i] - A[i - B];
-        if (sum < minSum) {
-            minSum = sum;
-            minIndex = i - B + 1;
-        }
-    }
-    
-    return minIndex;
+    return maxSum;
 }
 ```
 
 ### Key Takeaways:
 
-1. For fixed window, minimum sum = minimum average.
-2. Sliding window tracks running sum.
-3. Record index of minimum sum window.
-4. O(N) single pass solution.
-5. Variation of maximum subarray sum.
+1. Kadane's algorithm is optimal O(N).
+2. Dynamic programming approach.
+3. At each step: start fresh or continue.
+4. One of most important array algorithms.
+5. Foundation for many DP problems.
 

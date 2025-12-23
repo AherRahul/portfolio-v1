@@ -1,6 +1,6 @@
 ---
-title: "Arrays : 2D Matrices 1"
-description: "Introduction to 2D matrices and fundamental operations. Learn matrix representation, traversal patterns, basic transformations, and essential 2D array manipulation techniques."
+title: "Prefix & Subarrays"
+description: "Combine prefix sum technique with subarray problems to solve complex range query and subarray optimization problems efficiently. Master the synergy between these two powerful concepts."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-09-26"
 datePublished: "2025-09-26"
@@ -9,341 +9,258 @@ courseName: 03-data-structure
 topics:
   - data-structures
 resources:
-  - title: "Matrix Visualization"
+  - title: "Prefix Sum Applications"
     type: "tool"
     url: "https://visualgo.net/en/list"
-    description: "Interactive matrix operations visualization"
-  - title: "2D Array Patterns"
+    description: "Visualize prefix sum in subarray problems"
+  - title: "Subarray Sum Problems"
     type: "reference"
-    url: "https://www.geeksforgeeks.org/matrix/"
-    description: "Common matrix patterns and problems"
-  - title: "Matrix Practice"
+    url: "https://leetcode.com/tag/prefix-sum/"
+    description: "Collection of prefix sum and subarray problems"
+  - title: "Hash Map Techniques"
     type: "practice"
-    url: "https://leetcode.com/tag/matrix/"
-    description: "Practice matrix problems"
+    url: "https://leetcode.com/tag/hash-table/"
+    description: "Practice hash map optimization techniques"
 
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png)
 
-Arrays : 2D Matrices 1
+Prefix & Subarrays
 ----------------------------
 
-### Introduction to 2D Matrices
+### The Powerful Combination
 
-A **2D matrix** (or 2D array) is a data structure that stores elements in a grid-like format with rows and columns. It's essentially an array of arrays.
+Combining **Prefix Sum** with **Subarray** concepts creates powerful optimization strategies. This combination is essential for solving complex range query and subarray sum problems efficiently.
 
-### Representation in JavaScript
+### Core Principle
 
-```javascript
-// Method 1: Array of arrays
-const matrix = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9]
-];
-
-// Method 2: Creating with specific dimensions
-function createMatrix(rows, cols, defaultValue = 0) {
-    const matrix = [];
-    for (let i = 0; i < rows; i++) {
-        matrix[i] = new Array(cols).fill(defaultValue);
-    }
-    return matrix;
-}
+**Key Insight**: The sum of subarray from index `i` to `j` equals:
+```
+sum(i, j) = prefix[j] - prefix[i-1]
 ```
 
-### Matrix Terminology
+This allows us to:
+1. Reduce O(n²) or O(n³) solutions to O(n)
+2. Use hash maps to track prefix sums
+3. Solve counting and finding problems efficiently
 
-- **Dimensions**: m × n (m rows, n columns)
-- **Element**: `matrix[i][j]` (row i, column j)
-- **Square Matrix**: m = n
-- **Row**: All elements in same horizontal line
-- **Column**: All elements in same vertical line
+### Problem Pattern 1: Subarray Sum Equals K
 
-### Basic Matrix Operations
+**Problem**: Count subarrays with sum equal to K
 
-#### 1. Accessing Elements
-
+#### Naive Approach - O(n²)
 ```javascript
-const matrix = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9]
-];
-
-// Access element at row 1, column 2
-console.log(matrix[1][2]); // Output: 6
-
-// Get dimensions
-const rows = matrix.length;        // 3
-const cols = matrix[0].length;     // 3
-```
-
-#### 2. Traversal Patterns
-
-##### Row-wise Traversal
-```javascript
-function rowWiseTraversal(matrix) {
-    const result = [];
-    const rows = matrix.length;
-    const cols = matrix[0].length;
+function subarraySum(arr, k) {
+    let count = 0;
     
-    for (let i = 0; i < rows; i++) {
-        for (let j = 0; j < cols; j++) {
-            result.push(matrix[i][j]);
+    for (let i = 0; i < arr.length; i++) {
+        let sum = 0;
+        for (let j = i; j < arr.length; j++) {
+            sum += arr[j];
+            if (sum === k) count++;
         }
     }
     
-    return result;
+    return count;
 }
-
-// Input: [[1,2,3], [4,5,6], [7,8,9]]
-// Output: [1,2,3,4,5,6,7,8,9]
 ```
 
-##### Column-wise Traversal
+#### Optimized with Prefix Sum + HashMap - O(n)
 ```javascript
-function columnWiseTraversal(matrix) {
-    const result = [];
-    const rows = matrix.length;
-    const cols = matrix[0].length;
+function subarraySum(arr, k) {
+    const prefixMap = new Map();
+    prefixMap.set(0, 1); // Base case: prefix sum 0 occurs once
     
-    for (let j = 0; j < cols; j++) {
-        for (let i = 0; i < rows; i++) {
-            result.push(matrix[i][j]);
+    let prefixSum = 0;
+    let count = 0;
+    
+    for (let i = 0; i < arr.length; i++) {
+        prefixSum += arr[i];
+        
+        // If (prefixSum - k) exists, we found subarrays
+        if (prefixMap.has(prefixSum - k)) {
+            count += prefixMap.get(prefixSum - k);
+        }
+        
+        // Store current prefix sum
+        prefixMap.set(prefixSum, (prefixMap.get(prefixSum) || 0) + 1);
+    }
+    
+    return count;
+}
+```
+
+**Why it works**:
+- If `prefixSum[j] - prefixSum[i] = k`
+- Then `prefixSum[i] = prefixSum[j] - k`
+- We look for this in our map!
+
+### Problem Pattern 2: Longest Subarray with Sum K
+
+```javascript
+function longestSubarrayWithSumK(arr, k) {
+    const prefixMap = new Map();
+    prefixMap.set(0, -1); // Base case
+    
+    let prefixSum = 0;
+    let maxLength = 0;
+    
+    for (let i = 0; i < arr.length; i++) {
+        prefixSum += arr[i];
+        
+        // Check if we can form subarray with sum k
+        if (prefixMap.has(prefixSum - k)) {
+            const length = i - prefixMap.get(prefixSum - k);
+            maxLength = Math.max(maxLength, length);
+        }
+        
+        // Store first occurrence only (for longest)
+        if (!prefixMap.has(prefixSum)) {
+            prefixMap.set(prefixSum, i);
         }
     }
     
-    return result;
+    return maxLength;
 }
-
-// Input: [[1,2,3], [4,5,6], [7,8,9]]
-// Output: [1,4,7,2,5,8,3,6,9]
 ```
 
-##### Diagonal Traversal
+### Problem Pattern 3: Count Subarrays with Sum Divisible by K
+
 ```javascript
-function diagonalTraversal(matrix) {
-    const n = matrix.length;
-    const result = [];
+function subarraysDivByK(arr, k) {
+    const remainderMap = new Map();
+    remainderMap.set(0, 1); // Base case
     
-    // Main diagonal (top-left to bottom-right)
+    let prefixSum = 0;
+    let count = 0;
+    
+    for (let i = 0; i < arr.length; i++) {
+        prefixSum += arr[i];
+        
+        // Handle negative remainders
+        let remainder = ((prefixSum % k) + k) % k;
+        
+        // If this remainder seen before, we found subarrays
+        if (remainderMap.has(remainder)) {
+            count += remainderMap.get(remainder);
+        }
+        
+        remainderMap.set(remainder, (remainderMap.get(remainder) || 0) + 1);
+    }
+    
+    return count;
+}
+```
+
+### Problem Pattern 4: Maximum Subarray Sum (Using Prefix Sum Concept)
+
+```javascript
+function maxSubarraySum(arr) {
+    let minPrefixSum = 0;
+    let prefixSum = 0;
+    let maxSum = -Infinity;
+    
+    for (let i = 0; i < arr.length; i++) {
+        prefixSum += arr[i];
+        
+        // Maximum sum ending at i
+        maxSum = Math.max(maxSum, prefixSum - minPrefixSum);
+        
+        // Update minimum prefix sum seen so far
+        minPrefixSum = Math.min(minPrefixSum, prefixSum);
+    }
+    
+    return maxSum;
+}
+```
+
+### Problem Pattern 5: Equilibrium Index
+
+**Problem**: Find index where left sum equals right sum
+
+```javascript
+function findEquilibriumIndex(arr) {
+    const n = arr.length;
+    const prefix = new Array(n);
+    
+    // Build prefix sum
+    prefix[0] = arr[0];
+    for (let i = 1; i < n; i++) {
+        prefix[i] = prefix[i-1] + arr[i];
+    }
+    
+    const totalSum = prefix[n-1];
+    
     for (let i = 0; i < n; i++) {
-        result.push(matrix[i][i]);
-    }
-    
-    return result;
-}
-
-// Input: [[1,2,3], [4,5,6], [7,8,9]]
-// Output: [1,5,9]
-```
-
-##### Anti-Diagonal Traversal
-```javascript
-function antiDiagonalTraversal(matrix) {
-    const n = matrix.length;
-    const result = [];
-    
-    // Anti-diagonal (top-right to bottom-left)
-    for (let i = 0; i < n; i++) {
-        result.push(matrix[i][n - 1 - i]);
-    }
-    
-    return result;
-}
-
-// Input: [[1,2,3], [4,5,6], [7,8,9]]
-// Output: [3,5,7]
-```
-
-### Common Matrix Problems
-
-#### Problem 1: Sum of All Elements
-
-```javascript
-function matrixSum(matrix) {
-    let sum = 0;
-    
-    for (let i = 0; i < matrix.length; i++) {
-        for (let j = 0; j < matrix[0].length; j++) {
-            sum += matrix[i][j];
+        const leftSum = i === 0 ? 0 : prefix[i-1];
+        const rightSum = totalSum - prefix[i];
+        
+        if (leftSum === rightSum) {
+            return i;
         }
     }
     
-    return sum;
+    return -1;
 }
 ```
 
-**Time Complexity**: O(m × n)
-**Space Complexity**: O(1)
+### Common Problem Types & Solutions
 
-#### Problem 2: Matrix Transpose
+| Problem | Technique | Time |
+|---------|-----------|------|
+| Subarray sum equals K | Prefix + HashMap | O(n) |
+| Longest subarray sum K | Prefix + HashMap | O(n) |
+| Sum divisible by K | Prefix + Remainder Map | O(n) |
+| Maximum subarray sum | Kadane's / Min Prefix | O(n) |
+| Equilibrium index | Prefix Sum Array | O(n) |
+| Range sum queries | Prefix Sum Array | O(1) per query |
 
-```javascript
-function transpose(matrix) {
-    const rows = matrix.length;
-    const cols = matrix[0].length;
-    const result = [];
-    
-    for (let j = 0; j < cols; j++) {
-        result[j] = [];
-        for (let i = 0; i < rows; i++) {
-            result[j][i] = matrix[i][j];
-        }
-    }
-    
-    return result;
-}
-
-// Input:  [[1,2,3], [4,5,6]]
-// Output: [[1,4], [2,5], [3,6]]
-```
-
-**Time Complexity**: O(m × n)
-**Space Complexity**: O(m × n)
-
-#### Problem 3: Rotate Matrix 90° Clockwise
+### Template for Prefix + HashMap Problems
 
 ```javascript
-function rotate90Clockwise(matrix) {
-    const n = matrix.length;
+function solveSubarrayProblem(arr, condition) {
+    const map = new Map();
+    map.set(0, -1); // or set(0, 1) depending on problem
     
-    // Step 1: Transpose
-    for (let i = 0; i < n; i++) {
-        for (let j = i + 1; j < n; j++) {
-            [matrix[i][j], matrix[j][i]] = [matrix[j][i], matrix[i][j]];
+    let prefixSum = 0;
+    let result = 0; // count, length, etc.
+    
+    for (let i = 0; i < arr.length; i++) {
+        prefixSum += arr[i];
+        
+        // Apply your condition
+        const target = prefixSum - condition;
+        
+        if (map.has(target)) {
+            // Update result based on problem
+            result += map.get(target);
         }
-    }
-    
-    // Step 2: Reverse each row
-    for (let i = 0; i < n; i++) {
-        matrix[i].reverse();
-    }
-    
-    return matrix;
-}
-
-// Input:  [[1,2,3], [4,5,6], [7,8,9]]
-// Output: [[7,4,1], [8,5,2], [9,6,3]]
-```
-
-**Time Complexity**: O(n²)
-**Space Complexity**: O(1) - in-place
-
-#### Problem 4: Search in 2D Matrix
-
-```javascript
-function searchMatrix(matrix, target) {
-    const rows = matrix.length;
-    const cols = matrix[0].length;
-    
-    for (let i = 0; i < rows; i++) {
-        for (let j = 0; j < cols; j++) {
-            if (matrix[i][j] === target) {
-                return [i, j]; // Return position
-            }
-        }
-    }
-    
-    return [-1, -1]; // Not found
-}
-```
-
-**Time Complexity**: O(m × n)
-
-#### Problem 5: Print Boundary Elements
-
-```javascript
-function printBoundary(matrix) {
-    const rows = matrix.length;
-    const cols = matrix[0].length;
-    const result = [];
-    
-    // Top row
-    for (let j = 0; j < cols; j++) {
-        result.push(matrix[0][j]);
-    }
-    
-    // Right column (excluding corners)
-    for (let i = 1; i < rows - 1; i++) {
-        result.push(matrix[i][cols - 1]);
-    }
-    
-    // Bottom row (if more than 1 row)
-    if (rows > 1) {
-        for (let j = cols - 1; j >= 0; j--) {
-            result.push(matrix[rows - 1][j]);
-        }
-    }
-    
-    // Left column (excluding corners, if more than 1 column)
-    if (cols > 1) {
-        for (let i = rows - 2; i >= 1; i--) {
-            result.push(matrix[i][0]);
-        }
+        
+        // Update map
+        map.set(prefixSum, (map.get(prefixSum) || 0) + 1);
     }
     
     return result;
 }
 ```
-
-### Matrix Creation Patterns
-
-```javascript
-// Identity Matrix
-function createIdentityMatrix(n) {
-    const matrix = createMatrix(n, n, 0);
-    for (let i = 0; i < n; i++) {
-        matrix[i][i] = 1;
-    }
-    return matrix;
-}
-
-// Matrix from 1D array
-function create2DFrom1D(arr, rows, cols) {
-    const matrix = [];
-    let idx = 0;
-    
-    for (let i = 0; i < rows; i++) {
-        matrix[i] = [];
-        for (let j = 0; j < cols; j++) {
-            matrix[i][j] = arr[idx++];
-        }
-    }
-    
-    return matrix;
-}
-```
-
-### Time Complexity Summary
-
-| Operation | Time Complexity |
-|-----------|-----------------|
-| Access element | O(1) |
-| Row/Column traversal | O(n) |
-| Full matrix traversal | O(m × n) |
-| Transpose | O(m × n) |
-| Rotate 90° | O(n²) |
-| Search (unsorted) | O(m × n) |
 
 ### Practice Problems
 
-1. ✅ Transpose Matrix
-2. ✅ Rotate Image (90°)
-3. ✅ Spiral Matrix
-4. ✅ Set Matrix Zeroes
-5. ✅ Search a 2D Matrix
-6. ✅ Diagonal Traverse
-7. ✅ Matrix Diagonal Sum
+1. ✅ Subarray Sum Equals K
+2. ✅ Continuous Subarray Sum
+3. ✅ Subarray Sums Divisible by K
+4. ✅ Maximum Size Subarray Sum Equals k
+5. ✅ Find Pivot Index
+6. ✅ Product of Array Except Self
+7. ✅ Contiguous Array (0s and 1s)
+8. ✅ Minimum Size Subarray Sum
 
 ### Key Takeaways
 
-- Matrix is array of arrays: `matrix[row][col]`
-- Master different traversal patterns
-- Understand row-major vs column-major access
-- In-place operations save space
-- Many problems have O(m × n) time complexity
-- Practice visualization of matrix transformations
+- Prefix sum transforms subarray problems from O(n²) to O(n)
+- HashMap stores prefix sums for quick lookup
+- Pattern: `if (map.has(prefixSum - target))`
+- Handle edge cases: empty subarray, negative numbers
+- Master this pattern - it appears frequently in interviews!
 

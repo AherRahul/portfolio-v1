@@ -1,6 +1,6 @@
 ---
-title: "Subarrays"
-description: "Deep dive into subarrays - understanding, enumeration, and solving problems efficiently. Learn techniques to work with contiguous subsequences and optimize subarray-related algorithms."
+title: "Prefix Sum"
+description: "Master the prefix sum technique for efficient range query operations. Learn how to precompute cumulative sums to answer range sum queries in O(1) time complexity."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-09-26"
 datePublished: "2025-09-26"
@@ -9,184 +9,144 @@ courseName: 03-data-structure
 topics:
   - data-structures
 resources:
-  - title: "Subarray Problems Visualization"
+  - title: "Prefix Sum Visualization"
     type: "tool"
     url: "https://visualgo.net/en/list"
-    description: "Interactive subarray visualization"
-  - title: "Sliding Window Technique"
+    description: "Interactive prefix sum visualization"
+  - title: "Range Query Techniques"
     type: "reference"
-    url: "https://leetcode.com/tag/sliding-window/"
-    description: "Related sliding window problems"
-  - title: "Subarray Practice"
+    url: "https://cp-algorithms.com/data_structures/segment_tree.html"
+    description: "Advanced range query data structures"
+  - title: "Prefix Sum Practice"
     type: "practice"
-    url: "https://leetcode.com/tag/array/"
-    description: "Practice subarray problems"
+    url: "https://leetcode.com/tag/prefix-sum/"
+    description: "Practice problems on prefix sum technique"
 
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png)
 
-Subarrays
+Prefix Sum
 ----------------------------
 
-### What is a Subarray?
+### Introduction to Prefix Sum
 
-A **subarray** is a contiguous sequence of elements within an array. Unlike subsequences, subarrays must maintain the original order and cannot skip elements.
+**Prefix Sum** (also called cumulative sum) is a preprocessing technique that allows us to answer range sum queries efficiently. By precomputing cumulative sums, we can find the sum of any subarray in constant time.
 
-### Examples
+### The Concept
 
-For array `[1, 2, 3, 4]`:
-
-**Valid Subarrays**:
-- `[1]`, `[2]`, `[3]`, `[4]`
-- `[1, 2]`, `[2, 3]`, `[3, 4]`
-- `[1, 2, 3]`, `[2, 3, 4]`
-- `[1, 2, 3, 4]`
-- `[]` (empty subarray)
-
-**NOT Subarrays** (these are subsequences):
-- `[1, 3]` - skips element 2
-- `[1, 4]` - skips elements 2 and 3
-- `[2, 4]` - skips element 3
-
-### Counting Subarrays
-
-For an array of length `n`:
-- **Total subarrays** = n × (n + 1) / 2
-- **Including empty** = n × (n + 1) / 2 + 1
-
-**Proof**: For each starting position `i`, there are `(n - i)` possible ending positions.
+Given an array `arr[]`, the prefix sum array `prefix[]` is defined as:
 ```
-Sum = n + (n-1) + (n-2) + ... + 1 = n(n+1)/2
+prefix[i] = arr[0] + arr[1] + arr[2] + ... + arr[i]
 ```
 
-### Generating All Subarrays
+### Building Prefix Sum Array
 
 ```javascript
-function generateAllSubarrays(arr) {
+function buildPrefixSum(arr) {
     const n = arr.length;
-    const subarrays = [];
+    const prefix = new Array(n);
     
-    // i: starting index
-    for (let i = 0; i < n; i++) {
-        // j: ending index
-        for (let j = i; j < n; j++) {
-            // Extract subarray from i to j
-            const subarray = arr.slice(i, j + 1);
-            subarrays.push(subarray);
+    prefix[0] = arr[0];
+    for (let i = 1; i < n; i++) {
+        prefix[i] = prefix[i - 1] + arr[i];
+    }
+    
+    return prefix;
+}
+```
+
+### Range Sum Query
+
+To find sum from index `L` to `R`:
+```javascript
+function rangeSum(prefix, L, R) {
+    if (L === 0) {
+        return prefix[R];
+    }
+    return prefix[R] - prefix[L - 1];
+}
+```
+
+### Example
+
+```javascript
+// Original array: [3, 1, 4, 2, 5]
+// Prefix sum:     [3, 4, 8, 10, 15]
+
+// Query: Sum from index 1 to 3
+// Answer: prefix[3] - prefix[0] = 10 - 3 = 7
+// Verification: arr[1] + arr[2] + arr[3] = 1 + 4 + 2 = 7 ✓
+```
+
+### Complete Implementation
+
+```javascript
+class PrefixSum {
+    constructor(arr) {
+        this.n = arr.length;
+        this.prefix = new Array(this.n);
+        
+        // Build prefix sum
+        this.prefix[0] = arr[0];
+        for (let i = 1; i < this.n; i++) {
+            this.prefix[i] = this.prefix[i - 1] + arr[i];
         }
     }
     
-    return subarrays;
-}
-
-// Example
-const arr = [1, 2, 3];
-console.log(generateAllSubarrays(arr));
-// Output: [[1], [1,2], [1,2,3], [2], [2,3], [3]]
-```
-
-### Common Subarray Problems
-
-#### 1. Maximum Subarray Sum (Kadane's Algorithm)
-
-```javascript
-function maxSubarraySum(arr) {
-    let maxSum = arr[0];
-    let currentSum = arr[0];
-    
-    for (let i = 1; i < arr.length; i++) {
-        currentSum = Math.max(arr[i], currentSum + arr[i]);
-        maxSum = Math.max(maxSum, currentSum);
-    }
-    
-    return maxSum;
-}
-```
-
-**Time Complexity**: O(n)
-
-#### 2. Print All Subarray Sums
-
-```javascript
-function printSubarraySums(arr) {
-    const n = arr.length;
-    
-    for (let i = 0; i < n; i++) {
-        let sum = 0;
-        for (let j = i; j < n; j++) {
-            sum += arr[j];
-            console.log(`Subarray [${i}, ${j}]: sum = ${sum}`);
-        }
+    // Get sum from index L to R (inclusive)
+    getSum(L, R) {
+        if (L === 0) return this.prefix[R];
+        return this.prefix[R] - this.prefix[L - 1];
     }
 }
+
+// Usage
+const arr = [3, 1, 4, 2, 5];
+const ps = new PrefixSum(arr);
+console.log(ps.getSum(1, 3)); // Output: 7
 ```
 
-**Time Complexity**: O(n²)
+### Time & Space Complexity
 
-#### 3. Count Subarrays with Given Sum
+- **Building Prefix Sum**: O(n) time, O(n) space
+- **Range Query**: O(1) time
+- **Overall**: For Q queries - O(n + Q) vs O(n × Q) without prefix sum
 
+### Applications
+
+1. Range sum queries
+2. Equilibrium index problems
+3. Subarray sum problems
+4. 2D matrix range queries (2D prefix sum)
+5. XOR queries (prefix XOR)
+
+### Variations
+
+#### 2D Prefix Sum
+For matrix range sum queries:
 ```javascript
-function countSubarraysWithSum(arr, targetSum) {
-    let count = 0;
-    
-    for (let i = 0; i < arr.length; i++) {
-        let sum = 0;
-        for (let j = i; j < arr.length; j++) {
-            sum += arr[j];
-            if (sum === targetSum) {
-                count++;
-            }
-        }
-    }
-    
-    return count;
-}
+prefix[i][j] = prefix[i-1][j] + prefix[i][j-1] 
+             - prefix[i-1][j-1] + matrix[i][j]
 ```
 
-**Time Complexity**: O(n²)
-**Optimized with HashMap**: O(n)
-
-### Optimization Techniques
-
-1. **Prefix Sum**: For range sum queries
-2. **Sliding Window**: For fixed/variable size subarrays
-3. **Two Pointers**: For sorted arrays
-4. **Hash Maps**: For sum-based problems
-5. **Kadane's Algorithm**: For maximum sum
-
-### Time Complexity Patterns
-
-| Operation | Naive | Optimized |
-|-----------|-------|-----------|
-| Generate all subarrays | O(n²) | - |
-| Sum of all subarrays | O(n³) | O(n²) |
-| Maximum subarray sum | O(n²) | O(n) |
-| Subarray with given sum | O(n²) | O(n) |
-
-### Common Problem Types
-
-1. **Maximum/Minimum** subarray sum
-2. **Count** subarrays with property X
-3. **Find** subarray with target sum
-4. **Longest** subarray with condition
-5. **Smallest** subarray with sum ≥ K
+#### Prefix XOR
+```javascript
+prefixXOR[i] = arr[0] ^ arr[1] ^ ... ^ arr[i]
+```
 
 ### Practice Problems
 
-1. Maximum Subarray (Kadane's Algorithm)
+1. Range Sum Query - Immutable
 2. Subarray Sum Equals K
-3. Longest Subarray with Sum K
-4. Maximum Product Subarray
-5. Subarray with 0 Sum
-6. Count Subarrays with Equal 0s and 1s
-7. Longest Subarray with Equal 0s and 1s
+3. Contiguous Array
+4. Product of Array Except Self
+5. Range Sum Query 2D - Matrix
 
 ### Key Takeaways
 
-- Subarrays are contiguous sequences
-- Total subarrays = n(n+1)/2
-- Many problems can be optimized from O(n²) or O(n³) to O(n)
-- Prefix sum and sliding window are key optimization techniques
-- Understanding subarray fundamentals is crucial for array problems
+- Prefix Sum trades space for time
+- Essential for range query optimization
+- Foundation for more advanced techniques
+- Can be extended to 2D, XOR, products, etc.
 

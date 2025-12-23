@@ -1,6 +1,6 @@
 ---
-title: "Row with Maximum Number of Ones"
-description: "Find row with most 1s in binary matrix sorted row-wise. Master the staircase search for optimization."
+title: "Spiral Matrix 2"
+description: "Print matrix elements in spiral order starting from top-left. Master the layer-by-layer traversal pattern."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-09-26"
 datePublished: "2025-09-26"
@@ -13,44 +13,76 @@ topics:
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png)
 
-Row with Maximum Number of Ones
+Spiral Matrix 2
 ----------------------------
 
 ### Problem Statement:
 
-Given binary matrix where each row is sorted (0s before 1s), find the row with maximum number of 1s.
+Given NxN matrix `A`, print elements in spiral order starting from A[0][0].
+
+### Examples:
+
+#### Example 1:
+
+**Input:** A = [[1,2],[3,4]]
+
+**Output:** [1,2,4,3]
 
 ### Approach:
 
-Start from top-right, move left when see 1, move down when see 0.
+Track boundaries (top, bottom, left, right), traverse each layer.
 
 ### Time Complexity:
 
-* **Time = O(N+M)**, **Space = O(1)**
+* **Time = O(N²)**, **Space = O(1)**
 
 ### JavaScript Code:
 
 ```javascript
-function rowWithMax1s(A) {
-    let maxRow = 0;
-    let col = A[0].length - 1;
+function spiralOrder(A) {
+    const result = [];
+    let top = 0, bottom = A.length - 1;
+    let left = 0, right = A[0].length - 1;
     
-    for (let row = 0; row < A.length; row++) {
-        while (col >= 0 && A[row][col] === 1) {
-            maxRow = row;
-            col--;
+    while (top <= bottom && left <= right) {
+        // Right
+        for (let i = left; i <= right; i++) {
+            result.push(A[top][i]);
+        }
+        top++;
+        
+        // Down
+        for (let i = top; i <= bottom; i++) {
+            result.push(A[i][right]);
+        }
+        right--;
+        
+        // Left
+        if (top <= bottom) {
+            for (let i = right; i >= left; i--) {
+                result.push(A[bottom][i]);
+            }
+            bottom--;
+        }
+        
+        // Up
+        if (left <= right) {
+            for (let i = bottom; i >= top; i--) {
+                result.push(A[i][left]);
+            }
+            left++;
         }
     }
     
-    return maxRow;
+    return result;
 }
 ```
 
 ### Key Takeaways:
 
-1. Staircase search from top-right.
-2. O(N+M) optimal for sorted rows.
-3. Track best row while moving left.
-4. Better than O(N×M) brute force.
-5. Classic sorted matrix optimization.
+1. Layer-by-layer traversal pattern.
+2. Track four boundaries carefully.
+3. Handle odd/even dimensions.
+4. Classic matrix traversal problem.
+5. Tests boundary condition handling.
 

@@ -1,6 +1,6 @@
 ---
-title: "Prefix & Subarrays"
-description: "Combine prefix sum technique with subarray problems to solve complex range query and subarray optimization problems efficiently. Master the synergy between these two powerful concepts."
+title: "Subarrays"
+description: "Deep dive into subarrays - understanding, enumeration, and solving problems efficiently. Learn techniques to work with contiguous subsequences and optimize subarray-related algorithms."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-09-26"
 datePublished: "2025-09-26"
@@ -9,258 +9,184 @@ courseName: 03-data-structure
 topics:
   - data-structures
 resources:
-  - title: "Prefix Sum Applications"
+  - title: "Subarray Problems Visualization"
     type: "tool"
     url: "https://visualgo.net/en/list"
-    description: "Visualize prefix sum in subarray problems"
-  - title: "Subarray Sum Problems"
+    description: "Interactive subarray visualization"
+  - title: "Sliding Window Technique"
     type: "reference"
-    url: "https://leetcode.com/tag/prefix-sum/"
-    description: "Collection of prefix sum and subarray problems"
-  - title: "Hash Map Techniques"
+    url: "https://leetcode.com/tag/sliding-window/"
+    description: "Related sliding window problems"
+  - title: "Subarray Practice"
     type: "practice"
-    url: "https://leetcode.com/tag/hash-table/"
-    description: "Practice hash map optimization techniques"
+    url: "https://leetcode.com/tag/array/"
+    description: "Practice subarray problems"
 
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png)
 
-Prefix & Subarrays
+Subarrays
 ----------------------------
 
-### The Powerful Combination
+### What is a Subarray?
 
-Combining **Prefix Sum** with **Subarray** concepts creates powerful optimization strategies. This combination is essential for solving complex range query and subarray sum problems efficiently.
+A **subarray** is a contiguous sequence of elements within an array. Unlike subsequences, subarrays must maintain the original order and cannot skip elements.
 
-### Core Principle
+### Examples
 
-**Key Insight**: The sum of subarray from index `i` to `j` equals:
+For array `[1, 2, 3, 4]`:
+
+**Valid Subarrays**:
+- `[1]`, `[2]`, `[3]`, `[4]`
+- `[1, 2]`, `[2, 3]`, `[3, 4]`
+- `[1, 2, 3]`, `[2, 3, 4]`
+- `[1, 2, 3, 4]`
+- `[]` (empty subarray)
+
+**NOT Subarrays** (these are subsequences):
+- `[1, 3]` - skips element 2
+- `[1, 4]` - skips elements 2 and 3
+- `[2, 4]` - skips element 3
+
+### Counting Subarrays
+
+For an array of length `n`:
+- **Total subarrays** = n × (n + 1) / 2
+- **Including empty** = n × (n + 1) / 2 + 1
+
+**Proof**: For each starting position `i`, there are `(n - i)` possible ending positions.
 ```
-sum(i, j) = prefix[j] - prefix[i-1]
+Sum = n + (n-1) + (n-2) + ... + 1 = n(n+1)/2
 ```
 
-This allows us to:
-1. Reduce O(n²) or O(n³) solutions to O(n)
-2. Use hash maps to track prefix sums
-3. Solve counting and finding problems efficiently
+### Generating All Subarrays
 
-### Problem Pattern 1: Subarray Sum Equals K
-
-**Problem**: Count subarrays with sum equal to K
-
-#### Naive Approach - O(n²)
 ```javascript
-function subarraySum(arr, k) {
-    let count = 0;
+function generateAllSubarrays(arr) {
+    const n = arr.length;
+    const subarrays = [];
     
-    for (let i = 0; i < arr.length; i++) {
-        let sum = 0;
-        for (let j = i; j < arr.length; j++) {
-            sum += arr[j];
-            if (sum === k) count++;
+    // i: starting index
+    for (let i = 0; i < n; i++) {
+        // j: ending index
+        for (let j = i; j < n; j++) {
+            // Extract subarray from i to j
+            const subarray = arr.slice(i, j + 1);
+            subarrays.push(subarray);
         }
     }
     
-    return count;
+    return subarrays;
 }
+
+// Example
+const arr = [1, 2, 3];
+console.log(generateAllSubarrays(arr));
+// Output: [[1], [1,2], [1,2,3], [2], [2,3], [3]]
 ```
 
-#### Optimized with Prefix Sum + HashMap - O(n)
-```javascript
-function subarraySum(arr, k) {
-    const prefixMap = new Map();
-    prefixMap.set(0, 1); // Base case: prefix sum 0 occurs once
-    
-    let prefixSum = 0;
-    let count = 0;
-    
-    for (let i = 0; i < arr.length; i++) {
-        prefixSum += arr[i];
-        
-        // If (prefixSum - k) exists, we found subarrays
-        if (prefixMap.has(prefixSum - k)) {
-            count += prefixMap.get(prefixSum - k);
-        }
-        
-        // Store current prefix sum
-        prefixMap.set(prefixSum, (prefixMap.get(prefixSum) || 0) + 1);
-    }
-    
-    return count;
-}
-```
+### Common Subarray Problems
 
-**Why it works**:
-- If `prefixSum[j] - prefixSum[i] = k`
-- Then `prefixSum[i] = prefixSum[j] - k`
-- We look for this in our map!
-
-### Problem Pattern 2: Longest Subarray with Sum K
-
-```javascript
-function longestSubarrayWithSumK(arr, k) {
-    const prefixMap = new Map();
-    prefixMap.set(0, -1); // Base case
-    
-    let prefixSum = 0;
-    let maxLength = 0;
-    
-    for (let i = 0; i < arr.length; i++) {
-        prefixSum += arr[i];
-        
-        // Check if we can form subarray with sum k
-        if (prefixMap.has(prefixSum - k)) {
-            const length = i - prefixMap.get(prefixSum - k);
-            maxLength = Math.max(maxLength, length);
-        }
-        
-        // Store first occurrence only (for longest)
-        if (!prefixMap.has(prefixSum)) {
-            prefixMap.set(prefixSum, i);
-        }
-    }
-    
-    return maxLength;
-}
-```
-
-### Problem Pattern 3: Count Subarrays with Sum Divisible by K
-
-```javascript
-function subarraysDivByK(arr, k) {
-    const remainderMap = new Map();
-    remainderMap.set(0, 1); // Base case
-    
-    let prefixSum = 0;
-    let count = 0;
-    
-    for (let i = 0; i < arr.length; i++) {
-        prefixSum += arr[i];
-        
-        // Handle negative remainders
-        let remainder = ((prefixSum % k) + k) % k;
-        
-        // If this remainder seen before, we found subarrays
-        if (remainderMap.has(remainder)) {
-            count += remainderMap.get(remainder);
-        }
-        
-        remainderMap.set(remainder, (remainderMap.get(remainder) || 0) + 1);
-    }
-    
-    return count;
-}
-```
-
-### Problem Pattern 4: Maximum Subarray Sum (Using Prefix Sum Concept)
+#### 1. Maximum Subarray Sum (Kadane's Algorithm)
 
 ```javascript
 function maxSubarraySum(arr) {
-    let minPrefixSum = 0;
-    let prefixSum = 0;
-    let maxSum = -Infinity;
+    let maxSum = arr[0];
+    let currentSum = arr[0];
     
-    for (let i = 0; i < arr.length; i++) {
-        prefixSum += arr[i];
-        
-        // Maximum sum ending at i
-        maxSum = Math.max(maxSum, prefixSum - minPrefixSum);
-        
-        // Update minimum prefix sum seen so far
-        minPrefixSum = Math.min(minPrefixSum, prefixSum);
+    for (let i = 1; i < arr.length; i++) {
+        currentSum = Math.max(arr[i], currentSum + arr[i]);
+        maxSum = Math.max(maxSum, currentSum);
     }
     
     return maxSum;
 }
 ```
 
-### Problem Pattern 5: Equilibrium Index
+**Time Complexity**: O(n)
 
-**Problem**: Find index where left sum equals right sum
+#### 2. Print All Subarray Sums
 
 ```javascript
-function findEquilibriumIndex(arr) {
+function printSubarraySums(arr) {
     const n = arr.length;
-    const prefix = new Array(n);
-    
-    // Build prefix sum
-    prefix[0] = arr[0];
-    for (let i = 1; i < n; i++) {
-        prefix[i] = prefix[i-1] + arr[i];
-    }
-    
-    const totalSum = prefix[n-1];
     
     for (let i = 0; i < n; i++) {
-        const leftSum = i === 0 ? 0 : prefix[i-1];
-        const rightSum = totalSum - prefix[i];
-        
-        if (leftSum === rightSum) {
-            return i;
+        let sum = 0;
+        for (let j = i; j < n; j++) {
+            sum += arr[j];
+            console.log(`Subarray [${i}, ${j}]: sum = ${sum}`);
         }
     }
-    
-    return -1;
 }
 ```
 
-### Common Problem Types & Solutions
+**Time Complexity**: O(n²)
 
-| Problem | Technique | Time |
-|---------|-----------|------|
-| Subarray sum equals K | Prefix + HashMap | O(n) |
-| Longest subarray sum K | Prefix + HashMap | O(n) |
-| Sum divisible by K | Prefix + Remainder Map | O(n) |
-| Maximum subarray sum | Kadane's / Min Prefix | O(n) |
-| Equilibrium index | Prefix Sum Array | O(n) |
-| Range sum queries | Prefix Sum Array | O(1) per query |
-
-### Template for Prefix + HashMap Problems
+#### 3. Count Subarrays with Given Sum
 
 ```javascript
-function solveSubarrayProblem(arr, condition) {
-    const map = new Map();
-    map.set(0, -1); // or set(0, 1) depending on problem
-    
-    let prefixSum = 0;
-    let result = 0; // count, length, etc.
+function countSubarraysWithSum(arr, targetSum) {
+    let count = 0;
     
     for (let i = 0; i < arr.length; i++) {
-        prefixSum += arr[i];
-        
-        // Apply your condition
-        const target = prefixSum - condition;
-        
-        if (map.has(target)) {
-            // Update result based on problem
-            result += map.get(target);
+        let sum = 0;
+        for (let j = i; j < arr.length; j++) {
+            sum += arr[j];
+            if (sum === targetSum) {
+                count++;
+            }
         }
-        
-        // Update map
-        map.set(prefixSum, (map.get(prefixSum) || 0) + 1);
     }
     
-    return result;
+    return count;
 }
 ```
+
+**Time Complexity**: O(n²)
+**Optimized with HashMap**: O(n)
+
+### Optimization Techniques
+
+1. **Prefix Sum**: For range sum queries
+2. **Sliding Window**: For fixed/variable size subarrays
+3. **Two Pointers**: For sorted arrays
+4. **Hash Maps**: For sum-based problems
+5. **Kadane's Algorithm**: For maximum sum
+
+### Time Complexity Patterns
+
+| Operation | Naive | Optimized |
+|-----------|-------|-----------|
+| Generate all subarrays | O(n²) | - |
+| Sum of all subarrays | O(n³) | O(n²) |
+| Maximum subarray sum | O(n²) | O(n) |
+| Subarray with given sum | O(n²) | O(n) |
+
+### Common Problem Types
+
+1. **Maximum/Minimum** subarray sum
+2. **Count** subarrays with property X
+3. **Find** subarray with target sum
+4. **Longest** subarray with condition
+5. **Smallest** subarray with sum ≥ K
 
 ### Practice Problems
 
-1. ✅ Subarray Sum Equals K
-2. ✅ Continuous Subarray Sum
-3. ✅ Subarray Sums Divisible by K
-4. ✅ Maximum Size Subarray Sum Equals k
-5. ✅ Find Pivot Index
-6. ✅ Product of Array Except Self
-7. ✅ Contiguous Array (0s and 1s)
-8. ✅ Minimum Size Subarray Sum
+1. Maximum Subarray (Kadane's Algorithm)
+2. Subarray Sum Equals K
+3. Longest Subarray with Sum K
+4. Maximum Product Subarray
+5. Subarray with 0 Sum
+6. Count Subarrays with Equal 0s and 1s
+7. Longest Subarray with Equal 0s and 1s
 
 ### Key Takeaways
 
-- Prefix sum transforms subarray problems from O(n²) to O(n)
-- HashMap stores prefix sums for quick lookup
-- Pattern: `if (map.has(prefixSum - target))`
-- Handle edge cases: empty subarray, negative numbers
-- Master this pattern - it appears frequently in interviews!
+- Subarrays are contiguous sequences
+- Total subarrays = n(n+1)/2
+- Many problems can be optimized from O(n²) or O(n³) to O(n)
+- Prefix sum and sliding window are key optimization techniques
+- Understanding subarray fundamentals is crucial for array problems
 

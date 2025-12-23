@@ -1,6 +1,6 @@
 ---
-title: "Maximum Submatrix"
-description: "Find the maximum sum submatrix in a 2D array. Master Kadane's algorithm extension to 2D."
+title: "Find in Matrix"
+description: "Search for element in row-wise and column-wise sorted matrix. Master the staircase search algorithm."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-09-26"
 datePublished: "2025-09-26"
@@ -13,57 +13,55 @@ topics:
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png)
 
-Maximum Submatrix
+Find in Matrix
 ----------------------------
 
 ### Problem Statement:
 
-Find the submatrix with maximum sum in a 2D array.
+Given NxN matrix `A` sorted row-wise and column-wise, find if number `B` exists. Return 1 if found, 0 otherwise.
+
+### Examples:
+
+#### Example 1:
+
+**Input:** A = [[1,3,5],[2,4,6],[3,5,7]], B = 4
+
+**Output:** 1
 
 ### Approach:
 
-Fix left and right columns, apply Kadane's on compressed rows.
+Start from top-right, move left if target smaller, down if larger.
 
 ### Time Complexity:
 
-* **Time = O(N²×M)**, **Space = O(N)**
+* **Time = O(N+M)**, **Space = O(1)**
 
 ### JavaScript Code:
 
 ```javascript
-function maxSubmatrix(A) {
-    const N = A.length, M = A[0].length;
-    let maxSum = -Infinity;
+function searchMatrix(A, B) {
+    let row = 0;
+    let col = A[0].length - 1;
     
-    for (let left = 0; left < M; left++) {
-        const temp = new Array(N).fill(0);
-        
-        for (let right = left; right < M; right++) {
-            for (let i = 0; i < N; i++) {
-                temp[i] += A[i][right];
-            }
-            
-            // Apply Kadane's on temp
-            let currentSum = temp[0];
-            let maxKadane = temp[0];
-            for (let i = 1; i < N; i++) {
-                currentSum = Math.max(temp[i], currentSum + temp[i]);
-                maxKadane = Math.max(maxKadane, currentSum);
-            }
-            
-            maxSum = Math.max(maxSum, maxKadane);
+    while (row < A.length && col >= 0) {
+        if (A[row][col] === B) {
+            return 1;
+        } else if (A[row][col] > B) {
+            col--;
+        } else {
+            row++;
         }
     }
     
-    return maxSum;
+    return 0;
 }
 ```
 
 ### Key Takeaways:
 
-1. Extension of 1D Kadane's to 2D.
-2. Fix columns, compress to 1D problem.
-3. O(N²×M) optimal without advanced data structures.
-4. Combines column fixing with Kadane's.
-5. Tests advanced algorithmic thinking.
+1. Staircase search from top-right or bottom-left.
+2. O(N+M) optimal for sorted matrix.
+3. Eliminates row or column each step.
+4. Classic 2D search pattern.
+5. Tests understanding of matrix properties.
 

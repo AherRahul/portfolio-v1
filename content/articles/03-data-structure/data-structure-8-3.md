@@ -1,6 +1,6 @@
 ---
-title: "Sum of All Submatrices"
-description: "Calculate total sum of all possible submatrices. Learn the contribution technique for matrix problems."
+title: "Maximum Subarray Sum of Fixed Length"
+description: "Find maximum sum among all subarrays of given length using sliding window. Master the fixed window maximum pattern."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-09-26"
 datePublished: "2025-09-26"
@@ -13,44 +13,56 @@ topics:
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png)
 
-Sum of All Submatrices
+Maximum Subarray Sum of Fixed Length
 ----------------------------
 
 ### Problem Statement:
 
-Given matrix `A`, find sum of all possible submatrices.
+Given array `A` and integer `K`, find the maximum sum among all subarrays of length `K`.
+
+### Examples:
+
+#### Example 1:
+
+**Input:** A = [1,2,3,4,5], K = 3
+
+**Output:** 12
+
+**Explanation:** Subarray [3,4,5] has maximum sum 12
 
 ### Approach:
 
-Each element A[i][j] appears in (i+1)×(j+1)×(N-i)×(M-j) submatrices.
+Sliding window: compute first window sum, then slide and update.
 
 ### Time Complexity:
 
-* **Time = O(N×M)**, **Space = O(1)**
+* **Time = O(N)**, **Space = O(1)**
 
 ### JavaScript Code:
 
 ```javascript
-function sumOfSubmatrices(A) {
-    const N = A.length, M = A[0].length;
-    let total = 0;
-    
-    for (let i = 0; i < N; i++) {
-        for (let j = 0; j < M; j++) {
-            const count = (i + 1) * (j + 1) * (N - i) * (M - j);
-            total += A[i][j] * count;
-        }
+function maxSumSubarray(A, K) {
+    let sum = 0;
+    for (let i = 0; i < K; i++) {
+        sum += A[i];
     }
     
-    return total;
+    let maxSum = sum;
+    
+    for (let i = K; i < A.length; i++) {
+        sum += A[i] - A[i - K];
+        maxSum = Math.max(maxSum, sum);
+    }
+    
+    return maxSum;
 }
 ```
 
 ### Key Takeaways:
 
-1. Mathematical formula avoids generating all submatrices.
-2. Each element's contribution calculated independently.
-3. O(N×M) vs O(N³×M³) brute force.
-4. Extension of 1D subarray sum problem.
-5. Demonstrates power of contribution technique.
+1. Sliding window for fixed-size subarray problems.
+2. O(N) optimal vs O(N×K) brute force.
+3. Maintain running sum efficiently.
+4. Classic interview pattern.
+5. Foundation for variable window problems.
 

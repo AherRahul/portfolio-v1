@@ -1,6 +1,6 @@
 ---
-title: "Rain Water Trapped"
-description: "Calculate water trapped between elevation bars using prefix and suffix maximum arrays. Master the classic two-pointer optimization."
+title: "Sum of All Subarrays"
+description: "Calculate the total sum of all possible subarrays efficiently. Learn the mathematical formula approach to solve in O(N) time."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-09-26"
 datePublished: "2025-09-26"
@@ -13,63 +13,52 @@ topics:
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png)
 
-Rain Water Trapped
+Sum of All Subarrays
 ----------------------------
 
 ### Problem Statement:
 
-Given `N` non-negative integers representing elevation map where width of each bar is 1, compute how much water can be trapped after raining.
+Given an array `A`, find the sum of sums of all possible subarrays.
 
 ### Examples:
 
 #### Example 1:
 
-**Input:** height = [0,1,0,2,1,0,1,3,2,1,2,1]
+**Input:** A = [1, 2, 3]
 
-**Output:** 6
+**Output:** 20
 
-**Explanation:** Water trapped = 1+1+2+1+1 = 6
+**Explanation:** Subarray sums: 1+3+6+2+5+3 = 20
 
 ### Approach:
 
-For each position, water = min(leftMax, rightMax) - height[i]
+Each element A[i] appears in (i+1) × (N-i) subarrays. Total = Σ A[i] × (i+1) × (N-i)
 
 ### Time Complexity:
 
-* **Time = O(N)**, **Space = O(N)** or O(1) with two pointers
+* **Time = O(N)**, **Space = O(1)**
 
 ### JavaScript Code:
 
 ```javascript
-function trap(height) {
-    const N = height.length;
-    if (N === 0) return 0;
+function sumOfAllSubarrays(A) {
+    const N = A.length;
+    let total = 0;
     
-    const leftMax = [height[0]];
-    for (let i = 1; i < N; i++) {
-        leftMax[i] = Math.max(leftMax[i-1], height[i]);
-    }
-    
-    const rightMax = new Array(N);
-    rightMax[N-1] = height[N-1];
-    for (let i = N-2; i >= 0; i--) {
-        rightMax[i] = Math.max(rightMax[i+1], height[i]);
-    }
-    
-    let water = 0;
     for (let i = 0; i < N; i++) {
-        water += Math.min(leftMax[i], rightMax[i]) - height[i];
+        const count = (i + 1) * (N - i);
+        total += A[i] * count;
     }
     
-    return water;
+    return total;
 }
 ```
 
 ### Key Takeaways:
 
-1. Water level determined by min(leftMax, rightMax).
-2. Requires both prefix and suffix maximum.
-3. Can optimize to O(1) space with two pointers.
-4. Classic interview problem.
-5. Tests understanding of cumulative arrays.
+1. **Mathematical formula** avoids generating all subarrays.
+2. Each element's contribution calculated independently.
+3. Element at index i appears in multiple subarrays.
+4. Formula: (i+1) subarrays starting before/at i, (N-i) ending at/after i.
+5. Elegant O(N) solution to O(N²) problem.
 

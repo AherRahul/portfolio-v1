@@ -1,6 +1,6 @@
 ---
-title: "Leaders in an Array"
-description: "Master the concept of leaders in an array using the carry forward technique. Learn how to find elements that are greater than all elements to their right efficiently in a single pass."
+title: "Reverse String"
+description: "Understand dynamic memory allocation and pointer manipulation. Master singly linked lists, doubly linked lists, circular lists, and advanced linked list operations and algorithms."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-09-26"
 datePublished: "2025-09-26"
@@ -9,407 +9,262 @@ courseName: 03-data-structure
 topics:
   - data-structures
 resources:
-  - title: "Array Problems"
-    type: "reference"
-    url: "https://www.geeksforgeeks.org/leaders-in-an-array/"
-    description: "Understanding leader elements"
-  - title: "Array Visualization"
+  - title: "Linked List Visualizations"
     type: "tool"
-    url: "https://visualgo.net/en/array"
-    description: "Visualize array traversal"
-  - title: "Array Practice"
+    url: "https://visualgo.net/en/list"
+    description: "Interactive linked list operations visualization"
+  - title: "Linked List Problems"
     type: "practice"
-    url: "https://leetcode.com/tag/array/"
-    description: "Practice array problems"
+    url: "https://leetcode.com/tag/linked-list/"
+    description: "Practice problems for mastering linked list algorithms"
+  - title: "Memory Management Guide"
+    type: "reference"
+    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management"
+    description: "Understanding memory allocation and garbage collection"
+  - title: "Scaler Notes - Day 33, 18 Apr - DSA: Introduction to Problem Solving"
+    type: "documentation"
+    url: "https://res.cloudinary.com/duojkrgue/image/upload/v1761497972/Portfolio/scalerNotes/01-dsa-problem-solving_zudvhj.pdf"
+    description: "DSA Mathematical foundations"
 
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png)
 
-Leaders in an Array
-----------------------------
+
+Reverse String 
+---------------------
 
 ### Problem Statement:
 
-Given an integer array `A` of size `N`, find all the **leader elements** in the array.
+Write a function that reverses a string. The input string is given as an array of characters `s`. You must do this by modifying the input array in-place with `O(1)`extra memory.
 
-An element is called a **leader** if it is **greater than all the elements to its right side**. The rightmost element is always a leader.
-
-Return an array containing all leader elements in the order they appear in the original array.
-
-### Examples:
+<br />
 
 #### Example 1:
 
-**Input:** A = [16, 17, 4, 3, 5, 2]
+**Input:** = \[“h”,”e”,”l”,”l”,”o”\]
 
-**Output:** [17, 5, 2]
+**Output:** = \[“o”,”l”,”l”,”e”,”h”\]
 
-**Explanation:**
-* 17 is greater than all elements to its right (4, 3, 5, 2)
-* 5 is greater than all elements to its right (2)
-* 2 is the rightmost element (always a leader)
+<br />
 
 #### Example 2:
 
-**Input:** A = [5, 4, 3, 2, 1]
+**Input:** = \[“H”,”a”,”n”,”n”,”a”,”h”\]
 
-**Output:** [5, 4, 3, 2, 1]
+**Output:** = \[“h”,”a”,”n”,”n”,”a”,”H”\]
 
-**Explanation:** Since the array is in descending order, every element is a leader.
 
-#### Example 3:
+### Approach: Two Pointer Technique
 
-**Input:** A = [1, 2, 3, 4, 5]
-
-**Output:** [5]
-
-**Explanation:** Only the last element is a leader (ascending order).
-
-#### Example 4:
-
-**Input:** A = [7, 10, 4, 3, 6, 5, 2]
-
-**Output:** [10, 6, 5, 2]
-
-**Explanation:**
-* 10 > all elements to its right
-* 6 > 5, 2
-* 5 > 2
-* 2 is rightmost
-
-### Constraints:
-
-* `1 ≤ N ≤ 10^5`
-* `-10^9 ≤ A[i] ≤ 10^9`
-
-### Important Points to Understand:
-
-**1. Leader Definition:**
-* Must be **greater than** (not greater than or equal to) all elements to its right.
-* Rightmost element is always a leader by definition.
-
-**2. Carry Forward from Right:**
-* Traverse from right to left.
-* Track the maximum element seen so far from the right.
-* If current element > max, it's a leader.
-
-**3. Order Preservation:**
-* Output should maintain the original order of leaders.
-* Can reverse at the end if building from right to left.
-
-**4. Optimization:**
-* Brute force: O(N²) - for each element, check all elements to its right.
-* Optimized: O(N) - single pass from right to left.
-
-### Approach:
-
-**Brute Force Approach:**
-1. For each element at index i.
-2. Check if it's greater than all elements from i+1 to N-1.
-3. If yes, add to result.
-
-**Optimized Approach (Carry Forward):**
-1. Start from the rightmost element.
-2. Track `maxRight` - maximum element seen so far from right.
-3. If current element > maxRight, it's a leader.
-4. Update maxRight as we move left.
-5. Reverse the result to maintain original order.
+*   Initialize two pointers, one at the start and one at the end of the array.
+*   Swap the characters at both pointers.
+*   Move the pointers towards the center until they meet.
 
 ### Time Complexity:
 
-**Brute Force:**
-* **Time Complexity = O(N²)** - For each element, scan remaining array.
-
-**Optimized:**
-* **Time Complexity = O(N)** - Single pass from right to left.
+*   **Time Complexity = O(n)**
+    
 
 ### Space Complexity:
 
-* **Space Complexity = O(K)** where K = number of leaders.
-* In worst case (descending array), K = N.
+*   **Space Complexity = O(1)**
+    
 
-### Dry Run - Brute Force:
-
-```
-Input: A = [16, 17, 4, 3, 5, 2]
-
-i = 0 (16):
-    Check if 16 > all of [17, 4, 3, 5, 2]
-    16 < 17 → NOT a leader
-
-i = 1 (17):
-    Check if 17 > all of [4, 3, 5, 2]
-    17 > 4 ✓, 17 > 3 ✓, 17 > 5 ✓, 17 > 2 ✓
-    → IS a leader
-
-i = 2 (4):
-    Check if 4 > all of [3, 5, 2]
-    4 > 3 ✓, but 4 < 5 ✗
-    → NOT a leader
-
-i = 3 (3):
-    Check if 3 > all of [5, 2]
-    3 < 5 → NOT a leader
-
-i = 4 (5):
-    Check if 5 > all of [2]
-    5 > 2 ✓
-    → IS a leader
-
-i = 5 (2):
-    Rightmost → IS a leader
-
-Leaders = [17, 5, 2]
-
-Output: [17, 5, 2]
-```
-
-### Dry Run - Optimized:
+### Dry Run
 
 ```
-Input: A = [16, 17, 4, 3, 5, 2]
+Input: = ["h", "e", "l", "l", "o"]
 
-Initialize: maxRight = -Infinity, leaders = []
+len = 5, halfLen = 2
+                    
+i = 0 → swap [0] and [4] → ["o", "e", "l", "l", "h"]
+i = 1 → swap [1] and [3] → ["o", "l", "l", "e", "h"]
+  
 
-Traverse RIGHT to LEFT:
-
-i = 5, A[5] = 2
-    2 > -Infinity → Leader!
-    leaders = [2]
-    maxRight = 2
-
-i = 4, A[4] = 5
-    5 > 2 → Leader!
-    leaders = [2, 5]
-    maxRight = 5
-
-i = 3, A[3] = 3
-    3 < 5 → NOT a leader
-    maxRight = 5
-
-i = 2, A[2] = 4
-    4 < 5 → NOT a leader
-    maxRight = 5
-
-i = 1, A[1] = 17
-    17 > 5 → Leader!
-    leaders = [2, 5, 17]
-    maxRight = 17
-
-i = 0, A[0] = 16
-    16 < 17 → NOT a leader
-    maxRight = 17
-
-Reverse leaders: [17, 5, 2]
-
-Output: [17, 5, 2]
+Output: ["o", "l", "l", "e", "h"]
 ```
 
-### Brute Force Approach - JavaScript Code:
+### Visualisation:
+
+![Reverse String](https://namastedev.com/blog/wp-content/uploads/2025/06/Screenshot-2025-06-26-at-8.19.31 PM.png)
+
+### JavaScript Code
 
 ```javascript
-function findLeaders_BruteForce(A) {
-    const N = A.length;
-    const leaders = [];
-    
-    for (let i = 0; i < N; i++) {
-        let isLeader = true;
-        
-        // Check if A[i] is greater than all elements to its right
-        for (let j = i + 1; j < N; j++) {
-            if (A[i] <= A[j]) {
-                isLeader = false;
-                break;
-            }
-        }
-        
-        if (isLeader) {
-            leaders.push(A[i]);
-        }
+
+var reverseString = function(s) {
+    let len = s.length;
+    let halfLen = Math.floor(len / 2);
+
+    for (let i = 0; i < halfLen; i++) {
+        let temp = s[i];
+        s[i] = s[len - i - 1];
+        s[len - i - 1] = temp;
     }
-    
-    return leaders;
-}
+};
+         
 ```
 
-**Time:** O(N²) ❌
-**Space:** O(K) where K = number of leaders
+### Constraints:
 
-### Visualization:
+* `1 ≤ s.length ≤ 10^5`
+* s[i] is a printable ASCII character
 
-```
-Array: [16, 17, 4, 3, 5, 2]
+### Important Points to Understand:
 
-Traverse RIGHT to LEFT, tracking max:
+**1. In-Place Requirement:**
+* Must modify the input array directly.
+* O(1) extra space (only temp variable for swapping).
 
-Step 1: Index 5 (value 2)
-    [16, 17, 4, 3, 5, 2]
-                        ↑
-    maxRight = -∞
-    2 > -∞ → LEADER ✓
-    Update maxRight = 2
+**2. Character Array:**
+* Input is an array of characters, not a string.
+* JavaScript strings are immutable, arrays are mutable.
 
-Step 2: Index 4 (value 5)
-    [16, 17, 4, 3, 5, 2]
-                    ↑
-    maxRight = 2
-    5 > 2 → LEADER ✓
-    Update maxRight = 5
+**3. Two-Pointer Pattern:**
+* Swap elements from both ends moving toward center.
+* Only need to swap first half with second half.
 
-Step 3: Index 3 (value 3)
-    [16, 17, 4, 3, 5, 2]
-                ↑
-    maxRight = 5
-    3 < 5 → NOT leader ✗
-
-Step 4: Index 2 (value 4)
-    [16, 17, 4, 3, 5, 2]
-            ↑
-    maxRight = 5
-    4 < 5 → NOT leader ✗
-
-Step 5: Index 1 (value 17)
-    [16, 17, 4, 3, 5, 2]
-        ↑
-    maxRight = 5
-    17 > 5 → LEADER ✓
-    Update maxRight = 17
-
-Step 6: Index 0 (value 16)
-    [16, 17, 4, 3, 5, 2]
-    ↑
-    maxRight = 17
-    16 < 17 → NOT leader ✗
-
-Leaders found (in reverse): [2, 5, 17]
-Reverse to get: [17, 5, 2]
-```
-
-### Optimal Approach - Carry Forward:
-
-```javascript
-function findLeaders(A) {
-    const N = A.length;
-    const leaders = [];
-    let maxRight = -Infinity;
-    
-    // Traverse from right to left
-    for (let i = N - 1; i >= 0; i--) {
-        if (A[i] > maxRight) {
-            leaders.push(A[i]);
-            maxRight = A[i];
-        }
-    }
-    
-    // Reverse to maintain original order
-    return leaders.reverse();
-}
-```
-
-**Time:** O(N) ✓
-**Space:** O(K) ✓
-
-### Alternative Approach - Without Reverse:
-
-```javascript
-function findLeaders_NoReverse(A) {
-    const N = A.length;
-    const leaders = [];
-    let maxRight = -Infinity;
-    
-    // Traverse from right to left
-    for (let i = N - 1; i >= 0; i--) {
-        if (A[i] > maxRight) {
-            // Insert at beginning to maintain order
-            leaders.unshift(A[i]);
-            maxRight = A[i];
-        }
-    }
-    
-    return leaders;
-}
-```
-
-**Note:** `unshift()` is O(K) for each insertion, making total O(N×K) in worst case. Reverse approach is better!
+**4. Symmetry:**
+* Middle element (if odd length) doesn't need to move.
 
 ### Edge Cases to Consider:
 
-**1. Single Element:**
-* Input: A = [5]
-* Output: [5] (always a leader)
+**1. Single Character:**
+* Input: s = ["a"]
+* Output: ["a"] (no change needed)
 
-**2. All Descending:**
-* Input: A = [5, 4, 3, 2, 1]
-* Output: [5, 4, 3, 2, 1] (all are leaders)
+**2. Two Characters:**
+* Input: s = ["a", "b"]
+* Output: ["b", "a"]
 
-**3. All Ascending:**
-* Input: A = [1, 2, 3, 4, 5]
-* Output: [5] (only last is leader)
+**3. Palindrome:**
+* Input: s = ["r", "a", "c", "e", "c", "a", "r"]
+* Output: ["r", "a", "c", "e", "c", "a", "r"] (stays same)
 
-**4. All Same Elements:**
-* Input: A = [5, 5, 5, 5]
-* Output: [5] (only last, since need strictly greater)
+**4. Odd Length:**
+* Input: s = ["a", "b", "c"]
+* Output: ["c", "b", "a"]
+* Middle element 'b' doesn't move.
 
-**5. Negative Numbers:**
-* Input: A = [-1, -5, -3, -2]
-* Output: [-1, -2] (-1 > all right, -2 is last)
+**5. Even Length:**
+* Input: s = ["a", "b", "c", "d"]
+* Output: ["d", "c", "b", "a"]
 
-**6. Mixed Positive/Negative:**
-* Input: A = [10, -5, 8, -3]
-* Output: [10, 8, -3]
+**6. Special Characters:**
+* Input: s = ["!", "@", "#"]
+* Output: ["#", "@", "!"]
 
-**7. Two Elements:**
-* Input: A = [10, 5]
-* Output: [10, 5] (first > second, second is last)
+**7. Numbers as Characters:**
+* Input: s = ["1", "2", "3"]
+* Output: ["3", "2", "1"]
+
+### Brute Force Approach:
+
+**Using Extra Space:**
+```javascript
+var reverseStringBruteForce = function(s) {
+    const reversed = [];
+    
+    // Copy in reverse order
+    for (let i = s.length - 1; i >= 0; i--) {
+        reversed.push(s[i]);
+    }
+    
+    // Copy back
+    for (let i = 0; i < s.length; i++) {
+        s[i] = reversed[i];
+    }
+};
+```
+
+**Time:** O(N)
+**Space:** O(N) ❌ (violates O(1) space requirement)
+
+### Multiple Optimized Approaches:
+
+**Approach 1: Two Pointers (Current Solution)**
+```javascript
+var reverseString = function(s) {
+    let left = 0;
+    let right = s.length - 1;
+    
+    while (left < right) {
+        // Swap
+        [s[left], s[right]] = [s[right], s[left]];
+        left++;
+        right--;
+    }
+};
+```
+
+**Approach 2: For Loop with Half Length**
+```javascript
+var reverseString = function(s) {
+    const len = s.length;
+    const halfLen = Math.floor(len / 2);
+    
+    for (let i = 0; i < halfLen; i++) {
+        const temp = s[i];
+        s[i] = s[len - 1 - i];
+        s[len - 1 - i] = temp;
+    }
+};
+```
+
+**Approach 3: Recursion** (Not O(1) space due to call stack)
+```javascript
+var reverseString = function(s, left = 0, right = s.length - 1) {
+    if (left >= right) return;
+    
+    [s[left], s[right]] = [s[right], s[left]];
+    reverseString(s, left + 1, right - 1);
+};
+```
+
+**Time:** O(N)
+**Space:** O(N) due to recursion stack ❌
 
 ### Key Takeaways:
 
-1. **Right-to-left traversal** is key for O(N) solution.
+1. **Two-pointer technique** is the standard for reversing arrays/strings.
 
-2. **Carry forward maximum:** Track the maximum seen so far from the right.
+2. **In-place operations** are crucial for space optimization.
 
-3. **Rightmost is always leader:** Don't forget this special case.
+3. **Swapping techniques:**
+   * Using temp variable
+   * Using array destructuring: [a, b] = [b, a]
+   * Using XOR (for numbers only)
 
-4. **Reverse for order:** Building from right requires reversal for correct output order.
+4. **Half iterations:** Only need N/2 swaps.
 
-5. **Strictly greater:** Leader must be > not ≥ elements to its right.
+5. **Foundation skill:** Reversing is used in many advanced problems:
+   * Palindrome checking
+   * Array rotation
+   * String manipulation
+   * Matrix transformations
 
-6. **Applications:**
-   * Stock market analysis (finding price peaks)
-   * Game leaderboards
-   * Performance monitoring
-   * Finding dominant elements
+6. **Interview strategy:**
+   * Start with two-pointer explanation.
+   * Mention space complexity requirement.
+   * Walk through with odd and even length examples.
+   * Discuss why we only iterate to midpoint.
 
-7. **Interview strategy:**
-   * Start with brute force explanation.
-   * Optimize using right-to-left scan.
-   * Explain why we track maximum from right.
-   * Discuss the reversal step.
+7. **Common mistakes:**
+   * Going beyond midpoint (causes double reversal).
+   * Not handling empty or single-element arrays.
+   * Using extra space (violates constraint).
 
-8. **Common mistakes:**
-   * Using >= instead of > (wrong comparison).
-   * Forgetting to add rightmost element.
-   * Not reversing the result.
-   * Traversing left-to-right (much harder to optimize).
+8. **Related problems:**
+   * Reverse words in a string.
+   * Rotate array.
+   * Palindrome problems.
+   * Reverse linked list.
 
-9. **Pattern recognition:** This right-to-left carry forward pattern appears in:
-   * Next greater element problems
-   * Stock span problems
-   * Monotonic stack problems
+9. **Applications:**
+   * Text processing
+   * Data serialization
+   * Encryption/encoding
+   * Game development (mirror effects)
 
-10. **Related problems:**
-    * Next greater element
-    * Stock span
-    * Trapping rain water
-    * Maximum element in subarray
-
-11. **Optimization note:** 
-    * Using `reverse()` at end: O(N) + O(K) total
-    * Using `unshift()` during iteration: O(N × K) worst case
-    * Reverse approach is better!
-
-12. **Interview follow-up:** "What if we need leaders from left?" 
-    * Answer: Reverse problem - find elements smaller than all to their left.
-    * Or: Find elements greater than all to their left (easier - left-to-right scan).
-
+10. **Performance:** O(N) time, O(1) space is optimal for in-place reversal.

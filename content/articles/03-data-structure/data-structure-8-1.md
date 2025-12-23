@@ -1,6 +1,6 @@
 ---
-title: "Arrays : 2D Matrices 2"
-description: "Advanced 2D matrix algorithms and optimization techniques. Master spiral traversal, matrix multiplication, 2D prefix sums, and complex matrix transformation problems."
+title: "Arrays : 2D Matrices 1"
+description: "Introduction to 2D matrices and fundamental operations. Learn matrix representation, traversal patterns, basic transformations, and essential 2D array manipulation techniques."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-09-26"
 datePublished: "2025-09-26"
@@ -9,71 +9,89 @@ courseName: 03-data-structure
 topics:
   - data-structures
 resources:
-  - title: "Advanced Matrix Algorithms"
+  - title: "Matrix Visualization"
     type: "tool"
     url: "https://visualgo.net/en/list"
-    description: "Visualize complex matrix operations"
-  - title: "Matrix Optimization Techniques"
+    description: "Interactive matrix operations visualization"
+  - title: "2D Array Patterns"
     type: "reference"
     url: "https://www.geeksforgeeks.org/matrix/"
-    description: "Advanced matrix problem patterns"
-  - title: "Hard Matrix Problems"
+    description: "Common matrix patterns and problems"
+  - title: "Matrix Practice"
     type: "practice"
     url: "https://leetcode.com/tag/matrix/"
-    description: "Challenge yourself with hard matrix problems"
+    description: "Practice matrix problems"
 
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png)
 
-Arrays : 2D Matrices 2
+Arrays : 2D Matrices 1
 ----------------------------
 
-### Advanced Matrix Algorithms
+### Introduction to 2D Matrices
 
-Building on matrix fundamentals, we'll explore advanced algorithms that are frequently asked in technical interviews and competitive programming.
+A **2D matrix** (or 2D array) is a data structure that stores elements in a grid-like format with rows and columns. It's essentially an array of arrays.
 
-### Problem 1: Spiral Matrix Traversal
-
-**Problem**: Traverse matrix in spiral order (clockwise from outside to inside)
+### Representation in JavaScript
 
 ```javascript
-function spiralOrder(matrix) {
-    if (!matrix.length) return [];
-    
+// Method 1: Array of arrays
+const matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+];
+
+// Method 2: Creating with specific dimensions
+function createMatrix(rows, cols, defaultValue = 0) {
+    const matrix = [];
+    for (let i = 0; i < rows; i++) {
+        matrix[i] = new Array(cols).fill(defaultValue);
+    }
+    return matrix;
+}
+```
+
+### Matrix Terminology
+
+- **Dimensions**: m × n (m rows, n columns)
+- **Element**: `matrix[i][j]` (row i, column j)
+- **Square Matrix**: m = n
+- **Row**: All elements in same horizontal line
+- **Column**: All elements in same vertical line
+
+### Basic Matrix Operations
+
+#### 1. Accessing Elements
+
+```javascript
+const matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+];
+
+// Access element at row 1, column 2
+console.log(matrix[1][2]); // Output: 6
+
+// Get dimensions
+const rows = matrix.length;        // 3
+const cols = matrix[0].length;     // 3
+```
+
+#### 2. Traversal Patterns
+
+##### Row-wise Traversal
+```javascript
+function rowWiseTraversal(matrix) {
     const result = [];
-    let top = 0;
-    let bottom = matrix.length - 1;
-    let left = 0;
-    let right = matrix[0].length - 1;
+    const rows = matrix.length;
+    const cols = matrix[0].length;
     
-    while (top <= bottom && left <= right) {
-        // Traverse right
-        for (let j = left; j <= right; j++) {
-            result.push(matrix[top][j]);
-        }
-        top++;
-        
-        // Traverse down
-        for (let i = top; i <= bottom; i++) {
-            result.push(matrix[i][right]);
-        }
-        right--;
-        
-        // Traverse left (if still in bounds)
-        if (top <= bottom) {
-            for (let j = right; j >= left; j--) {
-                result.push(matrix[bottom][j]);
-            }
-            bottom--;
-        }
-        
-        // Traverse up (if still in bounds)
-        if (left <= right) {
-            for (let i = bottom; i >= top; i--) {
-                result.push(matrix[i][left]);
-            }
-            left++;
+    for (let i = 0; i < rows; i++) {
+        for (let j = 0; j < cols; j++) {
+            result.push(matrix[i][j]);
         }
     }
     
@@ -81,326 +99,251 @@ function spiralOrder(matrix) {
 }
 
 // Input: [[1,2,3], [4,5,6], [7,8,9]]
-// Output: [1,2,3,6,9,8,7,4,5]
+// Output: [1,2,3,4,5,6,7,8,9]
 ```
 
-**Time Complexity**: O(m × n)
-**Space Complexity**: O(1) (excluding output)
-
-### Problem 2: Set Matrix Zeroes
-
-**Problem**: If element is 0, set entire row and column to 0
-
+##### Column-wise Traversal
 ```javascript
-function setZeroes(matrix) {
+function columnWiseTraversal(matrix) {
+    const result = [];
     const rows = matrix.length;
     const cols = matrix[0].length;
-    let firstRowZero = false;
-    let firstColZero = false;
     
-    // Check if first row needs to be zero
     for (let j = 0; j < cols; j++) {
-        if (matrix[0][j] === 0) {
-            firstRowZero = true;
-            break;
-        }
-    }
-    
-    // Check if first column needs to be zero
-    for (let i = 0; i < rows; i++) {
-        if (matrix[i][0] === 0) {
-            firstColZero = true;
-            break;
-        }
-    }
-    
-    // Use first row and column as markers
-    for (let i = 1; i < rows; i++) {
-        for (let j = 1; j < cols; j++) {
-            if (matrix[i][j] === 0) {
-                matrix[i][0] = 0;
-                matrix[0][j] = 0;
-            }
-        }
-    }
-    
-    // Set zeros based on markers
-    for (let i = 1; i < rows; i++) {
-        for (let j = 1; j < cols; j++) {
-            if (matrix[i][0] === 0 || matrix[0][j] === 0) {
-                matrix[i][j] = 0;
-            }
-        }
-    }
-    
-    // Set first row if needed
-    if (firstRowZero) {
-        for (let j = 0; j < cols; j++) {
-            matrix[0][j] = 0;
-        }
-    }
-    
-    // Set first column if needed
-    if (firstColZero) {
         for (let i = 0; i < rows; i++) {
-            matrix[i][0] = 0;
-        }
-    }
-    
-    return matrix;
-}
-```
-
-**Time Complexity**: O(m × n)
-**Space Complexity**: O(1)
-
-### Problem 3: 2D Prefix Sum (Range Sum Query)
-
-**Problem**: Find sum of rectangle in O(1) after preprocessing
-
-```javascript
-class MatrixPrefixSum {
-    constructor(matrix) {
-        this.rows = matrix.length;
-        this.cols = matrix[0].length;
-        this.prefix = Array(this.rows + 1)
-            .fill(0)
-            .map(() => Array(this.cols + 1).fill(0));
-        
-        // Build 2D prefix sum
-        for (let i = 1; i <= this.rows; i++) {
-            for (let j = 1; j <= this.cols; j++) {
-                this.prefix[i][j] = matrix[i-1][j-1]
-                                  + this.prefix[i-1][j]
-                                  + this.prefix[i][j-1]
-                                  - this.prefix[i-1][j-1];
-            }
-        }
-    }
-    
-    // Sum of rectangle from (r1,c1) to (r2,c2) inclusive
-    sumRegion(r1, c1, r2, c2) {
-        r1++; c1++; r2++; c2++; // Convert to 1-indexed
-        
-        return this.prefix[r2][c2]
-             - this.prefix[r1-1][c2]
-             - this.prefix[r2][c1-1]
-             + this.prefix[r1-1][c1-1];
-    }
-}
-
-// Usage
-const matrix = [[3,0,1,4,2], [5,6,3,2,1], [1,2,0,1,5]];
-const ps = new MatrixPrefixSum(matrix);
-console.log(ps.sumRegion(1, 1, 2, 3)); // Sum of rectangle
-```
-
-**Time Complexity**: 
-- Build: O(m × n)
-- Query: O(1)
-
-**Space Complexity**: O(m × n)
-
-### Problem 4: Search in Row-Column Sorted Matrix
-
-**Problem**: Matrix is sorted row-wise and column-wise
-
-```javascript
-function searchMatrix(matrix, target) {
-    if (!matrix.length) return false;
-    
-    let row = 0;
-    let col = matrix[0].length - 1;
-    
-    // Start from top-right corner
-    while (row < matrix.length && col >= 0) {
-        if (matrix[row][col] === target) {
-            return true;
-        } else if (matrix[row][col] > target) {
-            col--; // Move left
-        } else {
-            row++; // Move down
-        }
-    }
-    
-    return false;
-}
-```
-
-**Time Complexity**: O(m + n)
-**Space Complexity**: O(1)
-
-### Problem 5: Matrix Multiplication
-
-```javascript
-function matrixMultiply(A, B) {
-    const m = A.length;      // rows of A
-    const n = A[0].length;   // cols of A = rows of B
-    const p = B[0].length;   // cols of B
-    
-    // Result will be m × p
-    const result = Array(m).fill(0).map(() => Array(p).fill(0));
-    
-    for (let i = 0; i < m; i++) {
-        for (let j = 0; j < p; j++) {
-            for (let k = 0; k < n; k++) {
-                result[i][j] += A[i][k] * B[k][j];
-            }
+            result.push(matrix[i][j]);
         }
     }
     
     return result;
 }
 
-// A: 2×3, B: 3×2 → Result: 2×2
-const A = [[1,2,3], [4,5,6]];
-const B = [[7,8], [9,10], [11,12]];
-console.log(matrixMultiply(A, B));
+// Input: [[1,2,3], [4,5,6], [7,8,9]]
+// Output: [1,4,7,2,5,8,3,6,9]
 ```
 
-**Time Complexity**: O(m × n × p)
-**Space Complexity**: O(m × p)
-
-### Problem 6: Rotate Matrix 90° Counter-Clockwise
-
+##### Diagonal Traversal
 ```javascript
-function rotate90CounterClockwise(matrix) {
+function diagonalTraversal(matrix) {
     const n = matrix.length;
+    const result = [];
     
-    // Step 1: Reverse each row
+    // Main diagonal (top-left to bottom-right)
     for (let i = 0; i < n; i++) {
-        matrix[i].reverse();
+        result.push(matrix[i][i]);
     }
     
-    // Step 2: Transpose
+    return result;
+}
+
+// Input: [[1,2,3], [4,5,6], [7,8,9]]
+// Output: [1,5,9]
+```
+
+##### Anti-Diagonal Traversal
+```javascript
+function antiDiagonalTraversal(matrix) {
+    const n = matrix.length;
+    const result = [];
+    
+    // Anti-diagonal (top-right to bottom-left)
+    for (let i = 0; i < n; i++) {
+        result.push(matrix[i][n - 1 - i]);
+    }
+    
+    return result;
+}
+
+// Input: [[1,2,3], [4,5,6], [7,8,9]]
+// Output: [3,5,7]
+```
+
+### Common Matrix Problems
+
+#### Problem 1: Sum of All Elements
+
+```javascript
+function matrixSum(matrix) {
+    let sum = 0;
+    
+    for (let i = 0; i < matrix.length; i++) {
+        for (let j = 0; j < matrix[0].length; j++) {
+            sum += matrix[i][j];
+        }
+    }
+    
+    return sum;
+}
+```
+
+**Time Complexity**: O(m × n)
+**Space Complexity**: O(1)
+
+#### Problem 2: Matrix Transpose
+
+```javascript
+function transpose(matrix) {
+    const rows = matrix.length;
+    const cols = matrix[0].length;
+    const result = [];
+    
+    for (let j = 0; j < cols; j++) {
+        result[j] = [];
+        for (let i = 0; i < rows; i++) {
+            result[j][i] = matrix[i][j];
+        }
+    }
+    
+    return result;
+}
+
+// Input:  [[1,2,3], [4,5,6]]
+// Output: [[1,4], [2,5], [3,6]]
+```
+
+**Time Complexity**: O(m × n)
+**Space Complexity**: O(m × n)
+
+#### Problem 3: Rotate Matrix 90° Clockwise
+
+```javascript
+function rotate90Clockwise(matrix) {
+    const n = matrix.length;
+    
+    // Step 1: Transpose
     for (let i = 0; i < n; i++) {
         for (let j = i + 1; j < n; j++) {
             [matrix[i][j], matrix[j][i]] = [matrix[j][i], matrix[i][j]];
         }
     }
     
+    // Step 2: Reverse each row
+    for (let i = 0; i < n; i++) {
+        matrix[i].reverse();
+    }
+    
     return matrix;
 }
+
+// Input:  [[1,2,3], [4,5,6], [7,8,9]]
+// Output: [[7,4,1], [8,5,2], [9,6,3]]
 ```
 
-### Problem 7: Number of Islands (DFS on Matrix)
+**Time Complexity**: O(n²)
+**Space Complexity**: O(1) - in-place
+
+#### Problem 4: Search in 2D Matrix
 
 ```javascript
-function numIslands(grid) {
-    if (!grid.length) return 0;
-    
-    const rows = grid.length;
-    const cols = grid[0].length;
-    let count = 0;
-    
-    function dfs(i, j) {
-        if (i < 0 || i >= rows || j < 0 || j >= cols || grid[i][j] !== '1') {
-            return;
-        }
-        
-        grid[i][j] = '0'; // Mark as visited
-        
-        // Explore all 4 directions
-        dfs(i + 1, j);
-        dfs(i - 1, j);
-        dfs(i, j + 1);
-        dfs(i, j - 1);
-    }
+function searchMatrix(matrix, target) {
+    const rows = matrix.length;
+    const cols = matrix[0].length;
     
     for (let i = 0; i < rows; i++) {
         for (let j = 0; j < cols; j++) {
-            if (grid[i][j] === '1') {
-                count++;
-                dfs(i, j);
+            if (matrix[i][j] === target) {
+                return [i, j]; // Return position
             }
         }
     }
     
-    return count;
+    return [-1, -1]; // Not found
 }
 ```
 
 **Time Complexity**: O(m × n)
-**Space Complexity**: O(m × n) for recursion stack
 
-### Problem 8: Generate Spiral Matrix
-
-**Problem**: Create n×n matrix filled in spiral order
+#### Problem 5: Print Boundary Elements
 
 ```javascript
-function generateSpiralMatrix(n) {
-    const matrix = Array(n).fill(0).map(() => Array(n).fill(0));
+function printBoundary(matrix) {
+    const rows = matrix.length;
+    const cols = matrix[0].length;
+    const result = [];
     
-    let top = 0, bottom = n - 1;
-    let left = 0, right = n - 1;
-    let num = 1;
+    // Top row
+    for (let j = 0; j < cols; j++) {
+        result.push(matrix[0][j]);
+    }
     
-    while (top <= bottom && left <= right) {
-        // Fill top row
-        for (let j = left; j <= right; j++) {
-            matrix[top][j] = num++;
+    // Right column (excluding corners)
+    for (let i = 1; i < rows - 1; i++) {
+        result.push(matrix[i][cols - 1]);
+    }
+    
+    // Bottom row (if more than 1 row)
+    if (rows > 1) {
+        for (let j = cols - 1; j >= 0; j--) {
+            result.push(matrix[rows - 1][j]);
         }
-        top++;
-        
-        // Fill right column
-        for (let i = top; i <= bottom; i++) {
-            matrix[i][right] = num++;
+    }
+    
+    // Left column (excluding corners, if more than 1 column)
+    if (cols > 1) {
+        for (let i = rows - 2; i >= 1; i--) {
+            result.push(matrix[i][0]);
         }
-        right--;
-        
-        // Fill bottom row
-        if (top <= bottom) {
-            for (let j = right; j >= left; j--) {
-                matrix[bottom][j] = num++;
-            }
-            bottom--;
-        }
-        
-        // Fill left column
-        if (left <= right) {
-            for (let i = bottom; i >= top; i--) {
-                matrix[i][left] = num++;
-            }
-            left++;
+    }
+    
+    return result;
+}
+```
+
+### Matrix Creation Patterns
+
+```javascript
+// Identity Matrix
+function createIdentityMatrix(n) {
+    const matrix = createMatrix(n, n, 0);
+    for (let i = 0; i < n; i++) {
+        matrix[i][i] = 1;
+    }
+    return matrix;
+}
+
+// Matrix from 1D array
+function create2DFrom1D(arr, rows, cols) {
+    const matrix = [];
+    let idx = 0;
+    
+    for (let i = 0; i < rows; i++) {
+        matrix[i] = [];
+        for (let j = 0; j < cols; j++) {
+            matrix[i][j] = arr[idx++];
         }
     }
     
     return matrix;
 }
-
-// generateSpiralMatrix(3)
-// Output: [[1,2,3], [8,9,4], [7,6,5]]
 ```
 
-### Advanced Techniques Summary
+### Time Complexity Summary
 
-| Technique | Use Case | Complexity |
-|-----------|----------|------------|
-| Spiral Traversal | Print/traverse in spiral | O(m×n) |
-| 2D Prefix Sum | Range sum queries | O(1) query |
-| In-place markers | Space-optimized modifications | O(1) space |
-| Corner start | Search in sorted matrix | O(m+n) |
-| DFS/BFS | Connected components, paths | O(m×n) |
+| Operation | Time Complexity |
+|-----------|-----------------|
+| Access element | O(1) |
+| Row/Column traversal | O(n) |
+| Full matrix traversal | O(m × n) |
+| Transpose | O(m × n) |
+| Rotate 90° | O(n²) |
+| Search (unsorted) | O(m × n) |
 
 ### Practice Problems
 
-1. ✅ Spiral Matrix I & II
-2. ✅ Set Matrix Zeroes
-3. ✅ Rotate Image
-4. ✅ Search a 2D Matrix II
-5. ✅ Range Sum Query 2D
-6. ✅ Number of Islands
-7. ✅ Maximal Rectangle
-8. ✅ Valid Sudoku
-9. ✅ Word Search
+1. ✅ Transpose Matrix
+2. ✅ Rotate Image (90°)
+3. ✅ Spiral Matrix
+4. ✅ Set Matrix Zeroes
+5. ✅ Search a 2D Matrix
+6. ✅ Diagonal Traverse
+7. ✅ Matrix Diagonal Sum
 
 ### Key Takeaways
 
-- Master spiral traversal pattern (4 directions)
-- Use first row/column as markers for O(1) space
-- 2D prefix sum enables O(1) range queries
-- Start from corner for sorted matrix search
-- DFS/BFS for connected component problems
-- Matrix problems often test boundary condition handling
-- Visualize the transformation before coding
+- Matrix is array of arrays: `matrix[row][col]`
+- Master different traversal patterns
+- Understand row-major vs column-major access
+- In-place operations save space
+- Many problems have O(m × n) time complexity
+- Practice visualization of matrix transformations
 

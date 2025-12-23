@@ -1,6 +1,6 @@
 ---
-title: "Spiral Matrix 2"
-description: "Print matrix elements in spiral order starting from top-left. Master the layer-by-layer traversal pattern."
+title: "Suffix Maximum"
+description: "Build suffix maximum array to find maximum element from any index to end. Learn reverse cumulative maximum technique."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-09-26"
 datePublished: "2025-09-26"
@@ -13,65 +13,39 @@ topics:
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png)
 
-Spiral Matrix 2
+Suffix Maximum
 ----------------------------
 
 ### Problem Statement:
 
-Given NxN matrix `A`, print elements in spiral order starting from A[0][0].
+Given array `A`, create array `suffixMax` where `suffixMax[i]` is the maximum element from index i to N-1.
 
 ### Examples:
 
 #### Example 1:
 
-**Input:** A = [[1,2],[3,4]]
+**Input:** A = [3, 1, 4, 1, 5]
 
-**Output:** [1,2,4,3]
+**Output:** [5, 5, 5, 5, 5]
 
 ### Approach:
 
-Track boundaries (top, bottom, left, right), traverse each layer.
+Iterate right to left, tracking max seen so far.
 
 ### Time Complexity:
 
-* **Time = O(N²)**, **Space = O(1)**
+* **Time = O(N)**, **Space = O(N)**
 
 ### JavaScript Code:
 
 ```javascript
-function spiralOrder(A) {
-    const result = [];
-    let top = 0, bottom = A.length - 1;
-    let left = 0, right = A[0].length - 1;
+function suffixMax(A) {
+    const N = A.length;
+    const result = new Array(N);
+    result[N-1] = A[N-1];
     
-    while (top <= bottom && left <= right) {
-        // Right
-        for (let i = left; i <= right; i++) {
-            result.push(A[top][i]);
-        }
-        top++;
-        
-        // Down
-        for (let i = top; i <= bottom; i++) {
-            result.push(A[i][right]);
-        }
-        right--;
-        
-        // Left
-        if (top <= bottom) {
-            for (let i = right; i >= left; i--) {
-                result.push(A[bottom][i]);
-            }
-            bottom--;
-        }
-        
-        // Up
-        if (left <= right) {
-            for (let i = bottom; i >= top; i--) {
-                result.push(A[i][left]);
-            }
-            left++;
-        }
+    for (let i = N-2; i >= 0; i--) {
+        result[i] = Math.max(result[i+1], A[i]);
     }
     
     return result;
@@ -80,9 +54,9 @@ function spiralOrder(A) {
 
 ### Key Takeaways:
 
-1. Layer-by-layer traversal pattern.
-2. Track four boundaries carefully.
-3. Handle odd/even dimensions.
-4. Classic matrix traversal problem.
-5. Tests boundary condition handling.
+1. Reverse of prefix maximum.
+2. Scan from right to left.
+3. Combined with prefix for range queries.
+4. Essential for water trapping.
+5. Used in leader element problems.
 

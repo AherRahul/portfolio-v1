@@ -1,6 +1,6 @@
 ---
-title: "Search in Row-wise and Column-wise Sorted Matrix"
-description: "Search for element efficiently in matrix sorted both row-wise and column-wise. Master the staircase search algorithm."
+title: "Subarray with Least Average"
+description: "Find subarray of given size with minimum average using sliding window. Master the window minimum pattern."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-09-26"
 datePublished: "2025-09-26"
@@ -13,47 +13,60 @@ topics:
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png)
 
-Search in Sorted Matrix
+Subarray with Least Average
 ----------------------------
 
 ### Problem Statement:
 
-Given matrix sorted row-wise and column-wise, search for target element.
+Given array `A` of size `N` and integer `B`, find starting index of subarray of size `B` with minimum average.
+
+### Examples:
+
+#### Example 1:
+
+**Input:** A = [1,2,3,4,5], B = 2
+
+**Output:** 0
+
+**Explanation:** Subarray [1,2] has minimum average 1.5
 
 ### Approach:
 
-Start from top-right or bottom-left, eliminate row or column each step.
+Use sliding window to find minimum sum (minimum sum = minimum average for fixed size).
 
 ### Time Complexity:
 
-* **Time = O(N+M)**, **Space = O(1)**
+* **Time = O(N)**, **Space = O(1)**
 
 ### JavaScript Code:
 
 ```javascript
-function searchMatrix(A, target) {
-    let row = 0;
-    let col = A[0].length - 1;
+function findMinAverageSubarray(A, B) {
+    let sum = 0;
+    for (let i = 0; i < B; i++) {
+        sum += A[i];
+    }
     
-    while (row < A.length && col >= 0) {
-        if (A[row][col] === target) {
-            return true;
-        } else if (A[row][col] > target) {
-            col--;
-        } else {
-            row++;
+    let minSum = sum;
+    let minIndex = 0;
+    
+    for (let i = B; i < A.length; i++) {
+        sum += A[i] - A[i - B];
+        if (sum < minSum) {
+            minSum = sum;
+            minIndex = i - B + 1;
         }
     }
     
-    return false;
+    return minIndex;
 }
 ```
 
 ### Key Takeaways:
 
-1. Staircase search is optimal.
-2. Start from corner where both directions are sorted differently.
-3. O(N+M) eliminates one row/column per step.
-4. Classic sorted matrix problem.
-5. Better than O(N×M) brute force or O(N log M) binary search per row.
+1. For fixed window, minimum sum = minimum average.
+2. Sliding window tracks running sum.
+3. Record index of minimum sum window.
+4. O(N) single pass solution.
+5. Variation of maximum subarray sum.
 

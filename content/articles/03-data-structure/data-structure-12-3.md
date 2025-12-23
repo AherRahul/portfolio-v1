@@ -1,6 +1,6 @@
 ---
-title: "A, B and Modulo"
-description: "Find pairs where (A[i] + A[j]) % M equals B. Master modular arithmetic in combinatorial problems."
+title: "Number of 1 Bits"
+description: "Count total number of set bits (1s) in binary representation. Master Brian Kernighan's algorithm."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-09-26"
 datePublished: "2025-09-26"
@@ -13,45 +13,47 @@ topics:
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png)
 
-A, B and Modulo
+Number of 1 Bits
 ----------------------------
 
 ### Problem Statement:
 
-Given array `A`, integers `B` and `M`, count pairs (i,j) where i < j and `(A[i] + A[j]) % M === B`.
+Given integer `N`, count number of 1s in its binary representation.
+
+### Examples:
+
+#### Example 1:
+
+**Input:** N = 13 (binary: 1101)
+
+**Output:** 3
 
 ### Approach:
 
-Use hash map to store frequency of remainders. For each element with remainder r, find complement remainder needed.
+**Brian Kernighan's Algorithm:** `N & (N-1)` removes rightmost set bit. Count iterations until N becomes 0.
 
 ### Time Complexity:
 
-* **Time = O(N)**, **Space = O(M)**
+* **Time = O(k)** where k = number of set bits, **Space = O(1)**
 
 ### JavaScript Code:
 
 ```javascript
-function countPairs(A, B, M) {
-    const freq = new Map();
+function countSetBits(N) {
     let count = 0;
-    
-    for (const num of A) {
-        const rem = num % M;
-        const need = (B - rem + M) % M;
-        
-        count += freq.get(need) || 0;
-        freq.set(rem, (freq.get(rem) || 0) + 1);
+    while (N > 0) {
+        N = N & (N - 1);  // Remove rightmost 1
+        count++;
     }
-    
     return count;
 }
 ```
 
 ### Key Takeaways:
 
-1. Use modular arithmetic properties
-2. Hash map stores remainder frequencies
-3. For each element, find complement
-4. O(N) single pass with hash map
-5. Pattern for two-sum with modulo
+1. Brian Kernighan's algorithm is optimal
+2. Each iteration removes one set bit
+3. Better than checking all 32 bits
+4. Property: `N & (N-1)` clears rightmost 1
+5. Classic bit manipulation problem
 

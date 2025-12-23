@@ -1,6 +1,6 @@
 ---
-title: "Prefix Maximum"
-description: "Build prefix maximum array to find maximum element from start to any index. Learn cumulative maximum technique."
+title: "Subarray Sums"
+description: "Calculate sums of all subarrays efficiently. Master the technique to avoid redundant calculations using running sum approach."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-09-26"
 datePublished: "2025-09-26"
@@ -13,49 +13,55 @@ topics:
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png)
 
-Prefix Maximum
+Subarray Sums
 ----------------------------
 
 ### Problem Statement:
 
-Given array `A`, create array `prefixMax` where `prefixMax[i]` is the maximum element from index 0 to i.
+Given an array `A` of size `N`, return an array containing the sum of each possible subarray.
 
 ### Examples:
 
 #### Example 1:
 
-**Input:** A = [3, 1, 4, 1, 5]
+**Input:** A = [1, 2, 3]
 
-**Output:** [3, 3, 4, 4, 5]
+**Output:** [1, 3, 6, 2, 5, 3]
+
+**Explanation:** Subarrays: [1]=1, [1,2]=3, [1,2,3]=6, [2]=2, [2,3]=5, [3]=3
 
 ### Approach:
 
-Iterate left to right, tracking max seen so far.
+Use nested loops with running sum to avoid O(N³).
 
 ### Time Complexity:
 
-* **Time = O(N)**, **Space = O(N)**
+* **Time = O(N²)**, **Space = O(N²)**
 
 ### JavaScript Code:
 
 ```javascript
-function prefixMax(A) {
+function subarraySums(A) {
     const N = A.length;
-    const result = [A[0]];
+    const sums = [];
     
-    for (let i = 1; i < N; i++) {
-        result[i] = Math.max(result[i-1], A[i]);
+    for (let start = 0; start < N; start++) {
+        let sum = 0;
+        for (let end = start; end < N; end++) {
+            sum += A[end];
+            sums.push(sum);
+        }
     }
     
-    return result;
+    return sums;
 }
 ```
 
 ### Key Takeaways:
 
-1. Track cumulative maximum.
-2. Each position stores max up to that point.
-3. Useful for range maximum queries.
-4. Foundation for rain water trapping.
-5. Pattern extends to min, GCD, LCM.
+1. Running sum avoids recalculating from scratch.
+2. O(N²) optimal for generating all sums.
+3. Pattern for optimizing subarray problems.
+4. Store or process sums as needed.
+5. Foundation for maximum subarray sum.
 

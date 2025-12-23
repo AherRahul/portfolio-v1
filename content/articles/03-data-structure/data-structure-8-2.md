@@ -1,6 +1,6 @@
 ---
-title: "Sub-matrix Sum Queries"
-description: "Answer sum queries for any rectangular sub-matrix using 2D prefix sum. Master the 2D cumulative sum technique."
+title: "Subarray with Given Sum and Length"
+description: "Find subarrays with specific sum and length using sliding window technique. Master fixed-size window pattern."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-09-26"
 datePublished: "2025-09-26"
@@ -13,49 +13,58 @@ topics:
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png)
 
-Sub-matrix Sum Queries
+Subarray with Given Sum and Length
 ----------------------------
 
 ### Problem Statement:
 
-Given matrix `A` and queries `[r1,c1,r2,c2]`, find sum of sub-matrix from (r1,c1) to (r2,c2).
+Given array `A`, integer `B` (length), and integer `C` (target sum), count subarrays of length `B` with sum equal to `C`.
+
+### Examples:
+
+#### Example 1:
+
+**Input:** A = [1,2,3,4,1], B = 3, C = 6
+
+**Output:** 1
+
+**Explanation:** Subarray [1,2,3] has length 3 and sum 6
 
 ### Approach:
 
-Build 2D prefix sum: `prefix[i][j] = sum of rectangle from (0,0) to (i,j)`. Query formula: `prefix[r2][c2] - prefix[r1-1][c2] - prefix[r2][c1-1] + prefix[r1-1][c1-1]`
+Use sliding window of size B, track sum, count matches.
 
 ### Time Complexity:
 
-* **Preprocessing: O(N×M)**, **Query: O(1)**
+* **Time = O(N)**, **Space = O(1)**
 
 ### JavaScript Code:
 
 ```javascript
-function subMatrixSum(A, queries) {
-    const N = A.length, M = A[0].length;
-    const prefix = Array(N+1).fill().map(() => Array(M+1).fill(0));
+function countSubarrays(A, B, C) {
+    if (B > A.length) return 0;
     
-    for (let i = 1; i <= N; i++) {
-        for (let j = 1; j <= M; j++) {
-            prefix[i][j] = A[i-1][j-1] + prefix[i-1][j] + prefix[i][j-1] - prefix[i-1][j-1];
-        }
+    let sum = 0;
+    for (let i = 0; i < B; i++) {
+        sum += A[i];
     }
     
-    const result = [];
-    for (const [r1,c1,r2,c2] of queries) {
-        const sum = prefix[r2+1][c2+1] - prefix[r1][c2+1] - prefix[r2+1][c1] + prefix[r1][c1];
-        result.push(sum);
+    let count = sum === C ? 1 : 0;
+    
+    for (let i = B; i < A.length; i++) {
+        sum += A[i] - A[i - B];
+        if (sum === C) count++;
     }
     
-    return result;
+    return count;
 }
 ```
 
 ### Key Takeaways:
 
-1. 2D extension of 1D prefix sum.
-2. Inclusion-exclusion principle for rectangles.
-3. O(1) query after O(N×M) preprocessing.
-4. Essential for matrix range queries.
-5. Foundation for advanced 2D problems.
+1. Fixed-size sliding window pattern.
+2. O(N) single pass solution.
+3. Maintain running sum efficiently.
+4. Add new element, remove old element.
+5. Foundation for many window problems.
 

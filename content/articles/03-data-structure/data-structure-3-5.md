@@ -1,6 +1,6 @@
 ---
-title: "Best Time to Buy and Sell Stocks I"
-description: "Master the single transaction stock problem using carry forward technique. Learn how to find maximum profit with one buy and one sell operation efficiently."
+title: "Merge Sorted Arrays"
+description: "Understand First-In-First-Out (FIFO) processing. Learn queue operations, circular queues, priority queues, deques, and queue applications in algorithms and system design."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-09-26"
 datePublished: "2025-09-26"
@@ -9,464 +9,283 @@ courseName: 03-data-structure
 topics:
   - data-structures
 resources:
-  - title: "Stock Problems"
-    type: "reference"
-    url: "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/"
-    description: "Classic stock trading problem"
-  - title: "Greedy Algorithms"
+  - title: "Queue Visualizations"
     type: "tool"
-    url: "https://visualgo.net/en"
-    description: "Visualize greedy approaches"
+    url: "https://visualgo.net/en/list"
+    description: "Interactive queue operations visualization"
+  - title: "Queue Problems Practice"
+    type: "practice"
+    url: "https://leetcode.com/tag/queue/"
+    description: "Practice problems for mastering queue algorithms"
+  - title: "Priority Queue Implementation"
+    type: "reference"
+    url: "https://en.wikipedia.org/wiki/Priority_queue"
+    description: "Understanding priority queue data structures"
+  - title: "Scaler Notes - Day 33, 18 Apr - DSA: Introduction to Problem Solving"
+    type: "documentation"
+    url: "https://res.cloudinary.com/duojkrgue/image/upload/v1761497972/Portfolio/scalerNotes/01-dsa-problem-solving_zudvhj.pdf"
+    description: "DSA Mathematical foundations"
 
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png)
 
-## Problem Statement
 
-You are given an array `prices` where `prices[i]` is the price of a given stock on the `i-th` day.
+Merge Sorted Arrays 
+-----------------------
 
-You want to maximize your profit by choosing a **single day to buy** one stock and choosing a **different day in the future to sell** that stock.
+### Problem Statement:
 
-Return the **maximum profit** you can achieve from this transaction. If you cannot achieve any profit, return `0`.
+You are given two integer arrays `nums1` and `nums2`, sorted in non-decreasing order, and two integers `m` and `n`, representing the number of elements in nums1 and nums2 respectively.
 
-**Important:** You cannot sell a stock before you buy one (must buy first, then sell).
+Merge`nums1` and `nums2` into a single array sorted in non-decreasing order.
 
-**Input:**
-- An integer array `prices[]` where `prices[i]` represents stock price on day `i`
+The final sorted array should not be returned by the function, but instead be stored inside the array `nums1`. To accommodate this, nums1 has a length of `m + n`, where the first `m` elements denote the elements that should be merged, and the last `n` elements are set to 0 and should be ignored. `nums2` has a length of `n`.
 
-**Output:**
-- Return the maximum profit achievable from one buy + one sell transaction
-- Return `0` if no profit is possible
+<br />
 
----
+#### Example 1:
 
-## Examples
+**Input:** nums1 = \[ 1, 2, 3, 0, 0, 0 \], m = 3 nums2 = \[ 2, 5, 6 \], n = 3
 
-### Example 1:
-**Input:** `prices = [7, 1, 5, 3, 6, 4]`  
-**Output:** `5`
+**Output:** \[ 1, 2, 2, 3, 5, 6 \]
 
-**Explanation:**
-```
-Buy on day 2 (price = 1)
-Sell on day 5 (price = 6)
-Profit = 6 - 1 = 5
+`Explanation:` The arrays we are merging are \[1, 2, 3 \] and \[ 2, 5, 6 \]. The result of the merge is \[ 1, 2, 2, 3, 5, 6 \] with the underlined elements coming from nums1.
 
-Day:    1  2  3  4  5  6
-Price:  7  1  5  3  6  4
-        ↓  ↑        ↑
-      Skip Buy    Sell
-```
+<br />
 
-### Example 2:
-**Input:** `prices = [7, 6, 4, 3, 1]`  
-**Output:** `0`
+#### Example 2:
 
-**Explanation:**
-```
-Prices are strictly decreasing
-No profitable transaction possible
-Any buy-sell would result in loss
+**Input:** nums1 = \[ 1 \], m = 1, nums2 = \[\], n = 0
 
-Day:    1  2  3  4  5
-Price:  7  6  4  3  1
-        ↓  ↓  ↓  ↓  ↓
-      Continuously decreasing
-```
+**Output:**\[ 1 \]
 
-### Example 3:
-**Input:** `prices = [2, 4, 1, 7, 5]`  
-**Output:** `6`
+`Explanation:` The arrays we are merging are \[1\] and \[\]. The result of the merge is \[1\].
 
-**Explanation:**
-```
-Buy on day 3 (price = 1)
-Sell on day 4 (price = 7)
-Profit = 7 - 1 = 6
+<br />
 
-Day:    1  2  3  4  5
-Price:  2  4  1  7  5
-              ↑  ↑
-            Buy Sell
-```
+#### Example 3:
 
----
+**Input:** nums1 = \[ 0 \], m = 0 nums2 = \[ 1 \], n = 1
 
-## Constraints
+**Output:**\[ 1 \]
 
-- `1 ≤ prices.length ≤ 10^5`
-- `0 ≤ prices[i] ≤ 10^4`
-- Only **one transaction** allowed (one buy + one sell)
-- Must buy before selling
-- Time limit: O(N) solution required
-- Space limit: O(1) auxiliary space expected
+`Explanation:` The arrays we are merging are \[\] and \[ 1 \]. The result of the merge is \[ 1 \]. Note that because m = 0, there are no elements in nums1. The 0 is only there to ensure the merge result can fit in nums1.
 
----
+### Time Complexity:
 
-## Important Points to Understand
+*   **Time Complexity = O((m+n) log (m+n))** Due to sorting.
+    
 
-1. **Single Transaction Only:**
-   - Can only buy once and sell once
-   - Cannot buy multiple times or sell multiple times
-   - Must complete the cycle: buy → sell
+### Space Complexity:
 
-2. **Temporal Constraint:**
-   - Must buy BEFORE selling
-   - Cannot sell on the same day or before buying
-   - Sell day index must be > buy day index
+*   **Space Complexity = O(1)** Extra (in-place).
+    
 
-3. **Profit Calculation:**
-   - Profit = Selling Price - Buying Price
-   - Want to maximize: Sell High - Buy Low
-   - Minimum buy price and maximum future sell price
+### Approach: Brute Force (Simple Concatenate + Sort)
 
-4. **Greedy Insight:**
-   - Track the minimum price seen so far
-   - At each day, check if selling today gives better profit
-   - Don't need to remember exact buy/sell days, just max profit
+*   Overwrite the trailing zeros in `nums1` (from index m onwards) with all elements of `nums2`.
+*   Sort the whole `nums1` array.
 
-5. **Carry Forward Technique:**
-   - Carry forward the minimum price
-   - This avoids nested loops (O(N²) → O(N))
-
----
-
-## Approach
-
-### Optimal Strategy: Carry Forward Minimum Price
-
-**Core Idea:**
-- As we traverse the array, maintain the minimum price seen so far
-- At each position, calculate potential profit if we sell today
-- Track the maximum profit achievable
-
-**Algorithm:**
-1. Initialize `minPrice = Infinity` and `maxProfit = 0`
-2. For each price in the array:
-   - Update `minPrice` if current price is lower
-   - Calculate profit if selling today: `profit = currentPrice - minPrice`
-   - Update `maxProfit` if this profit is better
-3. Return `maxProfit`
-
-**Why this works:**
-- We always know the cheapest buying price up to current day
-- We can calculate the best profit if we sell on current day
-- By checking every day, we find the global maximum profit
-
----
-
-## Time Complexity
-
-**Optimal Solution: O(N)**
-- Single pass through the array: O(N)
-- Constant time operations at each step: O(1)
-- Total: O(N)
-
-**Brute Force: O(N²)**
-- For each day i, check all future days j where j > i
-- Nested loops: O(N²)
-- Not acceptable for large inputs (10^5 elements)
-
----
-
-## Space Complexity
-
-**Optimal Solution: O(1)**
-- Only two variables: `minPrice` and `maxProfit`
-- No additional data structures needed
-- Constant auxiliary space
-
----
-
-## Dry Run
-
-Let's trace through **prices = [7, 1, 5, 3, 6, 4]**:
+### Dry Run
 
 ```
-Initialize: minPrice = ∞, maxProfit = 0
+Input: nums1 = [1, 2, 3, 0, 0, 0], m = 3 nums2 = [2, 5, 6], n = 3
 
-Day 1: price = 7
-  minPrice = min(∞, 7) = 7
-  profit = 7 - 7 = 0
-  maxProfit = max(0, 0) = 0
+    1. Copy nums2 into nums1 
+       i = 3 to 5:
+            nums1[3] = nums2[0] = 2
+            nums1[4] = nums2[1] = 5
+            nums1[5] = nums2[2] = 6 
+            
+        => nums1 = [1, 2, 3, 2, 5, 6]
 
-Day 2: price = 1
-  minPrice = min(7, 1) = 1
-  profit = 1 - 1 = 0
-  maxProfit = max(0, 0) = 0
-
-Day 3: price = 5
-  minPrice = min(1, 5) = 1
-  profit = 5 - 1 = 4
-  maxProfit = max(0, 4) = 4  ← Profit improved!
-
-Day 4: price = 3
-  minPrice = min(1, 3) = 1
-  profit = 3 - 1 = 2
-  maxProfit = max(4, 2) = 4
-
-Day 5: price = 6
-  minPrice = min(1, 6) = 1
-  profit = 6 - 1 = 5
-  maxProfit = max(4, 5) = 5  ← Profit improved!
-
-Day 6: price = 4
-  minPrice = min(1, 4) = 1
-  profit = 4 - 1 = 3
-  maxProfit = max(5, 3) = 5
-
-Final: maxProfit = 5
+    2. Sort the array
+        nums1.sort((a, b) => a - b)
+        => [1, 2, 2, 3, 5, 6]
+  
 ```
 
----
-
-## Brute Force Approach
-
-**Naive Solution:** Check all possible buy-sell pairs
+### JavaScript Code
 
 ```javascript
-function maxProfitBruteForce(prices) {
-    const N = prices.length;
-    let maxProfit = 0;
-    
-    // Try every possible buy day
-    for (let buy = 0; buy < N - 1; buy++) {
-        // Try every possible sell day after buy day
-        for (let sell = buy + 1; sell < N; sell++) {
-            const profit = prices[sell] - prices[buy];
-            maxProfit = Math.max(maxProfit, profit);
-        }
+
+ var merge = function(nums1, m, nums2, n) {
+    for (let i = m; i < nums1.length; i++) {
+      nums1[i] = nums2[i - m];
     }
+    nums1.sort((a, b) => a - b);
+  };     
+```
+
+---
+
+### Approach 2: Two-Pointer Method
+
+*   Instead of sorting at the end, this algorithm merges the arrays in sorted order using two pointers:
+*   Copy the first m elements of nums1 into a temporary array (nums1Copy). Use two pointers p1 (for nums1Copy) and p2 (for nums2) to compare elements. At each index i of nums1, place the smaller of the elements from nums1Copy\[p1\] and nums2\[p2\].
+*   Repeat until nums1 is fully filled with the merged sorted elements..
+
+### Time Complexity:
+
+*   **Time Complexity = O(m+n)**
     
-    return maxProfit;
-}
+    `Explanation:`
+    
+    *   Copying the first m elements to nums1Copy takes O(m).
+    *   Merging the two sorted arrays takes O(m + n) because each index in nums1 is visited exactly once.
 
-console.log(maxProfitBruteForce([7, 1, 5, 3, 6, 4])); 
-// Output: 5
-```
+### Space Complexity:
 
-**Problems:**
-- **Time Complexity:** O(N²) - nested loops
-- **Space Complexity:** O(1)
-- **Inefficient:** For N=10^5, this results in 10^10 operations
-- **Timeout:** Will exceed time limit for large inputs
+*   **Space Complexity = O(m)**
+    
+    `Explanation:`
+    
+    *   You create a copy of the first m elements of nums1 in nums1Copy, which takes O(m) additional space.
+    
 
----
-
-## Visualization
-
-### Price Movement and Profit Calculation:
+### Dry Run
 
 ```
-Prices: [7, 1, 5, 3, 6, 4]
+Input: nums1 = [1, 2, 3, 0, 0, 0], m = 3 nums2 = [2, 5, 6], n = 3
 
- 7 |●
- 6 |          ●       Best Sell (6)
- 5 |      ●              
- 4 |                  ●
- 3 |        ●
- 2 |
- 1 |  ●  ← Best Buy (1)
-   +--+--+--+--+--+--
-      1  2  3  4  5  6  (Days)
+Execution nums1Copy = [1,2,3], p1 = 0, p2 = 0
 
-Maximum Profit = 6 - 1 = 5
+        nums1Copy[0]=1 < nums2[0]=2 → nums1[0] = 1, p1++
+        nums1Copy[1]=2 == nums2[0]=2 → nums1[1] = 2, p2++
+        nums1Copy[1]=2 < nums2[1]=5 → nums1[2] = 2, p1++
+        nums1Copy[2]=3 < nums2[1]=5 → nums1[3] = 3, p1++
+        p1==3 → only nums2 left
+        nums1[4] = 5, nums1[5] = 6
+  
+
+Output: nums1 = [1,2,2,3,5,6]
 ```
-
-### Carry Forward Minimum:
-
-```
-prices:   [7,  1,  5,  3,  6,  4]
-minPrice: [7,  1,  1,  1,  1,  1]  ← Minimum price so far
-profit:   [0,  0,  4,  2,  5,  3]  ← If we sell today
-maxProfit:        ↑           ↑
-                  4           5 (final answer)
-```
-
----
-
-## Multiple Optimized Approaches
-
-### Approach 1: Carry Forward (Most Intuitive)
+### JavaScript Code
 
 ```javascript
-function maxProfit(prices) {
-    let minPrice = Infinity;
-    let maxProfit = 0;
-    
-    for (let i = 0; i < prices.length; i++) {
-        // Update minimum price if we found a lower price
-        if (prices[i] < minPrice) {
-            minPrice = prices[i];
-        }
-        // Calculate profit if we sell today
-        else if (prices[i] - minPrice > maxProfit) {
-            maxProfit = prices[i] - minPrice;
-        }
-    }
-    
-    return maxProfit;
-}
+
+var merge = function(nums1, m, nums2, n) {
+      let nums1Copy = nums1.slice(0, m)
+      let p1 = 0;
+      let p2 = 0;
+      for (let i = 0; i < m + n; i++) {
+          if (p2 >= n || (p1 < m && nums1Copy[p1] < nums2[p2])) {
+              nums1[i] = nums1Copy[p1];
+              p1++;
+          } else {
+              nums1[i] = nums2[p2];
+              p2++;
+          }
+      }
+  };    
 ```
-
-**Time:** O(N) | **Space:** O(1)
-
-### Approach 2: Single Pass with Math.max/min
-
-```javascript
-function maxProfitConcise(prices) {
-    let minPrice = Infinity;
-    let maxProfit = 0;
-    
-    for (const price of prices) {
-        minPrice = Math.min(minPrice, price);
-        maxProfit = Math.max(maxProfit, price - minPrice);
-    }
-    
-    return maxProfit;
-}
-```
-
-**Time:** O(N) | **Space:** O(1)
-**Note:** Most concise and elegant solution
-
-### Approach 3: Track Buy Index (If indices needed)
-
-```javascript
-function maxProfitWithIndices(prices) {
-    let minPrice = prices[0];
-    let minIndex = 0;
-    let maxProfit = 0;
-    let buyDay = 0, sellDay = 0;
-    
-    for (let i = 1; i < prices.length; i++) {
-        const profit = prices[i] - minPrice;
-        
-        if (profit > maxProfit) {
-            maxProfit = profit;
-            buyDay = minIndex;
-            sellDay = i;
-        }
-        
-        if (prices[i] < minPrice) {
-            minPrice = prices[i];
-            minIndex = i;
-        }
-    }
-    
-    console.log(`Buy on day ${buyDay + 1}, Sell on day ${sellDay + 1}`);
-    return maxProfit;
-}
-```
-
-**Time:** O(N) | **Space:** O(1)
-**Use when:** Need to return buy/sell days
-
 ---
 
-## Edge Cases to Consider
+### Optimal Approach
 
-1. **Single Day:**
-   - Input: `prices = [5]`
-   - Output: `0`
-   - Cannot make any transaction
+*   We have two sorted arrays:
+*   nums1 with length m + n where the first m elements are valid.
+*   nums2 with n elements.
+*   The goal: merge nums2 into nums1 in sorted order in-place.
+*   Start filling nums1 from the end (index m + n - 1), comparing the last elements of both arrays (nums1\[m-1\] and nums2\[n-1\]).
+*   Place the larger element at the current last position.
+*   Move pointers accordingly:
+*   Decrement the pointer in nums1 or nums2.
+*   Decrement the position pointer for placement.
+*   If nums2 is exhausted first, merging is done.
+*   If nums1 is exhausted first, copy remaining elements of nums2.
 
-2. **Strictly Decreasing:**
-   - Input: `prices = [5, 4, 3, 2, 1]`
-   - Output: `0`
-   - No profitable transaction
+### Time Complexity:
 
-3. **Strictly Increasing:**
-   - Input: `prices = [1, 2, 3, 4, 5]`
-   - Output: `4` (buy on day 1, sell on day 5)
-   - Maximum profit = 5 - 1 = 4
+*   **Time Complexity = O((m+n) log (m+n))** Due to sorting.
+    
 
-4. **All Same Prices:**
-   - Input: `prices = [3, 3, 3, 3]`
-   - Output: `0`
-   - No profit opportunity
+### Space Complexity:
 
-5. **Large Numbers:**
-   - Input: `prices = [10000, 1, 10000]`
-   - Output: `9999`
-   - Handle large price differences
+*   **Space Complexity = O(1) (constant space)**
+    
+    `Explanation`
+    
+    *   No extra significant space is used (in-place).
+    *   Only a few variables (p1, p2, i) are used.
+    
 
-6. **Zero Prices:**
-   - Input: `prices = [0, 5, 0, 5]`
-   - Output: `5`
-   - Buy at 0, sell at 5
-
----
-
-## JavaScript Code
+### JavaScript Code
 
 ```javascript
-/**
- * Best Time to Buy and Sell Stock - Optimal Solution
- * Time Complexity: O(N)
- * Space Complexity: O(1)
- */
-function maxProfit(prices) {
-    // Edge case: empty or single element
-    if (!prices || prices.length < 2) {
-        return 0;
+
+  var merge = function(nums1, m, nums2, n) {
+    let p1 = m - 1;
+    let p2 = n - 1;
+  
+    for (let i = m + n - 1; i >= 0; i--) {
+      if (p2 < 0) break;
+  
+      if (p1 >= 0 && nums1[p1] > nums2[p2]) {
+        nums1[i] = nums1[p1--];
+      } else {
+        nums1[i] = nums2[p2--];
+      }
     }
-    
-    let minPrice = Infinity;
-    let maxProfit = 0;
-    
-    for (const price of prices) {
-        // Update minimum buying price
-        minPrice = Math.min(minPrice, price);
-        
-        // Calculate profit if selling today
-        const profit = price - minPrice;
-        
-        // Update maximum profit
-        maxProfit = Math.max(maxProfit, profit);
-    }
-    
-    return maxProfit;
-}
-
-// Example Usage:
-console.log("Example 1:");
-console.log(maxProfit([7, 1, 5, 3, 6, 4]));  // Output: 5
-
-console.log("\nExample 2:");
-console.log(maxProfit([7, 6, 4, 3, 1]));     // Output: 0
-
-console.log("\nExample 3:");
-console.log(maxProfit([2, 4, 1, 7, 5]));     // Output: 6
-
-console.log("\nEdge Cases:");
-console.log(maxProfit([5]));                  // Output: 0
-console.log(maxProfit([1, 2, 3, 4, 5]));     // Output: 4
-console.log(maxProfit([3, 3, 3, 3]));        // Output: 0
+  };     
 ```
 
----
+### Important Points to Understand:
 
-## Key Takeaways
+**1. In-Place Merging:**
+* nums1 has enough space (m + n) to hold both arrays.
+* Last n positions are initially 0 and meant for nums2 elements.
 
-1. **Carry Forward Pattern:** Track minimum value while traversing to avoid nested loops
+**2. Backward Approach:**
+* Fill from the end to avoid overwriting values.
+* This is the key insight for O(1) space solution.
 
-2. **Greedy Works:** For single transaction, greedy approach gives optimal solution
+**3. Three Approaches:**
+* Brute force: Concatenate and sort - O((m+n) log(m+n))
+* Two pointer (forward): Needs extra space - O(m)
+* Two pointer (backward): Optimal - O(m+n) time, O(1) space
 
-3. **Time Optimization:** Reduced from O(N²) brute force to O(N) optimal
+### Edge Cases to Consider:
 
-4. **Space Efficiency:** Only need two variables, achieving O(1) space
+**1. nums2 is empty (n = 0):**
+* Input: nums1 = [1, 2, 3], m = 3, nums2 = [], n = 0
+* Output: [1, 2, 3] (no changes needed)
 
-5. **Real-World Application:** Models many "buy low, sell high" optimization problems
+**2. nums1 valid portion is empty (m = 0):**
+* Input: nums1 = [0, 0, 0], m = 0, nums2 = [1, 2, 3], n = 3
+* Output: [1, 2, 3]
 
-6. **Related to Kadane's:** Similar pattern to maximum subarray sum problem
+**3. All nums1 elements larger:**
+* Input: nums1 = [4, 5, 6, 0, 0, 0], m = 3, nums2 = [1, 2, 3], n = 3
+* Output: [1, 2, 3, 4, 5, 6]
 
-7. **LeetCode Classic:** One of the most common interview questions (#121)
+**4. All nums2 elements larger:**
+* Input: nums1 = [1, 2, 3, 0, 0, 0], m = 3, nums2 = [4, 5, 6], n = 3
+* Output: [1, 2, 3, 4, 5, 6]
 
-8. **Foundation Problem:** Understanding this helps with multi-transaction variants
+**5. Interleaved elements:**
+* Input: nums1 = [1, 3, 5, 0, 0, 0], m = 3, nums2 = [2, 4, 6], n = 3
+* Output: [1, 2, 3, 4, 5, 6]
 
-9. **Single Pass:** Can solve in one traversal without looking back
+### Key Takeaways:
 
-10. **Interview Tip:** Start with brute force, explain optimization, implement optimal solution
+1. **Backward filling** is the key insight for optimal space complexity.
 
+2. **Three approaches** show progression from brute force to optimal.
+
+3. **Sorted arrays** property enables efficient merging without extra comparison overhead.
+
+4. **Two-pointer technique** is fundamental for merging operations.
+
+5. **Space optimization:** Backward approach avoids extra array needed in forward approach.
+
+6. **Applications:** Merge sort, external sorting, database merge operations.
+
+7. **Interview strategy:** Always mention all three approaches and their trade-offs.
+
+8. **Common mistakes:** Forgetting to handle cases where one array is exhausted first.
+
+9. **Related problems:** Merge K sorted lists, Merge intervals, Sort colors.
+
+10. **Foundation:** Understanding this prepares for more complex merge problems.
