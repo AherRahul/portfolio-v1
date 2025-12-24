@@ -1288,7 +1288,7 @@ content:
         enable_ai_notes: false
         enable_ai_quiz: false
         _path: data-structure-9-6
-  - module_id: 20
+  - module_id: 10
     module_name: Practice Problems - Arrays - (Easy/Medium)
     module_duration: "45 mins read"
     topics_count: 28
@@ -1366,37 +1366,13 @@ content:
           topics:
             - data-structures
           duration: "5 mins read"
-          photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data-structure_and_algorithms_xibaur.png"
+          photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
           auther_name: Rahul Aher
           is_on_youtube: false
           enable_ai_notes: true
           enable_ai_quiz: true
           _path: data-structure-10-5
-  - module_id: 21
-    module_name: Recursion - Easy/Medium
-    module_duration: "30 mins read"
-    topics_count: 6
-    tutor: 1
-    expanded: false
-    enable_ai_notes: false
-    enable_ai_quiz: false
-    topics:
-      - id: 1
-        topic_name: Recursion - 101
-        sub_topic: Recursion
-        publish_date: 2025-09-26
-        description: >
-          Understanding the importance of data structures and algorithms in programming. Learn systematic problem-solving approaches, algorithmic thinking, and how DSA impacts software performance and efficiency.
-        topics:
-          - data-structures
-        duration: "5 mins read"
-        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
-        auther_name: Rahul Aher
-        is_on_youtube: false
-        enable_ai_notes: true
-        enable_ai_quiz: true
-        _path: data-structure-11-1
-  - module_id: 22
+  - module_id: 11
     module_name: Bit Manipulation
     module_duration: "35 mins read"
     topics_count: 7
@@ -1419,7 +1395,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-12-1
+        _path: data-structure-11-1
       - id: 2
         topic_name: Problem - Unset i-th bit
         sub_topic: Bit Manipulation
@@ -1434,7 +1410,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-12-2
+        _path: data-structure-11-2
       - id: 3
         topic_name: Problem - Check bit
         sub_topic: Bit Manipulation
@@ -1449,7 +1425,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-12-3
+        _path: data-structure-11-3
       - id: 4
         topic_name: Problem - Number of 1 Bits
         sub_topic: Bit Manipulation
@@ -1464,7 +1440,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-12-4
+        _path: data-structure-11-4
       - id: 5
         topic_name: Problem - Set Bit
         sub_topic: Bit Manipulation
@@ -1479,7 +1455,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-12-5
+        _path: data-structure-11-5
       - id: 6
         topic_name: Problem - Toggle i-th bit
         sub_topic: Bit Manipulation
@@ -1494,7 +1470,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-12-6
+        _path: data-structure-11-6
       - id: 7
         topic_name: Problem - Unset x bits from right
         sub_topic: Bit Manipulation
@@ -1509,8 +1485,8 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-12-7
-  - module_id: 23
+        _path: data-structure-11-7
+  - module_id: 12
     module_name: Subsets & Subsequences
     module_duration: "15 mins read"
     topics_count: 3
@@ -1533,7 +1509,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-13-1
+        _path: data-structure-12-1
       - id: 2
         topic_name: Problem - Sum the Difference
         sub_topic: Subsets & Subsequences
@@ -1548,7 +1524,7 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
-        _path: data-structure-13-2
+        _path: data-structure-12-2
       - id: 3
         topic_name: Problem - A, B and Modulo
         sub_topic: Subsets & Subsequences
@@ -1563,7 +1539,898 @@ content:
         is_on_youtube: false
         enable_ai_notes: false
         enable_ai_quiz: false
+        _path: data-structure-12-3
+  - module_id: 13
+    module_name: Recursion - Easy/Medium
+    module_duration: "70 mins read"
+    topics_count: 12
+    tutor: 1
+    expanded: false
+    enable_ai_notes: false
+    enable_ai_quiz: false
+    topics:
+      - id: 1
+        topic_name: Recursion - 101
+        sub_topic: Recursion
+        publish_date: 2025-09-26
+        description: >
+          Master the art of recursion - a fundamental programming technique where a function calls itself. Learn base cases, recursive cases, call stack visualization, and how to solve complex problems by breaking them into smaller subproblems.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: true
+        enable_ai_quiz: true
+        _path: data-structure-13-1
+      - id: 2
+        topic_name: Problem - Print A to 1 function
+        sub_topic: Recursion
+        publish_date: 2025-09-26
+        description: >
+          Learn to print numbers from A to 1 using recursion. Master the fundamental concept of recursive countdown, understand call stack behavior, and implement your first recursive function with proper base case handling.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: false
+        enable_ai_quiz: false
+        _path: data-structure-13-2
+      - id: 3
+        topic_name: Problem - Find Factorial
+        sub_topic: Recursion
+        publish_date: 2025-09-26
+        description: >
+          Calculate factorial of a number using recursion. Learn how to break down mathematical problems recursively, understand the relationship between factorial and recursion, and master the classic recursive pattern.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: false
+        enable_ai_quiz: false
         _path: data-structure-13-3
+      - id: 4
+        topic_name: Problem - Find Fibonacci - II
+        sub_topic: Recursion
+        publish_date: 2025-09-26
+        description: >
+          Generate Fibonacci numbers using recursion. Master the classic recursive pattern with multiple recursive calls, understand exponential time complexity, and learn optimization techniques for recursive solutions.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: false
+        enable_ai_quiz: false
+        _path: data-structure-13-4
+      - id: 5
+        topic_name: Problem - Print 1 to A function
+        sub_topic: Recursion
+        publish_date: 2025-09-26
+        description: >
+          Print numbers from 1 to A using recursion. Learn ascending order recursion, understand the difference between pre-recursion and post-recursion operations, and master recursive counting patterns.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: false
+        enable_ai_quiz: false
+        _path: data-structure-13-5
+      - id: 6
+        topic_name: Problem - Check Palindrome using Recursion
+        sub_topic: Recursion
+        publish_date: 2025-09-26
+        description: >
+          Verify if a string is a palindrome using recursion. Master string manipulation with recursion, learn two-pointer recursive technique, and understand how to compare characters from both ends recursively.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: false
+        enable_ai_quiz: false
+        _path: data-structure-13-6
+      - id: 7
+        topic_name: Problem - Print reverse string
+        sub_topic: Recursion
+        publish_date: 2025-09-26
+        description: >
+          Reverse and print a string using recursion. Learn how recursion naturally handles reversal operations, understand call stack unwinding for output, and master string processing with recursive techniques.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: false
+        enable_ai_quiz: false
+        _path: data-structure-13-7
+      - id: 8
+        topic_name: Problem - Sum of Digits
+        sub_topic: Recursion
+        publish_date: 2025-09-26
+        description: >
+          Calculate sum of digits in a number using recursion. Master digit extraction with modulo and division operations, learn how to process numbers recursively, and understand mathematical recursion patterns.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: false
+        enable_ai_quiz: false
+        _path: data-structure-13-8
+      - id: 9
+        topic_name: Problem - Implement Power Function
+        sub_topic: Recursion
+        publish_date: 2025-09-26
+        description: >
+          Implement power function (A^B % C) using recursion. Learn modular exponentiation, master divide-and-conquer optimization, and understand how to reduce O(N) to O(log N) using recursive techniques.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: false
+        enable_ai_quiz: false
+        _path: data-structure-13-9
+      - id: 10
+        topic_name: Problem - Is magic?
+        sub_topic: Recursion
+        publish_date: 2025-09-26
+        description: >
+          Check if a number is magic using recursion. Learn to recursively calculate digit sums until a single digit, understand multi-level recursion, and master recursive validation patterns.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: false
+        enable_ai_quiz: false
+        _path: data-structure-13-10
+      - id: 11
+        topic_name: Problem - Kth Symbol - Easy
+        sub_topic: Recursion
+        publish_date: 2025-09-26
+        description: >
+          Find the Kth symbol in a recursively generated sequence. Master pattern recognition in recursive sequences, learn to optimize from generating full sequences to direct calculation, and understand binary tree recursion.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: false
+        enable_ai_quiz: false
+        _path: data-structure-13-11
+      - id: 12
+        topic_name: Problem - Tower of Hanoi
+        sub_topic: Recursion
+        publish_date: 2025-09-26
+        description: >
+          Solve the classic Tower of Hanoi puzzle using recursion. Master complex recursive problem-solving, understand divide-and-conquer strategy, and learn how recursion elegantly solves seemingly complex problems.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: false
+        enable_ai_quiz: false
+        _path: data-structure-13-12
+  - module_id: 14
+    module_name: Hashing - Easy/Medium
+    module_duration: "125 mins read"
+    topics_count: 25
+    tutor: 1
+    expanded: false
+    enable_ai_notes: false
+    enable_ai_quiz: false
+    topics:
+      - id: 1
+        topic_name: Problem - Frequency of element query
+        sub_topic: Hashing
+        publish_date: 2025-12-24
+        description: >
+          Track participation frequency efficiently using hash maps. Learn how to use hash maps for frequency counting, understand O(1) lookup time, and master the fundamental pattern of element frequency tracking.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: false
+        enable_ai_quiz: false
+        _path: data-structure-14-1
+      - id: 2
+        topic_name: Problem - Count distinct elements
+        sub_topic: Hashing
+        publish_date: 2025-12-24
+        description: >
+          Count unique elements in an array using hash sets. Learn to use Set data structure for O(N) time complexity, understand the difference between frequency and uniqueness, and master distinct counting techniques.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: false
+        enable_ai_quiz: false
+        _path: data-structure-14-2
+      - id: 3
+        topic_name: Problem - First Repeating element
+        sub_topic: Hashing
+        publish_date: 2025-12-24
+        description: >
+          Find the first repeating element with smallest index using hash maps. Learn to track element occurrences while maintaining order information, and master the technique of finding first duplicates efficiently.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: false
+        enable_ai_quiz: false
+        _path: data-structure-14-3
+      - id: 4
+        topic_name: Problem - Sub-array with 0 sum
+        sub_topic: Hashing
+        publish_date: 2025-12-24
+        description: >
+          Detect if a subarray exists with sum zero using prefix sum and hashing. Learn the powerful technique of using cumulative sums with hash sets, optimize from O(N²) to O(N), and master subarray sum problems.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: false
+        enable_ai_quiz: false
+        _path: data-structure-14-4
+      - id: 5
+        topic_name: Problem - Count unique elements
+        sub_topic: Hashing
+        publish_date: 2025-12-24
+        description: >
+          Count elements with frequency 1 using hash maps. Learn to filter unique occurrences, understand frequency-based counting, and master techniques for identifying singleton elements efficiently.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: false
+        enable_ai_quiz: false
+        _path: data-structure-14-5
+      - id: 6
+        topic_name: Problem - Common Elements
+        sub_topic: Hashing
+        publish_date: 2025-12-24
+        description: >
+          Find common elements between two arrays using hash maps. Learn intersection operations, handle duplicate counting, and master the technique of finding shared elements with proper frequency handling.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: false
+        enable_ai_quiz: false
+        _path: data-structure-14-6
+      - id: 7
+        topic_name: Problem - K Occurrences
+        sub_topic: Hashing
+        publish_date: 2025-12-24
+        description: >
+          Find and sum heights with exactly B occurrences. Learn to filter by frequency, apply modulo operations, and master the technique of aggregating values based on occurrence count.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: false
+        enable_ai_quiz: false
+        _path: data-structure-14-7
+      - id: 8
+        topic_name: Problem - Count Subarray Zero Sum
+        sub_topic: Hashing
+        publish_date: 2025-12-24
+        description: >
+          Count all subarrays with sum zero using prefix sum hashing. Learn to use hash maps to track prefix sum frequencies, optimize counting from O(N²) to O(N), and master the advanced subarray counting pattern.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: false
+        enable_ai_quiz: false
+        _path: data-structure-14-8
+      - id: 9
+        topic_name: Problem - Longest Subarray Zero Sum
+        sub_topic: Hashing
+        publish_date: 2025-12-24
+        description: >
+          Find the longest subarray with sum zero using prefix sum and hashing. Learn to track first occurrence of prefix sums, calculate maximum length efficiently, and master the longest subarray pattern.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: false
+        enable_ai_quiz: false
+        _path: data-structure-14-9
+      - id: 10
+        topic_name: Problem - Check Pair Sum
+        sub_topic: Hashing
+        publish_date: 2025-12-24
+        description: >
+          Find if two elements sum to a target using hash sets. Learn the two-sum pattern with O(N) time complexity, understand complement searching, and master one of the most common interview patterns.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: false
+        enable_ai_quiz: false
+        _path: data-structure-14-10
+      - id: 11
+        topic_name: Problem - Count Pair Sum
+        sub_topic: Hashing
+        publish_date: 2025-12-24
+        description: >
+          Count pairs with given sum using hash maps. Learn to count valid pairs while avoiding duplicates, handle frequency-based counting, and master the pair counting pattern with modulo operations.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: false
+        enable_ai_quiz: false
+        _path: data-structure-14-11
+      - id: 12
+        topic_name: Problem - Pair With Given Difference
+        sub_topic: Hashing
+        publish_date: 2025-12-24
+        description: >
+          Find pairs with specific difference using hash sets. Learn to search for target differences efficiently, understand the difference pattern vs sum pattern, and master variation of the two-pointer technique.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: false
+        enable_ai_quiz: false
+        _path: data-structure-14-12
+      - id: 13
+        topic_name: Problem - Count Pair Difference
+        sub_topic: Hashing
+        publish_date: 2025-12-24
+        description: >
+          Count pairs with given difference using hash maps. Learn frequency-based pair counting for differences, handle edge cases with modulo, and master the difference counting pattern.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: false
+        enable_ai_quiz: false
+        _path: data-structure-14-13
+      - id: 14
+        topic_name: Problem - Shaggy and distances
+        sub_topic: Hashing
+        publish_date: 2025-12-24
+        description: >
+          Find minimum distance between equal elements using hash maps. Learn to track last occurrence indices, calculate minimum distance on-the-fly, and master the index tracking pattern.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: false
+        enable_ai_quiz: false
+        _path: data-structure-14-14
+      - id: 15
+        topic_name: Problem - Subarray with given sum
+        sub_topic: Hashing
+        publish_date: 2025-12-24
+        description: >
+          Find first continuous subarray with given sum using prefix sum and hashing. Learn to identify subarray ranges efficiently, handle positive integers optimization, and master subarray identification patterns.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: false
+        enable_ai_quiz: false
+        _path: data-structure-14-15
+      - id: 16
+        topic_name: Problem - Subarray Sum Equals K
+        sub_topic: Hashing
+        publish_date: 2025-12-24
+        description: >
+          Count subarrays with sum K using prefix sum and hash maps. Learn the classic pattern of counting subarrays with target sum, optimize from O(N²) to O(N), and master one of the most important hashing patterns.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: false
+        enable_ai_quiz: false
+        _path: data-structure-14-16
+      - id: 17
+        topic_name: Problem - Distinct Numbers in Window
+        sub_topic: Hashing
+        publish_date: 2025-12-24
+        description: >
+          Count distinct numbers in sliding windows using hash maps. Learn the sliding window with hashing pattern, maintain frequency as window slides, and master efficient window-based counting.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: false
+        enable_ai_quiz: false
+        _path: data-structure-14-17
+      - id: 18
+        topic_name: Problem - Unique 2D points
+        sub_topic: Hashing
+        publish_date: 2025-12-24
+        description: >
+          Count unique 2D coordinate points using hash sets. Learn to hash composite keys, handle multi-dimensional data in hash structures, and master unique coordinate counting.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: false
+        enable_ai_quiz: false
+        _path: data-structure-14-18
+      - id: 19
+        topic_name: Problem - Longest Consecutive Sequence
+        sub_topic: Hashing
+        publish_date: 2025-12-24
+        description: >
+          Find longest consecutive sequence using hash sets. Learn to identify sequence starts, build sequences efficiently in O(N) time, and master one of the most elegant hashing algorithms.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: false
+        enable_ai_quiz: false
+        _path: data-structure-14-19
+      - id: 20
+        topic_name: Problem - Colorful Number
+        sub_topic: Hashing
+        publish_date: 2025-12-24
+        description: >
+          Check if a number is colorful using hash sets. Learn to generate consecutive digit sequences, track products with hashing, and master the colorful number pattern for digit manipulation.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: false
+        enable_ai_quiz: false
+        _path: data-structure-14-20
+  - module_id: 15
+    module_name: Sorting - Easy/Medium
+    module_duration: "75 mins read"
+    topics_count: 15
+    tutor: 1
+    expanded: false
+    enable_ai_notes: false
+    enable_ai_quiz: false
+    topics:
+      - id: 1
+        topic_name: Problem - Bubble Sort
+        sub_topic: Sorting
+        publish_date: 2025-12-24
+        description: >
+          Implement the bubble sort algorithm from scratch. Learn the simplest sorting technique, understand adjacent element comparisons, master the O(N²) algorithm, and build foundation for advanced sorting.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: false
+        enable_ai_quiz: false
+        _path: data-structure-15-1
+      - id: 2
+        topic_name: Problem - Merge Two Sorted Arrays
+        sub_topic: Sorting
+        publish_date: 2025-12-24
+        description: >
+          Merge two sorted arrays into one sorted array. Learn the two-pointer technique for merging, understand the foundation of merge sort, and master linear time merging with O(N+M) complexity.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: false
+        enable_ai_quiz: false
+        _path: data-structure-15-2
+      - id: 3
+        topic_name: Problem - Merge Sort
+        sub_topic: Sorting
+        publish_date: 2025-12-24
+        description: >
+          Implement merge sort using divide-and-conquer. Learn one of the most efficient sorting algorithms, master recursive sorting with O(N log N) time, and understand stable sorting properties.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: false
+        enable_ai_quiz: false
+        _path: data-structure-15-3
+      - id: 4
+        topic_name: Problem - Array with consecutive elements
+        sub_topic: Sorting
+        publish_date: 2025-12-24
+        description: >
+          Check if array elements are consecutive using sorting. Learn to validate consecutive sequences, optimize with O(1) space using mathematical properties, and master array validation patterns.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: false
+        enable_ai_quiz: false
+        _path: data-structure-15-4
+      - id: 5
+        topic_name: Problem - Insertion Sort
+        sub_topic: Sorting
+        publish_date: 2025-12-24
+        description: >
+          Implement insertion sort using recursion. Learn the insertion sort algorithm, understand building sorted portion incrementally, and master recursive implementation of iterative algorithms.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: false
+        enable_ai_quiz: false
+        _path: data-structure-15-5
+      - id: 6
+        topic_name: Problem - Inversion count in an array
+        sub_topic: Sorting
+        publish_date: 2025-12-24
+        description: >
+          Count inversions using modified merge sort. Learn to count pairs where i<j but A[i]>A[j], optimize from O(N²) to O(N log N), and master the advanced application of merge sort.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: false
+        enable_ai_quiz: false
+        _path: data-structure-15-6
+      - id: 7
+        topic_name: Problem - Factors sort
+        sub_topic: Sorting
+        publish_date: 2025-12-24
+        description: >
+          Sort array by number of factors using custom comparator. Learn custom sorting logic, count factors efficiently, and master comparator-based sorting for complex criteria.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: false
+        enable_ai_quiz: false
+        _path: data-structure-15-7
+      - id: 8
+        topic_name: Problem - Largest Number
+        sub_topic: Sorting
+        publish_date: 2025-12-24
+        description: >
+          Form largest number by arranging array elements. Learn custom string comparison, create optimal concatenation order, and master one of the most creative sorting problems.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: false
+        enable_ai_quiz: false
+        _path: data-structure-15-8
+      - id: 9
+        topic_name: Problem - B Closest Points to Origin
+        sub_topic: Sorting
+        publish_date: 2025-12-24
+        description: >
+          Find B closest points to origin using sorting or heap. Learn Euclidean distance calculation, partial sorting optimization, and master k-closest elements pattern with multiple approaches.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: false
+        enable_ai_quiz: false
+        _path: data-structure-15-9
+      - id: 10
+        topic_name: Problem - Unique Elements
+        sub_topic: Sorting
+        publish_date: 2025-12-24
+        description: >
+          Make all elements unique with minimum increments. Learn greedy approach with sorting, calculate minimum steps to uniqueness, and master array transformation with sorting.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: false
+        enable_ai_quiz: false
+        _path: data-structure-15-10
+      - id: 11
+        topic_name: Problem - Max Chunks To Make Sorted
+        sub_topic: Sorting
+        publish_date: 2025-12-24
+        description: >
+          Find maximum chunks that can be independently sorted. Learn to identify sortable partitions, understand maximum element tracking, and master the chunk partitioning pattern.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: false
+        enable_ai_quiz: false
+        _path: data-structure-15-11
+      - id: 12
+        topic_name: Problem - QuickSort
+        sub_topic: Sorting
+        publish_date: 2025-12-24
+        description: >
+          Implement quicksort with partitioning. Learn the most practical sorting algorithm, master pivot selection and partitioning, and understand average O(N log N) with in-place sorting.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: false
+        enable_ai_quiz: false
+        _path: data-structure-15-12
+      - id: 13
+        topic_name: Problem - Wave Array
+        sub_topic: Sorting
+        publish_date: 2025-12-24
+        description: >
+          Arrange array in wave form where a1≥a2≤a3≥a4. Learn wave pattern creation, swap adjacent elements optimally, and master array rearrangement with specific patterns.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: false
+        enable_ai_quiz: false
+        _path: data-structure-15-13
+  - module_id: 16
+    module_name: Searching - Easy/Medium
+    module_duration: "60 mins read"
+    topics_count: 12
+    tutor: 1
+    expanded: false
+    enable_ai_notes: false
+    enable_ai_quiz: false
+    topics:
+      - id: 1
+        topic_name: Problem - Search for a Range
+        sub_topic: Binary Search
+        publish_date: 2025-12-24
+        description: >
+          Find first and last occurrence of target in sorted array. Learn modified binary search for finding boundaries, implement O(log N) range search, and master the binary search variation pattern.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: false
+        enable_ai_quiz: false
+        _path: data-structure-16-1
+      - id: 2
+        topic_name: Problem - Find a peak element
+        sub_topic: Binary Search
+        publish_date: 2025-12-24
+        description: >
+          Find any peak element using binary search. Learn to identify local maxima in O(log N), understand the peak finding algorithm, and master binary search on unsorted arrays.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: false
+        enable_ai_quiz: false
+        _path: data-structure-16-2
+      - id: 3
+        topic_name: Problem - Sorted Insert Position
+        sub_topic: Binary Search
+        publish_date: 2025-12-24
+        description: >
+          Find insert position in sorted array using binary search. Learn to find insertion index efficiently, handle edge cases for missing elements, and master binary search for position finding.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: false
+        enable_ai_quiz: false
+        _path: data-structure-16-3
+      - id: 4
+        topic_name: Problem - Ceiling in a sorted array
+        sub_topic: Binary Search
+        publish_date: 2025-12-24
+        description: >
+          Find ceiling (smallest element ≥ target) using binary search. Learn ceiling and floor concepts, implement efficient bound finding, and master upper bound binary search pattern.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: false
+        enable_ai_quiz: false
+        _path: data-structure-16-4
+      - id: 5
+        topic_name: Problem - Matrix Search
+        sub_topic: Binary Search
+        publish_date: 2025-12-24
+        description: >
+          Search in row and column sorted matrix using binary search. Learn to treat 2D matrix as 1D sorted array, implement O(log(M*N)) search, and master 2D binary search techniques.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: false
+        enable_ai_quiz: false
+        _path: data-structure-16-5
+      - id: 6
+        topic_name: Problem - Search in Bitonic Array
+        sub_topic: Binary Search
+        publish_date: 2025-12-24
+        description: >
+          Search in bitonic array (first increasing then decreasing). Learn to find peak then search in both halves, handle bitonic properties, and master specialized binary search.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: false
+        enable_ai_quiz: false
+        _path: data-structure-16-6
+      - id: 7
+        topic_name: Problem - Single Element in Sorted Array
+        sub_topic: Binary Search
+        publish_date: 2025-12-24
+        description: >
+          Find single non-duplicate element using binary search. Learn to use XOR properties with binary search, analyze pair patterns, and master O(log N) unique element finding.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: false
+        enable_ai_quiz: false
+        _path: data-structure-16-7
+      - id: 8
+        topic_name: Problem - Rotated Sorted Array Search
+        sub_topic: Binary Search
+        publish_date: 2025-12-24
+        description: >
+          Search in rotated sorted array using modified binary search. Learn to find pivot and search in appropriate half, handle rotation edge cases, and master rotated array search pattern.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: false
+        enable_ai_quiz: false
+        _path: data-structure-16-8
+      - id: 9
+        topic_name: Problem - Square Root of Integer
+        sub_topic: Binary Search
+        publish_date: 2025-12-24
+        description: >
+          Find square root using binary search without library functions. Learn binary search on answer space, handle precision for floor value, and master mathematical binary search.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: false
+        enable_ai_quiz: false
+        _path: data-structure-16-9
+      - id: 10
+        topic_name: Problem - Ath Magical Number
+        sub_topic: Binary Search
+        publish_date: 2025-12-24
+        description: >
+          Find Ath magical number (divisible by B or C) using binary search. Learn binary search on infinite space, use LCM for optimization, and master the magical number pattern.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: false
+        enable_ai_quiz: false
+        _path: data-structure-16-10
+      - id: 11
+        topic_name: Problem - Painter's Partition Problem
+        sub_topic: Binary Search
+        publish_date: 2025-12-24
+        description: >
+          Minimize maximum time to paint boards using binary search. Learn binary search on answer, understand the partition pattern, and master one of the classic optimization problems.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: false
+        enable_ai_quiz: false
+        _path: data-structure-16-11
+      - id: 12
+        topic_name: Problem - Aggressive cows
+        sub_topic: Binary Search
+        publish_date: 2025-12-24
+        description: >
+          Maximize minimum distance between cows using binary search. Learn to binary search on distance, validate placement feasibility, and master the aggressive cows optimization pattern.
+        topics:
+          - data-structures
+        duration: "5 mins read"
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png"
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        enable_ai_notes: false
+        enable_ai_quiz: false
+        _path: data-structure-16-12
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png)

@@ -1,6 +1,6 @@
 ---
-title: "Two Sum – Optimized Solution (JavaScript)"
-description: "Understand First-In-First-Out (FIFO) processing. Learn queue operations, circular queues, priority queues, deques, and queue applications in algorithms and system design."
+title: "Unset i-th Bit"
+description: "Learn to unset (turn off) a specific bit position using bitwise AND operation. Master fundamental bit manipulation technique."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-09-26"
 datePublished: "2025-09-26"
@@ -8,79 +8,49 @@ showOnArticles: false
 courseName: 03-data-structure
 topics:
   - data-structures
-resources:
-  - title: "Queue Visualizations"
-    type: "tool"
-    url: "https://visualgo.net/en/list"
-    description: "Interactive queue operations visualization"
-  - title: "Queue Problems Practice"
-    type: "practice"
-    url: "https://leetcode.com/tag/queue/"
-    description: "Practice problems for mastering queue algorithms"
-  - title: "Priority Queue Implementation"
-    type: "reference"
-    url: "https://en.wikipedia.org/wiki/Priority_queue"
-    description: "Understanding priority queue data structures"
 
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png)
 
-Recursion
-------------------
+Unset i-th Bit
+----------------------------
 
-**Recursion is a technique** where a `function calls` itself to solve a problem by **breaking** it down into **smaller sub-problems**.
+### Problem Statement:
 
-### Two Parts Of Recursion:
-1. **Base Case:** Stop Condition - When to stop calling itself
-2. **Recursive Case:** Part where functions call itself
+Given integer `N` and position `i`, unset (turn off/make 0) the bit at position i (0-indexed from right).
 
+### Examples:
 
-### Base Condition:
-*   Every **function call** in `recursion` is stored in the `call stack`. If the recursion is too deep or has no base condition, the call stack keeps growing until memory is exhausted, causing a stack overflow error.
-*   A **base condition** is essential in recursion. It stops the recursion when a certain condition is met. Without it, recursion goes infinite and causes a stack overflow. **`if (num === 0) return;`.**
+#### Example 1:
 
+**Input:** N = 13 (binary: 1101), i = 2
 
-### Real Life Example: 
-1. Queue of People
-2. Comment Thread
-3. Organisational hierachies
+**Output:** 9 (binary: 1001)
 
-### Note
-1. Base case must be on the top to stop the recursion.
-2. The case of infinite recursion leads to the **STACK OVERFOLW**
-
-### Commom Mistake's
-1. Missing Base Case - Stack overflow
-2. Not simplyfying the inputs - never reach base case
-3. Too deep recursion - large inputs
-4. Keeping in mind the time complexity
+**Explanation:** Bit at position 2 was 1, now becomes 0
 
 ### Approach:
 
-*   `Problem:` Print numbers from n to 1 using `recursion`.
-*   Print the `number`.
-*   Recurse with `num - 1`.
-*   Stop when `num === 0`.
+Use AND operation with complement of mask: `N & ~(1 << i)`
 
-### Time Complexity: `O(n)`
+### Time Complexity:
 
-*   one function call per number from n to 1.
-    
+* **Time = O(1)**, **Space = O(1)**
 
-### Space Complexity: `O(n)`
-
-*   Due to recursive call stack frames.
-    
-
-### JavaScript Code
+### JavaScript Code:
 
 ```javascript
-
-function printDescending(num) {
-    if (num === 0) return;
-    console.log(num);
-    printDescending(num - 1);
+function unsetBit(N, i) {
+    return N & ~(1 << i);
 }
-printDescending(5);       
 ```
+
+### Key Takeaways:
+
+1. Create mask with 1 at position i: `(1 << i)`
+2. Complement mask to get all 1s except position i: `~(1 << i)`
+3. AND with N to unset bit: `N & ~(1 << i)`
+4. Works regardless of current bit value
+5. Foundation bit manipulation operation
+

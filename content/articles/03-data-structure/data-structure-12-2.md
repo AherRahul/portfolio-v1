@@ -1,6 +1,6 @@
 ---
-title: "Check Bit"
-description: "Check if a specific bit is set or unset using bitwise operations. Master bit testing technique."
+title: "Sum the Difference"
+description: "Calculate sum of (max - min) across all subsequences. Master combinatorics and contribution technique."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-09-26"
 datePublished: "2025-09-26"
@@ -13,42 +13,45 @@ topics:
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png)
 
-Check Bit
+Sum the Difference
 ----------------------------
 
 ### Problem Statement:
 
-Given integer `N` and position `i`, check if bit at position i is set (1) or unset (0).
-
-### Examples:
-
-#### Example 1:
-
-**Input:** N = 13 (binary: 1101), i = 2
-
-**Output:** true (bit is set)
+Given array `A`, find sum of (maximum - minimum) across all non-empty subsequences.
 
 ### Approach:
 
-Use AND with mask: `(N & (1 << i)) !== 0`
+Sort array. Each element contributes based on how many times it appears as max or min. Element at position i is max in 2^i subsequences and min in 2^(N-1-i) subsequences.
 
 ### Time Complexity:
 
-* **Time = O(1)**, **Space = O(1)**
+* **Time = O(N log N)**, **Space = O(1)**
 
 ### JavaScript Code:
 
 ```javascript
-function checkBit(N, i) {
-    return (N & (1 << i)) !== 0;
+function sumTheDifference(A) {
+    A.sort((a, b) => a - b);
+    const N = A.length;
+    const MOD = 1e9 + 7;
+    let result = 0;
+    
+    for (let i = 0; i < N; i++) {
+        const maxContribution = A[i] * Math.pow(2, i);
+        const minContribution = A[i] * Math.pow(2, N - 1 - i);
+        result = (result + maxContribution - minContribution) % MOD;
+    }
+    
+    return (result + MOD) % MOD;
 }
 ```
 
 ### Key Takeaways:
 
-1. Create mask with 1 at position i
-2. AND isolates that bit
-3. Check if result is non-zero
-4. Essential for bit testing
-5. Used in many bit manipulation algorithms
+1. Sort first to identify max/min positions
+2. Use combinatorics to count contributions
+3. Each element's contribution calculated independently
+4. Power of 2 represents number of subsequences
+5. Mathematical approach avoids generating all subsequences
 

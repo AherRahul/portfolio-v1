@@ -1,6 +1,6 @@
 ---
-title: "Subsequence-Sum Problem"
-description: "Find if there exists a subsequence with given sum. Learn subset sum problem fundamentals and recursive thinking."
+title: "Two Sum – Optimized Solution (JavaScript)"
+description: "Understand First-In-First-Out (FIFO) processing. Learn queue operations, circular queues, priority queues, deques, and queue applications in algorithms and system design."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
 dateModified: "2025-09-26"
 datePublished: "2025-09-26"
@@ -8,56 +8,79 @@ showOnArticles: false
 courseName: 03-data-structure
 topics:
   - data-structures
+resources:
+  - title: "Queue Visualizations"
+    type: "tool"
+    url: "https://visualgo.net/en/list"
+    description: "Interactive queue operations visualization"
+  - title: "Queue Problems Practice"
+    type: "practice"
+    url: "https://leetcode.com/tag/queue/"
+    description: "Practice problems for mastering queue algorithms"
+  - title: "Priority Queue Implementation"
+    type: "reference"
+    url: "https://en.wikipedia.org/wiki/Priority_queue"
+    description: "Understanding priority queue data structures"
 
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png)
 
-Subsequence-Sum Problem
-----------------------------
+Recursion
+------------------
 
-### Problem Statement:
+**Recursion is a technique** where a `function calls` itself to solve a problem by **breaking** it down into **smaller sub-problems**.
 
-Given array `A` and integer `B`, check if there exists a subsequence with sum equal to `B`.
+### Two Parts Of Recursion:
+1. **Base Case:** Stop Condition - When to stop calling itself
+2. **Recursive Case:** Part where functions call itself
 
-### Examples:
 
-#### Example 1:
+### Base Condition:
+*   Every **function call** in `recursion` is stored in the `call stack`. If the recursion is too deep or has no base condition, the call stack keeps growing until memory is exhausted, causing a stack overflow error.
+*   A **base condition** is essential in recursion. It stops the recursion when a certain condition is met. Without it, recursion goes infinite and causes a stack overflow. **`if (num === 0) return;`.**
 
-**Input:** A = [1, 2, 3], B = 4
 
-**Output:** true (subsequence [1,3] has sum 4)
+### Real Life Example: 
+1. Queue of People
+2. Comment Thread
+3. Organisational hierachies
+
+### Note
+1. Base case must be on the top to stop the recursion.
+2. The case of infinite recursion leads to the **STACK OVERFOLW**
+
+### Commom Mistake's
+1. Missing Base Case - Stack overflow
+2. Not simplyfying the inputs - never reach base case
+3. Too deep recursion - large inputs
+4. Keeping in mind the time complexity
 
 ### Approach:
 
-Recursive: For each element, include or exclude. DP: Use 2D table[i][sum].
+*   `Problem:` Print numbers from n to 1 using `recursion`.
+*   Print the `number`.
+*   Recurse with `num - 1`.
+*   Stop when `num === 0`.
 
-### Time Complexity:
+### Time Complexity: `O(n)`
 
-* **Recursive: O(2^N)**, **DP: O(N×Sum)**
+*   one function call per number from n to 1.
+    
 
-### JavaScript Code:
+### Space Complexity: `O(n)`
+
+*   Due to recursive call stack frames.
+    
+
+### JavaScript Code
 
 ```javascript
-function hasSubsequenceSum(A, B) {
-    function helper(index, sum) {
-        if (sum === 0) return true;
-        if (index >= A.length) return false;
-        
-        // Include or exclude current element
-        return helper(index + 1, sum - A[index]) || 
-               helper(index + 1, sum);
-    }
-    
-    return helper(0, B);
+
+function printDescending(num) {
+    if (num === 0) return;
+    console.log(num);
+    printDescending(num - 1);
 }
+printDescending(5);       
 ```
-
-### Key Takeaways:
-
-1. Each element has two choices: include or exclude
-2. Recursive solution explores all possibilities
-3. DP optimizes with memoization
-4. Classic subset sum problem
-5. Foundation for backtracking problems
-
