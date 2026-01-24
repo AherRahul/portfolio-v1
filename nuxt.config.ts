@@ -53,6 +53,8 @@ export default defineNuxtConfig({
   routeRules: {
     '/support-me/': { redirect: { to: '/sponsors/', statusCode: 301 } },
     '/timeline/': { redirect: { to: '/about/', statusCode: 301 } },
+    // Admin routes should not be prerendered for security
+    '/admin/**': { ssr: false },
   },
   runtimeConfig: {
     // Server-side environment variables
@@ -114,7 +116,10 @@ export default defineNuxtConfig({
         '/__og-image__/**',
         '/api/_content/query/**',
         // Ignore topic pages that are extremely slow to render
-        '/topics/**'
+        '/topics/**',
+        // Ignore admin routes - should not be prerendered
+        '/admin/**',
+        '/api/admin/**'
       ]
     },
     devProxy: {

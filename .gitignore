@@ -11,3 +11,8 @@ sw.*
 deploy-package
 # Local Netlify folder
 .netlify
+ADMIN_SETUP.md
+/docs
+ADMIN_PORTAL_IMPLEMENTATION.md
+ADMIN_PORTAL_FEATURES.md
+CLOUDINARY_SETUP.md

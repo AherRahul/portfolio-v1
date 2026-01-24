@@ -1,14 +1,23 @@
 ---
-title: "API Architecture - Design Best Practices for REST API"
-description: "REST which stands for Representational State Transfer is an architectural style that governs how API are designed and built. REST’s popularity and ease of implementation make it the most preferred API architectural style for modern-day software development as compared to other protocols such as SOAP (simple object access protocol). REST API or RESTful web services have become the backbone for efficient communication between client and server in modern-day software development. However, to build efficient and robust REST API, it is crucial to follow some standard best practices. In this blog, we’ll explore REST API best practices that can help you build scalable, maintainable, secure, and robust API."
-slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles/api-architecture.md"
-dateModified: "2025-05-26"
-datePublished: "2025-05-26"
-showOnArticles: true
+title: API Architecture - Design Best Practices for REST API
+description: REST which stands for Representational State Transfer is an
+  architectural style that governs how API are designed and built. REST’s
+  popularity and ease of implementation make it the most preferred API
+  architectural style for modern-day software development as compared to other
+  protocols such as SOAP (simple object access protocol). REST API or RESTful
+  web services have become the backbone for efficient communication between
+  client and server in modern-day software development. However, to build
+  efficient and robust REST API, it is crucial to follow some standard best
+  practices. In this blog, we’ll explore REST API best practices that can help
+  you build scalable, maintainable, secure, and robust API.
+datePublished: 2026-01-25
+dateModified: 2026-01-25
 topics:
   - system-design
   - aws
   - lld
+showOnArticles: true
+featured: false
 ---
 
 REST which stands for Representational State Transfer is an architectural style that governs how API are designed and built. REST’s popularity and ease of implementation make it the most preferred API architectural style for modern-day software development as compared to other protocols such as SOAP (simple object access protocol).
@@ -61,8 +70,6 @@ An endpoint can be interpreted as an action performed on a resource. Example: PO
 At a high-level, verbs map to CRUD operations: GET means Read, POST means Create, PUT and PATCH mean Update, and DELETE means Delete
 A response’s status is specified by its status code: 1xx for information, 2xx for success, 3xx for redirection, 4xx for client errors and 5xx for server errors
 Of course you can use other things the HTTP protocol offers for REST API design, but these are the basic things I believe you must keep in mind.
-
-## 2. Do not return plain text
 
 
 

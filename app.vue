@@ -4,6 +4,9 @@ provideUseId(() => useId())
 
 const route = useRoute()
 
+// Check if current route is an admin route
+const isAdminRoute = computed(() => route.path.startsWith('/admin'))
+
 useAppSeo()
 useSiteNotifications()
 
@@ -128,8 +131,8 @@ function useSiteNotifications() {
 
 <template>
   <div class="bg-black antialiased min-h-screen text-white">
-    <AppNavbar />
-    <div class="mt-8">
+    <AppNavbar v-if="!isAdminRoute" />
+    <div :class="isAdminRoute ? '' : 'mt-8'">
       <NuxtPage />
     </div>
     <!-- Gradient "hack" for icons -->
@@ -140,8 +143,8 @@ function useSiteNotifications() {
         <stop offset="1" style="stop-color:#D90575" />
       </linearGradient>
     </svg>
-    <LazyAppFooter />
-    <LazyAppNotificationArea />
+    <LazyAppFooter v-if="!isAdminRoute" />
+    <LazyAppNotificationArea v-if="!isAdminRoute" />
     <ClientOnly>
       <ImageModal />
     </ClientOnly>
