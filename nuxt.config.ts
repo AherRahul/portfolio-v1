@@ -53,8 +53,8 @@ export default defineNuxtConfig({
   routeRules: {
     '/support-me/': { redirect: { to: '/sponsors/', statusCode: 301 } },
     '/timeline/': { redirect: { to: '/about/', statusCode: 301 } },
-    // Admin routes should not be prerendered for security
-    '/admin/**': { ssr: false },
+    // Admin routes should not be prerendered for security and are local-only
+    '/admin/**': { ssr: false, prerender: false },
   },
   runtimeConfig: {
     // Server-side environment variables
