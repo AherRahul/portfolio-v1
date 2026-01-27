@@ -18,7 +18,6 @@ const content = computed({
 
 const showPreview = ref(false)
 const saving = ref(false)
-const showMediaUploader = ref(false)
 const frontmatterEditorEnhanced = ref()
 
 // Parse markdown for preview
@@ -240,34 +239,6 @@ function insertCode() {
   insertMarkdown('`', '`')
 }
 
-function handleMediaUpload(url: string, type: string) {
-  const textarea = document.querySelector('textarea') as HTMLTextAreaElement
-  if (!textarea) return
-  
-  const start = textarea.selectionStart
-  
-  let markdown = ''
-  if (type === 'image') {
-    markdown = `![Image](${url})`
-  } else if (type === 'pdf') {
-    markdown = `[Download PDF](${url})`
-  } else {
-    markdown = `[Resource](${url})`
-  }
-  
-  const newText = content.value.substring(0, start) + markdown + content.value.substring(start)
-  content.value = newText
-  
-  nextTick(() => {
-    textarea.focus()
-    textarea.setSelectionRange(start + markdown.length, start + markdown.length)
-  })
-}
-
-function openMediaUploader() {
-  showMediaUploader.value = true
-}
-
 function openFrontmatterEditor() {
   frontmatterEditorEnhanced.value?.openEditor()
 }
@@ -429,17 +400,6 @@ defineExpose({ clearDraft })
       
       <div class="border-l border-zinc-700 h-6 mx-2"></div>
       
-      <!-- Media Upload -->
-      <button
-        @click="openMediaUploader"
-        class="px-2 py-1 hover:bg-zinc-700 rounded"
-        title="Upload Image/PDF to Cloudinary"
-      >
-        <Icon name="heroicons:cloud-arrow-up" />
-      </button>
-      
-      <div class="border-l border-zinc-700 h-6 mx-2"></div>
-      
       <!-- Preview Toggle -->
       <button
         @click="showPreview = !showPreview"
@@ -493,12 +453,6 @@ defineExpose({ clearDraft })
         <span class="text-xs">Ctrl+S to save</span>
       </div>
     </div>
-    
-    <!-- Media Uploader Modal -->
-    <AdminMediaUploader
-      v-model="showMediaUploader"
-      @upload-complete="handleMediaUpload"
-    />
     
     <!-- Frontmatter Editor Enhanced -->
     <AdminFrontmatterEditorEnhanced

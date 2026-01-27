@@ -4,8 +4,8 @@ definePageMeta({
   documentDriven: false
 })
 
-const email = ref('admin@rahulaher.com')
-const password = ref('R@hu95heR')
+const email = ref('')
+const password = ref('')
 const error = ref('')
 const loading = ref(false)
 const isProduction = ref(false)

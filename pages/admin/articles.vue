@@ -352,14 +352,13 @@ function handleViewOnSite() {
             </div>
           </div>
           
-          <div class="mb-4">
+          <div v-if="viewMode === 'articles'" class="mb-4">
             <button
               @click="handleNewFile"
-              :disabled="viewMode === 'course-articles' && !selectedCourse"
-              class="w-full bg-red-500 hover:bg-red-600 disabled:bg-zinc-700 disabled:cursor-not-allowed text-white px-4 py-2 rounded-md flex items-center justify-center gap-2 transition-colors"
+              class="w-full bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md flex items-center justify-center gap-2 transition-colors"
             >
               <Icon name="heroicons:plus" />
-              New {{ viewMode === 'course-articles' ? 'Course Article' : 'Article' }}
+              New Article
             </button>
           </div>
           

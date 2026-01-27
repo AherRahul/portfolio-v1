@@ -70,13 +70,6 @@ const quickActions = [
     icon: 'heroicons:cube',
     to: '/admin/npmpackages',
     color: 'from-red-500 to-rose-500'
-  },
-  {
-    title: 'Media Library',
-    description: 'Upload and manage images and assets',
-    icon: 'heroicons:photo',
-    to: '/admin/media',
-    color: 'from-indigo-500 to-purple-500'
   }
 ]
 </script>

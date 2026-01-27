@@ -88,7 +88,8 @@ const fieldDefinitions = computed(() => {
         topicsField,
         { key: 'courseName', label: 'Course Name (if part of a course)', type: 'text', required: false, help: 'Leave empty for standalone articles' },
         { key: 'showOnArticles', label: 'Show on Articles Page', type: 'boolean', required: false, help: 'Display in main articles listing' },
-        { key: 'featured', label: 'Featured Article', type: 'boolean', required: false, help: 'Highlight in featured section' }
+        { key: 'featured', label: 'Featured Article', type: 'boolean', required: false, help: 'Highlight in featured section' },
+        { key: 'resources', label: 'Resources', type: 'resources', required: false, help: 'External resources like PDFs, articles, documentation, etc.' }
       ]
     
     case 'courses':
@@ -170,6 +171,10 @@ watch(showEditor, (isOpen) => {
           // Keep as array for multi-select
           defaults[field.key] = [...existingValue]
           console.log('Topics loaded:', existingValue)
+        } else if (field.type === 'resources' && Array.isArray(existingValue)) {
+          // Keep resources as array
+          defaults[field.key] = [...existingValue]
+          console.log('Resources loaded:', existingValue)
         } else if (field.type === 'boolean') {
           // Ensure boolean values
           defaults[field.key] = !!existingValue
@@ -189,7 +194,7 @@ watch(showEditor, (isOpen) => {
           defaults[field.key] = new Date().toISOString().split('T')[0]
         } else if (field.type === 'boolean') {
           defaults[field.key] = false
-        } else if (field.type === 'topics-multi-select') {
+        } else if (field.type === 'topics-multi-select' || field.type === 'resources') {
           defaults[field.key] = []
         } else if (field.type === 'number') {
           defaults[field.key] = 0
@@ -252,6 +257,29 @@ async function handleSave() {
           .split(',')
           .map((t: string) => t.trim())
           .filter(Boolean)
+      }
+      
+      // Keep resources as array (already handled)
+      if (field.type === 'resources' && Array.isArray(processedFields[field.key])) {
+        // Ensure resources array is properly formatted
+        if (processedFields[field.key].length === 0) {
+          delete processedFields[field.key]
+        } else {
+          // Clean up resources - remove empty url/description fields for cleaner YAML
+          processedFields[field.key] = processedFields[field.key].map((r: any) => {
+            const cleaned: any = {
+              title: r.title,
+              type: r.type
+            }
+            if (r.url && r.url.trim()) {
+              cleaned.url = r.url.trim()
+            }
+            if (r.description && r.description.trim()) {
+              cleaned.description = r.description.trim()
+            }
+            return cleaned
+          })
+        }
       }
       
       // Remove empty values
@@ -550,6 +578,13 @@ defineExpose({ openEditor })
                 type="text"
                 class="w-full px-4 py-2.5 bg-zinc-800 border border-zinc-700 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 placeholder="tag1, tag2, tag3"
+              />
+
+              <!-- Resources Editor -->
+              <AdminResourcesEditor
+                v-else-if="field.type === 'resources'"
+                :model-value="frontmatterFields[field.key] || []"
+                @update:model-value="setFieldValue(field.key, $event)"
               />
             </div>
           </div>

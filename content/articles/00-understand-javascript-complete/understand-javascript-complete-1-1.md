@@ -1,25 +1,27 @@
 ---
-title: "JavaScript Engine"
-description: "To truly understand JavaScript, you have to look beyond the code you write and into the engine that runs it. At its heart, JavaScript is a single-threaded, non-blocking, asynchronous language. This fundamental nature is what makes it so efficient and powerful for building responsive applications, especially on the web."
-slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-25"
-datePublished: "2025-09-25"
-showOnArticles: false
-courseName: 00-understand-javascript-complete
+title: JavaScript Engine
+description: To truly understand JavaScript, you have to look beyond the code
+  you write and into the engine that runs it. At its heart, JavaScript is a
+  single-threaded, non-blocking, asynchronous language. This fundamental nature
+  is what makes it so efficient and powerful for building responsive
+  applications, especially on the web.
+datePublished: 2025-09-25
+dateModified: 2025-09-25
 topics:
   - javascript
+courseName: 00-understand-javascript-complete
+showOnArticles: false
+featured: false
 resources:
-  - title: "JS course PDF - 1"
-    type: "PDF"
-    url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758792130/Portfolio/javaScriptCourse/pdf/JavaScript-day1_How-JavaScript-Work_compressed_ylrymp.pdf"
-    description: "A PDF Notes on JavaScript Engine topic"
-
+  - title: JS course PDF - 1
+    type: PDF
+    url: https://res.cloudinary.com/duojkrgue/image/upload/v1758792130/Portfolio/javaScriptCourse/pdf/JavaScript-day1_How-JavaScript-Work_compressed_ylrymp.pdf
+    description: A PDF Notes on JavaScript Engine topic
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758795081/Portfolio/javaScriptCourse/images/01/1_t9gtmc.png)
 
-How JavaScript Works?
---------------------------------------
+## How JavaScript Works?
 
 To truly understand JavaScript, you have to look beyond the code you write and into the engine that runs it. At its heart, JavaScript is a single-threaded, non-blocking, asynchronous language. This fundamental nature is what makes it so efficient and powerful for building responsive applications, especially on the web.
 
