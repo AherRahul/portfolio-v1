@@ -299,16 +299,31 @@ async function handleSave() {
     // Ensure we're replacing the entire frontmatter block, not duplicating
     // Support both Windows (\r\n) and Unix (\n) line endings
     let newContent = ''
-    const hasFrontmatter = props.modelValue.match(/^---\r?\n[\s\S]*?\r?\n---/)
     
-    if (hasFrontmatter) {
-      // Replace existing frontmatter
-      newContent = props.modelValue.replace(
-        /^---\r?\n[\s\S]*?\r?\n---\r?\n/,
-        `---\n${newFrontmatter}---\n`
-      )
+    // More robust frontmatter matching - match from start of file
+    // Pattern: --- (optional whitespace, newline) content --- (optional whitespace, optional newline)
+    // Use non-greedy match but ensure we match the closing --- that's on its own line
+    const frontmatterPattern = /^---\s*\r?\n([\s\S]*?)\r?\n\s*---\s*(\r?\n|$)/
+    const frontmatterMatch = props.modelValue.match(frontmatterPattern)
+    
+    if (frontmatterMatch) {
+      // Get everything after the frontmatter block
+      const frontmatterEndIndex = frontmatterMatch.index! + frontmatterMatch[0].length
+      const afterFrontmatter = props.modelValue.substring(frontmatterEndIndex)
+      
+      // Preserve the newline structure - if there was content after frontmatter, ensure newline
+      let newlineAfter = ''
+      if (afterFrontmatter.trim()) {
+        // If content follows and doesn't start with newline, add one
+        if (!afterFrontmatter.startsWith('\n') && !afterFrontmatter.startsWith('\r\n')) {
+          newlineAfter = '\n'
+        }
+      }
+      
+      // Replace the entire frontmatter block
+      newContent = `---\n${newFrontmatter}---${newlineAfter}${afterFrontmatter}`
     } else {
-      // Add frontmatter to the beginning
+      // No frontmatter found, add it to the beginning
       newContent = `---\n${newFrontmatter}---\n${props.modelValue}`
     }
     

@@ -433,6 +433,7 @@ function handleViewOnSite() {
               @save="handleSave"
               @view-on-site="handleViewOnSite"
               class="h-[calc(100vh-280px)]"
+              style="min-height: 600px; height: 600px;"
             />
           </div>
         </div>

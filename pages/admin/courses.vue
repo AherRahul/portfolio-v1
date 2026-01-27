@@ -13,10 +13,15 @@ const isEditing = ref(false)
 const saving = ref(false)
 const deleting = ref(false)
 const creating = ref(false)
-const newFileName = ref('')
+const newCourseData = ref({
+  fileName: '',
+  title: '',
+  description: ''
+})
 
 const fileBrowser = ref()
 const markdownEditor = ref()
+const courseContentEditor = ref()
 
 const contentType = 'courses'
 
@@ -76,27 +81,30 @@ async function handleSave() {
 async function handleDelete() {
   if (!selectedFile.value) return
   
-  const confirmed = confirm(`Are you sure you want to delete "${selectedFile.value}"? This action cannot be undone.`)
+  const confirmed = confirm(`Are you sure you want to delete "${selectedFile.value}" and its associated articles folder? This action cannot be undone.`)
   if (!confirmed) return
   
   deleting.value = true
   try {
-    await $fetch('/api/admin/content/file', {
-      method: 'DELETE',
+    // Extract course slug from file path
+    const courseSlug = selectedFile.value.split('/').pop() || selectedFile.value
+    
+    // Use course-specific delete endpoint that also deletes articles folder
+    await $fetch('/api/admin/courses/delete', {
+      method: 'POST',
       body: {
-        type: contentType,
-        path: selectedFile.value
+        courseSlug: courseSlug
       }
     })
     
-    alert('File deleted successfully!')
+    alert('Course and associated articles folder deleted successfully!')
     selectedFile.value = ''
     fileContent.value = ''
     isEditing.value = false
     fileBrowser.value?.refresh()
   } catch (err: any) {
-    console.error('Error deleting file:', err)
-    const errorMsg = err.data?.message || err.message || 'Failed to delete file'
+    console.error('Error deleting course:', err)
+    const errorMsg = err.data?.message || err.message || 'Failed to delete course'
     alert(`Error: ${errorMsg}`)
   } finally {
     deleting.value = false
@@ -105,43 +113,75 @@ async function handleDelete() {
 
 function handleNewFile() {
   creating.value = true
+  // Reset form
+  newCourseData.value = {
+    fileName: '',
+    title: '',
+    description: ''
+  }
 }
 
-async function createNewFile() {
-  if (!newFileName.value.trim()) {
+async function createNewCourse() {
+  if (!newCourseData.value.fileName.trim()) {
     alert('Please enter a file name')
     return
   }
   
-  // Ensure .md extension
-  let fileName = newFileName.value.trim()
-  if (!fileName.endsWith('.md')) {
-    fileName += '.md'
+  if (!newCourseData.value.title.trim()) {
+    alert('Please enter a course title')
+    return
   }
   
-  // Construct path
-  const filePath = currentPath.value ? `${currentPath.value}/${fileName}` : fileName
+  if (!newCourseData.value.description.trim()) {
+    alert('Please enter a course description')
+    return
+  }
   
   try {
-    // Create course template
-    const template = '---\ntitle: "New Course"\ndescription: "Course description"\ntutor: 1\ntime: "10hr"\ntopics:\n  - javascript\n---\n\n# New Course\n\nStart writing your course content here...'
-    
-    await $fetch('/api/admin/content/file', {
+    const response = await $fetch('/api/admin/courses/create', {
       method: 'POST',
       body: {
-        type: contentType,
-        path: filePath,
-        content: template
+        fileName: newCourseData.value.fileName.trim(),
+        title: newCourseData.value.title.trim(),
+        description: newCourseData.value.description.trim()
       }
     })
     
-    newFileName.value = ''
+    // Reset form
+    newCourseData.value = {
+      fileName: '',
+      title: '',
+      description: ''
+    }
     creating.value = false
+    
+    // Select the newly created course file
+    if (response.course && (response.course as any).fileName) {
+      selectedFile.value = (response.course as any).fileName
+      
+      // Load the file content without full page refresh
+      try {
+        const fileResponse = await $fetch('/api/admin/content/file', {
+          query: {
+            type: contentType,
+            path: selectedFile.value
+          }
+        })
+        fileContent.value = fileResponse.content
+        isEditing.value = true
+      } catch (err: any) {
+        console.error('Error loading file:', err)
+      }
+    }
+    
+    // Refresh file browser without page reload
+    await nextTick()
     fileBrowser.value?.refresh()
-    selectedFile.value = filePath
+    
+    alert('Course created successfully! Course file, articles folder, and first topic have been created.')
   } catch (err: any) {
-    console.error('Error creating file:', err)
-    const errorMsg = err.data?.message || err.message || 'Failed to create file'
+    console.error('Error creating course:', err)
+    const errorMsg = err.data?.message || err.message || 'Failed to create course'
     alert(`Error: ${errorMsg}`)
   }
 }
@@ -167,6 +207,16 @@ function handleViewOnSite() {
   if (!selectedFile.value) return
   const fileName = selectedFile.value.replace('.md', '')
   window.open(`/courses/${fileName}`, '_blank')
+}
+
+function handleOpenContentEditor() {
+  nextTick(() => {
+    if (courseContentEditor.value && typeof courseContentEditor.value.openEditor === 'function') {
+      courseContentEditor.value.openEditor()
+    } else {
+      console.error('CourseContentEditor ref not available')
+    }
+  })
 }
 </script>
 
@@ -243,6 +293,13 @@ function handleViewOnSite() {
               
               <div class="flex items-center gap-2">
                 <button
+                  @click="handleOpenContentEditor"
+                  class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-md flex items-center gap-2 transition-colors"
+                >
+                  <Icon name="heroicons:squares-2x2" />
+                  Manage Content
+                </button>
+                <button
                   @click="handleSave"
                   :disabled="saving"
                   class="bg-green-600 hover:bg-green-700 disabled:bg-zinc-700 disabled:cursor-not-allowed text-white px-4 py-2 rounded-md flex items-center gap-2 transition-colors"
@@ -270,48 +327,102 @@ function handleViewOnSite() {
               @save="handleSave"
               @view-on-site="handleViewOnSite"
               class="h-[calc(100vh-280px)]"
+              style="min-height: 600px; height: 600px;"
             />
           </div>
         </div>
       </div>
+      
+      <!-- Course Content Editor - Always rendered but hidden -->
+      <AdminCourseContentEditor
+        v-if="isEditing"
+        ref="courseContentEditor"
+        v-model="fileContent"
+        :course-slug="selectedFile.split('/').pop()?.replace('.md', '') || ''"
+        @save="handleSave"
+      />
     </div>
     
-    <!-- Create File Modal -->
+    <!-- Create Course Modal -->
     <div
       v-if="creating"
-      class="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
+      class="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4 overflow-y-auto"
       @click.self="creating = false"
     >
-      <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-6 max-w-md w-full">
-        <h3 class="text-xl font-semibold mb-4">Create New Course</h3>
-        <div class="mb-4">
-          <label class="block text-sm font-medium text-zinc-300 mb-2">
-            File Name
-          </label>
-          <input
-            v-model="newFileName"
-            type="text"
-            placeholder="my-course.md"
-            class="w-full px-4 py-2 bg-zinc-800 border border-zinc-700 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-red-500"
-            @keyup.enter="createNewFile"
-          />
-          <p class="text-xs text-zinc-500 mt-1">
-            Will be created in: courses/
-          </p>
+      <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-6 max-w-lg w-full my-8">
+        <h3 class="text-xl font-semibold mb-6">Create New Course</h3>
+        
+        <div class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium text-zinc-300 mb-2">
+              File Name (Slug) <span class="text-red-500">*</span>
+            </label>
+            <input
+              v-model="newCourseData.fileName"
+              type="text"
+              placeholder="my-course-name"
+              class="w-full px-4 py-2 bg-zinc-800 border border-zinc-700 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-red-500"
+              @keyup.enter="createNewCourse"
+            />
+            <p class="text-xs text-zinc-500 mt-1">
+              URL-friendly name (lowercase, hyphens only). Will create: courses/my-course-name.md
+            </p>
+          </div>
+          
+          <div>
+            <label class="block text-sm font-medium text-zinc-300 mb-2">
+              Course Title <span class="text-red-500">*</span>
+            </label>
+            <input
+              v-model="newCourseData.title"
+              type="text"
+              placeholder="My Awesome Course"
+              class="w-full px-4 py-2 bg-zinc-800 border border-zinc-700 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-red-500"
+              @keyup.enter="createNewCourse"
+            />
+            <p class="text-xs text-zinc-500 mt-1">
+              Display name for the course
+            </p>
+          </div>
+          
+          <div>
+            <label class="block text-sm font-medium text-zinc-300 mb-2">
+              Course Description <span class="text-red-500">*</span>
+            </label>
+            <textarea
+              v-model="newCourseData.description"
+              rows="4"
+              placeholder="A comprehensive course that covers..."
+              class="w-full px-4 py-2 bg-zinc-800 border border-zinc-700 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-red-500 resize-none"
+            ></textarea>
+            <p class="text-xs text-zinc-500 mt-1">
+              Brief description of what the course covers
+            </p>
+          </div>
         </div>
-        <div class="flex gap-3">
-          <button
-            @click="createNewFile"
-            class="flex-1 bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md transition-colors"
-          >
-            Create
-          </button>
-          <button
-            @click="creating = false"
-            class="flex-1 bg-zinc-800 hover:bg-zinc-700 text-white px-4 py-2 rounded-md transition-colors"
-          >
-            Cancel
-          </button>
+        
+        <div class="mt-6 pt-4 border-t border-zinc-800">
+          <p class="text-xs text-zinc-400 mb-4">
+            This will create:
+            <br />• Course file: <code class="text-zinc-500">courses/{{ newCourseData.fileName || 'filename' }}.md</code>
+            <br />• Articles folder: <code class="text-zinc-500">articles/{{ newCourseData.fileName || 'filename' }}/</code>
+            <br />• First topic: <code class="text-zinc-500">articles/{{ newCourseData.fileName || 'filename' }}/{{ newCourseData.fileName || 'filename' }}-1-1.md</code>
+          </p>
+          
+          <div class="flex gap-3">
+            <button
+              @click="createNewCourse"
+              class="flex-1 bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md transition-colors font-medium"
+            >
+              Create Course
+            </button>
+            <button
+              @click="creating = false"
+              class="flex-1 bg-zinc-800 hover:bg-zinc-700 text-white px-4 py-2 rounded-md transition-colors"
+            >
+              Cancel
+            </button>
+          </div>
         </div>
       </div>
     </div>

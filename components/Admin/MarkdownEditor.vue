@@ -20,50 +20,145 @@ const showPreview = ref(false)
 const saving = ref(false)
 const frontmatterEditorEnhanced = ref()
 
-// Parse markdown for preview
+// Floating toolbar state
+const toolbarPosition = ref({ x: 20, y: 20 })
+const isDragging = ref(false)
+const dragStart = ref({ x: 0, y: 0 })
+const toolbarRef = ref<HTMLElement | null>(null)
+const isToolbarFloating = ref(false)
+
+// Load toolbar position from localStorage
+onMounted(() => {
+  const savedPosition = localStorage.getItem('markdown-editor-toolbar-position')
+  const savedFloating = localStorage.getItem('markdown-editor-toolbar-floating')
+  if (savedPosition) {
+    try {
+      toolbarPosition.value = JSON.parse(savedPosition)
+    } catch (e) {
+      console.error('Failed to parse toolbar position:', e)
+    }
+  }
+  if (savedFloating === 'true') {
+    isToolbarFloating.value = true
+  }
+})
+
+// Save toolbar position to localStorage
+function saveToolbarPosition() {
+  localStorage.setItem('markdown-editor-toolbar-position', JSON.stringify(toolbarPosition.value))
+  localStorage.setItem('markdown-editor-toolbar-floating', String(isToolbarFloating.value))
+}
+
+// Toggle floating toolbar
+function toggleFloatingToolbar() {
+  isToolbarFloating.value = !isToolbarFloating.value
+  saveToolbarPosition()
+}
+
+// Drag handlers
+function startDrag(e: MouseEvent) {
+  if (!isToolbarFloating.value) return
+  isDragging.value = true
+  dragStart.value = {
+    x: e.clientX - toolbarPosition.value.x,
+    y: e.clientY - toolbarPosition.value.y
+  }
+  document.addEventListener('mousemove', handleDrag)
+  document.addEventListener('mouseup', stopDrag)
+  e.preventDefault()
+}
+
+function handleDrag(e: MouseEvent) {
+  if (!isDragging.value) return
+  
+  const newX = e.clientX - dragStart.value.x
+  const newY = e.clientY - dragStart.value.y
+  
+  // Constrain to viewport
+  const maxX = window.innerWidth - (toolbarRef.value?.offsetWidth || 400)
+  const maxY = window.innerHeight - (toolbarRef.value?.offsetHeight || 60)
+  
+  toolbarPosition.value = {
+    x: Math.max(0, Math.min(newX, maxX)),
+    y: Math.max(0, Math.min(newY, maxY))
+  }
+}
+
+function stopDrag() {
+  isDragging.value = false
+  document.removeEventListener('mousemove', handleDrag)
+  document.removeEventListener('mouseup', stopDrag)
+  saveToolbarPosition()
+}
+
+// Parse markdown for preview - completely strip frontmatter
 const parsedContent = computed(() => {
   if (!content.value) return { frontmatter: {}, body: '' }
   
-  // Simple frontmatter parser
-  const lines = content.value.split('\n')
-  let inFrontmatter = false
-  let frontmatterLines: string[] = []
-  let bodyLines: string[] = []
+  let body = content.value
+  let frontmatter: any = {}
   
-  for (let i = 0; i < lines.length; i++) {
-    const line = lines[i]
+  // More robust frontmatter parser - strip everything between --- delimiters
+  // Try multiple patterns to catch edge cases
+  const frontmatterPatterns = [
+    /^---\s*\r?\n([\s\S]*?)\r?\n\s*---\s*\r?\n?/,  // Standard with optional \r
+    /^---\s*\n([\s\S]*?)\n\s*---\s*\n?/,           // Standard Unix
+    /^---\s*\r\n([\s\S]*?)\r\n\s*---\s*\r\n?/,     // Windows style
+  ]
+  
+  let match: RegExpMatchArray | null = null
+  for (const pattern of frontmatterPatterns) {
+    match = content.value.match(pattern)
+    if (match) break
+  }
+  
+  if (match) {
+    // Extract frontmatter content
+    const frontmatterContent = match[1].trim()
     
-    if (i === 0 && line.trim() === '---') {
-      inFrontmatter = true
-      continue
-    }
+    // Parse frontmatter (simple YAML-like parsing)
+    frontmatterContent.split('\n').forEach(line => {
+      const trimmedLine = line.trim()
+      if (!trimmedLine || trimmedLine.startsWith('#')) return
+      
+      const colonIndex = trimmedLine.indexOf(':')
+      if (colonIndex > -1) {
+        const key = trimmedLine.substring(0, colonIndex).trim()
+        let value = trimmedLine.substring(colonIndex + 1).trim()
+        // Remove quotes
+        value = value.replace(/^["']|["']$/g, '')
+        frontmatter[key] = value
+      }
+    })
     
-    if (inFrontmatter && line.trim() === '---') {
-      inFrontmatter = false
-      continue
-    }
-    
-    if (inFrontmatter) {
-      frontmatterLines.push(line)
-    } else {
-      bodyLines.push(line)
+    // Remove frontmatter block completely from body
+    body = content.value.replace(match[0], '').trim()
+  } else {
+    // Fallback: if no frontmatter delimiters found, check if content starts with YAML-like structure
+    // and remove it manually
+    const lines = content.value.split('\n')
+    if (lines.length > 0 && lines[0].trim() === '---') {
+      // Find closing ---
+      let endIndex = -1
+      for (let i = 1; i < lines.length; i++) {
+        if (lines[i].trim() === '---') {
+          endIndex = i
+          break
+        }
+      }
+      if (endIndex > -1) {
+        // Remove frontmatter lines (including the --- delimiters)
+        body = lines.slice(endIndex + 1).join('\n').trim()
+      }
     }
   }
   
-  // Parse frontmatter
-  const frontmatter: any = {}
-  frontmatterLines.forEach(line => {
-    const colonIndex = line.indexOf(':')
-    if (colonIndex > -1) {
-      const key = line.substring(0, colonIndex).trim()
-      const value = line.substring(colonIndex + 1).trim().replace(/^["']|["']$/g, '')
-      frontmatter[key] = value
-    }
-  })
+  // Final safety check: remove any remaining frontmatter-like patterns
+  body = body.replace(/^---[\s\S]*?---\s*\n?/m, '')
   
   return {
     frontmatter,
-    body: bodyLines.join('\n')
+    body: body.trim()
   }
 })
 
@@ -117,21 +212,21 @@ const renderedHTML = computed(() => {
   html = html.replace(/^> (.+)$/gim, '<blockquote class="border-l-4 border-red-500 pl-4 italic text-zinc-400 my-4">$1</blockquote>')
   
   // 9.5. Tables (basic support)
-  html = html.replace(/\|(.+)\|\n\|[-:\s|]+\|\n((?:\|.+\|\n?)*)/g, (match, header, rows) => {
-    const headers = header.split('|').map(h => h.trim()).filter(Boolean)
-    const rowData = rows.trim().split('\n').map(row => 
-      row.split('|').map(cell => cell.trim()).filter(Boolean)
+  html = html.replace(/\|(.+)\|\n\|[-:\s|]+\|\n((?:\|.+\|\n?)*)/g, (match: string, header: string, rows: string) => {
+    const headers = header.split('|').map((h: string) => h.trim()).filter(Boolean)
+    const rowData = rows.trim().split('\n').map((row: string) => 
+      row.split('|').map((cell: string) => cell.trim()).filter(Boolean)
     )
     
     let table = '<table class="w-full border-collapse my-6"><thead><tr>'
-    headers.forEach(h => {
+    headers.forEach((h: string) => {
       table += `<th class="border border-zinc-700 bg-zinc-800 px-4 py-2 text-left font-semibold">${h}</th>`
     })
     table += '</tr></thead><tbody>'
     
-    rowData.forEach(row => {
+    rowData.forEach((row: string[]) => {
       table += '<tr>'
-      row.forEach(cell => {
+      row.forEach((cell: string) => {
         table += `<td class="border border-zinc-700 px-4 py-2">${cell}</td>`
       })
       table += '</tr>'
@@ -291,11 +386,15 @@ function handleKeyDown(event: KeyboardEvent) {
 // Auto-save draft to localStorage
 const draftKey = computed(() => props.filePath ? `admin-draft-${props.filePath}` : null)
 
+let draftTimeout: ReturnType<typeof setTimeout> | null = null
 watch(content, (newValue) => {
   if (draftKey.value) {
-    localStorage.setItem(draftKey.value, newValue)
+    if (draftTimeout) clearTimeout(draftTimeout)
+    draftTimeout = setTimeout(() => {
+      localStorage.setItem(draftKey.value!, newValue)
+    }, 1000)
   }
-}, { debounce: 1000 })
+})
 
 onMounted(() => {
   // Restore draft if exists
@@ -320,9 +419,42 @@ defineExpose({ clearDraft })
 </script>
 
 <template>
-  <div class="flex flex-col h-full bg-zinc-900 border border-zinc-800 rounded-lg overflow-hidden">
-    <!-- Toolbar -->
-    <div class="bg-zinc-800 border-b border-zinc-700 p-2 flex items-center gap-1 flex-wrap">
+  <div class="flex flex-col h-full bg-zinc-900 border border-zinc-800 rounded-lg overflow-hidden relative">
+    <!-- Floating Toolbar Toggle Button -->
+    <button
+      @click="toggleFloatingToolbar"
+      class="absolute top-2 right-2 z-30 bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 rounded-md p-1.5 transition-colors"
+      :title="isToolbarFloating ? 'Dock Toolbar' : 'Float Toolbar'"
+    >
+      <Icon :name="isToolbarFloating ? 'heroicons:arrows-pointing-in' : 'heroicons:arrows-pointing-out'" class="text-zinc-300 text-sm" />
+    </button>
+
+    <!-- Toolbar - Can be fixed or floating -->
+    <div
+      ref="toolbarRef"
+      :class="[
+        isToolbarFloating 
+          ? 'fixed rounded-lg shadow-2xl border-2 border-zinc-600' 
+          : 'flex-shrink-0 border-b',
+        'z-20 bg-zinc-800 border-zinc-700 p-2 flex items-center gap-1 flex-wrap',
+        isDragging ? 'cursor-move select-none' : ''
+      ]"
+      :style="isToolbarFloating ? {
+        left: `${toolbarPosition.x}px`,
+        top: `${toolbarPosition.y}px`,
+        maxWidth: '90vw'
+      } : {}"
+    >
+      <!-- Drag Handle (only visible when floating) -->
+      <div
+        v-if="isToolbarFloating"
+        @mousedown="startDrag"
+        class="absolute -top-1 left-1/2 transform -translate-x-1/2 w-12 h-1.5 bg-zinc-600 rounded-full cursor-move hover:bg-zinc-500 transition-colors"
+        title="Drag to move"
+      ></div>
+      
+      <!-- Toolbar Content -->
+      <div class="flex items-center gap-1 flex-wrap w-full">
       <!-- Headings -->
       <div class="flex gap-1 border-r border-zinc-700 pr-2 mr-2">
         <button
@@ -409,16 +541,20 @@ defineExpose({ clearDraft })
       >
         <Icon name="heroicons:eye" />
       </button>
+      </div>
     </div>
     
-    <!-- Editor/Preview Area -->
-    <div class="flex-1 flex overflow-hidden">
+    <!-- Spacer when toolbar is floating -->
+    <div v-if="isToolbarFloating" class="h-2"></div>
+    
+    <!-- Editor/Preview Area - Scrollable content -->
+    <div class="flex-1 flex overflow-hidden min-h-0">
       <!-- Editor -->
-      <div :class="showPreview ? 'w-1/2 border-r border-zinc-700' : 'w-full'" style="min-height: 500px;">
+      <div :class="showPreview ? 'w-1/2 border-r border-zinc-700' : 'w-full'" >
         <textarea
           v-model="content"
           @keydown="handleKeyDown"
-          class="w-full h-full p-6 bg-zinc-900 text-zinc-100 font-mono text-sm resize-none focus:outline-none leading-relaxed"
+          class="w-full min-h-full p-6 bg-zinc-900 text-zinc-100 font-mono text-sm resize-none focus:outline-none leading-relaxed"
           placeholder="Start writing your markdown content..."
           spellcheck="false"
         ></textarea>
@@ -435,7 +571,7 @@ defineExpose({ clearDraft })
         </div>
         
         <!-- Rendered Content (Matches live site styling) -->
-        <div class="p-8 max-w-4xl mx-auto">
+        <div class="p-4 max-w-4xl mx-auto" style="min-height: 600px; height: 600px;">
           <article class="prose prose-lg prose-invert prose-zinc max-w-none">
             <div v-html="renderedHTML" class="text-zinc-100"></div>
           </article>
