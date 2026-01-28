@@ -175,7 +175,7 @@ function handleViewOnSite() {
                 </button>
               </div>
             </div>
-            <AdminMarkdownEditor ref="markdownEditor" v-model="fileContent" :file-path="selectedFile" :content-type="contentType" @save="handleSave" @view-on-site="handleViewOnSite" class="h-[calc(100vh-280px)]" />
+            <AdminMarkdownEditor ref="markdownEditor" v-model="fileContent" :file-path="selectedFile" :content-type="contentType" @save="handleSave" @view-on-site="handleViewOnSite" class="h-[calc(100vh-280px)]" style="min-height: 600px; height: 600px;" />
           </div>
         </div>
       </div>
