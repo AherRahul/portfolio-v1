@@ -2,8 +2,8 @@
 title: "Big O Notation & Complexity Analysis"
 description: "Master the language of algorithmic efficiency. Learn to analyze time and space complexity, understand Big O, Big Theta, and Big Omega notations, and make informed decisions about algorithm performance."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-26"
-datePublished: "2025-09-26"
+dateModified: "2026-09-26"
+datePublished: "2026-09-26"
 showOnArticles: false
 courseName: 03-data-structure
 topics:
@@ -139,7 +139,7 @@ Time complexity measures how efficient an algorithm is as the input size increas
 *   **Time Complexity:** O(n)
 *   **Requirement:** Can work on unsorted arrays
 
-![Linear Search Graph](https://namastedev.com/blog/wp-content/uploads/2025/06/Screenshot-2025-06-17-at-3.50.59%E2%80%AFPM.png)
+![Linear Search Graph](https://namastedev.com/blog/wp-content/uploads/2025/06/Screenshot-2026-06-17-at-3.50.59%E2%80%AFPM.png)
 
 ### Binary Search
 
@@ -149,7 +149,7 @@ Time complexity measures how efficient an algorithm is as the input size increas
 *   **Time Complexity:** O(log n)
 *   **Requirement:** Only works on sorted arrays
 
-![Binary Search Graph](https://namastedev.com/blog/wp-content/uploads/2025/06/Screenshot-2025-06-17-at-3.51.05%E2%80%AFPM.png)
+![Binary Search Graph](https://namastedev.com/blog/wp-content/uploads/2025/06/Screenshot-2026-06-17-at-3.51.05%E2%80%AFPM.png)
 
 When we use `Linear Search` for an input size of 100, it runs 100 times, whereas `Binary Search` takes only 7 steps. This shows that Binary Search is more efficient. As the input size (n) increases, the way an algorithm behaves helps us understand how efficient it is. Also, the graph helps us understand that Binary Search is more efficient.
 
@@ -280,7 +280,7 @@ void permute(string s, int l, int r) {
 *   `O(2^n)` – Recursion (e.g., Fibonacci)
 *   `O(n!)` – e.g., Brute-force permutations
 
-![](https://namastedev.com/blog/wp-content/uploads/2025/07/Screenshot-2025-07-25-at-10.31.42 AM.png)
+![](https://namastedev.com/blog/wp-content/uploads/2025/07/Screenshot-2026-07-25-at-10.31.42 AM.png)
 
 ## What is Space Complexity?
 

@@ -2,7 +2,7 @@
 title: "Fixing Common Accessibility Issues"
 description: "Master systematic approaches to identifying, prioritizing, and fixing accessibility issues. Learn common accessibility problems and their solutions, with practical remediation strategies for real-world applications."
 image: "https://res.cloudinary.com/duojkrgue/image/upload/v1759048331/Portfolio/FrontendSystemDesignCourse/titleImages/54_biczvd.png"
-publishedAt: "2025-01-13"
+publishedAt: "2026-01-13"
 is_on_youtube: false
 courseName: "02-frontend-system-design"
 id: 70

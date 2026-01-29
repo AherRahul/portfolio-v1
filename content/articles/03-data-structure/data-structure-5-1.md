@@ -2,8 +2,8 @@
 title: "Prefix Sum"
 description: "Master the prefix sum technique for efficient range query operations. Learn how to precompute cumulative sums to answer range sum queries in O(1) time complexity."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-26"
-datePublished: "2025-09-26"
+dateModified: "2026-09-26"
+datePublished: "2026-09-26"
 showOnArticles: false
 courseName: 03-data-structure
 topics:

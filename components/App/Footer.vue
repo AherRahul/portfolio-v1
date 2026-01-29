@@ -8,7 +8,7 @@ const navigation = {
     { name: 'About', to: '/about/' },
     // { name: 'My equipment', to: '/uses/' },
     // { name: 'Sponsors', to: '/sponsors/' },
-    { name: 'Topics', to: '/topics/' }
+    // { name: 'Topics', to: '/topics/' }
   ],
   services: [
     { name: 'Consulting', to: '/consulting/' },

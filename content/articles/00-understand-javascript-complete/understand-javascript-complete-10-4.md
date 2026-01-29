@@ -1,31 +1,33 @@
 ---
-title: "Code Splitting & Lazy Loading"
-description: "Master code splitting and lazy loading techniques to optimize application startup time. Learn dynamic imports, route-based splitting, component lazy loading, and intelligent resource management for better performance."
-slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-26"
-datePublished: "2025-09-26"
+title: Code Splitting & Lazy Loading
+description: Master code splitting and lazy loading techniques to optimize
+  application startup time. Learn dynamic imports, route-based splitting,
+  component lazy loading, and intelligent resource management for better
+  performance.
+slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
+dateModified: 2026-01-29
+datePublished: 2026-09-26
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
   - javascript
 resources:
-  - title: "Dynamic Imports - MDN"
-    type: "reference"
-    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import#dynamic_imports"
-    description: "Official documentation for dynamic imports"
-  - title: "Code Splitting - Webpack"
-    type: "reference"
-    url: "https://webpack.js.org/guides/code-splitting/"
-    description: "Webpack's guide to code splitting strategies"
-  - title: "Intersection Observer API"
-    type: "reference"
-    url: "https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API"
-    description: "API for lazy loading based on element visibility"
-  - title: "Web Performance - Lazy Loading"
-    type: "article"
-    url: "https://web.dev/lazy-loading/"
-    description: "Best practices for lazy loading resources"
-
+  - title: Dynamic Imports - MDN
+    type: reference
+    url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import#dynamic_imports
+    description: Official documentation for dynamic imports
+  - title: Code Splitting - Webpack
+    type: reference
+    url: https://webpack.js.org/guides/code-splitting/
+    description: Webpack's guide to code splitting strategies
+  - title: Intersection Observer API
+    type: reference
+    url: https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
+    description: API for lazy loading based on element visibility
+  - title: Web Performance - Lazy Loading
+    type: article
+    url: https://web.dev/lazy-loading/
+    description: Best practices for lazy loading resources
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758811611/Portfolio/javaScriptCourse/images/all%20title%20images/45_dmgmu1.png)

@@ -1,31 +1,33 @@
 ---
-title: "Prototypes and Prototype Chain"
-description: "JavaScript's prototype system is unique among programming languages. Instead of traditional classes, JavaScript uses prototypes for inheritance. Understanding the prototype chain is crucial for grasping how JavaScript objects inherit properties and methods from one another."
-slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-25"
-datePublished: "2025-09-25"
+title: Prototypes and Prototype Chain
+description: JavaScript's prototype system is unique among programming
+  languages. Instead of traditional classes, JavaScript uses prototypes for
+  inheritance. Understanding the prototype chain is crucial for grasping how
+  JavaScript objects inherit properties and methods from one another.
+slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
+dateModified: 2026-01-29
+datePublished: 2026-09-25
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
   - javascript
 resources:
-  - title: "JS course PDF - 10"
-    type: "PDF"
-    url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758792130/Portfolio/javaScriptCourse/pdf/JavaScript-day10_Prototypes_compressed.pdf"
-    description: "A PDF Notes on Prototypes and Prototype Chain topic"
-  - title: "MDN - Object prototypes"
-    type: "documentation"
-    url: "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes"
-    description: "Comprehensive guide to JavaScript prototypes from MDN"
-  - title: "MDN - Inheritance and the prototype chain"
-    type: "documentation"
-    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain"
-    description: "Detailed explanation of JavaScript's prototype-based inheritance"
-  - title: "JavaScript.info - Prototypal inheritance"
-    type: "article"
-    url: "https://javascript.info/prototype-inheritance"
-    description: "In-depth tutorial on prototypal inheritance with examples"
-
+  - title: JS course PDF - 10
+    type: PDF
+    url: https://res.cloudinary.com/duojkrgue/image/upload/v1758792130/Portfolio/javaScriptCourse/pdf/JavaScript-day10_Prototypes_compressed.pdf
+    description: A PDF Notes on Prototypes and Prototype Chain topic
+  - title: MDN - Object prototypes
+    type: documentation
+    url: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes
+    description: Comprehensive guide to JavaScript prototypes from MDN
+  - title: MDN - Inheritance and the prototype chain
+    type: documentation
+    url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain
+    description: Detailed explanation of JavaScript's prototype-based inheritance
+  - title: JavaScript.info - Prototypal inheritance
+    type: article
+    url: https://javascript.info/prototype-inheritance
+    description: In-depth tutorial on prototypal inheritance with examples
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758811616/Portfolio/javaScriptCourse/images/all%20title%20images/11_kmovpj.png)

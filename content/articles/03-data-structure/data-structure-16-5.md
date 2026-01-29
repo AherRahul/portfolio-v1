@@ -2,8 +2,8 @@
 title: "Matrix Search - Row and Column Wise Sorted"
 description: "Search in row-wise and column-wise sorted 2D matrix. Master staircase search algorithm, optimize from O(MN) to O(M+N), and handle 2D search efficiently."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-12-24"
-datePublished: "2025-12-24"
+dateModified: "2026-12-24"
+datePublished: "2026-12-24"
 showOnArticles: false
 courseName: 03-data-structure
 topics:

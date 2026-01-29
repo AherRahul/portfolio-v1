@@ -2,8 +2,8 @@
 title: "Unique Elements in Array"
 description: "Find count of unique elements efficiently. Master hash set for uniqueness, compare with sorting approach, and handle large datasets optimally."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-12-24"
-datePublished: "2025-12-24"
+dateModified: "2026-12-24"
+datePublished: "2026-12-24"
 showOnArticles: false
 courseName: 03-data-structure
 topics:

@@ -1,8 +1,8 @@
 ---
 title: "Problem - Counting Subarrays Easy"
 description: "Master various subarray counting techniques. Learn to count subarrays satisfying different conditions efficiently and understand pattern recognition in counting problems."
-dateModified: 2025-02-08
-datePublished: 2025-02-08
+dateModified: 2026-02-08
+datePublished: 2026-02-08
 topics:
   - data-structures
 courseName: 03-data-structure

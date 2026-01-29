@@ -2,8 +2,8 @@
 title: "Print A to 1 using Recursion"
 description: "Learn to print numbers from A to 1 using recursion. Master the fundamental concept of recursive countdown, understand call stack behavior, and implement your first recursive function with proper base case handling."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-12-24"
-datePublished: "2025-12-24"
+dateModified: "2026-12-24"
+datePublished: "2026-12-24"
 showOnArticles: false
 courseName: 03-data-structure
 topics:

@@ -2,8 +2,8 @@
 title: "Introduction to Express.js Framework"
 description: "Express.js is the most popular, minimal, and flexible web framework for NodeJs. These notes cover what Express.js is, why we need it over vanilla NodeJs, how it simplifies server development, and the fundamental concepts like routing, middleware, and the request/response lifecycle."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-15"
-datePublished: "2025-09-15"
+dateModified: "2026-09-15"
+datePublished: "2026-09-15"
 showOnArticles: false
 courseName: 01-beginner-to-advance-nodejs
 topics:

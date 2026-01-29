@@ -2,8 +2,8 @@
 title: "01 Networking - How the Web Works: Understanding the Architecture of the Web"
 description: "'Networking - How Web Works?' provides an in-depth understanding of how the internet facilitates communication between users and servers. It begins with the basics of web browsers sending HTTP/HTTPS requests to servers and receiving responses. The role of DNS (Domain Name System) in translating domain names into IP addresses, which act as unique identifiers for devices on a network, is crucial.The topic delves into protocols like TCP/IP, which ensure reliable data transmission across networks, and explores concepts such as request-response cycles and status codes that define server interactions. "
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles/how-web-works.md"
-dateModified: "2025-01-11"
-datePublished: "2025-01-10"
+dateModified: "2026-01-11"
+datePublished: "2026-01-10"
 showOnArticles: false
 courseName: ''
 topics:

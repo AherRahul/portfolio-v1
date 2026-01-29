@@ -2,8 +2,8 @@
 title: "Indexed DB"
 description: "Explore IndexedDB for complex client-side data storage. Learn about object stores, transactions, indexing, querying, database design patterns, and building powerful offline-capable applications with IndexedDB."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-04-09"
-datePublished: "2025-04-09"
+dateModified: "2026-04-09"
+datePublished: "2026-04-09"
 showOnArticles: false
 courseName: 02-frontend-system-design
 image: https://res.cloudinary.com/duojkrgue/image/upload/v1759048367/Portfolio/FrontendSystemDesignCourse/titleImages/40_hmlkb7.png

@@ -2,8 +2,8 @@
 title: "Check Palindrome using Recursion"
 description: "Verify if a string is a palindrome using recursion. Master string manipulation with recursion, learn two-pointer recursive technique, and understand how to compare characters from both ends recursively."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-12-24"
-datePublished: "2025-12-24"
+dateModified: "2026-12-24"
+datePublished: "2026-12-24"
 showOnArticles: false
 courseName: 03-data-structure
 topics:

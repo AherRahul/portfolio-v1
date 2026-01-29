@@ -2,8 +2,8 @@
 title: "Implement Power Function using Recursion"
 description: "Implement power function (A^B % C) using recursion. Learn modular exponentiation, master divide-and-conquer optimization, and understand how to reduce O(N) to O(log N) using recursive techniques."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-12-24"
-datePublished: "2025-12-24"
+dateModified: "2026-12-24"
+datePublished: "2026-12-24"
 showOnArticles: false
 courseName: 03-data-structure
 topics:

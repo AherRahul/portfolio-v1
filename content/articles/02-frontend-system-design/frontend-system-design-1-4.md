@@ -2,8 +2,8 @@
 title: "Why GraphQL over Rest API"
 description: "Many companies today use GraphQL. In this blog, we’ll explore what GraphQL is, its benefits, and why it’s so popular. Suppose your app needs information about continents, countries, and languages. If you’re using REST API, you’ll likely call multiple API to fetch this data and then organize it for your frontend. Be patient—it’s not an Instagram Reel, but for serious learners, it’ll be worth the read."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-03-04"
-datePublished: "2025-03-04"
+dateModified: "2026-03-04"
+datePublished: "2026-03-04"
 showOnArticles: false
 courseName: 02-frontend-system-design
 topics:

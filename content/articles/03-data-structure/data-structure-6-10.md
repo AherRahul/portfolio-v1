@@ -2,8 +2,8 @@
 title: "Counting Subarrays Easy"
 description: "Count subarrays with sum less than K. Master the sliding window and two-pointer approach for subarray counting."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-26"
-datePublished: "2025-09-26"
+dateModified: "2026-09-26"
+datePublished: "2026-09-26"
 showOnArticles: false
 courseName: 03-data-structure
 topics:

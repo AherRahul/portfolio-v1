@@ -1,31 +1,33 @@
 ---
-title: "Classes and Inheritance"
-description: "ES6 introduced class syntax to JavaScript, providing a more familiar way to create objects and implement inheritance. While classes are syntactic sugar over prototypes, they offer cleaner syntax and additional features for modern JavaScript development."
-slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-25"
-datePublished: "2025-09-25"
+title: Classes and Inheritance
+description: ES6 introduced class syntax to JavaScript, providing a more
+  familiar way to create objects and implement inheritance. While classes are
+  syntactic sugar over prototypes, they offer cleaner syntax and additional
+  features for modern JavaScript development.
+slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
+dateModified: 2026-01-29
+datePublished: 2026-09-25
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
   - javascript
 resources:
-  - title: "JS course PDF - 11"
-    type: "PDF"
-    url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758792130/Portfolio/javaScriptCourse/pdf/JavaScript-day11_Classes_compressed.pdf"
-    description: "A PDF Notes on Classes and Inheritance topic"
-  - title: "MDN - Classes"
-    type: "documentation"
-    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes"
-    description: "Complete reference for JavaScript classes from MDN"
-  - title: "MDN - extends keyword"
-    type: "documentation"
-    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/extends"
-    description: "Detailed guide to class inheritance with extends"
-  - title: "JavaScript.info - Classes"
-    type: "article"
-    url: "https://javascript.info/class"
-    description: "Comprehensive tutorial on JavaScript classes with examples"
-
+  - title: JS course PDF - 11
+    type: PDF
+    url: https://res.cloudinary.com/duojkrgue/image/upload/v1758792130/Portfolio/javaScriptCourse/pdf/JavaScript-day11_Classes_compressed.pdf
+    description: A PDF Notes on Classes and Inheritance topic
+  - title: MDN - Classes
+    type: documentation
+    url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
+    description: Complete reference for JavaScript classes from MDN
+  - title: MDN - extends keyword
+    type: documentation
+    url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/extends
+    description: Detailed guide to class inheritance with extends
+  - title: JavaScript.info - Classes
+    type: article
+    url: https://javascript.info/class
+    description: Comprehensive tutorial on JavaScript classes with examples
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758811618/Portfolio/javaScriptCourse/images/all%20title%20images/12_atiwu3.png)

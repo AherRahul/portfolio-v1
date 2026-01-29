@@ -2,8 +2,8 @@
 title: "History of NodeJs in Depth"
 description: "NodeJs is a JavaScript runtime built on Chrome's V8 engine. It allows JavaScript to run outside the browser and introduced event-driven, non-blocking I/O that changed server-side programming forever. These notes explore what NodeJs is, why it was created, and how it evolved over time."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-04-10"
-datePublished: "2025-04-10"
+dateModified: "2026-04-10"
+datePublished: "2026-04-10"
 showOnArticles: false
 courseName: 01-beginner-to-advance-nodejs
 topics:

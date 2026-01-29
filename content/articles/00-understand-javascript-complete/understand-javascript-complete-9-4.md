@@ -1,31 +1,32 @@
 ---
-title: "Strategy Pattern & State Pattern"
-description: "Master behavioral design patterns for managing algorithms and state-dependent behavior. Learn to build flexible, maintainable systems that can change behavior dynamically at runtime."
-slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-26"
-datePublished: "2025-09-26"
+title: Strategy Pattern & State Pattern
+description: Master behavioral design patterns for managing algorithms and
+  state-dependent behavior. Learn to build flexible, maintainable systems that
+  can change behavior dynamically at runtime.
+slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
+dateModified: 2026-01-29
+datePublished: 2026-09-26
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
   - javascript
 resources:
-  - title: "Strategy Pattern - GoF Design Patterns"
-    type: "reference"
-    url: "https://en.wikipedia.org/wiki/Strategy_pattern"
-    description: "Classical Strategy pattern definition and theory"
-  - title: "State Pattern - GoF Design Patterns"
-    type: "reference"
-    url: "https://en.wikipedia.org/wiki/State_pattern"
-    description: "State pattern for state-dependent behavior"
-  - title: "State Machines in JavaScript"
-    type: "article"
-    url: "https://statecharts.github.io/"
-    description: "Advanced state machine concepts and implementations"
-  - title: "Behavioral Design Patterns"
-    type: "article"
-    url: "https://refactoring.guru/design-patterns/behavioral-patterns"
-    description: "Overview of behavioral patterns and their applications"
-
+  - title: Strategy Pattern - GoF Design Patterns
+    type: reference
+    url: https://en.wikipedia.org/wiki/Strategy_pattern
+    description: Classical Strategy pattern definition and theory
+  - title: State Pattern - GoF Design Patterns
+    type: reference
+    url: https://en.wikipedia.org/wiki/State_pattern
+    description: State pattern for state-dependent behavior
+  - title: State Machines in JavaScript
+    type: article
+    url: https://statecharts.github.io/
+    description: Advanced state machine concepts and implementations
+  - title: Behavioral Design Patterns
+    type: article
+    url: https://refactoring.guru/design-patterns/behavioral-patterns
+    description: Overview of behavioral patterns and their applications
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758811626/Portfolio/javaScriptCourse/images/all%20title%20images/40_fhahlc.png)

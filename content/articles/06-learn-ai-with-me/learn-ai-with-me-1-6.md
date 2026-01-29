@@ -1,19 +1,20 @@
 ---
-title: "Prompts"
-description: "It essentially **defines the task** you want the LLM to perform. It provides context, specifies the desired output format or style, and guides the LLM towards a specific outcome"
-slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-04-10"
-datePublished: "2025-04-10"
+title: Prompts
+description: It essentially **defines the task** you want the LLM to perform. It
+  provides context, specifies the desired output format or style, and guides the
+  LLM towards a specific outcome
+slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
+dateModified: 2026-01-29
+datePublished: 2026-04-10
 showOnArticles: false
 courseName: 06-learn-ai-with-me
 topics:
   - ai
 resources:
-  - title: "AI Notes"
-    type: "PDF"
+  - title: AI Notes
+    type: PDF
     url: ""
-    description: "A PDF Notes."
-
+    description: A PDF Notes.
 ---
 
 ![](https://res.cloudinary.com/duojkrgue/image/upload/v1758777282/Portfolio/aiCourse/Learn_AI_eyag79.png)

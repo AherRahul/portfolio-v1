@@ -2,8 +2,8 @@
 title: "Count Factors"
 description: "Learn how to efficiently count the number of factors (divisors) of a given number. Master mathematical optimization techniques and understand the relationship between factors and prime factorization."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-26"
-datePublished: "2025-09-26"
+dateModified: "2026-09-26"
+datePublished: "2026-09-26"
 showOnArticles: false
 courseName: 03-data-structure
 topics:

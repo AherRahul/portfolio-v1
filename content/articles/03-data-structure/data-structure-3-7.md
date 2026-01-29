@@ -2,8 +2,8 @@
 title: "Max Consecutive Ones"
 description: "Understand First-In-First-Out (FIFO) processing. Learn queue operations, circular queues, priority queues, deques, and queue applications in algorithms and system design."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-26"
-datePublished: "2025-09-26"
+dateModified: "2026-09-26"
+datePublished: "2026-09-26"
 showOnArticles: false
 courseName: 03-data-structure
 topics:
@@ -76,7 +76,7 @@ Given a binary array `nums`, return the maximum number of consecutive 1’s in t
 
 ### Visualisation:
 
-![Max 1's](https://namastedev.com/blog/wp-content/uploads/2025/06/Screenshot-2025-06-28-at-10.24.01 PM.png)
+![Max 1's](https://namastedev.com/blog/wp-content/uploads/2025/06/Screenshot-2026-06-28-at-10.24.01 PM.png)
 
 ### Time Complexity:
 

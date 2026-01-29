@@ -2,8 +2,8 @@
 title: "Build Optimization"
 description: "Master build-time optimizations for modern web applications. Learn about webpack optimization, tree shaking, code splitting, bundle analysis, asset optimization, and implementing efficient build pipelines."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-04-05"
-datePublished: "2025-04-05"
+dateModified: "2026-04-05"
+datePublished: "2026-04-05"
 showOnArticles: false
 courseName: 02-frontend-system-design
 image: https://res.cloudinary.com/duojkrgue/image/upload/v1759048338/Portfolio/FrontendSystemDesignCourse/titleImages/36_xbep6q.png

@@ -2,8 +2,8 @@
 title: "Ath Magical Number using Binary Search"
 description: "Find Ath number divisible by A or B. Master LCM concept, binary search on answer, and handle large numbers with modulo arithmetic."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-12-24"
-datePublished: "2025-12-24"
+dateModified: "2026-12-24"
+datePublished: "2026-12-24"
 showOnArticles: false
 courseName: 03-data-structure
 topics:

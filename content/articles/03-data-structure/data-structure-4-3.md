@@ -2,8 +2,8 @@
 title: "Leaders in an Array"
 description: "Master the concept of leaders in an array using the carry forward technique. Learn how to find elements that are greater than all elements to their right efficiently in a single pass."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-26"
-datePublished: "2025-09-26"
+dateModified: "2026-09-26"
+datePublished: "2026-09-26"
 showOnArticles: false
 courseName: 03-data-structure
 topics:

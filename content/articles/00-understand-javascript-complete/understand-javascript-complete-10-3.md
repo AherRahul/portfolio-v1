@@ -1,31 +1,32 @@
 ---
-title: "Debouncing & Throttling"
-description: "Master rate limiting techniques to control function execution frequency. Learn debouncing and throttling patterns to optimize performance, improve user experience, and prevent excessive API calls or computations."
-slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-26"
-datePublished: "2025-09-26"
+title: Debouncing & Throttling
+description: Master rate limiting techniques to control function execution
+  frequency. Learn debouncing and throttling patterns to optimize performance,
+  improve user experience, and prevent excessive API calls or computations.
+slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
+dateModified: 2026-01-29
+datePublished: 2026-09-26
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
   - javascript
 resources:
-  - title: "Debouncing and Throttling Explained"
-    type: "article"
-    url: "https://css-tricks.com/debouncing-throttling-explained-examples/"
-    description: "Visual explanation of debouncing and throttling with examples"
-  - title: "Lodash Debounce and Throttle"
-    type: "reference"
-    url: "https://lodash.com/docs/4.17.15#debounce"
-    description: "Production-ready implementations of debounce and throttle"
-  - title: "RequestAnimationFrame Throttling"
-    type: "article"
-    url: "https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame"
-    description: "Using requestAnimationFrame for smooth animations"
-  - title: "RxJS Debounce Operators"
-    type: "reference"
-    url: "https://rxjs.dev/api/operators/debounceTime"
-    description: "Reactive programming approach to rate limiting"
-
+  - title: Debouncing and Throttling Explained
+    type: article
+    url: https://css-tricks.com/debouncing-throttling-explained-examples/
+    description: Visual explanation of debouncing and throttling with examples
+  - title: Lodash Debounce and Throttle
+    type: reference
+    url: https://lodash.com/docs/4.17.15#debounce
+    description: Production-ready implementations of debounce and throttle
+  - title: RequestAnimationFrame Throttling
+    type: article
+    url: https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame
+    description: Using requestAnimationFrame for smooth animations
+  - title: RxJS Debounce Operators
+    type: reference
+    url: https://rxjs.dev/api/operators/debounceTime
+    description: Reactive programming approach to rate limiting
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758811611/Portfolio/javaScriptCourse/images/all%20title%20images/44_jf6ftw.png)

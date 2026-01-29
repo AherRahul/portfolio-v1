@@ -2,8 +2,8 @@
 title: "Deep dive into v8 JS Engine"
 description: "Now, let's focus on one of NodeJs's best friends, the V8 Engine. It takes the code and runs it. Before doing anything, I just want you to read this carefully."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-04-12"
-datePublished: "2025-04-12"
+dateModified: "2026-04-12"
+datePublished: "2026-04-12"
 showOnArticles: false
 courseName: 01-beginner-to-advance-nodejs
 topics:

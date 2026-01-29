@@ -2,8 +2,8 @@
 title: "Normalization"
 description: "Understand data normalization principles for frontend applications. Learn about normalized vs denormalized data structures, state management normalization, Redux normalization patterns, and optimizing data organization."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-04-10"
-datePublished: "2025-04-10"
+dateModified: "2026-04-10"
+datePublished: "2026-04-10"
 showOnArticles: false
 courseName: 02-frontend-system-design
 image: https://res.cloudinary.com/duojkrgue/image/upload/v1759048367/Portfolio/FrontendSystemDesignCourse/titleImages/41_ocp50b.png

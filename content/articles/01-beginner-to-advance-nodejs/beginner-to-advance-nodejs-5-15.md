@@ -2,8 +2,8 @@
 title: "Building REST API with Express.js"
 description: "Learn to create RESTful API with Express.js - handling JSON payloads, query parameters, route parameters, status codes, and CRUD operations. This comprehensive guide covers practical examples with proper API design principles and error handling."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-15"
-datePublished: "2025-09-15"
+dateModified: "2026-09-15"
+datePublished: "2026-09-15"
 showOnArticles: false
 courseName: 01-beginner-to-advance-nodejs
 topics:
@@ -538,7 +538,7 @@ curl -X DELETE http://localhost:3000/users/1
   "message": "Operation successful",
   "data": { /* actual data */ },
   "metadata": {
-    "timestamp": "2025-01-15T10:30:00Z",
+    "timestamp": "2026-01-15T10:30:00Z",
     "version": "1.0.0"
   }
 }
@@ -549,7 +549,7 @@ curl -X DELETE http://localhost:3000/users/1
   "message": "Error description",
   "errors": ["Specific error details"],
   "metadata": {
-    "timestamp": "2025-01-15T10:30:00Z",
+    "timestamp": "2026-01-15T10:30:00Z",
     "version": "1.0.0"
   }
 }

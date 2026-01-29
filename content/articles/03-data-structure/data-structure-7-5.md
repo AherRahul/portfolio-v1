@@ -2,8 +2,8 @@
 title: "Rain Water Trapped"
 description: "Calculate water trapped between elevation bars using prefix and suffix maximum arrays. Master the classic two-pointer optimization."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-26"
-datePublished: "2025-09-26"
+dateModified: "2026-09-26"
+datePublished: "2026-09-26"
 showOnArticles: false
 courseName: 03-data-structure
 topics:

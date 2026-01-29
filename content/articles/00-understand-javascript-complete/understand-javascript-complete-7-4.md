@@ -1,31 +1,32 @@
 ---
-title: "Iterators & Generators"
-description: "Master the iterator protocol and generator functions to create custom iteration behavior, lazy evaluation, and powerful control flow patterns that can pause and resume execution."
-slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-26"
-datePublished: "2025-09-26"
+title: Iterators & Generators
+description: Master the iterator protocol and generator functions to create
+  custom iteration behavior, lazy evaluation, and powerful control flow patterns
+  that can pause and resume execution.
+slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
+dateModified: 2026-01-29
+datePublished: 2026-09-26
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
   - javascript
 resources:
-  - title: "MDN - Iterators and Generators"
-    type: "documentation"
-    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators"
-    description: "Complete guide to iterators and generator functions"
-  - title: "MDN - Iterator Protocol"
-    type: "documentation"
-    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols"
-    description: "Understanding the iterator and iterable protocols"
-  - title: "Generator Functions Reference"
-    type: "documentation"
-    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*"
-    description: "Detailed reference for generator function syntax"
-  - title: "Advanced Generator Patterns"
-    type: "article"
-    url: "https://2ality.com/2015/03/es6-generators.html"
-    description: "Advanced patterns and use cases for generators"
-
+  - title: MDN - Iterators and Generators
+    type: documentation
+    url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators
+    description: Complete guide to iterators and generator functions
+  - title: MDN - Iterator Protocol
+    type: documentation
+    url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols
+    description: Understanding the iterator and iterable protocols
+  - title: Generator Functions Reference
+    type: documentation
+    url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*
+    description: Detailed reference for generator function syntax
+  - title: Advanced Generator Patterns
+    type: article
+    url: https://2ality.com/2015/03/es6-generators.html
+    description: Advanced patterns and use cases for generators
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758811622/Portfolio/javaScriptCourse/images/all%20title%20images/30_gvpkuz.png)

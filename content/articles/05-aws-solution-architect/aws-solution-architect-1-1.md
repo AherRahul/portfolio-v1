@@ -1,9 +1,13 @@
 ---
-title: "AWS Certified Solutions Architect - Exam Guide"
-description: "Consistency and standards are important for building a unified design language and help the user know what to expect from our product and how to use it. However, this does not mean sacrificing the user experience. In this sense, the context and needs of our users are priorities when developing our solutions."
-slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles/aws-solution-architect-exam-guide.md"
-dateModified: "2025-05-22"
-datePublished: "2025-05-22"
+title: AWS Certified Solutions Architect - Exam Guide
+description: Consistency and standards are important for building a unified
+  design language and help the user know what to expect from our product and how
+  to use it. However, this does not mean sacrificing the user experience. In
+  this sense, the context and needs of our users are priorities when developing
+  our solutions.
+slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles/aws-solution-architect-exam-guide.md
+dateModified: 2026-01-29
+datePublished: 2026-05-22
 topics:
   - system-design
   - aws
@@ -11,7 +15,7 @@ topics:
 tutor: 1
 showOnArticles: false
 courseName: 05-aws-solution-architect
-videoUrl: "https://www.youtube.com/embed/ejZm0c_OhYM?si=_EDroaJF7rPD1dvL"
+videoUrl: https://www.youtube.com/embed/ejZm0c_OhYM?si=_EDroaJF7rPD1dvL
 ---
 
 ## AWS Certified Solutions Architect - Exam Guide
@@ -125,6 +129,5 @@ Good luck with your certification!
 
 Have any questions or want to share your experience? Drop a comment below, and let’s discuss!
 
----
 
 Thank you so much for reading. If you found it valuable, consider subscribing for more such content every week. If you have any questions or suggestions, please email me your comments or feel free to improve it.

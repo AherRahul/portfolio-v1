@@ -2,8 +2,8 @@
 title: "Count Subarray with Zero Sum using Hashing"
 description: "Count all subarrays with sum zero using prefix sum hashing. Learn to use hash maps to track prefix sum frequencies, optimize counting from O(N²) to O(N), and master the advanced subarray counting pattern."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-12-24"
-datePublished: "2025-12-24"
+dateModified: "2026-12-24"
+datePublished: "2026-12-24"
 showOnArticles: false
 courseName: 03-data-structure
 topics:

@@ -2,8 +2,8 @@
 title: "What is short polling? Learn with example"
 description: "Dive into short polling methodologies. Explore the technique of frequent requests to servers at fixed intervals, enabling frontend applications to obtain recent data updates for dynamic content."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-03-01"
-datePublished: "2025-03-01"
+dateModified: "2026-03-01"
+datePublished: "2026-03-01"
 showOnArticles: false
 courseName: 02-frontend-system-design
 topics:

@@ -1,27 +1,30 @@
 ---
-title: "Hoisting"
-description: "Hoisting is JavaScript's behavior of moving variable and function declarations to the top of their scope during the creation phase. It's not magic—it's a direct result of how execution contexts work. Understanding hoisting helps you predict how your code will behave and avoid common pitfalls."
-slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-25"
-datePublished: "2025-09-25"
+title: Hoisting
+description: Hoisting is JavaScript's behavior of moving variable and function
+  declarations to the top of their scope during the creation phase. It's not
+  magic—it's a direct result of how execution contexts work. Understanding
+  hoisting helps you predict how your code will behave and avoid common
+  pitfalls.
+slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
+dateModified: 2026-01-29
+datePublished: 2026-09-25
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
   - javascript
 resources:
-  - title: "JS course PDF - 3"
-    type: "PDF"
-    url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758791650/Portfolio/javaScriptCourse/pdf/JavaScript-day-3_Hoisting_tj99ch.pdf"
-    description: "A PDF Notes on Hoisting topic"
-  - title: "MDN - Hoisting"
-    type: "documentation"
-    url: "https://developer.mozilla.org/en-US/docs/Glossary/Hoisting"
-    description: "Official MDN documentation explaining hoisting behavior in JavaScript"
-  - title: "You Don't Know JS - Hoisting"
-    type: "article"
-    url: "https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/scope-closures/ch5.md"
-    description: "Deep dive into hoisting from the You Don't Know JS book series"
-
+  - title: JS course PDF - 3
+    type: PDF
+    url: https://res.cloudinary.com/duojkrgue/image/upload/v1758791650/Portfolio/javaScriptCourse/pdf/JavaScript-day-3_Hoisting_tj99ch.pdf
+    description: A PDF Notes on Hoisting topic
+  - title: MDN - Hoisting
+    type: documentation
+    url: https://developer.mozilla.org/en-US/docs/Glossary/Hoisting
+    description: Official MDN documentation explaining hoisting behavior in JavaScript
+  - title: You Don't Know JS - Hoisting
+    type: article
+    url: https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/scope-closures/ch5.md
+    description: Deep dive into hoisting from the You Don't Know JS book series
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758809861/Portfolio/javaScriptCourse/images/4/4_zqjd0e.png)

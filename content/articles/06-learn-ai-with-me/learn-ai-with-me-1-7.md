@@ -1,18 +1,22 @@
 ---
-title: "Limitations of LLMs"
-description: "As with any emerging technology that becomes integral to our daily lives, AI models—specifically LLMs—come with their unique inherent features. These features set the stage for both their capabilities and limitations:"
-slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-04-10"
-datePublished: "2025-04-10"
+title: Limitations of LLMs
+description: "As with any emerging technology that becomes integral to our daily
+  lives, AI models—specifically LLMs—come with their unique inherent features.
+  These features set the stage for both their capabilities and limitations:"
+slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
+dateModified: 2026-01-29
+datePublished: 2026-04-10
 showOnArticles: false
 courseName: 06-learn-ai-with-me
 topics:
   - ai
 resources:
-  - title: "AI Notes"
-    type: "PDF"
+  - title: AI Notes
+    type: PDF
     url: ""
-    description: "A PDF Notes."
+    description: A PDF Notes.
+---
+
 ---
 
 ![](https://res.cloudinary.com/duojkrgue/image/upload/v1758777282/Portfolio/aiCourse/Learn_AI_eyag79.png)
@@ -49,4 +53,3 @@ These foundational features of LLMs introduce several usage limitations, which c
 > LLMs may store and utilize input data. As such, issues surrounding data protection, responsibilities, rights, and compliance with legal regulations arise when using LLMs.
 
 Understanding these limitations is crucial not only to maximize the effectiveness of AI for your tasks but also to anticipate possible challenges and implement robust usage practices and precautions.
-

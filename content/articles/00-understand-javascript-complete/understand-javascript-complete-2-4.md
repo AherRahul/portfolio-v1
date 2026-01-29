@@ -1,32 +1,35 @@
 ---
-title: "Event Loop Mastery"
-description: "The Event Loop is JavaScript's secret to handling asynchronous operations while remaining single-threaded. Understanding this mechanism is crucial for mastering promises, async/await, and building responsive applications that don't freeze."
-slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-25"
-datePublished: "2025-09-25"
+title: Event Loop Mastery
+description: The Event Loop is JavaScript's secret to handling asynchronous
+  operations while remaining single-threaded. Understanding this mechanism is
+  crucial for mastering promises, async/await, and building responsive
+  applications that don't freeze.
+slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
+dateModified: 2026-01-29
+datePublished: 2026-09-25
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
   - javascript
 resources:
-  - title: "JS course PDF - 8"
-    type: "PDF"
-    url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758792130/Portfolio/javaScriptCourse/pdf/JavaScript-day8_EventLoop_compressed.pdf"
-    description: "A PDF Notes on Event Loop Mastery topic"
-  - title: "MDN - Event Loop"
-    type: "documentation"
-    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop"
-    description: "Official MDN documentation on the JavaScript Event Loop"
-  - title: "JavaScript Visualizer - Event Loop"
-    type: "tool"
-    url: "http://latentflip.com/loupe/"
-    description: "Interactive visualization of JavaScript's call stack, event loop, and callback queue"
-  - title: "What the heck is the event loop anyway?"
-    type: "video"
-    url: "https://www.youtube.com/watch?v=8aGhZQkoFbQ"
-    description: "Philip Roberts' famous JSConf talk explaining the event loop"
-    duration: "26:52"
-
+  - title: JS course PDF - 8
+    type: PDF
+    url: https://res.cloudinary.com/duojkrgue/image/upload/v1758792130/Portfolio/javaScriptCourse/pdf/JavaScript-day8_EventLoop_compressed.pdf
+    description: A PDF Notes on Event Loop Mastery topic
+  - title: MDN - Event Loop
+    type: documentation
+    url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop
+    description: Official MDN documentation on the JavaScript Event Loop
+  - title: JavaScript Visualizer - Event Loop
+    type: tool
+    url: http://latentflip.com/loupe/
+    description: Interactive visualization of JavaScript's call stack, event loop,
+      and callback queue
+  - title: What the heck is the event loop anyway?
+    type: video
+    url: https://www.youtube.com/watch?v=8aGhZQkoFbQ
+    description: Philip Roberts' famous JSConf talk explaining the event loop
+    duration: 26:52
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758809904/Portfolio/javaScriptCourse/images/9/9_cfrrxh.png)

@@ -1,31 +1,32 @@
 ---
-title: "Promise Chaining & Error Handling"
-description: "Master advanced Promise patterns including Promise.all(), Promise.race(), Promise.allSettled(), and sophisticated error handling strategies for building robust asynchronous applications."
-slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-25"
-datePublished: "2025-09-25"
+title: Promise Chaining & Error Handling
+description: Master advanced Promise patterns including Promise.all(),
+  Promise.race(), Promise.allSettled(), and sophisticated error handling
+  strategies for building robust asynchronous applications.
+slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
+dateModified: 2026-01-29
+datePublished: 2026-09-25
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
   - javascript
 resources:
-  - title: "JS course PDF - 23"
-    type: "PDF"
-    url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758792130/Portfolio/javaScriptCourse/pdf/JavaScript-day23_PromiseChainingError_compressed.pdf"
-    description: "A PDF Notes on Promise Chaining & Error Handling topic"
-  - title: "MDN - Promise Static Methods"
-    type: "documentation"
-    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise#static_methods"
-    description: "Complete reference for Promise.all, Promise.race, and other static methods"
-  - title: "Promise Error Handling Best Practices"
-    type: "article"
-    url: "https://blog.logrocket.com/javascript-promises-error-handling/"
-    description: "Comprehensive guide to handling errors in Promise chains"
-  - title: "JavaScript.info - Promise API"
-    type: "article"
-    url: "https://javascript.info/promise-api"
-    description: "Detailed guide to Promise static methods and error handling"
-
+  - title: JS course PDF - 23
+    type: PDF
+    url: https://res.cloudinary.com/duojkrgue/image/upload/v1758792130/Portfolio/javaScriptCourse/pdf/JavaScript-day23_PromiseChainingError_compressed.pdf
+    description: A PDF Notes on Promise Chaining & Error Handling topic
+  - title: MDN - Promise Static Methods
+    type: documentation
+    url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise#static_methods
+    description: Complete reference for Promise.all, Promise.race, and other static methods
+  - title: Promise Error Handling Best Practices
+    type: article
+    url: https://blog.logrocket.com/javascript-promises-error-handling/
+    description: Comprehensive guide to handling errors in Promise chains
+  - title: JavaScript.info - Promise API
+    type: article
+    url: https://javascript.info/promise-api
+    description: Detailed guide to Promise static methods and error handling
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758811622/Portfolio/javaScriptCourse/images/all%20title%20images/24_fd5tli.png)

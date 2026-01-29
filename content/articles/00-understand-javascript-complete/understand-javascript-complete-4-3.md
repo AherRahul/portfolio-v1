@@ -1,31 +1,33 @@
 ---
-title: "Closures in JavaScript"
-description: "Closures are JavaScript's superpower - they allow functions to remember variables from their outer scope even after that scope has finished executing. This concept is fundamental to understanding advanced JavaScript patterns and is a favorite interview topic."
-slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-25"
-datePublished: "2025-09-25"
+title: Closures in JavaScript
+description: Closures are JavaScript's superpower - they allow functions to
+  remember variables from their outer scope even after that scope has finished
+  executing. This concept is fundamental to understanding advanced JavaScript
+  patterns and is a favorite interview topic.
+slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
+dateModified: 2026-01-29
+datePublished: 2026-09-25
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
   - javascript
 resources:
-  - title: "JS course PDF - 14"
-    type: "PDF"
-    url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758792130/Portfolio/javaScriptCourse/pdf/JavaScript-day14_Closures_compressed.pdf"
-    description: "A PDF Notes on Closures in JavaScript topic"
-  - title: "MDN - Closures"
-    type: "documentation"
-    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures"
-    description: "Complete guide to JavaScript closures from MDN"
-  - title: "JavaScript.info - Closure"
-    type: "article"
-    url: "https://javascript.info/closure"
-    description: "In-depth tutorial on closures with practical examples"
-  - title: "You Don't Know JS - Closures"
-    type: "book"
-    url: "https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/scope-closures/ch7.md"
-    description: "Deep dive into closures from the You Don't Know JS series"
-
+  - title: JS course PDF - 14
+    type: PDF
+    url: https://res.cloudinary.com/duojkrgue/image/upload/v1758792130/Portfolio/javaScriptCourse/pdf/JavaScript-day14_Closures_compressed.pdf
+    description: A PDF Notes on Closures in JavaScript topic
+  - title: MDN - Closures
+    type: documentation
+    url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures
+    description: Complete guide to JavaScript closures from MDN
+  - title: JavaScript.info - Closure
+    type: article
+    url: https://javascript.info/closure
+    description: In-depth tutorial on closures with practical examples
+  - title: You Don't Know JS - Closures
+    type: book
+    url: https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/scope-closures/ch7.md
+    description: Deep dive into closures from the You Don't Know JS series
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758811616/Portfolio/javaScriptCourse/images/all%20title%20images/15_fpg92y.png)

@@ -1,31 +1,32 @@
 ---
-title: "Async Await"
-description: "Async/await makes asynchronous code look and feel like synchronous code while maintaining all the power of Promises. Master this modern syntax for writing clean, readable async JavaScript."
-slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-25"
-datePublished: "2025-09-25"
+title: Async Await
+description: Async/await makes asynchronous code look and feel like synchronous
+  code while maintaining all the power of Promises. Master this modern syntax
+  for writing clean, readable async JavaScript.
+slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
+dateModified: 2026-01-29
+datePublished: 2026-09-25
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
   - javascript
 resources:
-  - title: "JS course PDF - 24"
-    type: "PDF"
-    url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758792130/Portfolio/javaScriptCourse/pdf/JavaScript-day24_AsyncAwait_compressed.pdf"
-    description: "A PDF Notes on Async Await topic"
-  - title: "MDN - async function"
-    type: "documentation"
-    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function"
-    description: "Complete reference for async functions and await expressions"
-  - title: "MDN - await operator"
-    type: "documentation"
-    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await"
-    description: "Detailed guide to the await operator"
-  - title: "JavaScript.info - Async/await"
-    type: "article"
-    url: "https://javascript.info/async-await"
-    description: "Comprehensive tutorial on async/await syntax and patterns"
-
+  - title: JS course PDF - 24
+    type: PDF
+    url: https://res.cloudinary.com/duojkrgue/image/upload/v1758792130/Portfolio/javaScriptCourse/pdf/JavaScript-day24_AsyncAwait_compressed.pdf
+    description: A PDF Notes on Async Await topic
+  - title: MDN - async function
+    type: documentation
+    url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function
+    description: Complete reference for async functions and await expressions
+  - title: MDN - await operator
+    type: documentation
+    url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await
+    description: Detailed guide to the await operator
+  - title: JavaScript.info - Async/await
+    type: article
+    url: https://javascript.info/async-await
+    description: Comprehensive tutorial on async/await syntax and patterns
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758811622/Portfolio/javaScriptCourse/images/all%20title%20images/25_xdoa6m.png)

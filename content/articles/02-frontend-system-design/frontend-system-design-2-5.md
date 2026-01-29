@@ -2,8 +2,8 @@
 title: "Introduction to Web hooks"
 description: "Understand WebHooks' functionalities. Learn how they trigger instant notifications and events, allowing frontend systems to react promptly to external changes or specific actions, ensuring responsiveness and agility."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-03-01"
-datePublished: "2025-03-01"
+dateModified: "2026-03-01"
+datePublished: "2026-03-01"
 showOnArticles: false
 courseName: 02-frontend-system-design
 topics:

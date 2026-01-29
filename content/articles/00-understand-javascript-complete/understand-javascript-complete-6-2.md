@@ -1,31 +1,33 @@
 ---
-title: "Promises"
-description: "Promises revolutionized JavaScript by providing a clean, chainable way to handle asynchronous operations. They eliminate callback hell and provide consistent error handling, making async code readable and maintainable."
-slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-25"
-datePublished: "2025-09-25"
+title: Promises
+description: Promises revolutionized JavaScript by providing a clean, chainable
+  way to handle asynchronous operations. They eliminate callback hell and
+  provide consistent error handling, making async code readable and
+  maintainable.
+slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
+dateModified: 2026-01-29
+datePublished: 2026-09-25
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
   - javascript
 resources:
-  - title: "JS course PDF - 22"
-    type: "PDF"
-    url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758792130/Portfolio/javaScriptCourse/pdf/JavaScript-day22_Promises_compressed.pdf"
-    description: "A PDF Notes on Promises topic"
-  - title: "MDN - Promise"
-    type: "documentation"
-    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise"
-    description: "Complete reference for JavaScript Promises"
-  - title: "Promises/A+ Specification"
-    type: "specification"
-    url: "https://promisesaplus.com/"
-    description: "The official specification that defines Promise behavior"
-  - title: "JavaScript.info - Promises"
-    type: "article"
-    url: "https://javascript.info/promise-basics"
-    description: "Comprehensive guide to understanding and using Promises"
-
+  - title: JS course PDF - 22
+    type: PDF
+    url: https://res.cloudinary.com/duojkrgue/image/upload/v1758792130/Portfolio/javaScriptCourse/pdf/JavaScript-day22_Promises_compressed.pdf
+    description: A PDF Notes on Promises topic
+  - title: MDN - Promise
+    type: documentation
+    url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
+    description: Complete reference for JavaScript Promises
+  - title: Promises/A+ Specification
+    type: specification
+    url: https://promisesaplus.com/
+    description: The official specification that defines Promise behavior
+  - title: JavaScript.info - Promises
+    type: article
+    url: https://javascript.info/promise-basics
+    description: Comprehensive guide to understanding and using Promises
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758811619/Portfolio/javaScriptCourse/images/all%20title%20images/23_rymf0o.png)

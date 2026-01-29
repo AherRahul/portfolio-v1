@@ -2,8 +2,8 @@
 title: "Clustering & Scaling"
 description: "Scale NodeJs across CPU cores with cluster and worker threads; horizontal scaling patterns, sticky sessions, and stateless design."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-15"
-datePublished: "2025-09-15"
+dateModified: "2026-09-15"
+datePublished: "2026-09-15"
 showOnArticles: false
 courseName: 01-beginner-to-advance-nodejs
 topics:

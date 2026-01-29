@@ -1,7 +1,7 @@
 ---
 title: "A/B Testing"
 description: "Master A/B testing methodologies and implementation. Learn about experiment design, statistical significance, feature flags, multivariate testing, and building data-driven decision-making systems for frontend optimization."
-publishedAt: 2025-03-27
+publishedAt: 2026-03-27
 image: "https://res.cloudinary.com/duojkrgue/image/upload/v1759048334/Portfolio/FrontendSystemDesignCourse/titleImages/27_gn4zxg.png"
 category: "Frontend System Design"
 author: "Rahul Aher"

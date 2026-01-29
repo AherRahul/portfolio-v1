@@ -2,7 +2,7 @@
 title: "Progressive Web Apps (PWAs)"
 description: "Master the complete PWA development stack including web app manifests, installation prompts, app shell architecture, and native-like features. Learn how to create web applications that deliver app-store-quality experiences."
 image: "https://res.cloudinary.com/duojkrgue/image/upload/v1759048332/Portfolio/FrontendSystemDesignCourse/titleImages/56_dnoqdc.png"
-publishedAt: "2025-01-13"
+publishedAt: "2026-01-13"
 is_on_youtube: false
 courseName: "02-frontend-system-design"
 id: 72

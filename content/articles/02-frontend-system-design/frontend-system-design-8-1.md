@@ -2,7 +2,7 @@
 title: "Keyboard Navigation and Accessibility"
 description: "Master keyboard navigation patterns, ARIA attributes, and focus management techniques for creating fully accessible web applications that work seamlessly without mouse input."
 image: "https://res.cloudinary.com/duojkrgue/image/upload/v1759048378/Portfolio/FrontendSystemDesignCourse/titleImages/49_sj5t8l.png"
-publishedAt: "2025-01-13"
+publishedAt: "2026-01-13"
 is_on_youtube: false
 courseName: "02-frontend-system-design"
 id: 65

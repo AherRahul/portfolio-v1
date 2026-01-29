@@ -2,8 +2,8 @@
 title: "Reverse Array in a Range"
 description: "Master the technique of reversing a portion of an array within a given range. Learn in-place array manipulation, two-pointer technique, and understand how partial array reversal works efficiently."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-26"
-datePublished: "2025-09-26"
+dateModified: "2026-09-26"
+datePublished: "2026-09-26"
 showOnArticles: false
 courseName: 03-data-structure
 topics:

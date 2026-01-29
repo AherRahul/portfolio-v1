@@ -1,31 +1,32 @@
 ---
-title: "Callback Hell"
-description: "Callback Hell is the nightmare of nested callbacks that makes code unreadable and unmaintainable. Understanding this problem is the first step toward mastering modern asynchronous JavaScript patterns."
-slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-25"
-datePublished: "2025-09-25"
+title: Callback Hell
+description: Callback Hell is the nightmare of nested callbacks that makes code
+  unreadable and unmaintainable. Understanding this problem is the first step
+  toward mastering modern asynchronous JavaScript patterns.
+slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
+dateModified: 2026-01-29
+datePublished: 2026-09-25
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
   - javascript
 resources:
-  - title: "JS course PDF - 21"
-    type: "PDF"
-    url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758792130/Portfolio/javaScriptCourse/pdf/JavaScript-day21_CallbackHell_compressed.pdf"
-    description: "A PDF Notes on Callback Hell topic"
-  - title: "MDN - Asynchronous JavaScript"
-    type: "documentation"
-    url: "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous"
-    description: "Comprehensive guide to asynchronous JavaScript concepts"
-  - title: "Callback Hell Website"
-    type: "article"
-    url: "http://callbackhell.com/"
-    description: "Interactive guide explaining callback hell and solutions"
-  - title: "JavaScript.info - Callbacks"
-    type: "article"
-    url: "https://javascript.info/callbacks"
-    description: "Understanding callbacks and their problems"
-
+  - title: JS course PDF - 21
+    type: PDF
+    url: https://res.cloudinary.com/duojkrgue/image/upload/v1758792130/Portfolio/javaScriptCourse/pdf/JavaScript-day21_CallbackHell_compressed.pdf
+    description: A PDF Notes on Callback Hell topic
+  - title: MDN - Asynchronous JavaScript
+    type: documentation
+    url: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous
+    description: Comprehensive guide to asynchronous JavaScript concepts
+  - title: Callback Hell Website
+    type: article
+    url: http://callbackhell.com/
+    description: Interactive guide explaining callback hell and solutions
+  - title: JavaScript.info - Callbacks
+    type: article
+    url: https://javascript.info/callbacks
+    description: Understanding callbacks and their problems
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758811619/Portfolio/javaScriptCourse/images/all%20title%20images/22_ma9iq2.png)

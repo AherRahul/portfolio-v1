@@ -2,8 +2,8 @@
 title: "Cross-Site Request Forgery (CSRF)"
 description: "Master Cross-Site Request Forgery (CSRF) attack prevention. Learn about CSRF tokens, SameSite cookies, double-submit cookies, origin validation, and building comprehensive CSRF protection strategies for modern web applications."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-03-24"
-datePublished: "2025-03-24"
+dateModified: "2026-03-24"
+datePublished: "2026-03-24"
 showOnArticles: false
 courseName: 02-frontend-system-design
 topics:

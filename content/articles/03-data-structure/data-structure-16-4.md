@@ -2,8 +2,8 @@
 title: "Find Ceiling in Sorted Array"
 description: "Find ceiling (smallest element >= target) in sorted array. Master upper bound concept, handle exact matches, and optimize with binary search."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-12-24"
-datePublished: "2025-12-24"
+dateModified: "2026-12-24"
+datePublished: "2026-12-24"
 showOnArticles: false
 courseName: 03-data-structure
 topics:

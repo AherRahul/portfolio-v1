@@ -2,8 +2,8 @@
 title: "Search in Rotated Sorted Array"
 description: "Find element in rotated sorted array. Master pivot detection, modified binary search, and handle rotation with O(log N) solution."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-12-24"
-datePublished: "2025-12-24"
+dateModified: "2026-12-24"
+datePublished: "2026-12-24"
 showOnArticles: false
 courseName: 03-data-structure
 topics:

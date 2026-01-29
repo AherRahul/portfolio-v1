@@ -2,8 +2,8 @@
 title: "Reverse String"
 description: "Understand dynamic memory allocation and pointer manipulation. Master singly linked lists, doubly linked lists, circular lists, and advanced linked list operations and algorithms."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-26"
-datePublished: "2025-09-26"
+dateModified: "2026-09-26"
+datePublished: "2026-09-26"
 showOnArticles: false
 courseName: 03-data-structure
 topics:
@@ -87,7 +87,7 @@ Output: ["o", "l", "l", "e", "h"]
 
 ### Visualisation:
 
-![Reverse String](https://namastedev.com/blog/wp-content/uploads/2025/06/Screenshot-2025-06-26-at-8.19.31 PM.png)
+![Reverse String](https://namastedev.com/blog/wp-content/uploads/2025/06/Screenshot-2026-06-26-at-8.19.31 PM.png)
 
 ### JavaScript Code
 

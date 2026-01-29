@@ -1,10 +1,12 @@
 ---
-title: "EC2 Fundamentals and Instance Types"
-description: "Learn cloud computing basics, AWS EC2 setup, security groups, and server management with practical insights to kickstart your cloud journey effectively."
+title: EC2 Fundamentals and Instance Types
+description: Learn cloud computing basics, AWS EC2 setup, security groups, and
+  server management with practical insights to kickstart your cloud journey
+  effectively.
 tutor: 1
-slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles/aws-solution-architect-exam-guide.md"
-dateModified: "2026-01-28"
-datePublished: "2026-01-28"
+slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles/aws-solution-architect-exam-guide.md
+dateModified: 2026-01-29
+datePublished: 2026-01-28
 showOnArticles: false
 courseName: 05-aws-solution-architect
 topics:
@@ -12,8 +14,6 @@ topics:
   - aws
   - lld
 ---
-
-
 ## Introduction to Cloud Computing and AWS EC2
 
 Cloud computing has revolutionized how applications and servers are managed, scaled, and deployed. This blog post delves into the fundamentals of cloud computing, focusing on AWS (Amazon Web Services), particularly EC2 (Elastic Compute Cloud) instances, their configuration, and security essentials. Whether you are a fresher or transitioning from on-premises infrastructure, this guide will equip you with the knowledge to understand cloud services and practical steps to launch and manage EC2 servers effectively.
@@ -22,7 +22,7 @@ Cloud computing has revolutionized how applications and servers are managed, sca
 
 ### What is Cloud Computing and Why It Matters
 
-Cloud computing refers to delivering computing services—servers, storage, databases, networking, software—over the internet (“the cloud”). Traditionally, companies managed physical servers on-premises, buying and assembling hardware, manually installing operating systems, and configuring networks. This approach presented several challenges:
+Cloud computing refers to delivering computing servicesâ€”servers, storage, databases, networking, softwareâ€”over the internet (â€œthe cloudâ€). Traditionally, companies managed physical servers on-premises, buying and assembling hardware, manually installing operating systems, and configuring networks. This approach presented several challenges:
 
 *   **Scalability Issues**: When user demand increased, upgrading servers was slow, costly, and involved downtime.
 *   **High Costs**: Maintaining physical infrastructure requires significant capital investment and ongoing maintenance expenses.

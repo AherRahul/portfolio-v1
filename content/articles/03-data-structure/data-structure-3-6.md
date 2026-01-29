@@ -2,8 +2,8 @@
 title: "Move Zeros"
 description: "Understand First-In-First-Out (FIFO) processing. Learn queue operations, circular queues, priority queues, deques, and queue applications in algorithms and system design."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-26"
-datePublished: "2025-09-26"
+dateModified: "2026-09-26"
+datePublished: "2026-09-26"
 showOnArticles: false
 courseName: 03-data-structure
 topics:
@@ -70,7 +70,7 @@ Given an integer array nums, move all 0’s to the end of it while maintaining t
 
 ### Visualisation:
 
-![Move zero](https://namastedev.com/blog/wp-content/uploads/2025/06/Screenshot-2025-06-28-at-8.46.31 PM.png)
+![Move zero](https://namastedev.com/blog/wp-content/uploads/2025/06/Screenshot-2026-06-28-at-8.46.31 PM.png)
 
 ## Time Complexity:
 

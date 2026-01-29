@@ -2,8 +2,8 @@
 title: "Remove Element"
 description: "Dive deep into string manipulation and pattern matching. Learn string operations, substring algorithms, palindrome detection, and advanced string processing techniques."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-26"
-datePublished: "2025-09-26"
+dateModified: "2026-09-26"
+datePublished: "2026-09-26"
 showOnArticles: false
 courseName: 03-data-structure
 topics:
@@ -101,7 +101,7 @@ Output: k = 5, nums = [0, 1, 3, 0, 4]
 
 ### Visualisation:
 
-![Remove duplicates](https://namastedev.com/blog/wp-content/uploads/2025/06/Screenshot-2025-06-25-at-10.57.03 PM.png)
+![Remove duplicates](https://namastedev.com/blog/wp-content/uploads/2025/06/Screenshot-2026-06-25-at-10.57.03 PM.png)
 
 ### JavaScript Code
 

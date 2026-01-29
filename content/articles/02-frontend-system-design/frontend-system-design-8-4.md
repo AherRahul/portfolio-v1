@@ -2,7 +2,7 @@
 title: "Color Contrast and Visual Accessibility"
 description: "Master color contrast requirements, visual accessibility principles, and inclusive design techniques. Learn how to create visually accessible interfaces that work for users with various visual abilities and conditions."
 image: "https://res.cloudinary.com/duojkrgue/image/upload/v1759048331/Portfolio/FrontendSystemDesignCourse/titleImages/52_qxgltq.png"
-publishedAt: "2025-01-13"
+publishedAt: "2026-01-13"
 is_on_youtube: false
 courseName: "02-frontend-system-design"
 id: 68

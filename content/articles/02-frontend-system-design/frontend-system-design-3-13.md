@@ -2,8 +2,8 @@
 title: "Cross-Origin Resource Sharing (CORS)"
 description: "Deep dive into Cross-Origin Resource Sharing (CORS) mechanisms. Understand same-origin policy, preflight requests, CORS headers configuration, and implementing secure cross-origin communication in modern web applications."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-03-23"
-datePublished: "2025-03-23"
+dateModified: "2026-03-23"
+datePublished: "2026-03-23"
 showOnArticles: false
 courseName: 02-frontend-system-design
 topics:

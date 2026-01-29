@@ -2,8 +2,8 @@
 title: "Alerting"
 description: "Master frontend alerting and monitoring systems. Learn about intelligent alert management, threshold monitoring, escalation strategies, and building comprehensive alerting systems for proactive issue resolution."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-04-13"
-datePublished: "2025-04-13"
+dateModified: "2026-04-13"
+datePublished: "2026-04-13"
 showOnArticles: false
 courseName: 02-frontend-system-design
 image: https://res.cloudinary.com/duojkrgue/image/upload/v1759048371/Portfolio/FrontendSystemDesignCourse/titleImages/47_u2tbdr.png

@@ -2,8 +2,8 @@
 title: "Missing Number"
 description: "Understand First-In-First-Out (FIFO) processing. Learn queue operations, circular queues, priority queues, deques, and queue applications in algorithms and system design."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-26"
-datePublished: "2025-09-26"
+dateModified: "2026-09-26"
+datePublished: "2026-09-26"
 showOnArticles: false
 courseName: 03-data-structure
 topics:
@@ -110,7 +110,7 @@ Output: 3
 
 ### Visualisation:
 
-![Stocks](https://namastedev.com/blog/wp-content/uploads/2025/07/Screenshot-2025-07-12-at-9.57.58 AM.png)
+![Stocks](https://namastedev.com/blog/wp-content/uploads/2025/07/Screenshot-2026-07-12-at-9.57.58 AM.png)
 
 ### JavaScript Code
 

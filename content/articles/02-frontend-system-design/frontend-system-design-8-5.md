@@ -2,7 +2,7 @@
 title: "Accessibility Testing Tools"
 description: "Master automated and manual accessibility testing tools and methodologies. Learn how to integrate accessibility testing into your development workflow and catch issues early in the development process."
 image: "https://res.cloudinary.com/duojkrgue/image/upload/v1744108709/Portfolio/FrontendSystemDesignCourse/39_xm74k9.png"
-publishedAt: "2025-01-13"
+publishedAt: "2026-01-13"
 is_on_youtube: false
 courseName: "02-frontend-system-design"
 id: 69

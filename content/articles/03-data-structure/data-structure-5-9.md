@@ -1,8 +1,8 @@
 ---
 title: "Problem - Product array puzzle"
 description: "Solve the product array puzzle using prefix and suffix product technique. Learn to build product arrays without division and master the advanced application of prefix technique."
-dateModified: 2025-02-08
-datePublished: 2025-02-08
+dateModified: 2026-02-08
+datePublished: 2026-02-08
 topics:
   - data-structures
 courseName: 03-data-structure

@@ -1,7 +1,7 @@
 ---
 title: "Security Testing"
 description: "Master security testing practices for web applications. Learn about vulnerability scanning, penetration testing, security test automation, OWASP testing guidelines, and building secure development lifecycles."
-publishedAt: 2025-03-30
+publishedAt: 2026-03-30
 image: "https://res.cloudinary.com/duojkrgue/image/upload/v1759048334/Portfolio/FrontendSystemDesignCourse/titleImages/30_cqgktg.png"
 category: "Frontend System Design"
 author: "Rahul Aher"

@@ -2,8 +2,8 @@
 title: "Count Inversions in Array"
 description: "Count inversions using modified merge sort. Master divide-and-conquer counting, understand array disorder measurement, and achieve O(N log N) solution."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-12-24"
-datePublished: "2025-12-24"
+dateModified: "2026-12-24"
+datePublished: "2026-12-24"
 showOnArticles: false
 courseName: 03-data-structure
 topics:

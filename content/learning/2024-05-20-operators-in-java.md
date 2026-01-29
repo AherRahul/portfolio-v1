@@ -1,9 +1,9 @@
 ---
 title: "2. Operators in JAVA"
-date: "2025-05-20"
+date: "2026-05-20"
 eventName: "MODULE 1: Introduction to Programming"
 location: ""
-slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/learning/2025-05-20-operators-in-java.md"
+slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/learning/2026-05-20-operators-in-java.md"
 type: "lecture-notes"
 language: "en"
 topics:

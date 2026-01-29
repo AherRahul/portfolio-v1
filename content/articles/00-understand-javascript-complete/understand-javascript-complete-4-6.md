@@ -1,31 +1,32 @@
 ---
-title: "Trust Issues with setTimeout"
-description: "setTimeout doesn't always behave as expected! Understanding the nuances of setTimeout, its minimum delays, and how it interacts with the event loop will help you write more predictable asynchronous code."
-slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-25"
-datePublished: "2025-09-25"
+title: Trust Issues with setTimeout
+description: setTimeout doesn't always behave as expected! Understanding the
+  nuances of setTimeout, its minimum delays, and how it interacts with the event
+  loop will help you write more predictable asynchronous code.
+slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
+dateModified: 2026-01-29
+datePublished: 2026-09-25
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
   - javascript
 resources:
-  - title: "JS course PDF - 17"
-    type: "PDF"
-    url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758792130/Portfolio/javaScriptCourse/pdf/JavaScript-day17_SetTimeoutIssues_compressed.pdf"
-    description: "A PDF Notes on Trust Issues with setTimeout topic"
-  - title: "MDN - setTimeout"
-    type: "documentation"
-    url: "https://developer.mozilla.org/en-US/docs/Web/API/setTimeout"
-    description: "Complete reference for setTimeout function and its quirks"
-  - title: "HTML Living Standard - Timers"
-    type: "specification"
-    url: "https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#timers"
-    description: "Official specification for setTimeout behavior"
-  - title: "Event Loop Visualization"
-    type: "tool"
-    url: "http://latentflip.com/loupe/"
-    description: "Interactive tool to visualize setTimeout and event loop behavior"
-
+  - title: JS course PDF - 17
+    type: PDF
+    url: https://res.cloudinary.com/duojkrgue/image/upload/v1758792130/Portfolio/javaScriptCourse/pdf/JavaScript-day17_SetTimeoutIssues_compressed.pdf
+    description: A PDF Notes on Trust Issues with setTimeout topic
+  - title: MDN - setTimeout
+    type: documentation
+    url: https://developer.mozilla.org/en-US/docs/Web/API/setTimeout
+    description: Complete reference for setTimeout function and its quirks
+  - title: HTML Living Standard - Timers
+    type: specification
+    url: https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#timers
+    description: Official specification for setTimeout behavior
+  - title: Event Loop Visualization
+    type: tool
+    url: http://latentflip.com/loupe/
+    description: Interactive tool to visualize setTimeout and event loop behavior
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758811617/Portfolio/javaScriptCourse/images/all%20title%20images/17_d5t5i3.png)

@@ -2,8 +2,8 @@
 title: "Web Socket"
 description: "Discover the power of Web Sockets. Learn to establish persistent connections facilitating real-time, bidirectional communication between clients and servers, enhancing interactivity and responsiveness in frontend applications."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-03-08"
-datePublished: "2025-03-08"
+dateModified: "2026-03-08"
+datePublished: "2026-03-08"
 showOnArticles: false
 courseName: 02-frontend-system-design
 topics:

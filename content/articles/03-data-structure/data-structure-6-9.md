@@ -2,8 +2,8 @@
 title: "Good Subarrays Easy"
 description: "Count subarrays with specific properties. Learn conditional counting techniques for subarray problems."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-26"
-datePublished: "2025-09-26"
+dateModified: "2026-09-26"
+datePublished: "2026-09-26"
 showOnArticles: false
 courseName: 03-data-structure
 topics:

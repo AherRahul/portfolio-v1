@@ -2,8 +2,8 @@
 title: "Prefix Sum Concept"
 description: "Understand the fundamental concept of prefix sum arrays. Learn how to build prefix sum arrays and use them to answer range queries efficiently."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-26"
-datePublished: "2025-09-26"
+dateModified: "2026-09-26"
+datePublished: "2026-09-26"
 showOnArticles: false
 courseName: 03-data-structure
 topics:

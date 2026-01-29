@@ -1,31 +1,32 @@
 ---
-title: "Advanced Closures Interview Questions"
-description: "Master the most challenging closure-based interview questions that test your deep understanding of JavaScript's scope, execution context, and functional programming concepts."
-slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-25"
-datePublished: "2025-09-25"
+title: Advanced Closures Interview Questions
+description: Master the most challenging closure-based interview questions that
+  test your deep understanding of JavaScript's scope, execution context, and
+  functional programming concepts.
+slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
+dateModified: 2026-01-29
+datePublished: 2026-09-25
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
   - javascript
 resources:
-  - title: "JS course PDF - 20"
-    type: "PDF"
-    url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758792130/Portfolio/javaScriptCourse/pdf/JavaScript-day20_AdvancedClosures_compressed.pdf"
-    description: "A PDF Notes on Advanced Closures Interview Questions topic"
-  - title: "JavaScript Interview Questions"
-    type: "article"
-    url: "https://github.com/sudheerj/javascript-interview-questions"
-    description: "Comprehensive list of JavaScript interview questions including closures"
-  - title: "You Don't Know JS - Advanced Closures"
-    type: "book"
-    url: "https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/scope-closures/ch8.md"
-    description: "Advanced closure concepts from You Don't Know JS series"
-  - title: "JavaScript Closures Visualizer"
-    type: "tool"
-    url: "https://ui.dev/javascript-visualizer/"
-    description: "Interactive tool to visualize closure behavior"
-
+  - title: JS course PDF - 20
+    type: PDF
+    url: https://res.cloudinary.com/duojkrgue/image/upload/v1758792130/Portfolio/javaScriptCourse/pdf/JavaScript-day20_AdvancedClosures_compressed.pdf
+    description: A PDF Notes on Advanced Closures Interview Questions topic
+  - title: JavaScript Interview Questions
+    type: article
+    url: https://github.com/sudheerj/javascript-interview-questions
+    description: Comprehensive list of JavaScript interview questions including closures
+  - title: You Don't Know JS - Advanced Closures
+    type: book
+    url: https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/scope-closures/ch8.md
+    description: Advanced closure concepts from You Don't Know JS series
+  - title: JavaScript Closures Visualizer
+    type: tool
+    url: https://ui.dev/javascript-visualizer/
+    description: Interactive tool to visualize closure behavior
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758811619/Portfolio/javaScriptCourse/images/all%20title%20images/21_a3dkrm.png)

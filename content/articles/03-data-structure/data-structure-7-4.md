@@ -2,8 +2,8 @@
 title: "Suffix Maximum"
 description: "Build suffix maximum array to find maximum element from any index to end. Learn reverse cumulative maximum technique."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-26"
-datePublished: "2025-09-26"
+dateModified: "2026-09-26"
+datePublished: "2026-09-26"
 showOnArticles: false
 courseName: 03-data-structure
 topics:

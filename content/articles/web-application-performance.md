@@ -2,8 +2,8 @@
 title: "10 Proven Strategies to Optimize Web Application Performance"
 description: "In today's fast-paced digital world, user experience plays a crucial role in the success of any web application. Users expect lightning-fast loading times and seamless interactions, and any lag or delay can lead to frustration and abandonment. Therefore, optimizing the performance of your web application is paramount. In this blog post, we'll explore ten proven strategies to enhance the performance of your web application, ensuring a smoother and more enjoyable user experience."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles/web-application-performance.md"
-dateModified: "2025-01-01"
-datePublished: "2025-01-01"
+dateModified: "2026-01-01"
+datePublished: "2026-01-01"
 showOnArticles: true
 topics:
   - system-design

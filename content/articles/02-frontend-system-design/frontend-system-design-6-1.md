@@ -2,8 +2,8 @@
 title: "Local Storage"
 description: "Master browser local storage mechanisms and best practices. Learn about localStorage API, storage limits, security considerations, data persistence strategies, and building robust client-side storage solutions."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-04-06"
-datePublished: "2025-04-06"
+dateModified: "2026-04-06"
+datePublished: "2026-04-06"
 showOnArticles: false
 courseName: 02-frontend-system-design
 image: https://res.cloudinary.com/duojkrgue/image/upload/v1759048339/Portfolio/FrontendSystemDesignCourse/titleImages/37_d3mlak.png

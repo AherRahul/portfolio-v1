@@ -2,8 +2,8 @@
 title: "Find in Matrix"
 description: "Search for element in row-wise and column-wise sorted matrix. Master the staircase search algorithm."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-26"
-datePublished: "2025-09-26"
+dateModified: "2026-09-26"
+datePublished: "2026-09-26"
 showOnArticles: false
 courseName: 03-data-structure
 topics:

@@ -1,31 +1,32 @@
 ---
-title: "undefined vs not defined"
-description: "undefined and 'not defined' are two completely different concepts in JavaScript that often confuse developers. Understanding the distinction between these states is essential for debugging and writing robust code."
-slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-25"
-datePublished: "2025-09-25"
+title: undefined vs not defined
+description: undefined and 'not defined' are two completely different concepts
+  in JavaScript that often confuse developers. Understanding the distinction
+  between these states is essential for debugging and writing robust code.
+slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
+dateModified: 2026-01-29
+datePublished: 2026-09-25
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
   - javascript
 resources:
-  - title: "JS course PDF - 13"
-    type: "PDF"
-    url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758792130/Portfolio/javaScriptCourse/pdf/JavaScript-day13_Undefined_compressed.pdf"
-    description: "A PDF Notes on undefined vs not defined topic"
-  - title: "MDN - undefined"
-    type: "documentation"
-    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined"
-    description: "Complete reference for the undefined value in JavaScript"
-  - title: "MDN - ReferenceError"
-    type: "documentation"
-    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError"
-    description: "Understanding ReferenceError when variables are not defined"
-  - title: "JavaScript.info - Variables"
-    type: "article"
-    url: "https://javascript.info/variables"
-    description: "Comprehensive guide to variable declaration and undefined values"
-
+  - title: JS course PDF - 13
+    type: PDF
+    url: https://res.cloudinary.com/duojkrgue/image/upload/v1758792130/Portfolio/javaScriptCourse/pdf/JavaScript-day13_Undefined_compressed.pdf
+    description: A PDF Notes on undefined vs not defined topic
+  - title: MDN - undefined
+    type: documentation
+    url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined
+    description: Complete reference for the undefined value in JavaScript
+  - title: MDN - ReferenceError
+    type: documentation
+    url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError
+    description: Understanding ReferenceError when variables are not defined
+  - title: JavaScript.info - Variables
+    type: article
+    url: https://javascript.info/variables
+    description: Comprehensive guide to variable declaration and undefined values
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758811616/Portfolio/javaScriptCourse/images/all%20title%20images/14_b0culy.png)

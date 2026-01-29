@@ -2,8 +2,8 @@
 title: "A, B and Modulo"
 description: "Find pairs where (A[i] + A[j]) % M equals B. Master modular arithmetic in combinatorial problems."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-26"
-datePublished: "2025-09-26"
+dateModified: "2026-09-26"
+datePublished: "2026-09-26"
 showOnArticles: false
 courseName: 03-data-structure
 topics:

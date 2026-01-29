@@ -1,19 +1,22 @@
 ---
-title: "Cognitive Constraints and Interaction Challenges"
-description: "One of the broadest groups of LLMs' limitations is Cognitive Constraints and Interaction Challenges. The good news is that these are among the most manageable ones for users when interacting with LLMs. This group includes five categories: non-human cognition, hallucinations, biased outputs, lack of knowledge, and stochastic nature."
-slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-04-10"
-datePublished: "2025-04-10"
+title: Cognitive Constraints and Interaction Challenges
+description: "One of the broadest groups of LLMs' limitations is Cognitive
+  Constraints and Interaction Challenges. The good news is that these are among
+  the most manageable ones for users when interacting with LLMs. This group
+  includes five categories: non-human cognition, hallucinations, biased outputs,
+  lack of knowledge, and stochastic nature."
+slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
+dateModified: 2026-01-29
+datePublished: 2026-04-10
 showOnArticles: false
 courseName: 06-learn-ai-with-me
 topics:
   - ai
 resources:
-  - title: "AI Notes"
-    type: "PDF"
+  - title: AI Notes
+    type: PDF
     url: ""
-    description: "A PDF Notes."
-
+    description: A PDF Notes.
 ---
 
 ![](https://res.cloudinary.com/duojkrgue/image/upload/v1758777282/Portfolio/aiCourse/Learn_AI_eyag79.png)

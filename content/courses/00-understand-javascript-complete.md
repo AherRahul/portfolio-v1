@@ -22,7 +22,7 @@ content:
       - id: 1
         topic_name: JavaScript Engine
         sub_topic: Javascript
-        publish_date: 2025-09-24
+        publish_date: 2026-09-24
         description: >
           To truly understand JavaScript, you have to look beyond the code you
           write and into the engine that runs it. At its heart, JavaScript is a
@@ -39,7 +39,7 @@ content:
       - id: 2
         topic_name: Execution Context
         sub_topic: Javascript
-        publish_date: 2025-09-24
+        publish_date: 2026-09-24
         description: >
           An Execution Context is the abstract environment where JavaScript code
           is evaluated and executed. Think of it as a container or a sandbox
@@ -56,7 +56,7 @@ content:
       - id: 3
         topic_name: Hoisting
         sub_topic: Javascript
-        publish_date: 2025-09-25
+        publish_date: 2026-09-25
         description: >
           Hoisting is JavaScript's behavior of moving variable and function
           declarations to the top of their scope during the creation phase. It's
@@ -73,7 +73,7 @@ content:
       - id: 4
         topic_name: Scope and Lexical Environment
         sub_topic: Javascript
-        publish_date: 2025-09-25
+        publish_date: 2026-09-25
         description: >
           Scope determines where variables can be accessed in your code, while
           lexical environment is the internal structure that makes scope
@@ -97,7 +97,7 @@ content:
       - id: 5
         topic_name: Variables and Data Types
         sub_topic: Javascript
-        publish_date: 2025-09-25
+        publish_date: 2026-09-25
         description: >
           Variables are containers for storing data values, and understanding
           JavaScript's data types is fundamental to writing effective code. From
@@ -114,7 +114,7 @@ content:
       - id: 6
         topic_name: Functions Deep Dive
         sub_topic: Javascript
-        publish_date: 2025-09-25
+        publish_date: 2026-09-25
         description: >
           Functions are the heart of JavaScript programming. They're not just
           blocks of code that execute - they're first-class citizens that can be
@@ -130,7 +130,7 @@ content:
       - id: 7
         topic_name: Control Flow and Operators
         sub_topic: Javascript
-        publish_date: 2025-09-25
+        publish_date: 2026-09-25
         description: >
           Control flow determines the path your code takes - from simple if-else
           statements to complex loops and switch cases. Combined with
@@ -146,7 +146,7 @@ content:
       - id: 8
         topic_name: Event Loop Mastery
         sub_topic: Javascript
-        publish_date: 2025-09-25
+        publish_date: 2026-09-25
         description: >
           The Event Loop is JavaScript's secret to handling asynchronous
           operations while remaining single-threaded. Understanding this
@@ -169,7 +169,7 @@ content:
       - id: 9
         topic_name: Objects and this keyword
         sub_topic: Javascript
-        publish_date: 2025-09-25
+        publish_date: 2026-09-25
         description: >
           Objects are the cornerstone of JavaScript programming. More than just
           data containers, they're dynamic entities that can hold properties,
@@ -186,7 +186,7 @@ content:
       - id: 10
         topic_name: Prototypes and Prototype Chain
         sub_topic: Javascript
-        publish_date: 2025-09-25
+        publish_date: 2026-09-25
         description: >
           JavaScript's prototype system is unique among programming languages.
           Instead of traditional classes, JavaScript uses prototypes for
@@ -203,7 +203,7 @@ content:
       - id: 11
         topic_name: Classes and Inheritance
         sub_topic: Javascript
-        publish_date: 2025-09-25
+        publish_date: 2026-09-25
         description: >
           ES6 introduced class syntax to JavaScript, providing a more familiar
           way to create objects and implement inheritance. While classes are
@@ -226,7 +226,7 @@ content:
       - id: 12
         topic_name: Window & this keyword
         sub_topic: Javascript
-        publish_date: 2025-09-25
+        publish_date: 2026-09-25
         description: >
           The shortest JavaScript program and the mysterious global 'this'
           keyword. Understanding the global execution context, window object,
@@ -242,7 +242,7 @@ content:
       - id: 13
         topic_name: undefined vs not defined
         sub_topic: Javascript
-        publish_date: 2025-09-25
+        publish_date: 2026-09-25
         description: >
           undefined and 'not defined' are two completely different concepts in
           JavaScript that often confuse developers. Understanding the
@@ -258,7 +258,7 @@ content:
       - id: 14
         topic_name: Closures in JavaScript
         sub_topic: Javascript
-        publish_date: 2025-09-25
+        publish_date: 2026-09-25
         description: >
           Closures are JavaScript's superpower - they allow functions to
           remember variables from their outer scope even after that scope has
@@ -274,7 +274,7 @@ content:
       - id: 15
         topic_name: setTimeout + Closures Interview Questions
         sub_topic: Javascript
-        publish_date: 2025-09-25
+        publish_date: 2026-09-25
         description: >
           The classic setTimeout with closures in a loop is one of the most
           frequently asked JavaScript interview questions. Understanding this
@@ -290,7 +290,7 @@ content:
       - id: 16
         topic_name: Callback Functions & Event Listeners
         sub_topic: Javascript
-        publish_date: 2025-09-25
+        publish_date: 2026-09-25
         description: >
           Callback functions are the foundation of asynchronous JavaScript and
           event-driven programming. Understanding how callbacks work with event
@@ -305,7 +305,7 @@ content:
       - id: 17
         topic_name: Trust Issues with setTimeout
         sub_topic: Javascript
-        publish_date: 2025-09-25
+        publish_date: 2026-09-25
         description: >
           setTimeout doesn't always behave as expected! Understanding the
           nuances of setTimeout, its minimum delays, and how it interacts with
@@ -327,7 +327,7 @@ content:
       - id: 18
         topic_name: Higher-Order Functions
         sub_topic: Javascript
-        publish_date: 2025-09-25
+        publish_date: 2026-09-25
         description: >
           Higher-order functions are functions that take other functions as
           arguments or return functions. They're the backbone of functional
@@ -343,7 +343,7 @@ content:
       - id: 19
         topic_name: map, filter & reduce
         sub_topic: Javascript
-        publish_date: 2025-09-25
+        publish_date: 2026-09-25
         description: >
           The holy trinity of array methods - map, filter, and reduce - are
           essential tools for functional programming in JavaScript. These
@@ -359,7 +359,7 @@ content:
       - id: 20
         topic_name: Advanced Closures Interview Questions
         sub_topic: Javascript
-        publish_date: 2025-09-25
+        publish_date: 2026-09-25
         description: >
           Master the most challenging closure-based interview questions that
           test your deep understanding of JavaScript's scope, execution context,
@@ -381,7 +381,7 @@ content:
       - id: 21
         topic_name: Callback Hell
         sub_topic: Javascript
-        publish_date: 2025-09-25
+        publish_date: 2026-09-25
         description: >
           Callback Hell is the nightmare of nested callbacks that makes code
           unreadable and unmaintainable. Understanding this problem is the first
@@ -396,7 +396,7 @@ content:
       - id: 22
         topic_name: Promises
         sub_topic: Javascript
-        publish_date: 2025-09-25
+        publish_date: 2026-09-25
         description: >
           Promises revolutionized asynchronous JavaScript by providing a cleaner
           way to handle async operations. Understanding promises is essential
@@ -411,7 +411,7 @@ content:
       - id: 23
         topic_name: Promise Chaining & Error Handling
         sub_topic: Javascript
-        publish_date: 2025-09-25
+        publish_date: 2026-09-25
         description: >
           Learn how to create promises, chain them together, and handle errors
           gracefully. Master the Promise constructor and understand how to build
@@ -426,7 +426,7 @@ content:
       - id: 24
         topic_name: Async Await
         sub_topic: Javascript
-        publish_date: 2025-09-25
+        publish_date: 2026-09-25
         description: >
           Async/await is syntactic sugar over promises that makes asynchronous
           code look and behave more like synchronous code. Master this modern
@@ -441,7 +441,7 @@ content:
       - id: 25
         topic_name: Promise APIs & Interview Questions
         sub_topic: Javascript
-        publish_date: 2025-09-25
+        publish_date: 2026-09-25
         description: >
           Master Promise.all(), Promise.race(), Promise.allSettled(), and
           Promise.any(). These powerful utility methods are frequently tested in
@@ -463,7 +463,7 @@ content:
       - id: 26
         topic_name: Destructuring & Spread/Rest Operators
         sub_topic: Javascript
-        publish_date: 2025-09-26
+        publish_date: 2026-09-26
         description: >
           Master the art of extracting values from arrays and objects with
           destructuring assignment, and learn to spread and collect elements
@@ -479,7 +479,7 @@ content:
       - id: 27
         topic_name: Template Literals & Tagged Templates
         sub_topic: Javascript
-        publish_date: 2025-09-26
+        publish_date: 2026-09-26
         description: >
           Explore the power of template literals for string interpolation and
           multiline strings, plus advanced tagged template functions for custom
@@ -494,7 +494,7 @@ content:
       - id: 28
         topic_name: Symbols, Sets, Maps & WeakMaps
         sub_topic: Javascript
-        publish_date: 2025-09-26
+        publish_date: 2026-09-26
         description: >
           Discover modern data structures and primitive types in JavaScript.
           Learn when and how to use Symbols for unique identifiers, Sets for
@@ -510,7 +510,7 @@ content:
       - id: 29
         topic_name: Iterators & Generators
         sub_topic: Javascript
-        publish_date: 2025-09-26
+        publish_date: 2026-09-26
         description: >
           Master the iterator protocol and generator functions to create custom
           iteration behavior, lazy evaluation, and powerful control flow
@@ -525,7 +525,7 @@ content:
       - id: 30
         topic_name: Modules (import/export) & Dynamic Imports
         sub_topic: Javascript
-        publish_date: 2025-09-26
+        publish_date: 2026-09-26
         description: >
           Learn the modern module system that replaced the chaos of global
           variables and script tags. Master static imports/exports and dynamic
@@ -547,7 +547,7 @@ content:
       - id: 31
         topic_name: DOM Manipulation Mastery
         sub_topic: Javascript
-        publish_date: 2025-09-26
+        publish_date: 2026-09-26
         description: >
           Master the Document Object Model with modern techniques for selecting,
           creating, modifying, and removing elements. Learn
@@ -563,7 +563,7 @@ content:
       - id: 32
         topic_name: Event Handling & Custom Events
         sub_topic: Javascript
-        publish_date: 2025-09-26
+        publish_date: 2026-09-26
         description: >
           Deep dive into the event system that powers interactive web
           applications. Learn event delegation, custom events, and advanced
@@ -578,7 +578,7 @@ content:
       - id: 33
         topic_name: Fetch API & Network Requests
         sub_topic: Javascript
-        publish_date: 2025-09-26
+        publish_date: 2026-09-26
         description: >
           Master modern HTTP communication with the Fetch API. Learn to handle
           different request types, manage headers, process responses, and
@@ -593,7 +593,7 @@ content:
       - id: 34
         topic_name: Web Storage & IndexedDB
         sub_topic: Javascript
-        publish_date: 2025-09-26
+        publish_date: 2026-09-26
         description: >
           Explore client-side storage options from simple localStorage to
           powerful IndexedDB. Learn when to use each storage method and how to
@@ -608,7 +608,7 @@ content:
       - id: 35
         topic_name: Service Workers & Progressive Web Apps
         sub_topic: Javascript
-        publish_date: 2025-09-26
+        publish_date: 2026-09-26
         description: >
           Build progressive web applications with service workers for offline
           functionality, background sync, and push notifications. Transform web
@@ -630,7 +630,7 @@ content:
       - id: 36
         topic_name: Module Pattern & Namespace Management
         sub_topic: Javascript
-        publish_date: 2025-09-26
+        publish_date: 2026-09-26
         description: >
           Learn classical design patterns for organizing code into reusable
           modules. Master techniques for creating clean namespaces and avoiding
@@ -645,7 +645,7 @@ content:
       - id: 37
         topic_name: Observer Pattern & Event Systems
         sub_topic: Javascript
-        publish_date: 2025-09-26
+        publish_date: 2026-09-26
         description: >
           Implement the observer pattern to create loosely coupled, event-driven
           architectures. Build custom event systems and understand how modern
@@ -660,7 +660,7 @@ content:
       - id: 38
         topic_name: Factory & Builder Patterns
         sub_topic: Javascript
-        publish_date: 2025-09-26
+        publish_date: 2026-09-26
         description: >
           Master creational patterns for object construction. Learn when to use
           factory functions vs constructors vs classes, and how the builder
@@ -675,7 +675,7 @@ content:
       - id: 39
         topic_name: Singleton & Decorator Patterns
         sub_topic: Javascript
-        publish_date: 2025-09-26
+        publish_date: 2026-09-26
         description: >
           Explore structural patterns for managing object instances and
           extending functionality. Learn the singleton pattern's pros and cons,
@@ -690,7 +690,7 @@ content:
       - id: 40
         topic_name: MVC/MVP/MVVM Architecture Patterns
         sub_topic: Javascript
-        publish_date: 2025-09-26
+        publish_date: 2026-09-26
         description: >
           Understand architectural patterns that separate concerns in large
           applications. Learn how MVC, MVP, and MVVM patterns influence modern
@@ -712,7 +712,7 @@ content:
       - id: 41
         topic_name: Memory Management & Garbage Collection
         sub_topic: Javascript
-        publish_date: 2025-09-26
+        publish_date: 2026-09-26
         description: >
           Deep dive into JavaScript's memory model, garbage collection
           algorithms, and memory leak prevention. Learn to profile memory usage
@@ -727,7 +727,7 @@ content:
       - id: 42
         topic_name: Performance Profiling & Optimization
         sub_topic: Javascript
-        publish_date: 2025-09-26
+        publish_date: 2026-09-26
         description: >
           Master the art of measuring and improving JavaScript performance.
           Learn to use browser DevTools, identify bottlenecks, and apply
@@ -742,7 +742,7 @@ content:
       - id: 43
         topic_name: Debouncing, Throttling & Lazy Loading
         sub_topic: Javascript
-        publish_date: 2025-09-26
+        publish_date: 2026-09-26
         description: >
           Implement essential performance patterns for handling frequent events
           and loading resources efficiently. Master debouncing, throttling, and
@@ -757,7 +757,7 @@ content:
       - id: 44
         topic_name: Code Splitting & Bundle Optimization
         sub_topic: Javascript
-        publish_date: 2025-09-26
+        publish_date: 2026-09-26
         description: >
           Optimize application loading with strategic code splitting and bundle
           analysis. Learn to reduce initial bundle size and implement smart
@@ -772,7 +772,7 @@ content:
       - id: 45
         topic_name: Web Workers & Parallel Processing
         sub_topic: Javascript
-        publish_date: 2025-09-26
+        publish_date: 2026-09-26
         description: >
           Unlock parallel processing in JavaScript with Web Workers. Learn to
           offload heavy computations, implement background data processing, and

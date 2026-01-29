@@ -2,8 +2,8 @@
 title: "Cross-site Scripting (XSS)"
 description: "Learn about Cross-site Scripting (XSS) attacks, one of the most common web application vulnerabilities. Understand the different types of XSS, how attackers exploit them, and comprehensive strategies to prevent and mitigate XSS attacks in modern frontend applications."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-03-11"
-datePublished: "2025-03-11"
+dateModified: "2026-03-11"
+datePublished: "2026-03-11"
 showOnArticles: false
 courseName: 02-frontend-system-design
 topics:

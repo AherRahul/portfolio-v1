@@ -2,8 +2,8 @@
 title: "Debugging & Inspecting NodeJs"
 description: "Use Node inspector, Chrome DevTools, VS Code debugger; breakpoints, watch expressions, CPU profiling, and memory tools."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-15"
-datePublished: "2025-09-15"
+dateModified: "2026-09-15"
+datePublished: "2026-09-15"
 showOnArticles: false
 courseName: 01-beginner-to-advance-nodejs
 topics:

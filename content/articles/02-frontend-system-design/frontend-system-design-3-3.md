@@ -2,8 +2,8 @@
 title: "Security Headers"
 description: "Master essential HTTP security headers that protect web applications from common attacks. Learn about Content-Security-Policy, X-XSS-Protection, Strict-Transport-Security, X-Content-Type-Options, and how to implement comprehensive header security strategies."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-03-13"
-datePublished: "2025-03-13"
+dateModified: "2026-03-13"
+datePublished: "2026-03-13"
 showOnArticles: false
 courseName: 02-frontend-system-design
 topics:

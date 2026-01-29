@@ -1,31 +1,33 @@
 ---
-title: "Profiling & Performance Analysis"
-description: "Master JavaScript performance analysis using browser developer tools, performance monitoring APIs, and profiling techniques. Learn to identify bottlenecks, measure performance metrics, and optimize application speed."
-slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-26"
-datePublished: "2025-09-26"
+title: Profiling & Performance Analysis
+description: Master JavaScript performance analysis using browser developer
+  tools, performance monitoring APIs, and profiling techniques. Learn to
+  identify bottlenecks, measure performance metrics, and optimize application
+  speed.
+slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
+dateModified: 2026-01-29
+datePublished: 2026-09-26
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
   - javascript
 resources:
-  - title: "Chrome DevTools Performance Tab"
-    type: "reference"
-    url: "https://developers.google.com/web/tools/chrome-devtools/evaluate-performance"
-    description: "Official guide to Chrome DevTools performance analysis"
-  - title: "Performance API - MDN"
-    type: "reference"
-    url: "https://developer.mozilla.org/en-US/docs/Web/API/Performance"
-    description: "Comprehensive Performance API documentation"
-  - title: "Web Vitals"
-    type: "reference"
-    url: "https://web.dev/vitals/"
-    description: "Google's Core Web Vitals for measuring user experience"
-  - title: "Lighthouse Performance Audits"
-    type: "article"
-    url: "https://web.dev/lighthouse-performance/"
-    description: "Using Lighthouse for automated performance auditing"
-
+  - title: Chrome DevTools Performance Tab
+    type: reference
+    url: https://developers.google.com/web/tools/chrome-devtools/evaluate-performance
+    description: Official guide to Chrome DevTools performance analysis
+  - title: Performance API - MDN
+    type: reference
+    url: https://developer.mozilla.org/en-US/docs/Web/API/Performance
+    description: Comprehensive Performance API documentation
+  - title: Web Vitals
+    type: reference
+    url: https://web.dev/vitals/
+    description: Google's Core Web Vitals for measuring user experience
+  - title: Lighthouse Performance Audits
+    type: article
+    url: https://web.dev/lighthouse-performance/
+    description: Using Lighthouse for automated performance auditing
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758811611/Portfolio/javaScriptCourse/images/all%20title%20images/43_vigden.png)

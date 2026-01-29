@@ -2,8 +2,8 @@
 title: "Integration Testing with Supertest"
 description: "Test Express API end-to-end with Supertest. Learn setup, lifecycle hooks, test database strategies, and writing assertions for routes, status codes, and payloads."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-15"
-datePublished: "2025-09-15"
+dateModified: "2026-09-15"
+datePublished: "2026-09-15"
 showOnArticles: false
 courseName: 01-beginner-to-advance-nodejs
 topics:

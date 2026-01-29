@@ -1,17 +1,21 @@
 ---
-title: "Who Owns What in the Cloud?"
-description: "Consistency and standards are important for building a unified design language and help the user know what to expect from our product and how to use it. However, this does not mean sacrificing the user experience. In this sense, the context and needs of our users are priorities when developing our solutions."
+title: Who Owns What in the Cloud?
+description: Consistency and standards are important for building a unified
+  design language and help the user know what to expect from our product and how
+  to use it. However, this does not mean sacrificing the user experience. In
+  this sense, the context and needs of our users are priorities when developing
+  our solutions.
 tutor: 1
-slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles/aws-solution-architect-exam-guide.md"
-dateModified: "2025-05-22"
-datePublished: "2025-05-22"
+slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles/aws-solution-architect-exam-guide.md
+dateModified: 2026-01-29
+datePublished: 2026-05-22
 showOnArticles: false
 courseName: 05-aws-solution-architect
 topics:
   - system-design
   - aws
   - lld
-videoUrl: "https://www.youtube.com/embed/izQlU1sZkNg?si=q_GceoOp1N6nWdNZ"
+videoUrl: https://www.youtube.com/embed/izQlU1sZkNg?si=q_GceoOp1N6nWdNZ
 ---
 
 ## Who Owns What in the Cloud? Understanding AWS Shared Responsibility Model
@@ -176,6 +180,5 @@ Happy coding!
 
 
 
----
 
 Thank you so much for reading. If you found it valuable, consider subscribing for more such content every week. If you have any questions or suggestions, please email me your comments or feel free to improve it.

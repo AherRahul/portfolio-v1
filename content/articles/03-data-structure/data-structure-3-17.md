@@ -2,8 +2,8 @@
 title: "Range Sum Query - II"
 description: "Master efficient range sum queries using the Prefix Sum technique. Learn how to answer multiple range queries in O(1) time after O(N) preprocessing, and understand one of the most powerful array optimization techniques."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-26"
-datePublished: "2025-09-26"
+dateModified: "2026-09-26"
+datePublished: "2026-09-26"
 showOnArticles: false
 courseName: 03-data-structure
 topics:

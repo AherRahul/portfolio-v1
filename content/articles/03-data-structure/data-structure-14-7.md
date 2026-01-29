@@ -2,8 +2,8 @@
 title: "K Occurrences Problem using Hashing"
 description: "Find and sum heights with exactly B occurrences. Learn to filter by frequency, apply modulo operations, and master the technique of aggregating values based on occurrence count."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-12-24"
-datePublished: "2025-12-24"
+dateModified: "2026-12-24"
+datePublished: "2026-12-24"
 showOnArticles: false
 courseName: 03-data-structure
 topics:

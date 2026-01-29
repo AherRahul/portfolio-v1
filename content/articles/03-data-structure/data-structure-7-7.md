@@ -2,8 +2,8 @@
 title: "Range Sum II - Array Updates"
 description: "Handle multiple range update and query operations efficiently. Learn segment tree lite approach using difference arrays."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-26"
-datePublished: "2025-09-26"
+dateModified: "2026-09-26"
+datePublished: "2026-09-26"
 showOnArticles: false
 courseName: 03-data-structure
 topics:

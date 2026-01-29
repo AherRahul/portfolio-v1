@@ -2,8 +2,8 @@
 title: "Middleware in Express.js"
 description: "Understanding Express.js middleware - the heart of Express applications. Learn about different types of middleware, execution order, built-in middleware, third-party options, and how to create custom middleware for logging, validation, authentication, and error handling."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-15"
-datePublished: "2025-09-15"
+dateModified: "2026-09-15"
+datePublished: "2026-09-15"
 showOnArticles: false
 courseName: 01-beginner-to-advance-nodejs
 topics:

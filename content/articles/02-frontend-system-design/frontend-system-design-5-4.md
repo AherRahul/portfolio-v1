@@ -2,8 +2,8 @@
 title: "Network Optimization"
 description: "Master network-level performance optimizations. Learn about HTTP/2, HTTP/3, resource bundling, compression, CDN strategies, prefetching, preloading, and implementing efficient network communication patterns."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-04-03"
-datePublished: "2025-04-03"
+dateModified: "2026-04-03"
+datePublished: "2026-04-03"
 showOnArticles: false
 courseName: 02-frontend-system-design
 image: https://res.cloudinary.com/duojkrgue/image/upload/v1759048338/Portfolio/FrontendSystemDesignCourse/titleImages/34_sf104b.png

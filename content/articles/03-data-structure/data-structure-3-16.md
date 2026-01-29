@@ -2,8 +2,8 @@
 title: "Count of Primes"
 description: "Master the Sieve of Eratosthenes algorithm to efficiently count prime numbers. Learn multiple approaches from brute force to optimal solutions, understand prime number distribution, and explore one of the most elegant algorithms in computer science."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-26"
-datePublished: "2025-09-26"
+dateModified: "2026-09-26"
+datePublished: "2026-09-26"
 showOnArticles: false
 courseName: 03-data-structure
 topics:

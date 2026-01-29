@@ -2,8 +2,8 @@
 title: "Form Largest Number from Array"
 description: "Arrange array elements to form largest number. Master custom string comparison, handle edge cases with zeros, and learn concatenation-based sorting."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-12-24"
-datePublished: "2025-12-24"
+dateModified: "2026-12-24"
+datePublished: "2026-12-24"
 showOnArticles: false
 courseName: 03-data-structure
 topics:

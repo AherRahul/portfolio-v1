@@ -2,8 +2,8 @@
 title: "Consistent Hashing Algorithm"
 description: "Consistent hashing is a distributed hashing technique used in computer science and distributed systems to achieve load balancing and minimize the need for rehashing when the number of nodes in a system changes. It is particularly useful in distributed hash tables (DHTs), distributed caching systems, and other distributed storage systems. Consistent hashing is a technique used in computer systems to distribute keys (e.g., cache keys) uniformly across a cluster of nodes (e.g., cache servers). The goal is to minimize the number of keys that need to be moved when nodes are added or removed from the cluster, thus reducing the impact of these changes on the overall system."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles/consistent-hashing-algorithm.md"
-dateModified: "2025-05-23"
-datePublished: "2025-05-23"
+dateModified: "2026-05-23"
+datePublished: "2026-05-23"
 showOnArticles: true
 topics:
   - system-design

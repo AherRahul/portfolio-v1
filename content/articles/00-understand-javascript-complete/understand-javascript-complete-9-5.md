@@ -1,31 +1,33 @@
 ---
-title: "Singleton Pattern & Proxy Pattern"
-description: "Master advanced design patterns for controlling object instantiation and access. Learn to implement global state management, lazy initialization, access control, and sophisticated object interaction mechanisms."
-slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-26"
-datePublished: "2025-09-26"
+title: Singleton Pattern & Proxy Pattern
+description: Master advanced design patterns for controlling object
+  instantiation and access. Learn to implement global state management, lazy
+  initialization, access control, and sophisticated object interaction
+  mechanisms.
+slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
+dateModified: 2026-01-29
+datePublished: 2026-09-26
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
   - javascript
 resources:
-  - title: "Singleton Pattern - GoF Design Patterns"
-    type: "reference"
-    url: "https://en.wikipedia.org/wiki/Singleton_pattern"
-    description: "Classical Singleton pattern definition and implementation"
-  - title: "Proxy Pattern - GoF Design Patterns"
-    type: "reference"
-    url: "https://en.wikipedia.org/wiki/Proxy_pattern"
-    description: "Proxy pattern for controlling access to objects"
-  - title: "JavaScript Proxy Object"
-    type: "reference"
-    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy"
-    description: "Native JavaScript Proxy API documentation"
-  - title: "ES6 Proxy Deep Dive"
-    type: "article"
-    url: "https://ponyfoo.com/articles/es6-proxy-introduction"
-    description: "Comprehensive guide to JavaScript Proxy features"
-
+  - title: Singleton Pattern - GoF Design Patterns
+    type: reference
+    url: https://en.wikipedia.org/wiki/Singleton_pattern
+    description: Classical Singleton pattern definition and implementation
+  - title: Proxy Pattern - GoF Design Patterns
+    type: reference
+    url: https://en.wikipedia.org/wiki/Proxy_pattern
+    description: Proxy pattern for controlling access to objects
+  - title: JavaScript Proxy Object
+    type: reference
+    url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy
+    description: Native JavaScript Proxy API documentation
+  - title: ES6 Proxy Deep Dive
+    type: article
+    url: https://ponyfoo.com/articles/es6-proxy-introduction
+    description: Comprehensive guide to JavaScript Proxy features
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758811608/Portfolio/javaScriptCourse/images/all%20title%20images/41_tpbsvz.png)

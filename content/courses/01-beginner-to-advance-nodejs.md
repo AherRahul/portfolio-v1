@@ -18,7 +18,7 @@ content:
       - id: 1
         topic_name: Introduction to NodeJS
         sub_topic: NodeJS Basics - Module 1
-        publish_date: 2025-09-21
+        publish_date: 2026-09-21
         description: >
           NodeJs is a high-performance JavaScript runtime designed for building fast, scalable server-side applications. With its event-driven, non-blocking architecture, it efficiently handles multiple requests, making it ideal for real-time applications like chat apps and streaming services. By the end, you'll have a strong foundation in NodeJs, enabling you to build scalable, high-performance applications from scratch.
         topics:
@@ -32,7 +32,7 @@ content:
       - id: 2
         topic_name: JavaScript on Server
         sub_topic: NodeJS Basics - Module 1
-        publish_date: 2025-09-22
+        publish_date: 2026-09-22
         description: >
           Discover how JavaScript powers server-side development with NodeJs, transforming the way web applications are built. NodeJs is a fast, scalable runtime that enables asynchronous, event-driven programming, making it ideal for real-time applications like chat apps and streaming services. You'll also learn to build server-side applications from scratch, manage dependencies with npm, and use frameworks like Express.js.
         topics:
@@ -46,7 +46,7 @@ content:
       - id: 3
         topic_name: Let's write code
         sub_topic: NodeJS Basics - Module 1
-        publish_date: 2025-09-23
+        publish_date: 2026-09-23
         description: >
           Go to NodeJs website and download the latest version, If you are struggling in installing feel free to contact me , we can schedule a 5min meeting I will help you to download NodeJs in to your system , Best way to download it , Go to Prebuilt installer and download a file and install it by executing by dowload file.
         topics:
@@ -60,7 +60,7 @@ content:
       - id: 4
         topic_name: Module.export & require
         sub_topic: NodeJS Basics - Module 1
-        publish_date: 2025-09-24
+        publish_date: 2026-09-24
         description: >
           As you saw in the last episode, we wrote our first line of code in NodeJs. Now, we could just keep adding whatever we want to app.js, and technically, it would work. But that's not the best way to do things because the file would get cluttered and hard to manage. Instead, we need multiple files.So, you'll use require to include different modules into your main file.
         topics:
@@ -82,7 +82,7 @@ content:
       - id: 5
         topic_name: Diving into the NodeJS github repo
         sub_topic: NodeJS Basics - Module 1
-        publish_date: 2025-04-09
+        publish_date: 2026-04-09
         description: >
           As we know, each module in NodeJs has its own scope. How does NodeJs achieve this? In JavaScript, we follow the Principle of Least Privilege (PoLP), which is related to functions and scope. If you're unfamiliar, you can Google it. The idea is to only expose what is necessary to the global scope, keeping everything else private. To achieve PoLP, wrap your code in a function or immediately invoke it (IIFE).
         topics:
@@ -96,7 +96,7 @@ content:
       - id: 6
         topic_name: libuv & async IO in NodeJs
         sub_topic: NodeJS Basics - Module 1
-        publish_date: 2025-04-10
+        publish_date: 2026-04-10
         description: >
           If you read NodeJs's definition, it mentions an event-driven architecture and its ability to handle asynchronous I/O. These two concepts are crucial to understand, so take your time to read and grasp them thoroughly. We know JavaScript is a synchronous, single-threaded language, meaning the code runs in one direction like a one-way road, with one task executing at a time.
         topics:
@@ -110,7 +110,7 @@ content:
       - id: 7
         topic_name: sync, async, setTimeoutZero in NodeJs
         sub_topic: NodeJS Basics - Module 1
-        publish_date: 2025-04-11
+        publish_date: 2026-04-11
         description: >
           In the last few sessions, we have seen how NodeJs code runs. If something is synchronous, the V8 engine handles it, or in case of asynchronous tasks, libUV steps in. You can think of NodeJs having two best friends, like Jai and Veeru. Whenever a problem (or code) comes in, they handle it accordingly.
         topics:
@@ -124,7 +124,7 @@ content:
       - id: 8
         topic_name: Deep dive into v8 JS Engine
         sub_topic: NodeJS Basics - Module 1
-        publish_date: 2025-04-12
+        publish_date: 2026-04-12
         description: >
           Now, let's focus on one of NodeJs's best friends, the V8 Engine. It takes the code and runs it. Before doing anything, I just want you to read this carefully.
         topics:
@@ -138,7 +138,7 @@ content:
       - id: 9
         topic_name: libuv & Event Loop
         sub_topic: NodeJS Basics - Module 1
-        publish_date: 2025-04-13
+        publish_date: 2026-04-13
         description: >
           As we know, NodeJs has two main parts, like the duo Jai and Veeru: the V8 engine and libuv. Let’s take a closer look at libuv. Just like the V8 engine has its hidden parts, you can learn more about it by clicking here. Now, let’s focus on libuv.
         topics:
@@ -152,7 +152,7 @@ content:
       - id: 10
         topic_name: LibUV Thread Pool - Deep Dive
         sub_topic: NodeJS Basics - Module 1
-        publish_date: 2025-04-14
+        publish_date: 2026-04-14
         description: >
           Welcome back! If you haven’t read the previous blog about the two friends, go and check that out first because things are getting more interesting. We’ve received an official FIR against NodeJs, and when NodeJs faced trouble, it called in its two best friends for help.
         topics:
@@ -174,7 +174,7 @@ content:
       - id: 11
         topic_name: Create a http server using Node JS
         sub_topic: NodeJS Basics - Module 1
-        publish_date: 2025-04-15
+        publish_date: 2026-04-15
         description: >
           We covered a lot of theory, investigating NodeJs from its beginnings to 2025, and now it’s time to take action. But be patient  -  we'll start with some theory to set the context of what a server is, and then write something. Today, your VS Code or code editor won’t be alone. NodeJs will be part of your code base, and we will write something.
         topics:
@@ -196,7 +196,7 @@ content:
       - id: 12
         topic_name: Databases and mongoDB
         sub_topic: NodeJS Basics - Module 1
-        publish_date: 2025-04-16
+        publish_date: 2026-04-16
         description: >
           In computer science, a database is an organized collection of data, a structured way of collecting and storing information. It is based on the DBMS (Database Management System), which means you can create, delete, edit, and retrieve data. The DBMS software manages everything, including the storage.
         topics:
@@ -210,7 +210,7 @@ content:
       - id: 13
         topic_name: Create MongoDB database using Node JS
         sub_topic: NodeJS Basics - Module 1
-        publish_date: 2025-04-17
+        publish_date: 2026-04-17
         description: >
           Okay, it’s time to create a database. Go to the database website by clicking here. There are two ways to install the database
         topics:
@@ -232,7 +232,7 @@ content:
       - id: 14
         topic_name: Introduction to Express.js
         sub_topic: Express Basics - Module 5
-        publish_date: 2025-09-15
+        publish_date: 2026-09-15
         description: >
           What is Express.js and why it's the most popular minimal and flexible web framework for NodeJs. Overview of routing, middleware, request/response lifecycle, and folder structure for small-to-medium apps.
         topics:
@@ -268,7 +268,7 @@ content:
       - id: 15
         topic_name: Building REST API with Express.js
         sub_topic: Express Basics - Module 5
-        publish_date: 2025-09-15
+        publish_date: 2026-09-15
         description: >
           Learn to create RESTful routes, handle JSON payloads, query parameters, route parameters, and status codes. Includes a simple CRUD example with controllers and router separation.
         topics:
@@ -304,7 +304,7 @@ content:
       - id: 16
         topic_name: Middleware in Express.js
         sub_topic: Express Basics - Module 5
-        publish_date: 2025-09-15
+        publish_date: 2026-09-15
         description: >
           Understand middleware types, execution order, built-in middleware, third-party middleware and how to build custom middleware for logging, validation, and authentication checks.
         topics:
@@ -317,7 +317,7 @@ content:
       - id: 17
         topic_name: Error Handling & Logging
         sub_topic: Express Basics - Module 5
-        publish_date: 2025-09-15
+        publish_date: 2026-09-15
         description: >
           Best practices for centralized error handling in Express, custom error classes, capturing stack traces, structured logging and integrating with logging libraries.
         topics:
@@ -330,7 +330,7 @@ content:
       - id: 18
         topic_name: Routing & Parameter Handling
         sub_topic: Express Basics - Module 5
-        publish_date: 2025-09-15
+        publish_date: 2026-09-15
         description: >
           Advanced routing patterns, nested routers, route params and query string parsing, validation and sanitization strategies for route inputs.
         topics:
@@ -351,7 +351,7 @@ content:
       - id: 19
         topic_name: JWT Authentication
         sub_topic: Auth & Security - Module 6
-        publish_date: 2025-09-15
+        publish_date: 2026-09-15
         description: >
           Learn how to secure API with JSON Web Tokens: token creation, verification, refresh tokens, and secure storage on client-side. Patterns for protecting routes and role-based access control.
         topics:
@@ -387,7 +387,7 @@ content:
       - id: 20
         topic_name: Password Hashing with bcrypt
         sub_topic: Auth & Security - Module 6
-        publish_date: 2025-09-15
+        publish_date: 2026-09-15
         description: >
           Securely store passwords using bcrypt: salting, rounds cost, verifying passwords, and safe migration strategies.
         topics:
@@ -400,7 +400,7 @@ content:
       - id: 21
         topic_name: Security Best Practices
         sub_topic: Auth & Security - Module 6
-        publish_date: 2025-09-15
+        publish_date: 2026-09-15
         description: >
           Prevent common vulnerabilities like XSS, CSRF, SQL/NoSQL injection, input validation, safe headers, CORS, and secure configuration patterns.
         topics:
@@ -413,7 +413,7 @@ content:
       - id: 22
         topic_name: OAuth & Social Login (Overview)
         sub_topic: Auth & Security - Module 6
-        publish_date: 2025-09-15
+        publish_date: 2026-09-15
         description: >
           Overview of OAuth2 flows, when to use Authorization Code vs Implicit, and integrating common social login providers.
         topics:
@@ -434,7 +434,7 @@ content:
       - id: 23
         topic_name: Unit Testing with Jest
         sub_topic: Testing - Module 7
-        publish_date: 2025-09-15
+        publish_date: 2026-09-15
         description: >
           Write unit tests for NodeJs applications using Jest: assertions, mocks, spies and coverage reporting.
         topics:
@@ -447,7 +447,7 @@ content:
       - id: 24
         topic_name: Integration Testing with Supertest
         sub_topic: Testing - Module 7
-        publish_date: 2025-09-15
+        publish_date: 2026-09-15
         description: >
           Test your Express API end-to-end with Supertest. Set up test databases, run lifecycle hooks, and assert responses and side-effects.
         topics:
@@ -460,7 +460,7 @@ content:
       - id: 25
         topic_name: Deploying NodeJs Apps
         sub_topic: Deployment - Module 7
-        publish_date: 2025-09-15
+        publish_date: 2026-09-15
         description: >
           Learn to deploy NodeJs applications to Heroku, Vercel, and AWS; understand environment variables, process managers and basic CI/CD concepts.
         topics:
@@ -481,7 +481,7 @@ content:
       - id: 26
         topic_name: Streams & Buffers
         sub_topic: Advanced - Module 8
-        publish_date: 2025-09-15
+        publish_date: 2026-09-15
         description: >
           Learn how to handle large data efficiently with NodeJs streams, readable/writable/transform streams and Buffer usage patterns.
         topics:
@@ -494,7 +494,7 @@ content:
       - id: 27
         topic_name: Clustering & Scaling
         sub_topic: Advanced - Module 8
-        publish_date: 2025-09-15
+        publish_date: 2026-09-15
         description: >
           Scale NodeJs applications using the cluster module, worker threads and horizontal scaling patterns.
         topics:
@@ -507,7 +507,7 @@ content:
       - id: 28
         topic_name: Performance Optimization
         sub_topic: Advanced - Module 8
-        publish_date: 2025-09-15
+        publish_date: 2026-09-15
         description: >
           Tips & tricks to optimize NodeJs performance: profiling, hot paths, event-loop monitoring and caching strategies.
         topics:
@@ -520,7 +520,7 @@ content:
       - id: 29
         topic_name: Memory Leaks & Profiling
         sub_topic: Advanced - Module 8
-        publish_date: 2025-09-15
+        publish_date: 2026-09-15
         description: >
           Detect and fix memory leaks, use NodeJs profiler and heap snapshots, and learn allocation tracking techniques.
         topics:
@@ -541,7 +541,7 @@ content:
       - id: 30
         topic_name: npm & Package Management
         sub_topic: Tooling - Module 9
-        publish_date: 2025-09-15
+        publish_date: 2026-09-15
         description: >
           Understand npm, package.json, semantic versioning, lockfiles, and package publishing basics.
         topics:
@@ -554,7 +554,7 @@ content:
       - id: 31
         topic_name: Debugging & Inspecting NodeJs
         sub_topic: Tooling - Module 9
-        publish_date: 2025-09-15
+        publish_date: 2026-09-15
         description: >
           Use NodeJs inspector, Chrome DevTools, and VS Code debugging to diagnose issues and step through code.
         topics:
@@ -567,7 +567,7 @@ content:
       - id: 32
         topic_name: TypeScript with NodeJs
         sub_topic: Tooling - Module 9
-        publish_date: 2025-09-15
+        publish_date: 2026-09-15
         description: >
           Introduction to using TypeScript in NodeJs projects: tsconfig, compiling, typing Node API and build workflows.
         topics:
@@ -580,7 +580,7 @@ content:
       - id: 33
         topic_name: Monitoring & Observability
         sub_topic: Tooling - Module 9
-        publish_date: 2025-09-15
+        publish_date: 2026-09-15
         description: >
           Basic monitoring concepts for NodeJs apps: metrics, health checks, logs aggregation, and integrating observability tools.
         topics:

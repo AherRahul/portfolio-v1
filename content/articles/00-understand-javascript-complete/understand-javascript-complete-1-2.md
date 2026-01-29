@@ -1,19 +1,22 @@
 ---
-title: "Execution Context"
-description: "An Execution Context is the abstract environment where JavaScript code is evaluated and executed. Think of it as a container or a sandbox that manages all the variables, functions, and code that's currently running. It's the central concept that determines what a function can access and what the value of this is."
-slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-25"
-datePublished: "2025-09-25"
+title: Execution Context
+description: An Execution Context is the abstract environment where JavaScript
+  code is evaluated and executed. Think of it as a container or a sandbox that
+  manages all the variables, functions, and code that's currently running. It's
+  the central concept that determines what a function can access and what the
+  value of this is.
+slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
+dateModified: 2026-01-29
+datePublished: 2026-09-25
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
   - javascript
 resources:
-  - title: "JS course PDF - 2"
-    type: "PDF"
-    url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758791683/Portfolio/javaScriptCourse/pdf/javascript-day2_Execution-Context_buwdmj.pdf"
-    description: "A PDF Notes on Execution Context topic"
-
+  - title: JS course PDF - 2
+    type: PDF
+    url: https://res.cloudinary.com/duojkrgue/image/upload/v1758791683/Portfolio/javaScriptCourse/pdf/javascript-day2_Execution-Context_buwdmj.pdf
+    description: A PDF Notes on Execution Context topic
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758785691/Portfolio/javaScriptCourse/images/02/Javascript_f1fl8c.png)

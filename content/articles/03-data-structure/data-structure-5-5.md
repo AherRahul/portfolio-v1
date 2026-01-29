@@ -2,8 +2,8 @@
 title: "Even Numbers in a Range"
 description: "Count even numbers efficiently in multiple range queries using prefix sum technique on boolean array."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-26"
-datePublished: "2025-09-26"
+dateModified: "2026-09-26"
+datePublished: "2026-09-26"
 showOnArticles: false
 courseName: 03-data-structure
 topics:

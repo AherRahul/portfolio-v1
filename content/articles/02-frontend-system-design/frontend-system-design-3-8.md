@@ -2,8 +2,8 @@
 title: "Input Validation and Sanitization"
 description: "Master input validation and sanitization techniques for robust web application security. Learn client-side and server-side validation, XSS prevention, SQL injection protection, and building comprehensive input security layers."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-03-18"
-datePublished: "2025-03-18"
+dateModified: "2026-03-18"
+datePublished: "2026-03-18"
 showOnArticles: false
 courseName: 02-frontend-system-design
 topics:

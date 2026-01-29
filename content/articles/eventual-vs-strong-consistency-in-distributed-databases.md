@@ -2,8 +2,8 @@
 title: "Eventual vs Strong Consistency in Distributed Databases"
 description: "While consistency is vital, it’s essential to understand that achieving strong consistency in distributed systems can come at the expense of increased latency and reduced availability. Strong consistency may require additional coordination mechanisms that slow down operations. Therefore, choosing the appropriate consistency model involves striking a balance between data correctness and system performance, based on the specific requirements of the application and use case. Different systems may opt for eventual consistency or other weaker consistency models if absolute real-time consistency is not necessary for their functionality."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles/eventual-vs-strong-consistency-in-distributed-databases.md"
-dateModified: "2025-05-25"
-datePublished: "2025-05-25"
+dateModified: "2026-05-25"
+datePublished: "2026-05-25"
 showOnArticles: true
 topics:
   - system-design

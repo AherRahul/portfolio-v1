@@ -2,8 +2,8 @@
 title: "Mathematical Foundations for Algorithms"
 description: "Build essential mathematical intuition for algorithms. Learn modular arithmetic, combinatorics, probability theory, and discrete mathematics concepts crucial for advanced algorithmic problem-solving."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-26"
-datePublished: "2025-09-26"
+dateModified: "2026-09-26"
+datePublished: "2026-09-26"
 showOnArticles: false
 courseName: 03-data-structure
 topics:

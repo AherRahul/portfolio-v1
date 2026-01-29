@@ -2,8 +2,8 @@
 title: "Server Sent Events - A Real time communication"
 description: "Delve into Server-Sent Events. Understand how servers push data to clients, enabling continuous updates in frontend applications without the need for repeated requests, optimizing data streaming."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-03-09"
-datePublished: "2025-03-09"
+dateModified: "2026-03-09"
+datePublished: "2026-03-09"
 showOnArticles: false
 courseName: 02-frontend-system-design
 topics:

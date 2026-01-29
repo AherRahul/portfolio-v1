@@ -1,7 +1,7 @@
 ---
 title: "Performance Testing"
 description: "Understand performance testing strategies for web applications. Learn about load testing, stress testing, Lighthouse automation, Core Web Vitals monitoring, and implementing comprehensive performance validation workflows."
-publishedAt: 2025-03-28
+publishedAt: 2026-03-28
 image: "https://res.cloudinary.com/duojkrgue/image/upload/v1759048334/Portfolio/FrontendSystemDesignCourse/titleImages/28_tde1my.png"
 category: "Frontend System Design"
 author: "Rahul Aher"

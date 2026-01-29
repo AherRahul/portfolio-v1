@@ -2,8 +2,8 @@
 title: "Pick from Both Sides"
 description: "Master the sliding window technique to pick elements from array ends. Learn how to maximize sum by picking K elements from either left or right side of an array."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-26"
-datePublished: "2025-09-26"
+dateModified: "2026-09-26"
+datePublished: "2026-09-26"
 showOnArticles: false
 courseName: 03-data-structure
 topics:

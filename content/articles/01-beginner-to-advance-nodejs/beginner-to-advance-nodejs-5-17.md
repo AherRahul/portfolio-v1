@@ -2,8 +2,8 @@
 title: "Error Handling & Logging in Express.js"
 description: "Master error handling and logging in Express.js applications. Learn about centralized error handling, custom error classes, structured logging, capturing stack traces, and integrating with popular logging libraries like Winston and Morgan for production-ready applications."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-15"
-datePublished: "2025-09-15"
+dateModified: "2026-09-15"
+datePublished: "2026-09-15"
 showOnArticles: false
 courseName: 01-beginner-to-advance-nodejs
 topics:

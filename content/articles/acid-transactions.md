@@ -2,8 +2,8 @@
 title: "ACID TRANSACTIONS"
 description: "ACID transactions refer to a set of properties that are designed to ensure the reliability and consistency of database transactions. The term “ACID” stands for Atomicity, Consistency, Isolation, and Durability, which are the four key properties of an ACID transaction. Essentially, ACID transactions guarantee that database operations are executed correctly, and if there is any kind of failure, the database can recover to a previous state without losing any data or impacting the consistency of the data. In other words, ACID transactions provide a high level of assurance that database transactions will be processed reliably and that data will be stored accurately and consistently."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles/acid-transactions.md"
-dateModified: "2025-05-22"
-datePublished: "2025-05-22"
+dateModified: "2026-05-22"
+datePublished: "2026-05-22"
 showOnArticles: true
 topics:
   - system-design

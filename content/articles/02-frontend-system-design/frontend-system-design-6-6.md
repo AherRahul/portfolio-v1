@@ -2,8 +2,8 @@
 title: "HTTP Caching"
 description: "Master HTTP caching strategies and implementation. Learn about cache headers, ETags, cache invalidation, browser caching behavior, CDN caching, and building efficient HTTP caching architectures."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-04-11"
-datePublished: "2025-04-11"
+dateModified: "2026-04-11"
+datePublished: "2026-04-11"
 showOnArticles: false
 courseName: 02-frontend-system-design
 image: https://res.cloudinary.com/duojkrgue/image/upload/v1759048375/Portfolio/FrontendSystemDesignCourse/titleImages/42_c4ahrb.png

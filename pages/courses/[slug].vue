@@ -307,7 +307,7 @@ defineOgImageComponent('Course', {
                           </span>
                           <span v-if="lecture.publish_date" class="flex items-center gap-1">
                             <Icon class="text-sm" name="heroicons:calendar" /> 
-                            {{ new Date(lecture.publish_date).toLocaleDateString() }}
+                            {{ lecture.publish_date }}
                           </span>
                           <span v-if="lecture.is_on_youtube" class="flex items-center gap-1 text-red-500">
                             <Icon class="text-sm" name="mdi:youtube" /> 

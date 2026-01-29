@@ -2,8 +2,8 @@
 title: "Deploying NodeJs Apps (Heroku, Vercel/Netlify, AWS)"
 description: "Deploy Express/Node apps: build outputs, env vars/secrets, process managers (PM2), health checks, logs, and basic CI/CD."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-15"
-datePublished: "2025-09-15"
+dateModified: "2026-09-15"
+datePublished: "2026-09-15"
 showOnArticles: false
 courseName: 01-beginner-to-advance-nodejs
 topics:

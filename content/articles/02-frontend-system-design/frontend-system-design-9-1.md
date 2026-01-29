@@ -2,7 +2,7 @@
 title: "Service Workers and Offline Functionality"
 description: "Master Service Workers to create robust offline experiences. Learn how to implement caching strategies, background sync, and offline-first architecture for web applications that work reliably regardless of network conditions."
 image: "https://res.cloudinary.com/duojkrgue/image/upload/v1759048332/Portfolio/FrontendSystemDesignCourse/titleImages/55_cqoxgb.png"
-publishedAt: "2025-01-13"
+publishedAt: "2026-01-13"
 is_on_youtube: false
 courseName: "02-frontend-system-design"
 id: 71

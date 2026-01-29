@@ -2,8 +2,8 @@
 title: "Module.exports & require"
 description: "As you saw in the last episode, we wrote our first line of code in NodeJs. Now, we could just keep adding whatever we want to app.js, and technically, it would work. But that's not the best way to do things because the file would get cluttered and hard to manage. Instead, we need multiple files.So, you'll use require to include different modules into your main file."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-04-08"
-datePublished: "2025-04-08"
+dateModified: "2026-04-08"
+datePublished: "2026-04-08"
 showOnArticles: false
 courseName: 01-beginner-to-advance-nodejs
 topics:

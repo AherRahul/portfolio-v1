@@ -1,31 +1,32 @@
 ---
-title: "Event Handling & Custom Events"
-description: "Deep dive into the event system that powers interactive web applications. Learn event delegation, custom events, and advanced patterns for building responsive user interfaces."
-slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-26"
-datePublished: "2025-09-26"
+title: Event Handling & Custom Events
+description: Deep dive into the event system that powers interactive web
+  applications. Learn event delegation, custom events, and advanced patterns for
+  building responsive user interfaces.
+slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
+dateModified: 2026-01-29
+datePublished: 2026-09-26
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
   - javascript
 resources:
-  - title: "MDN - Event Reference"
-    type: "documentation"
-    url: "https://developer.mozilla.org/en-US/docs/Web/Events"
-    description: "Complete reference of DOM events and their properties"
-  - title: "MDN - EventTarget Interface"
-    type: "documentation"
-    url: "https://developer.mozilla.org/en-US/docs/Web/API/EventTarget"
-    description: "Understanding the EventTarget interface and event methods"
-  - title: "Event Delegation Guide"
-    type: "article"
-    url: "https://javascript.info/event-delegation"
-    description: "Advanced event delegation patterns and techniques"
-  - title: "Custom Events Best Practices"
-    type: "article"
-    url: "https://web.dev/eventing-deepdive/"
-    description: "Creating and managing custom events effectively"
-
+  - title: MDN - Event Reference
+    type: documentation
+    url: https://developer.mozilla.org/en-US/docs/Web/Events
+    description: Complete reference of DOM events and their properties
+  - title: MDN - EventTarget Interface
+    type: documentation
+    url: https://developer.mozilla.org/en-US/docs/Web/API/EventTarget
+    description: Understanding the EventTarget interface and event methods
+  - title: Event Delegation Guide
+    type: article
+    url: https://javascript.info/event-delegation
+    description: Advanced event delegation patterns and techniques
+  - title: Custom Events Best Practices
+    type: article
+    url: https://web.dev/eventing-deepdive/
+    description: Creating and managing custom events effectively
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758811625/Portfolio/javaScriptCourse/images/all%20title%20images/33_lw5vgb.png)

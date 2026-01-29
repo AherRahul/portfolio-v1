@@ -5,8 +5,8 @@ description: To truly understand JavaScript, you have to look beyond the code
   single-threaded, non-blocking, asynchronous language. This fundamental nature
   is what makes it so efficient and powerful for building responsive
   applications, especially on the web.
-datePublished: 2025-09-25
-dateModified: 2025-09-25
+datePublished: 2026-09-25
+dateModified: 2026-01-29
 topics:
   - javascript
 courseName: 00-understand-javascript-complete

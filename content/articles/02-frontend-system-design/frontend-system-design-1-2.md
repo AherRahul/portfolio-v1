@@ -2,8 +2,8 @@
 title: "Communication Protocols"
 description: "A communications protocol is a set of formal rules describing how to transmit or exchange data, especially across a network. A standardised communications protocol is one that has been codified as a standard. Examples of these include WiFi, the Internet Protocol, and the Hypertext Transfer Protocol (HTTP)."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-03-02"
-datePublished: "2025-03-02"
+dateModified: "2026-03-02"
+datePublished: "2026-03-02"
 showOnArticles: false
 courseName: 02-frontend-system-design
 topics:

@@ -2,8 +2,8 @@
 title: "Performance Monitoring"
 description: "Master performance monitoring for web applications. Learn Real User Monitoring (RUM), synthetic monitoring, performance analytics, alerting systems, and building comprehensive performance observability."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-03-20"
-datePublished: "2025-03-20"
+dateModified: "2026-03-20"
+datePublished: "2026-03-20"
 showOnArticles: false
 courseName: 02-frontend-system-design
 topics:

@@ -2,8 +2,8 @@
 title: "Client-side Security"
 description: "Understand comprehensive client-side security practices for modern web applications. Cover secure coding practices, data validation, secure storage, API security, third-party integrations, and building robust defense mechanisms in frontend applications."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-03-14"
-datePublished: "2025-03-14"
+dateModified: "2026-03-14"
+datePublished: "2026-03-14"
 showOnArticles: false
 courseName: 02-frontend-system-design
 topics:

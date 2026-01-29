@@ -1,31 +1,32 @@
 ---
-title: "setTimeout + Closures Interview Questions"
-description: "The classic setTimeout with closures in a loop is one of the most frequently asked JavaScript interview questions. Understanding this concept will help you master both closures and asynchronous JavaScript behavior."
-slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-25"
-datePublished: "2025-09-25"
+title: setTimeout + Closures Interview Questions
+description: The classic setTimeout with closures in a loop is one of the most
+  frequently asked JavaScript interview questions. Understanding this concept
+  will help you master both closures and asynchronous JavaScript behavior.
+slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
+dateModified: 2026-01-29
+datePublished: 2026-09-25
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
   - javascript
 resources:
-  - title: "JS course PDF - 15"
-    type: "PDF"
-    url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758792130/Portfolio/javaScriptCourse/pdf/JavaScript-day15_SetTimeoutClosures_compressed.pdf"
-    description: "A PDF Notes on setTimeout + Closures Interview Questions topic"
-  - title: "MDN - setTimeout"
-    type: "documentation"
-    url: "https://developer.mozilla.org/en-US/docs/Web/API/setTimeout"
-    description: "Complete reference for setTimeout function"
-  - title: "JavaScript.info - Scheduling"
-    type: "article"
-    url: "https://javascript.info/settimeout-setinterval"
-    description: "Guide to setTimeout, setInterval and scheduling in JavaScript"
-  - title: "Event Loop Visualization"
-    type: "tool"
-    url: "http://latentflip.com/loupe/"
-    description: "Interactive tool to visualize setTimeout and event loop behavior"
-
+  - title: JS course PDF - 15
+    type: PDF
+    url: https://res.cloudinary.com/duojkrgue/image/upload/v1758792130/Portfolio/javaScriptCourse/pdf/JavaScript-day15_SetTimeoutClosures_compressed.pdf
+    description: A PDF Notes on setTimeout + Closures Interview Questions topic
+  - title: MDN - setTimeout
+    type: documentation
+    url: https://developer.mozilla.org/en-US/docs/Web/API/setTimeout
+    description: Complete reference for setTimeout function
+  - title: JavaScript.info - Scheduling
+    type: article
+    url: https://javascript.info/settimeout-setinterval
+    description: Guide to setTimeout, setInterval and scheduling in JavaScript
+  - title: Event Loop Visualization
+    type: tool
+    url: http://latentflip.com/loupe/
+    description: Interactive tool to visualize setTimeout and event loop behavior
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758811617/Portfolio/javaScriptCourse/images/all%20title%20images/16_msnwox.png)

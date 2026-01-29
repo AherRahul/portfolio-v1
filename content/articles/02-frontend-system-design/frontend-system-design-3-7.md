@@ -2,8 +2,8 @@
 title: "Compliance & Regulation"
 description: "Navigate compliance and regulatory requirements for modern web applications. Understand GDPR, CCPA, COPPA, accessibility compliance, data protection requirements, and implementing compliance-ready frontend architectures."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-03-17"
-datePublished: "2025-03-17"
+dateModified: "2026-03-17"
+datePublished: "2026-03-17"
 showOnArticles: false
 courseName: 02-frontend-system-design
 topics:

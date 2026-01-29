@@ -1,7 +1,7 @@
 ---
 title: "E2E and Automation Testing"
 description: "Explore end-to-end testing and automation strategies. Learn about Cypress, Playwright, Selenium, automated testing pipelines, visual regression testing, and building robust automated testing workflows for modern web applications."
-publishedAt: 2025-03-26
+publishedAt: 2026-03-26
 image: "https://res.cloudinary.com/duojkrgue/image/upload/v1759048333/Portfolio/FrontendSystemDesignCourse/titleImages/26_uu6dwp.png"
 category: "Frontend System Design"
 author: "Rahul Aher"

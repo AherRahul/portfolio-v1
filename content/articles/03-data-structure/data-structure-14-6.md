@@ -2,8 +2,8 @@
 title: "Common Elements Between Two Arrays"
 description: "Find common elements between two arrays using hash maps. Learn intersection operations, handle duplicate counting, and master the technique of finding shared elements with proper frequency handling."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-12-24"
-datePublished: "2025-12-24"
+dateModified: "2026-12-24"
+datePublished: "2026-12-24"
 showOnArticles: false
 courseName: 03-data-structure
 topics:

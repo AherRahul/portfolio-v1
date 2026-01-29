@@ -2,8 +2,8 @@
 title: "Secure Communication (HTTPs)"
 description: "Deep dive into HTTPS and secure communication protocols. Learn about SSL/TLS certificates, encryption algorithms, certificate pinning, HSTS implementation, and ensuring secure data transmission in modern web applications."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-03-15"
-datePublished: "2025-03-15"
+dateModified: "2026-03-15"
+datePublished: "2026-03-15"
 showOnArticles: false
 courseName: 02-frontend-system-design
 topics:
@@ -128,7 +128,7 @@ class TLSHandshakeSimulator {
         subject: "CN=secure-api.example.com",
         issuer: "CN=DigiCert SHA2 Secure Server CA",
         validFrom: "2024-01-01",
-        validTo: "2025-01-01",
+        validTo: "2026-01-01",
         algorithm: "RSA 2048-bit",
         fingerprint: "sha256:a1b2c3d4..."
       },

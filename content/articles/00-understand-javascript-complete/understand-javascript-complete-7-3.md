@@ -1,31 +1,33 @@
 ---
-title: "Symbols, Sets, Maps & WeakMaps"
-description: "Discover modern data structures and primitive types in JavaScript. Learn when and how to use Symbols for unique identifiers, Sets for unique collections, Maps for key-value pairs, and WeakMaps for memory-efficient associations."
-slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-26"
-datePublished: "2025-09-26"
+title: Symbols, Sets, Maps & WeakMaps
+description: Discover modern data structures and primitive types in JavaScript.
+  Learn when and how to use Symbols for unique identifiers, Sets for unique
+  collections, Maps for key-value pairs, and WeakMaps for memory-efficient
+  associations.
+slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
+dateModified: 2026-01-29
+datePublished: 2026-09-26
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
   - javascript
 resources:
-  - title: "MDN - Symbol"
-    type: "documentation"
-    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol"
-    description: "Complete reference for JavaScript Symbols"
-  - title: "MDN - Set"
-    type: "documentation"
-    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set"
-    description: "Comprehensive guide to Set data structure"
-  - title: "MDN - Map"
-    type: "documentation"
-    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map"
-    description: "Complete Map documentation and examples"
-  - title: "MDN - WeakMap"
-    type: "documentation"
-    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap"
-    description: "Understanding WeakMap for memory-efficient associations"
-
+  - title: MDN - Symbol
+    type: documentation
+    url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol
+    description: Complete reference for JavaScript Symbols
+  - title: MDN - Set
+    type: documentation
+    url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
+    description: Comprehensive guide to Set data structure
+  - title: MDN - Map
+    type: documentation
+    url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map
+    description: Complete Map documentation and examples
+  - title: MDN - WeakMap
+    type: documentation
+    url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap
+    description: Understanding WeakMap for memory-efficient associations
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758811622/Portfolio/javaScriptCourse/images/all%20title%20images/29_kfasgd.png)

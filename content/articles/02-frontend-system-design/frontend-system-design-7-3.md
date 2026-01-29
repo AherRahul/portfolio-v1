@@ -2,8 +2,8 @@
 title: "Fixing"
 description: "Master frontend issue resolution and incident response. Learn about systematic debugging, root cause analysis, automated recovery, and building comprehensive fixing systems for rapid incident resolution."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-04-13"
-datePublished: "2025-04-13"
+dateModified: "2026-04-13"
+datePublished: "2026-04-13"
 showOnArticles: false
 courseName: 02-frontend-system-design
 image: https://res.cloudinary.com/duojkrgue/image/upload/v1759048373/Portfolio/FrontendSystemDesignCourse/titleImages/48_scud6e.png

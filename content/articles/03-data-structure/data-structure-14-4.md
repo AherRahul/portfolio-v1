@@ -2,8 +2,8 @@
 title: "Sub-array with 0 Sum using Hashing"
 description: "Detect if a subarray exists with sum zero using prefix sum and hashing. Learn the powerful technique of using cumulative sums with hash sets, optimize from O(N²) to O(N), and master subarray sum problems."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-12-24"
-datePublished: "2025-12-24"
+dateModified: "2026-12-24"
+datePublished: "2026-12-24"
 showOnArticles: false
 courseName: 03-data-structure
 topics:

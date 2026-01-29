@@ -2,7 +2,7 @@
 title: "Focus Management Techniques"
 description: "Master advanced focus management patterns for complex UI components. Learn how to create predictable, intuitive focus behavior that enhances user experience and accessibility across all interaction methods."
 image: "https://res.cloudinary.com/duojkrgue/image/upload/v1759048378/Portfolio/FrontendSystemDesignCourse/titleImages/51_zcxw7s.png"
-publishedAt: "2025-01-13"
+publishedAt: "2026-01-13"
 is_on_youtube: false
 courseName: "02-frontend-system-design"
 id: 67

@@ -2,8 +2,8 @@
 title: "Dependency Security"
 description: "Master dependency security management in modern frontend applications. Learn about vulnerability scanning, security auditing, dependency updates, package integrity verification, and building secure supply chain practices for JavaScript applications."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-03-16"
-datePublished: "2025-03-16"
+dateModified: "2026-03-16"
+datePublished: "2026-03-16"
 showOnArticles: false
 courseName: 02-frontend-system-design
 topics:

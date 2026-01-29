@@ -1,20 +1,23 @@
 ---
-title: "Introduction"
-description: "Imagine a world where your fridge reorders groceries before you run out, and your car avoids rush hour traffic like a seasoned pro. This isn't science fiction anymore – it's the exciting frontier of Artificial Intelligence (AI)"
-slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-04-10"
-datePublished: "2025-04-10"
+title: Introduction
+description: Imagine a world where your fridge reorders groceries before you run
+  out, and your car avoids rush hour traffic like a seasoned pro. This isn't
+  science fiction anymore – it's the exciting frontier of Artificial
+  Intelligence (AI)
+slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
+dateModified: 2026-01-29
+datePublished: 2026-04-10
 showOnArticles: false
 courseName: 06-learn-ai-with-me
 topics:
   - ai
 resources:
-  - title: "AI Notes"
-    type: "PDF"
+  - title: AI Notes
+    type: PDF
     url: ""
-    description: "A PDF Notes."
-
+    description: A PDF Notes.
 ---
+
 ![](https://res.cloudinary.com/duojkrgue/image/upload/v1758777282/Portfolio/aiCourse/Learn_AI_eyag79.png)
 
 Introduction
@@ -49,5 +52,3 @@ The scope of AI extends beyond a particular area, spanning various fields such a
 > However, it is critical to remember that the true power of AI is only realized when it is employed wisely and ethically.
 
 AI is not here to replace human abilities but to enhance them. It provides options for automating normal and monotonous tasks. This automation saves you time and allows you to focus on more creative and intellectual tasks that require human insight and inventiveness.
-
-

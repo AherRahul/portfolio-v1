@@ -2,8 +2,8 @@
 title: "Longest Subarray with Zero Sum"
 description: "Find the longest subarray with sum zero using prefix sum and hashing. Learn to track first occurrence of prefix sums, calculate maximum length efficiently, and master the longest subarray pattern."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-12-24"
-datePublished: "2025-12-24"
+dateModified: "2026-12-24"
+datePublished: "2026-12-24"
 showOnArticles: false
 courseName: 03-data-structure
 topics:

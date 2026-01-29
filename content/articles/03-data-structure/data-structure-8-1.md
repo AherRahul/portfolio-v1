@@ -2,8 +2,8 @@
 title: "Arrays : 2D Matrices 1"
 description: "Introduction to 2D matrices and fundamental operations. Learn matrix representation, traversal patterns, basic transformations, and essential 2D array manipulation techniques."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-26"
-datePublished: "2025-09-26"
+dateModified: "2026-09-26"
+datePublished: "2026-09-26"
 showOnArticles: false
 courseName: 03-data-structure
 topics:

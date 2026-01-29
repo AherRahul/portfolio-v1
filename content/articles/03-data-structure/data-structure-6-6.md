@@ -2,8 +2,8 @@
 title: "Total Number of Subarrays"
 description: "Calculate the total count of all possible subarrays using mathematical formula. Understand the N×(N+1)/2 pattern."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-26"
-datePublished: "2025-09-26"
+dateModified: "2026-09-26"
+datePublished: "2026-09-26"
 showOnArticles: false
 courseName: 03-data-structure
 topics:

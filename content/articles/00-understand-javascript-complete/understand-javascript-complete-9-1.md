@@ -1,31 +1,32 @@
 ---
-title: "Module Pattern & Namespace Management"
-description: "Learn classical design patterns for organizing code into reusable modules. Master techniques for creating clean namespaces and avoiding global scope pollution in large applications."
-slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-26"
-datePublished: "2025-09-26"
+title: Module Pattern & Namespace Management
+description: Learn classical design patterns for organizing code into reusable
+  modules. Master techniques for creating clean namespaces and avoiding global
+  scope pollution in large applications.
+slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
+dateModified: 2026-01-29
+datePublished: 2026-09-26
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
   - javascript
 resources:
-  - title: "JavaScript Design Patterns"
-    type: "book"
-    url: "https://addyosmani.com/resources/essentialjsdesignpatterns/book/"
-    description: "Comprehensive guide to JavaScript design patterns"
-  - title: "MDN - Modules"
-    type: "documentation"
-    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules"
-    description: "Modern module system in JavaScript"
-  - title: "Module Pattern Examples"
-    type: "article"
-    url: "https://coryrylan.com/blog/javascript-module-pattern-basics"
-    description: "Practical examples of the module pattern"
-  - title: "Namespace Patterns"
-    type: "article"
-    url: "https://javascriptweblog.wordpress.com/2010/12/07/namespacing-in-javascript/"
-    description: "Effective namespacing strategies"
-
+  - title: JavaScript Design Patterns
+    type: book
+    url: https://addyosmani.com/resources/essentialjsdesignpatterns/book/
+    description: Comprehensive guide to JavaScript design patterns
+  - title: MDN - Modules
+    type: documentation
+    url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules
+    description: Modern module system in JavaScript
+  - title: Module Pattern Examples
+    type: article
+    url: https://coryrylan.com/blog/javascript-module-pattern-basics
+    description: Practical examples of the module pattern
+  - title: Namespace Patterns
+    type: article
+    url: https://javascriptweblog.wordpress.com/2010/12/07/namespacing-in-javascript/
+    description: Effective namespacing strategies
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758811628/Portfolio/javaScriptCourse/images/all%20title%20images/37_wk5qdw.png)

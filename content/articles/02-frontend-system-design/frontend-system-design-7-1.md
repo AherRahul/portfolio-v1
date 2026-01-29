@@ -2,8 +2,8 @@
 title: "Telemetry"
 description: "Master frontend telemetry and data collection. Learn about user behavior tracking, performance monitoring, error reporting, and building comprehensive telemetry systems for data-driven application insights."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-04-13"
-datePublished: "2025-04-13"
+dateModified: "2026-04-13"
+datePublished: "2026-04-13"
 showOnArticles: false
 courseName: 02-frontend-system-design
 image: https://res.cloudinary.com/duojkrgue/image/upload/v1759048376/Portfolio/FrontendSystemDesignCourse/titleImages/46_abjfhs.png

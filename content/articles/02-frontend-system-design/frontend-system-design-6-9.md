@@ -2,8 +2,8 @@
 title: "State Management"
 description: "Master frontend state management architectures. Learn about state normalization, predictable state updates, time-travel debugging, and building scalable state management systems with Redux, Zustand, and modern patterns."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-04-13"
-datePublished: "2025-04-13"
+dateModified: "2026-04-13"
+datePublished: "2026-04-13"
 showOnArticles: false
 courseName: 02-frontend-system-design
 image: https://res.cloudinary.com/duojkrgue/image/upload/v1759048368/Portfolio/FrontendSystemDesignCourse/titleImages/45_q8gym3.png

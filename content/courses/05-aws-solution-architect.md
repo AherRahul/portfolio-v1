@@ -5,7 +5,7 @@ tutor: 1
 video: true
 topics:
   - aws
-  - solution-architect
+  
 time: "45hr 30 mins"
 content:
   - module_id: 1
@@ -18,12 +18,12 @@ content:
       - id: 1
         topic_name: Exam Guide
         sub_topic: Associate SAA C03 Exam Guide
-        publish_date: 2025-09-28
+        publish_date: 2026-01-29
         description: >
           AWS Certified Solutions Architect is one of the most popular cloud computing certifications. In this full course taught by an expert trainer, you will learn the major parts of Amazon Web Services, and prepare for the associate-level AWS Certified Solutions Architect exam. By the end of this course, you will be ready to take the AWS Certified Solutions Architect Associate exam - and pass!
         topics:
           - aws
-          - solution-architect
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695039/Portfolio/awsCourse/Aws_solution_architect_banner_image_hjr7dz.png"
         duration: 6:54 mins
         videoUrl: "https://www.youtube.com/embed/ejZm0c_OhYM?si=_EDroaJF7rPD1dvL"
         auther_name: Rahul Aher
@@ -37,12 +37,12 @@ content:
     topics:
       - id: 1
         topic_name: The Building Blocks of AWS - Availability Zones and Regions
-        publish_date: 2025-10-15
+        publish_date: 2026-01-29
         description: >
           Learn about AWS Regions and Availability Zones (AZs), the foundation of AWS's global infrastructure. Regions are geographically isolated locations, each containing multiple AZs. These AZs are designed for high availability, fault tolerance, and low latency, enabling applications to stay resilient and perform efficiently across the globe.
         topics:
           - aws
-          - solution-architect
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695039/Portfolio/awsCourse/Aws_solution_architect_banner_image_hjr7dz.png"
         duration: 8:27 mins
         videoUrl: "https://www.youtube.com/embed/SVW2HBZ3QNA?si=TsD1JykWf5LYzBil"
         auther_name: Rahul Aher
@@ -50,12 +50,12 @@ content:
         _path: aws-solution-architect-2-1
       - id: 2
         topic_name: Who Owns What in the Cloud?
-        publish_date: 2025-10-15
+        publish_date: 2026-01-29
         description: >
           It explores the shared responsibility model of cloud computing. In this model, AWS manages the infrastructure's security, such as physical hardware, networking, and global infrastructure, while customers are responsible for securing their applications, data, and access configurations. Understanding this division is crucial for designing secure and compliant cloud architectures.
         topics:
           - aws
-          - solution-architect
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695039/Portfolio/awsCourse/Aws_solution_architect_banner_image_hjr7dz.png"
         duration: 5:44 mins
         videoUrl: "https://www.youtube.com/embed/izQlU1sZkNg?si=q_GceoOp1N6nWdNZ"
         auther_name: Rahul Aher
@@ -63,12 +63,12 @@ content:
         _path: aws-solution-architect-2-2
       - id: 3
         topic_name: Compute, Storage, Databases, and Networking
-        publish_date: 2025-10-15
+        publish_date: 2026-01-29
         description: >
           It covers the core AWS services that power cloud applications. Compute services like EC2 and Lambda handle processing, while storage solutions like S3 and EBS manage data. Databases such as RDS and DynamoDB ensure efficient data management, and networking tools like VPC and CloudFront enable secure and scalable connectivity. These services form the foundation of any AWS architecture.
         topics:
           - aws
-          - solution-architect
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695039/Portfolio/awsCourse/Aws_solution_architect_banner_image_hjr7dz.png"
         duration: 8:27 mins
         videoUrl: "https://www.youtube.com/embed/ULfTWvsHw20?si=O7d0O9g4OH5sZHRS"
         auther_name: Rahul Aher
@@ -85,12 +85,12 @@ content:
       - id: 4
         topic_name: EC2 Fundamentals and Instance Types
         sub_topic: Compute
-        publish_date: 2025-01-20
+        publish_date: 2026-01-29
         description: >
           Master EC2 instances, instance families (t3, m5, c5, r5), instance types, pricing models (On-Demand, Reserved, Spot), and choosing the right instance for your workload. Essential for AWS interviews.
         topics:
           - aws
-          - solution-architect
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695039/Portfolio/awsCourse/Aws_solution_architect_banner_image_hjr7dz.png"
         duration: "35:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -98,12 +98,12 @@ content:
       - id: 5
         topic_name: EC2 Storage - EBS and Instance Store
         sub_topic: Compute
-        publish_date: 2025-01-20
+        publish_date: 2026-01-29
         description: >
           Learn EBS volume types (gp3, io1, io2), EBS snapshots, EBS encryption, instance store volumes, and storage optimization strategies. Master storage for EC2 instances.
         topics:
           - aws
-          - solution-architect
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695039/Portfolio/awsCourse/Aws_solution_architect_banner_image_hjr7dz.png"
         duration: "30:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -111,12 +111,12 @@ content:
       - id: 6
         topic_name: Auto Scaling and Load Balancing
         sub_topic: Compute
-        publish_date: 2025-01-20
+        publish_date: 2026-01-29
         description: >
           Master Auto Scaling Groups, scaling policies, Elastic Load Balancer (ALB, NLB, CLB), health checks, and building highly available architectures. Critical for production systems.
         topics:
           - aws
-          - solution-architect
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695039/Portfolio/awsCourse/Aws_solution_architect_banner_image_hjr7dz.png"
         duration: "45:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -124,12 +124,12 @@ content:
       - id: 7
         topic_name: AWS Lambda and Serverless Computing
         sub_topic: Compute
-        publish_date: 2025-01-20
+        publish_date: 2026-01-29
         description: >
           Learn AWS Lambda, serverless architecture, Lambda functions, triggers, concurrency, cold starts, and building serverless applications. Master modern compute patterns.
         topics:
           - aws
-          - solution-architect
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695039/Portfolio/awsCourse/Aws_solution_architect_banner_image_hjr7dz.png"
         duration: "40:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -137,12 +137,12 @@ content:
       - id: 8
         topic_name: ECS and Container Orchestration
         sub_topic: Compute
-        publish_date: 2025-01-20
+        publish_date: 2026-01-29
         description: >
           Master ECS, Fargate, ECS tasks, services, task definitions, container orchestration, and deploying containerized applications. Learn container patterns used at scale.
         topics:
           - aws
-          - solution-architect
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695039/Portfolio/awsCourse/Aws_solution_architect_banner_image_hjr7dz.png"
         duration: "40:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -150,12 +150,12 @@ content:
       - id: 9
         topic_name: EKS and Kubernetes on AWS
         sub_topic: Compute
-        publish_date: 2025-01-20
+        publish_date: 2026-01-29
         description: >
           Learn EKS, Kubernetes on AWS, cluster management, node groups, and running Kubernetes workloads. Master container orchestration at enterprise scale.
         topics:
           - aws
-          - solution-architect
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695039/Portfolio/awsCourse/Aws_solution_architect_banner_image_hjr7dz.png"
         duration: "35:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -163,12 +163,12 @@ content:
       - id: 10
         topic_name: Batch and EMR for Big Data
         sub_topic: Compute
-        publish_date: 2025-01-20
+        publish_date: 2026-01-29
         description: >
           Learn AWS Batch for batch processing, EMR for big data analytics, and processing large datasets. Master data processing patterns used by top tech companies.
         topics:
           - aws
-          - solution-architect
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695039/Portfolio/awsCourse/Aws_solution_architect_banner_image_hjr7dz.png"
         duration: "35:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -176,12 +176,12 @@ content:
       - id: 11
         topic_name: Lightsail and Elastic Beanstalk
         sub_topic: Compute
-        publish_date: 2025-01-20
+        publish_date: 2026-01-29
         description: >
           Understand Lightsail for simple applications, Elastic Beanstalk for platform-as-a-service, and when to use each service. Learn simplified deployment options.
         topics:
           - aws
-          - solution-architect
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695039/Portfolio/awsCourse/Aws_solution_architect_banner_image_hjr7dz.png"
         duration: "25:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -189,12 +189,12 @@ content:
       - id: 12
         topic_name: Compute Interview Questions
         sub_topic: Compute
-        publish_date: 2025-01-20
+        publish_date: 2026-01-29
         description: >
           Practice compute service interview questions. Master choosing the right compute service, designing scalable architectures, and optimizing compute costs.
         topics:
           - aws
-          - solution-architect
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695039/Portfolio/awsCourse/Aws_solution_architect_banner_image_hjr7dz.png"
         duration: "40:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -210,12 +210,12 @@ content:
       - id: 13
         topic_name: S3 Fundamentals and Storage Classes
         sub_topic: Storage
-        publish_date: 2025-01-21
+        publish_date: 2026-01-29
         description: >
           Master S3 buckets, objects, storage classes (Standard, IA, Glacier, Deep Archive), lifecycle policies, versioning, and S3 best practices. Essential for AWS interviews.
         topics:
           - aws
-          - solution-architect
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695039/Portfolio/awsCourse/Aws_solution_architect_banner_image_hjr7dz.png"
         duration: "40:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -223,12 +223,12 @@ content:
       - id: 14
         topic_name: S3 Security and Access Control
         sub_topic: Storage
-        publish_date: 2025-01-21
+        publish_date: 2026-01-29
         description: >
           Learn S3 bucket policies, ACLs, IAM policies for S3, encryption (SSE-S3, SSE-KMS, SSE-C), and securing S3 buckets. Master S3 security best practices.
         topics:
           - aws
-          - solution-architect
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695039/Portfolio/awsCourse/Aws_solution_architect_banner_image_hjr7dz.png"
         duration: "35:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -236,12 +236,12 @@ content:
       - id: 15
         topic_name: S3 Performance and Optimization
         sub_topic: Storage
-        publish_date: 2025-01-21
+        publish_date: 2026-01-29
         description: >
           Master S3 transfer acceleration, multipart uploads, byte-range fetches, S3 Select, and optimizing S3 performance. Learn S3 optimization techniques.
         topics:
           - aws
-          - solution-architect
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695039/Portfolio/awsCourse/Aws_solution_architect_banner_image_hjr7dz.png"
         duration: "30:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -249,12 +249,12 @@ content:
       - id: 16
         topic_name: EBS Deep Dive
         sub_topic: Storage
-        publish_date: 2025-01-21
+        publish_date: 2026-01-29
         description: >
           Learn EBS volume types, IOPS, throughput, EBS snapshots, AMIs, and EBS optimization. Master block storage for EC2 instances.
         topics:
           - aws
-          - solution-architect
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695039/Portfolio/awsCourse/Aws_solution_architect_banner_image_hjr7dz.png"
         duration: "35:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -262,12 +262,12 @@ content:
       - id: 17
         topic_name: EFS and File Storage
         sub_topic: Storage
-        publish_date: 2025-01-21
+        publish_date: 2026-01-29
         description: >
           Master EFS, file systems, performance modes, throughput modes, and shared file storage for EC2 instances. Learn when to use EFS vs EBS.
         topics:
           - aws
-          - solution-architect
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695039/Portfolio/awsCourse/Aws_solution_architect_banner_image_hjr7dz.png"
         duration: "30:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -275,12 +275,12 @@ content:
       - id: 18
         topic_name: Storage Gateway and Hybrid Storage
         sub_topic: Storage
-        publish_date: 2025-01-21
+        publish_date: 2026-01-29
         description: >
           Learn Storage Gateway types (File, Volume, Tape), hybrid cloud storage, and integrating on-premises storage with AWS. Master hybrid storage patterns.
         topics:
           - aws
-          - solution-architect
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695039/Portfolio/awsCourse/Aws_solution_architect_banner_image_hjr7dz.png"
         duration: "25:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -288,12 +288,12 @@ content:
       - id: 19
         topic_name: Storage Interview Questions
         sub_topic: Storage
-        publish_date: 2025-01-21
+        publish_date: 2026-01-29
         description: >
           Practice storage service interview questions. Master choosing the right storage service, designing storage architectures, and optimizing storage costs.
         topics:
           - aws
-          - solution-architect
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695039/Portfolio/awsCourse/Aws_solution_architect_banner_image_hjr7dz.png"
         duration: "35:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -309,12 +309,12 @@ content:
       - id: 20
         topic_name: RDS Fundamentals
         sub_topic: Databases
-        publish_date: 2025-01-22
+        publish_date: 2026-01-29
         description: >
           Master RDS, database engines (MySQL, PostgreSQL, Oracle, SQL Server), instance types, Multi-AZ, read replicas, and RDS best practices. Essential for database design.
         topics:
           - aws
-          - solution-architect
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695039/Portfolio/awsCourse/Aws_solution_architect_banner_image_hjr7dz.png"
         duration: "40:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -322,12 +322,12 @@ content:
       - id: 21
         topic_name: Aurora and Serverless Databases
         sub_topic: Databases
-        publish_date: 2025-01-22
+        publish_date: 2026-01-29
         description: >
           Learn Aurora architecture, Aurora Serverless, Aurora Global Database, and high-performance database solutions. Master modern database patterns.
         topics:
           - aws
-          - solution-architect
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695039/Portfolio/awsCourse/Aws_solution_architect_banner_image_hjr7dz.png"
         duration: "35:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -335,12 +335,12 @@ content:
       - id: 22
         topic_name: DynamoDB Fundamentals
         sub_topic: Databases
-        publish_date: 2025-01-22
+        publish_date: 2026-01-29
         description: >
           Master DynamoDB, NoSQL database design, tables, items, attributes, primary keys, and DynamoDB data modeling. Learn NoSQL patterns used at scale.
         topics:
           - aws
-          - solution-architect
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695039/Portfolio/awsCourse/Aws_solution_architect_banner_image_hjr7dz.png"
         duration: "45:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -348,12 +348,12 @@ content:
       - id: 23
         topic_name: DynamoDB Advanced Features
         sub_topic: Databases
-        publish_date: 2025-01-22
+        publish_date: 2026-01-29
         description: >
           Learn DynamoDB Streams, Global Tables, DAX, on-demand vs provisioned capacity, and DynamoDB optimization. Master production DynamoDB patterns.
         topics:
           - aws
-          - solution-architect
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695039/Portfolio/awsCourse/Aws_solution_architect_banner_image_hjr7dz.png"
         duration: "40:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -361,12 +361,12 @@ content:
       - id: 24
         topic_name: ElastiCache and In-Memory Databases
         sub_topic: Databases
-        publish_date: 2025-01-22
+        publish_date: 2026-01-29
         description: >
           Master ElastiCache, Redis vs Memcached, caching strategies, and improving application performance with caching. Learn caching patterns.
         topics:
           - aws
-          - solution-architect
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695039/Portfolio/awsCourse/Aws_solution_architect_banner_image_hjr7dz.png"
         duration: "35:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -374,12 +374,12 @@ content:
       - id: 25
         topic_name: Database Migration Service (DMS)
         sub_topic: Databases
-        publish_date: 2025-01-22
+        publish_date: 2026-01-29
         description: >
           Learn DMS, database migration strategies, continuous replication, and migrating databases to AWS. Master database migration patterns.
         topics:
           - aws
-          - solution-architect
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695039/Portfolio/awsCourse/Aws_solution_architect_banner_image_hjr7dz.png"
         duration: "30:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -387,12 +387,12 @@ content:
       - id: 26
         topic_name: Database Interview Questions
         sub_topic: Databases
-        publish_date: 2025-01-22
+        publish_date: 2026-01-29
         description: >
           Practice database service interview questions. Master choosing the right database, designing database architectures, and optimizing database performance.
         topics:
           - aws
-          - solution-architect
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695039/Portfolio/awsCourse/Aws_solution_architect_banner_image_hjr7dz.png"
         duration: "40:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -408,12 +408,12 @@ content:
       - id: 27
         topic_name: VPC Fundamentals
         sub_topic: Networking
-        publish_date: 2025-01-23
+        publish_date: 2026-01-29
         description: >
           Master VPC, subnets, route tables, internet gateways, NAT gateways, and VPC architecture. Essential for AWS networking interviews.
         topics:
           - aws
-          - solution-architect
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695039/Portfolio/awsCourse/Aws_solution_architect_banner_image_hjr7dz.png"
         duration: "45:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -421,12 +421,12 @@ content:
       - id: 28
         topic_name: Security Groups and NACLs
         sub_topic: Networking
-        publish_date: 2025-01-23
+        publish_date: 2026-01-29
         description: >
           Learn security groups, network ACLs, stateful vs stateless firewalls, and securing VPC resources. Master VPC security best practices.
         topics:
           - aws
-          - solution-architect
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695039/Portfolio/awsCourse/Aws_solution_architect_banner_image_hjr7dz.png"
         duration: "35:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -434,12 +434,12 @@ content:
       - id: 29
         topic_name: VPC Peering and Transit Gateway
         sub_topic: Networking
-        publish_date: 2025-01-23
+        publish_date: 2026-01-29
         description: >
           Master VPC peering, Transit Gateway, VPC endpoints, and connecting VPCs. Learn advanced networking patterns used in enterprise architectures.
         topics:
           - aws
-          - solution-architect
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695039/Portfolio/awsCourse/Aws_solution_architect_banner_image_hjr7dz.png"
         duration: "40:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -447,12 +447,12 @@ content:
       - id: 30
         topic_name: Route 53 and DNS
         sub_topic: Networking
-        publish_date: 2025-01-23
+        publish_date: 2026-01-29
         description: >
           Learn Route 53, DNS concepts, routing policies, health checks, and DNS management. Master DNS and domain management on AWS.
         topics:
           - aws
-          - solution-architect
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695039/Portfolio/awsCourse/Aws_solution_architect_banner_image_hjr7dz.png"
         duration: "35:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -460,12 +460,12 @@ content:
       - id: 31
         topic_name: CloudFront and CDN
         sub_topic: Networking
-        publish_date: 2025-01-23
+        publish_date: 2026-01-29
         description: >
           Master CloudFront, CDN concepts, distributions, origins, caching behaviors, and content delivery optimization. Learn CDN patterns used at scale.
         topics:
           - aws
-          - solution-architect
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695039/Portfolio/awsCourse/Aws_solution_architect_banner_image_hjr7dz.png"
         duration: "40:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -473,12 +473,12 @@ content:
       - id: 32
         topic_name: API Gateway
         sub_topic: Networking
-        publish_date: 2025-01-23
+        publish_date: 2026-01-29
         description: >
           Learn API Gateway, REST APIs, HTTP APIs, WebSocket APIs, API throttling, and building serverless APIs. Master API management patterns.
         topics:
           - aws
-          - solution-architect
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695039/Portfolio/awsCourse/Aws_solution_architect_banner_image_hjr7dz.png"
         duration: "35:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -486,12 +486,12 @@ content:
       - id: 33
         topic_name: Direct Connect and VPN
         sub_topic: Networking
-        publish_date: 2025-01-23
+        publish_date: 2026-01-29
         description: >
           Learn Direct Connect, VPN, Site-to-Site VPN, and hybrid cloud connectivity. Master connecting on-premises infrastructure to AWS.
         topics:
           - aws
-          - solution-architect
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695039/Portfolio/awsCourse/Aws_solution_architect_banner_image_hjr7dz.png"
         duration: "30:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -499,12 +499,12 @@ content:
       - id: 34
         topic_name: Networking Interview Questions
         sub_topic: Networking
-        publish_date: 2025-01-23
+        publish_date: 2026-01-29
         description: >
           Practice networking service interview questions. Master designing network architectures, securing networks, and optimizing network performance.
         topics:
           - aws
-          - solution-architect
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695039/Portfolio/awsCourse/Aws_solution_architect_banner_image_hjr7dz.png"
         duration: "40:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -520,12 +520,12 @@ content:
       - id: 35
         topic_name: IAM Fundamentals
         sub_topic: Security
-        publish_date: 2025-01-24
+        publish_date: 2026-01-24
         description: >
           Master IAM, users, groups, roles, policies, permission boundaries, and IAM best practices. Essential for AWS security interviews.
         topics:
           - aws
-          - solution-architect
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695039/Portfolio/awsCourse/Aws_solution_architect_banner_image_hjr7dz.png"
         duration: "45:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -533,12 +533,12 @@ content:
       - id: 36
         topic_name: IAM Roles and Policies
         sub_topic: Security
-        publish_date: 2025-01-24
+        publish_date: 2026-01-24
         description: >
           Learn IAM roles, assume role, service roles, instance roles, policy types, and least privilege principles. Master IAM patterns for production.
         topics:
           - aws
-          - solution-architect
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695039/Portfolio/awsCourse/Aws_solution_architect_banner_image_hjr7dz.png"
         duration: "40:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -546,12 +546,12 @@ content:
       - id: 37
         topic_name: KMS and Encryption
         sub_topic: Security
-        publish_date: 2025-01-24
+        publish_date: 2026-01-24
         description: >
           Master KMS, encryption at rest, encryption in transit, customer-managed keys, AWS-managed keys, and encryption best practices. Learn data protection patterns.
         topics:
           - aws
-          - solution-architect
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695039/Portfolio/awsCourse/Aws_solution_architect_banner_image_hjr7dz.png"
         duration: "40:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -559,12 +559,12 @@ content:
       - id: 38
         topic_name: Secrets Manager and Parameter Store
         sub_topic: Security
-        publish_date: 2025-01-24
+        publish_date: 2026-01-24
         description: >
           Learn Secrets Manager, Parameter Store, managing secrets, and secure configuration management. Master secrets management patterns.
         topics:
           - aws
-          - solution-architect
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695039/Portfolio/awsCourse/Aws_solution_architect_banner_image_hjr7dz.png"
         duration: "30:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -572,12 +572,12 @@ content:
       - id: 39
         topic_name: CloudTrail and CloudWatch
         sub_topic: Security
-        publish_date: 2025-01-24
+        publish_date: 2026-01-24
         description: >
           Master CloudTrail for audit logging, CloudWatch for monitoring, logs, metrics, alarms, and observability. Learn monitoring and logging patterns.
         topics:
           - aws
-          - solution-architect
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695039/Portfolio/awsCourse/Aws_solution_architect_banner_image_hjr7dz.png"
         duration: "35:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -585,12 +585,12 @@ content:
       - id: 40
         topic_name: WAF and Shield
         sub_topic: Security
-        publish_date: 2025-01-24
+        publish_date: 2026-01-24
         description: >
           Learn WAF, Shield, DDoS protection, web application security, and protecting applications from attacks. Master application security patterns.
         topics:
           - aws
-          - solution-architect
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695039/Portfolio/awsCourse/Aws_solution_architect_banner_image_hjr7dz.png"
         duration: "30:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -598,12 +598,12 @@ content:
       - id: 41
         topic_name: Security Best Practices
         sub_topic: Security
-        publish_date: 2025-01-24
+        publish_date: 2026-01-24
         description: >
           Master AWS security best practices, security architecture patterns, compliance, and building secure cloud applications. Learn security at scale.
         topics:
           - aws
-          - solution-architect
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695039/Portfolio/awsCourse/Aws_solution_architect_banner_image_hjr7dz.png"
         duration: "40:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -619,12 +619,12 @@ content:
       - id: 42
         topic_name: AWS Pricing Models
         sub_topic: Cost Optimization
-        publish_date: 2025-01-25
+        publish_date: 2026-01-25
         description: >
           Learn AWS pricing models, On-Demand, Reserved Instances, Savings Plans, Spot Instances, and cost optimization strategies. Master AWS cost management.
         topics:
           - aws
-          - solution-architect
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695039/Portfolio/awsCourse/Aws_solution_architect_banner_image_hjr7dz.png"
         duration: "35:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -632,12 +632,12 @@ content:
       - id: 43
         topic_name: Cost Explorer and Budgets
         sub_topic: Cost Optimization
-        publish_date: 2025-01-25
+        publish_date: 2026-01-25
         description: >
           Master Cost Explorer, AWS Budgets, cost allocation tags, and monitoring AWS costs. Learn cost management tools and practices.
         topics:
           - aws
-          - solution-architect
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695039/Portfolio/awsCourse/Aws_solution_architect_banner_image_hjr7dz.png"
         duration: "30:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -645,12 +645,12 @@ content:
       - id: 44
         topic_name: Right-Sizing and Resource Optimization
         sub_topic: Cost Optimization
-        publish_date: 2025-01-25
+        publish_date: 2026-01-25
         description: >
           Learn right-sizing instances, identifying unused resources, and optimizing AWS costs. Master cost optimization techniques used in production.
         topics:
           - aws
-          - solution-architect
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695039/Portfolio/awsCourse/Aws_solution_architect_banner_image_hjr7dz.png"
         duration: "35:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -658,12 +658,12 @@ content:
       - id: 45
         topic_name: Cost Optimization Interview Questions
         sub_topic: Cost Optimization
-        publish_date: 2025-01-25
+        publish_date: 2026-01-25
         description: >
           Practice cost optimization interview questions. Master designing cost-effective architectures and optimizing AWS costs.
         topics:
           - aws
-          - solution-architect
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695039/Portfolio/awsCourse/Aws_solution_architect_banner_image_hjr7dz.png"
         duration: "30:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -679,12 +679,12 @@ content:
       - id: 46
         topic_name: High Availability and Fault Tolerance
         sub_topic: Architecture
-        publish_date: 2025-01-26
+        publish_date: 2026-01-26
         description: >
           Master designing highly available architectures, Multi-AZ deployments, fault tolerance patterns, and disaster recovery. Learn HA patterns used at scale.
         topics:
           - aws
-          - solution-architect
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695039/Portfolio/awsCourse/Aws_solution_architect_banner_image_hjr7dz.png"
         duration: "45:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -692,12 +692,12 @@ content:
       - id: 47
         topic_name: Scalability Patterns
         sub_topic: Architecture
-        publish_date: 2025-01-26
+        publish_date: 2026-01-26
         description: >
           Learn horizontal vs vertical scaling, auto-scaling patterns, and designing scalable architectures. Master scalability patterns used by top tech companies.
         topics:
           - aws
-          - solution-architect
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695039/Portfolio/awsCourse/Aws_solution_architect_banner_image_hjr7dz.png"
         duration: "40:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -705,12 +705,12 @@ content:
       - id: 48
         topic_name: Serverless Architecture Patterns
         sub_topic: Architecture
-        publish_date: 2025-01-26
+        publish_date: 2026-01-26
         description: >
           Master serverless architecture patterns, Lambda, API Gateway, Step Functions, and building serverless applications. Learn modern architecture patterns.
         topics:
           - aws
-          - solution-architect
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695039/Portfolio/awsCourse/Aws_solution_architect_banner_image_hjr7dz.png"
         duration: "40:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -718,12 +718,12 @@ content:
       - id: 49
         topic_name: Microservices on AWS
         sub_topic: Architecture
-        publish_date: 2025-01-26
+        publish_date: 2026-01-26
         description: >
           Learn microservices architecture on AWS, ECS, EKS, service mesh, and building microservices applications. Master microservices patterns.
         topics:
           - aws
-          - solution-architect
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695039/Portfolio/awsCourse/Aws_solution_architect_banner_image_hjr7dz.png"
         duration: "35:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -731,12 +731,12 @@ content:
       - id: 50
         topic_name: Architecture Interview Questions
         sub_topic: Architecture
-        publish_date: 2025-01-26
+        publish_date: 2026-01-26
         description: >
           Practice architecture design interview questions. Master designing AWS architectures for common scenarios and use cases.
         topics:
           - aws
-          - solution-architect
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695039/Portfolio/awsCourse/Aws_solution_architect_banner_image_hjr7dz.png"
         duration: "45:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -752,12 +752,12 @@ content:
       - id: 51
         topic_name: Common AWS Interview Questions
         sub_topic: Interview Prep
-        publish_date: 2025-01-27
+        publish_date: 2026-01-27
         description: >
           Master frequently asked AWS interview questions from Amazon, Google, Microsoft, and other top tech companies. Practice with detailed explanations.
         topics:
           - aws
-          - solution-architect
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695039/Portfolio/awsCourse/Aws_solution_architect_banner_image_hjr7dz.png"
         duration: "40:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -765,12 +765,12 @@ content:
       - id: 52
         topic_name: AWS System Design Questions
         sub_topic: Interview Prep
-        publish_date: 2025-01-27
+        publish_date: 2026-01-27
         description: >
           Practice AWS system design interview questions. Learn to design scalable, secure, and cost-effective AWS architectures.
         topics:
           - aws
-          - solution-architect
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695039/Portfolio/awsCourse/Aws_solution_architect_banner_image_hjr7dz.png"
         duration: "40:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -778,12 +778,12 @@ content:
       - id: 53
         topic_name: Certification Exam Tips
         sub_topic: Interview Prep
-        publish_date: 2025-01-27
+        publish_date: 2026-01-27
         description: >
           Master AWS certification exam strategies, time management, question analysis, and exam preparation tips. Learn to pass AWS exams confidently.
         topics:
           - aws
-          - solution-architect
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695039/Portfolio/awsCourse/Aws_solution_architect_banner_image_hjr7dz.png"
         duration: "30:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -791,12 +791,12 @@ content:
       - id: 54
         topic_name: Interview Tips and Strategies
         sub_topic: Interview Prep
-        publish_date: 2025-01-27
+        publish_date: 2026-01-27
         description: >
           Master AWS interview strategies, communication techniques, and how to stand out in AWS interviews at top tech companies.
         topics:
           - aws
-          - solution-architect
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695039/Portfolio/awsCourse/Aws_solution_architect_banner_image_hjr7dz.png"
         duration: "30:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false

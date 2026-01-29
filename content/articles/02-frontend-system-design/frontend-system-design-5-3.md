@@ -2,8 +2,8 @@
 title: "Performance Tools"
 description: "Explore essential performance analysis tools and techniques. Learn about Chrome DevTools, Lighthouse, WebPageTest, performance profiling, bottleneck identification, and building efficient debugging workflows."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-04-02"
-datePublished: "2025-04-02"
+dateModified: "2026-04-02"
+datePublished: "2026-04-02"
 showOnArticles: false
 courseName: 02-frontend-system-design
 image: https://res.cloudinary.com/duojkrgue/image/upload/v1759048337/Portfolio/FrontendSystemDesignCourse/titleImages/33_gcjr18.png

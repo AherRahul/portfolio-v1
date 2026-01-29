@@ -2,8 +2,8 @@
 title: "Feature Policy | Permissions-Policy"
 description: "Explore Feature Policy and Permissions-Policy for enhanced web security. Learn to control browser feature access, implement granular permission management, and build secure, policy-driven web applications."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-03-21"
-datePublished: "2025-03-21"
+dateModified: "2026-03-21"
+datePublished: "2026-03-21"
 showOnArticles: false
 courseName: 02-frontend-system-design
 topics:

@@ -2,8 +2,8 @@
 title: "Rendering Pattern"
 description: "Understand different rendering patterns and their performance implications. Learn about SSR, SSG, CSR, ISR, streaming SSR, hydration optimization, and choosing the right rendering strategy for your application."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-04-04"
-datePublished: "2025-04-04"
+dateModified: "2026-04-04"
+datePublished: "2026-04-04"
 showOnArticles: false
 courseName: 02-frontend-system-design
 image: https://res.cloudinary.com/duojkrgue/image/upload/v1759048338/Portfolio/FrontendSystemDesignCourse/titleImages/35_isvryz.png

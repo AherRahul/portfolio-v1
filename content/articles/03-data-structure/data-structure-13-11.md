@@ -2,8 +2,8 @@
 title: "Kth Symbol - Easy using Recursion"
 description: "Find the Kth symbol in a recursively generated sequence. Master pattern recognition in recursive sequences, learn to optimize from generating full sequences to direct calculation, and understand binary tree recursion."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-12-24"
-datePublished: "2025-12-24"
+dateModified: "2026-12-24"
+datePublished: "2026-12-24"
 showOnArticles: false
 courseName: 03-data-structure
 topics:

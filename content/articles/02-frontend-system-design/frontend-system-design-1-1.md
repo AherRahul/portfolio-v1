@@ -2,8 +2,8 @@
 title: "How the Web Works"
 description: "Network is a core part of software, as the frontend needs data and the backend sends it. All of this happens through the network. How is data transferred over the internet? How does it reach the client, and what protocols are required? These are essential concepts for software development. We need to understand what happens when we type 'google.com,'' what DNS is, and its role in the process."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-03-01"
-datePublished: "2025-03-01"
+dateModified: "2026-03-01"
+datePublished: "2026-03-01"
 showOnArticles: false
 courseName: 02-frontend-system-design
 topics:

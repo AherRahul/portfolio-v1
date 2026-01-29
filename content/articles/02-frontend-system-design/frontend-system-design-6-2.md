@@ -2,8 +2,8 @@
 title: "Session Storage"
 description: "Understand session storage capabilities and use cases. Learn about sessionStorage API, session management, temporary data storage, security implications, and implementing session-based application features."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-04-07"
-datePublished: "2025-04-07"
+dateModified: "2026-04-07"
+datePublished: "2026-04-07"
 showOnArticles: false
 courseName: 02-frontend-system-design
 image: https://res.cloudinary.com/duojkrgue/image/upload/v1759048364/Portfolio/FrontendSystemDesignCourse/titleImages/38_hfhatt.png

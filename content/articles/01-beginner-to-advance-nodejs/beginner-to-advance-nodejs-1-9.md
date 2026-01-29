@@ -2,8 +2,8 @@
 title: "libuv & Event Loop"
 description: "As we know, NodeJs has two main parts, like the duo Jai and Veeru: the V8 engine and libuv. Let’s take a closer look at libuv. Just like the V8 engine has its hidden parts, you can learn more about it by clicking here. Now, let’s focus on libuv. Whenever V8 (Jai) can’t handle something—like file access, network calls, or timers—it gives the task to libuv. Also, when these tasks run, we often use callback functions, which are executed after libuv finishes the job."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-04-13"
-datePublished: "2025-04-13"
+dateModified: "2026-04-13"
+datePublished: "2026-04-13"
 showOnArticles: false
 courseName: 01-beginner-to-advance-nodejs
 topics:

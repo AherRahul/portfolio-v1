@@ -1,31 +1,32 @@
 ---
-title: "Template Literals & Tagged Templates"
-description: "Explore the power of template literals for string interpolation and multiline strings, plus advanced tagged template functions for custom string processing and domain-specific languages."
-slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-26"
-datePublished: "2025-09-26"
+title: Template Literals & Tagged Templates
+description: Explore the power of template literals for string interpolation and
+  multiline strings, plus advanced tagged template functions for custom string
+  processing and domain-specific languages.
+slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
+dateModified: 2026-01-29
+datePublished: 2026-09-26
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
   - javascript
 resources:
-  - title: "MDN - Template Literals"
-    type: "documentation"
-    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals"
-    description: "Complete guide to template literal syntax and usage"
-  - title: "MDN - Tagged Templates"
-    type: "documentation"
-    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#tagged_templates"
-    description: "Advanced tagged template functionality"
-  - title: "Template Literals Examples"
-    type: "article"
-    url: "https://2ality.com/2015/01/template-strings-html.html"
-    description: "Creative uses of template literals in HTML generation"
-  - title: "Tagged Template Use Cases"
-    type: "article"
-    url: "https://wesbos.com/tagged-template-literals"
-    description: "Real-world applications of tagged templates"
-
+  - title: MDN - Template Literals
+    type: documentation
+    url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
+    description: Complete guide to template literal syntax and usage
+  - title: MDN - Tagged Templates
+    type: documentation
+    url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#tagged_templates
+    description: Advanced tagged template functionality
+  - title: Template Literals Examples
+    type: article
+    url: https://2ality.com/2015/01/template-strings-html.html
+    description: Creative uses of template literals in HTML generation
+  - title: Tagged Template Use Cases
+    type: article
+    url: https://wesbos.com/tagged-template-literals
+    description: Real-world applications of tagged templates
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758811621/Portfolio/javaScriptCourse/images/all%20title%20images/28_czivkn.png)

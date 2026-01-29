@@ -1,31 +1,33 @@
 ---
-title: "Functions Deep Dive"
-description: "Functions are the heart of JavaScript programming. They're not just blocks of code that execute - they're first-class citizens that can be stored in variables, passed as arguments, and returned from other functions. Master functions, and you master JavaScript."
-slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-25"
-datePublished: "2025-09-25"
+title: Functions Deep Dive
+description: Functions are the heart of JavaScript programming. They're not just
+  blocks of code that execute - they're first-class citizens that can be stored
+  in variables, passed as arguments, and returned from other functions. Master
+  functions, and you master JavaScript.
+slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
+dateModified: 2026-01-29
+datePublished: 2026-09-25
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
   - javascript
 resources:
-  - title: "JS course PDF - 6"
-    type: "PDF"
-    url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758792130/Portfolio/javaScriptCourse/pdf/JavaScript-day6_Functions_compressed.pdf"
-    description: "A PDF Notes on Functions Deep Dive topic"
-  - title: "MDN - Functions"
-    type: "documentation"
-    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions"
-    description: "Complete guide to JavaScript functions from MDN"
-  - title: "JavaScript.info - Functions"
-    type: "article"
-    url: "https://javascript.info/function-basics"
-    description: "Comprehensive tutorial on JavaScript functions with practical examples"
-  - title: "You Don't Know JS - Functions & Scope"
-    type: "book"
-    url: "https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/scope-closures/ch3.md"
-    description: "Deep dive into JavaScript functions from the You Don't Know JS series"
-
+  - title: JS course PDF - 6
+    type: PDF
+    url: https://res.cloudinary.com/duojkrgue/image/upload/v1758792130/Portfolio/javaScriptCourse/pdf/JavaScript-day6_Functions_compressed.pdf
+    description: A PDF Notes on Functions Deep Dive topic
+  - title: MDN - Functions
+    type: documentation
+    url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions
+    description: Complete guide to JavaScript functions from MDN
+  - title: JavaScript.info - Functions
+    type: article
+    url: https://javascript.info/function-basics
+    description: Comprehensive tutorial on JavaScript functions with practical examples
+  - title: You Don't Know JS - Functions & Scope
+    type: book
+    url: https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/scope-closures/ch3.md
+    description: Deep dive into JavaScript functions from the You Don't Know JS series
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758809904/Portfolio/javaScriptCourse/images/7/7_fsje6a.png)

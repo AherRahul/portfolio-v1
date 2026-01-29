@@ -2,8 +2,8 @@
 title: "Unit & Integration Testing"
 description: "Master unit and integration testing for frontend applications. Learn testing frameworks like Jest, React Testing Library, test design patterns, mocking strategies, and building comprehensive test suites for reliable software development."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-03-25"
-datePublished: "2025-03-25"
+dateModified: "2026-03-25"
+datePublished: "2026-03-25"
 showOnArticles: false
 courseName: 02-frontend-system-design
 image: https://res.cloudinary.com/duojkrgue/image/upload/v1759048333/Portfolio/FrontendSystemDesignCourse/titleImages/25_tie9s3.png

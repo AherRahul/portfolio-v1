@@ -2,8 +2,8 @@
 title: "Performance Importance"
 description: "Understand why performance matters in modern web applications. Learn about user experience impact, business metrics correlation, Core Web Vitals, performance psychology, and building performance-conscious development mindset."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-03-31"
-datePublished: "2025-03-31"
+dateModified: "2026-03-31"
+datePublished: "2026-03-31"
 showOnArticles: false
 courseName: 02-frontend-system-design
 image: https://res.cloudinary.com/duojkrgue/image/upload/v1759048334/Portfolio/FrontendSystemDesignCourse/titleImages/31_pbdhz0.png

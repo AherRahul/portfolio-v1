@@ -17,7 +17,7 @@ content:
       - id: 1
         topic_name: How the Web Works
         sub_topic: Networking
-        publish_date: 2025-03-01
+        publish_date: 2026-03-01
         description: >
           Network is a core part of software, as the frontend needs data and the backend sends it. All of this happens through the network. How is data transferred over the internet? How does it reach the client, and what protocols are required? These are essential concepts for software development. We need to understand what happens when we type "google.com," what DNS is, and its role in the process.
         topics:
@@ -32,7 +32,7 @@ content:
       - id: 2
         topic_name: Communication Protocols
         sub_topic: Networking
-        publish_date: 2025-03-02
+        publish_date: 2026-03-02
         description: >
           A communications protocol is a set of formal rules describing how to transmit or exchange data, especially across a network. A standardised communications protocol is one that has been codified as a standard. Examples of these include WiFi, the Internet Protocol, and the Hypertext Transfer Protocol (HTTP).
         topics:
@@ -47,7 +47,7 @@ content:
       - id: 3
         topic_name: HTTP Headers Methods Status Codes and Rest API Deep Dive
         sub_topic: Networking
-        publish_date: 2025-03-03
+        publish_date: 2026-03-03
         description: >
           If you are a junior developer, a senior developer, or just a complete newbie, this is going to be a great place to learn about REST API—what they are, why they are used, and how they work. This is going to be a long blog, so it’s for serious readers. If you prefer short TikTok-like videos for instant information, this might not be for you. Let’s get started!
         topics:
@@ -62,7 +62,7 @@ content:
       - id: 4
         topic_name: Why GraphQL over Rest API
         sub_topic: Networking
-        publish_date: 2025-03-04
+        publish_date: 2026-03-04
         description: >
           Many companies today use GraphQL. In this blog, we’ll explore what GraphQL is, its benefits, and why it’s so popular. Suppose your app needs information about continents, countries, and languages. If you’re using REST API, you’ll likely call multiple API to fetch this data and then organize it for your frontend. Be patient—it’s not an Instagram Reel, but for serious learners, it’ll be worth the read.
         topics:
@@ -77,7 +77,7 @@ content:
       - id: 5
         topic_name: A quick overview of gRPC
         sub_topic: Networking
-        publish_date: 2025-03-05
+        publish_date: 2026-03-05
         description: >
           It's kind of like a sibling to REST API or GraphQL, enabling communication with the server in a unique way. RPC stands for Remote Procedure Call, and the "g" in gRPC stands for Google, as it was created by Google.
         topics:
@@ -99,7 +99,7 @@ content:
       - id: 6
         topic_name: What is short polling? Learn with example
         sub_topic: Networking
-        publish_date: 2025-03-06
+        publish_date: 2026-03-06
         description: >
           Dive into short polling methodologies. Explore the technique of frequent requests to servers at fixed intervals, enabling frontend applications to obtain recent data updates for dynamic content.
         topics:
@@ -114,7 +114,7 @@ content:
       - id: 7
         topic_name: Practical Guide Long Polling
         sub_topic: Networking
-        publish_date: 2025-03-07
+        publish_date: 2026-03-07
         description: >
           Explore long polling techniques. Learn how continuous connections to servers facilitate real-time data updates, enabling frontend applications to receive immediate data upon availability, optimizing user experiences.
         topics:
@@ -129,7 +129,7 @@ content:
       - id: 8
         topic_name: Web Socket
         sub_topic: Networking
-        publish_date: 2025-03-08
+        publish_date: 2026-03-08
         description: >
           Discover the power of Web Sockets. Learn to establish persistent connections facilitating real-time, bidirectional communication between clients and servers, enhancing interactivity and responsiveness in frontend applications.
         topics:
@@ -144,7 +144,7 @@ content:
       - id: 9
         topic_name: Server Sent Events - A Real time communication
         sub_topic: Networking
-        publish_date: 2025-03-09
+        publish_date: 2026-03-09
         description: >
           Delve into Server-Sent Events. Understand how servers push data to clients, enabling continuous updates in frontend applications without the need for repeated requests, optimizing data streaming.
         topics:
@@ -159,7 +159,7 @@ content:
       - id: 10
         topic_name: Introduction to Web hooks
         sub_topic: Networking
-        publish_date: 2025-03-10
+        publish_date: 2026-03-10
         description: >
           Understand WebHooks' functionalities. Learn how they trigger instant notifications and events, allowing frontend systems to react promptly to external changes or specific actions, ensuring responsiveness and agility.
         topics:
@@ -181,7 +181,7 @@ content:
       - id: 11
         topic_name: Cross-site Scripting (XSS)
         sub_topic: Security
-        publish_date: 2025-03-11
+        publish_date: 2026-03-11
         description: >
           Learn about Cross-site Scripting (XSS) attacks, one of the most common web application vulnerabilities. Understand the different types of XSS, how attackers exploit them, and comprehensive strategies to prevent and mitigate XSS attacks in modern frontend applications.
         topics:
@@ -196,7 +196,7 @@ content:
       - id: 12
         topic_name: iFrame Protection
         sub_topic: Security
-        publish_date: 2025-03-12
+        publish_date: 2026-03-12
         description: >
           Explore iframe security vulnerabilities and protection mechanisms. Learn about clickjacking attacks, X-Frame-Options header, Content Security Policy frame directives, and best practices for secure iframe implementation in modern web applications.
         topics:
@@ -211,7 +211,7 @@ content:
       - id: 13
         topic_name: Security Headers
         sub_topic: Security
-        publish_date: 2025-03-13
+        publish_date: 2026-03-13
         description: >
           Master essential HTTP security headers that protect web applications from common attacks. Learn about Content-Security-Policy, X-XSS-Protection, Strict-Transport-Security, X-Content-Type-Options, and how to implement comprehensive header security strategies.
         topics:
@@ -226,7 +226,7 @@ content:
       - id: 14
         topic_name: Client-side Security
         sub_topic: Security
-        publish_date: 2025-03-14
+        publish_date: 2026-03-14
         description: >
           Understand comprehensive client-side security practices for modern web applications. Cover secure coding practices, data validation, secure storage, API security, third-party integrations, and building robust defense mechanisms in frontend applications.
         topics:
@@ -241,7 +241,7 @@ content:
       - id: 15
         topic_name: Secure Communication (HTTPs)
         sub_topic: Security
-        publish_date: 2025-03-15
+        publish_date: 2026-03-15
         description: >
           Deep dive into HTTPS and secure communication protocols. Learn about SSL/TLS certificates, encryption algorithms, certificate pinning, HSTS implementation, and ensuring secure data transmission in modern web applications.
         topics:
@@ -256,7 +256,7 @@ content:
       - id: 16
         topic_name: Dependency Security
         sub_topic: Security
-        publish_date: 2025-03-16
+        publish_date: 2026-03-16
         description: >
           Master dependency security management in modern frontend applications. Learn about vulnerability scanning, security auditing, dependency updates, package integrity verification, and building secure supply chain practices for JavaScript applications.
         topics:
@@ -271,7 +271,7 @@ content:
       - id: 17
         topic_name: Compliance & Regulation
         sub_topic: Security
-        publish_date: 2025-03-17
+        publish_date: 2026-03-17
         description: >
           Navigate compliance and regulatory requirements for modern web applications. Understand GDPR, CCPA, COPPA, accessibility compliance, data protection requirements, and implementing compliance-ready frontend architectures.
         topics:
@@ -286,7 +286,7 @@ content:
       - id: 18
         topic_name: Input Validation and Sanitization
         sub_topic: Security
-        publish_date: 2025-03-18
+        publish_date: 2026-03-18
         description: >
           Master input validation and sanitization techniques for robust web application security. Learn client-side and server-side validation, XSS prevention, SQL injection protection, and building comprehensive input security layers.
         topics:
@@ -301,7 +301,7 @@ content:
       - id: 19
         topic_name: Server-Side Request Forgery (SSRF)
         sub_topic: Security
-        publish_date: 2025-03-19
+        publish_date: 2026-03-19
         description: >
           Understand Server-Side Request Forgery attacks and prevention strategies. Learn how SSRF exploits server functionality, identify vulnerable patterns, and implement comprehensive protection mechanisms in modern web architectures.
         topics:
@@ -316,7 +316,7 @@ content:
       - id: 20
         topic_name: Server-side JavaScript Injection (SSJI)
         sub_topic: Security
-        publish_date: 2025-03-20
+        publish_date: 2026-03-20
         description: >
           Learn about Server-side JavaScript Injection vulnerabilities in Node.js applications. Understand attack vectors, code execution risks, and comprehensive prevention strategies for secure server-side JavaScript development.
         topics:
@@ -331,7 +331,7 @@ content:
       - id: 21
         topic_name: Feature Policy | Permissions-Policy
         sub_topic: Security
-        publish_date: 2025-03-21
+        publish_date: 2026-03-21
         description: >
           Explore Feature Policy and Permissions-Policy for enhanced web security. Learn to control browser feature access, implement granular permission management, and build secure, policy-driven web applications.
         topics:
@@ -346,7 +346,7 @@ content:
       - id: 22
         topic_name: Subresource Integrity (SRI)
         sub_topic: Security
-        publish_date: 2025-03-22
+        publish_date: 2026-03-22
         description: >
           Master Subresource Integrity for secure resource loading. Learn to implement SRI hashes, prevent tampering of external resources, ensure CDN security, and build robust resource integrity verification systems.
         topics:
@@ -361,7 +361,7 @@ content:
       - id: 23
         topic_name: Cross-Origin Resource Sharing (CORS)
         sub_topic: Security
-        publish_date: 2025-03-23
+        publish_date: 2026-03-23
         description: >
           Deep dive into Cross-Origin Resource Sharing (CORS) mechanisms. Understand same-origin policy, preflight requests, CORS headers configuration, and implementing secure cross-origin communication in modern web applications.
         topics:
@@ -376,7 +376,7 @@ content:
       - id: 24
         topic_name: Cross-Site Request Forgery (CSRF)
         sub_topic: Security
-        publish_date: 2025-03-24
+        publish_date: 2026-03-24
         description: >
           Master Cross-Site Request Forgery (CSRF) attack prevention. Learn about CSRF tokens, SameSite cookies, double-submit cookies, origin validation, and building comprehensive CSRF protection strategies for modern web applications.
         topics:
@@ -398,7 +398,7 @@ content:
       - id: 25
         topic_name: Unit & Integration Testing
         sub_topic: Testing
-        publish_date: 2025-03-25
+        publish_date: 2026-03-25
         description: >
           Master unit and integration testing for frontend applications. Learn testing frameworks like Jest, React Testing Library, test design patterns, mocking strategies, and building comprehensive test suites for reliable software development.
         topics:
@@ -413,7 +413,7 @@ content:
       - id: 26
         topic_name: E2E and Automation Testing
         sub_topic: Testing
-        publish_date: 2025-03-26
+        publish_date: 2026-03-26
         description: >
           Explore end-to-end testing and automation strategies. Learn about Cypress, Playwright, Selenium, automated testing pipelines, visual regression testing, and building robust automated testing workflows for modern web applications.
         topics:
@@ -428,7 +428,7 @@ content:
       - id: 27
         topic_name: A/B Testing
         sub_topic: Testing
-        publish_date: 2025-03-27
+        publish_date: 2026-03-27
         description: >
           Master A/B testing methodologies and implementation. Learn about experiment design, statistical significance, feature flags, multivariate testing, and building data-driven decision-making systems for frontend optimization.
         topics:
@@ -443,7 +443,7 @@ content:
       - id: 28
         topic_name: Performance Testing
         sub_topic: Testing
-        publish_date: 2025-03-28
+        publish_date: 2026-03-28
         description: >
           Understand performance testing strategies for web applications. Learn about load testing, stress testing, Lighthouse automation, Core Web Vitals monitoring, and implementing comprehensive performance validation workflows.
         topics:
@@ -458,7 +458,7 @@ content:
       - id: 29
         topic_name: Test-Driven Development Overview
         sub_topic: Testing
-        publish_date: 2025-03-29
+        publish_date: 2026-03-29
         description: >
           Explore Test-Driven Development (TDD) practices for frontend development. Learn the red-green-refactor cycle, TDD benefits, implementation strategies, and building maintainable codebases through test-first development approaches.
         topics:
@@ -473,7 +473,7 @@ content:
       - id: 30
         topic_name: Security Testing
         sub_topic: Testing
-        publish_date: 2025-03-30
+        publish_date: 2026-03-30
         description: >
           Master security testing practices for web applications. Learn about vulnerability scanning, penetration testing, security test automation, OWASP testing guidelines, and building secure development lifecycles.
         topics:
@@ -495,7 +495,7 @@ content:
       - id: 31
         topic_name: Performance Importance
         sub_topic: Performance
-        publish_date: 2025-03-31
+        publish_date: 2026-03-31
         description: >
           Understand why performance matters in modern web applications. Learn about user experience impact, business metrics correlation, Core Web Vitals, performance psychology, and building performance-conscious development mindset.
         topics:
@@ -510,7 +510,7 @@ content:
       - id: 32
         topic_name: Performance Monitoring
         sub_topic: Performance
-        publish_date: 2025-04-01
+        publish_date: 2026-04-01
         description: >
           Master performance monitoring techniques and tools. Learn about Real User Monitoring (RUM), synthetic monitoring, performance budgets, alerting systems, and implementing comprehensive performance observability.
         topics:
@@ -525,7 +525,7 @@ content:
       - id: 33
         topic_name: Performance Tools
         sub_topic: Performance
-        publish_date: 2025-04-02
+        publish_date: 2026-04-02
         description: >
           Explore essential performance analysis tools and techniques. Learn about Chrome DevTools, Lighthouse, WebPageTest, performance profiling, bottleneck identification, and building efficient debugging workflows.
         topics:
@@ -540,7 +540,7 @@ content:
       - id: 34
         topic_name: Network Optimization
         sub_topic: Performance
-        publish_date: 2025-04-03
+        publish_date: 2026-04-03
         description: >
           Master network-level performance optimizations. Learn about HTTP/2, HTTP/3, resource bundling, compression, CDN strategies, prefetching, preloading, and implementing efficient network communication patterns.
         topics:
@@ -555,7 +555,7 @@ content:
       - id: 35
         topic_name: Rendering Pattern
         sub_topic: Performance
-        publish_date: 2025-04-04
+        publish_date: 2026-04-04
         description: >
           Understand different rendering patterns and their performance implications. Learn about SSR, SSG, CSR, ISR, streaming SSR, hydration optimization, and choosing the right rendering strategy for your application.
         topics:
@@ -570,7 +570,7 @@ content:
       - id: 36
         topic_name: Build Optimization
         sub_topic: Performance
-        publish_date: 2025-04-05
+        publish_date: 2026-04-05
         description: >
           Master build-time optimizations for modern web applications. Learn about webpack optimization, tree shaking, code splitting, bundle analysis, asset optimization, and implementing efficient build pipelines.
         topics:
@@ -592,7 +592,7 @@ content:
       - id: 37
         topic_name: Local Storage
         sub_topic: Database & Caching
-        publish_date: 2025-04-06
+        publish_date: 2026-04-06
         description: >
           Master browser local storage mechanisms and best practices. Learn about localStorage API, storage limits, security considerations, data persistence strategies, and building robust client-side storage solutions.
         topics:
@@ -607,7 +607,7 @@ content:
       - id: 38
         topic_name: Session Storage
         sub_topic: Database & Caching
-        publish_date: 2025-04-07
+        publish_date: 2026-04-07
         description: >
           Understand session storage capabilities and use cases. Learn about sessionStorage API, session management, temporary data storage, security implications, and implementing session-based application features.
         topics:
@@ -622,7 +622,7 @@ content:
       - id: 39
         topic_name: Cookie Storage
         sub_topic: Database & Caching
-        publish_date: 2025-04-08
+        publish_date: 2026-04-08
         description: >
           Master HTTP cookies for web application state management. Learn about cookie attributes, security flags, SameSite policies, GDPR compliance, cookie management strategies, and building secure cookie-based solutions.
         topics:
@@ -637,7 +637,7 @@ content:
       - id: 40
         topic_name: Indexed DB
         sub_topic: Database & Caching
-        publish_date: 2025-04-09
+        publish_date: 2026-04-09
         description: >
           Explore IndexedDB for complex client-side data storage. Learn about object stores, transactions, indexing, querying, database design patterns, and building powerful offline-capable applications with IndexedDB.
         topics:
@@ -652,7 +652,7 @@ content:
       - id: 41
         topic_name: Normalization
         sub_topic: Database & Caching
-        publish_date: 2025-04-10
+        publish_date: 2026-04-10
         description: >
           Understand data normalization principles for frontend applications. Learn about normalized vs denormalized data structures, state management normalization, Redux normalization patterns, and optimizing data organization.
         topics:
@@ -667,7 +667,7 @@ content:
       - id: 42
         topic_name: HTTP Caching
         sub_topic: Database & Caching
-        publish_date: 2025-04-11
+        publish_date: 2026-04-11
         description: >
           Master HTTP caching strategies and implementation. Learn about cache headers, ETags, cache invalidation, browser caching behavior, CDN caching, and building efficient HTTP caching architectures.
         topics:
@@ -682,7 +682,7 @@ content:
       - id: 43
         topic_name: Service Working Caching
         sub_topic: Database & Caching
-        publish_date: 2025-04-12
+        publish_date: 2026-04-12
         description: >
           Explore advanced caching with Service Workers. Learn about cache strategies, offline-first patterns, cache management, background sync, and implementing sophisticated PWA caching mechanisms.
         topics:
@@ -697,7 +697,7 @@ content:
       - id: 44
         topic_name: API Caching
         sub_topic: Database & Caching
-        publish_date: 2025-04-13
+        publish_date: 2026-04-13
         description: >
           Master API response caching strategies. Learn about client-side API caching, cache invalidation strategies, stale-while-revalidate patterns, query caching, and building efficient API caching layers.
         topics:
@@ -712,7 +712,7 @@ content:
       - id: 45
         topic_name: State Management
         sub_topic: Database & Caching
-        publish_date: 2025-04-14
+        publish_date: 2026-04-14
         description: >
           Understand comprehensive state management in modern frontend applications. Learn about Redux, Zustand, Context API, state persistence, state synchronization, and building scalable state management architectures.
         topics:
@@ -734,7 +734,7 @@ content:
       - id: 46
         topic_name: Telemetry
         sub_topic: Logging & Monitoring
-        publish_date: 2025-04-15
+        publish_date: 2026-04-15
         description: >
           Master telemetry collection and analysis for frontend applications. Learn about user behavior tracking, performance metrics collection, error tracking, analytics implementation, and building comprehensive telemetry systems.
         topics:
@@ -749,7 +749,7 @@ content:
       - id: 47
         topic_name: Alerting
         sub_topic: Logging & Monitoring
-        publish_date: 2025-04-16
+        publish_date: 2026-04-16
         description: >
           Understand alerting strategies and implementation for frontend applications. Learn about error monitoring, performance alerting, uptime monitoring, notification systems, and building proactive monitoring solutions.
         topics:
@@ -764,7 +764,7 @@ content:
       - id: 48
         topic_name: Fixing
         sub_topic: Logging & Monitoring
-        publish_date: 2025-04-17
+        publish_date: 2026-04-17
         description: >
           Master debugging and issue resolution workflows. Learn about log analysis, error reproduction, performance debugging, A/B test analysis, and implementing systematic problem-solving approaches for frontend issues.
         topics:
@@ -786,7 +786,7 @@ content:
       - id: 49
         topic_name: Keyboard Accessibility
         sub_topic: Accessibility
-        publish_date: 2025-04-18
+        publish_date: 2026-04-18
         description: >
           Master keyboard navigation and accessibility patterns. Learn about focus management, keyboard shortcuts, tab order, skip links, and building fully keyboard-accessible web applications for all users.
         topics:
@@ -801,7 +801,7 @@ content:
       - id: 50
         topic_name: Screen Reader
         sub_topic: Accessibility
-        publish_date: 2025-04-19
+        publish_date: 2026-04-19
         description: >
           Understand screen reader compatibility and optimization. Learn about ARIA attributes, semantic HTML, screen reader testing, voice-over optimization, and building applications that work seamlessly with assistive technologies.
         topics:
@@ -816,7 +816,7 @@ content:
       - id: 51
         topic_name: Focus Management
         sub_topic: Accessibility
-        publish_date: 2025-04-20
+        publish_date: 2026-04-20
         description: >
           Master focus management in complex web applications. Learn about focus trapping, focus restoration, modal focus, dynamic content focus, and implementing robust focus management patterns for accessible user experiences.
         topics:
@@ -831,7 +831,7 @@ content:
       - id: 52
         topic_name: Color Contrast
         sub_topic: Accessibility
-        publish_date: 2025-04-21
+        publish_date: 2026-04-21
         description: >
           Understand color accessibility and contrast requirements. Learn about WCAG color guidelines, contrast ratios, color-blind accessibility, high contrast modes, and designing inclusive visual experiences for all users.
         topics:
@@ -846,7 +846,7 @@ content:
       - id: 53
         topic_name: Accessibility Tools
         sub_topic: Accessibility
-        publish_date: 2025-04-22
+        publish_date: 2026-04-22
         description: >
           Explore accessibility testing tools and workflows. Learn about axe-core, Lighthouse accessibility audit, WAVE, accessibility testing automation, and building comprehensive accessibility validation processes.
         topics:
@@ -861,7 +861,7 @@ content:
       - id: 54
         topic_name: How to fix accessibility
         sub_topic: Accessibility
-        publish_date: 2025-04-23
+        publish_date: 2026-04-23
         description: >
           Master accessibility issue identification and remediation. Learn about accessibility auditing, common accessibility problems, remediation strategies, accessibility refactoring, and implementing accessibility-first development workflows.
         topics:
@@ -883,7 +883,7 @@ content:
       - id: 55
         topic_name: Service Workers
         sub_topic: Offline Support
-        publish_date: 2025-04-24
+        publish_date: 2026-04-24
         description: >
           Master Service Workers for advanced web application capabilities. Learn about service worker lifecycle, caching strategies, background sync, push notifications, and building powerful offline-first web experiences.
         topics:
@@ -898,7 +898,7 @@ content:
       - id: 56
         topic_name: Progressive Web Applications (PWAs)
         sub_topic: Offline Support
-        publish_date: 2025-04-25
+        publish_date: 2026-04-25
         description: >
           Understand Progressive Web Application development. Learn about PWA criteria, manifest files, app shell architecture, offline functionality, installability, and building native-like web experiences that work across all devices.
         topics:
@@ -920,7 +920,7 @@ content:
   #     - id: 57
   #       topic_name: Component Design
   #       sub_topic: Low Level Design
-  #       publish_date: 2025-04-26
+  #       publish_date: 2026-04-26
   #       description: >
   #         Master component architecture and design principles. Learn about component composition, props design, state management, lifecycle optimization, reusability patterns, and building maintainable component libraries.
   #       topics:
@@ -935,7 +935,7 @@ content:
   #     - id: 58
   #       topic_name: Config driven UI
   #       sub_topic: Low Level Design
-  #       publish_date: 2025-04-27
+  #       publish_date: 2026-04-27
   #       description: >
   #         Understand configuration-driven UI development. Learn about dynamic UI generation, JSON-based configurations, schema-driven interfaces, content management integration, and building flexible, data-driven user interfaces.
   #       topics:
@@ -950,7 +950,7 @@ content:
   #     - id: 59
   #       topic_name: Shimmer UI
   #       sub_topic: Low Level Design
-  #       publish_date: 2025-04-28
+  #       publish_date: 2026-04-28
   #       description: >
   #         Master shimmer UI and skeleton loading patterns. Learn about progressive loading, perceived performance, loading state design, content placeholders, and creating smooth loading experiences for better user engagement.
   #       topics:
@@ -965,7 +965,7 @@ content:
   #     - id: 60
   #       topic_name: Routing & Protected Routes
   #       sub_topic: Low Level Design
-  #       publish_date: 2025-04-29
+  #       publish_date: 2026-04-29
   #       description: >
   #         Understand client-side routing and route protection mechanisms. Learn about React Router, route guards, authentication flows, role-based access, dynamic routing, and building secure navigation systems.
   #       topics:
@@ -980,7 +980,7 @@ content:
   #     - id: 61
   #       topic_name: State Management + Libraries
   #       sub_topic: Low Level Design
-  #       publish_date: 2025-04-30
+  #       publish_date: 2026-04-30
   #       description: >
   #         Deep dive into state management solutions and libraries. Learn about Redux, Zustand, Jotai, state architecture patterns, performance optimization, and choosing the right state management approach for your application.
   #       topics:
@@ -995,7 +995,7 @@ content:
   #     - id: 62
   #       topic_name: Multi Language Support
   #       sub_topic: Low Level Design
-  #       publish_date: 2025-05-01
+  #       publish_date: 2026-05-01
   #       description: >
   #         Master internationalization (i18n) and localization. Learn about translation management, locale handling, RTL support, number formatting, date localization, and building globally accessible applications.
   #       topics:
@@ -1010,7 +1010,7 @@ content:
   #     - id: 63
   #       topic_name: Infinite Scroll
   #       sub_topic: Low Level Design
-  #       publish_date: 2025-05-02
+  #       publish_date: 2026-05-02
   #       description: >
   #         Implement infinite scroll and virtualization techniques. Learn about intersection observer, virtual scrolling, performance optimization, memory management, and creating smooth infinite loading experiences.
   #       topics:
@@ -1025,7 +1025,7 @@ content:
   #     - id: 64
   #       topic_name: Accordion
   #       sub_topic: Low Level Design
-  #       publish_date: 2025-05-03
+  #       publish_date: 2026-05-03
   #       description: >
   #         Design and implement accordion components. Learn about collapsible content patterns, accessibility considerations, animation techniques, keyboard navigation, and building flexible accordion interfaces.
   #       topics:
@@ -1040,7 +1040,7 @@ content:
   #     - id: 65
   #       topic_name: Reddit Nested Comments
   #       sub_topic: Low Level Design
-  #       publish_date: 2025-05-04
+  #       publish_date: 2026-05-04
   #       description: >
   #         Build complex nested comment systems. Learn about recursive component design, tree data structures, comment threading, vote systems, real-time updates, and creating engaging discussion interfaces.
   #       topics:
@@ -1055,7 +1055,7 @@ content:
   #     - id: 66
   #       topic_name: Image Slider
   #       sub_topic: Low Level Design
-  #       publish_date: 2025-05-05
+  #       publish_date: 2026-05-05
   #       description: >
   #         Create responsive image slider components. Learn about touch gestures, keyboard navigation, lazy loading, transition effects, accessibility, and building performant image carousel experiences.
   #       topics:
@@ -1070,7 +1070,7 @@ content:
   #     - id: 67
   #       topic_name: Pagination Part-1
   #       sub_topic: Low Level Design
-  #       publish_date: 2025-05-06
+  #       publish_date: 2026-05-06
   #       description: >
   #         Master pagination fundamentals and implementation. Learn about page-based pagination, offset-based approaches, cursor-based pagination, UI patterns, and building efficient data navigation systems.
   #       topics:
@@ -1085,7 +1085,7 @@ content:
   #     - id: 68
   #       topic_name: Pagination Part-2
   #       sub_topic: Low Level Design
-  #       publish_date: 2025-05-07
+  #       publish_date: 2026-05-07
   #       description: >
   #         Advanced pagination patterns and optimization. Learn about infinite pagination, virtual pagination, search pagination, server-side pagination, caching strategies, and handling large datasets efficiently.
   #       topics:
@@ -1100,7 +1100,7 @@ content:
   #     - id: 69
   #       topic_name: Real-Time Updates
   #       sub_topic: Low Level Design
-  #       publish_date: 2025-05-08
+  #       publish_date: 2026-05-08
   #       description: >
   #         Implement real-time data synchronization and updates. Learn about WebSocket integration, server-sent events, optimistic updates, conflict resolution, and building responsive real-time user interfaces.
   #       topics:
@@ -1115,7 +1115,7 @@ content:
   #     - id: 70
   #       topic_name: YouTube Live Stream Chat UI
   #       sub_topic: Low Level Design
-  #       publish_date: 2025-05-09
+  #       publish_date: 2026-05-09
   #       description: >
   #         Build complex real-time chat interfaces. Learn about message streaming, auto-scroll behavior, message queuing, emoji support, moderation features, and creating engaging live chat experiences.
   #       topics:
@@ -1130,7 +1130,7 @@ content:
   #     - id: 71
   #       topic_name: Autocomplete & Search Bar
   #       sub_topic: Low Level Design
-  #       publish_date: 2025-05-10
+  #       publish_date: 2026-05-10
   #       description: >
   #         Create intelligent autocomplete and search interfaces. Learn about debouncing, fuzzy search, caching strategies, keyboard navigation, accessibility, and building responsive search experiences.
   #       topics:
@@ -1152,7 +1152,7 @@ content:
   #     - id: 72
   #       topic_name: HLD - Photo Sharing App (Instagram)
   #       sub_topic: High Level Design
-  #       publish_date: 2025-05-11
+  #       publish_date: 2026-05-11
   #       description: >
   #         Design a comprehensive photo-sharing application architecture. Learn about image processing pipelines, CDN strategies, feed algorithms, social features, scalability patterns, and building Instagram-like platforms.
   #       topics:
@@ -1167,7 +1167,7 @@ content:
   #     - id: 73
   #       topic_name: HLD - E-commerce App (Amazon, Flipkart)
   #       sub_topic: High Level Design
-  #       publish_date: 2025-05-12
+  #       publish_date: 2026-05-12
   #       description: >
   #         Architect large-scale e-commerce platforms. Learn about product catalogs, cart systems, payment processing, order management, inventory tracking, recommendation engines, and building Amazon-scale applications.
   #       topics:
@@ -1182,7 +1182,7 @@ content:
   #     - id: 74
   #       topic_name: HLD - News Media Feed (Facebook, Twitter)
   #       sub_topic: High Level Design
-  #       publish_date: 2025-05-13
+  #       publish_date: 2026-05-13
   #       description: >
   #         Design social media feed systems and news platforms. Learn about timeline generation, content ranking, real-time updates, content moderation, engagement tracking, and building Facebook-scale feed architectures.
   #       topics:
@@ -1197,7 +1197,7 @@ content:
   #     - id: 75
   #       topic_name: HLD - Video Streaming (Netflix)
   #       sub_topic: High Level Design
-  #       publish_date: 2025-05-14
+  #       publish_date: 2026-05-14
   #       description: >
   #         Architect video streaming platforms and content delivery systems. Learn about adaptive bitrate streaming, CDN optimization, content encoding, recommendation systems, and building Netflix-scale video platforms.
   #       topics:
@@ -1212,7 +1212,7 @@ content:
   #     - id: 76
   #       topic_name: HLD - Music Streaming (Spotify)
   #       sub_topic: High Level Design
-  #       publish_date: 2025-05-15
+  #       publish_date: 2026-05-15
   #       description: >
   #         Design music streaming and audio platforms. Learn about audio processing, playlist management, recommendation algorithms, offline playback, social features, and building Spotify-like music platforms.
   #       topics:
@@ -1227,7 +1227,7 @@ content:
   #     - id: 77
   #       topic_name: HLD - Live Commentary (CricInfo, Crickbuzz)
   #       sub_topic: High Level Design
-  #       publish_date: 2025-05-16
+  #       publish_date: 2026-05-16
   #       description: >
   #         Build real-time sports commentary and live updating systems. Learn about event streaming, real-time data processing, live scoreboards, commentary feeds, and creating engaging sports platforms.
   #       topics:
@@ -1242,7 +1242,7 @@ content:
   #     - id: 78
   #       topic_name: HLD - Email Client
   #       sub_topic: High Level Design
-  #       publish_date: 2025-05-17
+  #       publish_date: 2026-05-17
   #       description: >
   #         Design comprehensive email client applications. Learn about email protocols, message handling, search functionality, attachment processing, offline sync, and building robust email platforms.
   #       topics:
@@ -1257,7 +1257,7 @@ content:
   #     - id: 79
   #       topic_name: HLD - Diagram Tools (Excalidraw)
   #       sub_topic: High Level Design
-  #       publish_date: 2025-05-18
+  #       publish_date: 2026-05-18
   #       description: >
   #         Architect collaborative drawing and diagramming tools. Learn about real-time collaboration, canvas rendering, vector graphics, conflict resolution, version control, and building Excalidraw-like applications.
   #       topics:
@@ -1272,7 +1272,7 @@ content:
   #     - id: 80
   #       topic_name: HLD - Analytics Dashboard (Google Analytics)
   #       sub_topic: High Level Design
-  #       publish_date: 2025-05-19
+  #       publish_date: 2026-05-19
   #       description: >
   #         Design comprehensive analytics and dashboard systems. Learn about data visualization, real-time metrics, report generation, data aggregation, performance optimization, and building Google Analytics-scale platforms.
   #       topics:
@@ -1287,7 +1287,7 @@ content:
   #     - id: 81
   #       topic_name: HLD - Google Docs
   #       sub_topic: High Level Design
-  #       publish_date: 2025-05-20
+  #       publish_date: 2026-05-20
   #       description: >
   #         Architect collaborative document editing systems. Learn about operational transforms, real-time collaboration, conflict resolution, document versioning, rich text editing, and building Google Docs-like platforms.
   #       topics:
@@ -1302,7 +1302,7 @@ content:
   #     - id: 82
   #       topic_name: HLD - Google Sheets
   #       sub_topic: High Level Design
-  #       publish_date: 2025-05-21
+  #       publish_date: 2026-05-21
   #       description: >
   #         Design collaborative spreadsheet and calculation engines. Learn about formula processing, real-time updates, large dataset handling, collaborative editing, data visualization, and building Google Sheets-like applications.
   #       topics:

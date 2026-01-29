@@ -1,31 +1,32 @@
 ---
-title: "DOM Manipulation Mastery"
-description: "Master the Document Object Model with modern techniques for selecting, creating, modifying, and removing elements. Learn performance-optimized DOM manipulation patterns used in real applications."
-slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-26"
-datePublished: "2025-09-26"
+title: DOM Manipulation Mastery
+description: Master the Document Object Model with modern techniques for
+  selecting, creating, modifying, and removing elements. Learn
+  performance-optimized DOM manipulation patterns used in real applications.
+slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
+dateModified: 2026-01-29
+datePublished: 2026-09-26
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
   - javascript
 resources:
-  - title: "MDN - Document Object Model (DOM)"
-    type: "documentation"
-    url: "https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model"
-    description: "Complete DOM API reference and examples"
-  - title: "MDN - Element Interface"
-    type: "documentation"
-    url: "https://developer.mozilla.org/en-US/docs/Web/API/Element"
-    description: "Comprehensive Element interface documentation"
-  - title: "DOM Performance Best Practices"
-    type: "article"
-    url: "https://web.dev/dom-size/"
-    description: "Optimizing DOM performance and size"
-  - title: "Modern DOM APIs"
-    type: "article"
-    url: "https://developer.chrome.com/blog/DOM-node-removal/"
-    description: "Latest DOM APIs and performance improvements"
-
+  - title: MDN - Document Object Model (DOM)
+    type: documentation
+    url: https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model
+    description: Complete DOM API reference and examples
+  - title: MDN - Element Interface
+    type: documentation
+    url: https://developer.mozilla.org/en-US/docs/Web/API/Element
+    description: Comprehensive Element interface documentation
+  - title: DOM Performance Best Practices
+    type: article
+    url: https://web.dev/dom-size/
+    description: Optimizing DOM performance and size
+  - title: Modern DOM APIs
+    type: article
+    url: https://developer.chrome.com/blog/DOM-node-removal/
+    description: Latest DOM APIs and performance improvements
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758811622/Portfolio/javaScriptCourse/images/all%20title%20images/32_eheuqw.png)

@@ -2,8 +2,8 @@
 title: "Databases and mongoDB"
 description: "In computer science, a database is an organized collection of data, a structured way of collecting and storing information. It is based on the DBMS (Database Management System), which means you can create, delete, edit, and retrieve data. The DBMS software manages everything, including the storage."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-04-16"
-datePublished: "2025-04-16"
+dateModified: "2026-04-16"
+datePublished: "2026-04-16"
 showOnArticles: false
 courseName: 01-beginner-to-advance-nodejs
 topics:

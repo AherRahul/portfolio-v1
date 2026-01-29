@@ -1,31 +1,32 @@
 ---
-title: "map, filter & reduce"
-description: "The holy trinity of array methods - map, filter, and reduce - are essential tools for functional programming in JavaScript. These methods allow you to transform, filter, and aggregate data in elegant, readable ways."
-slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-25"
-datePublished: "2025-09-25"
+title: map, filter & reduce
+description: The holy trinity of array methods - map, filter, and reduce - are
+  essential tools for functional programming in JavaScript. These methods allow
+  you to transform, filter, and aggregate data in elegant, readable ways.
+slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
+dateModified: 2026-01-29
+datePublished: 2026-09-25
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
   - javascript
 resources:
-  - title: "JS course PDF - 19"
-    type: "PDF"
-    url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758792130/Portfolio/javaScriptCourse/pdf/JavaScript-day19_MapFilterReduce_compressed.pdf"
-    description: "A PDF Notes on map, filter & reduce topic"
-  - title: "MDN - Array.prototype.map"
-    type: "documentation"
-    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map"
-    description: "Complete reference for the map method"
-  - title: "MDN - Array.prototype.filter"
-    type: "documentation"
-    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter"
-    description: "Complete reference for the filter method"
-  - title: "MDN - Array.prototype.reduce"
-    type: "documentation"
-    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce"
-    description: "Complete reference for the reduce method"
-
+  - title: JS course PDF - 19
+    type: PDF
+    url: https://res.cloudinary.com/duojkrgue/image/upload/v1758792130/Portfolio/javaScriptCourse/pdf/JavaScript-day19_MapFilterReduce_compressed.pdf
+    description: A PDF Notes on map, filter & reduce topic
+  - title: MDN - Array.prototype.map
+    type: documentation
+    url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+    description: Complete reference for the map method
+  - title: MDN - Array.prototype.filter
+    type: documentation
+    url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+    description: Complete reference for the filter method
+  - title: MDN - Array.prototype.reduce
+    type: documentation
+    url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
+    description: Complete reference for the reduce method
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758811618/Portfolio/javaScriptCourse/images/all%20title%20images/20_lzukxv.png)

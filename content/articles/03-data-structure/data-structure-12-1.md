@@ -2,8 +2,8 @@
 title: "Subsequence-Sum Problem"
 description: "Find if there exists a subsequence with given sum. Learn subset sum problem fundamentals and recursive thinking."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-26"
-datePublished: "2025-09-26"
+dateModified: "2026-09-26"
+datePublished: "2026-09-26"
 showOnArticles: false
 courseName: 03-data-structure
 topics:

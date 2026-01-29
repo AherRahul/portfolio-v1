@@ -2,8 +2,8 @@
 title: "Security Best Practices for NodeJs & Express"
 description: "A practical checklist of security best practices for NodeJs and Express apps: secure headers, input validation, auth, secrets management, CORS, rate limiting, safe logging, dependency hygiene, and production-hardening tips."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-15"
-datePublished: "2025-09-15"
+dateModified: "2026-09-15"
+datePublished: "2026-09-15"
 showOnArticles: false
 courseName: 01-beginner-to-advance-nodejs
 topics:

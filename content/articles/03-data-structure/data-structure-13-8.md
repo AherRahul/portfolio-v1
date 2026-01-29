@@ -2,8 +2,8 @@
 title: "Sum of Digits using Recursion"
 description: "Calculate sum of digits in a number using recursion. Master digit extraction with modulo and division operations, learn how to process numbers recursively, and understand mathematical recursion patterns."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-12-24"
-datePublished: "2025-12-24"
+dateModified: "2026-12-24"
+datePublished: "2026-12-24"
 showOnArticles: false
 courseName: 03-data-structure
 topics:

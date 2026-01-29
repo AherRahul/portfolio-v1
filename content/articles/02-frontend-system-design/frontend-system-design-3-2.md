@@ -2,8 +2,8 @@
 title: "iFrame Protection"
 description: "Explore iframe security vulnerabilities and protection mechanisms. Learn about clickjacking attacks, X-Frame-Options header, Content Security Policy frame directives, and best practices for secure iframe implementation in modern web applications."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-03-12"
-datePublished: "2025-03-12"
+dateModified: "2026-03-12"
+datePublished: "2026-03-12"
 showOnArticles: false
 courseName: 02-frontend-system-design
 topics:

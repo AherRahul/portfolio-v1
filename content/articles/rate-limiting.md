@@ -2,8 +2,8 @@
 title: "Rate Limiting"
 description: "Rate limiting runs within an application, rather than running on the web server itself. Typically, rate limiting is based on tracking the IP addresses that requests are coming from, and tracking how much time elapses between each request. The IP address is the main way an application identifies who or what is making the request. A rate limiting solution measures the amount of time between each request from each IP address, and also measures the number of requests within a specified timeframe. If there are too many requests from a single IP within the given timeframe, the rate limiting solution will not fulfill the IP address's requests for a certain amount of time."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles/rate-limiting.md"
-dateModified: "2025-05-24"
-datePublished: "2025-05-24"
+dateModified: "2026-05-24"
+datePublished: "2026-05-24"
 showOnArticles: true
 topics:
   - system-design

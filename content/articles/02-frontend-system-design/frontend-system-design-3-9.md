@@ -2,8 +2,8 @@
 title: "Server-Side Request Forgery (SSRF)"
 description: "Understand Server-Side Request Forgery attacks and prevention strategies. Learn how SSRF exploits server functionality, identify vulnerable patterns, and implement comprehensive protection mechanisms in modern web architectures."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-03-19"
-datePublished: "2025-03-19"
+dateModified: "2026-03-19"
+datePublished: "2026-03-19"
 showOnArticles: false
 courseName: 02-frontend-system-design
 topics:

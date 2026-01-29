@@ -17,11 +17,12 @@ content:
       - id: 1
         topic_name: What is System Design?
         sub_topic: System Design Basics
-        publish_date: 2025-11-05
+        publish_date: 2026-01-29
         description: >
           Systems Design involves creating a detailed blueprint for a system’s architecture, components, modules, interfaces, and data to meet specific requirements. It translates user needs into an organized structure, guiding implementation. The goal is to ensure scalability, maintainability, and performance while building an efficient system.
         topics:
           - system-design
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png"
         duration: "8:43 mins"
         videoUrl: "https://www.youtube.com/embed/K9EFon58_UI?si=95in2rvIl1h6pDxU"
         auther_name: Rahul Aher
@@ -30,11 +31,12 @@ content:
       - id: 2
         topic_name: How to approach system design?
         sub_topic: System Design Basics
-        publish_date: 2025-11-27
+        publish_date: 2026-01-29
         description: >
           Learn a structured approach to system design. Start by understanding functional and non-functional requirements, then break the system into components like databases, frontend, backend, and caching. Select tools for scalability, reliability, and performance. Visualize the architecture with diagrams and iterate to optimize and resolve bottlenecks effectively.
         topics:
           - system-design
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png"
         duration: "16:23 mins"
         videoUrl: "https://www.youtube.com/embed/JqcpMz3TykA?si=-rjiVhzMKwsMC9gr"
         auther_name: Rahul Aher
@@ -43,11 +45,12 @@ content:
       - id: 3
         topic_name: How do you evaluate that you have built a good system?
         sub_topic: System Design Basics
-        publish_date: 2025-11-29
+        publish_date: 2026-01-29
         description: >
           In this video, we explore the key metrics, strategies, and frameworks to evaluate whether your system is well-designed, efficient, and scalable. Learn how to assess user satisfaction, performance, maintainability, and more!. Learn how to assess user satisfaction, performance, maintainability, and more!
         topics:
           - system-design
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png"
         duration: "8:10 mins"
         videoUrl: "https://www.youtube.com/embed/F5mNbnsT12E?si=hF5yLA4XZ5XFV-vk"
         auther_name: Rahul Aher
@@ -63,11 +66,12 @@ content:
       - id: 4
         topic_name: Relational Databases for System Design
         sub_topic: System Design Basics
-        publish_date: 2025-11-30
+        publish_date: 2026-01-29
         description: >
           Learn everything you need to know relational databases in system design? This video explains how relational databases work, their importance, and best practices for integrating them into scalable systems. Explore key metrics, strategies, and frameworks to evaluate if your system is efficient, scalable, and well-designed. 
         topics:
           - system-design
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png"
         duration: "19:39 mins"
         videoUrl: "https://www.youtube.com/embed/g7C8ahBzoRA?si=n4wPLZky6xVqUl4u"
         auther_name: Rahul Aher
@@ -76,11 +80,12 @@ content:
       - id: 5
         topic_name: Database Transaction Isolation Levels Explained
         sub_topic: System Design Basics
-        publish_date: 2025-12-01
+        publish_date: 2026-01-29
         description: >
           Learn everything you need to know about database transaction isolation levels! Understand how they prevent issues like dirty reads, phantom reads, and write conflicts, and when to use each level. Confused by terms like Read Uncommitted, Repeatable Read, or Serializable? This video has clear examples to help you manage concurrency and maintain data integrity.
         topics:
           - system-design
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png"
         duration: "18.17 mins"
         videoUrl: "https://www.youtube.com/embed/edejC34kkBk?si=xRzr-kS7oN9LQpMY"
         auther_name: Rahul Aher
@@ -97,11 +102,12 @@ content:
       - id: 6
         topic_name: Horizontal vs Vertical Scaling
         sub_topic: Scalability
-        publish_date: 2025-01-20
+        publish_date: 2026-01-29
         description: >
           Master horizontal and vertical scaling strategies, when to use each, and scaling patterns used by top tech companies. Learn to design scalable systems from the ground up.
         topics:
           - system-design
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png"
         duration: "35:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -109,11 +115,12 @@ content:
       - id: 7
         topic_name: Load Balancing Strategies
         sub_topic: Scalability
-        publish_date: 2025-01-20
+        publish_date: 2026-01-29
         description: >
           Learn load balancing algorithms (round-robin, least connections, weighted), load balancer types, and implementing load balancing in distributed systems. Essential for system design interviews.
         topics:
           - system-design
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png"
         duration: "40:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -121,11 +128,12 @@ content:
       - id: 8
         topic_name: Caching Strategies
         sub_topic: Scalability
-        publish_date: 2025-01-20
+        publish_date: 2026-01-29
         description: >
           Master caching patterns: cache-aside, write-through, write-behind, cache eviction policies (LRU, LFU), and distributed caching. Learn caching strategies used at Google, Facebook, Amazon.
         topics:
           - system-design
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png"
         duration: "45:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -133,11 +141,12 @@ content:
       - id: 9
         topic_name: Database Sharding and Partitioning
         sub_topic: Scalability
-        publish_date: 2025-01-20
+        publish_date: 2026-01-29
         description: >
           Learn database sharding strategies, horizontal partitioning, consistent hashing, shard key selection, and managing sharded databases. Master database scaling patterns.
         topics:
           - system-design
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png"
         duration: "50:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -145,11 +154,12 @@ content:
       - id: 10
         topic_name: Replication and Consistency
         sub_topic: Scalability
-        publish_date: 2025-01-20
+        publish_date: 2026-01-29
         description: >
           Master database replication (master-slave, master-master), consistency models (strong, eventual), CAP theorem, and replication strategies. Learn consistency trade-offs.
         topics:
           - system-design
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png"
         duration: "45:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -157,11 +167,12 @@ content:
       - id: 11
         topic_name: CDN and Content Delivery
         sub_topic: Scalability
-        publish_date: 2025-01-20
+        publish_date: 2026-01-29
         description: >
           Learn CDN architecture, edge caching, content distribution strategies, and optimizing content delivery. Master CDN patterns used by Netflix, YouTube, Amazon.
         topics:
           - system-design
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png"
         duration: "35:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -169,11 +180,12 @@ content:
       - id: 12
         topic_name: Performance Optimization Techniques
         sub_topic: Scalability
-        publish_date: 2025-01-20
+        publish_date: 2026-01-29
         description: >
           Master performance optimization: database indexing, query optimization, connection pooling, async processing, and reducing latency. Learn optimization techniques.
         topics:
           - system-design
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png"
         duration: "40:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -181,11 +193,12 @@ content:
       - id: 13
         topic_name: Rate Limiting and Throttling
         sub_topic: Scalability
-        publish_date: 2025-01-20
+        publish_date: 2026-01-29
         description: >
           Learn rate limiting strategies, token bucket, leaky bucket, sliding window, and protecting systems from abuse. Master rate limiting patterns.
         topics:
           - system-design
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png"
         duration: "30:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -193,11 +206,12 @@ content:
       - id: 14
         topic_name: Scalability Interview Questions
         sub_topic: Scalability
-        publish_date: 2025-01-20
+        publish_date: 2026-01-29
         description: >
           Practice scalability interview questions from top tech companies. Master designing scalable systems and explaining scaling strategies.
         topics:
           - system-design
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png"
         duration: "40:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -213,11 +227,12 @@ content:
       - id: 15
         topic_name: CAP Theorem and ACID Properties
         sub_topic: Distributed Systems
-        publish_date: 2025-01-21
+        publish_date: 2026-01-21
         description: >
           Master CAP theorem, ACID properties, BASE properties, and trade-offs in distributed systems. Understand consistency, availability, and partition tolerance.
         topics:
           - system-design
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png"
         duration: "40:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -225,11 +240,12 @@ content:
       - id: 16
         topic_name: Distributed Consensus Algorithms
         sub_topic: Distributed Systems
-        publish_date: 2025-01-21
+        publish_date: 2026-01-21
         description: >
           Learn Raft, Paxos, consensus algorithms, leader election, and achieving consensus in distributed systems. Master consensus patterns used in production.
         topics:
           - system-design
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png"
         duration: "50:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -237,11 +253,12 @@ content:
       - id: 17
         topic_name: Message Queues and Event Streaming
         sub_topic: Distributed Systems
-        publish_date: 2025-01-21
+        publish_date: 2026-01-21
         description: >
           Master message queues (RabbitMQ, Kafka), pub-sub patterns, event-driven architecture, and asynchronous processing. Learn messaging patterns used at scale.
         topics:
           - system-design
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png"
         duration: "45:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -249,11 +266,12 @@ content:
       - id: 18
         topic_name: Microservices Architecture
         sub_topic: Distributed Systems
-        publish_date: 2025-01-21
+        publish_date: 2026-01-21
         description: >
           Learn microservices patterns, service decomposition, API gateway, service mesh, and building microservices architectures. Master microservices design.
         topics:
           - system-design
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png"
         duration: "50:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -261,11 +279,12 @@ content:
       - id: 19
         topic_name: Service Discovery and Configuration
         sub_topic: Distributed Systems
-        publish_date: 2025-01-21
+        publish_date: 2026-01-21
         description: >
           Master service discovery patterns, service registry, configuration management, and managing microservices. Learn service discovery strategies.
         topics:
           - system-design
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png"
         duration: "35:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -273,11 +292,12 @@ content:
       - id: 20
         topic_name: Distributed Locking and Coordination
         sub_topic: Distributed Systems
-        publish_date: 2025-01-21
+        publish_date: 2026-01-21
         description: >
           Learn distributed locking, ZooKeeper, etcd, coordination in distributed systems, and preventing race conditions. Master coordination patterns.
         topics:
           - system-design
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png"
         duration: "40:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -285,11 +305,12 @@ content:
       - id: 21
         topic_name: Circuit Breaker and Fault Tolerance
         sub_topic: Distributed Systems
-        publish_date: 2025-01-21
+        publish_date: 2026-01-21
         description: >
           Master circuit breaker pattern, retry strategies, timeout handling, and building fault-tolerant systems. Learn resilience patterns.
         topics:
           - system-design
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png"
         duration: "35:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -297,11 +318,12 @@ content:
       - id: 22
         topic_name: Distributed Transactions
         sub_topic: Distributed Systems
-        publish_date: 2025-01-21
+        publish_date: 2026-01-21
         description: >
           Learn distributed transactions, two-phase commit, Saga pattern, and managing transactions across services. Master transaction patterns.
         topics:
           - system-design
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png"
         duration: "40:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -309,11 +331,12 @@ content:
       - id: 23
         topic_name: Distributed Systems Interview Questions
         sub_topic: Distributed Systems
-        publish_date: 2025-01-21
+        publish_date: 2026-01-21
         description: >
           Practice distributed systems interview questions. Master explaining distributed systems concepts and designing distributed architectures.
         topics:
           - system-design
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png"
         duration: "45:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -329,11 +352,12 @@ content:
       - id: 24
         topic_name: Design a URL Shortener (bit.ly)
         sub_topic: Case Studies
-        publish_date: 2025-01-22
+        publish_date: 2026-01-22
         description: >
           Design a URL shortener service like bit.ly. Learn unique ID generation, database design, caching, and scaling to handle millions of requests. Master this classic system design problem.
         topics:
           - system-design
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png"
         duration: "50:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -341,11 +365,12 @@ content:
       - id: 25
         topic_name: Design a Chat/Messaging System (WhatsApp, Slack)
         sub_topic: Case Studies
-        publish_date: 2025-01-22
+        publish_date: 2026-01-22
         description: >
           Design a real-time messaging system. Learn WebSockets, message queuing, delivery guarantees, presence, and scaling chat systems. Master real-time system design.
         topics:
           - system-design
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png"
         duration: "55:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -353,11 +378,12 @@ content:
       - id: 26
         topic_name: Design a Social Media Feed (Twitter, Facebook)
         sub_topic: Case Studies
-        publish_date: 2025-01-22
+        publish_date: 2026-01-22
         description: >
           Design a social media feed system. Learn feed generation, ranking algorithms, real-time updates, and handling millions of users. Master feed system design.
         topics:
           - system-design
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png"
         duration: "50:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -365,11 +391,12 @@ content:
       - id: 27
         topic_name: Design a Video Streaming Platform (YouTube, Netflix)
         sub_topic: Case Studies
-        publish_date: 2025-01-22
+        publish_date: 2026-01-22
         description: >
           Design a video streaming platform. Learn video encoding, CDN, adaptive bitrate streaming, and handling massive video traffic. Master media system design.
         topics:
           - system-design
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png"
         duration: "55:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -377,11 +404,12 @@ content:
       - id: 28
         topic_name: Design an E-commerce Platform (Amazon)
         sub_topic: Case Studies
-        publish_date: 2025-01-22
+        publish_date: 2026-01-22
         description: >
           Design an e-commerce platform. Learn product catalog, inventory management, shopping cart, payment processing, and order fulfillment. Master e-commerce system design.
         topics:
           - system-design
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png"
         duration: "50:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -389,11 +417,12 @@ content:
       - id: 29
         topic_name: Design a Search Engine (Google Search)
         sub_topic: Case Studies
-        publish_date: 2025-01-22
+        publish_date: 2026-01-22
         description: >
           Design a search engine. Learn web crawling, indexing, ranking algorithms, and handling billions of queries. Master search system design.
         topics:
           - system-design
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png"
         duration: "55:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -401,11 +430,12 @@ content:
       - id: 30
         topic_name: Design a Distributed Cache (Redis, Memcached)
         sub_topic: Case Studies
-        publish_date: 2025-01-22
+        publish_date: 2026-01-22
         description: >
           Design a distributed caching system. Learn cache eviction, consistency, sharding, and high availability. Master cache system design.
         topics:
           - system-design
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png"
         duration: "45:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -413,11 +443,12 @@ content:
       - id: 31
         topic_name: Design a Notification System
         sub_topic: Case Studies
-        publish_date: 2025-01-22
+        publish_date: 2026-01-22
         description: >
           Design a notification system. Learn push notifications, email, SMS, queuing, and delivering notifications at scale. Master notification system design.
         topics:
           - system-design
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png"
         duration: "40:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -425,11 +456,12 @@ content:
       - id: 32
         topic_name: Design a Rate Limiter
         sub_topic: Case Studies
-        publish_date: 2025-01-22
+        publish_date: 2026-01-22
         description: >
           Design a rate limiting system. Learn token bucket, sliding window, distributed rate limiting, and protecting APIs. Master rate limiting design.
         topics:
           - system-design
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png"
         duration: "35:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -437,11 +469,12 @@ content:
       - id: 33
         topic_name: Design a File Storage System (Dropbox, Google Drive)
         sub_topic: Case Studies
-        publish_date: 2025-01-22
+        publish_date: 2026-01-22
         description: >
           Design a file storage system. Learn file upload, storage, synchronization, versioning, and handling large files. Master storage system design.
         topics:
           - system-design
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png"
         duration: "50:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -449,11 +482,12 @@ content:
       - id: 34
         topic_name: Design a Recommendation System
         sub_topic: Case Studies
-        publish_date: 2025-01-22
+        publish_date: 2026-01-22
         description: >
           Design a recommendation system. Learn collaborative filtering, content-based filtering, real-time recommendations, and scaling recommendation engines. Master ML system design.
         topics:
           - system-design
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png"
         duration: "50:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -461,11 +495,12 @@ content:
       - id: 35
         topic_name: Design a Distributed Counter
         sub_topic: Case Studies
-        publish_date: 2025-01-22
+        publish_date: 2026-01-22
         description: >
           Design a distributed counter system. Learn handling high write loads, consistency, and scaling counters. Master counter system design.
         topics:
           - system-design
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png"
         duration: "40:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -481,11 +516,12 @@ content:
       - id: 36
         topic_name: System Design Interview Framework
         sub_topic: Interview Prep
-        publish_date: 2025-01-23
+        publish_date: 2026-01-23
         description: >
           Master the structured approach to system design interviews. Learn to clarify requirements, estimate scale, design components, and discuss trade-offs effectively.
         topics:
           - system-design
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png"
         duration: "40:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -493,11 +529,12 @@ content:
       - id: 37
         topic_name: Common System Design Interview Questions
         sub_topic: Interview Prep
-        publish_date: 2025-01-23
+        publish_date: 2026-01-23
         description: >
           Practice frequently asked system design questions from Google, Meta, Amazon, Microsoft, and Netflix. Master answering system design questions confidently.
         topics:
           - system-design
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png"
         duration: "50:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -505,11 +542,12 @@ content:
       - id: 38
         topic_name: Drawing Architecture Diagrams
         sub_topic: Interview Prep
-        publish_date: 2025-01-23
+        publish_date: 2026-01-23
         description: >
           Learn to draw clear architecture diagrams, component diagrams, and data flow diagrams during interviews. Master visual communication in system design interviews.
         topics:
           - system-design
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png"
         duration: "30:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -517,11 +555,12 @@ content:
       - id: 39
         topic_name: Capacity Estimation and Back-of-Envelope Calculations
         sub_topic: Interview Prep
-        publish_date: 2025-01-23
+        publish_date: 2026-01-23
         description: >
           Master capacity estimation, back-of-envelope calculations, QPS estimation, and storage calculations. Learn to estimate system requirements quickly.
         topics:
           - system-design
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png"
         duration: "40:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -529,11 +568,12 @@ content:
       - id: 40
         topic_name: Trade-offs and Decision Making
         sub_topic: Interview Prep
-        publish_date: 2025-01-23
+        publish_date: 2026-01-23
         description: >
           Learn to discuss trade-offs, make design decisions, and justify choices in system design interviews. Master explaining your design rationale.
         topics:
           - system-design
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png"
         duration: "30:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -541,11 +581,12 @@ content:
       - id: 41
         topic_name: Interview Tips and Strategies
         sub_topic: Interview Prep
-        publish_date: 2025-01-23
+        publish_date: 2026-01-23
         description: >
           Master system design interview strategies, time management, communication techniques, and how to stand out in system design interviews at top tech companies.
         topics:
           - system-design
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png"
         duration: "30:00 mins"
         auther_name: Rahul Aher
         is_on_youtube: false

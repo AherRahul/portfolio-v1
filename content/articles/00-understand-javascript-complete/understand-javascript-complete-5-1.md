@@ -1,31 +1,33 @@
 ---
-title: "Higher-Order Functions"
-description: "Higher-order functions are functions that take other functions as arguments or return functions. They're the backbone of functional programming in JavaScript and enable powerful programming patterns like map, filter, and reduce."
-slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-25"
-datePublished: "2025-09-25"
+title: Higher-Order Functions
+description: Higher-order functions are functions that take other functions as
+  arguments or return functions. They're the backbone of functional programming
+  in JavaScript and enable powerful programming patterns like map, filter, and
+  reduce.
+slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
+dateModified: 2026-01-29
+datePublished: 2026-09-25
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
   - javascript
 resources:
-  - title: "JS course PDF - 18"
-    type: "PDF"
-    url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758792130/Portfolio/javaScriptCourse/pdf/JavaScript-day18_HigherOrder_compressed.pdf"
-    description: "A PDF Notes on Higher-Order Functions topic"
-  - title: "MDN - Higher-Order Functions"
-    type: "documentation"
-    url: "https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function"
-    description: "Understanding first-class functions and higher-order functions"
-  - title: "Functional Programming Guide"
-    type: "article"
-    url: "https://eloquentjavascript.net/05_higher_order.html"
-    description: "Eloquent JavaScript chapter on higher-order functions"
-  - title: "JavaScript.info - Function object"
-    type: "article"
-    url: "https://javascript.info/function-object"
-    description: "Understanding functions as objects in JavaScript"
-
+  - title: JS course PDF - 18
+    type: PDF
+    url: https://res.cloudinary.com/duojkrgue/image/upload/v1758792130/Portfolio/javaScriptCourse/pdf/JavaScript-day18_HigherOrder_compressed.pdf
+    description: A PDF Notes on Higher-Order Functions topic
+  - title: MDN - Higher-Order Functions
+    type: documentation
+    url: https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function
+    description: Understanding first-class functions and higher-order functions
+  - title: Functional Programming Guide
+    type: article
+    url: https://eloquentjavascript.net/05_higher_order.html
+    description: Eloquent JavaScript chapter on higher-order functions
+  - title: JavaScript.info - Function object
+    type: article
+    url: https://javascript.info/function-object
+    description: Understanding functions as objects in JavaScript
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758811617/Portfolio/javaScriptCourse/images/all%20title%20images/19_sm8mdu.png)
@@ -486,7 +488,7 @@ try {
     //   lastName: "Doe", 
     //   email: "john.doe@example.com",
     //   age: 30,
-    //   createdAt: "2025-09-25T...",
+    //   createdAt: "2026-09-25T...",
     //   fullName: "John Doe"
     // }
 } catch (error) {

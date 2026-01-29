@@ -1,31 +1,33 @@
 ---
-title: "Objects and this keyword"
-description: "Objects are the cornerstone of JavaScript programming. More than just data containers, they're dynamic entities that can hold properties, methods, and behavior. Understanding objects and the mysterious 'this' keyword is essential for mastering JavaScript's unique approach to programming."
-slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-25"
-datePublished: "2025-09-25"
+title: Objects and this keyword
+description: Objects are the cornerstone of JavaScript programming. More than
+  just data containers, they're dynamic entities that can hold properties,
+  methods, and behavior. Understanding objects and the mysterious 'this' keyword
+  is essential for mastering JavaScript's unique approach to programming.
+slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
+dateModified: 2026-01-29
+datePublished: 2026-09-25
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
   - javascript
 resources:
-  - title: "JS course PDF - 9"
-    type: "PDF"
-    url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758792130/Portfolio/javaScriptCourse/pdf/JavaScript-day9_Objects_compressed.pdf"
-    description: "A PDF Notes on Objects and this keyword topic"
-  - title: "MDN - Working with Objects"
-    type: "documentation"
-    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects"
-    description: "Comprehensive guide to JavaScript objects from MDN"
-  - title: "MDN - this keyword"
-    type: "documentation"
-    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this"
-    description: "Complete reference for the this keyword in JavaScript"
-  - title: "JavaScript.info - Objects"
-    type: "article"
-    url: "https://javascript.info/object"
-    description: "Detailed tutorial on JavaScript objects with practical examples"
-
+  - title: JS course PDF - 9
+    type: PDF
+    url: https://res.cloudinary.com/duojkrgue/image/upload/v1758792130/Portfolio/javaScriptCourse/pdf/JavaScript-day9_Objects_compressed.pdf
+    description: A PDF Notes on Objects and this keyword topic
+  - title: MDN - Working with Objects
+    type: documentation
+    url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects
+    description: Comprehensive guide to JavaScript objects from MDN
+  - title: MDN - this keyword
+    type: documentation
+    url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this
+    description: Complete reference for the this keyword in JavaScript
+  - title: JavaScript.info - Objects
+    type: article
+    url: https://javascript.info/object
+    description: Detailed tutorial on JavaScript objects with practical examples
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758811615/Portfolio/javaScriptCourse/images/all%20title%20images/10_ng3jhr.png)

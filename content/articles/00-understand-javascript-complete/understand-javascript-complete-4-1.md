@@ -1,31 +1,33 @@
 ---
-title: "Window & this keyword"
-description: "The shortest JavaScript program and the mysterious global 'this' keyword. Understanding the global execution context, window object, and how 'this' behaves in different contexts is crucial for mastering JavaScript's global scope."
-slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-25"
-datePublished: "2025-09-25"
+title: Window & this keyword
+description: The shortest JavaScript program and the mysterious global 'this'
+  keyword. Understanding the global execution context, window object, and how
+  'this' behaves in different contexts is crucial for mastering JavaScript's
+  global scope.
+slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
+dateModified: 2026-01-29
+datePublished: 2026-09-25
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
   - javascript
 resources:
-  - title: "JS course PDF - 12"
-    type: "PDF"
-    url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758792130/Portfolio/javaScriptCourse/pdf/JavaScript-day12_Window_compressed.pdf"
-    description: "A PDF Notes on Window & this keyword topic"
-  - title: "MDN - Window Object"
-    type: "documentation"
-    url: "https://developer.mozilla.org/en-US/docs/Web/API/Window"
-    description: "Complete reference for the Window object in web browsers"
-  - title: "MDN - globalThis"
-    type: "documentation"
-    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/globalThis"
-    description: "Universal global object reference across all JavaScript environments"
-  - title: "JavaScript.info - Global object"
-    type: "article"
-    url: "https://javascript.info/global-object"
-    description: "Comprehensive guide to global objects in different JavaScript environments"
-
+  - title: JS course PDF - 12
+    type: PDF
+    url: https://res.cloudinary.com/duojkrgue/image/upload/v1758792130/Portfolio/javaScriptCourse/pdf/JavaScript-day12_Window_compressed.pdf
+    description: A PDF Notes on Window & this keyword topic
+  - title: MDN - Window Object
+    type: documentation
+    url: https://developer.mozilla.org/en-US/docs/Web/API/Window
+    description: Complete reference for the Window object in web browsers
+  - title: MDN - globalThis
+    type: documentation
+    url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/globalThis
+    description: Universal global object reference across all JavaScript environments
+  - title: JavaScript.info - Global object
+    type: article
+    url: https://javascript.info/global-object
+    description: Comprehensive guide to global objects in different JavaScript environments
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758811615/Portfolio/javaScriptCourse/images/all%20title%20images/13_rcd00b.png)

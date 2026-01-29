@@ -2,8 +2,8 @@
 title: "Sub-matrix Sum Queries"
 description: "Answer sum queries for any rectangular sub-matrix using 2D prefix sum. Master the 2D cumulative sum technique."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-26"
-datePublished: "2025-09-26"
+dateModified: "2026-09-26"
+datePublished: "2026-09-26"
 showOnArticles: false
 courseName: 03-data-structure
 topics:

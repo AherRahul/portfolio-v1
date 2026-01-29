@@ -2,8 +2,8 @@
 title: "Service Worker Caching"
 description: "Explore advanced caching with Service Workers. Learn about cache strategies, offline-first patterns, cache management, background sync, and implementing sophisticated PWA caching mechanisms."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-04-12"
-datePublished: "2025-04-12"
+dateModified: "2026-04-12"
+datePublished: "2026-04-12"
 showOnArticles: false
 courseName: 02-frontend-system-design
 image: https://res.cloudinary.com/duojkrgue/image/upload/v1759048374/Portfolio/FrontendSystemDesignCourse/titleImages/43_f8hevl.png

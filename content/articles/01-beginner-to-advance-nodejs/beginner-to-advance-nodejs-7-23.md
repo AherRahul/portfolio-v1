@@ -2,8 +2,8 @@
 title: "Unit Testing with Jest"
 description: "Write fast unit tests for NodeJs apps with Jest: setup, test structure, assertions, mocks/spies, coverage, and practical patterns for pure functions and modules."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-15"
-datePublished: "2025-09-15"
+dateModified: "2026-09-15"
+datePublished: "2026-09-15"
 showOnArticles: false
 courseName: 01-beginner-to-advance-nodejs
 topics:

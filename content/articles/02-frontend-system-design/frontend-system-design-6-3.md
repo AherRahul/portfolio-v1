@@ -2,8 +2,8 @@
 title: "Cookie Storage"
 description: "Master HTTP cookies for web application state management. Learn about cookie attributes, security flags, SameSite policies, GDPR compliance, cookie management strategies, and building secure cookie-based solutions."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-04-08"
-datePublished: "2025-04-08"
+dateModified: "2026-04-08"
+datePublished: "2026-04-08"
 showOnArticles: false
 courseName: 02-frontend-system-design
 image: https://res.cloudinary.com/duojkrgue/image/upload/v1759048366/Portfolio/FrontendSystemDesignCourse/titleImages/39_xtjqot.png

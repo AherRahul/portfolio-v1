@@ -1,19 +1,21 @@
 ---
-title: "Privacy and Legal Concerns"
-description: "Suppose you want to utilize a GenAI tool on a client or internal project. In that case, you must obtain approval from your delivery manager to ensure you have permission to use it for any project-related tasks. This should be done even if you have a license issued by EPAM to use the product."
-slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-04-10"
-datePublished: "2025-04-10"
+title: Privacy and Legal Concerns
+description: Suppose you want to utilize a GenAI tool on a client or internal
+  project. In that case, you must obtain approval from your delivery manager to
+  ensure you have permission to use it for any project-related tasks. This
+  should be done even if you have a license issued by EPAM to use the product.
+slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
+dateModified: 2026-01-29
+datePublished: 2026-04-10
 showOnArticles: false
 courseName: 06-learn-ai-with-me
 topics:
   - ai
 resources:
-  - title: "AI Notes"
-    type: "PDF"
+  - title: AI Notes
+    type: PDF
     url: ""
-    description: "A PDF Notes."
-
+    description: A PDF Notes.
 ---
 
 ![](https://res.cloudinary.com/duojkrgue/image/upload/v1758777282/Portfolio/aiCourse/Learn_AI_eyag79.png)

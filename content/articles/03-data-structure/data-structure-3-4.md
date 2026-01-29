@@ -2,8 +2,8 @@
 title: "Best Time to Buy and Sell Stocks"
 description: "Master the Last-In-First-Out (LIFO) principle. Learn stack operations, expression evaluation, backtracking algorithms, and real-world applications of stack data structures."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-26"
-datePublished: "2025-09-26"
+dateModified: "2026-09-26"
+datePublished: "2026-09-26"
 showOnArticles: false
 courseName: 03-data-structure
 topics:
@@ -116,7 +116,7 @@ Output: 5
 
 ## Visualisation:
 
-![Stocks](https://namastedev.com/blog/wp-content/uploads/2025/06/Screenshot-2025-06-27-at-12.58.36 PM.png)
+![Stocks](https://namastedev.com/blog/wp-content/uploads/2025/06/Screenshot-2026-06-27-at-12.58.36 PM.png)
 
 ### JavaScript Code
 

@@ -1,31 +1,34 @@
 ---
-title: "Variables and Data Types"
-description: "Variables are containers for storing data values, and understanding JavaScript's data types is fundamental to writing effective code. From primitive types like strings and numbers to reference types like objects and arrays, mastering these concepts will make you a more confident JavaScript developer."
-slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-25"
-datePublished: "2025-09-25"
+title: Variables and Data Types
+description: Variables are containers for storing data values, and understanding
+  JavaScript's data types is fundamental to writing effective code. From
+  primitive types like strings and numbers to reference types like objects and
+  arrays, mastering these concepts will make you a more confident JavaScript
+  developer.
+slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
+dateModified: 2026-01-29
+datePublished: 2026-09-25
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
   - javascript
 resources:
-  - title: "JS course PDF - 5"
-    type: "PDF"
-    url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758792130/Portfolio/javaScriptCourse/pdf/JavaScript-day5_Variables_compressed.pdf"
-    description: "A PDF Notes on Variables and Data Types topic"
-  - title: "MDN - JavaScript Data Types"
-    type: "documentation"
-    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures"
-    description: "Official MDN documentation on JavaScript data types and structures"
-  - title: "MDN - var, let, const"
-    type: "documentation"
-    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var"
-    description: "Comprehensive guide to variable declarations in JavaScript"
-  - title: "JavaScript.info - Data Types"
-    type: "article"
-    url: "https://javascript.info/types"
-    description: "Detailed explanation of JavaScript data types with examples"
-
+  - title: JS course PDF - 5
+    type: PDF
+    url: https://res.cloudinary.com/duojkrgue/image/upload/v1758792130/Portfolio/javaScriptCourse/pdf/JavaScript-day5_Variables_compressed.pdf
+    description: A PDF Notes on Variables and Data Types topic
+  - title: MDN - JavaScript Data Types
+    type: documentation
+    url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures
+    description: Official MDN documentation on JavaScript data types and structures
+  - title: MDN - var, let, const
+    type: documentation
+    url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var
+    description: Comprehensive guide to variable declarations in JavaScript
+  - title: JavaScript.info - Data Types
+    type: article
+    url: https://javascript.info/types
+    description: Detailed explanation of JavaScript data types with examples
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758810441/Portfolio/javaScriptCourse/images/6/6_xfzj3n.png)

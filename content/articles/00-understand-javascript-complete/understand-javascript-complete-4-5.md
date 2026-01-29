@@ -1,31 +1,32 @@
 ---
-title: "Callback Functions & Event Listeners"
-description: "Callback functions are the foundation of asynchronous JavaScript and event-driven programming. Understanding how callbacks work with event listeners is essential for building interactive web applications."
-slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-25"
-datePublished: "2025-09-25"
+title: Callback Functions & Event Listeners
+description: Callback functions are the foundation of asynchronous JavaScript
+  and event-driven programming. Understanding how callbacks work with event
+  listeners is essential for building interactive web applications.
+slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
+dateModified: 2026-01-29
+datePublished: 2026-09-25
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
   - javascript
 resources:
-  - title: "JS course PDF - 16"
-    type: "PDF"
-    url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758792130/Portfolio/javaScriptCourse/pdf/JavaScript-day16_Callbacks_compressed.pdf"
-    description: "A PDF Notes on Callback Functions & Event Listeners topic"
-  - title: "MDN - Callback Functions"
-    type: "documentation"
-    url: "https://developer.mozilla.org/en-US/docs/Glossary/Callback_function"
-    description: "Complete guide to callback functions from MDN"
-  - title: "MDN - Event Listeners"
-    type: "documentation"
-    url: "https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener"
-    description: "Complete reference for addEventListener and event handling"
-  - title: "JavaScript.info - Introduction to Events"
-    type: "article"
-    url: "https://javascript.info/introduction-browser-events"
-    description: "Comprehensive guide to browser events and event handling"
-
+  - title: JS course PDF - 16
+    type: PDF
+    url: https://res.cloudinary.com/duojkrgue/image/upload/v1758792130/Portfolio/javaScriptCourse/pdf/JavaScript-day16_Callbacks_compressed.pdf
+    description: A PDF Notes on Callback Functions & Event Listeners topic
+  - title: MDN - Callback Functions
+    type: documentation
+    url: https://developer.mozilla.org/en-US/docs/Glossary/Callback_function
+    description: Complete guide to callback functions from MDN
+  - title: MDN - Event Listeners
+    type: documentation
+    url: https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+    description: Complete reference for addEventListener and event handling
+  - title: JavaScript.info - Introduction to Events
+    type: article
+    url: https://javascript.info/introduction-browser-events
+    description: Comprehensive guide to browser events and event handling
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758811617/Portfolio/javaScriptCourse/images/all%20title%20images/17_d5t5i3.png)

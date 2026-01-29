@@ -1,31 +1,33 @@
 ---
-title: "Destructuring & Spread/Rest Operators"
-description: "Master the art of extracting values from arrays and objects with destructuring assignment, and learn to spread and collect elements efficiently. These modern syntax features make your code more readable and concise."
-slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-26"
-datePublished: "2025-09-26"
+title: Destructuring & Spread/Rest Operators
+description: Master the art of extracting values from arrays and objects with
+  destructuring assignment, and learn to spread and collect elements
+  efficiently. These modern syntax features make your code more readable and
+  concise.
+slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
+dateModified: 2026-01-29
+datePublished: 2026-09-26
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
   - javascript
 resources:
-  - title: "MDN - Destructuring Assignment"
-    type: "documentation"
-    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment"
-    description: "Complete reference for destructuring assignment in JavaScript"
-  - title: "MDN - Spread Syntax"
-    type: "documentation"
-    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax"
-    description: "Comprehensive guide to spread operator usage"
-  - title: "MDN - Rest Parameters"
-    type: "documentation"
-    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters"
-    description: "Understanding rest parameters in function definitions"
-  - title: "ES6 Features Guide"
-    type: "article"
-    url: "https://github.com/lukehoban/es6features#destructuring"
-    description: "Overview of ES6 destructuring and spread features"
-
+  - title: MDN - Destructuring Assignment
+    type: documentation
+    url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
+    description: Complete reference for destructuring assignment in JavaScript
+  - title: MDN - Spread Syntax
+    type: documentation
+    url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
+    description: Comprehensive guide to spread operator usage
+  - title: MDN - Rest Parameters
+    type: documentation
+    url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters
+    description: Understanding rest parameters in function definitions
+  - title: ES6 Features Guide
+    type: article
+    url: https://github.com/lukehoban/es6features#destructuring
+    description: Overview of ES6 destructuring and spread features
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758811621/Portfolio/javaScriptCourse/images/all%20title%20images/27_hmmpq5.png)
@@ -849,7 +851,7 @@ function logMessage(level, message, ...additionalData) {
 }
 
 logMessage('info', 'User logged in', { userId: 123 }, { sessionId: 'abc' });
-// [2025-09-26T...] INFO: User logged in
+// [2026-09-26T...] INFO: User logged in
 // Additional data: [{ userId: 123 }, { sessionId: 'abc' }]
 
 // Pattern 2: Flexible API design
@@ -996,7 +998,7 @@ const apiResponse = {
     categories: ['admin', 'user'],
     settings: { theme: 'dark' }
   },
-  timestamp: '2025-09-26T10:00:00Z',
+  timestamp: '2026-09-26T10:00:00Z',
   requestId: 'req-123'
 };
 

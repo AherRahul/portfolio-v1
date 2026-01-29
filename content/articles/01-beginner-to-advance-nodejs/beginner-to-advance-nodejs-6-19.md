@@ -2,8 +2,8 @@
 title: "JWT Authentication in NodeJs"
 description: "Master JWT (JSON Web Tokens) authentication in NodeJs applications. Learn how to create, verify, and refresh tokens, implement secure token storage, protect routes with middleware, and build role-based access control systems."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-15"
-datePublished: "2025-09-15"
+dateModified: "2026-09-15"
+datePublished: "2026-09-15"
 showOnArticles: false
 courseName: 01-beginner-to-advance-nodejs
 topics:

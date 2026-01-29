@@ -1,31 +1,32 @@
 ---
-title: "Memory Management & Garbage Collection"
-description: "Master JavaScript's automatic memory management system. Learn how the V8 engine allocates and deallocates memory, optimize memory usage, prevent memory leaks, and build memory-efficient applications."
-slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-26"
-datePublished: "2025-09-26"
+title: Memory Management & Garbage Collection
+description: Master JavaScript's automatic memory management system. Learn how
+  the V8 engine allocates and deallocates memory, optimize memory usage, prevent
+  memory leaks, and build memory-efficient applications.
+slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
+dateModified: 2026-01-29
+datePublished: 2026-09-26
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
   - javascript
 resources:
-  - title: "V8 Memory Management"
-    type: "reference"
-    url: "https://v8.dev/blog/free-garbage-collection"
-    description: "Official V8 documentation on garbage collection"
-  - title: "Memory Management - MDN"
-    type: "reference"
-    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management"
-    description: "Comprehensive guide to JavaScript memory management"
-  - title: "Chrome DevTools Memory Tab"
-    type: "article"
-    url: "https://developers.google.com/web/tools/chrome-devtools/memory-problems"
-    description: "Using Chrome DevTools for memory analysis"
-  - title: "Memory Leaks Detection"
-    type: "article"
-    url: "https://auth0.com/blog/four-types-of-leaks-in-your-javascript-code-and-how-to-get-rid-of-them/"
-    description: "Common memory leak patterns and solutions"
-
+  - title: V8 Memory Management
+    type: reference
+    url: https://v8.dev/blog/free-garbage-collection
+    description: Official V8 documentation on garbage collection
+  - title: Memory Management - MDN
+    type: reference
+    url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management
+    description: Comprehensive guide to JavaScript memory management
+  - title: Chrome DevTools Memory Tab
+    type: article
+    url: https://developers.google.com/web/tools/chrome-devtools/memory-problems
+    description: Using Chrome DevTools for memory analysis
+  - title: Memory Leaks Detection
+    type: article
+    url: https://auth0.com/blog/four-types-of-leaks-in-your-javascript-code-and-how-to-get-rid-of-them/
+    description: Common memory leak patterns and solutions
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758811611/Portfolio/javaScriptCourse/images/all%20title%20images/42_jubiga.png)

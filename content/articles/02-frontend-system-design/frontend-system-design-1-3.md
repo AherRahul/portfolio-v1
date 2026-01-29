@@ -2,8 +2,8 @@
 title: "HTTP Headers Methods Status Codes and Rest API Deep Dive"
 description: "If you are a junior developer, a senior developer, or just a complete newbie, this is going to be a great place to learn about REST API—what they are, why they are used, and how they work. This is going to be a long blog, so it’s for serious readers. If you prefer short TikTok-like videos for instant information, this might not be for you. Let’s get started!"
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-03-03"
-datePublished: "2025-03-03"
+dateModified: "2026-03-03"
+datePublished: "2026-03-03"
 showOnArticles: false
 courseName: 02-frontend-system-design
 topics:

@@ -1,7 +1,7 @@
 ---
 title: "Test-Driven Development Overview"
 description: "Explore Test-Driven Development (TDD) practices for frontend development. Learn the red-green-refactor cycle, TDD benefits, implementation strategies, and building maintainable codebases through test-first development approaches."
-publishedAt: 2025-03-29
+publishedAt: 2026-03-29
 image: "https://res.cloudinary.com/duojkrgue/image/upload/v1759048334/Portfolio/FrontendSystemDesignCourse/titleImages/29_btltbr.png"
 category: "Frontend System Design"
 author: "Rahul Aher"

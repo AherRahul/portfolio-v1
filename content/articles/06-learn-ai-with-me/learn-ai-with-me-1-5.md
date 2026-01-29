@@ -1,19 +1,23 @@
 ---
-title: "How LLMs Work"
-description: "LLMs learn patterns and relationships between words and phrases during the pre-trained process. They learn statistical patterns, grammar, and semantics of human language using massive amounts of text data from the Internet and books. This allows them to collect a vast knowledge base and predict the next word given the context of the preceding words using mathematical calculations and probability."
-slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-04-10"
-datePublished: "2025-04-10"
+title: How LLMs Work
+description: LLMs learn patterns and relationships between words and phrases
+  during the pre-trained process. They learn statistical patterns, grammar, and
+  semantics of human language using massive amounts of text data from the
+  Internet and books. This allows them to collect a vast knowledge base and
+  predict the next word given the context of the preceding words using
+  mathematical calculations and probability.
+slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
+dateModified: 2026-01-29
+datePublished: 2026-04-10
 showOnArticles: false
 courseName: 06-learn-ai-with-me
 topics:
   - ai
 resources:
-  - title: "AI Notes"
-    type: "PDF"
+  - title: AI Notes
+    type: PDF
     url: ""
-    description: "A PDF Notes."
-
+    description: A PDF Notes.
 ---
 
 ![](https://res.cloudinary.com/duojkrgue/image/upload/v1758777282/Portfolio/aiCourse/Learn_AI_eyag79.png)

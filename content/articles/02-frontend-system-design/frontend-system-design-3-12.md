@@ -2,8 +2,8 @@
 title: "Subresource Integrity (SRI)"
 description: "Master Subresource Integrity for secure resource loading. Learn to implement SRI hashes, prevent tampering of external resources, ensure CDN security, and build robust resource integrity verification systems."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-03-22"
-datePublished: "2025-03-22"
+dateModified: "2026-03-22"
+datePublished: "2026-03-22"
 showOnArticles: false
 courseName: 02-frontend-system-design
 topics:

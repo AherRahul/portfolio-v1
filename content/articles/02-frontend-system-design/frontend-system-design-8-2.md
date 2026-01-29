@@ -2,7 +2,7 @@
 title: "Screen Reader Compatibility"
 description: "Master screen reader compatibility through ARIA attributes, semantic HTML, and accessibility testing. Learn how to create web applications that provide rich, meaningful experiences for users with visual impairments."
 image: "https://res.cloudinary.com/duojkrgue/image/upload/v1759048374/Portfolio/FrontendSystemDesignCourse/titleImages/50_mz8qmk.png"
-publishedAt: "2025-01-13"
+publishedAt: "2026-01-13"
 is_on_youtube: false
 courseName: "02-frontend-system-design"
 id: 66

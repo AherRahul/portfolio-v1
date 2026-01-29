@@ -2,8 +2,8 @@
 title: "API Caching"
 description: "Master API response caching strategies. Learn about client-side API caching, cache invalidation strategies, stale-while-revalidate patterns, query caching, and building efficient API caching layers."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-04-13"
-datePublished: "2025-04-13"
+dateModified: "2026-04-13"
+datePublished: "2026-04-13"
 showOnArticles: false
 courseName: 02-frontend-system-design
 image: https://res.cloudinary.com/duojkrgue/image/upload/v1759048368/Portfolio/FrontendSystemDesignCourse/titleImages/44_bmohse.png

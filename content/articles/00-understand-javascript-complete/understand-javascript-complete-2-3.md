@@ -1,31 +1,33 @@
 ---
-title: "Control Flow and Operators"
-description: "Control flow determines the path your code takes - from simple if-else statements to complex loops and switch cases. Combined with JavaScript's powerful operators, you'll learn to create logic that makes intelligent decisions and handles data efficiently."
-slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-25"
-datePublished: "2025-09-25"
+title: Control Flow and Operators
+description: Control flow determines the path your code takes - from simple
+  if-else statements to complex loops and switch cases. Combined with
+  JavaScript's powerful operators, you'll learn to create logic that makes
+  intelligent decisions and handles data efficiently.
+slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
+dateModified: 2026-01-29
+datePublished: 2026-09-25
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
   - javascript
 resources:
-  - title: "JS course PDF - 7"
-    type: "PDF"
-    url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758792130/Portfolio/javaScriptCourse/pdf/JavaScript-day7_ControlFlow_compressed.pdf"
-    description: "A PDF Notes on Control Flow and Operators topic"
-  - title: "MDN - Control Flow"
-    type: "documentation"
-    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling"
-    description: "Official MDN guide to JavaScript control flow and error handling"
-  - title: "MDN - Expressions and Operators"
-    type: "documentation"
-    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators"
-    description: "Comprehensive guide to JavaScript expressions and operators"
-  - title: "JavaScript.info - Conditionals"
-    type: "article"
-    url: "https://javascript.info/ifelse"
-    description: "Detailed tutorial on JavaScript conditional statements"
-
+  - title: JS course PDF - 7
+    type: PDF
+    url: https://res.cloudinary.com/duojkrgue/image/upload/v1758792130/Portfolio/javaScriptCourse/pdf/JavaScript-day7_ControlFlow_compressed.pdf
+    description: A PDF Notes on Control Flow and Operators topic
+  - title: MDN - Control Flow
+    type: documentation
+    url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling
+    description: Official MDN guide to JavaScript control flow and error handling
+  - title: MDN - Expressions and Operators
+    type: documentation
+    url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators
+    description: Comprehensive guide to JavaScript expressions and operators
+  - title: JavaScript.info - Conditionals
+    type: article
+    url: https://javascript.info/ifelse
+    description: Detailed tutorial on JavaScript conditional statements
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758809904/Portfolio/javaScriptCourse/images/8/8_f5rrib.png)

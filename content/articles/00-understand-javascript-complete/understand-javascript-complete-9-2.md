@@ -1,31 +1,32 @@
 ---
-title: "Observer Pattern & Event Systems"
-description: "Master the Observer pattern for building reactive, loosely-coupled applications. Learn to implement custom event systems and understand the foundation of modern reactive programming."
-slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-26"
-datePublished: "2025-09-26"
+title: Observer Pattern & Event Systems
+description: Master the Observer pattern for building reactive, loosely-coupled
+  applications. Learn to implement custom event systems and understand the
+  foundation of modern reactive programming.
+slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
+dateModified: 2026-01-29
+datePublished: 2026-09-26
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
   - javascript
 resources:
-  - title: "Observer Pattern - GoF Design Patterns"
-    type: "reference"
-    url: "https://en.wikipedia.org/wiki/Observer_pattern"
-    description: "Classical Observer pattern definition and theory"
-  - title: "Reactive Programming Introduction"
-    type: "article"
-    url: "https://gist.github.com/staltz/868e7e9bc2a7b8c1f754"
-    description: "Understanding reactive programming paradigms"
-  - title: "Event-Driven Architecture"
-    type: "article"
-    url: "https://martinfowler.com/articles/201701-event-driven.html"
-    description: "Martin Fowler's guide to event-driven systems"
-  - title: "RxJS Documentation"
-    type: "documentation"
-    url: "https://rxjs.dev/guide/overview"
-    description: "Advanced reactive programming with observables"
-
+  - title: Observer Pattern - GoF Design Patterns
+    type: reference
+    url: https://en.wikipedia.org/wiki/Observer_pattern
+    description: Classical Observer pattern definition and theory
+  - title: Reactive Programming Introduction
+    type: article
+    url: https://gist.github.com/staltz/868e7e9bc2a7b8c1f754
+    description: Understanding reactive programming paradigms
+  - title: Event-Driven Architecture
+    type: article
+    url: https://martinfowler.com/articles/201701-event-driven.html
+    description: Martin Fowler's guide to event-driven systems
+  - title: RxJS Documentation
+    type: documentation
+    url: https://rxjs.dev/guide/overview
+    description: Advanced reactive programming with observables
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758811625/Portfolio/javaScriptCourse/images/all%20title%20images/38_s8fo3c.png)

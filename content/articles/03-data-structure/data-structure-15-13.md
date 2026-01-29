@@ -2,8 +2,8 @@
 title: "Wave Array Sorting Pattern"
 description: "Arrange array in wave form with alternating peaks and valleys. Master swap-based wave formation, optimize without full sorting, and handle odd/even lengths."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-12-24"
-datePublished: "2025-12-24"
+dateModified: "2026-12-24"
+datePublished: "2026-12-24"
 showOnArticles: false
 courseName: 03-data-structure
 topics:

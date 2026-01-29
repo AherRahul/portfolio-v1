@@ -1,31 +1,32 @@
 ---
-title: "Modules (import/export) & Dynamic Imports"
-description: "Learn the modern module system that replaced the chaos of global variables and script tags. Master static imports/exports and dynamic imports for code splitting and lazy loading."
-slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-26"
-datePublished: "2025-09-26"
+title: Modules (import/export) & Dynamic Imports
+description: Learn the modern module system that replaced the chaos of global
+  variables and script tags. Master static imports/exports and dynamic imports
+  for code splitting and lazy loading.
+slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
+dateModified: 2026-01-29
+datePublished: 2026-09-26
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
   - javascript
 resources:
-  - title: "MDN - JavaScript Modules"
-    type: "documentation"
-    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules"
-    description: "Complete guide to ES6 modules and import/export syntax"
-  - title: "MDN - import() Expression"
-    type: "documentation"
-    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import"
-    description: "Dynamic import syntax and usage patterns"
-  - title: "ES Modules Deep Dive"
-    type: "article"
-    url: "https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/"
-    description: "Visual explanation of how ES modules work"
-  - title: "Module Loading Strategies"
-    type: "article"
-    url: "https://web.dev/reduce-javascript-payloads-with-code-splitting/"
-    description: "Code splitting and performance optimization with modules"
-
+  - title: MDN - JavaScript Modules
+    type: documentation
+    url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules
+    description: Complete guide to ES6 modules and import/export syntax
+  - title: MDN - import() Expression
+    type: documentation
+    url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import
+    description: Dynamic import syntax and usage patterns
+  - title: ES Modules Deep Dive
+    type: article
+    url: https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/
+    description: Visual explanation of how ES modules work
+  - title: Module Loading Strategies
+    type: article
+    url: https://web.dev/reduce-javascript-payloads-with-code-splitting/
+    description: Code splitting and performance optimization with modules
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758811623/Portfolio/javaScriptCourse/images/all%20title%20images/31_jca3sy.png)

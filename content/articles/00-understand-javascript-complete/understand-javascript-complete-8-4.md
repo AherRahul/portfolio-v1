@@ -1,31 +1,32 @@
 ---
-title: "Web Storage & IndexedDB"
-description: "Explore client-side storage options from simple localStorage to powerful IndexedDB. Learn when to use each storage method and how to build offline-capable applications."
-slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-26"
-datePublished: "2025-09-26"
+title: Web Storage & IndexedDB
+description: Explore client-side storage options from simple localStorage to
+  powerful IndexedDB. Learn when to use each storage method and how to build
+  offline-capable applications.
+slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
+dateModified: 2026-01-29
+datePublished: 2026-09-26
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
   - javascript
 resources:
-  - title: "MDN - Web Storage API"
-    type: "documentation"
-    url: "https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API"
-    description: "Complete guide to localStorage and sessionStorage"
-  - title: "MDN - IndexedDB API"
-    type: "documentation"
-    url: "https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API"
-    description: "Comprehensive IndexedDB reference and tutorials"
-  - title: "Storage Quotas and Eviction"
-    type: "article"
-    url: "https://web.dev/storage-for-the-web/"
-    description: "Understanding browser storage limits and management"
-  - title: "Offline-First Applications"
-    type: "article"
-    url: "https://web.dev/offline-cookbook/"
-    description: "Patterns for building robust offline experiences"
-
+  - title: MDN - Web Storage API
+    type: documentation
+    url: https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API
+    description: Complete guide to localStorage and sessionStorage
+  - title: MDN - IndexedDB API
+    type: documentation
+    url: https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API
+    description: Comprehensive IndexedDB reference and tutorials
+  - title: Storage Quotas and Eviction
+    type: article
+    url: https://web.dev/storage-for-the-web/
+    description: Understanding browser storage limits and management
+  - title: Offline-First Applications
+    type: article
+    url: https://web.dev/offline-cookbook/
+    description: Patterns for building robust offline experiences
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758811625/Portfolio/javaScriptCourse/images/all%20title%20images/35_rcxzgq.png)
@@ -1329,7 +1330,7 @@ setTimeout(async () => {
             description: 'Study client-side database patterns',
             category: 'Education',
             priority: 'high',
-            dueDate: new Date('2025-12-31')
+            dueDate: new Date('2026-12-31')
         });
         
         console.log('Created task:', task);

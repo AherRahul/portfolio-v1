@@ -2,8 +2,8 @@
 title: "Password Hashing with bcrypt in NodeJs"
 description: "Learn how to securely store and verify passwords using bcrypt in NodeJs applications. Understand salting, cost factors, password verification, migration strategies, and best practices for password security in production applications."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-15"
-datePublished: "2025-09-15"
+dateModified: "2026-09-15"
+datePublished: "2026-09-15"
 showOnArticles: false
 courseName: 01-beginner-to-advance-nodejs
 topics:

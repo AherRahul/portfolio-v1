@@ -6,7 +6,6 @@ time: "30hr 20 mins"
 video: false
 topics:
   - ai
-  - machine-learning
   - deep-learning
   - nlp
 content:
@@ -20,12 +19,11 @@ content:
       - id: 1
         topic_name: Introduction to Artificial Intelligence
         sub_topic: AI Fundamentals
-        publish_date: 2025-01-15
+        publish_date: 2026-01-29
         description: >
           Understand what AI is, its history, types of AI (Narrow vs General), and the AI landscape. Learn about AI applications in industry and how top tech companies use AI.
         topics:
           - ai
-          - machine-learning
         duration: "25:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777282/Portfolio/aiCourse/Learn_AI_eyag79.png"
         auther_name: Rahul Aher
@@ -34,12 +32,11 @@ content:
       - id: 2
         topic_name: Key Concepts and Terms in AI
         sub_topic: AI Fundamentals
-        publish_date: 2025-01-15
+        publish_date: 2026-01-29
         description: >
           Master essential AI terminology: Machine Learning (ML), Deep Learning (DL), Natural Language Processing (NLP), Computer Vision, Reinforcement Learning, and their relationships. Critical for AI interviews.
         topics:
           - ai
-          - machine-learning
         duration: "30:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777282/Portfolio/aiCourse/Learn_AI_eyag79.png"
         auther_name: Rahul Aher
@@ -48,12 +45,11 @@ content:
       - id: 3
         topic_name: Types of Machine Learning
         sub_topic: AI Fundamentals
-        publish_date: 2025-01-15
+        publish_date: 2026-01-29
         description: >
           Learn Supervised Learning, Unsupervised Learning, Semi-supervised Learning, and Reinforcement Learning. Understand when to use each approach and common algorithms for each type.
         topics:
           - ai
-          - machine-learning
         duration: "35:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777282/Portfolio/aiCourse/Learn_AI_eyag79.png"
         auther_name: Rahul Aher
@@ -62,12 +58,11 @@ content:
       - id: 4
         topic_name: Machine Learning Workflow
         sub_topic: AI Fundamentals
-        publish_date: 2025-01-15
+        publish_date: 2026-01-29
         description: >
           Master the ML pipeline: data collection, preprocessing, feature engineering, model selection, training, evaluation, and deployment. Learn best practices used in production ML systems.
         topics:
           - ai
-          - machine-learning
         duration: "40:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777282/Portfolio/aiCourse/Learn_AI_eyag79.png"
         auther_name: Rahul Aher
@@ -76,12 +71,11 @@ content:
       - id: 5
         topic_name: Data Preprocessing and Feature Engineering
         sub_topic: AI Fundamentals
-        publish_date: 2025-01-15
+        publish_date: 2026-01-29
         description: >
           Learn data cleaning, handling missing values, feature scaling, encoding categorical variables, feature selection, and feature transformation techniques. Essential for ML interviews.
         topics:
           - ai
-          - machine-learning
         duration: "45:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777282/Portfolio/aiCourse/Learn_AI_eyag79.png"
         auther_name: Rahul Aher
@@ -90,12 +84,11 @@ content:
       - id: 6
         topic_name: Model Evaluation and Metrics
         sub_topic: AI Fundamentals
-        publish_date: 2025-01-15
+        publish_date: 2026-01-29
         description: >
           Master evaluation metrics: accuracy, precision, recall, F1-score, ROC-AUC, confusion matrix, cross-validation, and when to use each metric. Learn to interpret model performance.
         topics:
           - ai
-          - machine-learning
         duration: "40:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777282/Portfolio/aiCourse/Learn_AI_eyag79.png"
         auther_name: Rahul Aher
@@ -104,12 +97,11 @@ content:
       - id: 7
         topic_name: Overfitting and Underfitting
         sub_topic: AI Fundamentals
-        publish_date: 2025-01-15
+        publish_date: 2026-01-29
         description: >
           Understand bias-variance tradeoff, overfitting, underfitting, regularization techniques (L1, L2, dropout), and strategies to prevent overfitting. Critical ML interview topic.
         topics:
           - ai
-          - machine-learning
         duration: "35:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777282/Portfolio/aiCourse/Learn_AI_eyag79.png"
         auther_name: Rahul Aher
@@ -118,12 +110,11 @@ content:
       - id: 8
         topic_name: Hyperparameter Tuning
         sub_topic: AI Fundamentals
-        publish_date: 2025-01-15
+        publish_date: 2026-01-29
         description: >
           Learn hyperparameter optimization techniques: grid search, random search, Bayesian optimization, and automated hyperparameter tuning. Master ML model optimization strategies.
         topics:
           - ai
-          - machine-learning
         duration: "30:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777282/Portfolio/aiCourse/Learn_AI_eyag79.png"
         auther_name: Rahul Aher
@@ -132,12 +123,11 @@ content:
       - id: 9
         topic_name: ML Algorithms - Linear Models
         sub_topic: AI Fundamentals
-        publish_date: 2025-01-15
+        publish_date: 2026-01-29
         description: >
           Master Linear Regression, Logistic Regression, Ridge, Lasso, and Elastic Net. Understand their mathematical foundations, use cases, and implementation details.
         topics:
           - ai
-          - machine-learning
         duration: "40:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777282/Portfolio/aiCourse/Learn_AI_eyag79.png"
         auther_name: Rahul Aher
@@ -146,12 +136,11 @@ content:
       - id: 10
         topic_name: ML Algorithms - Tree-Based Models
         sub_topic: AI Fundamentals
-        publish_date: 2025-01-15
+        publish_date: 2026-01-29
         description: >
           Learn Decision Trees, Random Forest, Gradient Boosting (XGBoost, LightGBM), and ensemble methods. Master tree-based algorithms used in production ML systems.
         topics:
           - ai
-          - machine-learning
         duration: "45:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777282/Portfolio/aiCourse/Learn_AI_eyag79.png"
         auther_name: Rahul Aher
@@ -168,7 +157,7 @@ content:
       - id: 11
         topic_name: Introduction to Neural Networks
         sub_topic: Deep Learning
-        publish_date: 2025-01-16
+        publish_date: 2026-01-16
         description: >
           Understand neural network architecture, neurons, activation functions, forward propagation, and how neural networks learn. Learn the mathematical foundations of deep learning.
         topics:
@@ -182,7 +171,7 @@ content:
       - id: 12
         topic_name: Backpropagation and Gradient Descent
         sub_topic: Deep Learning
-        publish_date: 2025-01-16
+        publish_date: 2026-01-16
         description: >
           Master backpropagation algorithm, gradient descent variants (SGD, Adam, RMSprop), learning rate scheduling, and optimization techniques. Essential for deep learning interviews.
         topics:
@@ -196,7 +185,7 @@ content:
       - id: 13
         topic_name: Convolutional Neural Networks (CNNs)
         sub_topic: Deep Learning
-        publish_date: 2025-01-16
+        publish_date: 2026-01-16
         description: >
           Learn CNN architecture, convolutional layers, pooling, popular CNN architectures (ResNet, VGG, Inception), and applications in computer vision. Master CNNs used at Google, Meta.
         topics:
@@ -210,7 +199,7 @@ content:
       - id: 14
         topic_name: Recurrent Neural Networks (RNNs)
         sub_topic: Deep Learning
-        publish_date: 2025-01-16
+        publish_date: 2026-01-16
         description: >
           Understand RNNs, LSTM, GRU, sequence modeling, and applications in NLP and time series. Learn RNN architectures and when to use them.
         topics:
@@ -225,7 +214,7 @@ content:
       - id: 15
         topic_name: Transformers Architecture
         sub_topic: Deep Learning
-        publish_date: 2025-01-16
+        publish_date: 2026-01-16
         description: >
           Master Transformer architecture, attention mechanism, self-attention, multi-head attention, and positional encoding. Understand the foundation of modern LLMs like GPT and BERT.
         topics:
@@ -240,7 +229,7 @@ content:
       - id: 16
         topic_name: Transfer Learning and Fine-tuning
         sub_topic: Deep Learning
-        publish_date: 2025-01-16
+        publish_date: 2026-01-16
         description: >
           Learn transfer learning strategies, fine-tuning pre-trained models, domain adaptation, and leveraging pre-trained models for your tasks. Essential for production ML.
         topics:
@@ -254,7 +243,7 @@ content:
       - id: 17
         topic_name: Regularization in Deep Learning
         sub_topic: Deep Learning
-        publish_date: 2025-01-16
+        publish_date: 2026-01-16
         description: >
           Master dropout, batch normalization, weight decay, data augmentation, and other regularization techniques for deep neural networks. Learn to prevent overfitting in deep models.
         topics:
@@ -268,7 +257,7 @@ content:
       - id: 18
         topic_name: Deep Learning Frameworks
         sub_topic: Deep Learning
-        publish_date: 2025-01-16
+        publish_date: 2026-01-16
         description: >
           Learn PyTorch, TensorFlow, Keras, and their use cases. Master building, training, and deploying deep learning models using modern frameworks.
         topics:
@@ -282,7 +271,7 @@ content:
       - id: 19
         topic_name: Training Deep Neural Networks
         sub_topic: Deep Learning
-        publish_date: 2025-01-16
+        publish_date: 2026-01-16
         description: >
           Master training strategies, batch size selection, learning rate tuning, gradient clipping, and debugging deep learning models. Learn production training practices.
         topics:
@@ -296,7 +285,7 @@ content:
       - id: 20
         topic_name: Deep Learning Interview Questions
         sub_topic: Deep Learning
-        publish_date: 2025-01-16
+        publish_date: 2026-01-16
         description: >
           Practice deep learning interview questions from top tech companies. Master explaining neural networks, backpropagation, and deep learning concepts clearly.
         topics:
@@ -318,7 +307,7 @@ content:
       - id: 21
         topic_name: Introduction to Large Language Models
         sub_topic: LLMs
-        publish_date: 2025-01-17
+        publish_date: 2026-01-17
         description: >
           Understand what LLMs are, their evolution (GPT, BERT, T5, PaLM), architecture, and capabilities. Learn how companies like OpenAI, Google, and Meta build LLMs.
         topics:
@@ -332,7 +321,7 @@ content:
       - id: 22
         topic_name: Types of Language Models
         sub_topic: LLMs
-        publish_date: 2025-01-17
+        publish_date: 2026-01-17
         description: >
           Learn autoregressive models (GPT), autoencoding models (BERT), encoder-decoder models (T5), and their differences. Understand when to use each type.
         topics:
@@ -346,7 +335,7 @@ content:
       - id: 23
         topic_name: Tokens and Tokenization
         sub_topic: LLMs
-        publish_date: 2025-01-17
+        publish_date: 2026-01-17
         description: >
           Master tokenization, BPE, WordPiece, SentencePiece, token limits, and how LLMs process text. Understand tokenization's impact on model performance and costs.
         topics:
@@ -360,7 +349,7 @@ content:
       - id: 24
         topic_name: How LLMs Work - Training Process
         sub_topic: LLMs
-        publish_date: 2025-01-17
+        publish_date: 2026-01-17
         description: >
           Learn pre-training, fine-tuning, supervised fine-tuning, RLHF (Reinforcement Learning from Human Feedback), and the complete LLM training pipeline. Understand how GPT-4 and Claude are trained.
         topics:
@@ -374,7 +363,7 @@ content:
       - id: 25
         topic_name: Prompt Engineering
         sub_topic: LLMs
-        publish_date: 2025-01-17
+        publish_date: 2026-01-17
         description: >
           Master prompt engineering techniques, few-shot learning, chain-of-thought prompting, prompt templates, and best practices for getting optimal outputs from LLMs.
         topics:
@@ -388,7 +377,7 @@ content:
       - id: 26
         topic_name: Limitations of LLMs
         sub_topic: LLMs
-        publish_date: 2025-01-17
+        publish_date: 2026-01-17
         description: >
           Understand LLM limitations: hallucination, context windows, bias, reasoning limitations, and safety concerns. Learn how to mitigate these issues in production.
         topics:
@@ -402,7 +391,7 @@ content:
       - id: 27
         topic_name: Fine-tuning LLMs
         sub_topic: LLMs
-        publish_date: 2025-01-17
+        publish_date: 2026-01-17
         description: >
           Learn fine-tuning strategies, LoRA (Low-Rank Adaptation), QLoRA, parameter-efficient fine-tuning, and adapting LLMs for specific tasks. Master production fine-tuning practices.
         topics:
@@ -416,7 +405,7 @@ content:
       - id: 28
         topic_name: RAG (Retrieval-Augmented Generation)
         sub_topic: LLMs
-        publish_date: 2025-01-17
+        publish_date: 2026-01-17
         description: >
           Master RAG architecture, vector databases, embeddings, retrieval strategies, and building production RAG systems. Learn how to enhance LLMs with external knowledge.
         topics:
@@ -430,7 +419,7 @@ content:
       - id: 29
         topic_name: LLM APIs and Integration
         sub_topic: LLMs
-        publish_date: 2025-01-17
+        publish_date: 2026-01-17
         description: >
           Learn to use OpenAI API, Anthropic API, Hugging Face, and other LLM providers. Master API integration, streaming, error handling, and cost optimization.
         topics:
@@ -444,7 +433,7 @@ content:
       - id: 30
         topic_name: LLM Evaluation and Metrics
         sub_topic: LLMs
-        publish_date: 2025-01-17
+        publish_date: 2026-01-17
         description: >
           Understand LLM evaluation metrics: perplexity, BLEU, ROUGE, human evaluation, and task-specific metrics. Learn to evaluate LLM performance effectively.
         topics:
@@ -458,7 +447,7 @@ content:
       - id: 31
         topic_name: LLM Deployment and Production
         sub_topic: LLMs
-        publish_date: 2025-01-17
+        publish_date: 2026-01-17
         description: >
           Master deploying LLMs in production: model serving, quantization, inference optimization, caching, and scaling LLM applications. Learn production best practices.
         topics:
@@ -472,7 +461,7 @@ content:
       - id: 32
         topic_name: LLM Interview Questions
         sub_topic: LLMs
-        publish_date: 2025-01-17
+        publish_date: 2026-01-17
         description: >
           Practice LLM and Generative AI interview questions from OpenAI, Google, Anthropic, and Meta. Master explaining LLM concepts, architectures, and applications.
         topics:
@@ -494,7 +483,7 @@ content:
       - id: 33
         topic_name: NLP Fundamentals
         sub_topic: NLP
-        publish_date: 2025-01-18
+        publish_date: 2026-01-18
         description: >
           Learn text preprocessing, tokenization, stemming, lemmatization, stop words, and basic NLP pipelines. Master foundational NLP concepts.
         topics:
@@ -508,7 +497,7 @@ content:
       - id: 34
         topic_name: Word Embeddings
         sub_topic: NLP
-        publish_date: 2025-01-18
+        publish_date: 2026-01-18
         description: >
           Master word embeddings: Word2Vec, GloVe, FastText, and modern contextual embeddings. Understand how embeddings capture semantic meaning.
         topics:
@@ -522,7 +511,7 @@ content:
       - id: 35
         topic_name: Named Entity Recognition (NER)
         sub_topic: NLP
-        publish_date: 2025-01-18
+        publish_date: 2026-01-18
         description: >
           Learn NER tasks, CRF models, transformer-based NER, and applications. Master extracting entities from text using modern NLP techniques.
         topics:
@@ -536,7 +525,7 @@ content:
       - id: 36
         topic_name: Text Classification
         sub_topic: NLP
-        publish_date: 2025-01-18
+        publish_date: 2026-01-18
         description: >
           Master text classification techniques, sentiment analysis, topic modeling, and building production text classifiers. Learn classification architectures.
         topics:
@@ -550,7 +539,7 @@ content:
       - id: 37
         topic_name: Sequence-to-Sequence Models
         sub_topic: NLP
-        publish_date: 2025-01-18
+        publish_date: 2026-01-18
         description: >
           Learn seq2seq models, attention mechanisms, encoder-decoder architectures, and applications in machine translation and summarization.
         topics:
@@ -564,7 +553,7 @@ content:
       - id: 38
         topic_name: Question Answering Systems
         sub_topic: NLP
-        publish_date: 2025-01-18
+        publish_date: 2026-01-18
         description: >
           Master QA systems, reading comprehension, extractive QA, generative QA, and building production QA systems. Learn architectures used by Google and Meta.
         topics:
@@ -578,7 +567,7 @@ content:
       - id: 39
         topic_name: Text Generation and Summarization
         sub_topic: NLP
-        publish_date: 2025-01-18
+        publish_date: 2026-01-18
         description: >
           Learn text generation techniques, summarization (extractive and abstractive), and building production text generation systems. Master modern generation approaches.
         topics:
@@ -592,7 +581,7 @@ content:
       - id: 40
         topic_name: NLP Interview Questions
         sub_topic: NLP
-        publish_date: 2025-01-18
+        publish_date: 2026-01-18
         description: >
           Practice NLP interview questions from top tech companies. Master explaining NLP concepts, models, and building NLP systems.
         topics:
@@ -614,12 +603,11 @@ content:
       - id: 41
         topic_name: ML System Architecture
         sub_topic: Production ML
-        publish_date: 2025-01-19
+        publish_date: 2026-01-19
         description: >
           Learn to design ML systems, data pipelines, training pipelines, inference services, and monitoring. Master ML system design patterns used at scale.
         topics:
           - ai
-          - machine-learning
         duration: "40:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777282/Portfolio/aiCourse/Learn_AI_eyag79.png"
         auther_name: Rahul Aher
@@ -628,12 +616,11 @@ content:
       - id: 42
         topic_name: Model Deployment Strategies
         sub_topic: Production ML
-        publish_date: 2025-01-19
+        publish_date: 2026-01-19
         description: >
           Master deployment patterns: batch inference, real-time inference, edge deployment, A/B testing, and canary deployments. Learn production deployment best practices.
         topics:
           - ai
-          - machine-learning
         duration: "45:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777282/Portfolio/aiCourse/Learn_AI_eyag79.png"
         auther_name: Rahul Aher
@@ -642,12 +629,11 @@ content:
       - id: 43
         topic_name: Model Monitoring and Observability
         sub_topic: Production ML
-        publish_date: 2025-01-19
+        publish_date: 2026-01-19
         description: >
           Learn model monitoring, data drift detection, concept drift, performance monitoring, and alerting. Master keeping ML models healthy in production.
         topics:
           - ai
-          - machine-learning
         duration: "40:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777282/Portfolio/aiCourse/Learn_AI_eyag79.png"
         auther_name: Rahul Aher
@@ -656,12 +642,11 @@ content:
       - id: 44
         topic_name: MLOps Fundamentals
         sub_topic: Production ML
-        publish_date: 2025-01-19
+        publish_date: 2026-01-19
         description: >
           Master MLOps practices: version control for models, CI/CD for ML, experiment tracking, model registry, and ML pipelines. Learn MLOps tools and workflows.
         topics:
           - ai
-          - machine-learning
         duration: "50:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777282/Portfolio/aiCourse/Learn_AI_eyag79.png"
         auther_name: Rahul Aher
@@ -670,12 +655,11 @@ content:
       - id: 45
         topic_name: Feature Stores and Data Management
         sub_topic: Production ML
-        publish_date: 2025-01-19
+        publish_date: 2026-01-19
         description: >
           Learn feature stores, feature engineering pipelines, feature versioning, and managing features at scale. Master data management for ML systems.
         topics:
           - ai
-          - machine-learning
         duration: "35:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777282/Portfolio/aiCourse/Learn_AI_eyag79.png"
         auther_name: Rahul Aher
@@ -684,12 +668,11 @@ content:
       - id: 46
         topic_name: Model Serving and Inference Optimization
         sub_topic: Production ML
-        publish_date: 2025-01-19
+        publish_date: 2026-01-19
         description: >
           Master model serving frameworks (TensorFlow Serving, TorchServe, Triton), inference optimization, quantization, pruning, and reducing latency. Learn production inference patterns.
         topics:
           - ai
-          - machine-learning
         duration: "45:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777282/Portfolio/aiCourse/Learn_AI_eyag79.png"
         auther_name: Rahul Aher
@@ -698,12 +681,11 @@ content:
       - id: 47
         topic_name: Scalability and Distributed Training
         sub_topic: Production ML
-        publish_date: 2025-01-19
+        publish_date: 2026-01-19
         description: >
           Learn distributed training, data parallelism, model parallelism, gradient accumulation, and scaling ML training. Master training large models efficiently.
         topics:
           - ai
-          - machine-learning
         duration: "40:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777282/Portfolio/aiCourse/Learn_AI_eyag79.png"
         auther_name: Rahul Aher
@@ -712,12 +694,11 @@ content:
       - id: 48
         topic_name: Cost Optimization for ML Systems
         sub_topic: Production ML
-        publish_date: 2025-01-19
+        publish_date: 2026-01-19
         description: >
           Master cost optimization strategies: model compression, efficient architectures, cloud cost management, and resource optimization. Learn to build cost-effective ML systems.
         topics:
           - ai
-          - machine-learning
         duration: "30:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777282/Portfolio/aiCourse/Learn_AI_eyag79.png"
         auther_name: Rahul Aher
@@ -726,12 +707,11 @@ content:
       - id: 49
         topic_name: ML System Design Interview Questions
         sub_topic: Production ML
-        publish_date: 2025-01-19
+        publish_date: 2026-01-19
         description: >
           Practice ML system design interview questions. Learn to design recommendation systems, search systems, and other ML-powered products at scale.
         topics:
           - ai
-          - machine-learning
         duration: "45:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777282/Portfolio/aiCourse/Learn_AI_eyag79.png"
         auther_name: Rahul Aher
@@ -748,12 +728,11 @@ content:
       - id: 50
         topic_name: Common AI/ML Interview Questions
         sub_topic: Interview Prep
-        publish_date: 2025-01-20
+        publish_date: 2026-01-20
         description: >
           Master frequently asked AI/ML interview questions from Google, OpenAI, Meta, Amazon, and Microsoft. Practice with detailed explanations and solutions.
         topics:
           - ai
-          - machine-learning
         duration: "50:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777282/Portfolio/aiCourse/Learn_AI_eyag79.png"
         auther_name: Rahul Aher
@@ -762,12 +741,11 @@ content:
       - id: 51
         topic_name: Coding Challenges for ML Engineers
         sub_topic: Interview Prep
-        publish_date: 2025-01-20
+        publish_date: 2026-01-20
         description: >
           Practice ML coding challenges: implementing algorithms, data preprocessing, model training, and evaluation. Master coding under interview constraints.
         topics:
           - ai
-          - machine-learning
         duration: "45:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777282/Portfolio/aiCourse/Learn_AI_eyag79.png"
         auther_name: Rahul Aher
@@ -776,12 +754,11 @@ content:
       - id: 52
         topic_name: ML System Design Case Studies
         sub_topic: Interview Prep
-        publish_date: 2025-01-20
+        publish_date: 2026-01-20
         description: >
           Learn to design ML systems: recommendation systems, search ranking, fraud detection, and other ML-powered products. Master ML system design interviews.
         topics:
           - ai
-          - machine-learning
         duration: "50:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777282/Portfolio/aiCourse/Learn_AI_eyag79.png"
         auther_name: Rahul Aher
@@ -790,12 +767,11 @@ content:
       - id: 53
         topic_name: Research Paper Reading and Discussion
         sub_topic: Interview Prep
-        publish_date: 2025-01-20
+        publish_date: 2026-01-20
         description: >
           Learn to read and discuss ML research papers. Master explaining complex ML concepts, architectures, and research contributions clearly.
         topics:
           - ai
-          - machine-learning
         duration: "35:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777282/Portfolio/aiCourse/Learn_AI_eyag79.png"
         auther_name: Rahul Aher
@@ -804,12 +780,11 @@ content:
       - id: 54
         topic_name: Behavioral Questions for AI Roles
         sub_topic: Interview Prep
-        publish_date: 2025-01-20
+        publish_date: 2026-01-20
         description: >
           Learn to answer behavioral questions, discuss AI projects, and communicate technical decisions. Master the soft skills needed for AI/ML interviews.
         topics:
           - ai
-          - machine-learning
         duration: "30:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777282/Portfolio/aiCourse/Learn_AI_eyag79.png"
         auther_name: Rahul Aher
@@ -818,12 +793,11 @@ content:
       - id: 55
         topic_name: Interview Tips and Strategies
         sub_topic: Interview Prep
-        publish_date: 2025-01-20
+        publish_date: 2026-01-20
         description: >
           Master interview strategies, time management, communication techniques, and how to stand out in AI/ML interviews at top tech companies.
         topics:
           - ai
-          - machine-learning
         duration: "30:00 mins read"
         photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758777282/Portfolio/aiCourse/Learn_AI_eyag79.png"
         auther_name: Rahul Aher

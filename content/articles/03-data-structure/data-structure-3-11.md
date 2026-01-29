@@ -1,8 +1,8 @@
 ---
 title: "Problem - IsPrime"
 description: "Master the fundamental concept of prime numbers. Learn efficient algorithms to check if a number is prime, understand the mathematics behind primality testing, and optimize your solution from O(N) to O(√N)."
-dateModified: 2025-02-08
-datePublished: 2025-02-08
+dateModified: 2026-02-08
+datePublished: 2026-02-08
 courseName: 03-data-structure
 topics:
   - data-structures

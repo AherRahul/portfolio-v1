@@ -1,31 +1,34 @@
 ---
-title: "Scope and Lexical Environment"
-description: "Scope determines where variables can be accessed in your code, while lexical environment is the internal structure that makes scope possible. Together, they form the foundation of how JavaScript resolves variable access, creates closures, and manages memory. Understanding these concepts is crucial for mastering JavaScript."
-slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-25"
-datePublished: "2025-09-25"
+title: Scope and Lexical Environment
+description: Scope determines where variables can be accessed in your code,
+  while lexical environment is the internal structure that makes scope possible.
+  Together, they form the foundation of how JavaScript resolves variable access,
+  creates closures, and manages memory. Understanding these concepts is crucial
+  for mastering JavaScript.
+slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
+dateModified: 2026-01-29
+datePublished: 2026-09-25
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
   - javascript
 resources:
-  - title: "JS course PDF - 4"
-    type: "PDF"
-    url: "https://res.cloudinary.com/duojkrgue/image/upload/v1758791648/Portfolio/javaScriptCourse/pdf/JavaScript-day4_Arguments_keyword_and_scope_chain_hdf0wc.pdf"
-    description: "A PDF Notes on Scope and Lexical Environment topic"
-  - title: "MDN - Scope"
-    type: "documentation"
-    url: "https://developer.mozilla.org/en-US/docs/Glossary/Scope"
-    description: "Official MDN documentation on JavaScript scope concepts"
-  - title: "JavaScript.info - Variable Scope and Closure"
-    type: "article"
-    url: "https://javascript.info/closure"
-    description: "Comprehensive guide to understanding scope and closures in JavaScript"
-  - title: "You Don't Know JS - Scope and Closures"
-    type: "book"
-    url: "https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/scope-closures/README.md"
-    description: "Deep dive into JavaScript scope concepts from the You Don't Know JS series"
-
+  - title: JS course PDF - 4
+    type: PDF
+    url: https://res.cloudinary.com/duojkrgue/image/upload/v1758791648/Portfolio/javaScriptCourse/pdf/JavaScript-day4_Arguments_keyword_and_scope_chain_hdf0wc.pdf
+    description: A PDF Notes on Scope and Lexical Environment topic
+  - title: MDN - Scope
+    type: documentation
+    url: https://developer.mozilla.org/en-US/docs/Glossary/Scope
+    description: Official MDN documentation on JavaScript scope concepts
+  - title: JavaScript.info - Variable Scope and Closure
+    type: article
+    url: https://javascript.info/closure
+    description: Comprehensive guide to understanding scope and closures in JavaScript
+  - title: You Don't Know JS - Scope and Closures
+    type: book
+    url: https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/scope-closures/README.md
+    description: Deep dive into JavaScript scope concepts from the You Don't Know JS series
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758809904/Portfolio/javaScriptCourse/images/5/5_pkpbj3.png)

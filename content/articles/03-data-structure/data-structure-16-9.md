@@ -2,8 +2,8 @@
 title: "Square Root of Integer using Binary Search"
 description: "Find integer square root using binary search. Master precision handling, avoid overflow, and implement efficient sqrt without library functions."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-12-24"
-datePublished: "2025-12-24"
+dateModified: "2026-12-24"
+datePublished: "2026-12-24"
 showOnArticles: false
 courseName: 03-data-structure
 topics:

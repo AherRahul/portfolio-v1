@@ -2,8 +2,8 @@
 title: "Bubble Sort Implementation and Analysis"
 description: "Master Bubble Sort algorithm with optimizations. Learn swap-based sorting, implement early termination, and understand when to use bubble sort in practice."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-12-24"
-datePublished: "2025-12-24"
+dateModified: "2026-12-24"
+datePublished: "2026-12-24"
 showOnArticles: false
 courseName: 03-data-structure
 topics:

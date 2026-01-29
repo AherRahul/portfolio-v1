@@ -1,31 +1,32 @@
 ---
-title: "Service Workers & Progressive Web Apps"
-description: "Build progressive web applications with service workers for offline functionality, background sync, and push notifications. Transform web apps into app-like experiences."
-slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-26"
-datePublished: "2025-09-26"
+title: Service Workers & Progressive Web Apps
+description: Build progressive web applications with service workers for offline
+  functionality, background sync, and push notifications. Transform web apps
+  into app-like experiences.
+slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
+dateModified: 2026-01-29
+datePublished: 2026-09-26
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
   - javascript
 resources:
-  - title: "MDN - Service Worker API"
-    type: "documentation"
-    url: "https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API"
-    description: "Complete Service Worker API reference and guides"
-  - title: "MDN - Progressive Web Apps"
-    type: "documentation"
-    url: "https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps"
-    description: "Comprehensive PWA development guide"
-  - title: "PWA Checklist"
-    type: "reference"
-    url: "https://web.dev/pwa-checklist/"
-    description: "Essential requirements for Progressive Web Apps"
-  - title: "Service Worker Cookbook"
-    type: "article"
-    url: "https://github.com/mdn/serviceworker-cookbook"
-    description: "Practical service worker patterns and recipes"
-
+  - title: MDN - Service Worker API
+    type: documentation
+    url: https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API
+    description: Complete Service Worker API reference and guides
+  - title: MDN - Progressive Web Apps
+    type: documentation
+    url: https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps
+    description: Comprehensive PWA development guide
+  - title: PWA Checklist
+    type: reference
+    url: https://web.dev/pwa-checklist/
+    description: Essential requirements for Progressive Web Apps
+  - title: Service Worker Cookbook
+    type: article
+    url: https://github.com/mdn/serviceworker-cookbook
+    description: Practical service worker patterns and recipes
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758811627/Portfolio/javaScriptCourse/images/all%20title%20images/36_cbrn79.png)

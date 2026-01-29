@@ -1,9 +1,17 @@
 ---
-title: "What is System Design?"
-description: "Systems Design is a critical discipline in software engineering, focused on creating a detailed blueprint for a system’s architecture, components, modules, interfaces, and data. It is a structured approach to designing complex systems that meet specific requirements and perform efficiently under varying conditions. The primary goal of systems design is to translate user needs, business goals, and technical constraints into a well-organized and effective system structure. Systems design bridges the gap between these requirements and the actual implementation, ensuring the system is both usable and efficient."
-slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles/what-is-system-design.md"
-dateModified: "2025-05-22"
-datePublished: "2025-05-22"
+title: What is System Design?
+description: Systems Design is a critical discipline in software engineering,
+  focused on creating a detailed blueprint for a system’s architecture,
+  components, modules, interfaces, and data. It is a structured approach to
+  designing complex systems that meet specific requirements and perform
+  efficiently under varying conditions. The primary goal of systems design is to
+  translate user needs, business goals, and technical constraints into a
+  well-organized and effective system structure. Systems design bridges the gap
+  between these requirements and the actual implementation, ensuring the system
+  is both usable and efficient.
+slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles/what-is-system-design.md
+dateModified: 2026-01-29
+datePublished: 2026-05-22
 showOnArticles: false
 courseName: 07-system-design
 topics:
@@ -212,7 +220,6 @@ Whether you’re preparing for interviews, building new systems, or improving ex
 Happy designing!
 
 
----
 
 Thank you so much for reading. If you found it valuable, consider subscribing for more such content every week. If you have any questions or suggestions, please email me your comments or feel free to improve it.
 

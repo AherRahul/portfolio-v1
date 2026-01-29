@@ -2,8 +2,8 @@
 title: "Find Peak Element using Binary Search"
 description: "Find peak element in array using binary search. Master divide-and-conquer on unsorted data, handle boundary conditions, and achieve O(log N) solution."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-12-24"
-datePublished: "2025-12-24"
+dateModified: "2026-12-24"
+datePublished: "2026-12-24"
 showOnArticles: false
 courseName: 03-data-structure
 topics:

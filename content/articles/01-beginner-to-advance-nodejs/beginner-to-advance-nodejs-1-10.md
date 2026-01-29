@@ -2,8 +2,8 @@
 title: "LibUV Thread Pool: Deep Dive"
 description: "Welcome back! If you haven’t read the previous blog about the two friends, go and check that out first because things are getting more interesting. We’ve received an official FIR against NodeJs, and when NodeJs faced trouble, it called in its two best friends for help. One of them, V8, was already investigated in our last episode. Now, it’s time to bring in the second friend: Libuv."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-04-14"
-datePublished: "2025-04-14"
+dateModified: "2026-04-14"
+datePublished: "2026-04-14"
 showOnArticles: false
 courseName: 01-beginner-to-advance-nodejs
 topics:

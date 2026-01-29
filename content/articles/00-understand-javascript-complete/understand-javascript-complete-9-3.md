@@ -1,31 +1,32 @@
 ---
-title: "Factory Pattern & Builder Pattern"
-description: "Master creational design patterns for flexible object creation. Learn factory methods, abstract factories, and builder patterns for constructing complex objects with clean, maintainable code."
-slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-26"
-datePublished: "2025-09-26"
+title: Factory Pattern & Builder Pattern
+description: Master creational design patterns for flexible object creation.
+  Learn factory methods, abstract factories, and builder patterns for
+  constructing complex objects with clean, maintainable code.
+slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
+dateModified: 2026-01-29
+datePublished: 2026-09-26
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
   - javascript
 resources:
-  - title: "Factory Pattern - GoF Design Patterns"
-    type: "reference"
-    url: "https://en.wikipedia.org/wiki/Factory_method_pattern"
-    description: "Classical Factory pattern definition and theory"
-  - title: "Builder Pattern - GoF Design Patterns"  
-    type: "reference"
-    url: "https://en.wikipedia.org/wiki/Builder_pattern"
-    description: "Builder pattern for complex object construction"
-  - title: "JavaScript Factory Functions"
-    type: "article"
-    url: "https://medium.com/javascript-scene/javascript-factory-functions-vs-constructor-functions-vs-classes-2f22ceddf33e"
-    description: "Modern approaches to object creation in JavaScript"
-  - title: "Fluent Interface Design"
-    type: "article"
-    url: "https://martinfowler.com/bliki/FluentInterface.html"
-    description: "Martin Fowler's guide to fluent interfaces"
-
+  - title: Factory Pattern - GoF Design Patterns
+    type: reference
+    url: https://en.wikipedia.org/wiki/Factory_method_pattern
+    description: Classical Factory pattern definition and theory
+  - title: Builder Pattern - GoF Design Patterns
+    type: reference
+    url: https://en.wikipedia.org/wiki/Builder_pattern
+    description: Builder pattern for complex object construction
+  - title: JavaScript Factory Functions
+    type: article
+    url: https://medium.com/javascript-scene/javascript-factory-functions-vs-constructor-functions-vs-classes-2f22ceddf33e
+    description: Modern approaches to object creation in JavaScript
+  - title: Fluent Interface Design
+    type: article
+    url: https://martinfowler.com/bliki/FluentInterface.html
+    description: Martin Fowler's guide to fluent interfaces
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758811626/Portfolio/javaScriptCourse/images/all%20title%20images/39_qbdpup.png)

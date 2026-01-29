@@ -2,8 +2,8 @@
 title: "Server-side JavaScript Injection (SSJI)"
 description: "Learn about Server-side JavaScript Injection vulnerabilities in Node.js applications. Understand attack vectors, code execution risks, and comprehensive prevention strategies for secure server-side JavaScript development."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-03-20"
-datePublished: "2025-03-20"
+dateModified: "2026-03-20"
+datePublished: "2026-03-20"
 showOnArticles: false
 courseName: 02-frontend-system-design
 topics:

@@ -1,31 +1,32 @@
 ---
-title: "Web Workers & Concurrency"
-description: "Master Web Workers and concurrent programming in JavaScript. Learn to move intensive computations off the main thread, implement parallel processing, and build responsive applications that never block the UI."
-slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-09-26"
-datePublished: "2025-09-26"
+title: Web Workers & Concurrency
+description: Master Web Workers and concurrent programming in JavaScript. Learn
+  to move intensive computations off the main thread, implement parallel
+  processing, and build responsive applications that never block the UI.
+slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
+dateModified: 2026-01-29
+datePublished: 2026-09-26
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
   - javascript
 resources:
-  - title: "Web Workers API - MDN"
-    type: "reference"
-    url: "https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API"
-    description: "Comprehensive Web Workers API documentation"
-  - title: "SharedArrayBuffer - MDN"
-    type: "reference"
-    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer"
-    description: "Shared memory between workers and main thread"
-  - title: "OffscreenCanvas API"
-    type: "reference"
-    url: "https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas"
-    description: "Canvas rendering in Web Workers"
-  - title: "Comlink Library"
-    type: "article"
-    url: "https://github.com/GoogleChromeLabs/comlink"
-    description: "Simplified communication with Web Workers"
-
+  - title: Web Workers API - MDN
+    type: reference
+    url: https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API
+    description: Comprehensive Web Workers API documentation
+  - title: SharedArrayBuffer - MDN
+    type: reference
+    url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer
+    description: Shared memory between workers and main thread
+  - title: OffscreenCanvas API
+    type: reference
+    url: https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas
+    description: Canvas rendering in Web Workers
+  - title: Comlink Library
+    type: article
+    url: https://github.com/GoogleChromeLabs/comlink
+    description: Simplified communication with Web Workers
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758811614/Portfolio/javaScriptCourse/images/all%20title%20images/46_uyspil.png)

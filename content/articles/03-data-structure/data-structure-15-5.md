@@ -2,8 +2,8 @@
 title: "Insertion Sort Implementation"
 description: "Master Insertion Sort with card-sorting analogy. Learn efficient sorting for small arrays, understand adaptive behavior, and implement stable sorting."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-12-24"
-datePublished: "2025-12-24"
+dateModified: "2026-12-24"
+datePublished: "2026-12-24"
 showOnArticles: false
 courseName: 03-data-structure
 topics:

@@ -2,8 +2,8 @@
 title: "sync, async, setTimeoutZero in NodeJs"
 description: "In the last few sessions, we have seen how NodeJs code runs. If something is synchronous, the V8 engine handles it, or in case of asynchronous tasks, libUV steps in. You can think of NodeJs having two best friends, like Jai and Veeru. Whenever a problem (or code) comes in, they handle it accordingly."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles"
-dateModified: "2025-04-11"
-datePublished: "2025-04-11"
+dateModified: "2026-04-11"
+datePublished: "2026-04-11"
 showOnArticles: false
 courseName: 01-beginner-to-advance-nodejs
 topics:
