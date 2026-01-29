@@ -100,7 +100,7 @@ function filterClient(items: any[]): any[] {
        theory and practice serves as the crucible where my understanding is honed and fortified. 
     </AppParagraph>
     <!-- Filters & search -->
-    <div class="mt-8 bg-zinc-900/60 rounded-md p-4 border border-zinc-800 hidden lg:block">
+    <!-- <div class="mt-8 bg-zinc-900/60 rounded-md p-4 border border-zinc-800 hidden lg:block">
       <div class="grid md:grid-cols-4 gap-4">
         <div>
           <label class="block text-sm text-zinc-300 mb-1">Search</label>
@@ -134,7 +134,7 @@ function filterClient(items: any[]): any[] {
           </select>
         </div>
       </div>
-    </div>
+    </div> -->
     <div class="flex flex-col gap-6 mt-8">
       <ContentList :query="query" v-slot="{ list }">
         <template v-if="filterClient(list).length">
