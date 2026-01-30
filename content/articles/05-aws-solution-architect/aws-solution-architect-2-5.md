@@ -15,7 +15,10 @@ topics:
   - system-design
   - aws
   - lld
-videoUrl: https://www.youtube.com/embed/ejZm0c_OhYM?si=_EDroaJF7rPD1dvL
+resources:
+  - title: "YouTube Video - Cloud World"
+    type: "Video"
+    url: "https://www.youtube.com/embed/ejZm0c_OhYM?si=_EDroaJF7rPD1dvL"
 ---
 
 ## AWS Fundamentals Exam Tips

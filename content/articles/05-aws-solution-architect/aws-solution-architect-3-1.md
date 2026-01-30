@@ -14,6 +14,7 @@ topics:
   - aws
   - lld
 ---
+
 ## Introduction to Cloud Computing and AWS EC2
 
 Cloud computing has revolutionized how applications and servers are managed, scaled, and deployed. This blog post delves into the fundamentals of cloud computing, focusing on AWS (Amazon Web Services), particularly EC2 (Elastic Compute Cloud) instances, their configuration, and security essentials. Whether you are a fresher or transitioning from on-premises infrastructure, this guide will equip you with the knowledge to understand cloud services and practical steps to launch and manage EC2 servers effectively.

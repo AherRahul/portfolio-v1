@@ -15,7 +15,10 @@ topics:
   - system-design
   - aws
   - lld
-videoUrl: https://www.youtube.com/embed/ULfTWvsHw20?si=O7d0O9g4OH5sZHRS
+resources:
+  - title: "YouTube Video - Cloud World"
+    type: "Video"
+    url: "https://www.youtube.com/embed/ULfTWvsHw20?si=O7d0O9g4OH5sZHRS"
 ---
 
 ## AWS Core Services: Compute, Storage, Databases, and Networking Explained
