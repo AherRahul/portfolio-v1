@@ -164,7 +164,25 @@ export default defineNuxtConfig({
       plugins: [tailwindTypography, tailwindForms],
       theme: {
         typography: typographyStyles,
+        fontSize: {
+          xs: ['11px', { lineHeight: '1rem' }],
+          sm: ['13px', { lineHeight: '1.25rem' }],
+          base: ['15px', { lineHeight: '1.5rem' }],
+          lg: ['17px', { lineHeight: '1.75rem' }],
+          xl: ['19px', { lineHeight: '1.75rem' }],
+          '2xl': ['23px', { lineHeight: '2rem' }],
+          '3xl': ['29px', { lineHeight: '2.25rem' }],
+          '4xl': ['35px', { lineHeight: '2.5rem' }],
+          '5xl': ['47px', { lineHeight: '1' }],
+          '6xl': ['59px', { lineHeight: '1' }],
+          '7xl': ['71px', { lineHeight: '1' }],
+          '8xl': ['95px', { lineHeight: '1' }],
+          '9xl': ['127px', { lineHeight: '1' }],
+        },
         extend: {
+          fontFamily: {
+            sans: ['Montserrat', 'sans-serif'],
+          },
           backgroundSize: {
             '200%': '200%'
           },
