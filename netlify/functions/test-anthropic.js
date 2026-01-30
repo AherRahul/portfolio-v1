@@ -18,7 +18,7 @@ const handler = async (event, context) => {
                 body: JSON.stringify({ message: 'Anthropic API key not configured' })
             };
         }
-        console.log('Testing Anthropic API connection...');
+        // console.log('Testing Anthropic API connection...');
         const anthropic = new sdk_1.default({
             apiKey: anthropicApiKey,
         });

@@ -136,7 +136,7 @@ Important formatting rules:
 - Mix question types evenly across the quiz
 `
 
-    console.log('Making API call to Anthropic...')
+    // console.log('Making API call to Anthropic...')
     const message = await anthropic.messages.create({
       model: 'claude-3-haiku-20240307',
       max_tokens: 4000,
@@ -146,7 +146,7 @@ Important formatting rules:
         content: prompt
       }]
     })
-    console.log('API call successful, processing response...')
+    // console.log('API call successful, processing response...')
 
     const responseText = message.content[0].type === 'text' ? message.content[0].text : ''
     
@@ -195,13 +195,13 @@ Important formatting rules:
         
         // Remove questions with unsupported types (like short-answer)
         if (!SUPPORTED_QUESTION_TYPES.includes(normalizedType)) {
-          console.log(`⚠️ Filtered out unsupported question type: ${(q as any).type}`)
+          // console.log(`⚠️ Filtered out unsupported question type: ${(q as any).type}`)
           return false
         }
         
         // Remove incomplete questions
         if (!q.question || !q.correctAnswers || !q.explanation) {
-          console.log(`⚠️ Filtered out incomplete question`)
+          // console.log(`⚠️ Filtered out incomplete question`)
           return false
         }
         
@@ -227,7 +227,7 @@ Important formatting rules:
     
     const filteredCount = quizData.questions.length
     if (filteredCount < originalCount) {
-      console.log(`Filtered out ${originalCount - filteredCount} unsupported/incomplete questions, ${filteredCount} remain`)
+      // console.log(`Filtered out ${originalCount - filteredCount} unsupported/incomplete questions, ${filteredCount} remain`)
     }
 
     // Set metadata

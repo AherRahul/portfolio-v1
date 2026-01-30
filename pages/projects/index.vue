@@ -17,7 +17,7 @@ useSeoMeta({
 defineOgImageComponent('Project')
 
 const query: QueryBuilderParams = { path: '/projects', without: ['body', 'excerpt'] }
-console.log(query)
+// console.log(query)
 </script>
 
 <template>

@@ -23,7 +23,7 @@ function fixJsonResponse(jsonStr: string): string {
   if (jsonStart > 0) {
     // Remove everything before the first {
     jsonStr = jsonStr.substring(jsonStart)
-    console.log(`Removed ${jsonStart} characters of prefix text`)
+    // console.log(`Removed ${jsonStart} characters of prefix text`)
   }
   
   // Remove any trailing comma before closing braces/brackets
@@ -146,7 +146,7 @@ export default defineEventHandler(async (event) => {
     // Initial question count - let token calculation handle the limits
     // Claude 3 Haiku can handle ~17 questions max with current token allocation
     let adjustedQuestionCount = Math.min(questionCount, 17)
-    console.log(`Quiz generation: Requested ${questionCount}, Initial adjusted to ${adjustedQuestionCount}`)
+    // console.log(`Quiz generation: Requested ${questionCount}, Initial adjusted to ${adjustedQuestionCount}`)
 
     const anthropicApiKey = useRuntimeConfig().anthropicApiKey
     if (!anthropicApiKey) {
@@ -217,9 +217,9 @@ For fill-blank questions, use type: "fill-blank" with no options array.
       const previousCount = adjustedQuestionCount
       adjustedQuestionCount = Math.min(adjustedQuestionCount, maxQuestionsForModel)
       finalMaxTokens = baseTokens + (adjustedQuestionCount * tokensPerQuestion)
-      console.log(`Token limit exceeded: Reduced from ${previousCount} to ${adjustedQuestionCount} questions (${finalMaxTokens}/${CLAUDE_HAIKU_MAX_TOKENS} tokens)`)
+      // console.log(`Token limit exceeded: Reduced from ${previousCount} to ${adjustedQuestionCount} questions (${finalMaxTokens}/${CLAUDE_HAIKU_MAX_TOKENS} tokens)`)
     } else {
-      console.log(`Token allocation OK: ${adjustedQuestionCount} questions using ${finalMaxTokens}/${CLAUDE_HAIKU_MAX_TOKENS} tokens`)
+      // console.log(`Token allocation OK: ${adjustedQuestionCount} questions using ${finalMaxTokens}/${CLAUDE_HAIKU_MAX_TOKENS} tokens`)
     }
 
     const message = await anthropic.messages.create({
@@ -235,8 +235,8 @@ For fill-blank questions, use type: "fill-blank" with no options array.
     const responseText = message.content[0].type === 'text' ? message.content[0].text : ''
     
     // Debug logging
-    console.log(`Raw response starts with: "${responseText.substring(0, 100)}..."`)
-    console.log(`Raw response ends with: "...${responseText.slice(-100)}"`)
+    // console.log(`Raw response starts with: "${responseText.substring(0, 100)}..."`)
+    // console.log(`Raw response ends with: "...${responseText.slice(-100)}"`)
     
     // Clean and parse the response
     let cleanedResponse = responseText.trim()
@@ -254,14 +254,14 @@ For fill-blank questions, use type: "fill-blank" with no options array.
     const afterCleanup = cleanedResponse.length
     
     if (beforeCleanup !== afterCleanup) {
-      console.log(`Cleanup removed ${beforeCleanup - afterCleanup} characters`)
-      console.log(`Cleaned response now starts with: "${cleanedResponse.substring(0, 50)}..."`)
+      // console.log(`Cleanup removed ${beforeCleanup - afterCleanup} characters`)
+      // console.log(`Cleaned response now starts with: "${cleanedResponse.substring(0, 50)}..."`)
     }
 
     let quizData: QuizResponse
     try {
       quizData = JSON.parse(cleanedResponse)
-      console.log('✅ Successfully parsed JSON response')
+      // console.log('✅ Successfully parsed JSON response')
     } catch (parseError) {
       console.error('❌ Failed to parse AI response:', parseError)
       console.error('Raw response length:', responseText.length)
@@ -269,12 +269,12 @@ For fill-blank questions, use type: "fill-blank" with no options array.
       console.error('Cleaned response ends with:', cleanedResponse.slice(-200))
       
       // Try to salvage partial response
-      console.log('🔄 Attempting to salvage partial JSON...')
+      // console.log('🔄 Attempting to salvage partial JSON...')
       const salvaged = salvagePartialJson(cleanedResponse)
       if (salvaged) {
         try {
           quizData = JSON.parse(salvaged)
-          console.log('✅ Successfully salvaged partial response')
+          // console.log('✅ Successfully salvaged partial response')
         } catch (salvageError) {
           console.error('❌ Salvage attempt also failed:', salvageError)
           throw createError({
@@ -304,13 +304,13 @@ For fill-blank questions, use type: "fill-blank" with no options array.
     
     // Filter out incomplete questions and ensure all questions have required fields
     const originalCount = quizData.questions.length
-    console.log(`Raw AI response contained ${originalCount} questions`)
+    // console.log(`Raw AI response contained ${originalCount} questions`)
     
     quizData.questions = quizData.questions
       .filter(q => {
         // Remove incomplete questions
         if (!q.question || !q.correctAnswers || !q.explanation) {
-          console.log(`⚠️ Filtered out incomplete question: ${q.question || 'No question text'}`)
+          // console.log(`⚠️ Filtered out incomplete question: ${q.question || 'No question text'}`)
           return false
         }
         
@@ -322,8 +322,8 @@ For fill-blank questions, use type: "fill-blank" with no options array.
         
         // Remove questions with unsupported types
         if (!SUPPORTED_QUESTION_TYPES.includes(normalizedType)) {
-          console.log(`⚠️ Filtered out unsupported question type "${(q as any).type}" (normalized: "${normalizedType}")`)
-          console.log(`   Question: ${q.question?.substring(0, 50)}...`)
+          // console.log(`⚠️ Filtered out unsupported question type "${(q as any).type}" (normalized: "${normalizedType}")`)
+          // console.log(`   Question: ${q.question?.substring(0, 50)}...`)
           return false
         }
         
@@ -362,7 +362,7 @@ For fill-blank questions, use type: "fill-blank" with no options array.
     
     const filteredCount = quizData.questions.length
     if (filteredCount < originalCount) {
-      console.log(`Filtered out ${originalCount - filteredCount} incomplete/unsupported questions, ${filteredCount} remain`)
+      // console.log(`Filtered out ${originalCount - filteredCount} incomplete/unsupported questions, ${filteredCount} remain`)
     }
 
     // Ensure we have at least some questions
@@ -379,7 +379,7 @@ For fill-blank questions, use type: "fill-blank" with no options array.
 
     // Add notification if question count was automatically reduced
     const finalQuestionCount = quizData.questions.length
-    console.log(`Successfully generated ${finalQuestionCount} quiz questions (requested: ${questionCount})`)
+    // console.log(`Successfully generated ${finalQuestionCount} quiz questions (requested: ${questionCount})`)
     
     // Include metadata about adjustments made
     const result = {

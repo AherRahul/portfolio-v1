@@ -45,7 +45,7 @@ export default defineEventHandler(async (event) => {
       path: '/'
     })
     
-    console.log('Cookie set successfully, token:', token.substring(0, 20) + '...')
+    // console.log('Cookie set successfully, token:', token.substring(0, 20) + '...')
     
     // Store token in a simple in-memory store (in production, use Redis or database)
     // This is just for demonstration

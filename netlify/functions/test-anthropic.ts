@@ -15,7 +15,7 @@ export const handler: Handler = async (event, context) => {
       }
     }
 
-    console.log('Testing Anthropic API connection...')
+    // console.log('Testing Anthropic API connection...')
     const anthropic = new Anthropic({
       apiKey: anthropicApiKey,
     })

@@ -4,7 +4,7 @@ export default defineNuxtPlugin(() => {
   
   // Immediate cleanup function
   const immediateCleanup = (reason: string) => {
-    console.log(`🔴 IMMEDIATE TTS CLEANUP: ${reason}`)
+    // console.log(`🔴 IMMEDIATE TTS CLEANUP: ${reason}`)
     stopAllReaders()
     
     // Double-check cleanup worked

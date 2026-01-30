@@ -118,7 +118,7 @@ Important: Key Points should be DIFFERENT from Takeaways:
 Return ONLY the JSON object, no additional text or formatting.
 `
 
-    console.log('Making API call to Anthropic...')
+    // console.log('Making API call to Anthropic...')
     const message = await anthropic.messages.create({
       model: 'claude-3-haiku-20240307',
       max_tokens: 3000,
@@ -128,7 +128,7 @@ Return ONLY the JSON object, no additional text or formatting.
         content: prompt
       }]
     })
-    console.log('API call successful, processing response...')
+    // console.log('API call successful, processing response...')
 
     const responseText = message.content[0].type === 'text' ? message.content[0].text : ''
     

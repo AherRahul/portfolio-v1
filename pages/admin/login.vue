@@ -38,11 +38,11 @@ async function handleLogin() {
       }
     })
     
-    console.log('Login response:', response)
+    // console.log('Login response:', response)
     
     if (response.success) {
       // Cookie is set by server
-      console.log('Login successful, redirecting to dashboard...')
+      // console.log('Login successful, redirecting to dashboard...')
       
       // Force a full page reload to ensure cookie is properly set
       window.location.href = '/admin/dashboard'

@@ -22,7 +22,7 @@ class TTSManager {
     this.isInitialized = true
 
     const cleanup = () => {
-      console.log('Global TTS cleanup triggered')
+      // console.log('Global TTS cleanup triggered')
       this.stopAllReaders()
     }
 
@@ -41,7 +41,7 @@ class TTSManager {
     })
 
     // Nuxt integration will be handled by the plugin
-    console.log('Global TTS Manager initialized')
+    // console.log('Global TTS Manager initialized')
   }
 
   registerReader(stopFunction: () => void): () => void {
@@ -54,7 +54,7 @@ class TTSManager {
   }
 
   stopAllReaders() {
-    console.log(`Stopping ${this.activeReaders.size} active TTS readers`)
+    // console.log(`Stopping ${this.activeReaders.size} active TTS readers`)
     
     // Stop all registered readers
     this.activeReaders.forEach(stopFn => {
@@ -70,7 +70,7 @@ class TTSManager {
     try {
       if (typeof window !== 'undefined' && window.speechSynthesis) {
         window.speechSynthesis.cancel()
-        console.log('Forced browser TTS cancellation')
+        // console.log('Forced browser TTS cancellation')
       }
     } catch (error) {
       console.warn('Error forcing browser TTS stop:', error)
@@ -83,7 +83,7 @@ class TTSManager {
         if (!audio.paused) {
           audio.pause()
           audio.currentTime = 0
-          console.log('Stopped orphaned audio element')
+          // console.log('Stopped orphaned audio element')
         }
       })
     } catch (error) {

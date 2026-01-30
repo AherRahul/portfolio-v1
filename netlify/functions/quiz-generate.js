@@ -119,7 +119,7 @@ Important:
 - All questions must be directly related to the provided content
 - Ensure JSON is valid and properly formatted
 `;
-        console.log('Making API call to Anthropic...');
+        // console.log('Making API call to Anthropic...');
         const message = await anthropic.messages.create({
             model: 'claude-3-haiku-20240307',
             max_tokens: 4000,
@@ -129,7 +129,7 @@ Important:
                     content: prompt
                 }]
         });
-        console.log('API call successful, processing response...');
+        // console.log('API call successful, processing response...');
         const responseText = message.content[0].type === 'text' ? message.content[0].text : '';
         // Clean and parse the response
         let cleanedResponse = responseText.trim();

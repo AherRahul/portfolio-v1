@@ -152,9 +152,9 @@ const fieldDefinitions = computed(() => {
 // Initialize fields when editor opens
 watch(showEditor, (isOpen) => {
   if (isOpen) {
-    console.log('Opening editor with frontmatter:', parsedFrontmatter.value)
-    console.log('Content type:', props.contentType)
-    console.log('File path:', props.filePath)
+    // console.log('Opening editor with frontmatter:', parsedFrontmatter.value)
+    // console.log('Content type:', props.contentType)
+    // console.log('File path:', props.filePath)
     
     // Pre-fill with existing values or defaults
     const defaults: Record<string, any> = {}
@@ -170,11 +170,11 @@ watch(showEditor, (isOpen) => {
         } else if (field.type === 'topics-multi-select' && Array.isArray(existingValue)) {
           // Keep as array for multi-select
           defaults[field.key] = [...existingValue]
-          console.log('Topics loaded:', existingValue)
+          // console.log('Topics loaded:', existingValue)
         } else if (field.type === 'resources' && Array.isArray(existingValue)) {
           // Keep resources as array
           defaults[field.key] = [...existingValue]
-          console.log('Resources loaded:', existingValue)
+          // console.log('Resources loaded:', existingValue)
         } else if (field.type === 'boolean') {
           // Ensure boolean values
           defaults[field.key] = !!existingValue
@@ -213,7 +213,7 @@ watch(showEditor, (isOpen) => {
       }
     }
     
-    console.log('Initialized fields:', defaults)
+    // console.log('Initialized fields:', defaults)
     frontmatterFields.value = defaults
   }
 })

@@ -117,7 +117,7 @@ function setActiveTab(tabId: string) {
       // Update UI to show actual quiz settings from cache
       quizDifficulty.value = cached.metadata.difficulty as 'easy' | 'medium' | 'hard'
       quizQuestionCount.value = cached.metadata.questionCount
-      console.log('🎯 Auto-loaded existing quiz on tab activation')
+      // console.log('🎯 Auto-loaded existing quiz on tab activation')
     }
   }
 }
@@ -127,13 +127,13 @@ async function generateSummary() {
   const cached = getCachedSummary(props.content, props.topicTitle)
   if (cached) {
     summaryData.value = cached.data
-    console.log('📋 Using cached summary from:', cached.metadata.createdAt)
+    // console.log('📋 Using cached summary from:', cached.metadata.createdAt)
     return
   }
 
   // Prevent generation if summary already exists
   if (hasExistingSummary(props.content, props.topicTitle)) {
-    console.log('📋 Summary already exists, skipping generation')
+    // console.log('📋 Summary already exists, skipping generation')
     return
   }
 
@@ -157,7 +157,7 @@ async function generateSummary() {
     
     // Cache the new summary
     setCachedSummary(props.content, props.topicTitle, responseData, props.difficulty)
-    console.log('💾 Generated and cached new summary')
+    // console.log('💾 Generated and cached new summary')
     
   } catch (err: any) {
     summaryError.value = err.data?.message || 'Failed to generate summary. Please try again.'
@@ -177,7 +177,7 @@ async function downloadSummary() {
       // For mobile, show a brief success message
       setTimeout(() => {
         // You could implement a toast notification here
-        console.log('PDF download initiated for mobile device')
+        // console.log('PDF download initiated for mobile device')
       }, 500)
     }
   } catch (error) {
@@ -201,7 +201,7 @@ async function generateQuiz() {
     // Update UI to show actual quiz settings from cache
     quizDifficulty.value = cached.metadata.difficulty as 'easy' | 'medium' | 'hard'
     quizQuestionCount.value = cached.metadata.questionCount
-    console.log('🎯 Using cached quiz from:', cached.metadata.createdAt)
+    // console.log('🎯 Using cached quiz from:', cached.metadata.createdAt)
     return
   }
 
@@ -235,11 +235,11 @@ async function generateQuiz() {
       quizQuestionCount.value,
       responseData.metadata?.requestedQuestions || quizQuestionCount.value
     )
-    console.log('💾 Generated and cached new quiz')
+    // console.log('💾 Generated and cached new quiz')
     
     // Show notification if question count was adjusted
     if (responseData.metadata?.questionCountAdjusted) {
-      console.log(`Quiz generated with ${responseData.metadata.actualQuestions} questions (requested ${responseData.metadata.requestedQuestions})`)
+      // console.log(`Quiz generated with ${responseData.metadata.actualQuestions} questions (requested ${responseData.metadata.requestedQuestions})`)
       
       // Store the adjustment info for user notification
       if (responseData.metadata.actualQuestions < responseData.metadata.requestedQuestions) {
@@ -286,7 +286,7 @@ async function downloadQuizResults() {
       (quizCompletionData.value.userAnswers || []) as any,
       quizCompletionData.value.score || 0
     )
-    console.log('📄 Quiz results PDF downloaded')
+    // console.log('📄 Quiz results PDF downloaded')
   } catch (error) {
     console.error('Error downloading quiz results PDF:', error)
   } finally {
@@ -312,7 +312,7 @@ function handleQuizCompletion(completionData: { score: number, userAnswers: any[
       ...completionData
     }
     
-    console.log('✅ Quiz completion recorded:', `${completionData.score}%`)
+    // console.log('✅ Quiz completion recorded:', `${completionData.score}%`)
   }
 }
 
@@ -330,7 +330,7 @@ function resetQuizForRetake() {
       { score: 0, userAnswers: [], totalQuestions: 0 } // Reset completion
     )
     
-    console.log('🔄 Quiz reset for retaking')
+    // console.log('🔄 Quiz reset for retaking')
   }
 }
 

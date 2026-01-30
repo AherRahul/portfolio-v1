@@ -43,7 +43,7 @@ export const useApiEndpoints = () => {
       // If direct function call fails, try the redirect URL as fallback
       if (url.includes('/.netlify/functions/')) {
         const fallbackUrl = endpoint // Original endpoint with redirect
-        console.log(`Retrying with fallback URL: ${fallbackUrl}`)
+        // console.log(`Retrying with fallback URL: ${fallbackUrl}`)
         return await $fetch(fallbackUrl, {
           ...options,
           timeout: 30000,

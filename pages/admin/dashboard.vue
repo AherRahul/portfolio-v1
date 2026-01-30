@@ -7,7 +7,7 @@ definePageMeta({
 
 const router = useRouter()
 
-console.log('Dashboard component loading...')
+// console.log('Dashboard component loading...')
 
 // Fetch content statistics with error handling
 const { data: stats, error: statsError } = await useAsyncData('admin-stats', () => 
@@ -22,8 +22,8 @@ if (statsError.value) {
 }
 
 onMounted(() => {
-  console.log('Dashboard mounted successfully')
-  console.log('Stats:', stats.value)
+  // console.log('Dashboard mounted successfully')
+  // console.log('Stats:', stats.value)
 })
 
 async function handleLogout() {

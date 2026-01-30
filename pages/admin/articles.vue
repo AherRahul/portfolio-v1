@@ -116,7 +116,7 @@ async function handleDelete() {
             action: 'remove'
           }
         })
-        console.log(`Removed ${articleSlug} from course ${selectedCourse.value}`)
+        // console.log(`Removed ${articleSlug} from course ${selectedCourse.value}`)
       } catch (err) {
         console.error('Failed to update course modules:', err)
         // Continue with deletion even if module update fails
@@ -214,7 +214,7 @@ Start writing your article content here...`
             action: 'add'
           }
         })
-        console.log(`Added ${articleSlug} to course ${selectedCourse.value}`)
+        // console.log(`Added ${articleSlug} to course ${selectedCourse.value}`)
       } catch (err) {
         console.error('Failed to update course modules:', err)
         alert('Article created but failed to update course modules. Please add it manually.')

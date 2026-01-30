@@ -151,7 +151,7 @@ function getCourseProgressStorage(): CourseProgressStorage {
 function saveCourseProgressStorage(storage: CourseProgressStorage): void {
   try {
     localStorage.setItem(COURSE_PROGRESS_KEY, JSON.stringify(storage))
-    console.log('💾 Saved course progress storage')
+    // console.log('💾 Saved course progress storage')
   } catch (error) {
     console.error('Error saving course progress storage:', error)
   }
@@ -167,7 +167,7 @@ function getCourseData(content: string, topicTitle: string): CourseData {
     
     // Check if content has changed
     if (existing.contentHash !== currentHash) {
-      console.log('🔄 Content changed, clearing old progress for:', topicTitle)
+      // console.log('🔄 Content changed, clearing old progress for:', topicTitle)
       // Content changed, start fresh
       const newCourse: CourseData = {
         courseId: topicTitle.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-'),
@@ -203,7 +203,7 @@ function saveCourseData(courseData: CourseData): void {
   courseData.lastUpdated = new Date().toISOString()
   storage.courses[courseData.topicTitle] = courseData
   saveCourseProgressStorage(storage)
-  console.log('💾 Saved course data for:', courseData.topicTitle)
+  // console.log('💾 Saved course data for:', courseData.topicTitle)
 }
 
 // Summary caching functions (updated to use single storage)
@@ -213,7 +213,7 @@ export function getCachedSummary(content: string, topicTitle: string): CachedSum
     
     if (!courseData.summary) return null
     
-    console.log('📋 Found cached summary:', courseData.summary.metadata.createdAt)
+    // console.log('📋 Found cached summary:', courseData.summary.metadata.createdAt)
     
     // Convert to legacy format for compatibility
     return {
@@ -244,7 +244,7 @@ export function setCachedSummary(content: string, topicTitle: string, summaryDat
     }
     
     saveCourseData(courseData)
-    console.log('💾 Cached summary for:', topicTitle)
+    // console.log('💾 Cached summary for:', topicTitle)
   } catch (error) {
     console.error('Error caching summary:', error)
   }
@@ -296,7 +296,7 @@ export function setCachedQuiz(content: string, topicTitle: string, quizData: any
     }
     
     saveCourseData(courseData)
-    console.log('💾 Cached quiz for:', topicTitle, `(${quizData.length} questions)`)
+    // console.log('💾 Cached quiz for:', topicTitle, `(${quizData.length} questions)`)
   } catch (error) {
     console.error('Error caching quiz:', error)
   }
@@ -315,14 +315,14 @@ export function updateQuizCompletion(content: string, topicTitle: string, diffic
     // If score is 0 and no answers, remove completion (for retaking)
     if (completionData.score === 0 && completionData.userAnswers.length === 0) {
       delete courseData.quiz.completion
-      console.log('🔄 Reset quiz completion for retaking:', topicTitle)
+      // console.log('🔄 Reset quiz completion for retaking:', topicTitle)
     } else {
       courseData.quiz.completion = {
         completed: true,
         completedAt: new Date().toISOString(),
         ...completionData
       }
-      console.log('✅ Updated quiz completion:', topicTitle, `${completionData.score}%`)
+      // console.log('✅ Updated quiz completion:', topicTitle, `${completionData.score}%`)
     }
     
     saveCourseData(courseData)
@@ -352,7 +352,7 @@ export function clearContentCache(content: string, topicTitle: string): void {
       }
     })
     
-    console.log('🗑️ Cleared all caches for:', topicTitle)
+    // console.log('🗑️ Cleared all caches for:', topicTitle)
   } catch (error) {
     console.error('Error clearing content cache:', error)
   }

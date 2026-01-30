@@ -60,9 +60,9 @@ export default defineEventHandler(async (event) => {
     let filteredCount = 0
     const errors: Array<{ file: string; error: string }> = []
     
-    console.log(`[Bulk Update] Processing ${files.length} files in ${type}`)
-    console.log(`[Bulk Update] Filters:`, filters)
-    console.log(`[Bulk Update] Updates:`, updates)
+    // console.log(`[Bulk Update] Processing ${files.length} files in ${type}`)
+    // console.log(`[Bulk Update] Filters:`, filters)
+    // console.log(`[Bulk Update] Updates:`, updates)
 
     let debugLogCount = 0
     let filesWithoutFrontmatter = 0
@@ -78,8 +78,8 @@ export default defineEventHandler(async (event) => {
         if (!match) {
           filesWithoutFrontmatter++
           if (filesWithoutFrontmatter === 1) {
-            console.log('[Bulk Update Debug] First file without frontmatter:', filePath)
-            console.log('[Bulk Update Debug] First 200 chars:', content.substring(0, 200))
+            // console.log('[Bulk Update Debug] First file without frontmatter:', filePath)
+            // console.log('[Bulk Update Debug] First 200 chars:', content.substring(0, 200))
           }
           continue
         }
@@ -93,19 +93,19 @@ export default defineEventHandler(async (event) => {
         } catch (e) {
           filesWithParseError++
           if (filesWithParseError === 1) {
-            console.log('[Bulk Update Debug] First file with parse error:', filePath)
-            console.log('[Bulk Update Debug] Error:', e)
+            // console.log('[Bulk Update Debug] First file with parse error:', filePath)
+            // console.log('[Bulk Update Debug] Error:', e)
           }
           continue
         }
 
         // Debug: Log first file to see structure
         if (debugLogCount === 0) {
-          console.log('[Bulk Update Debug] First successfully parsed file:')
-          console.log('  - Path:', filePath)
-          console.log('  - Filters object:', JSON.stringify(filters))
-          console.log('  - Filters.courseName:', filters?.courseName)
-          console.log('  - Frontmatter courseName:', frontmatter.courseName)
+          // console.log('[Bulk Update Debug] First successfully parsed file:')
+          // console.log('  - Path:', filePath)
+          // console.log('  - Filters object:', JSON.stringify(filters))
+          // console.log('  - Filters.courseName:', filters?.courseName)
+          // console.log('  - Frontmatter courseName:', frontmatter.courseName)
           debugLogCount++
         }
 
@@ -124,9 +124,9 @@ export default defineEventHandler(async (event) => {
           // Filter by courseName (check folder path, frontmatter, and filename)
           if (filters.courseName) {
             if (debugLogCount === 1) {
-              console.log('[Bulk Update Debug] Entering courseName filter')
-              console.log('  - Looking for course:', filters.courseName)
-              console.log('  - Type:', type)
+              // console.log('[Bulk Update Debug] Entering courseName filter')
+              // console.log('  - Looking for course:', filters.courseName)
+              // console.log('  - Type:', type)
               debugLogCount++
             }
             
@@ -146,12 +146,12 @@ export default defineEventHandler(async (event) => {
             
             // Debug logging for first 3 matching files
             if (filteredCount < 3 && (hasCourseName || inCourseFolder || fileMatchesCourse)) {
-              console.log(`[Bulk Update Debug] Matching File #${filteredCount + 1}: ${fileName}`)
-              console.log(`  - hasCourseName: ${hasCourseName} (frontmatter.courseName="${frontmatter.courseName}")`)
-              console.log(`  - inCourseFolder: ${inCourseFolder}`)
-              console.log(`  - courseNameWithoutIndex: "${courseNameWithoutIndex}"`)
-              console.log(`  - fileMatchesCourse: ${fileMatchesCourse}`)
-              console.log(`  - Full path: ${filePath}`)
+              // console.log(`[Bulk Update Debug] Matching File #${filteredCount + 1}: ${fileName}`)
+              // console.log(`  - hasCourseName: ${hasCourseName} (frontmatter.courseName="${frontmatter.courseName}")`)
+              // console.log(`  - inCourseFolder: ${inCourseFolder}`)
+              // console.log(`  - courseNameWithoutIndex: "${courseNameWithoutIndex}"`)
+              // console.log(`  - fileMatchesCourse: ${fileMatchesCourse}`)
+              // console.log(`  - Full path: ${filePath}`)
             }
             
             // File must be in course folder OR have matching courseName OR match filename pattern
@@ -228,10 +228,10 @@ export default defineEventHandler(async (event) => {
       }
     }
 
-    console.log(`[Bulk Update] Result: ${updatedCount} updated, ${filteredCount} matched filters, ${files.length} total`)
-    console.log(`[Bulk Update] Files without frontmatter: ${filesWithoutFrontmatter}`)
-    console.log(`[Bulk Update] Files with parse errors: ${filesWithParseError}`)
-    console.log(`[Bulk Update] Files successfully parsed: ${files.length - filesWithoutFrontmatter - filesWithParseError}`)
+    // console.log(`[Bulk Update] Result: ${updatedCount} updated, ${filteredCount} matched filters, ${files.length} total`)
+    // console.log(`[Bulk Update] Files without frontmatter: ${filesWithoutFrontmatter}`)
+    // console.log(`[Bulk Update] Files with parse errors: ${filesWithParseError}`)
+    // console.log(`[Bulk Update] Files successfully parsed: ${files.length - filesWithoutFrontmatter - filesWithParseError}`)
     
     return {
       success: true,

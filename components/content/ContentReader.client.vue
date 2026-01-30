@@ -54,13 +54,13 @@ let unregisterFromManager: (() => void) | null = null
 
 // Event handlers for cleanup (defined at module level for proper cleanup)
 const handlePageUnload = (event: Event) => {
-  console.log('Page unload detected, stopping TTS playback')
+  // console.log('Page unload detected, stopping TTS playback')
   stopAllPlayback()
 }
 
 const handleVisibilityChange = () => {
   if (document.hidden && isPlaying.value) {
-    console.log('Page hidden, stopping TTS playback')
+    // console.log('Page hidden, stopping TTS playback')
     stopAllPlayback()
   }
 }
@@ -175,7 +175,7 @@ function loadVoices() {
         selectedVoice.value = (anyHindi || enVoice || voices.value[0])?.name || ''
       }
 
-      console.log('Voice selected:', selectedVoice.value, 'Platform:', isIOS ? 'iOS' : isMobile ? 'Mobile' : 'Desktop')
+      // console.log('Voice selected:', selectedVoice.value, 'Platform:', isIOS ? 'iOS' : isMobile ? 'Mobile' : 'Desktop')
       
       // Debug: Log available voices on mobile for troubleshooting
       if (isMobile) {
@@ -223,7 +223,7 @@ function stopAllPlayback() {
   isCleaningUp = true
   
   try {
-    console.log('🛑 ContentReader: Stopping all playback')
+    // console.log('🛑 ContentReader: Stopping all playback')
     
     // Stop browser TTS aggressively
     if (typeof window !== 'undefined' && window.speechSynthesis) {
@@ -265,7 +265,7 @@ function stopAllPlayback() {
     // Clear highlights
     clearHighlights()
     
-    console.log('✅ ContentReader: All TTS playback stopped and cleaned up')
+    // console.log('✅ ContentReader: All TTS playback stopped and cleaned up')
   } catch (error) {
     console.warn('❌ Error during TTS cleanup:', error)
   } finally {
@@ -786,9 +786,9 @@ onMounted(async () => {
   const googleAvailable = await checkGoogleTTSAvailability()
   if (googleAvailable) {
     useGoogleTTS.value = true
-    console.log('Google Cloud TTS is available and enabled')
+    // console.log('Google Cloud TTS is available and enabled')
   } else {
-    console.log('Using browser TTS as fallback')
+    // console.log('Using browser TTS as fallback')
   }
 
   // Initialize content
@@ -880,7 +880,7 @@ if (process.client) {
   // Watch route changes
   watch(() => route.path, (newPath, oldPath) => {
     if (oldPath && newPath !== oldPath) {
-      console.log(`🔄 Route changed from ${oldPath} to ${newPath}, stopping TTS`)
+      // console.log(`🔄 Route changed from ${oldPath} to ${newPath}, stopping TTS`)
       stopAllPlayback()
       
       // Also trigger global cleanup
