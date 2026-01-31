@@ -7,8 +7,8 @@ description: Consistency and standards are important for building a unified
   our solutions.
 tutor: 1
 slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles/aws-solution-architect-exam-guide.md
-dateModified: 2026-01-29
-datePublished: 2026-05-22
+dateModified: 2026-01-31
+datePublished: 2026-01-31
 showOnArticles: false
 courseName: 05-aws-solution-architect
 topics:
@@ -18,7 +18,10 @@ topics:
 resources:
   - title: "YouTube Video - Cloud World"
     type: "Video"
-    url: "https://www.youtube.com/embed/izQlU1sZkNg?si=q_GceoOp1N6nWdNZ"
+    url: "https://youtu.be/izQlU1sZkNg?si=Q_anh7GVoEpbcbzf"
+  - title: "Notes"
+    type: "Documents"
+    url: "https://arkalim.notion.site/Notes-143374c83daa4d4991b07400056a2aa9"
 ---
 
 ## Understanding Ownership and Responsibility in Cloud Computing
@@ -38,6 +41,8 @@ These terms will be unpacked in the sections that follow.
 
 ### Analogizing Cloud Responsibility with Renting a Car
 
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1769850847/Portfolio/awsCourse/02/19671a87-a368-40b9-bf32-7a275d36735a.png)
+
 To grasp the shared responsibility concept, consider the analogy of renting a car:  
 - The **renter’s responsibilities** include:  
   - Operating the car safely (e.g., not damaging it)  
@@ -56,6 +61,8 @@ This analogy highlights how responsibility is divided between the **provider’s
 
 
 ### The Cloud Provider’s Responsibilities (Security **of** the Cloud)
+
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1769850961/Portfolio/awsCourse/02/1ac39f4b-376e-427b-9cf7-7dbe504b7dfd.png)
 
 Amazon Web Services (AWS), like other cloud providers, is accountable for securing the **physical and foundational layers** of the cloud infrastructure. This includes:  
 - The **physical security** of data centers, which are protected by:  
@@ -99,6 +106,8 @@ This section underscores that while AWS provides the infrastructure, customers m
 
 
 ### Practical Exam Tips and Responsibility Identification
+
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1769851076/Portfolio/awsCourse/02/cd22325a-71fd-4e85-afd4-3ace806c877b.png)
 
 When preparing for AWS exams or applying cloud security in practice, a key heuristic to determine responsibility is:  
 **"Can I configure or control this through the AWS Management Console?"**  

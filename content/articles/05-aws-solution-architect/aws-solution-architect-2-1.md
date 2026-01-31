@@ -1,10 +1,10 @@
 ---
-title: "The Evolution and Global Infrastructure of AWS Cloud"
+title: "The Evolution & Global Infrastructure of AWS Cloud"
 description: AWS has transformed from an internal Amazon tool into the world’s leading cloud platform. Its global infrastructure—comprising regions, availability zones, and edge locations—provides unparalleled scalability, reliability, and geographic reach. The platform’s extensive service catalog supports nearly any application, empowering industries from entertainment to science.
 tutor: 1
 slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles/aws-solution-architect-exam-guide.md
-dateModified: 2026-01-29
-datePublished: 2026-05-22
+dateModified: 2026-01-31
+datePublished: 2026-01-31
 showOnArticles: false
 courseName: 05-aws-solution-architect
 topics:
@@ -14,7 +14,10 @@ topics:
 resources:
   - title: "YouTube Video - Cloud World"
     type: "Video"
-    url: "https://www.youtube.com/embed/SVW2HBZ3QNA?si=TsD1JykWf5LYzBil"
+    url: "https://youtu.be/SVW2HBZ3QNA?si=RbOQxymPdbOEeI-l"
+  - title: "Notes"
+    type: "Documents"
+    url: "https://arkalim.notion.site/Notes-143374c83daa4d4991b07400056a2aa9"
 ---
 
 ## The Evolution and Global Infrastructure of AWS Cloud

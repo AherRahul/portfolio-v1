@@ -209,3 +209,5 @@ A: You may lose SSH access; recovery involves detaching storage and fixing firew
 <br />
 
 This comprehensive overview equips you with the foundational knowledge to start your cloud computing journey confidently with AWS EC2. Happy learning!
+
+Thank you so much for reading. 

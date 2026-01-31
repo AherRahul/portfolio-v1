@@ -1,5 +1,5 @@
 ---
-title: Introduction to AWS Certified Developer Associate Course
+title: AWS Certified Developer Associate Course
 description: Consistency and standards are important for building a unified
   design language and help the user know what to expect from our product and how
   to use it. However, this does not mean sacrificing the user experience. In
@@ -7,7 +7,7 @@ description: Consistency and standards are important for building a unified
   our solutions.
 slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles/aws-solution-architect-exam-guide.md
 dateModified: 2026-01-29
-datePublished: 2026-05-22
+datePublished: 2026-01-29
 topics:
   - system-design
   - aws
@@ -15,6 +15,13 @@ topics:
 tutor: 1
 showOnArticles: false
 courseName: 05-aws-solution-architect
+resources:
+  - title: "AWS Certified Developer - Associate"
+    type: "Article"
+    url: "https://aws.amazon.com/certification/certified-developer-associate/"
+  - title: "Notes"
+    type: "Documents"
+    url: "https://arkalim.notion.site/Notes-143374c83daa4d4991b07400056a2aa9"
 ---
 
 ## Introduction to AWS Certified Developer Associate Course

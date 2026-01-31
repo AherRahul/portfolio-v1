@@ -142,7 +142,7 @@ const latestArticles = computed<ArticlePreview[]>(() => (articles.value as unkno
             src="/img/rahul-main.png" 
             alt="Photo of Rahul Aher"
             class="z-20 relative w-full h-auto object-cover"
-            style="min-height: 849px; max-height: 710px; min-width: 400px;"
+            style="min-height: 872px; max-height: 710px; min-width: 400px;"
             loading="lazy"
           />
         </div>
