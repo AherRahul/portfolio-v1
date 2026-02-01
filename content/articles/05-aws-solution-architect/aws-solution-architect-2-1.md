@@ -20,8 +20,6 @@ resources:
     url: "https://arkalim.notion.site/Notes-143374c83daa4d4991b07400056a2aa9"
 ---
 
-## The Evolution and Global Infrastructure of AWS Cloud
-
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png)
 
 ### Introduction: Understanding AWS Cloud and Its Significance

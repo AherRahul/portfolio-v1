@@ -74,13 +74,13 @@ Key insights:
 
 ### Hands-On Example – Managing User Permissions
 
-A practical walkthrough was provided to illustrate permission management using a user named **Stephane**:
+A practical walkthrough was provided to illustrate permission management using a user named **Rahul**:
 
-- Initially, Stephane belongs to an **admin group** with administrator access, allowing full control over AWS resources.  
-- Removing Stephane from the admin group immediately revokes these permissions, resulting in an **Access Denied** error when attempting to list users (`iamListUsers`).  
-- Permissions were restored by attaching the **IAMReadOnlyAccess** managed policy directly to Stephane. This policy grants read-only access to IAM resources but restricts modification capabilities.  
+- Initially, Rahul belongs to an **admin group** with administrator access, allowing full control over AWS resources.  
+- Removing Rahul from the admin group immediately revokes these permissions, resulting in an **Access Denied** error when attempting to list users (`iamListUsers`).  
+- Permissions were restored by attaching the **IAMReadOnlyAccess** managed policy directly to Rahul. This policy grants read-only access to IAM resources but restricts modification capabilities.  
 - Attempts to create a new group (e.g., `developers`) while having only read-only access failed, demonstrating fine-grained control of permissions.  
-- Re-adding Stephane to the admin group restored full administrator privileges, illustrating how group membership affects effective permissions.
+- Re-adding Rahul to the admin group restored full administrator privileges, illustrating how group membership affects effective permissions.
 
 Important takeaways:  
 - Permission revocation is immediate upon removing group membership or policies.  
@@ -130,7 +130,7 @@ Advantages:
 The final steps included housekeeping best practices:
 
 - Deleting unused groups (e.g., the `developers` group) to avoid permission sprawl.  
-- Removing directly attached policies when they are no longer needed (e.g., removing `IAMReadOnlyAccess` from Stephane).  
+- Removing directly attached policies when they are no longer needed (e.g., removing `IAMReadOnlyAccess` from Rahul).  
 - Ensuring users belong only to relevant groups to maintain clear and manageable permission sets.
 
 This practice helps maintain security hygiene and reduces the risk of unintended permissions.

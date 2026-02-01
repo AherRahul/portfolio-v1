@@ -24,11 +24,9 @@ resources:
     url: "https://arkalim.notion.site/Notes-143374c83daa4d4991b07400056a2aa9"
 ---
 
-## Introduction to AWS Certified Developer Associate Course
-
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1769797069/Portfolio/awsCourse/01/610f47d6-3b28-4902-b972-21666b12f6f8.png)
 
-The **AWS Certified Developer Associate** course is designed to prepare learners for the **DVA-C02 certification**, a challenging yet highly valuable credential in the field of cloud computing. The course is led by Stephane Maarek, an experienced instructor who emphasizes a structured, step-by-step approach to mastering AWS services. This vides an overview of the course’s objectives, significance, and foundational concepts essential for understanding the AWS ecosystem.
+The **AWS Certified Developer Associate** course is designed to prepare learners for the **DVA-C02 certification**, a challenging yet highly valuable credential in the field of cloud computing. The course is led by Rahul Aher, an experienced instructor who emphasizes a structured, step-by-step approach to mastering AWS services. This blog is an overview of the course’s objectives, significance, and foundational concepts essential for understanding the AWS ecosystem.
 
 - The course targets both beginners and those with some prior IT or AWS experience, offering a comprehensive introduction to over **30 AWS services**.
 - It encourages a **hands-on learning style**, highlighting that while coding skills are beneficial, they are not mandatory for passing the developer exam.

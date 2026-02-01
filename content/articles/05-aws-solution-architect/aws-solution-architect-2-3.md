@@ -24,13 +24,11 @@ resources:
     url: "https://arkalim.notion.site/Notes-143374c83daa4d4991b07400056a2aa9"
 ---
 
-## AWS Core Services: Compute, Storage, Databases, and Networking Explained
-
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png)
 
 #### Introduction: Understanding the Core Components of AWS Architecture  
  
-This chapter introduces the **four fundamental components** essential for mastering the AWS Solutions Architect Associate exam: **Compute, Storage, Databases, and Networking**. These core services represent the backbone of AWS cloud infrastructure and knowledge of these areas significantly streamlines exam preparation. The lecture emphasizes that despite the broad range of AWS services, most can be categorized into these four groups, making it easier for learners to organize their study.  
+This chapter introduces the **four fundamental components** essential for mastering the AWS Developer Associate exam: **Compute, Storage, Databases, and Networking**. These core services represent the backbone of AWS cloud infrastructure and knowledge of these areas significantly streamlines exam preparation. The lecture emphasizes that despite the broad range of AWS services, most can be categorized into these four groups, making it easier for learners to organize their study.  
 - **Key Vocabulary and Concepts:**  
   - **Compute:** Processing power for applications (servers, virtual machines, serverless).  
   - **Storage:** Cloud-based data retention (disks, file systems, block storage).  
