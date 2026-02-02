@@ -18,7 +18,12 @@ const hovered = ref(false)
     <span v-show="filename" class="absolute top-0 right-0 px-2 py-3 font-mono rounded-lg text-xs leading-normal transition-opacity duration-200 backdrop-blur group-hover:opacity-0 mt-1 mr-1">
       {{ filename }}
     </span>
-    <slot />
+    <ClientOnly>
+      <MonacoCode :code="code" :language="language" />
+      <template #fallback>
+        <slot />
+      </template>
+    </ClientOnly>
 
     <ProseCodeCopyButton :content="code" />
   </div>
