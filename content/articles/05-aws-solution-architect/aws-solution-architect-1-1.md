@@ -30,10 +30,9 @@ The **AWS Certified Developer Associate** course is designed to prepare learners
 
 - The course targets both beginners and those with some prior IT or AWS experience, offering a comprehensive introduction to over **30 AWS services**.
 - It encourages a **hands-on learning style**, highlighting that while coding skills are beneficial, they are not mandatory for passing the developer exam.
-- Learners who have previously earned the **Certified Solutions Architect** credential are advised not to skip foundational sections, as these review core AWS concepts that underpin the developer certification.
 - The course aims to demystify AWS, often described as a complex "spaghetti ball" of services, by guiding learners through the critical components necessary for certification success.
 
-###  Understanding AWS and Its Importance
+###  Understanding AWS and It's Importance
 
 At the core of this course is AWS itself, which stands for **Amazon Web Services**, a leading **cloud provider** offering scalable, on-demand computing resources. AWS’s revolutionary impact on IT infrastructure is a key focus, illustrating why proficiency in AWS is a valuable skill in today’s technology landscape.
 
@@ -56,7 +55,6 @@ The course is structured to progressively build knowledge, starting with fundame
 While the course welcomes beginners, some prior knowledge can enhance the learning experience. The instructor provides guidance on who should take the course and how to approach the material effectively.
 
 - No prior development experience is strictly required, but familiarity with coding can be advantageous.
-- For those who have already earned the **Certified Solutions Architect** certification, it is recommended to review all sections carefully rather than skipping content, as foundational knowledge is crucial.
 - The course is tailored to accommodate a diverse range of learners, from novices to experienced IT professionals seeking to expand their AWS expertise.
 
 ### Challenges and Opportunities in AWS Certification

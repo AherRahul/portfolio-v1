@@ -21,6 +21,8 @@ resources:
 
 Identity and Access Management (**IAM**) policies are fundamental to managing **permissions** and **access control** within the Amazon Web Services (**AWS**) ecosystem. These policies define the **actions** users or groups can perform on specific **resources**, ensuring security, compliance, and operational efficiency. Understanding the structure and application of IAM policies is crucial for AWS administrators and developers alike, as it directly influences the ability to control access to sensitive services and data.
 
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770016214/Portfolio/awsCourse/03/03/e810689e-6fd0-4b58-86bd-0ec6885dbbeb.png)
+
 Key vocabulary and concepts introduced in this chapter include:  
 - **IAM Policy**: A document that defines permissions for users, groups, or roles.  
 - **User**: An individual identity within AWS.  
@@ -39,6 +41,8 @@ This chapter explores the application of IAM policies at various levels, the str
 
 IAM policies can be attached at multiple layers within AWS, influencing how permissions propagate:
 
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770016240/Portfolio/awsCourse/03/03/94d9f972-c781-45fe-818f-7905f5286686.png)
+
 - **Group-Level Policies**: When a policy is attached to a group (e.g., developers group containing Alice, Bob, and Charles), all members inherit the permissions defined by that policy.  
 - **Multiple Group Memberships**: A user can belong to multiple groups, inheriting policies from each. For example, Charles belongs to both the developers and audit teams, thus inheriting policies from both groups. Similarly, David belongs to operations and audit teams, receiving combined permissions.  
 - **Individual User Policies (Inline Policies)**: Policies can be attached directly to a user regardless of group membership. This allows granular control over permissions for users like Fred, who may not belong to any group.  
@@ -52,6 +56,8 @@ Key points:
 ### IAM Policy Structure Explained
 
 IAM policies follow a standardized JSON format that defines permissions clearly and consistently. The main components of the policy structure include:
+
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770016263/Portfolio/awsCourse/03/03/b0d0a321-8d3d-4c6f-9a21-41c56bdde230.png)
 
 - **Version**: Indicates the policy language version, typically `"2012-10-17"`.  
 - **Id**: An optional identifier for the policy itself.  
@@ -74,23 +80,34 @@ Key insights:
 
 ### Hands-On Example – Managing User Permissions
 
-A practical walkthrough was provided to illustrate permission management using a user named **Rahul**:
+A practical walkthrough was provided to illustrate permission management using a user named **Stephane**:
 
-- Initially, Rahul belongs to an **admin group** with administrator access, allowing full control over AWS resources.  
-- Removing Rahul from the admin group immediately revokes these permissions, resulting in an **Access Denied** error when attempting to list users (`iamListUsers`).  
-- Permissions were restored by attaching the **IAMReadOnlyAccess** managed policy directly to Rahul. This policy grants read-only access to IAM resources but restricts modification capabilities.  
+- Initially, Stephane belongs to an **admin group** with administrator access, allowing full control over AWS resources.  
+
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770016740/Portfolio/awsCourse/03/03/ea4f8863-542b-4e7a-89b4-7b1badc7deda.png)
+
+- Removing Stephane from the admin group immediately revokes these permissions, resulting in an **Access Denied** error when attempting to list users (`iamListUsers`).  
+
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770016943/Portfolio/awsCourse/03/03/db2cab44-9482-4d4c-beb3-fa4e73478930.png)
+
+- Permissions were restored by attaching the **IAMReadOnlyAccess** managed policy directly to Stephane. This policy grants read-only access to IAM resources but restricts modification capabilities.
+
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770017121/Portfolio/awsCourse/03/03/35f3dd67-82a8-45ed-8939-ed262761066d.png)
+
 - Attempts to create a new group (e.g., `developers`) while having only read-only access failed, demonstrating fine-grained control of permissions.  
-- Re-adding Rahul to the admin group restored full administrator privileges, illustrating how group membership affects effective permissions.
+- Re-adding Stephane to the admin group restored full administrator privileges, illustrating how group membership affects effective permissions.
 
-Important takeaways:  
-- Permission revocation is immediate upon removing group membership or policies.  
-- Managed policies can be attached directly to users for flexible permission assignment.  
-- Read-only permissions allow viewing but restrict creation or modification.  
-- Group membership is a powerful tool to manage permissions collectively.
+> Important takeaways:  
+> - Permission revocation is immediate upon removing group membership or policies.  
+> - Managed policies can be attached directly to users for flexible permission assignment.  
+> - Read-only permissions allow viewing but restrict creation or modification.  
+> - Group membership is a powerful tool to manage permissions collectively.
 
 ### Exploring AWS Managed Policies – AdministratorAccess and IAMReadOnlyAccess
 
 Two AWS-managed policies were examined to understand their scope and structure:
+
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770017657/Portfolio/awsCourse/03/03/75e1b48e-935f-4a7f-80e6-8eb70ed5484e.png)
 
 - **AdministratorAccess Policy**:  
   - Grants full access to all AWS services and resources.  
@@ -108,6 +125,8 @@ Key observations:
 - Reviewing policies in JSON reveals the precise permissions granted.
 
 ### Creating Custom IAM Policies Using Visual and JSON Editors
+
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770017937/Portfolio/awsCourse/03/03/b3950a5e-dc17-40f5-8d0c-212d32c5bc02.png)
 
 The process of creating custom IAM policies was demonstrated:
 
@@ -130,7 +149,7 @@ Advantages:
 The final steps included housekeeping best practices:
 
 - Deleting unused groups (e.g., the `developers` group) to avoid permission sprawl.  
-- Removing directly attached policies when they are no longer needed (e.g., removing `IAMReadOnlyAccess` from Rahul).  
+- Removing directly attached policies when they are no longer needed (e.g., removing `IAMReadOnlyAccess` from Stephane).  
 - Ensuring users belong only to relevant groups to maintain clear and manageable permission sets.
 
 This practice helps maintain security hygiene and reduces the risk of unintended permissions.

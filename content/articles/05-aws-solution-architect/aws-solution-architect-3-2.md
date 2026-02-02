@@ -23,12 +23,16 @@ This chapter focuses on the **Identity and Access Management (IAM)** service wit
 
 ### Overview of IAM Service and Global Scope
 
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770010556/Portfolio/awsCourse/03/02/d74f7d62-fb33-4907-b6a6-f0322a327d17.png)
+
 - **IAM is a global service** in AWS, meaning it does not require region selection unlike other AWS services that are region-specific.
 - On the **IAM Dashboard**, users are managed centrally, and any IAM user created is globally recognized across all AWS regions.
 - This global nature simplifies user management, ensuring consistent access policies regardless of the AWS region being accessed.
 
 
 ### The Role of the Root User and Why to Avoid It
+
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770011007/Portfolio/awsCourse/03/02/6a73b9eb-cd23-42b5-851c-efe4193aa347.png)
 
 - The **root user** represents the AWS account owner, having full and unrestricted access to all account resources.
 - When logged in as root, only the **account ID** is visible; no username is displayed.
@@ -39,8 +43,10 @@ This chapter focuses on the **Identity and Access Management (IAM)** service wit
 
 ### Creating an IAM User – Step-by-Step Process
 
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770011036/Portfolio/awsCourse/03/02/a48c6dd3-ffed-4d68-803e-9f2cf2730db9.png)
+
 - To create an IAM user, navigate to the **Users** section on the IAM console.
-- Provide a **username** (example used: “Rahul”).
+- Provide a **username** (example used: “Stephane”).
 - Choose between:
   - **AWS Identity Center** (recommended for complex setups), or
   - **IAM user creation**, which is simpler and essential for exam purposes.
@@ -52,10 +58,12 @@ This chapter focuses on the **Identity and Access Management (IAM)** service wit
 
 ### Managing Permissions through Groups
 
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770011084/Portfolio/awsCourse/03/02/f7657095-e12d-4d57-8a56-89a0fdf6b1e3.png)
+
 - Permissions can be assigned **directly to users** or via **user groups**.
 - Creating a group simplifies permissions management by allowing bulk permission assignment.
 - In this example, an **admin group** is created with the policy **Administrator Access** attached.
-- The user “Rahul” is added to this group, inheriting its permissions.
+- The user “Stephane” is added to this group, inheriting its permissions.
 - Viewing the group permissions shows the administrator access policy.
 - Checking the user's permissions reveals that the admin permissions come from the group rather than direct attachment.
 - This model streamlines permission management and reduces administrative overhead.
@@ -65,28 +73,34 @@ This chapter focuses on the **Identity and Access Management (IAM)** service wit
 
 - **Tags** are metadata labels that can be attached to AWS resources, including IAM users.
 - Tags are optional but helpful for organizing and tracking resources.
-- Example: tagging the user “Rahul” with a department such as **engineering**.
+- Example: tagging the user “Stephane” with a department such as **engineering**.
 - While not always used, understanding tags is beneficial for resource management and automation.
 
 
 ### Successful User Creation and Access Options
 
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770011247/Portfolio/awsCourse/03/02/1972c17e-cc61-44b7-bf11-ac24172585a0.png)
+
 - Upon user creation, options include:
   - Sending **sign-in instructions via email**.
   - Downloading a **CSV file** containing user credentials.
 - The IAM user now appears in the user list, and groups are visible on the left panel.
-- The admin group lists all its members, showing “Rahul” as part of it.
+- The admin group lists all its members, showing “Stephane” as part of it.
 
 
 ### AWS Account Sign-in and Customizing Access URLs
 
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770011501/Portfolio/awsCourse/03/02/61880f0b-e09d-466e-9222-1735edbef2f5.png)
+
 - AWS accounts have a unique **account ID** and a **sign-in URL**.
-- To simplify access, an **account alias** can be created, e.g., “aws-rahul-v3”.
+- To simplify access, an **account alias** can be created, e.g., “aws-Stephane-v3”.
 - This alias replaces the numeric account ID in the sign-in URL, making it easier to remember.
 - Aliases must be unique and can be customized freely if available.
 
 
 ### Managing Multiple AWS Sessions Simultaneously
+
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770011723/Portfolio/awsCourse/03/02/344cedb4-f4db-465c-9947-fb399b8aa9c8.png)
 
 - Using multiple AWS accounts or users simultaneously in one browser is challenging because logging in with one user will log out the other.
 - The workaround is to open one session in a **normal browser window** and the other in a **private/incognito window**.
@@ -95,6 +109,8 @@ This chapter focuses on the **Identity and Access Management (IAM)** service wit
 
 
 ### Signing in as an IAM User
+
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770015471/Portfolio/awsCourse/03/02/be238cfa-415a-4ec7-b26d-be1d0537cfcd.png)
 
 - IAM users sign in separately from root users.
 - The sign-in process requires the **account ID or alias**, followed by the **IAM username** and **password**.
@@ -134,5 +150,3 @@ By following these principles, users can maintain a secure AWS environment, mini
 - **Best practice**: use IAM users for daily activities.
 
 This detailed understanding equips learners and professionals to confidently manage AWS identities and access controls, ensuring security and operational efficiency.
-
-Thank you so much for reading. 

@@ -29,7 +29,7 @@ In the realm of cloud computing, **Identity and Access Management (IAM)** stands
 
 ### The Root User and Its Role
 
-![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1769864697/Portfolio/awsCourse/03/e7a4b1ef-9395-4c6d-ab77-f7095ce5b70a.png)
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1769864697/Portfolio/awsCourse/03/01/e7a4b1ef-9395-4c6d-ab77-f7095ce5b70a.png)
 
 At the inception of an AWS account, a **root user** is automatically created. This root user holds complete control over the account and its resources.
 
@@ -54,6 +54,8 @@ IAM allows the creation of individual **users**, each representing a single pers
 
 To manage permissions efficiently, users are grouped based on their roles or functions.
 
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770009972/Portfolio/awsCourse/03/01/9ea0f9c9-318b-4c8c-86ac-63f7499fe425.png)
+
 - Groups contain users, but importantly, groups **cannot contain other groups**.
 - Example: Alice, Bob, and Charles form a “developers” group.
 - David and Edward form an “operations” group.
@@ -65,7 +67,7 @@ This structure facilitates managing permissions at scale by assigning policies t
 
 ### Permissions and Policies
 
-![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1769864709/Portfolio/awsCourse/03/9b9cdb73-4270-4260-af15-8ce567fd070f.png)
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1769864709/Portfolio/awsCourse/03/01/9b9cdb73-4270-4260-af15-8ce567fd070f.png)
 
 The core reason for creating users and groups is to assign them **permissions** that control what actions they can perform within AWS.
 

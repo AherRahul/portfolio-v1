@@ -103,7 +103,7 @@ content:
   - module_id: 3
     module_name: IAM & AWS CLI
     module_duration: 45 mins
-    topics_count: 3
+    topics_count: 8
     tutor: 1
     expanded: false
     topics:
@@ -153,6 +153,83 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: aws-solution-architect-3-3
+      - id: 4
+        topic_name: Multi-Factor Authentication (MFA)
+        sub_topic: AWS Certified Developer Associate
+        publish_date: 2026-02-02
+        description: "This content explains two primary defense mechanisms to protect
+          AWS users in groups from account compromise: password policies and
+          Multi-Factor Authentication (MFA). Both are critical for securing AWS
+          accounts, especially the root and IAM users who have significant
+          permissions."
+        topics:
+          - javascript
+        duration: 10:00 mins read
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: aws-solution-architect-3-4
+      - id: 5
+        topic_name: Accessing AWS – Management Console, CLI, and SDK
+        sub_topic: AWS Certified Developer Associate
+        publish_date: 2026-02-02
+        description: This chapter provides a foundational understanding of AWS access
+          mechanisms, ensuring learners are equipped to interact with AWS
+          securely and effectively, whether via the console, CLI, or SDK.
+        topics:
+          - javascript
+        duration: 10:00 mins read
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: aws-solution-architect-3-5
+      - id: 6
+        topic_name: Understanding IAM Roles in AWS
+        sub_topic: AWS Certified Developer Associate
+        publish_date: 2026-02-02
+        description: By integrating IAM Roles effectively, AWS users can ensure that
+          services operate within strict permission boundaries, reducing risk
+          and improving governance across cloud resources. This chapter’s
+          overview and practical insights provide a foundational understanding
+          necessary for advancing in AWS identity and access management.
+        topics:
+          - javascript
+        duration: 10:00 mins read
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: aws-solution-architect-3-6
+      - id: 7
+        topic_name: Security Tools in IAM
+        sub_topic: AWS Certified Developer Associate
+        publish_date: 2026-02-02
+        description: This chapter underscores the importance of using AWS’s built-in
+          security tools to maintain a secure, compliant, and efficiently
+          managed cloud environment.
+        topics:
+          - javascript
+        duration: 10:00 mins read
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: aws-solution-architect-3-7
+      - id: 8
+        topic_name: IAM Summary
+        sub_topic: AWS Certified Developer Associate
+        publish_date: 2026-02-02
+        description: Proper IAM implementation not only protects organizational assets
+          but also ensures compliance and operational efficiency. As the cloud
+          landscape evolves, adhering to these principles is vital for
+          maintaining trust and security in AWS environments. This chapter
+          serves as a comprehensive guide for administrators and users alike,
+          laying a strong foundation for secure and effective AWS usage.
+        topics:
+          - javascript
+        duration: 10:00 mins read
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: aws-solution-architect-3-8
 ---
 
 ## AWS Certified Developer Associate Exam Preparation Guide  
