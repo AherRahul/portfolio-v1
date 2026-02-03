@@ -188,7 +188,7 @@ content:
   - module_id: 4
     module_name: Class Relationships
     module_duration: 12 mins read
-    topics_count: 6
+    topics_count: 5
     tutor: 1
     expanded: false
     topics:
@@ -262,28 +262,15 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: realization
-      - id: 21
-        topic_name: Class Relationships Quiz
-        sub_topic: Class Relationships
-        publish_date: 2026-02-02
-        description: |
-          Answer the questions first, then check the key.
-        topics:
-          - lld
-        duration: 2 mins read
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1770051377/Portfolio/lldSystemDesign/LLD-banner_huzyvn.png
-        auther_name: Rahul Aher
-        is_on_youtube: false
-        _path: class-relationships-quiz
   - module_id: 5
     module_name: Design Principles
     module_duration: 16 mins read
-    topics_count: 8
+    topics_count: 7
     tutor: 1
     expanded: false
     topics:
       - id: 22
-        topic_name: Dry
+        topic_name: DRY Principle
         sub_topic: Design Principles
         publish_date: 2026-02-02
         description: >
@@ -297,7 +284,7 @@ content:
         is_on_youtube: false
         _path: dry
       - id: 23
-        topic_name: Kiss
+        topic_name: KISS Principle
         sub_topic: Design Principles
         publish_date: 2026-02-02
         description: >
@@ -311,7 +298,7 @@ content:
         is_on_youtube: false
         _path: kiss
       - id: 24
-        topic_name: Yagni
+        topic_name: YAGNI Principle
         sub_topic: Design Principles
         publish_date: 2026-02-02
         description: >
@@ -325,7 +312,7 @@ content:
         is_on_youtube: false
         _path: yagni
       - id: 25
-        topic_name: Lod
+        topic_name: Law of Demeter
         sub_topic: Design Principles
         publish_date: 2026-02-02
         description: >
@@ -339,7 +326,7 @@ content:
         is_on_youtube: false
         _path: lod
       - id: 26
-        topic_name: Soc
+        topic_name: Separation of Concerns
         sub_topic: Design Principles
         publish_date: 2026-02-02
         description: >
@@ -367,7 +354,7 @@ content:
         is_on_youtube: false
         _path: coupling-and-cohesion
       - id: 28
-        topic_name: Composing Objects
+        topic_name: Composing Objects Principle
         sub_topic: Design Principles
         publish_date: 2026-02-02
         description: >
@@ -380,33 +367,20 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: composing-objects
-      - id: 29
-        topic_name: Design Principles Quiz
-        sub_topic: Design Principles
-        publish_date: 2026-02-02
-        description: |
-          Answer the questions first, then check the key.
-        topics:
-          - lld
-        duration: 2 mins read
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1770051377/Portfolio/lldSystemDesign/LLD-banner_huzyvn.png
-        auther_name: Rahul Aher
-        is_on_youtube: false
-        _path: design-principles-quiz
   - module_id: 6
     module_name: SOLID Principles
     module_duration: 12 mins read
-    topics_count: 6
+    topics_count: 5
     tutor: 1
     expanded: false
     topics:
       - id: 30
-        topic_name: SRP
+        topic_name: Single Responsibility Principle (SRP)
         sub_topic: SOLID Principles
         publish_date: 2026-02-02
         description: >
-          This lesson explains SRP in simple terms and shows how it helps you
-          design clear, testable code.
+          This lesson explains Single Responsibility Principle (SRP) in simple
+          terms and shows how it helps you design clear, testable code.
         topics:
           - lld
         duration: 2 mins read
@@ -415,12 +389,12 @@ content:
         is_on_youtube: false
         _path: srp
       - id: 31
-        topic_name: OCP
+        topic_name: Open-Closed Principle
         sub_topic: SOLID Principles
         publish_date: 2026-02-02
         description: >
-          This lesson explains OCP in simple terms and shows how it helps you
-          design clear, testable code.
+          This lesson explains Open-Closed Principle in simple terms and shows
+          how it helps you design clear, testable code.
         topics:
           - lld
         duration: 2 mins read
@@ -429,7 +403,7 @@ content:
         is_on_youtube: false
         _path: ocp
       - id: 32
-        topic_name: LSP
+        topic_name: Liskov Substitution Principle (LSP)
         sub_topic: SOLID Principles
         publish_date: 2026-02-02
         description: >
@@ -443,7 +417,7 @@ content:
         is_on_youtube: false
         _path: lsp
       - id: 33
-        topic_name: ISP
+        topic_name: Interface Segregation Principle (ISP)
         sub_topic: SOLID Principles
         publish_date: 2026-02-02
         description: >
@@ -457,7 +431,7 @@ content:
         is_on_youtube: false
         _path: isp
       - id: 34
-        topic_name: DIP
+        topic_name: Dependency Inversion Principle (DIP)
         sub_topic: SOLID Principles
         publish_date: 2026-02-02
         description: >
@@ -470,19 +444,6 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: dip
-      - id: 35
-        topic_name: Solid Principles Quiz
-        sub_topic: SOLID Principles
-        publish_date: 2026-02-02
-        description: |
-          Answer the questions first, then check the key.
-        topics:
-          - lld
-        duration: 2 mins read
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1770051377/Portfolio/lldSystemDesign/LLD-banner_huzyvn.png
-        auther_name: Rahul Aher
-        is_on_youtube: false
-        _path: solid-principles-quiz
   - module_id: 7
     module_name: UML
     module_duration: 10 mins read
