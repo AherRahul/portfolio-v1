@@ -447,7 +447,7 @@ content:
   - module_id: 7
     module_name: UML
     module_duration: 10 mins read
-    topics_count: 5
+    topics_count: 4
     tutor: 1
     expanded: false
     topics:
@@ -507,19 +507,6 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: activity-diagram
-      - id: 40
-        topic_name: UML Quiz
-        sub_topic: UML
-        publish_date: 2026-02-02
-        description: |
-          Answer the questions first, then check the key.
-        topics:
-          - lld
-        duration: 2 mins read
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1770051377/Portfolio/lldSystemDesign/LLD-banner_huzyvn.png
-        auther_name: Rahul Aher
-        is_on_youtube: false
-        _path: uml-quiz
   - module_id: 8
     module_name: Design Patterns - Overview
     module_duration: 2 mins read
