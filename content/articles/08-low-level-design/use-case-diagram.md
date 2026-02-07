@@ -29,6 +29,9 @@ Use Case Diagrams are especially significant during the **requirements gathering
   - Typically employed in the **early phases of software development** after gathering requirements.
 
 - **Example: Ride-Booking System**
+
+  ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770484978/Portfolio/lldSystemDesign/img/61d448e6-1b70-41cb-b904-0e838864a011.png)
+
   - **Actors**: Rider, Driver
   - **Use Cases**:
     - Rider: Book Ride, Cancel Ride, Make Payment
@@ -48,6 +51,9 @@ Use Case Diagrams may appear simple — consisting of stick figures, ovals, and 
   - Definition: Represent **any entity outside the system** that interacts with it.
   - Usually human users, but can also be external systems or devices.
   - **Notation**: Stick figure labeled with actor’s role.
+
+    ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770485001/Portfolio/lldSystemDesign/img/e0ae6f75-a558-429b-90e0-79754ece75de.png)
+
   - Two types of actors:
     - **Primary actors**: Initiate interactions (e.g., a user logging in).
     - **Secondary actors**: Support interactions but do not start them (e.g., payment gateway).
@@ -57,6 +63,9 @@ Use Case Diagrams may appear simple — consisting of stick figures, ovals, and 
   - Definition: **Functionalities or goals** the system offers to actors.
   - Represent the **actions** the user intends to perform.
   - **Notation**: Oval labeled with an action verb phrase.
+
+    ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770485013/Portfolio/lldSystemDesign/img/b37f8a9e-cc67-452a-830c-f1da79f4ffcb.png)
+
   - Characteristics:
     - Start with a verb (e.g., Register, Search, Make Payment).
     - Represent complete user interactions.
@@ -67,6 +76,9 @@ Use Case Diagrams may appear simple — consisting of stick figures, ovals, and 
   - Defines the scope by separating **what is inside the system** from what lies outside.
   - Clarifies responsibilities and scope of implementation.
   - **Notation**: Labeled rectangular box enclosing all use cases.
+
+    ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770485022/Portfolio/lldSystemDesign/img/ca5dd0d2-afb8-43d8-9d94-6b91294ffb39.png)
+
   - Example: “Online Banking System” or “Movie Ticket Booking System”.
 
 - **4. Relationships**
@@ -76,22 +88,34 @@ Use Case Diagrams may appear simple — consisting of stick figures, ovals, and 
     - **Association**
       - Links actors to use cases they participate in.
       - **Notation**: Solid line.
+
+        ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770485036/Portfolio/lldSystemDesign/img/53f7da02-bf0f-4b48-b4a1-0a84cae523c4.png)
+
       - Example: Customer → Place Order.
     
     - **Include**
       - Indicates mandatory, reusable functionality included by other use cases.
       - **Notation**: Dashed arrow labeled `<<include>>`.
+
+        ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770485046/Portfolio/lldSystemDesign/img/9ee07935-9206-4515-ab9c-f503ec34f658.png)
+
       - Example: Checkout includes Validate Payment.
     
     - **Extend**
       - Represents optional or conditional behavior extending a base use case.
       - **Notation**: Dashed arrow labeled `<<extend>>`.
+
+        ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770485058/Portfolio/lldSystemDesign/img/52556655-0400-4a98-ab1b-42495a14d3fe.png)
+
       - Example: Search may extend to Advanced Filter.
     
     - **Generalization**
       - Shows inheritance or specialization between actors or use cases.
       - Child inherits and possibly extends parent behavior.
       - **Notation**: Directed arrow with triangle from child to parent.
+
+        ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770485069/Portfolio/lldSystemDesign/img/9b44aa89-4e4e-40af-af36-f7104b55e6f2.png)
+
       - Example: Admin is a specialized User.
 
 
@@ -103,6 +127,9 @@ To demonstrate practical application, the process of constructing a Use Case Dia
   - Determine all external entities interacting with the system.
   - Could be human users or external systems.
   - Example actors:
+
+    ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770485084/Portfolio/lldSystemDesign/img/633edcc3-679a-42e2-ab4c-d204854c3214.png)
+
     - **Customer**: Books and cancels tickets, browses movies.
     - **Admin**: Manages movie listings and schedules.
     - **Payment Gateway**: Processes payments externally.
@@ -120,6 +147,9 @@ To demonstrate practical application, the process of constructing a Use Case Dia
   - Clarifies system scope and responsibility.
   - Example label: **Movie Ticket Booking System**.
 
+  ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770485096/Portfolio/lldSystemDesign/img/587901d6-ae07-4871-9699-8f425f4f2ad0.png)
+
+
 - **Step 4: Connect Actors to Use Cases**
   - Draw **solid lines (associations)** from each actor to the use cases they interact with.
   - Customers connect to most use cases; admins to management tasks; payment gateway to payment processing.
@@ -128,12 +158,24 @@ To demonstrate practical application, the process of constructing a Use Case Dia
   - Use arrows and labels to depict relationships.
   
     - **Include**: Use case always includes another — e.g., Book Ticket always includes Make Payment.
+
+      ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770485105/Portfolio/lldSystemDesign/img/7e705b52-7e82-4e39-9c9f-b134d0c44b0b.png)
+
     - **Extend**: Optional behavior — e.g., Browsing movies may extend to filtering by genre.
+
+      ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770485119/Portfolio/lldSystemDesign/img/86354eba-4e4a-4141-ad66-c4e8e3a8732d.png)
+
     - **Generalization**: Actors or use cases sharing behavior but differing slightly — e.g., Registered User and Guest User as specialized Customers.
+
+      ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770485134/Portfolio/lldSystemDesign/img/dd0b3d39-a6a7-4fea-bee1-2ea75e7924e0.png)
+
 
 - **Bringing It All Together**
   - The final diagram provides a coherent, comprehensive view of actors, their goals, system boundaries, and inter-use case relationships.
   - This visual blueprint assists in aligning stakeholders, clarifying requirements, and guiding design.
+
+    ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770485224/Portfolio/lldSystemDesign/img/93f4a017-4376-4c28-9238-18bc1e32ffa7.png)
+
 
 
 ### Opinions and Arguments on the Utility of Use Case Diagrams

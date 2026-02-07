@@ -36,7 +36,7 @@ These diagrams are used to:
 - Assign responsibilities to systems or actors to understand handoffs.
 - Detect bottlenecks and inefficiencies in the workflow.
 
-*Key Concept:* Activity Diagrams provide a holistic view of how a process unfolds from start to finish and are particularly useful in complex workflows involving multiple actors and concurrent operations.
+> *Key Concept:* Activity Diagrams provide a holistic view of how a process unfolds from start to finish and are particularly useful in complex workflows involving multiple actors and concurrent operations.
 
 
 ### 2. Components of an Activity Diagram
@@ -44,20 +44,43 @@ These diagrams are used to:
 Understanding the basic symbols and nodes is essential to accurately create and interpret Activity Diagrams.
 
 - **Initial Node (Start):** Denoted by a filled black circle (●). Marks the beginning of the workflow.
+
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770483679/Portfolio/lldSystemDesign/img/082b0088-8b9e-41af-b04b-3a0598400b5f.png)
   
 - **Activity/Action Node:** Represented by a rounded rectangle, it signifies a single step or action, e.g., *Validate Order*. Good action names should start with a verb, be clear and specific, and describe *what* happens, not *how*.
+
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770483708/Portfolio/lldSystemDesign/img/77ea097b-cc5e-4a75-8d33-4ae1b815ca7c.png)
+  
   
 - **Final Node (End):** Depicted as a concentric circle (◉), indicating the workflow’s termination.
+
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770483726/Portfolio/lldSystemDesign/img/6bdb2504-b8bc-4356-934f-9071d959e881.png)
+  
   
 - **Flow Final Node:** Shows termination of a specific flow within the activity without ending the entire process. Illustrated as a circle with an X.
+
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770483742/Portfolio/lldSystemDesign/img/f784613a-68b6-438c-8200-cd3ea8a6e99a.png)
+  
   
 - **Decision Node:** A diamond shape (◇) representing a branching point where the flow diverges based on a condition (e.g., *Is inventory sufficient?*).
+
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770483757/Portfolio/lldSystemDesign/img/bdccbe0a-ceab-4349-a65c-1ca2f6218787.png)
+  
   
 - **Merge Node:** Also a diamond, but used to combine multiple incoming flows into one.
+
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770483769/Portfolio/lldSystemDesign/img/c6a01d0b-c80a-4339-a013-4426acba2a27.png)
+  
   
 - **Fork Node:** A thick horizontal bar (▬) that splits one flow into multiple parallel flows (e.g., simultaneously updating inventory and sending email).
+
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770483784/Portfolio/lldSystemDesign/img/ec5cd037-0e6c-4bd6-af7a-b642595f1a93.png)
+  
   
 - **Join Node:** A thick horizontal bar that synchronizes multiple parallel flows back into a single flow.
+
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770483797/Portfolio/lldSystemDesign/img/8c3277ab-7f2a-4c4b-92a4-993e2aab052c.png)
+  
 
 These elements work together to clearly visualize complex workflows with branching, concurrency, and merging.
 
@@ -67,12 +90,24 @@ These elements work together to clearly visualize complex workflows with branchi
 Activity Diagrams incorporate different types of flow controls that represent how activities progress:
 
 - **Sequential Flow:** Activities follow one after another, for example, *Receive Order → Validate Order → Process Payment → Ship Order*.
+
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770483815/Portfolio/lldSystemDesign/img/c77054ce-25f4-4420-b5ec-5a5d153e9515.png)
+  
   
 - **Conditional Flow (Branching):** The flow diverges based on a condition; for example, if a user is authenticated, proceed to process the request; otherwise, prompt login.
+
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770483831/Portfolio/lldSystemDesign/img/2ed0411b-ceec-4eee-88d9-f7105bb8098f.png)
+  
   
 - **Parallel Flow (Concurrent Execution):** Multiple activities occur simultaneously, such as *validating the cart*, *checking inventory*, and *calculating shipping* all in parallel during checkout.
+
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770483855/Portfolio/lldSystemDesign/img/a4c7a769-62e7-45e9-824e-3e1974b80d51.png)
+  
   
 - **Loop Flow:** Activities repeat until a certain condition is met, like processing items in a list until none remain.
+
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770483867/Portfolio/lldSystemDesign/img/b9539d02-5387-4804-b558-b9b1a357d69c.png)
+  
 
 Understanding these flows allows for accurately modeling real-world processes that involve decisions, concurrency, and repetition.
 
@@ -81,6 +116,8 @@ Understanding these flows allows for accurately modeling real-world processes th
 
 **Swimlanes** partition the diagram into columns or rows, each representing an actor, system, or component responsible for certain activities. For example:
 
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770483884/Portfolio/lldSystemDesign/img/da9b3eb9-87cd-41f3-954d-4f7d008aed3f.png)
+  
 - **Customer**: Browsing, selecting products, making payments.
 - **System**: Validating orders, processing payments.
 - **Warehouse**: Shipping items.
@@ -101,7 +138,13 @@ Creating an effective Activity Diagram involves a systematic approach:
 
 1. **Identify the Process:** Define the workflow to be modeled (e.g., order processing, payment flow).
 2. **List All Activities:** Enumerate every action that occurs within the process.
+
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770483897/Portfolio/lldSystemDesign/img/22b90c4b-9eb2-4512-a3bb-ab61f2ca6c73.png)
+  
 3. **Identify Decision Points:** Determine where the flow branches and the possible outcomes.
+
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770483915/Portfolio/lldSystemDesign/img/0df98392-127c-40e0-8bdb-4f3ac5721f2a.png)
+  
 4. **Identify Parallel Activities:** Recognize which activities can or should occur simultaneously.
 5. **Determine Responsibilities:** Assign activities to actors or systems using swimlanes.
 6. **Draw the Diagram:** Connect all components with appropriate control flows, decisions, forks, and joins.
@@ -112,6 +155,9 @@ Following these steps ensures the diagram accurately reflects the real-world pro
 ### 6. Real-World Example: ATM Withdrawal Workflow
 
 A practical example illustrates the power and clarity of Activity Diagrams. Consider an **ATM withdrawal process** involving multiple decision points and parallel flows:
+
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770483931/Portfolio/lldSystemDesign/img/94899e82-9c33-43d0-a61c-e6b96f8725ee.png)
+  
 
 - The process begins with **inserting a card** (Initial Node).
 - The system reads card data and validates it (Decision Node: *Is card valid?*).
@@ -129,6 +175,9 @@ This example showcases:
 
 
 ### 7. Activity Diagrams vs. Flowcharts
+
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770483934/Portfolio/lldSystemDesign/img/a154db8f-5e72-4e19-a0f1-ba817b5e19bc.png)
+  
 
 While similar to flowcharts, Activity Diagrams provide enhanced capabilities:
 
