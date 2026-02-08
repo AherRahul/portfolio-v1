@@ -257,26 +257,11 @@ The `CheckoutService` remains unchanged, oblivious to whether the payment is pro
 
 ### Benefits of Using the Adapter Pattern
 
-#### 1. Decoupling
-
-Separates the client code from the legacy or third-party system, reducing dependencies and coupling.
-
-#### 2. Flexibility and Extensibility
-
-Allows adding new payment providers without altering existing client code.
-
-#### 3. Reusability
-
-Enables reuse of legacy or third-party components without modification.
-
-#### 4. Compliance with SOLID Principles
-
-Adheres to the **Open/Closed Principle**, keeping the system open to extension but closed for modification.
-
-#### 5. Maintainability
-
-Simplifies testing and maintenance by isolating legacy code behind an adapter.
-
+- **1. Decoupling:** Separates the client code from the legacy or third-party system, reducing dependencies and coupling.
+- **2. Flexibility and Extensibility:** Allows adding new payment providers without altering existing client code.
+- **3. Reusability:** Enables reuse of legacy or third-party components without modification.
+- **4. Compliance with SOLID Principles:** Adheres to the **Open/Closed Principle**, keeping the system open to extension but closed for modification.
+- **5. Maintainability:** Simplifies testing and maintenance by isolating legacy code behind an adapter.
 
 ### Summary
 

@@ -9,6 +9,9 @@ courseName: 08-low-level-design
 showOnArticles: false
 ---
 
+## What is LLD?
+
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770051377/Portfolio/lldSystemDesign/LLD-banner_huzyvn.png)
 
 ### Introduction: The Significance of Low-Level Design
 

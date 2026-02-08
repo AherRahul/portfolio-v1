@@ -255,25 +255,20 @@ Painting a Windows-style checkbox.
 
 ### Benefits of Using the Abstract Factory Pattern
 
-#### 1. Platform Independence
-
+**1. Platform Independence**
 The application logic interacts only with abstract interfaces and factories, eliminating direct dependencies on platform-specific classes.
 
-#### 2. Consistency Across UI Components
-
+**2. Consistency Across UI Components**
 Each factory ensures that all UI components it creates belong to the same platform or theme, maintaining a consistent look and feel.
 
-#### 3. Adherence to SOLID Principles
-
+**3. Adherence to SOLID Principles**
 - **Open/Closed Principle:** Adding new platforms or UI components involves creating new factories or products without modifying existing code.
 - **Single Responsibility Principle:** Factories handle object creation while application logic focuses on UI behavior.
 
-#### 4. Improved Maintainability and Testability
-
+**4. Improved Maintainability and Testability**
 Swapping factories allows easy testing of different UI configurations or themes without changing the core application code.
 
-#### 5. Scalability
-
+**5. Scalability**
 Introducing new platforms (e.g., Linux, Android) or components (e.g., `TextField`, `Slider`) simply requires implementing new concrete factories and products, keeping your codebase clean and extensible.
 
 
