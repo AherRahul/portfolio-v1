@@ -531,7 +531,7 @@ content:
   - module_id: 9
     module_name: Design Patterns - Creational
     module_duration: 12 mins read
-    topics_count: 6
+    topics_count: 5
     tutor: 1
     expanded: false
     topics:
@@ -605,23 +605,10 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: prototype
-      - id: 47
-        topic_name: Creational Design Patterns Quiz
-        sub_topic: Design Patterns - Creational
-        publish_date: 2026-02-02
-        description: |
-          Answer the questions first, then check the key.
-        topics:
-          - lld
-        duration: 2 mins read
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1770051377/Portfolio/lldSystemDesign/LLD-banner_huzyvn.png
-        auther_name: Rahul Aher
-        is_on_youtube: false
-        _path: creational-design-patterns-quiz
   - module_id: 10
     module_name: Design Patterns - Structural
     module_duration: 16 mins read
-    topics_count: 8
+    topics_count: 7
     tutor: 1
     expanded: false
     topics:
@@ -723,23 +710,10 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: flyweight
-      - id: 55
-        topic_name: Structural Design Patterns Quiz
-        sub_topic: Design Patterns - Structural
-        publish_date: 2026-02-02
-        description: |
-          Answer the questions first, then check the key.
-        topics:
-          - lld
-        duration: 2 mins read
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1770051377/Portfolio/lldSystemDesign/LLD-banner_huzyvn.png
-        auther_name: Rahul Aher
-        is_on_youtube: false
-        _path: structural-design-patterns-quiz
   - module_id: 11
     module_name: Design Patterns - Behavioral
     module_duration: 22 mins read
-    topics_count: 11
+    topics_count: 10
     tutor: 1
     expanded: false
     topics:
@@ -884,23 +858,10 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: memento
-      - id: 66
-        topic_name: Behavioral Design Patterns Quiz
-        sub_topic: Design Patterns - Behavioral
-        publish_date: 2026-02-02
-        description: |
-          Answer the questions first, then check the key.
-        topics:
-          - lld
-        duration: 2 mins read
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1770051377/Portfolio/lldSystemDesign/LLD-banner_huzyvn.png
-        auther_name: Rahul Aher
-        is_on_youtube: false
-        _path: behavioral-design-patterns-quiz
   - module_id: 12
     module_name: Design Patterns - Additional Patterns
     module_duration: 18 mins read
-    topics_count: 9
+    topics_count: 8
     tutor: 1
     expanded: false
     topics:
@@ -1017,19 +978,6 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: producer-consumer
-      - id: 75
-        topic_name: Additional Patterns Quiz
-        sub_topic: Design Patterns - Additional Patterns
-        publish_date: 2026-02-02
-        description: |
-          Answer the questions first, then check the key.
-        topics:
-          - lld
-        duration: 2 mins read
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1770051377/Portfolio/lldSystemDesign/LLD-banner_huzyvn.png
-        auther_name: Rahul Aher
-        is_on_youtube: false
-        _path: additional-patterns-quiz
   - module_id: 13
     module_name: LLD Interview Tips
     module_duration: 6 mins read

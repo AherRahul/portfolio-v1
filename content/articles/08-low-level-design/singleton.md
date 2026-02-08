@@ -1,5 +1,5 @@
 ---
-title: "Singleton"
+title: "Singleton Pattern"
 description: "Singleton is a reusable way to solve a common design problem. It gives you a proven structure so your code stays clean as it grows."
 datePublished: 2026-02-02
 dateModified: 2026-02-02
