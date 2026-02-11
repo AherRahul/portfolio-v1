@@ -61,8 +61,8 @@ export function typographyStyles({ theme }: PluginUtils) {
         img: {
           borderRadius: theme('borderRadius.lg'),
           width: '100%',
-          maxWidth: '28rem', // 448px (28rem)
-          height: theme('spacing.64'), // 256px (16rem)
+          maxWidth: '40rem', // 448px (28rem)
+          height: '25rem', // 256px (16rem)
           objectFit: 'cover',
           cursor: 'pointer',
           transition: 'opacity 0.2s ease',
