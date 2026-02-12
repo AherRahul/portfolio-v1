@@ -708,5 +708,9 @@ textarea {
 :deep(.prose em) {
   color: #d4d4d8;
 }
+
+h4 {
+  margin-bottom: 0.5rem !important
+}
 </style>
 
