@@ -108,9 +108,11 @@ content:
         _path: git-1-6
 ---
 
-# 📘 Git Mastery: Complete Guide from Basics to Enterprise Workflows
+<br/> 
+<br/>
 
-## 📌 Course Overview
+## Git Mastery: Complete Guide from Basics to Enterprise Workflows
+
 
 This comprehensive blog-based Git course is designed to take you from foundational concepts to advanced, real-world Git workflows used in professional development teams.
 
@@ -121,12 +123,13 @@ Each module is structured as detailed, easy-to-follow blog articles, allowing yo
 Whether you're a beginner starting your Git journey or an experienced developer looking to deepen your understanding, this course provides complete coverage of Git from start to finish.
 
 
+<br/>
 
-# 📚 What This Course Covers
+## What This Course Covers
 
 This course is divided into structured modules covering:
 
-### 🔹 Git Foundations
+### Git Foundations
 
 *   Introduction to Git
     
@@ -139,7 +142,7 @@ This course is divided into structured modules covering:
 *   Undoing Changes
     
 
-### 🔹 Branching & History Management
+### Branching & History Management
 
 *   Branching Strategies
     
@@ -152,7 +155,7 @@ This course is divided into structured modules covering:
 *   Tagging
     
 
-### 🔹 Remote & Collaboration
+### Remote & Collaboration
 
 *   Remote Repositories
     
@@ -163,7 +166,7 @@ This course is divided into structured modules covering:
 *   Team Workflows
     
 
-### 🔹 Advanced Git
+### Advanced Git
 
 *   Git Internals (How Git works under the hood)
     
@@ -174,7 +177,7 @@ This course is divided into structured modules covering:
 *   Debugging & Troubleshooting
     
 
-### 🔹 Professional Usage
+### Professional Usage
 
 *   Git Best Practices
     
@@ -186,8 +189,9 @@ This course is divided into structured modules covering:
 In total, this course contains structured lessons across 20+ modules covering 150+ focused topics.
 
 
+<br/>
 
-# 🎯 How This Course Will Help You
+## How This Course Will Help You
 
 By completing this course, you will:
 
@@ -205,8 +209,9 @@ You’ll move from “I know some Git commands” to:
 > “I understand how Git works and can handle complex repository situations confidently.”
 
 
+<br/>
 
-# 👨‍💻 Who This Course Is For
+##  Who This Course Is For
 
 *   Beginners who want a strong Git foundation
     
@@ -220,8 +225,9 @@ You’ll move from “I know some Git commands” to:
     
 
 
+<br/>
 
-# 📖 Learning Format
+## Learning Format
 
 This is a **blog-based, self-paced course**.
 
@@ -250,8 +256,9 @@ You can:
 It also serves as a long-term **Git reference guide** for your development career.
 
 
+<br/>
 
-# 🧠 What Makes This Course Different?
+## What Makes This Course Different?
 
 ✔ Covers Git from beginner to advanced  
 ✔ Includes Git Internals (rarely explained properly)  
@@ -261,8 +268,9 @@ It also serves as a long-term **Git reference guide** for your development caree
 ✔ Structured like a professional handbook
 
 
+<br/>
 
-# 🏁 After Completing This Course
+## After Completing This Course
 
 You will be able to:
 
@@ -275,17 +283,4 @@ You will be able to:
 *   Optimize your development workflow
     
 *   Guide others in Git best practices
-    
-
-
-
-If you’d like, I can also:
-
-*   ✨ Rewrite this in a more marketing-focused tone (for Udemy or paid course)
-    
-*   🧩 Make it more technical and documentation-style
-    
-*   🚀 Make it more beginner-friendly
-    
-*   🏢 Make it enterprise/corporate training style
     

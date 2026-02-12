@@ -164,4 +164,4 @@ By exploring the fascinating journey of Git and its continuous evolution, develo
 
 ## Mind Map
 
-![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770919570/Portfolio/gitCourse/NoteGPT_MindMap_1770919556754_clsduq.png)
+![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770920280/Portfolio/gitCourse/NoteGPT_MindMap_1770920268355_byakde.png)
