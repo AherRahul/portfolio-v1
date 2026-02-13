@@ -55,7 +55,7 @@ Collectively, these benefits enhance productivity, reduce errors, and improve pr
 
 To effectively leverage version control, it’s important to understand its foundational elements.
 
-#### Repositories: The Project Hub
+### Repositories: The Project Hub
 
 A **repository** (or "repo") is the central storage location for your project files and their version history. Repositories can be:
 
@@ -64,7 +64,7 @@ A **repository** (or "repo") is the central storage location for your project fi
 
 The first commit in a repository establishes the initial state of your project, setting the baseline for all future changes.
 
-#### Commits: Snapshots of Your Work
+### Commits: Snapshots of Your Work
 
 A **commit** is a recorded snapshot capturing the project at a specific moment. Each commit includes:
 
@@ -78,7 +78,7 @@ git add .
 git commit -m "Your commit message here"
 ```
 
-#### Branches: Parallel Development Lines
+### Branches: Parallel Development Lines
 
 Branches allow you to diverge from the main code line to work on features, fixes, or experiments independently. The default branch in Git is usually called `main` or `master`.
 

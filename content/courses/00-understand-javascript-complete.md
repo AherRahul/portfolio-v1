@@ -784,6 +784,235 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-10-5
+  - module_id: 11
+    module_name: TypeScript
+    module_duration: 2 hrs 30 mins
+    topics_count: 16
+    tutor: 1
+    expanded: false
+    topics:
+      - id: 1
+        topic_name: Module Overview
+        sub_topic: Understand JavaScript Completely
+        publish_date: 2026-02-13
+        description: Master TypeScript confidently with our free, complete video
+          playlist. Learn practical concepts and boost your development skills
+          in React, Express, and more.
+        topics:
+          - javascript
+        duration: 10:00 mins read
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1758725512/Portfolio/javaScriptCourse/images/0_eestcm.png
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: understand-javascript-complete-11-1
+      - id: 2
+        topic_name: Introduction to Typescript
+        sub_topic: Understand JavaScript Completely
+        publish_date: 2026-02-13
+        description: Learn TypeScript basics and its advantages over JavaScript in this
+          fast-paced, beginner-friendly guide. Understand types, type safety,
+          tooling, and setup essentials.
+        topics:
+          - javascript
+        duration: 10:00 mins read
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1758725512/Portfolio/javaScriptCourse/images/0_eestcm.png
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: understand-javascript-complete-11-2
+      - id: 3
+        topic_name: How Typescript works?
+        sub_topic: Understand JavaScript Completely
+        publish_date: 2026-02-13
+        description: Explore the behind-the-scenes journey of TypeScript compilation,
+          from source code to JavaScript, with detailed insights into lexers,
+          parsers, binders, checkers, and emitters.
+        topics:
+          - javascript
+        duration: 10:00 mins read
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1758725512/Portfolio/javaScriptCourse/images/0_eestcm.png
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: understand-javascript-complete-11-3
+      - id: 4
+        topic_name: How to setup Typescript in project
+        sub_topic: Understand JavaScript Completely
+        publish_date: 2026-02-13
+        description: Learn how to set up TypeScript traditionally in your project with
+          step-by-step guidance, including key configurations and best practices
+          for seamless coding.
+        topics:
+          - javascript
+        duration: 10:00 mins read
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1758725512/Portfolio/javaScriptCourse/images/0_eestcm.png
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: understand-javascript-complete-11-4
+      - id: 5
+        topic_name: Type Annotations & Inference in TS
+        sub_topic: Understand JavaScript Completely
+        publish_date: 2026-02-13
+        description: Learn TypeScript’s powerful type inference and type annotation
+          features with simple examples, and avoid common errors in your code
+          effortlessly.
+        topics:
+          - javascript
+        duration: 10:00 mins read
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1758725512/Portfolio/javaScriptCourse/images/0_eestcm.png
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: understand-javascript-complete-11-5
+      - id: 6
+        topic_name: Understanding Unions & Any
+        sub_topic: Understand JavaScript Completely
+        publish_date: 2026-02-13
+        description: Learn how to effectively use Union and Any types in TypeScript to
+          write cleaner, safer code while avoiding common pitfalls with
+          practical examples.
+        topics:
+          - javascript
+        duration: 10:00 mins read
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1758725512/Portfolio/javaScriptCourse/images/0_eestcm.png
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: understand-javascript-complete-11-6
+      - id: 7
+        topic_name: Type Narrowing & Type Guards
+        sub_topic: Understand JavaScript Completely
+        publish_date: 2026-02-13
+        description: Learn Type Guards in TypeScript for safer and cleaner code with
+          examples on type narrowing, anonymous types, and best practices for
+          handling data types effectively.
+        topics:
+          - javascript
+        duration: 10:00 mins read
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1758725512/Portfolio/javaScriptCourse/images/0_eestcm.png
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: understand-javascript-complete-11-7
+      - id: 8
+        topic_name: Assertion, Unknown & Never in TS
+        sub_topic: Understand JavaScript Completely
+        publish_date: 2026-02-13
+        description: Learn TypeScript data types, type assertions, never type, and best
+          practices for error handling and role-based access in this
+          comprehensive guide.
+        topics:
+          - javascript
+        duration: 10:00 mins read
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1758725512/Portfolio/javaScriptCourse/images/0_eestcm.png
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: understand-javascript-complete-11-8
+      - id: 9
+        topic_name: Types and Interface in typescript
+        sub_topic: Understand JavaScript Completely
+        publish_date: 2026-02-13
+        description: Learn TypeScript basics including type aliases, interfaces, unions,
+          intersections, and class implementations for clean, maintainable code.
+        topics:
+          - javascript
+        duration: 10:00 mins read
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1758725512/Portfolio/javaScriptCourse/images/0_eestcm.png
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: understand-javascript-complete-11-9
+      - id: 10
+        topic_name: Object discussion in Typescript
+        sub_topic: Understand JavaScript Completely
+        publish_date: 2026-02-13
+        description: Learn how to master TypeScript objects with detailed explanations
+          on typing, partial updates, pick, omit, and duck typing for clean,
+          error-free code.
+        topics:
+          - javascript
+        duration: 10:00 mins read
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1758725512/Portfolio/javaScriptCourse/images/0_eestcm.png
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: understand-javascript-complete-11-10
+      - id: 11
+        topic_name: Functions in Typescript
+        sub_topic: Understand JavaScript Completely
+        publish_date: 2026-02-13
+        description: "Learn TypeScript functions with ease: parameters, return types,
+          optional/default values, and best practices for safe and secure
+          coding."
+        topics:
+          - javascript
+        duration: 10:00 mins read
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1758725512/Portfolio/javaScriptCourse/images/0_eestcm.png
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: understand-javascript-complete-11-11
+      - id: 12
+        topic_name: Array, enum and tuples in Typescript
+        sub_topic: Understand JavaScript Completely
+        publish_date: 2026-02-13
+        description: Learn TypeScript arrays, tuples, and enums with practical examples
+          to build robust, error-free applications. Master foundational data
+          structures easily.
+        topics:
+          - javascript
+        duration: 10:00 mins read
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1758725512/Portfolio/javaScriptCourse/images/0_eestcm.png
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: understand-javascript-complete-11-12
+      - id: 13
+        topic_name: OOP concepts in Typescript
+        sub_topic: Understand JavaScript Completely
+        publish_date: 2026-02-13
+        description: Learn TypeScript OOP concepts like classes, constructors, access
+          modifiers, getters/setters, static members, abstract classes, and
+          composition with practical examples.
+        topics:
+          - javascript
+        duration: 10:00 mins read
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1758725512/Portfolio/javaScriptCourse/images/0_eestcm.png
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: understand-javascript-complete-11-13
+      - id: 14
+        topic_name: Interface and Generics in Typescript
+        sub_topic: Understand JavaScript Completely
+        publish_date: 2026-02-13
+        description: Learn TypeScript interfaces and generics with clear examples and
+          best practices to structure data and write reusable code efficiently.
+        topics:
+          - javascript
+        duration: 10:00 mins read
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1758725512/Portfolio/javaScriptCourse/images/0_eestcm.png
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: understand-javascript-complete-11-14
+      - id: 15
+        topic_name: Type definations & Axios in TS
+        sub_topic: Understand JavaScript Completely
+        publish_date: 2026-02-13
+        description: Learn TypeScript type declarations, web requests using Axios and
+          Fetch, and practical tips to write better typed code with interfaces
+          and generics.
+        topics:
+          - javascript
+        duration: 10:00 mins read
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1758725512/Portfolio/javaScriptCourse/images/0_eestcm.png
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: understand-javascript-complete-11-15
+      - id: 16
+        topic_name: TS with React
+        sub_topic: Understand JavaScript Completely
+        publish_date: 2026-02-13
+        description: Learn how to use TypeScript with React effectively, including
+          components, hooks, props, and forms with hands-on examples to boost
+          your coding confidence.
+        topics:
+          - javascript
+        duration: 10:00 mins read
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1758725512/Portfolio/javaScriptCourse/images/0_eestcm.png
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: understand-javascript-complete-11-16
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758725512/Portfolio/javaScriptCourse/images/0_eestcm.png)
