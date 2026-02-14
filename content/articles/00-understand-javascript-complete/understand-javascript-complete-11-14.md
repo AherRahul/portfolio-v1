@@ -108,7 +108,7 @@ interface User {
 }
 
 const user: User = {
-  name: "Hitesh",
+  name: "Rahul",
   age: 42,
 };
 ```

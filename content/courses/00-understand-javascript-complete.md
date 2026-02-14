@@ -90,7 +90,7 @@ content:
   - module_id: 2
     module_name: Core Language Concepts
     module_duration: 55 mins read
-    topics_count: 4
+    topics_count: 1
     tutor: 1
     expanded: false
     topics:
@@ -111,71 +111,22 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-2-1
-      - id: 6
-        topic_name: Functions Deep Dive
-        sub_topic: Javascript
-        publish_date: 2026-09-25
-        description: >
-          Functions are the heart of JavaScript programming. They're not just
-          blocks of code that execute - they're first-class citizens that can be
-          stored in variables, passed as arguments, and returned from other
-          functions. Master functions, and you master JavaScript.
-        topics:
-          - javascript
-        duration: 14:00 mins read
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1758811613/Portfolio/javaScriptCourse/images/all%20title%20images/7_oxgz6k.png
-        auther_name: Rahul Aher
-        is_on_youtube: false
-        _path: understand-javascript-complete-2-2
-      - id: 7
-        topic_name: Control Flow and Operators
-        sub_topic: Javascript
-        publish_date: 2026-09-25
-        description: >
-          Control flow determines the path your code takes - from simple if-else
-          statements to complex loops and switch cases. Combined with
-          JavaScript's powerful operators, you'll learn to create logic that
-          makes intelligent decisions and handles data efficiently.
-        topics:
-          - javascript
-        duration: 13:00 mins read
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1758811615/Portfolio/javaScriptCourse/images/all%20title%20images/8_qvfyzu.png
-        auther_name: Rahul Aher
-        is_on_youtube: false
-        _path: understand-javascript-complete-2-3
-      - id: 8
-        topic_name: Event Loop Mastery
-        sub_topic: Javascript
-        publish_date: 2026-09-25
-        description: >
-          The Event Loop is JavaScript's secret to handling asynchronous
-          operations while remaining single-threaded. Understanding this
-          mechanism is crucial for mastering promises, async/await, and building
-          responsive applications that don't freeze.
-        topics:
-          - javascript
-        duration: 16:00 mins read
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1758811614/Portfolio/javaScriptCourse/images/all%20title%20images/9_u6xbrf.png
-        auther_name: Rahul Aher
-        is_on_youtube: false
-        _path: understand-javascript-complete-2-4
   - module_id: 3
-    module_name: Objects and Prototypes
-    module_duration: 50 mins read
+    module_name: Objects
+    module_duration: 20 mins read
     topics_count: 3
     tutor: 1
     expanded: false
     topics:
       - id: 9
-        topic_name: Objects and this keyword
+        topic_name: Objects - Part 1
         sub_topic: Javascript
         publish_date: 2026-09-25
-        description: >
-          Objects are the cornerstone of JavaScript programming. More than just
-          data containers, they're dynamic entities that can hold properties,
-          methods, and behavior. Understanding objects and the mysterious 'this'
-          keyword is essential for mastering JavaScript's unique approach to
-          programming.
+        description: Objects are the cornerstone of JavaScript programming. More than
+          just data containers, they're dynamic entities that can hold
+          properties, methods, and behavior. Understanding objects and the
+          mysterious 'this' keyword is essential for mastering JavaScript's
+          unique approach to programming.
         topics:
           - javascript
         duration: 16:00 mins read
@@ -183,39 +134,144 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-3-1
-      - id: 10
-        topic_name: Prototypes and Prototype Chain
-        sub_topic: Javascript
-        publish_date: 2026-09-25
-        description: >
-          JavaScript's prototype system is unique among programming languages.
-          Instead of traditional classes, JavaScript uses prototypes for
-          inheritance. Understanding the prototype chain is crucial for grasping
-          how JavaScript objects inherit properties and methods from one
-          another.
+      - id: 12
+        topic_name: Objects - Part 2
+        sub_topic: Understand JavaScript Completely
+        publish_date: 2026-02-14
+        description: Learn how to effectively create, access, and merge JavaScript
+          objects with practical examples and advanced tips for building robust
+          web applications.
         topics:
           - javascript
-        duration: 18:00 mins read
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1758811616/Portfolio/javaScriptCourse/images/all%20title%20images/11_kmovpj.png
+        duration: 10:00 mins read
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1758811615/Portfolio/javaScriptCourse/images/all%20title%20images/10_ng3jhr.png
         auther_name: Rahul Aher
         is_on_youtube: false
-        _path: understand-javascript-complete-3-2
-      - id: 11
-        topic_name: Classes and Inheritance
+        _path: understand-javascript-complete-3-12
+      - id: 13
+        topic_name: Objects, Destructuring & APIs
+        sub_topic: Understand JavaScript Completely
+        publish_date: 2026-02-14
+        description: Learn how to master JavaScript objects, destructuring, and APIs
+          with practical examples to build a strong foundation for advanced
+          coding.
+        topics:
+          - javascript
+        duration: 10:00 mins read
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1758811615/Portfolio/javaScriptCourse/images/all%20title%20images/10_ng3jhr.png
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: understand-javascript-complete-3-13
+  - module_id: 5
+    module_name: Functions
+    module_duration: 45 mins read
+    topics_count: 7
+    tutor: 1
+    expanded: false
+    topics:
+      - id: 21
+        topic_name: Basics, Parameters & Return Values
+        sub_topic: Understand JavaScript Completely
+        publish_date: 2026-02-14
+        description: Learn JavaScript functions basics, parameters, return values, and
+          scope with practical examples to boost your coding skills in React and
+          beyond.
+        topics:
+          - javascript
+        duration: 10:00 mins read
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1758725512/Portfolio/javaScriptCourse/images/0_eestcm.png
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: understand-javascript-complete-5-21
+      - id: 22
+        topic_name: Rest Operator & Object
+        sub_topic: Understand JavaScript Completely
+        publish_date: 2026-02-14
+        description: Learn how to master JavaScript functions, parameters, rest
+          operator, and object handling with clear examples and best practices
+          for your coding journey.
+        topics:
+          - javascript
+        duration: 10:00 mins read
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1758725512/Portfolio/javaScriptCourse/images/0_eestcm.png
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: understand-javascript-complete-5-22
+      - id: 23
+        topic_name: "Scope: Let, Var & Const"
+        sub_topic: Understand JavaScript Completely
+        publish_date: 2026-02-14
+        description: Understand JavaScript scope, including let, var, and const, with
+          practical examples to avoid common programming errors and write
+          cleaner code.
+        topics:
+          - javascript
+        duration: 10:00 mins read
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1758725512/Portfolio/javaScriptCourse/images/0_eestcm.png
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: understand-javascript-complete-5-23
+      - id: 24
+        topic_name: Scope and Closures
+        sub_topic: Understand JavaScript Completely
+        publish_date: 2026-02-14
+        description: Learn JavaScript scope, closures, and function execution with clear
+          examples and error handling tips to master coding concepts
+          effectively.
+        topics:
+          - javascript
+        duration: 10:00 mins read
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1758725512/Portfolio/javaScriptCourse/images/0_eestcm.png
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: understand-javascript-complete-5-24
+      - id: 18
+        topic_name: Higher-Order Functions
         sub_topic: Javascript
         publish_date: 2026-09-25
         description: >
-          ES6 introduced class syntax to JavaScript, providing a more familiar
-          way to create objects and implement inheritance. While classes are
-          syntactic sugar over prototypes, they offer cleaner syntax and
-          additional features for modern JavaScript development.
+          Higher-order functions are functions that take other functions as
+          arguments or return functions. They're the backbone of functional
+          programming in JavaScript and enable powerful programming patterns
+          like map, filter, and reduce.
         topics:
           - javascript
         duration: 16:00 mins read
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1758811618/Portfolio/javaScriptCourse/images/all%20title%20images/12_atiwu3.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1758811617/Portfolio/javaScriptCourse/images/all%20title%20images/19_sm8mdu.png
         auther_name: Rahul Aher
         is_on_youtube: false
-        _path: understand-javascript-complete-3-3
+        _path: understand-javascript-complete-5-1
+      - id: 19
+        topic_name: map, filter & reduce
+        sub_topic: Javascript
+        publish_date: 2026-09-25
+        description: >
+          The holy trinity of array methods - map, filter, and reduce - are
+          essential tools for functional programming in JavaScript. These
+          methods allow you to transform, filter, and aggregate data in elegant,
+          readable ways.
+        topics:
+          - javascript
+        duration: 18:00 mins read
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1758811618/Portfolio/javaScriptCourse/images/all%20title%20images/20_lzukxv.png
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: understand-javascript-complete-5-2
+      - id: 20
+        topic_name: Advanced Closures Interview Questions
+        sub_topic: Javascript
+        publish_date: 2026-09-25
+        description: >
+          Master the most challenging closure-based interview questions that
+          test your deep understanding of JavaScript's scope, execution context,
+          and functional programming concepts.
+        topics:
+          - javascript
+        duration: 14:00 mins read
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1758811619/Portfolio/javaScriptCourse/images/all%20title%20images/21_a3dkrm.png
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: understand-javascript-complete-5-3
   - module_id: 4
     module_name: Advanced JavaScript Concepts
     module_duration: 75 mins read
@@ -317,60 +373,6 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-4-6
-  - module_id: 5
-    module_name: Functional Programming
-    module_duration: 45 mins read
-    topics_count: 3
-    tutor: 1
-    expanded: false
-    topics:
-      - id: 18
-        topic_name: Higher-Order Functions
-        sub_topic: Javascript
-        publish_date: 2026-09-25
-        description: >
-          Higher-order functions are functions that take other functions as
-          arguments or return functions. They're the backbone of functional
-          programming in JavaScript and enable powerful programming patterns
-          like map, filter, and reduce.
-        topics:
-          - javascript
-        duration: 16:00 mins read
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1758811617/Portfolio/javaScriptCourse/images/all%20title%20images/19_sm8mdu.png
-        auther_name: Rahul Aher
-        is_on_youtube: false
-        _path: understand-javascript-complete-5-1
-      - id: 19
-        topic_name: map, filter & reduce
-        sub_topic: Javascript
-        publish_date: 2026-09-25
-        description: >
-          The holy trinity of array methods - map, filter, and reduce - are
-          essential tools for functional programming in JavaScript. These
-          methods allow you to transform, filter, and aggregate data in elegant,
-          readable ways.
-        topics:
-          - javascript
-        duration: 18:00 mins read
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1758811618/Portfolio/javaScriptCourse/images/all%20title%20images/20_lzukxv.png
-        auther_name: Rahul Aher
-        is_on_youtube: false
-        _path: understand-javascript-complete-5-2
-      - id: 20
-        topic_name: Advanced Closures Interview Questions
-        sub_topic: Javascript
-        publish_date: 2026-09-25
-        description: >
-          Master the most challenging closure-based interview questions that
-          test your deep understanding of JavaScript's scope, execution context,
-          and functional programming concepts.
-        topics:
-          - javascript
-        duration: 14:00 mins read
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1758811619/Portfolio/javaScriptCourse/images/all%20title%20images/21_a3dkrm.png
-        auther_name: Rahul Aher
-        is_on_youtube: false
-        _path: understand-javascript-complete-5-3
   - module_id: 6
     module_name: Asynchronous JavaScript
     module_duration: 70 mins read
