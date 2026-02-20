@@ -13,8 +13,7 @@ featured: false
 
 ![image.png](https://github.blog/wp-content/uploads/2024/05/GitHub-for-beginners.png?w=1024)
 
-
-## Understanding Centralized and Distributed Version Control Systems
+# Understanding Centralized and Distributed Version Control Systems
 
 Version control systems (VCS) are essential tools that enable software development teams to collaborate efficiently, track changes, and manage code history. There are two primary models for version control: centralized and distributed. Each model offers unique workflows, advantages, and challenges that influence how teams coordinate their work and maintain project integrity.
 

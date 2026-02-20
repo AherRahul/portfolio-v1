@@ -12,7 +12,7 @@ showOnArticles: false
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770051377/Portfolio/lldSystemDesign/LLD-banner_huzyvn.png)
 
 
-### Introduction: The Significance of Activity Diagrams in System Design
+# Introduction: The Significance of Activity Diagrams in System Design
 
 In designing complex systems such as an **order processing system**, understanding the workflow and clearly communicating it is critical. When asked about the workflow of an order placement, one must consider not only the sequence of steps but also **parallel processes**, **decision points**, and **responsibility assignments**. Here, an **Activity Diagram**, a type of **UML (Unified Modeling Language) diagram**, becomes invaluable. Unlike sequence diagrams that emphasize object interactions, Activity Diagrams focus on the **flow of activities**, decision logic, and concurrent operations within a process. They offer a more powerful and detailed visualization than traditional flowcharts, making them essential for **modeling business workflows, optimizing parallel operations, and clarifying roles and responsibilities** within complex systems.
 

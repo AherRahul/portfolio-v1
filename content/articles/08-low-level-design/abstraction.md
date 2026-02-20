@@ -11,7 +11,7 @@ showOnArticles: false
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770051377/Portfolio/lldSystemDesign/LLD-banner_huzyvn.png)
 
-### Introduction: The Essence and Importance of Abstraction
+# Introduction: The Essence and Importance of Abstraction
 
 Abstraction is a foundational concept in software engineering and object-oriented programming (OOP), central to managing complexity and building maintainable systems. At its core, **abstraction** is the process of **hiding complex internal implementation details** while exposing only the relevant, high-level functionality to users or other system components. This approach allows developers and users to focus on *what* an object or system does, rather than *how* it accomplishes its tasks.
 

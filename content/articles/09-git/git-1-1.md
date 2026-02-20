@@ -13,7 +13,7 @@ featured: false
 
 ![image.png](https://github.blog/wp-content/uploads/2024/05/GitHub-for-beginners.png?w=1024)
 
-## What Is Git? A Complete Guide to Version Control Basics
+# What Is Git? A Complete Guide to Version Control Basics
 
 In the fast-paced world of software development, managing changes to code efficiently is essential. Whether you are a solo developer or part of a large team, tracking modifications, collaborating effectively, and maintaining the integrity of your codebase are critical challenges. This is where **Git** comes into play — a powerful and versatile **distributed version control system** that has transformed how developers handle their projects.
 

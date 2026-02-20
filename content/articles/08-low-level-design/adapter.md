@@ -9,11 +9,13 @@ courseName: 08-low-level-design
 showOnArticles: false
 ---
 
-## Understanding the Adapter Design Pattern: Bridging Incompatible Interfaces
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770051377/Portfolio/lldSystemDesign/LLD-banner_huzyvn.png)
 
-### Introduction
+# Understanding the Adapter Design Pattern: Bridging Incompatible Interfaces
+
+
+## Introduction
 
 In modern software development, integrating different systems or components often involves dealing with incompatible interfaces. 
 

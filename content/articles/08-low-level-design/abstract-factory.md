@@ -9,11 +9,12 @@ courseName: 08-low-level-design
 showOnArticles: false
 ---
 
-## Mastering the Abstract Factory Pattern for Cross-Platform UI Design
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770051377/Portfolio/lldSystemDesign/LLD-banner_huzyvn.png)
 
-### Introduction to the Abstract Factory Pattern
+# Mastering the Abstract Factory Pattern for Cross-Platform UI Design
+
+## Introduction to the Abstract Factory Pattern
 
 In software development, creating families of related objects that must work together seamlessly across different environments can be challenging. 
 

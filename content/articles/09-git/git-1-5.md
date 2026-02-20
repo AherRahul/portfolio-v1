@@ -14,7 +14,7 @@ featured: false
 ![image.png](https://github.blog/wp-content/uploads/2024/05/GitHub-for-beginners.png?w=1024)
 
 
-## How to Install Git and Start Practicing with a Sample Repository
+# How to Install Git and Start Practicing with a Sample Repository
 
 Git is a powerful version control system widely used by developers for tracking changes in source code during software development. Whether you're a beginner or looking to refresh your skills, understanding how to properly install Git and start using it is essential. This guide will walk you through the installation process on various operating systems, verify your setup, and provide a practical way to practice Git commands using a sample repository.
 

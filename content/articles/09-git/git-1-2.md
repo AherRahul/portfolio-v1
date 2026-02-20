@@ -13,7 +13,7 @@ featured: false
 
 ![image.png](https://github.blog/wp-content/uploads/2024/05/GitHub-for-beginners.png?w=1024)
 
-## Version Control Basics: A Guide to Git and Effective Collaboration
+# Version Control Basics: A Guide to Git and Effective Collaboration
 
 Version control is a fundamental system that records changes to files over time, enabling teams to collaborate efficiently and manage code systematically. Whether you're a beginner or seeking to strengthen your development practices, understanding version control lays the groundwork for mastering tools like Git and streamlining project workflows.
 
