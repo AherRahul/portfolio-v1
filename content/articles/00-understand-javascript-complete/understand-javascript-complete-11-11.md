@@ -17,8 +17,6 @@ featured: false
 
 TypeScript functions serve as the backbone of any TypeScript program, enabling developers to write reusable blocks of code that perform specific tasks. Unlike JavaScript, TypeScript adds static typing to functions, which helps catch errors early and ensures safer code. In this blog post, we'll explore the essentials of TypeScript functions, including parameters, return types, optional and default parameters, and common best practices to enhance your coding experience.
 
-<br/>
-
 ## Understanding the Basics of Functions in TypeScript
 
 A function in TypeScript is essentially a reusable chunk of code that can accept inputs, perform operations, and optionally return outputs. While functions in JavaScript and TypeScript share many similarities, TypeScript introduces explicit typing, making function usage more predictable and error-free.
@@ -31,8 +29,6 @@ There are fundamentally two scenarios for functions in TypeScript:
 2. **Functions that return data as output (return values).**
 
 Every function falls into one of these categories or both, meaning a function either accepts data, returns data, both, or neither. This simplicity is what makes functions manageable and easy to understand in TypeScript.
-
-<br/>
 
 ## Defining a Basic Function with Parameters
 
@@ -51,8 +47,6 @@ function makeTea(type: string, cups: number): void {
 - The return type is specified as `void`, indicating this function does not return any value.
 
 TypeScript immediately helps catch errors if you try to pass the wrong data type. For instance, passing a string where a number is expected will trigger a compiler error, ensuring safer code.
-
-<br/>
 
 ## Return Types in TypeScript Functions
 
@@ -84,8 +78,6 @@ function createOrder(order: TeaOrder): TeaOrder {
 ```
 
 In this case, the function accepts an object `order` of type `TeaOrder` and returns the same object. Defining interfaces helps manage complex data structures and makes sure the data fits the expected shape.
-
-<br/>
 
 ## Optional and Default Parameters in Functions
 
@@ -119,8 +111,6 @@ In this example, if no `type` is provided, the function defaults to `"Masala"`.
 
 When defining multiple parameters, always place optional and default parameters after required ones. This avoids confusion and maintains clarity.
 
-<br/>
-
 ## The `void` Return Type for Functions
 
 Not all functions return data. Sometimes, functions perform actions like logging or updating UI without returning any value. For such cases, TypeScript provides the `void` return type.
@@ -134,8 +124,6 @@ function logTeaReady(): void {
 
 Specifying `void` explicitly clarifies the function's purpose and prevents accidental return values.
 
-<br/>
-
 ## Type Inference in Functions
 
 TypeScript can automatically infer the return type of a function based on the returned value, even if you don't explicitly specify it.
@@ -148,8 +136,6 @@ function getTeaCount() {
 ```
 
 Here, TypeScript infers the return type as `number`. However, explicitly specifying return types is a better practice for readability and maintainability.
-
-<br/>
 
 ## Handling Null and Undefined Return Values
 
@@ -167,8 +153,6 @@ function fetchOrder(orderId: string): string | null {
 ```
 
 Using union types (`string | null`) clearly tells TypeScript that the function may return either a string or null.
-
-<br/>
 
 ## Using Complex Objects and Nested Types in Functions
 
@@ -196,8 +180,6 @@ function createTeaOrder(order: TeaOrder): TeaOrder {
 
 Here, the `TeaOrder` interface includes nested objects and optional properties, allowing for detailed and precise typing.
 
-<br/>
-
 ## Summary: Key Takeaways for TypeScript Functions
 
 - Functions accept parameters and optionally return values.
@@ -208,8 +190,6 @@ Here, the `TeaOrder` interface includes nested objects and optional properties, 
 - TypeScript infers return types but explicit definitions improve clarity.
 - Union types help handle multiple possible return types like `string | null`.
 - Interfaces and nested types help define complex data structures for parameters and return values.
-
-<br/>
 
 ## Conclusion
 

@@ -18,8 +18,6 @@ featured: false
 
 TypeScript has become an essential tool for modern JavaScript developers, offering robust typing features that improve code quality and maintainability. One of the core concepts in TypeScript is objects and their typing system. This guide dives deep into understanding how to work effectively with objects in TypeScript, covering everything from basic object typing to advanced utilities like Partial, Pick, and Omit. By the end, you'll have a comprehensive understanding that can save you hours of debugging and refactoring.
 
-<br/>
-
 ## Introduction to TypeScript Objects
 
 TypeScript objects are fundamental structures that allow you to group data using key-value pairs. If you already know JavaScript objects, TypeScript objects will feel familiar, but with the added power of static typing. This typing enables early error detection and better developer experience through autocomplete and suggestions.
@@ -52,8 +50,6 @@ type Tea = {
 
 Now, when creating objects of type `Tea`, you must provide all properties with their correct types, or TypeScript will throw errors.
 
-<br/>
-
 ## Working with Object Types in Depth
 
 ### Adding Arrays as Properties
@@ -78,8 +74,6 @@ const gingerTea: Tea = {
 
 TypeScript ensures that `ingredients` is always an array of strings, preventing accidental insertion of invalid types.
 
-<br/>
-
 ## Understanding Duck Typing in TypeScript
 
 TypeScript uses a structural type system often referred to as "duck typing," inspired by the phrase:  
@@ -101,8 +95,6 @@ smallCup = bigCup;  // No error because bigCup has at least the properties requi
 ```
 
 The assignment works because `bigCup` has all required properties of `Cup`, even if it has extra properties. This flexibility is useful but requires awareness to prevent unintended bugs.
-
-<br/>
 
 ## Essential TypeScript Utility Types for Objects
 
@@ -197,8 +189,6 @@ const publicTea: PublicTea = {
 
 This is helpful when hiding sensitive data or simplifying object shapes for external consumers.
 
-<br/>
-
 ## Best Practices for Working with Objects in TypeScript
 
 ### Separation of Type Definitions for Clarity
@@ -227,8 +217,6 @@ Errors and autocomplete suggestions guide you in writing correct code. For examp
 ### Using Type Utilities to Future-Proof Code
 
 Utilities like `Partial`, `Pick`, and `Omit` help adapt types as your application grows without rewriting entire interfaces.
-
-<br/>
 
 ## Conclusion: Why Deep Dive into TypeScript Objects?
 

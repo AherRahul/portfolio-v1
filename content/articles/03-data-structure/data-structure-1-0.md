@@ -60,8 +60,6 @@ Imagine you're the **chief architect of a massive city** tasked with designing t
 
 Understanding DSA is essential for building software that performs well, scales effectively, and solves real-world problems efficiently.
 
-<br />
-
 ## The Theoretical Foundation: What Are Data Structures and Algorithms?
 
 ### Understanding Data Structures: The Storage Architecture
@@ -136,8 +134,6 @@ Understanding DSA is essential for building software that performs well, scales 
 - **Technical Interviews**: DSA knowledge is tested at top companies
 - **Problem-Solving Skills**: Better algorithmic thinking improves code quality
 - **System Design**: Understanding trade-offs enables better architecture decisions
-
-<br />
 
 ## Summary
 

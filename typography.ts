@@ -36,25 +36,67 @@ export function typographyStyles({ theme }: PluginUtils) {
           marginBottom: theme('spacing.4'),
         },
 
-        // Headings
-        'h2, h3': {
+        // Headings — full h1–h6 hierarchy
+        'h1, h2, h3, h4, h5, h6': {
           color: 'var(--tw-prose-headings)',
           fontWeight: theme('fontWeight.semibold'),
+          scrollMarginTop: theme('spacing.24'),
+        },
+        h1: {
+          fontSize: theme('fontSize.3xl')[0],
+          lineHeight: theme('lineHeight.tight'),
+          fontWeight: theme('fontWeight.bold'),
+          marginTop: theme('spacing.10'),
+          marginBottom: theme('spacing.4'),
+          paddingLeft: theme('spacing.4'),
+          borderLeftWidth: '4px',
+          borderLeftColor: theme('colors.red.500'),
         },
         h2: {
-          fontSize: theme('fontSize.xl')[0],
-          lineHeight: theme('lineHeight.7'),
-          marginTop: theme('spacing.15'),
+          fontSize: theme('fontSize.2xl')[0],
+          lineHeight: theme('lineHeight.snug'),
+          fontWeight: theme('fontWeight.bold'),
+          marginTop: theme('spacing.14'),
           marginBottom: theme('spacing.3'),
+          paddingBottom: theme('spacing.1'),
         },
         h3: {
-          fontSize: theme('fontSize.base')[0],
+          fontSize: theme('fontSize.xl')[0],
           lineHeight: theme('lineHeight.7'),
-          marginTop: theme('spacing.12'),
+          fontWeight: theme('fontWeight.semibold'),
+          marginTop: theme('spacing.10'),
           marginBottom: theme('spacing.3'),
         },
-        ':is(h2, h3) + *': {
+        h4: {
+          fontSize: theme('fontSize.lg')[0],
+          lineHeight: theme('lineHeight.7'),
+          fontWeight: theme('fontWeight.semibold'),
+          marginTop: theme('spacing.8'),
+          marginBottom: theme('spacing.2'),
+        },
+        h5: {
+          fontSize: theme('fontSize.base')[0],
+          lineHeight: theme('lineHeight.6'),
+          fontWeight: theme('fontWeight.semibold'),
+          marginTop: theme('spacing.6'),
+          marginBottom: theme('spacing.2'),
+          color: theme('colors.zinc.300'),
+        },
+        h6: {
+          fontSize: theme('fontSize.sm')[0],
+          lineHeight: theme('lineHeight.6'),
+          fontWeight: theme('fontWeight.semibold'),
+          marginTop: theme('spacing.5'),
+          marginBottom: theme('spacing.1'),
+          color: theme('colors.zinc.400'),
+          textTransform: 'uppercase',
+          letterSpacing: theme('letterSpacing.wide'),
+        },
+        ':is(h1, h2, h3, h4, h5, h6) + *': {
           marginTop: 0,
+        },
+        ':is(h1, h2, h3, h4, h5, h6) code': {
+          fontWeight: theme('fontWeight.bold'),
         },
 
         // Images

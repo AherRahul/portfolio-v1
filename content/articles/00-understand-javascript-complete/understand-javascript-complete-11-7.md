@@ -20,8 +20,6 @@ Type Guards are an essential concept in TypeScript that help developers write sa
 
 In this blog post, we will explore what Type Guards are, how they help in type narrowing, and the best practices when working with them. We will also discuss the difference between the `any` and `unknown` types, and demonstrate with practical examples to make these concepts clear.
 
-<br />
-
 ## Understanding Type Guards  
 
 ### What Are Type Guards?  
@@ -33,8 +31,6 @@ For example, you might have a function that accepts a parameter which can be a s
 - **Safety:** They help avoid runtime errors by ensuring variables are used according to their actual type.  
 - **Code Completion:** When types are narrowed down, your IDE can provide accurate method and property suggestions.  
 - **Best Practices:** Type Guards encourage a more disciplined coding style, improving readability and maintainability.
-
-<br />
 
 ## `any` vs `unknown` Types in TypeScript  
 
@@ -61,8 +57,6 @@ if (typeof value === "string") {
 - Forces explicit type checking.  
 - Prevents accidental misuse of variables.  
 - Makes your code more robust and easier to debug.
-
-<br />
 
 ## Practical Examples of Type Guards  
 
@@ -118,8 +112,6 @@ function orderTea(size: Size) {
 
 By explicitly checking all possible cases, you ensure your function handles every variant, which is called **exhaustive checking**. This reduces bugs caused by unhandled cases.
 
-<br />
-
 ## Using Classes and `instanceof` for Type Guards  
 
 When working with object-oriented code, you can use the `instanceof` operator to narrow types based on class instances.
@@ -147,8 +139,6 @@ function serveTeaOrder(tea: CoolerTea | CuttingTea) {
 ```
 
 This pattern ensures you are calling methods on the correct class instances, which protects against runtime errors.
-
-<br />
 
 ## Creating Custom Types and Using Type Guards  
 
@@ -192,8 +182,6 @@ function makeTea(order: TeaOrder) {
 
 This approach leverages TypeScript’s union types and exhaustive checking to ensure all tea types are handled appropriately.
 
-<br />
-
 ## Handling Arrays with `any` and `unknown`  
 
 When working with arrays, you might receive data whose type is uncertain. While you can use `any[]` to accept any array, it’s safer to use `unknown[]` to enforce type checks on array elements.
@@ -210,8 +198,6 @@ function processStringArray(arr: unknown[]): string[] {
 
 This makes your code more predictable and less prone to errors.
 
-<br />
-
 ## Summary: Best Practices for Type Guards  
 
 - **Prefer `unknown` over `any`**: Use `unknown` to force type checks before using values.  
@@ -221,15 +207,11 @@ This makes your code more predictable and less prone to errors.
 - **Use Type Guards in functions**: Narrow types early in your functions for better safety and code completion.  
 - **Avoid bypassing TypeScript safety**: Resist the temptation to use `any` just to silence errors; instead, use proper guards.
 
-<br />
-
 ## Conclusion  
 
 Type Guards are a powerful feature in TypeScript that significantly enhance code quality by providing runtime type safety and better developer experience. By understanding and applying type narrowing, using `unknown` instead of `any`, and leveraging class-based guards, you can write robust and maintainable TypeScript applications.
 
 Start integrating these practices into your projects, and you will see how your code becomes easier to read, debug, and extend. Happy coding!
-
-<br />
 
 ## FAQ  
 

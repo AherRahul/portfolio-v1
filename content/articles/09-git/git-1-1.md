@@ -20,8 +20,6 @@ In the fast-paced world of software development, managing changes to code effici
 This blog post will guide you through what Git is, its unique architecture, core features, key terminology, essential commands, and its wide-ranging applications. By the end, you'll understand why Git is the preferred choice for modern software development workflows and how to use it confidently.
 
 
-<br/>
-
 ## Understanding Git: The Basics
 
 ### What Is Git?
@@ -64,8 +62,6 @@ To fully appreciate Git’s capabilities, it’s important to understand its und
 
 When you make a commit, Git creates a new tree object reflecting the current state of your files. The commit object then points to this tree and links back to its parent commit(s), forming a chain of snapshots. This object model allows Git to store data efficiently and reconstruct any version of the project at any time.
 
-<br/>
-
 ## Essential Git Terminology
 
 Understanding Git's vocabulary is crucial to effectively use the tool. Here are some fundamental terms you should know:
@@ -77,8 +73,6 @@ Understanding Git's vocabulary is crucial to effectively use the tool. Here are 
 
 These concepts form the backbone of how you interact with Git during your development process.
 
-
-<br/>
 
 ## Core Git Commands and Operations
 
@@ -144,8 +138,6 @@ git checkout new-feature
 These commands form the fundamental toolkit for version control with Git.
 
 
-<br/>
-
 ## Practical Applications of Git in Software Development
 
 Git goes beyond just tracking code changes—it's integral to contemporary software development workflows. Here’s how Git is applied in real-world scenarios:
@@ -165,8 +157,6 @@ Git powers the majority of open-source projects worldwide. Platforms like GitHub
 #### Experimentation and Innovation
 
 With Git’s lightweight branching, developers can experiment freely without risking the main codebase. This encourages innovation and rapid prototyping, accelerating project growth.
-
-<br/>
 
 ## Conclusion
 

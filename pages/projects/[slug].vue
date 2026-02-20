@@ -47,11 +47,11 @@ onMounted(() => {
       />
       
       <!-- Content Reader positioned below heading -->
-      <div class="mt-8">
+      <!-- <div class="mt-8">
         <ClientOnly>
           <LazyContentReader :prepend="project.title" content-selector=".project-content" />
         </ClientOnly>
-      </div>
+      </div> -->
     </AppSection>
     <AppSection class="bg-zinc-900 !pb-0" inner-class="border-b border-zinc-800">
       <div class="justify-center gap-8 pb-16">

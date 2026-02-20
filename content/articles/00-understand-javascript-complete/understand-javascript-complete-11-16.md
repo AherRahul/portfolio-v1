@@ -18,8 +18,6 @@ featured: false
 
 React and TypeScript make a powerful combination for building scalable and maintainable front-end applications. Many developers often wonder if learning TypeScript is necessary when they already know JavaScript, especially when working with React. The truth is that all JavaScript React code can seamlessly be converted to TypeScript with minimal effort, primarily by adding type definitions and interfaces. This guide will walk you through the essentials of working with TypeScript in React, including component creation, props handling, hooks, and forms, providing you the confidence to use TypeScript efficiently in your projects.
 
-<br/>
-
 ## Why Use TypeScript with React?
 
 ### Benefits of Type Safety
@@ -33,8 +31,6 @@ If you already have JavaScript knowledge, transitioning to TypeScript is simpler
 ### Better Developer Experience with Tooling
 
 With TypeScript, editors provide better auto-completion, inline documentation, and error checking, making your development workflow more productive.
-
-<br/>
 
 ## Setting Up a React TypeScript Project
 
@@ -54,8 +50,6 @@ This initializes a React project with TypeScript support out-of-the-box.
 ### Project Structure Overview
 
 Inside the `src` folder, your main entry is `main.tsx` or `App.tsx`. Files with the `.tsx` extension indicate React components written in TypeScript JSX syntax.
-
-<br/>
 
 ## Building React Components with TypeScript
 
@@ -102,8 +96,6 @@ export function App() {
 
 Passing props with proper types helps avoid bugs and improves maintainability.
 
-<br/>
-
 ## Managing State with useState Hook in TypeScript
 
 ### Defining State Types Explicitly
@@ -130,8 +122,6 @@ Here, `useState<number>(0)` explicitly states that `count` is a number.
 ### Why Explicit Types Matter
 
 Specifying types prevents accidental assignment of wrong data types and helps TypeScript provide better suggestions.
-
-<br/>
 
 ## Handling Lists and Props with Arrays
 
@@ -169,8 +159,6 @@ export function TeaList({ items }: TeaListProps) {
 ### Importing Types for Reusability
 
 You can export interfaces like `Tea` from a separate `types.ts` file to reuse them across components.
-
-<br/>
 
 ## Building Forms with TypeScript in React
 
@@ -222,8 +210,6 @@ export function OrderForm({ onSubmit }: OrderFormProps) {
 - Use `React.ChangeEvent<HTMLInputElement>` for input change events.
 - Convert input values to appropriate types (e.g., string to number).
 
-<br/>
-
 ## Advanced Props: Using Children and Extending Interfaces
 
 ### The Special `children` Prop in React
@@ -269,8 +255,6 @@ export function Card({ title, footer, children }: PropsWithChildren<CardExtraPro
 
 This is useful for consistent typing of components accepting children.
 
-<br/>
-
 ## Creating Custom Hooks with TypeScript
 
 ### Example: A Generic useFetch Hook
@@ -310,8 +294,6 @@ export function useFetch<T>(url: string): FetchState<T> {
 - Strongly typed state for data, loading, and error.
 - Improved code readability and maintainability.
 
-<br/>
-
 ## Best Practices for TypeScript with React
 
 ### Define Interfaces for Props and State
@@ -330,8 +312,6 @@ Use utility types like `PropsWithChildren`, `Partial<T>`, and generics to write 
 
 Use React's predefined event types for input, form, and other event handlers to get accurate type checking.
 
-<br/>
-
 ## Conclusion: Building Confidence with TypeScript in React
 
 TypeScript enhances React development by providing type safety, better tooling, and clearer code structure. The learning curve is minimal if you start by adding types gradually to your existing JavaScript React code.
@@ -341,8 +321,6 @@ By practicing key concepts such as defining props interfaces, typing hooks, hand
 This guide covered practical examples including components, state management, lists, forms, children props, and custom hooks. With these fundamentals, you are well-equipped to build robust React applications using TypeScript and can confidently advance to frameworks like Next.js without additional hurdles.
 
 Keep exploring, practicing, and integrating TypeScript into your React projects to enjoy cleaner, safer, and more maintainable codebases.
-
-<br/>
 
 ## FAQ
 

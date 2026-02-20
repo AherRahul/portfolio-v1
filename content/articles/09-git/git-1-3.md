@@ -20,8 +20,6 @@ Version control systems (VCS) are essential tools that enable software developme
 
 This blog post provides an in-depth comparison of centralized and distributed version control systems, helping you understand their core concepts, workflows, and when to choose one over the other.
 
-<br />
-
 ## What is a Version Control System?
 
 A version control system is a software tool that records changes to files over time, allowing multiple developers to work on a project simultaneously without overwriting each other’s work. It also tracks the entire history of changes, making it possible to revert to previous versions if needed.
@@ -32,8 +30,6 @@ There are two broad categories of VCS:
 - **Distributed Version Control Systems (DVCS)**
 
 
-
-<br />
 
 ## Centralized Version Control Systems (CVCS)
 
@@ -61,8 +57,6 @@ Popular centralized systems include **Subversion (SVN)** and **Concurrent Versio
 - **Limited Offline Capability:** Developers cannot commit or browse full history without server access.
 - **Merge Conflicts:** With multiple developers working on the same files, conflicts can arise that require manual resolution.
 
-<br />
-
 ## Centralized Workflow Example
 
 Using SVN as an example, the workflow typically involves:
@@ -81,8 +75,6 @@ svn commit -m "Implemented new feature"
 In this model, every operation interacts with the central server to ensure consistency.
 
 
-
-<br />
 
 ## Distributed Version Control Systems (DVCS)
 
@@ -109,8 +101,6 @@ Distributed version control systems take a different approach by giving **each d
 - **Learning Curve:** More complex concepts such as branching, merging, and repository synchronization may confuse new users.
 - **Coordination Effort:** Multiple copies of the repository require careful management to avoid fragmentation or conflicts.
 
-<br />
-
 ## Distributed Workflow Example
 
 With Git, the typical workflow looks like this:
@@ -136,8 +126,6 @@ git push origin new-feature
 This setup encourages experimentation in isolated branches without affecting the main codebase until changes are merged.
 
 
-<br />
-
 ## Key Differences Between Centralized and Distributed VCS
 
 Understanding the critical differences between centralized and distributed systems helps clarify when to use each. Here’s a summary of their main distinctions
@@ -151,8 +139,6 @@ Understanding the critical differences between centralized and distributed syste
 | **Commit History**       | Limited without server access   | Full local history available    |
 
 This table highlights how DVCS like Git stands out, especially in scenarios requiring flexibility, offline work, and branching.
-
-<br />
 
 ## Choosing the Right Version Control System
 Choosing between a centralized and distributed system often depends on the project requirements and the team's workflow preferences. Here are some situations where each model excels:
@@ -170,8 +156,6 @@ Choosing between a centralized and distributed system often depends on the proje
 - **Experimental or Agile Workflows:** Developers need freedom to create branches and test features without impacting others.
 
 
-<br />
-
 ## Conclusion: Making an Informed Version Control Choice
 
 Both centralized and distributed version control systems have distinct strengths tailored for different team setups and project complexities. Centralized VCS offers straightforward workflows ideal for smaller teams and controlled environments, while distributed VCS provides unmatched flexibility, offline capabilities, and powerful branching suited for modern, collaborative development.
@@ -186,8 +170,6 @@ Understanding these differences empowers teams to adopt the version control stra
 Now that you have a clear understanding of the centralized versus distributed VCS landscape, the next logical step is to dive into the history and development of Git. Learn how Git was created to overcome the limitations of earlier systems and why it has become the dominant choice for modern software development.
 
 Stay tuned for our upcoming deep dive into Git’s origins, architecture, and best practices!
-
-<br/>
 
 ## Mind Map
 

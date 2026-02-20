@@ -15,78 +15,24 @@ content:
   - module_id: 1
     module_name: Get Started
     module_duration: 47 mins read
-    topics_count: 4
+    topics_count: 1
     tutor: 1
     expanded: false
     topics:
       - id: 1
-        topic_name: JavaScript Engine
-        sub_topic: Javascript
-        publish_date: 2026-09-24
-        description: >
-          To truly understand JavaScript, you have to look beyond the code you
-          write and into the engine that runs it. At its heart, JavaScript is a
-          single-threaded, non-blocking, asynchronous language. This fundamental
-          nature is what makes it so efficient and powerful for building
-          responsive applications, especially on the web.
+        topic_name: Introduction
+        sub_topic: Understand JavaScript Completely
+        publish_date: 2026-02-20
+        description: Start your JavaScript journey with confidence! Learn modern
+          concepts, best practices, and real-world projects in this in-depth
+          series for beginners and beyond.
         topics:
           - javascript
         duration: 10:00 mins read
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1758795081/Portfolio/javaScriptCourse/images/01/1_t9gtmc.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1758811615/Portfolio/javaScriptCourse/images/all%20title%20images/10_ng3jhr.png
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-1-1
-      - id: 2
-        topic_name: Execution Context
-        sub_topic: Javascript
-        publish_date: 2026-09-24
-        description: >
-          An Execution Context is the abstract environment where JavaScript code
-          is evaluated and executed. Think of it as a container or a sandbox
-          that manages all the variables, functions, and code that's currently
-          running. It's the central concept that determines what a function can
-          access and what the value of this is.
-        topics:
-          - javascript
-        duration: 10:00 mins read
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1758785691/Portfolio/javaScriptCourse/images/02/Javascript_f1fl8c.png
-        auther_name: Rahul Aher
-        is_on_youtube: false
-        _path: understand-javascript-complete-1-2
-      - id: 3
-        topic_name: Hoisting
-        sub_topic: Javascript
-        publish_date: 2026-09-25
-        description: >
-          Hoisting is JavaScript's behavior of moving variable and function
-          declarations to the top of their scope during the creation phase. It's
-          not magic—it's a direct result of how execution contexts work.
-          Understanding hoisting helps you predict how your code will behave and
-          avoid common pitfalls.
-        topics:
-          - javascript
-        duration: 12:00 mins read
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1758811613/Portfolio/javaScriptCourse/images/all%20title%20images/4_m7pdwg.png
-        auther_name: Rahul Aher
-        is_on_youtube: false
-        _path: understand-javascript-complete-1-3
-      - id: 4
-        topic_name: Scope and Lexical Environment
-        sub_topic: Javascript
-        publish_date: 2026-09-25
-        description: >
-          Scope determines where variables can be accessed in your code, while
-          lexical environment is the internal structure that makes scope
-          possible. Together, they form the foundation of how JavaScript
-          resolves variable access, creates closures, and manages memory.
-          Understanding these concepts is crucial for mastering JavaScript.
-        topics:
-          - javascript
-        duration: 15:00 mins read
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1758811613/Portfolio/javaScriptCourse/images/all%20title%20images/5_ygat9m.png
-        auther_name: Rahul Aher
-        is_on_youtube: false
-        _path: understand-javascript-complete-1-4
   - module_id: 2
     module_name: Core Language Concepts
     module_duration: 55 mins read

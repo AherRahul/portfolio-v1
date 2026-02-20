@@ -19,8 +19,6 @@ TypeScript is a powerful superset of JavaScript that helps developers write more
 
 This blog post will provide a comprehensive overview of TypeScript interfaces and generics, explaining their concepts, practical usage, and real-world applications. Whether you’re a beginner or someone looking to deepen your understanding, this guide will clarify these essential TypeScript concepts.
 
-<br />
-
 ## Understanding TypeScript Interfaces
 
 ### What is an Interface in TypeScript?
@@ -90,8 +88,6 @@ const discount: DiscountCalculator = {
 
 A class implementing this interface would need to define the `calculate` method accordingly.
 
-<br />
-
 ## Advanced Interface Concepts
 
 ### Interface Merging
@@ -151,8 +147,6 @@ const ratings: TeaRatings = {
 ```
 
 This means any string key maps to a number.
-
-<br />
 
 ## Introduction to Generics in TypeScript
 
@@ -218,8 +212,6 @@ const stringBox: Box<string> = { content: "Hello" };
 
 You specify the type when using the interface, making it flexible.
 
-<br />
-
 ## Practical Use Cases of Generics
 
 ### API Response Handling
@@ -244,8 +236,6 @@ This allows reuse of `ApiResponse` for different data shapes.
 
 In UI frameworks like React, form states are often typed generically to handle different form data structures efficiently.
 
-<br />
-
 ## Summary and Best Practices
 
 - **Interfaces** define the shape of objects and can include properties and methods.
@@ -254,8 +244,6 @@ In UI frameworks like React, form states are often typed generically to handle d
 - **Generics** enable writing reusable, type-safe code components that work with any data type.
 - Use generics in functions, interfaces, and classes to maximize flexibility.
 - Use interfaces and generics together to build scalable, maintainable codebases, especially when working with complex data or external APIs.
-
-<br />
 
 ## Frequently Asked Questions (FAQ)
 

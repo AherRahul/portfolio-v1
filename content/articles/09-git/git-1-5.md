@@ -18,8 +18,6 @@ featured: false
 
 Git is a powerful version control system widely used by developers for tracking changes in source code during software development. Whether you're a beginner or looking to refresh your skills, understanding how to properly install Git and start using it is essential. This guide will walk you through the installation process on various operating systems, verify your setup, and provide a practical way to practice Git commands using a sample repository.
 
-<br/>
-
 ## Installing Git Locally on Your Computer
 
 Git can be installed on all major operating systems including Windows, macOS, and Linux. The official Git website ([git-scm.com](https://git-scm.com/)) provides detailed instructions tailored for your specific OS. Follow the steps below based on your platform.
@@ -56,8 +54,6 @@ Git can be installed on all major operating systems including Windows, macOS, an
    ```
 5. Confirm the installation once done.
 
-<br/>
-
 ## Verifying Your Git Installation
 
 After installing Git, it’s important to confirm that the setup was successful.
@@ -76,8 +72,6 @@ After installing Git, it’s important to confirm that the setup was successful.
 4. This version number indicates that Git is ready to use.
 
 If you encounter any errors or do not see the version information, review the installation steps or consult the official Git documentation for troubleshooting.
-
-<br/>
 
 ## Start Practicing Git with a Sample Repository
 
@@ -112,8 +106,6 @@ If you prefer, you can also create a personal test repository:
    git init
    ```
 3. Add files and practice common Git operations like add, commit, push, and branch.
-
-<br/>
 
 ## What’s Next?
 

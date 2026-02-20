@@ -18,8 +18,6 @@ featured: false
 
 Git has become the backbone of modern software development, powering collaboration and code management for millions of developers worldwide. To truly appreciate its impact, it is essential to understand Git’s evolution—from its inception to its current standing as the leading distributed version control system. This blog post explores Git’s history, core design principles, feature development, and its critical role in contemporary software engineering.
 
-<br />
-
 ## The Birth of Git
 
 #### The Challenge Faced by Linus Torvalds
@@ -35,8 +33,6 @@ Git has become the backbone of modern software development, powering collaborati
   - Strong data integrity to maintain a trustworthy repository.
 
   This led to the birth of Git, a tool that was not merely a version control system but a paradigm shift in how developers collaborate and manage code.
-
-<br />
 
 ## Key Design Principles of Git
 
@@ -64,8 +60,6 @@ Git introduced the staging area, giving developers fine-grained control over com
 - The staging area acts as a review step to catch errors before finalizing commits.
 - Encourages cleaner, more logical commits, improving project history clarity.
 
-<br />
-
 ## The Growth and Adoption of Git
 
 ### Early Adoption and Community Growth
@@ -79,8 +73,6 @@ Git’s open-source nature encouraged widespread contributions. Developers aroun
 ### Integration with Popular Platforms
 
 The launch of GitHub in 2008 marked a turning point. GitHub provided a user-friendly platform for hosting Git repositories with social coding features like pull requests, issue tracking, and forking, making Git more accessible and popular among developers.
-
-<br />
 
 ## Evolution of Git Features
 
@@ -111,8 +103,6 @@ As projects grew complex, managing external dependencies became crucial.
 - **Submodules:** Allow embedding external repositories inside a project but require separate updates and commits.
 - **Subtrees:** Provide a more integrated approach, treating external code as part of the main project, simplifying workflows.
 
-<br />
-
 ## The Role of Git in Modern Software Development
 
 ### Enabling Continuous Integration and Deployment
@@ -127,15 +117,11 @@ Git’s branching and merging model align perfectly with agile workflows—suppo
 
 The Git ecosystem includes GUIs (GitKraken, SourceTree), IDE integrations, and CI/CD tools, enhancing usability and productivity. These tools lower the barrier to entry and optimize workflows for all developers.
 
-<br />
-
 ## Conclusion
 
 Understanding Git’s evolution provides deeper insight into why it remains the dominant version control system today. From Linus Torvalds’s initial vision to the vibrant community and ecosystem that supports it, Git embodies the principles of speed, reliability, and collaboration. Its distributed architecture, innovative features, and seamless integration with modern development practices have revolutionized how developers manage code and work together.
 
 Whether you’re an individual developer or part of a large team, mastering Git unlocks powerful workflows that accelerate software delivery and foster innovation. As development continues to evolve, Git’s adaptability ensures it will remain a cornerstone of version control for years to come.
-
-<br />
 
 ## FAQ
 
@@ -159,8 +145,6 @@ They provide user-friendly interfaces, social coding features, and integrations 
 
 By exploring the fascinating journey of Git and its continuous evolution, developers can appreciate the tool’s powerful capabilities and leverage them to improve their workflows and project outcomes.
 
-
-<br/>
 
 ## Mind Map
 

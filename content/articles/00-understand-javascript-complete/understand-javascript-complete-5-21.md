@@ -14,8 +14,6 @@ featured: false
 
 JavaScript functions are the building blocks of any dynamic web application, especially when working with frameworks like React. Understanding how to write and use functions effectively is crucial for developers at all levels. In this comprehensive guide, we will explore the fundamentals of JavaScript functions, including how to define them, pass parameters, handle return values, and understand scope. This knowledge will not only improve your coding skills but also prepare you for real-world programming challenges.
 
-<br/>
-
 ## What Are Functions in JavaScript?  
 
 A function in JavaScript is essentially a reusable block of code designed to perform a particular task. Instead of repeating the same code multiple times, you can wrap it inside a function and call it whenever needed. Functions help keep your code organized, reduce redundancy, and make it more maintainable.
@@ -36,8 +34,6 @@ Here, `greet` is a function that logs a greeting message. To execute the functio
 greet(); // Output: Hello, World!
 ```
 
-<br/>
-
 ## Why Use Functions?  
 
 Imagine you need to perform the same task multiple times — like displaying a message or calculating values. Writing the same code repeatedly is inefficient and error-prone. Functions solve this problem by enabling you to write the code once and reuse it anywhere.
@@ -45,8 +41,6 @@ Imagine you need to perform the same task multiple times — like displaying a m
 # Understanding Function Parameters and Arguments  
 
 Functions become more powerful when you pass data to them. This is done via parameters and arguments.
-
-<br/>
 
 ## Parameters vs. Arguments  
 
@@ -84,16 +78,12 @@ Here, the function takes two inputs, adds them, and returns their sum. The retur
 
 Understanding the difference between executing a function and referencing it is vital.
 
-<br/>
-
 ## Function Execution vs. Function Reference  
 
 - **Execution** involves calling the function with parentheses, e.g., `addNumbers(2, 3)` which runs the function and returns a value.  
 - **Reference** means referring to the function itself without executing it, e.g., `addNumbers` which can be passed around or assigned but not run.
 
 If you only refer to a function without executing it, no code inside runs, and you get no output.
-
-<br/>
 
 ## The `return` Statement  
 
@@ -125,8 +115,6 @@ console.log(product);  // Output: undefined
 
 Scope defines the accessibility of variables inside and outside functions.
 
-<br/>
-
 ## Local and Global Scope  
 
 - **Local scope** means variables declared inside a function are only available within that function.  
@@ -148,8 +136,6 @@ Understanding scope is essential when working with functions in React or any Jav
 # Handling Edge Cases in Functions  
 
 Functions should be robust and handle unexpected inputs gracefully.
-
-<br/>
 
 ## What Happens If No Arguments Are Passed?  
 
@@ -180,8 +166,6 @@ greetUser();  // Output: Please provide a user name.
 greetUser("Rahul"); // Output: Hello, Rahul
 ```
 
-<br/>
-
 ## Using Default Parameter Values  
 
 ES6 introduced default parameters, which assign default values if no arguments are passed:
@@ -201,8 +185,6 @@ This feature ensures your functions behave predictably even when some arguments 
 
 JavaScript provides logical operators to write concise conditional checks.
 
-<br/>
-
 ## Using `!` (Logical NOT) Operator  
 
 The exclamation mark `!` converts a truthy value to false and a falsy value to true. For example:
@@ -216,8 +198,6 @@ if (!userName) {
 ```
 
 If `userName` is `undefined` or an empty string (both falsy), the condition will be true, and the message will print.
-
-<br/>
 
 ## Checking for Undefined or Empty Values  
 

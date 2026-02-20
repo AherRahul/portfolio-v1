@@ -216,11 +216,11 @@ const resourcesForTabs = computed(() => {
       </div>
       
       <!-- Content Reader positioned below heading -->
-      <div v-if="!isCourseArticle" class="mt-8">
+      <!-- <div v-if="!isCourseArticle" class="mt-8">
         <ClientOnly>
           <LazyContentReader :prepend="article.title" content-selector=".article-content" />
         </ClientOnly>
-      </div>
+      </div> -->
     </AppSection>
     <AppSection class="justify-center bg-zinc-900 pb-8">
       <!-- Enhanced Course Tabs for course articles OR regular content for standalone articles -->

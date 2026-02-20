@@ -17,8 +17,6 @@ featured: false
 
 TypeScript is a powerful superset of JavaScript that adds static type definitions to the language, enhancing code safety, maintainability, and developer productivity. In this comprehensive guide, we'll explore essential TypeScript concepts including type assertions, the never type, handling dynamic data like API responses and local storage, and how to effectively work with role-based access controls. Whether you’re a beginner or looking to refine your TypeScript skills, this post offers practical insights and examples from real-world scenarios.
 
-<br />
-
 ## Introduction to TypeScript Data Types
 
 TypeScript introduces static typing to JavaScript, enabling developers to specify the data type of variables, function parameters, and return values. This helps catch errors during development rather than at runtime.
@@ -30,8 +28,6 @@ TypeScript introduces static typing to JavaScript, enabling developers to specif
 - **Special types:** `any`, `unknown`, `never`, and `void`.
 
 Among these, `any` and `unknown` are used when the type is not known upfront, but they differ in safety and usage. The `never` type, a less commonly understood but powerful feature, is used to represent values that never occur.
-
-<br />
 
 ## Type Assertions in TypeScript: Forcing Types Safely
 
@@ -72,8 +68,6 @@ Without assertion, TypeScript won't provide method suggestions or may throw erro
 - Avoid overusing `any` as it negates the benefits of TypeScript.
 - Use interface or type aliases to define expected shapes of objects.
 
-<br />
-
 ## Handling Dynamic Data with Custom Types
 
 When working with dynamic data such as API responses or local storage, TypeScript requires you to define expected data structures.
@@ -106,8 +100,6 @@ if (bookString) {
 
 This ensures TypeScript understands the structure of the parsed object.
 
-<br />
-
 ## TypeScript and DOM Elements: Assigning Types to HTML Elements
 
 When interacting with the DOM, TypeScript requires explicit typing to provide proper method suggestions and avoid errors.
@@ -120,8 +112,6 @@ console.log(usernameInput.value);
 ```
 
 Without the type assertion `as HTMLInputElement`, TypeScript treats the element as a generic `HTMLElement`, which may not have a `.value` property. This is crucial in frameworks like React where you work with many input elements.
-
-<br />
 
 ## Understanding the `any` and `unknown` Types
 
@@ -147,8 +137,6 @@ if (typeof value === 'string') {
 ```
 
 This prevents unsafe operations on values of unknown types.
-
-<br />
 
 ## The Power of the `never` Type in TypeScript
 
@@ -196,8 +184,6 @@ function infiniteLoop(): never {
 
 This signals to TypeScript and developers that the function doesn’t complete normally.
 
-<br />
-
 ## Error Handling in TypeScript: Best Practices with `try-catch`
 
 Error handling is critical in production code. TypeScript adds challenges because error types are not always known.
@@ -231,8 +217,6 @@ try {
 ```
 
 This approach avoids runtime issues and improves type safety.
-
-<br />
 
 ## Practical Examples and Use Cases
 
@@ -277,8 +261,6 @@ console.log(input.value);
 
 Ensures TypeScript recognizes the element type for better autocompletion and error prevention.
 
-<br />
-
 ## Summary
 
 TypeScript's static typing and advanced features like type assertions, the never type, and precise error handling provide strong safeguards for writing robust, maintainable code. Key takeaways include:
@@ -290,8 +272,6 @@ TypeScript's static typing and advanced features like type assertions, the never
 - Assign explicit types when interacting with DOM elements to avoid runtime issues.
 
 By mastering these concepts, developers can write cleaner, more efficient TypeScript code, reducing bugs and improving productivity in large-scale projects.
-
-<br />
 
 ## Frequently Asked Questions (FAQ)
 

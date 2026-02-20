@@ -22,8 +22,6 @@ JavaScript is a versatile programming language widely used in web development. T
 
 Objects allow you to logically group data and methods that operate on that data. They are essential for building complex applications because they provide structure and organization. Before moving on to loops and conditional logic, having a strong grasp of objects ensures you can manipulate and access data efficiently.
 
-<br/>
-
 ## Destructuring Objects for Cleaner Code
 
 ### What is Destructuring?
@@ -77,8 +75,6 @@ function User({ name, email }) {
 
 Instead of accessing `props.name` and `props.email`, destructuring directly extracts these values, resulting in cleaner component code.
 
-<br/>
-
 ## Introduction to APIs and JSON
 
 ### What Are APIs?
@@ -129,8 +125,6 @@ fetch('https://randomuser.me/api/?results=5')
 
 Understanding how to navigate these structures is crucial for effective API data handling.
 
-<br/>
-
 ## Tools for Handling and Visualizing JSON
 
 ### JSON Formatter Tools
@@ -145,8 +139,6 @@ Raw JSON data from APIs can sometimes be hard to read. Online JSON formatter too
 
 You can find many free JSON formatter tools online or even integrate them into your IDE.
 
-<br/>
-
 ## Summary and What’s Next
 
 In this post, we explored the basics of JavaScript objects, how destructuring simplifies accessing object properties, and the fundamentals of working with APIs and JSON data. Mastering these concepts lays the groundwork for diving into more advanced topics like functions and scope, which we will cover in upcoming discussions.
@@ -158,8 +150,6 @@ In this post, we explored the basics of JavaScript objects, how destructuring si
 - **Project Implementation:** Apply these concepts in real projects, including React applications.
 
 These topics will help you not only understand JavaScript better but also build scalable, maintainable applications.
-
-<br/>
 
 ## Frequently Asked Questions (FAQs)
 

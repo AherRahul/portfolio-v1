@@ -15,13 +15,9 @@ featured: false
 
 ## Understanding TypeScript Compilation: From Code to JavaScript
 
-<br />
-
 ## Introduction to TypeScript Compilation
 
 TypeScript, a popular superset of JavaScript, relies on a complex compilation process to convert human-readable code into executable JavaScript. This process is analogous to translating spoken languages, involving multiple stages such as lexical analysis, parsing, binding, type checking, and code emission. Understanding these steps not only clarifies how TypeScript works under the hood but also aids developers in optimizing their code and troubleshooting errors efficiently.
-
-<br />
 
 ## What Is Compilation?
 
@@ -35,8 +31,6 @@ Compilation is essentially the translation of one language into another. In the 
 TypeScript primarily compiles to JavaScript, which is then executed by JavaScript engines in browsers or Node.js.
 
 
-
-<br />
 
 ## The TypeScript Compilation Flow
 
@@ -93,8 +87,6 @@ For example, the AST for `const a = "toto"` organizes the declaration, the ident
 
 
 
-<br />
-
 ## Deep Dive into AST and SyntaxKind
 
 TypeScript uses an internal enum called **SyntaxKind** to efficiently represent various kinds of syntax nodes in the AST. Each node is labeled by a numeric kind instead of a string for performance reasons.
@@ -111,8 +103,6 @@ export const enum SyntaxKind {
 This optimization simplifies the compiler’s internal handling of code structures.
 
 
-
-<br />
 
 ## 3. Binding: Creating the Symbols Table
 
@@ -131,8 +121,6 @@ After parsing, the compiler uses the **Binder** to generate a **Symbols table**.
 The symbols table acts as a central repository, linking code elements to their metadata, which aids later stages like type checking.
 
 
-
-<br />
 
 ## 4. Type Checking with the Checker
 
@@ -167,8 +155,6 @@ This system helps developers quickly pinpoint and resolve issues.
 
 
 
-<br />
-
 ## 5. Emission: Generating JavaScript Code
 
 The final step in the TypeScript compilation process is **emission**. The **Emitter** takes the fully validated AST and produces JavaScript code that can be executed by browsers or Node.js.
@@ -182,8 +168,6 @@ TypeScript itself cannot run natively in browsers or most environments. Emitting
 
 
 
-<br />
-
 ## Why Use Additional Tooling Beyond TypeScript?
 
 While the TypeScript compiler can produce JavaScript directly, many projects incorporate additional tools such as bundlers and transpilers. This is because:
@@ -194,8 +178,6 @@ While the TypeScript compiler can produce JavaScript directly, many projects inc
 
 These tools complement the TypeScript compiler to enhance performance, compatibility, and maintainability.
 
-
-<br />
 
 ## Summary
 
@@ -210,8 +192,6 @@ The TypeScript compilation process is a multi-stage pipeline that transforms hum
 Understanding this flow empowers developers to write better code, debug efficiently, and grasp the rationale behind using supplementary build tools.
 
 
-
-<br />
 
 ## FAQ
 

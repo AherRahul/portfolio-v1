@@ -19,8 +19,6 @@ Version control is a fundamental system that records changes to files over time,
 
 In this guide, we’ll explore the core concepts of version control, its benefits, essential terminologies, workflows, and best practices to help you become proficient in managing your codebase.
 
-<br/>
-
 ## What is Version Control?
 
 At its simplest, **version control** is a mechanism that tracks and records modifications made to a project’s files. Each save or commit captures a **snapshot** of the project state, allowing developers to revisit or revert to previous versions when necessary. This snapshot-based approach offers a reliable history of changes, facilitating error recovery and collaborative development.
@@ -32,8 +30,6 @@ Version control is indispensable in modern software development, as it supports:
 - Experimenting with new features safely  
 - Reverting to stable versions in case of errors  
 
-
-<br/>
 
 ## The Benefits of Using Version Control
 
@@ -48,8 +44,6 @@ Implementing version control in your projects brings numerous advantages:
 - **Branching and Merging:** Branching enables you to isolate new features or fixes, fostering parallel development. Once stable, these branches can be merged back into the main codebase seamlessly. 
 Collectively, these benefits enhance productivity, reduce errors, and improve project transparency.
 
-
-<br/>
 
 ## Key Concepts in Version Control
 
@@ -128,8 +122,6 @@ By following these practices, teams can maintain clean, organized repositories a
 
 
 
-<br/>
-
 ## Common Version Control Workflows
 
 Understanding popular workflows helps integrate version control into team environments effectively.
@@ -167,8 +159,6 @@ A simpler, lightweight workflow ideal for smaller teams and open-source projects
 
 GitHub Flow emphasizes continuous integration and collaborative review.
 
-<br/>
-
 ## Conclusion
 
 Version control is a cornerstone of modern software development, enabling teams to track changes, collaborate efficiently, and maintain project integrity. By mastering core concepts such as repositories, commits, branches, and workflows, developers can boost productivity and reduce errors.
@@ -176,8 +166,6 @@ Version control is a cornerstone of modern software development, enabling teams 
 Whether you adopt a simple feature branch workflow or a sophisticated Git Flow model, understanding version control fundamentals empowers you to manage your projects with confidence.
 
 As you continue your journey, the next step is to explore the differences between distributed and centralized version control systems, uncovering the advantages each offers for diverse development environments.
-
-<br/>
 
 ## Frequently Asked Questions (FAQ)
 
@@ -194,8 +182,6 @@ A pull request is a mechanism to propose changes from one branch to another, all
 When conflicts occur, Git marks the conflicting sections in files. You must manually edit the files to choose which changes to keep, then stage and commit the resolved files.
 
 By integrating version control fundamentals into your workflow, you position yourself for success in collaborative development environments and pave the way for advanced Git mastery.
-
-<br/>
 
 ## Mind Map
 

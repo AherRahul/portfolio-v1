@@ -33,15 +33,11 @@ resources:
 
 JavaScript is a versatile and widely-used programming language, and mastering objects is crucial for any developer aiming to excel in it. Objects form the core of JavaScript programming, enabling developers to store complex data and functionalities efficiently. In this guide, we will explore JavaScript objects in detail — from declaration methods to accessing properties, using symbols, freezing objects, and common interview questions related to objects.
 
-<br />
-
 ## 1. Introduction to JavaScript Objects
 
 Objects in JavaScript are collections of key-value pairs, where keys are strings or symbols and values can be any data type, including functions or other objects. Objects allow you to group related data and functionalities together, making your code more modular and manageable.
 
 In JavaScript, understanding objects thoroughly is essential because they form the foundation of many programming patterns and are heavily used in real-world applications.
-
-<br />
 
 ## 2. Declaring Objects in JavaScript
 
@@ -73,8 +69,6 @@ user.team = "JS User";
 #### Singleton Concept
 
 When using object literals, the object is a singleton, meaning only one instance exists. However, constructor methods can create multiple instances. Understanding this distinction is important, especially in interview scenarios.
-
-<br />
 
 ## 3. Accessing Object Properties
 
@@ -108,8 +102,6 @@ console.log(user["full name"]); // Correct way to access
 ### When to Use Which?
 
 Most of the time, dot notation is preferred for its simplicity. However, if property names contain spaces, symbols, or reserved words, or if you need dynamic access, bracket notation is mandatory.
-
-<br />
 
 ## 4. Using Symbols as Object Keys
 
@@ -145,8 +137,6 @@ Dot notation will not work with symbols because symbols are not strings.
 
 Being able to declare and use symbols in objects is often a point of discussion in JavaScript interviews. It’s important to know that symbols require bracket notation for access and assignment.
 
-<br />
-
 ## 5. Freezing Objects to Lock Values
 
 Sometimes, it’s necessary to prevent modification of an object’s properties to ensure data integrity. JavaScript provides the `Object.freeze()` method for this purpose.
@@ -168,8 +158,6 @@ console.log(user.email); // Outputs: rahul@example.com
 ```
 
 Freezing is useful when you want to create immutable objects, especially in large applications or libraries.
-
-<br />
 
 ## 6. Adding Functions (Methods) Inside Objects
 
@@ -207,8 +195,6 @@ user.greet(); // Outputs: Hello Rahul
 
 Inside methods, `this` refers to the object itself, enabling access to other properties.
 
-<br />
-
 ## 7. Common Interview Tips and Best Practices
 
 **1. Always Know Both Access Methods:** Understand when to use dot notation and when to use bracket notation. Remember bracket notation is essential for keys with spaces, special characters, or symbols.
@@ -220,8 +206,6 @@ Inside methods, `this` refers to the object itself, enabling access to other pro
 **4. Methods Inside Objects:** Be ready to add functions inside objects and explain how `this` works within methods.
 
 **5. Debugging Tips:** If you get `undefined` or errors while accessing properties, check if you are using the right notation and if the property exists.
-
-<br />
 
 ## 8. Summary
 

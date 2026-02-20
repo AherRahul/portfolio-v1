@@ -109,8 +109,6 @@ content:
 ---
 
 <br/> 
-<br/>
-
 ## Git Mastery: Complete Guide from Basics to Enterprise Workflows
 
 
@@ -122,8 +120,6 @@ Each module is structured as detailed, easy-to-follow blog articles, allowing yo
 
 Whether you're a beginner starting your Git journey or an experienced developer looking to deepen your understanding, this course provides complete coverage of Git from start to finish.
 
-
-<br/>
 
 ## What This Course Covers
 
@@ -189,8 +185,6 @@ This course is divided into structured modules covering:
 In total, this course contains structured lessons across 20+ modules covering 150+ focused topics.
 
 
-<br/>
-
 ## How This Course Will Help You
 
 By completing this course, you will:
@@ -209,8 +203,6 @@ You’ll move from “I know some Git commands” to:
 > “I understand how Git works and can handle complex repository situations confidently.”
 
 
-<br/>
-
 ##  Who This Course Is For
 
 *   Beginners who want a strong Git foundation
@@ -224,8 +216,6 @@ You’ll move from “I know some Git commands” to:
 *   Team leads who want to implement better Git workflows
     
 
-
-<br/>
 
 ## Learning Format
 
@@ -256,8 +246,6 @@ You can:
 It also serves as a long-term **Git reference guide** for your development career.
 
 
-<br/>
-
 ## What Makes This Course Different?
 
 ✔ Covers Git from beginner to advanced  
@@ -267,8 +255,6 @@ It also serves as a long-term **Git reference guide** for your development caree
 ✔ Includes CI/CD and enterprise practices  
 ✔ Structured like a professional handbook
 
-
-<br/>
 
 ## After Completing This Course
 

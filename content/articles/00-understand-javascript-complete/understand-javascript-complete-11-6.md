@@ -19,8 +19,6 @@ featured: false
 
 TypeScript is a powerful superset of JavaScript that adds static typing to the language, helping developers catch errors early and write more maintainable code. In this blog post, we will deep dive into two important TypeScript features: **Union Types** and the **Any Type**. Understanding these concepts will improve your coding accuracy and prevent many common bugs. We will discuss their use cases, advantages, and pitfalls with practical examples, empowering you to write robust TypeScript code.
 
-<br />
-
 ## Understanding TypeScript Union Types
 
 ### What is a Union Type?
@@ -76,8 +74,6 @@ This approach ensures that only valid status values are used, reducing runtime e
 - **Code Autocompletion:** Editors provide suggestions based on union members, speeding up development.
 - **Better Documentation:** Makes your code self-describing by defining valid values clearly.
 - **Easier Maintenance:** Changes to allowed types propagate safely throughout the codebase.
-
-<br />
 
 ## Avoiding Pitfalls with the Any Type
 
@@ -160,8 +156,6 @@ if (currentOrder !== undefined) {
 
 This approach makes it clear that `currentOrder` may be `undefined`, forcing you to handle this case and making your code safer and more predictable.
 
-<br />
-
 ## Best Practices for Using Union and Any Types in TypeScript
 
 ### Prefer Union Types Over Any
@@ -184,8 +178,6 @@ This enables editor suggestions and prevents invalid assignments, improving deve
 
 * **Leverage TypeScript’s Type Inference:** Sometimes you don't need to annotate types explicitly. Let TypeScript infer types as long as it leads to safe and predictable code.
 
-<br />
-
 ## Summary
 
 In this post, we explored two critical TypeScript types: **Union** and **Any**. Union types offer a way to express variables that can hold multiple specific types, enhancing code safety and clarity. For example, defining API request statuses or seat types in an airline booking system as unions helps prevent invalid values and aids developer productivity with autocompletion.
@@ -193,8 +185,6 @@ In this post, we explored two critical TypeScript types: **Union** and **Any**. 
 On the other hand, the `any` type disables type checking and should be avoided whenever possible, as it removes the benefits of TypeScript’s static typing. While sometimes necessary, it's better to use more precise union types including `undefined` or `null` to represent uncertain values.
 
 By applying these best practices, you can write clean, robust, and maintainable TypeScript code, reducing runtime errors and improving developer experience.
-
-<br />
 
 ## Frequently Asked Questions (FAQs)
 

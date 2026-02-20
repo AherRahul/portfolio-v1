@@ -18,8 +18,6 @@ TypeScript has become an essential language for modern JavaScript development, a
 
 In this comprehensive guide, we will explore the traditional way of setting up TypeScript in a project, focusing on installing it project-wise rather than globally, initializing configuration files, and running your TypeScript code efficiently. This tutorial does not require you to use React or Node.js specifically but will prepare you with foundational knowledge that you can easily extend to those environments.
 
-<br/>
-
 ## Why Set Up TypeScript Project-Wise Instead of Globally?
 
 ### Global vs. Local Installation
@@ -34,8 +32,6 @@ When installing TypeScript, you have two main options:
 - Maintains version consistency per project.
 - Avoids conflicts between different projects using incompatible TypeScript versions.
 - Simplifies dependency management by keeping everything within the project scope.
-
-<br/>
 
 ## Step 1: Initializing Your Project and Installing TypeScript
 
@@ -75,8 +71,6 @@ npx tsc --version
 ```
 
 You should see the current version of TypeScript installed, for example, `5.9.3`.
-
-<br/>
 
 ## Step 2: Creating the TypeScript Configuration File (`tsconfig.json`)
 
@@ -118,8 +112,6 @@ This command generates a `tsconfig.json` with a set of default compiler options.
 }
 ```
 
-<br/>
-
 ## Step 3: Writing Your First TypeScript File
 
 ### Creating the Source Folder and File
@@ -151,8 +143,6 @@ console.log(greet(userName));
 - The `userName` variable is explicitly typed as `string`.
 - The compiler ensures you can only pass a string to `greet`, preventing runtime errors.
 
-<br/>
-
 ## Step 4: Compiling TypeScript Code
 
 ### Running the TypeScript Compiler
@@ -169,8 +159,6 @@ This command reads your `tsconfig.json`, compiles `.ts` files in `src`, and outp
 
 Navigate to the `dist` folder and open `index.js`. It should contain JavaScript equivalent to your TypeScript code.
 
-<br/>
-
 ## Step 5: Running Your Compiled JavaScript
 
 Run the compiled JavaScript using Node.js:
@@ -184,8 +172,6 @@ You should see the output:
 ```
 Hello, Rahul Aher! Welcome to TypeScript.
 ```
-
-<br/>
 
 ## Optional: Setting Up Scripts for Convenience
 
@@ -203,8 +189,6 @@ To simplify running your TypeScript commands, update `package.json` with scripts
 - `npm run start` runs the compiled JavaScript.
 - `npm run dev` watches for changes and recompiles automatically.
 
-<br/>
-
 ## Understanding TypeScript's Type Safety and IntelliSense
 
 ### How TypeScript Helps Developers
@@ -218,8 +202,6 @@ With TypeScript:
 ### Example: Type Safety in Action
 
 If you try to call `greet(123)` instead of a string, TypeScript will warn you during compilation, preventing runtime errors.
-
-<br/>
 
 ## Extending TypeScript Setup to Node.js and React
 
@@ -243,8 +225,6 @@ Modify `tsconfig.json` to include:
 
 And rename your React files from `.js` to `.tsx` for JSX support.
 
-<br/>
-
 ## Tips and Best Practices for TypeScript Setup
 
 - **Always prefer project-wise installation** to avoid version conflicts.
@@ -254,15 +234,11 @@ And rename your React files from `.js` to `.tsx` for JSX support.
 - **Regularly update TypeScript and type definitions** for the latest features and fixes.
 - **Use `tsc --watch` during development** for automatic recompilation.
 
-<br/>
-
 ## Conclusion
 
 Setting up TypeScript traditionally is straightforward and forms the foundation for robust JavaScript applications. By installing TypeScript locally, configuring `tsconfig.json` correctly, and understanding the basics of compiling and running TypeScript code, you can start leveraging TypeScript’s powerful features for safer and cleaner code.
 
 Once comfortable with this setup, you can easily extend your knowledge to frameworks like React and backends like Node.js. Stay tuned for upcoming tutorials on TypeScript types, advanced configurations, and real-world coding examples.
-
-<br/>
 
 ## FAQ
 

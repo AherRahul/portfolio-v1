@@ -17,8 +17,6 @@ featured: false
 
 TypeScript is a powerful superset of JavaScript that adds static typing and enhanced tooling to your code. Among its many features, foundational data structures like arrays, tuples, and enums play a critical role in developing scalable and maintainable applications. This guide will take you through these core concepts with practical examples, helping you grasp their syntax, use cases, and best practices.
 
-<br/>
-
 ## Understanding Arrays in TypeScript  
 
 ### What Are Arrays?  
@@ -75,8 +73,6 @@ let table: number[][] = [
 
 Each element inside the main array is itself an array, providing a grid-like data structure often used in machine learning, graphics, or tabular data.
 
-<br/>
-
 ## Exploring Tuples in TypeScript  
 
 ### What Are Tuples?  
@@ -120,8 +116,6 @@ This makes your code self-documenting and easier to understand when accessing tu
 
 ### Tuples Are Arrays Under the Hood  
 It's important to remember that tuples are essentially arrays with fixed types and length. This means methods like `push` can technically be used, but this often leads to unexpected behavior and bugs. Hence, it's best to avoid pushing extra elements into tuples.
-
-<br/>
 
 ## Leveraging Enums in TypeScript  
 
@@ -201,8 +195,6 @@ const enum SugarLevel {
 
 Constant enums are removed during compilation, replacing usage with literal values for better performance.
 
-<br/>
-
 ## Practical Example: Making Tea with TypeScript  
 
 To put all concepts together, consider a simple function to make tea with a restricted set of tea types and cup sizes:
@@ -228,16 +220,12 @@ makeTea(TeaType.MASALA, CupSize.LARGE);
 
 This approach ensures only valid tea types and cup sizes are allowed, enhancing code safety and reducing bugs.
 
-<br/>
-
 ## Summary  
 
 - **Arrays** are versatile collections of elements of the same type, with support for readonly and multi-dimensional structures.
 - **Tuples** provide fixed-length, ordered collections with specific types for each element, supporting optional and readonly features.
 - **Enums** allow defining named constants, restricting variable values to predefined options and improving code clarity.
 - Adhering to best practices in using these structures makes your TypeScript code more robust, maintainable, and easier to debug.
-
-<br/>
 
 ## Frequently Asked Questions (FAQs)  
 

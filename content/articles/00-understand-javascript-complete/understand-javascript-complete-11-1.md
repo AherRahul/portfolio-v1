@@ -13,8 +13,6 @@ featured: false
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758725512/Portfolio/javaScriptCourse/images/0_eestcm.png)
 
-<br/>
-
 ##  Module Overview
 
 If you already know JavaScript and want to take the next big step in your development journey, this **Next TypeScript Module** is designed for you.
@@ -31,8 +29,6 @@ Instead of short-form videos, this is a structured, in-depth **reading-based lea
     
 
 Whether you work with React, Express, Node.js, or any modern framework, this series will help you integrate TypeScript into real projects smoothly and confidently.
-
-<br/>
 
 ## Why Learn TypeScript?
 
@@ -51,8 +47,6 @@ It helps you:
 
 With TypeScript becoming the industry standard in modern frontend and backend development, learning it is a smart long-term investment.
 
-<br/>
-
 ## About This Blog Series
 
 ### What This Series Covers
@@ -69,8 +63,6 @@ This blog series is carefully structured to:
     
 
 Each blog post builds on the previous one, ensuring a smooth and structured learning journey.
-
-<br/>
 
 ## Structure of the TypeScript Blog Series
 
@@ -120,8 +112,6 @@ Each post will include:
 *   Mini exercises (optional)
     
 
-<br/>
-
 ## From JavaScript to TypeScript
 
 Since this series is designed for developers who already know JavaScript, we will:
@@ -136,8 +126,6 @@ Since this series is designed for developers who already know JavaScript, we wil
     
 
 This practical transition approach ensures you don’t feel overwhelmed.
-
-<br/>
 
 ## Applying TypeScript in Real Frameworks
 
@@ -167,8 +155,6 @@ This series is not just about theory. You will learn how to use TypeScript in:
 
 The goal is to make you comfortable using TypeScript in full-stack development.
 
-<br/>
-
 ## Why a Blog Series Instead of Videos?
 
 This blog-based format gives you:
@@ -183,8 +169,6 @@ This blog-based format gives you:
     
 
 You can bookmark posts, revisit concepts, and use them as documentation when working on real projects.
-
-<br/>
 
 ## How to Make the Most of This Series
 
@@ -206,8 +190,6 @@ Follow the series step by step instead of jumping randomly between topics.
 
 Share your learning progress on LinkedIn or Twitter. Teaching and sharing reinforce learning.
 
-<br/>
-
 ## What Makes This TypeScript Series Different?
 
 Unlike many tutorials that go too deep into complex type theory, this series focuses on:
@@ -223,8 +205,6 @@ Unlike many tutorials that go too deep into complex type theory, this series foc
 
 By the end of this series, you won’t just “know” TypeScript — you’ll **use it confidently in real projects**.
 
-<br/>
-
 ## Key Takeaways
 
 *   Structured 15–16 post learning path
@@ -237,8 +217,6 @@ By the end of this series, you won’t just “know” TypeScript — you’ll *
     
 *   Production-ready mindset
     
-
-<br/>
 
 ## FAQ: TypeScript Blog Series
 
@@ -253,8 +231,6 @@ Absolutely. The focus is on real-world usage and industry-relevant patterns.
 
 **Q4: Can I use this as a reference later?**  
 Yes. That’s one of the main advantages of this blog format.
-
-<br/>
 
 ## Final Words
 

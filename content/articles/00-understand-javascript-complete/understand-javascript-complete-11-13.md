@@ -17,8 +17,6 @@ featured: false
 
 TypeScript is a powerful superset of JavaScript that introduces additional syntax and features, making object-oriented programming (OOP) more robust and developer-friendly. In this comprehensive guide, we will explore the core OOP concepts in TypeScript, such as classes, constructors, access modifiers, getters and setters, static members, abstract classes, and composition, with practical code examples to help you grasp each topic effectively.
 
-<br />
-
 ## Understanding TypeScript and Its OOP Foundation
 
 TypeScript extends JavaScript with static typing, class-based object orientation, and other modern programming features. Since TypeScript compiles down to JavaScript, all its OOP concepts are compatible with JavaScript’s runtime behavior but offer stronger typing and better code organization.
@@ -26,8 +24,6 @@ TypeScript extends JavaScript with static typing, class-based object orientation
 ### What is Object-Oriented Programming (OOP)?
 
 OOP is a programming paradigm based on the concept of “objects,” which can contain data in the form of fields (properties) and code in the form of procedures (methods). TypeScript enhances OOP by allowing developers to define strict structures and behavior within classes.
-
-<br />
 
 ## Defining Classes and Constructors in TypeScript
 
@@ -72,8 +68,6 @@ const gingerTea = new Tea("Ginger", 20);
 
 This creates a Tea object with flavor "Ginger" and price 20.
 
-<br />
-
 ## Exploring the `this` Keyword in TypeScript Classes
 
 Within class methods, `this` refers to the current instance of the object:
@@ -88,8 +82,6 @@ console.log(gingerTea.flavor); // Output: Ginger
 ```
 
 Here, `this.flavor` inside the class would point to `"Ginger"` for this object.
-
-<br />
 
 ## Access Modifiers: Controlling Property Access
 
@@ -150,8 +142,6 @@ class Branch extends Shop {
 
 Here, `shopName` is not accessible outside, but the `Branch` subclass can access it.
 
-<br />
-
 ## Getters and Setters: Controlled Access to Properties
 
 When you want controlled reading or writing of private properties, use getters and setters.
@@ -193,8 +183,6 @@ tea.sugar = 4; // Valid
 
 This approach encapsulates internal state and adds business logic to property manipulation.
 
-<br />
-
 ## Readonly Properties: Immutable Class Members
 
 Sometimes, you want properties that can be assigned only once and then remain constant.
@@ -210,8 +198,6 @@ class Cup {
 ```
 
 Attempting to modify `capacity` after initialization will result in a compilation error, ensuring immutability.
-
-<br />
 
 ## Static Members: Shared Properties and Methods
 
@@ -236,8 +222,6 @@ console.log(TeaShop.getShopInfo()); // Welcome to TeaCode Cafe
 
 - Instances do not carry static members.
 
-<br />
-
 ## Abstract Classes: Defining Blueprints for Subclasses
 
 Abstract classes define contracts (abstract methods) that derived classes must implement, but they cannot be instantiated directly.
@@ -255,8 +239,6 @@ class MyTea extends Drink {
 ```
 
 Attempting to instantiate `Drink` directly will throw an error, enforcing subclass implementation of required methods.
-
-<br />
 
 ## Composition vs Inheritance: Flexible Code Reuse
 
@@ -297,8 +279,6 @@ class TeaMaker {
 
 Here, `TeaMaker` uses `Heater` as a component, demonstrating composition.
 
-<br />
-
 ## Key Takeaways for TypeScript OOP
 
 - **Classes and constructors** form the foundation of TypeScript OOP, allowing structured data and behavior.
@@ -309,8 +289,6 @@ Here, `TeaMaker` uses `Heater` as a component, demonstrating composition.
 - **Abstract classes** enforce a blueprint for subclasses.
 - **Composition** offers an alternative to inheritance for flexible design.
 - TypeScript’s OOP features build on JavaScript’s capabilities, adding typing and better tooling support.
-
-<br />
 
 ## Frequently Asked Questions (FAQ)
 

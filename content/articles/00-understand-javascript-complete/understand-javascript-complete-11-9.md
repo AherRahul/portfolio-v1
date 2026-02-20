@@ -17,8 +17,6 @@ featured: false
 
 TypeScript is quickly becoming a favorite among developers for its ability to bring static typing to JavaScript, making code more robust and easier to maintain. This blog post will walk you through the fundamental concepts of TypeScript, including type aliases, interfaces, union and intersection types, and how to implement these in classes effectively. Whether you're migrating a JavaScript project to TypeScript or just starting out, this guide will simplify complex topics and help you write cleaner, more readable code.
 
-<br/>
-
 ## Introduction to TypeScript Types
 
 TypeScript enhances JavaScript by adding **type annotations** which help catch errors early during development. Understanding how to define and use types is essential for any TypeScript developer.
@@ -26,8 +24,6 @@ TypeScript enhances JavaScript by adding **type annotations** which help catch e
 ### Why Use Types?
 
 In JavaScript, variables can hold any type of data, which sometimes leads to runtime errors. TypeScript enforces types at compile time, ensuring data consistency and reducing bugs.
-
-<br/>
 
 ## Type Aliases: Simplifying Complex Types
 
@@ -59,15 +55,11 @@ function serveTea(order: TeaOrder) {
 
 This approach improves code readability and reusability across your codebase.
 
-<br/>
-
 ## Understanding Function Signatures and Type Reuse
 
 Every data structure has a “signature” describing the types of values it holds. By defining reusable types, you ensure consistent data handling.
 
 For instance, in a tea ordering system, the `TeaOrder` type signature can be used wherever an order object is required, avoiding duplication and potential errors.
-
-<br/>
 
 ## Interfaces: The Preferred Way for Object Shape Definitions
 
@@ -86,8 +78,6 @@ interface TeaOrder {
 ```
 
 Notice that interfaces don’t use an equals sign (`=`) like type aliases.
-
-<br/>
 
 ## Interfaces vs. Type Aliases in Classes
 
@@ -114,8 +104,6 @@ class MasalaTea implements TeaRecipe {
 
 If you try to implement a type alias that includes non-object types or union/intersection types in a class, you may encounter errors. Interfaces help avoid such issues.
 
-<br/>
-
 ## Handling Hardcoded Values with Literal Types
 
 TypeScript allows you to define **literal types**, specifying exact allowed values rather than broad types like `string` or `number`.
@@ -135,8 +123,6 @@ interface TeaOrder {
 
 Literal types improve type safety by restricting values to a predefined set.
 
-<br/>
-
 ## Union Types: Defining Multiple Possible Values
 
 Union types allow a variable to be one of several types or values.
@@ -152,8 +138,6 @@ function orderTea(type: TeaType) {
 ```
 
 Here, only the values `"masala"`, `"ginger"`, or `"lemon"` are valid inputs.
-
-<br/>
 
 ## Intersection Types: Combining Multiple Types
 
@@ -179,8 +163,6 @@ const myTea: MasalaTea = {
 ```
 
 This approach allows you to build complex types by combining simpler ones.
-
-<br/>
 
 ## Optional and Readonly Properties in Interfaces
 
@@ -218,16 +200,12 @@ const config: Config = {
 
 Readonly properties help protect critical configuration data from accidental modification.
 
-<br/>
-
 ## Common Pitfalls When Using Types and Interfaces with Classes
 
 - Classes **cannot implement** union or intersection types directly.
 - Classes **can implement** interfaces that describe object shapes.
 - Using interfaces for class contracts is the best practice to avoid errors.
 - Type aliases are suitable for simple or union/intersection types but limited for class implementations.
-
-<br/>
 
 ## Summary: Best Practices for TypeScript Types and Interfaces
 
@@ -238,15 +216,11 @@ Readonly properties help protect critical configuration data from accidental mod
 - Always define reusable types for repeated structures to improve maintainability.
 - Understand the limits of type aliases vs. interfaces especially in class implementations.
 
-<br/>
-
 ## Conclusion
 
 TypeScript’s type system, with features like type aliases, interfaces, unions, intersections, optional and readonly properties, empowers developers to write safer, more maintainable code. By mastering these concepts, you can confidently design complex data structures, implement robust classes, and catch errors early in development. Whether you’re building a tea ordering app or scaling a large project, TypeScript helps you enforce contracts in your codebase with ease.
 
 So, brew yourself a cup of tea, relax, and start coding with TypeScript today!
-
-<br/>
 
 ## FAQ
 

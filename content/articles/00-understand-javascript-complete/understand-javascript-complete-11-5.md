@@ -18,15 +18,11 @@ featured: false
 
 TypeScript has become an essential tool for JavaScript developers, offering powerful features that prevent bugs and enhance code readability. Two fundamental concepts that every TypeScript programmer should master are **type inference** and **type annotation**. In this blog post, we'll dive deep into these concepts, explain their differences, showcase practical examples, and discuss common errors you might encounter. By the end, you'll understand how TypeScript helps you write smarter and more reliable code.
 
-<br/>
-
 ## What is TypeScript and Why Does It Matter?
 
 Before we explore type inference and annotation, it's important to understand what TypeScript is. TypeScript is a superset of JavaScript that adds static typing to the language. This means you can declare variable types explicitly or let TypeScript infer them automatically, resulting in fewer runtime errors and better tooling support in editors like Visual Studio Code.
 
 TypeScript helps catch mistakes early during development by analyzing your code’s types. This leads to more maintainable and robust applications, especially in large projects with multiple developers.
-
-<br/>
 
 ## Understanding Type Inference in TypeScript
 
@@ -63,8 +59,6 @@ This error occurs because TypeScript inferred `drink` to be a string from the fi
 - **Less verbose code:** You write less boilerplate by avoiding unnecessary type declarations.
 - **Safer code:** TypeScript catches type mismatches automatically.
 - **Better tooling:** Editors show accurate autocomplete suggestions based on inferred types.
-
-<br/>
 
 ## Exploring Type Annotation in TypeScript
 
@@ -109,8 +103,6 @@ Example:
 let isWinter: boolean = true;
 ```
 
-<br/>
-
 ## Combining Type Inference and Annotation
 
 While TypeScript is smart enough to infer types in many cases, sometimes combining inference with explicit annotations leads to better clarity and error prevention.
@@ -127,8 +119,6 @@ If you try to assign a value of the wrong type, TypeScript will immediately noti
 ```typescript
 courseName = 123; // Error: Type 'number' is not assignable to type 'string'
 ```
-
-<br/>
 
 ## Common TypeScript Errors Related to Types
 
@@ -148,8 +138,6 @@ cups = "five"; // Error: Type 'string' is not assignable to type 'number'
 ```
 
 Type errors are the main reason why TypeScript is so beneficial—it catches these issues during development rather than letting them cause bugs at runtime.
-
-<br/>
 
 ## Practical Examples to Understand TypeScript Types
 
@@ -181,8 +169,6 @@ isWinter = false; // Valid
 isWinter = "yes"; // Error
 ```
 
-<br/>
-
 ## Custom and Advanced Type Annotations
 
 While basic types like string, number, and boolean cover most cases, TypeScript allows creating custom types and interfaces, which are especially useful in complex applications like React projects.
@@ -198,8 +184,6 @@ favoriteFlavor = "mint"; // Error
 
 We will explore these advanced types in future posts.
 
-<br/>
-
 ## Summary: Type Inference vs Type Annotation
 
 | Feature          | Description                                           | When to Use                                    |
@@ -209,8 +193,6 @@ We will explore these advanced types in future posts.
 
 Both play complementary roles in writing clean, error-free TypeScript code.
 
-<br/>
-
 ## Final Thoughts: Become a Smarter TypeScript Developer
 
 Understanding and leveraging TypeScript’s type inference and type annotation features will save you countless hours debugging and improve your code quality. Remember:
@@ -219,8 +201,6 @@ Understanding and leveraging TypeScript’s type inference and type annotation f
 - Use annotations to clarify intent and prevent mistakes.
 - Pay attention to type-related errors—they help catch bugs early.
 - Practice with real-world examples to deepen your understanding.
-
-<br/>
 
 ## Engage With Us!
 

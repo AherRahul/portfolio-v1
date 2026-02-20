@@ -893,7 +893,21 @@ if (process.client) {
 
 <template>
   <div class="w-full">
-    <!-- Compact Trigger Bar -->
+   
+    <!-- Content Wrapper (only when not using external selector) -->
+    <div v-if="!props.contentSelector" ref="contentRoot">
+      <ContentDoc :class="props.docClass" />
+    </div>
+    
+    <!-- Hidden ref for external content targeting -->
+    <div v-else ref="contentRoot" style="display: none;"></div>
+  </div>
+  
+</template>
+
+<!-- 
+
+ Compact Trigger Bar
     <div class="flex items-center justify-between p-3 sm:p-2 mb-2 border border-red-500/30 bg-zinc-900/70 rounded-lg sm:rounded-sm">
       <div class="flex items-center gap-2 min-w-0 flex-1">
         <Icon name="heroicons:speaker-wave" class="text-red-400 text-base sm:text-sm flex-shrink-0" />
@@ -916,10 +930,10 @@ if (process.client) {
       </button>
     </div>
 
-    <!-- Enhanced Reader Controls -->
+    Enhanced Reader Controls
     <Transition name="slide-y">
     <div v-show="isOpen" id="reader-controls" class="border border-zinc-800 bg-zinc-900 rounded-lg sm:rounded-sm mb-2">
-      <!-- Progress Bar -->
+      Progress Bar
       <div v-if="isContentReady" class="px-3 sm:px-2 py-2 sm:py-1 border-b border-zinc-800">
         <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-0 text-xs text-zinc-400 mb-2 sm:mb-1">
           <span class="text-sm sm:text-xs font-medium">{{ currentSentence + 1 }} / {{ sentences.length }} sentences</span>
@@ -933,9 +947,9 @@ if (process.client) {
         </div>
       </div>
 
-      <!-- Main Controls -->
+      Main Controls
       <div class="flex flex-col gap-3 p-3 sm:p-2">
-        <!-- Mobile: Playback Controls (Full Width) -->
+        Mobile: Playback Controls (Full Width)
         <div class="flex sm:hidden items-center gap-2 w-full">
           <button
             class="px-3 py-3 bg-zinc-700 text-white text-sm border border-zinc-600 disabled:opacity-50 rounded-lg min-w-[48px]"
@@ -974,7 +988,7 @@ if (process.client) {
           </button>
         </div>
 
-        <!-- Desktop: Compact Playback Controls -->
+        Desktop: Compact Playback Controls 
         <div class="hidden sm:flex items-center gap-1">
           <button
             class="px-2 py-1 bg-zinc-700 text-white text-xs border border-zinc-600 disabled:opacity-50"
@@ -1015,9 +1029,9 @@ if (process.client) {
           </button>
         </div>
 
-        <!-- Mobile: Controls Row -->
+        Mobile: Controls Row
         <div class="flex sm:hidden flex-col gap-3">
-          <!-- Speed & Voice Row -->
+          Speed & Voice Row
           <div class="grid grid-cols-1 gap-3">
             <div class="flex items-center gap-3">
               <label class="text-xs font-medium text-zinc-400 min-w-[50px]">Speed</label>
@@ -1048,7 +1062,7 @@ if (process.client) {
             </div>
           </div>
 
-          <!-- Settings Row -->
+          Settings Row
           <div class="flex flex-col gap-3">
             <div class="flex items-center justify-center gap-6">
               <label class="flex items-center gap-2 text-sm text-zinc-400">
@@ -1069,7 +1083,7 @@ if (process.client) {
               </label>
             </div>
             
-            <!-- Google TTS Toggle -->
+            Google TTS Toggle
             <div v-if="isGoogleTTSAvailable" class="flex items-center justify-center">
               <label class="flex items-center gap-2 text-sm text-zinc-400">
                 <input
@@ -1083,9 +1097,9 @@ if (process.client) {
           </div>
         </div>
 
-        <!-- Desktop: Compact Controls Row -->
+        Desktop: Compact Controls Row
         <div class="hidden sm:flex items-center gap-2">
-          <!-- Speed Control -->
+          Speed Control
           <div class="flex items-center gap-2">
             <label class="text-[10px] uppercase tracking-wide text-zinc-400">Speed</label>
             <select
@@ -1100,7 +1114,7 @@ if (process.client) {
             </select>
           </div>
 
-          <!-- Voice Control -->
+          Voice Control
           <div v-if="voices.length" class="flex items-center gap-2 min-w-[140px]">
             <label class="text-[10px] uppercase tracking-wide text-zinc-400">Voice</label>
             <select
@@ -1115,7 +1129,7 @@ if (process.client) {
             </select>
           </div>
 
-          <!-- Settings -->
+            Settings
           <div class="flex items-center gap-2 ml-auto">
             <label class="flex items-center gap-1 text-xs text-zinc-400">
               <input
@@ -1144,13 +1158,13 @@ if (process.client) {
           </div>
         </div>
 
-        <!-- Status -->
+        Status
         <div v-if="!isSupported" class="text-sm sm:text-xs text-zinc-400 text-center sm:text-left">
           Text-to-speech not supported in this browser.
         </div>
       </div>
 
-      <!-- Keyboard Shortcuts Help -->
+      Keyboard Shortcuts Help
       <div class="px-3 sm:px-2 py-2 sm:py-1 border-t border-zinc-800 text-xs sm:text-[10px] text-zinc-500 text-center sm:text-left">
         <span class="hidden md:inline">Shortcuts: Space (play/pause) • Esc (reset) • ← → (skip) • </span>
         <span class="block sm:inline">{{ wordCount }} words • {{ averageWPM }} WPM</span>
@@ -1158,13 +1172,4 @@ if (process.client) {
     </div>
     </Transition>
 
-    <!-- Content Wrapper (only when not using external selector) -->
-    <div v-if="!props.contentSelector" ref="contentRoot">
-      <ContentDoc :class="props.docClass" />
-    </div>
-    
-    <!-- Hidden ref for external content targeting -->
-    <div v-else ref="contentRoot" style="display: none;"></div>
-  </div>
-  
-</template>
+-->

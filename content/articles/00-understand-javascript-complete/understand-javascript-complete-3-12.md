@@ -17,8 +17,6 @@ featured: false
 
 JavaScript objects form the backbone of modern web development, enabling developers to store, organize, and manipulate data efficiently. Whether you are building a simple user profile or integrating complex APIs, understanding objects is essential. This comprehensive guide delves deep into JavaScript objects, covering their creation, access patterns, merging techniques, and practical tips to enhance your coding skills.
 
-<br />
-
 ## Introduction to JavaScript Objects
 
 ### What Are JavaScript Objects?  
@@ -34,8 +32,6 @@ const user = {
 };
 ```
 This is called a singleton object because it is a single instance declared inline.
-
-<br />
 
 ## Creating and Declaring Objects
 
@@ -70,8 +66,6 @@ tinderUser.email = "sam@gmail.com";  // Dot notation
 tinderUser["age"] = 25;               // Bracket notation
 ```
 
-<br />
-
 ## Nested Objects and Deep Access
 
 ### Creating Nested Objects  
@@ -101,8 +95,6 @@ console.log(regularUser?.fullName?.middleName);  // Returns undefined instead of
 ```
 This avoids unnecessary `if-else` checks and prevents runtime crashes.
 
-<br />
-
 ## Working with Object Properties
 
 ### Extracting Keys and Values  
@@ -129,8 +121,6 @@ for (const [key, value] of Object.entries(tinderUser)) {
   console.log(`${key}: ${value}`);
 }
 ```
-
-<br />
 
 ## Merging and Combining Objects
 
@@ -175,8 +165,6 @@ It creates a new object with combined properties without modifying originals.
 - Prefer the spread operator for clarity and immutability in modern JavaScript.  
 - Use `Object.assign()` when you need to polyfill or support older environments.
 
-<br />
-
 ## Handling Arrays of Objects
 
 ### Arrays Containing Objects  
@@ -200,8 +188,6 @@ To process or display user data, use array methods like `.map()`:
 users.map(user => console.log(user.email));
 ```
 
-<br />
-
 ## Advanced Object Methods and Concepts
 
 ### Prototype and Inherited Methods  
@@ -212,8 +198,6 @@ Sometimes, especially in databases or APIs, you may want to prevent certain prop
 
 ### Cloning Objects  
 Deep and shallow cloning are important when duplicating objects without affecting the original. While `Object.assign()` and spread operator perform shallow copies, deep cloning requires utilities like `JSON.parse(JSON.stringify(obj))` or dedicated libraries.
-
-<br />
 
 ## Summary and Next Steps
 
