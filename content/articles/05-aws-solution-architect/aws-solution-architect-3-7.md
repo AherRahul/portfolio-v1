@@ -1,13 +1,16 @@
 ---
-title: "Security Tools in IAM"
-description: "This chapter underscores the importance of using AWS’s built-in security tools to maintain a secure, compliant, and efficiently managed cloud environment."
-datePublished: 2026-02-02
-dateModified: 2026-02-02
+title: Security Tools in IAM
+description: This chapter underscores the importance of using AWS’s built-in
+  security tools to maintain a secure, compliant, and efficiently managed cloud
+  environment.
+datePublished: 2026-02-21
+dateModified: 2026-02-21
 topics:
   - javascript
 courseName: 05-aws-solution-architect
 showOnArticles: false
 featured: false
+published: true
 ---
 
 

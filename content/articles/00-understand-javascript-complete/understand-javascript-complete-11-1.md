@@ -1,13 +1,16 @@
 ---
-title: "Module Overview"
-description: "Master TypeScript confidently with our free, complete video playlist. Learn practical concepts and boost your development skills in React, Express, and more."
-datePublished: 2026-02-13
-dateModified: 2026-02-13
+title: Module Overview
+description: Master TypeScript confidently with our free, complete video
+  playlist. Learn practical concepts and boost your development skills in React,
+  Express, and more.
+datePublished: 2026-02-21
+dateModified: 2026-02-21
 topics:
   - javascript
 courseName: 00-understand-javascript-complete
 showOnArticles: false
 featured: false
+published: true
 ---
 
 

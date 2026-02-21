@@ -1,13 +1,16 @@
 ---
-title: "Object discussion in Typescript"
-description: "Learn how to master TypeScript objects with detailed explanations on typing, partial updates, pick, omit, and duck typing for clean, error-free code."
-datePublished: 2026-02-13
-dateModified: 2026-02-13
+title: Object discussion in Typescript
+description: Learn how to master TypeScript objects with detailed explanations
+  on typing, partial updates, pick, omit, and duck typing for clean, error-free
+  code.
+datePublished: 2026-02-21
+dateModified: 2026-02-21
 topics:
   - javascript
 courseName: 00-understand-javascript-complete
 showOnArticles: false
 featured: false
+published: true
 ---
 
 

@@ -1,13 +1,15 @@
 ---
-title: "Types and Interface in typescript"
-description: "Learn TypeScript basics including type aliases, interfaces, unions, intersections, and class implementations for clean, maintainable code."
-datePublished: 2026-02-13
-dateModified: 2026-02-13
+title: Types and Interface in typescript
+description: Learn TypeScript basics including type aliases, interfaces, unions,
+  intersections, and class implementations for clean, maintainable code.
+datePublished: 2026-02-21
+dateModified: 2026-02-21
 topics:
   - javascript
 courseName: 00-understand-javascript-complete
 showOnArticles: false
 featured: false
+published: true
 ---
 
 

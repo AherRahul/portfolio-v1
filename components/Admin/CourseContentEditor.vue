@@ -14,6 +14,7 @@ interface Topic {
   auther_name: string
   is_on_youtube: boolean
   _path: string
+  published?: boolean
 }
 
 interface Module {
@@ -24,6 +25,7 @@ interface Module {
   tutor: number
   expanded: boolean
   topics: Topic[]
+  published?: boolean
 }
 
 const props = defineProps<{
@@ -42,6 +44,7 @@ const showModuleModal = ref(false)
 const showTopicModal = ref(false)
 const editingModuleIndex = ref<number | null>(null)
 const editingTopicIndex = ref<{ moduleIndex: number; topicIndex: number } | null>(null)
+const publishLoading = ref<string>('') // tracks which item is being published
 const newModule = ref<Partial<Module>>({
   module_name: '',
   module_duration: '',
@@ -60,6 +63,9 @@ const newTopic = ref<Partial<Topic>>({
   auther_name: 'Rahul Aher',
   is_on_youtube: false
 })
+
+// Computed: is the overall course published?
+const courseIsPublished = computed(() => !!parsedFrontmatter.value?.published)
 
 // Fetch available topics for topic selection
 const { data: topicsData } = await useAsyncData(
@@ -373,6 +379,81 @@ function updateCourseContent() {
   emit('update:modelValue', newContent)
 }
 
+async function handlePublishCourse(action: 'publish' | 'unpublish') {
+  const key = `course-${action}`
+  publishLoading.value = key
+  try {
+    const res = await $fetch('/api/admin/courses/publish', {
+      method: 'POST',
+      body: { courseSlug: props.courseSlug, action, target: 'course' }
+    })
+    // Re-read the file so our local state reflects what was written
+    const fileResponse = await $fetch('/api/admin/content/file', {
+      query: { type: 'courses', path: `${props.courseSlug}.md` }
+    })
+    emit('update:modelValue', fileResponse.content)
+    // Re-init modules from updated content
+    const updated = fileResponse.content.match(/^---\s*\n([\s\S]*?)\n\s*---/)
+    if (updated) {
+      try {
+        const { parse: yamlParse } = await import('yaml')
+        const fm = yamlParse(updated[1].trim())
+        modules.value = (fm.content || []).map((mod: any) => ({ ...mod }))
+      } catch {}
+    }
+  } catch (err: any) {
+    alert(`Error: ${err.data?.message || err.message}`)
+  } finally {
+    publishLoading.value = ''
+  }
+}
+
+async function handlePublishModule(moduleIndex: number, action: 'publish' | 'unpublish') {
+  const mod = modules.value[moduleIndex]
+  const key = `module-${mod.module_id}-${action}`
+  publishLoading.value = key
+  try {
+    await $fetch('/api/admin/courses/publish', {
+      method: 'POST',
+      body: { courseSlug: props.courseSlug, action, target: 'module', moduleId: mod.module_id }
+    })
+    // Update local module published state
+    mod.published = action === 'publish'
+    if (action === 'publish') {
+      const today = new Date().toISOString().split('T')[0]
+      mod.topics.forEach(t => { t.published = true; t.publish_date = today })
+    } else {
+      mod.topics.forEach(t => { t.published = false })
+    }
+    updateCourseContent()
+  } catch (err: any) {
+    alert(`Error: ${err.data?.message || err.message}`)
+  } finally {
+    publishLoading.value = ''
+  }
+}
+
+async function handlePublishTopic(moduleIndex: number, topicIndex: number, action: 'publish' | 'unpublish') {
+  const mod = modules.value[moduleIndex]
+  const topic = mod.topics[topicIndex]
+  const key = `topic-${topic._path}-${action}`
+  publishLoading.value = key
+  try {
+    await $fetch('/api/admin/courses/publish', {
+      method: 'POST',
+      body: { courseSlug: props.courseSlug, action, target: 'topic', moduleId: mod.module_id, topicPath: topic._path }
+    })
+    // Update local state
+    topic.published = action === 'publish'
+    if (action === 'publish') topic.publish_date = new Date().toISOString().split('T')[0]
+    updateCourseContent()
+  } catch (err: any) {
+    alert(`Error: ${err.data?.message || err.message}`)
+  } finally {
+    publishLoading.value = ''
+  }
+}
+
 defineExpose({ openEditor })
 </script>
 
@@ -391,12 +472,39 @@ defineExpose({ openEditor })
               <h3 class="text-2xl font-semibold text-white">Manage Course Content</h3>
               <p class="text-sm text-zinc-500 mt-1">Modules and Topics • {{ courseSlug }}</p>
             </div>
-            <button
-              @click="closeEditor"
-              class="text-zinc-400 hover:text-white transition-colors"
-            >
-              <Icon name="heroicons:x-mark" class="text-2xl" />
-            </button>
+            <div class="flex items-center gap-3">
+              <!-- Course-level publish toggle -->
+              <div class="flex items-center gap-2">
+                <span :class="courseIsPublished ? 'bg-green-500/20 text-green-400 border-green-500/40' : 'bg-zinc-700 text-zinc-400 border-zinc-600'" class="text-xs font-medium px-2.5 py-1 rounded-full border flex items-center gap-1.5">
+                  <span :class="courseIsPublished ? 'bg-green-400' : 'bg-zinc-500'" class="w-1.5 h-1.5 rounded-full inline-block"></span>
+                  {{ courseIsPublished ? 'Published' : 'Draft' }}
+                </span>
+                <button
+                  v-if="!courseIsPublished"
+                  @click="handlePublishCourse('publish')"
+                  :disabled="publishLoading !== ''"
+                  class="bg-green-600 hover:bg-green-500 disabled:opacity-50 disabled:cursor-not-allowed text-white text-xs px-3 py-1.5 rounded-md flex items-center gap-1.5 transition-colors font-medium"
+                >
+                  <Icon name="heroicons:rocket-launch" class="text-sm" />
+                  {{ publishLoading === 'course-publish' ? 'Publishing...' : 'Publish Course' }}
+                </button>
+                <button
+                  v-else
+                  @click="handlePublishCourse('unpublish')"
+                  :disabled="publishLoading !== ''"
+                  class="bg-zinc-700 hover:bg-zinc-600 disabled:opacity-50 disabled:cursor-not-allowed text-zinc-300 text-xs px-3 py-1.5 rounded-md flex items-center gap-1.5 transition-colors"
+                >
+                  <Icon name="heroicons:eye-slash" class="text-sm" />
+                  {{ publishLoading === 'course-unpublish' ? 'Unpublishing...' : 'Unpublish' }}
+                </button>
+              </div>
+              <button
+                @click="closeEditor"
+                class="text-zinc-400 hover:text-white transition-colors"
+              >
+                <Icon name="heroicons:x-mark" class="text-2xl" />
+              </button>
+            </div>
           </div>
 
           <!-- Modules List -->
@@ -420,19 +528,44 @@ defineExpose({ openEditor })
               <div
                 v-for="(module, moduleIndex) in modules"
                 :key="moduleIndex"
-                class="bg-zinc-800 border border-zinc-700 rounded-md p-4"
+                :class="module.published ? 'border-green-700/50' : 'border-zinc-700'"
+                class="bg-zinc-800 border rounded-md p-4"
               >
                 <!-- Module Header -->
                 <div class="flex items-center justify-between mb-3">
                   <div class="flex-1">
-                    <div class="flex items-center gap-3">
+                    <div class="flex items-center gap-3 flex-wrap">
                       <span class="text-xs font-medium text-zinc-400 bg-zinc-700 px-2 py-1 rounded">Module {{ module.module_id }}</span>
                       <h5 class="font-semibold text-zinc-200">{{ module.module_name }}</h5>
                       <span class="text-xs text-zinc-500">{{ module.module_duration }}</span>
                       <span class="text-xs text-zinc-500">{{ module.topics_count }} topics</span>
+                      <!-- Module publish badge -->
+                      <span :class="module.published ? 'bg-green-500/20 text-green-400 border-green-500/40' : 'bg-amber-900/30 text-amber-400 border-amber-700/40'" class="text-xs px-2 py-0.5 rounded-full border flex items-center gap-1">
+                        <span :class="module.published ? 'bg-green-400' : 'bg-amber-500'" class="w-1.5 h-1.5 rounded-full"></span>
+                        {{ module.published ? 'Published' : 'Draft' }}
+                      </span>
                     </div>
                   </div>
                   <div class="flex items-center gap-1">
+                    <!-- Module publish/unpublish -->
+                    <button
+                      v-if="!module.published"
+                      @click="handlePublishModule(moduleIndex, 'publish')"
+                      :disabled="publishLoading !== ''"
+                      title="Publish module & all its topics"
+                      class="p-1.5 rounded-md hover:bg-green-700 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+                    >
+                      <Icon name="heroicons:rocket-launch" class="text-green-400 text-lg" />
+                    </button>
+                    <button
+                      v-else
+                      @click="handlePublishModule(moduleIndex, 'unpublish')"
+                      :disabled="publishLoading !== ''"
+                      title="Unpublish module & all its topics"
+                      class="p-1.5 rounded-md hover:bg-zinc-700 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+                    >
+                      <Icon name="heroicons:eye-slash" class="text-zinc-400 text-lg" />
+                    </button>
                     <button @click="moveModule(moduleIndex, 'up')" :disabled="moduleIndex === 0" class="p-1.5 rounded-md hover:bg-zinc-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors">
                       <Icon name="heroicons:arrow-up" class="text-zinc-400 text-lg" />
                     </button>
@@ -469,17 +602,42 @@ defineExpose({ openEditor })
                     <div
                       v-for="(topic, topicIndex) in module.topics"
                       :key="topicIndex"
-                      class="bg-zinc-900 border border-zinc-700 rounded p-2 flex items-center justify-between"
+                      :class="topic.published ? 'border-green-800/40 bg-zinc-900' : 'border-zinc-700 bg-zinc-900'"
+                      class="border rounded p-2 flex items-center justify-between"
                     >
-                      <div class="flex-1">
-                        <div class="flex items-center gap-2">
+                      <div class="flex-1 min-w-0">
+                        <div class="flex items-center gap-2 flex-wrap">
                           <span class="text-xs text-zinc-500">#{{ topic.id }}</span>
                           <span class="text-sm font-medium text-zinc-300">{{ topic.topic_name }}</span>
                           <span class="text-xs text-zinc-500">{{ topic.duration }}</span>
+                          <!-- Topic publish badge -->
+                          <span :class="topic.published ? 'bg-green-500/15 text-green-400 border-green-600/30' : 'bg-amber-900/20 text-amber-500 border-amber-700/30'" class="text-xs px-1.5 py-0.5 rounded-full border flex items-center gap-1">
+                            <span :class="topic.published ? 'bg-green-400' : 'bg-amber-500'" class="w-1 h-1 rounded-full"></span>
+                            {{ topic.published ? 'Live' : 'Draft' }}
+                          </span>
                         </div>
                         <div class="text-xs text-zinc-600 mt-1">{{ topic._path }}</div>
                       </div>
                       <div class="flex items-center gap-1">
+                        <!-- Topic publish/unpublish -->
+                        <button
+                          v-if="!topic.published"
+                          @click="handlePublishTopic(moduleIndex, topicIndex, 'publish')"
+                          :disabled="publishLoading !== ''"
+                          title="Publish this topic"
+                          class="p-1 rounded-md hover:bg-green-800 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+                        >
+                          <Icon name="heroicons:eye" class="text-green-400 text-sm" />
+                        </button>
+                        <button
+                          v-else
+                          @click="handlePublishTopic(moduleIndex, topicIndex, 'unpublish')"
+                          :disabled="publishLoading !== ''"
+                          title="Unpublish this topic"
+                          class="p-1 rounded-md hover:bg-zinc-700 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+                        >
+                          <Icon name="heroicons:eye-slash" class="text-zinc-400 text-sm" />
+                        </button>
                         <button @click="moveTopic(moduleIndex, topicIndex, 'up')" :disabled="topicIndex === 0" class="p-1 rounded-md hover:bg-zinc-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors">
                           <Icon name="heroicons:arrow-up" class="text-zinc-400 text-sm" />
                         </button>

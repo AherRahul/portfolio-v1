@@ -1,13 +1,16 @@
 ---
-title: "Data Types, Assertions & Never Type Explained"
-description: "Learn TypeScript data types, type assertions, never type, and best practices for error handling and role-based access in this comprehensive guide."
-datePublished: 2026-02-13
-dateModified: 2026-02-13
+title: Data Types, Assertions & Never Type Explained
+description: Learn TypeScript data types, type assertions, never type, and best
+  practices for error handling and role-based access in this comprehensive
+  guide.
+datePublished: 2026-02-21
+dateModified: 2026-02-21
 topics:
   - javascript
 courseName: 00-understand-javascript-complete
 showOnArticles: false
 featured: false
+published: true
 ---
 
 

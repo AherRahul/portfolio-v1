@@ -1,13 +1,17 @@
 ---
-title: "Multi-Factor Authentication (MFA)"
-description: "This content explains two primary defense mechanisms to protect AWS users in groups from account compromise: password policies and Multi-Factor Authentication (MFA). Both are critical for securing AWS accounts, especially the root and IAM users who have significant permissions."
-datePublished: 2026-02-02
-dateModified: 2026-02-02
+title: Multi-Factor Authentication (MFA)
+description: "This content explains two primary defense mechanisms to protect
+  AWS users in groups from account compromise: password policies and
+  Multi-Factor Authentication (MFA). Both are critical for securing AWS
+  accounts, especially the root and IAM users who have significant permissions."
+datePublished: 2026-02-21
+dateModified: 2026-02-21
 topics:
   - javascript
 courseName: 05-aws-solution-architect
 showOnArticles: false
 featured: false
+published: true
 ---
 
 

@@ -22,7 +22,7 @@ content:
       - id: 1
         topic_name: Introduction
         sub_topic: Understand JavaScript Completely
-        publish_date: 2026-02-20
+        publish_date: 2026-02-21
         description: Start your JavaScript journey with confidence! Learn modern
           concepts, best practices, and real-world projects in this in-depth
           series for beginners and beyond.
@@ -33,10 +33,13 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-1-1
+        published: true
+        enable_ai_notes: false
+        enable_ai_quiz: false
       - id: 2
         topic_name: Setting up environment
         sub_topic: Understand JavaScript Completely
-        publish_date: 2026-02-20
+        publish_date: 2026-02-21
         description: Learn how to set up an online Node.js coding environment using
           GitHub Codespaces easily. Step-by-step guide for beginners to code and
           manage projects online.
@@ -47,10 +50,13 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-1-2
+        published: true
+        enable_ai_notes: false
+        enable_ai_quiz: false
       - id: 3
         topic_name: Save your work on Github
         sub_topic: Understand JavaScript Completely
-        publish_date: 2026-02-20
+        publish_date: 2026-02-21
         description: Learn how to set up an online Node.js coding environment using
           GitHub and VS Code, enabling seamless coding and version control from
           anywhere.
@@ -61,30 +67,78 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-1-3
+        published: true
+        enable_ai_notes: false
+        enable_ai_quiz: false
+    published: true
   - module_id: 2
     module_name: Core Language Concepts
     module_duration: 55 mins read
-    topics_count: 1
+    topics_count: 4
     tutor: 1
     expanded: false
     topics:
       - id: 5
-        topic_name: Variables and Data Types
+        topic_name: let, const and var
         sub_topic: Javascript
-        publish_date: 2026-09-25
-        description: >
-          Variables are containers for storing data values, and understanding
-          JavaScript's data types is fundamental to writing effective code. From
-          primitive types like strings and numbers to reference types like
-          objects and arrays, mastering these concepts will make you a more
-          confident JavaScript developer.
+        publish_date: 2026-02-21
+        description: Learn how to master JavaScript variables and constants with
+          practical examples to build e-commerce and social media apps. Start
+          coding smartly today!
         topics:
           - javascript
         duration: 12:00 mins read
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1758811614/Portfolio/javaScriptCourse/images/all%20title%20images/6_lqwupw.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1758725512/Portfolio/javaScriptCourse/images/0_eestcm.png
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-2-1
+        published: true
+      - id: 6
+        topic_name: Datatypes and ECMA standards
+        sub_topic: Understand JavaScript Completely
+        publish_date: 2026-02-21
+        description: Learn the essentials of JavaScript data types, strict mode, and
+          best coding practices to become a proficient coder. Master JS basics
+          with practical tips and examples.
+        topics:
+          - javascript
+        duration: 10:00 mins read
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1758725512/Portfolio/javaScriptCourse/images/0_eestcm.png
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: understand-javascript-complete-2-6
+        published: true
+      - id: 7
+        topic_name: Datatype conversion confusion
+        sub_topic: Understand JavaScript Completely
+        publish_date: 2026-02-21
+        description: Learn JavaScript data type conversion and operations with practical
+          examples. Master type checking, conversion pitfalls, and boost your
+          coding confidence.
+        topics:
+          - javascript
+        duration: 10:00 mins read
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1758725512/Portfolio/javaScriptCourse/images/0_eestcm.png
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: understand-javascript-complete-2-7
+        published: true
+      - id: 8
+        topic_name: Why string to number conversion is confusing
+        sub_topic: Understand JavaScript Completely
+        publish_date: 2026-02-21
+        description: Learn JavaScript type conversions and operations clearly explained
+          with practical examples, coding best practices, and tips for clean,
+          readable code.
+        topics:
+          - javascript
+        duration: 10:00 mins read
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1758725512/Portfolio/javaScriptCourse/images/0_eestcm.png
+        auther_name: Rahul Aher
+        is_on_youtube: false
+        _path: understand-javascript-complete-2-8
+        published: true
+    published: true
   - module_id: 3
     module_name: Objects
     module_duration: 20 mins read
@@ -95,7 +149,7 @@ content:
       - id: 9
         topic_name: Objects - Part 1
         sub_topic: Javascript
-        publish_date: 2026-09-25
+        publish_date: 2026-02-21
         description: Objects are the cornerstone of JavaScript programming. More than
           just data containers, they're dynamic entities that can hold
           properties, methods, and behavior. Understanding objects and the
@@ -108,10 +162,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-3-1
+        published: false
       - id: 12
         topic_name: Objects - Part 2
         sub_topic: Understand JavaScript Completely
-        publish_date: 2026-02-14
+        publish_date: 2026-02-21
         description: Learn how to effectively create, access, and merge JavaScript
           objects with practical examples and advanced tips for building robust
           web applications.
@@ -122,10 +177,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-3-12
+        published: false
       - id: 13
         topic_name: Objects, Destructuring & APIs
         sub_topic: Understand JavaScript Completely
-        publish_date: 2026-02-14
+        publish_date: 2026-02-21
         description: Learn how to master JavaScript objects, destructuring, and APIs
           with practical examples to build a strong foundation for advanced
           coding.
@@ -136,6 +192,8 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-3-13
+        published: false
+    published: false
   - module_id: 5
     module_name: Functions
     module_duration: 45 mins read
@@ -146,7 +204,7 @@ content:
       - id: 21
         topic_name: Basics, Parameters & Return Values
         sub_topic: Understand JavaScript Completely
-        publish_date: 2026-02-14
+        publish_date: 2026-02-21
         description: Learn JavaScript functions basics, parameters, return values, and
           scope with practical examples to boost your coding skills in React and
           beyond.
@@ -157,10 +215,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-5-21
+        published: false
       - id: 22
         topic_name: Rest Operator & Object
         sub_topic: Understand JavaScript Completely
-        publish_date: 2026-02-14
+        publish_date: 2026-02-21
         description: Learn how to master JavaScript functions, parameters, rest
           operator, and object handling with clear examples and best practices
           for your coding journey.
@@ -171,10 +230,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-5-22
+        published: false
       - id: 23
         topic_name: "Scope: Let, Var & Const"
         sub_topic: Understand JavaScript Completely
-        publish_date: 2026-02-14
+        publish_date: 2026-02-21
         description: Understand JavaScript scope, including let, var, and const, with
           practical examples to avoid common programming errors and write
           cleaner code.
@@ -185,10 +245,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-5-23
+        published: false
       - id: 24
         topic_name: Scope and Closures
         sub_topic: Understand JavaScript Completely
-        publish_date: 2026-02-14
+        publish_date: 2026-02-21
         description: Learn JavaScript scope, closures, and function execution with clear
           examples and error handling tips to master coding concepts
           effectively.
@@ -199,10 +260,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-5-24
+        published: false
       - id: 18
         topic_name: Higher-Order Functions
         sub_topic: Javascript
-        publish_date: 2026-09-25
+        publish_date: 2026-02-21
         description: >
           Higher-order functions are functions that take other functions as
           arguments or return functions. They're the backbone of functional
@@ -215,10 +277,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-5-1
+        published: false
       - id: 19
         topic_name: map, filter & reduce
         sub_topic: Javascript
-        publish_date: 2026-09-25
+        publish_date: 2026-02-21
         description: >
           The holy trinity of array methods - map, filter, and reduce - are
           essential tools for functional programming in JavaScript. These
@@ -231,10 +294,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-5-2
+        published: false
       - id: 20
         topic_name: Advanced Closures Interview Questions
         sub_topic: Javascript
-        publish_date: 2026-09-25
+        publish_date: 2026-02-21
         description: >
           Master the most challenging closure-based interview questions that
           test your deep understanding of JavaScript's scope, execution context,
@@ -246,6 +310,8 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-5-3
+        published: false
+    published: false
   - module_id: 4
     module_name: Advanced JavaScript Concepts
     module_duration: 75 mins read
@@ -256,7 +322,7 @@ content:
       - id: 12
         topic_name: Window & this keyword
         sub_topic: Javascript
-        publish_date: 2026-09-25
+        publish_date: 2026-02-21
         description: >
           The shortest JavaScript program and the mysterious global 'this'
           keyword. Understanding the global execution context, window object,
@@ -269,10 +335,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-4-1
+        published: false
       - id: 13
         topic_name: undefined vs not defined
         sub_topic: Javascript
-        publish_date: 2026-09-25
+        publish_date: 2026-02-21
         description: >
           undefined and 'not defined' are two completely different concepts in
           JavaScript that often confuse developers. Understanding the
@@ -285,10 +352,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-4-2
+        published: false
       - id: 14
         topic_name: Closures in JavaScript
         sub_topic: Javascript
-        publish_date: 2026-09-25
+        publish_date: 2026-02-21
         description: >
           Closures are JavaScript's superpower - they allow functions to
           remember variables from their outer scope even after that scope has
@@ -301,10 +369,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-4-3
+        published: false
       - id: 15
         topic_name: setTimeout + Closures Interview Questions
         sub_topic: Javascript
-        publish_date: 2026-09-25
+        publish_date: 2026-02-21
         description: >
           The classic setTimeout with closures in a loop is one of the most
           frequently asked JavaScript interview questions. Understanding this
@@ -317,10 +386,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-4-4
+        published: false
       - id: 16
         topic_name: Callback Functions & Event Listeners
         sub_topic: Javascript
-        publish_date: 2026-09-25
+        publish_date: 2026-02-21
         description: >
           Callback functions are the foundation of asynchronous JavaScript and
           event-driven programming. Understanding how callbacks work with event
@@ -332,10 +402,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-4-5
+        published: false
       - id: 17
         topic_name: Trust Issues with setTimeout
         sub_topic: Javascript
-        publish_date: 2026-09-25
+        publish_date: 2026-02-21
         description: >
           setTimeout doesn't always behave as expected! Understanding the
           nuances of setTimeout, its minimum delays, and how it interacts with
@@ -347,6 +418,8 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-4-6
+        published: false
+    published: false
   - module_id: 6
     module_name: Asynchronous JavaScript
     module_duration: 70 mins read
@@ -357,7 +430,7 @@ content:
       - id: 21
         topic_name: Callback Hell
         sub_topic: Javascript
-        publish_date: 2026-09-25
+        publish_date: 2026-02-21
         description: >
           Callback Hell is the nightmare of nested callbacks that makes code
           unreadable and unmaintainable. Understanding this problem is the first
@@ -369,10 +442,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-6-1
+        published: false
       - id: 22
         topic_name: Promises
         sub_topic: Javascript
-        publish_date: 2026-09-25
+        publish_date: 2026-02-21
         description: >
           Promises revolutionized asynchronous JavaScript by providing a cleaner
           way to handle async operations. Understanding promises is essential
@@ -384,10 +458,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-6-2
+        published: false
       - id: 23
         topic_name: Promise Chaining & Error Handling
         sub_topic: Javascript
-        publish_date: 2026-09-25
+        publish_date: 2026-02-21
         description: >
           Learn how to create promises, chain them together, and handle errors
           gracefully. Master the Promise constructor and understand how to build
@@ -399,10 +474,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-6-3
+        published: false
       - id: 24
         topic_name: Async Await
         sub_topic: Javascript
-        publish_date: 2026-09-25
+        publish_date: 2026-02-21
         description: >
           Async/await is syntactic sugar over promises that makes asynchronous
           code look and behave more like synchronous code. Master this modern
@@ -414,10 +490,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-6-4
+        published: false
       - id: 25
         topic_name: Promise APIs & Interview Questions
         sub_topic: Javascript
-        publish_date: 2026-09-25
+        publish_date: 2026-02-21
         description: >
           Master Promise.all(), Promise.race(), Promise.allSettled(), and
           Promise.any(). These powerful utility methods are frequently tested in
@@ -429,6 +506,8 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-6-5
+        published: false
+    published: false
   - module_id: 7
     module_name: Modern JavaScript (ES6+)
     module_duration: 3hr 45 mins read
@@ -439,7 +518,7 @@ content:
       - id: 26
         topic_name: Destructuring & Spread/Rest Operators
         sub_topic: Javascript
-        publish_date: 2026-09-26
+        publish_date: 2026-02-21
         description: >
           Master the art of extracting values from arrays and objects with
           destructuring assignment, and learn to spread and collect elements
@@ -452,10 +531,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-7-1
+        published: false
       - id: 27
         topic_name: Template Literals & Tagged Templates
         sub_topic: Javascript
-        publish_date: 2026-09-26
+        publish_date: 2026-02-21
         description: >
           Explore the power of template literals for string interpolation and
           multiline strings, plus advanced tagged template functions for custom
@@ -467,10 +547,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-7-2
+        published: false
       - id: 28
         topic_name: Symbols, Sets, Maps & WeakMaps
         sub_topic: Javascript
-        publish_date: 2026-09-26
+        publish_date: 2026-02-21
         description: >
           Discover modern data structures and primitive types in JavaScript.
           Learn when and how to use Symbols for unique identifiers, Sets for
@@ -483,10 +564,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-7-3
+        published: false
       - id: 29
         topic_name: Iterators & Generators
         sub_topic: Javascript
-        publish_date: 2026-09-26
+        publish_date: 2026-02-21
         description: >
           Master the iterator protocol and generator functions to create custom
           iteration behavior, lazy evaluation, and powerful control flow
@@ -498,10 +580,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-7-4
+        published: false
       - id: 30
         topic_name: Modules (import/export) & Dynamic Imports
         sub_topic: Javascript
-        publish_date: 2026-09-26
+        publish_date: 2026-02-21
         description: >
           Learn the modern module system that replaced the chaos of global
           variables and script tags. Master static imports/exports and dynamic
@@ -513,6 +596,8 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-7-5
+        published: false
+    published: false
   - module_id: 8
     module_name: Browser APIs & Web Platform
     module_duration: 3hr 50 mins read
@@ -523,7 +608,7 @@ content:
       - id: 31
         topic_name: DOM Manipulation Mastery
         sub_topic: Javascript
-        publish_date: 2026-09-26
+        publish_date: 2026-02-21
         description: >
           Master the Document Object Model with modern techniques for selecting,
           creating, modifying, and removing elements. Learn
@@ -536,10 +621,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-8-1
+        published: false
       - id: 32
         topic_name: Event Handling & Custom Events
         sub_topic: Javascript
-        publish_date: 2026-09-26
+        publish_date: 2026-02-21
         description: >
           Deep dive into the event system that powers interactive web
           applications. Learn event delegation, custom events, and advanced
@@ -551,10 +637,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-8-2
+        published: false
       - id: 33
         topic_name: Fetch API & Network Requests
         sub_topic: Javascript
-        publish_date: 2026-09-26
+        publish_date: 2026-02-21
         description: >
           Master modern HTTP communication with the Fetch API. Learn to handle
           different request types, manage headers, process responses, and
@@ -566,10 +653,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-8-3
+        published: false
       - id: 34
         topic_name: Web Storage & IndexedDB
         sub_topic: Javascript
-        publish_date: 2026-09-26
+        publish_date: 2026-02-21
         description: >
           Explore client-side storage options from simple localStorage to
           powerful IndexedDB. Learn when to use each storage method and how to
@@ -581,10 +669,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-8-4
+        published: false
       - id: 35
         topic_name: Service Workers & Progressive Web Apps
         sub_topic: Javascript
-        publish_date: 2026-09-26
+        publish_date: 2026-02-21
         description: >
           Build progressive web applications with service workers for offline
           functionality, background sync, and push notifications. Transform web
@@ -596,6 +685,8 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-8-5
+        published: false
+    published: false
   - module_id: 9
     module_name: JavaScript Design Patterns
     module_duration: 3hr 30 mins read
@@ -606,7 +697,7 @@ content:
       - id: 36
         topic_name: Module Pattern & Namespace Management
         sub_topic: Javascript
-        publish_date: 2026-09-26
+        publish_date: 2026-02-21
         description: >
           Learn classical design patterns for organizing code into reusable
           modules. Master techniques for creating clean namespaces and avoiding
@@ -618,10 +709,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-9-1
+        published: false
       - id: 37
         topic_name: Observer Pattern & Event Systems
         sub_topic: Javascript
-        publish_date: 2026-09-26
+        publish_date: 2026-02-21
         description: >
           Implement the observer pattern to create loosely coupled, event-driven
           architectures. Build custom event systems and understand how modern
@@ -633,10 +725,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-9-2
+        published: false
       - id: 38
         topic_name: Factory & Builder Patterns
         sub_topic: Javascript
-        publish_date: 2026-09-26
+        publish_date: 2026-02-21
         description: >
           Master creational patterns for object construction. Learn when to use
           factory functions vs constructors vs classes, and how the builder
@@ -648,10 +741,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-9-3
+        published: false
       - id: 39
         topic_name: Singleton & Decorator Patterns
         sub_topic: Javascript
-        publish_date: 2026-09-26
+        publish_date: 2026-02-21
         description: >
           Explore structural patterns for managing object instances and
           extending functionality. Learn the singleton pattern's pros and cons,
@@ -663,10 +757,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-9-4
+        published: false
       - id: 40
         topic_name: MVC/MVP/MVVM Architecture Patterns
         sub_topic: Javascript
-        publish_date: 2026-09-26
+        publish_date: 2026-02-21
         description: >
           Understand architectural patterns that separate concerns in large
           applications. Learn how MVC, MVP, and MVVM patterns influence modern
@@ -678,6 +773,8 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-9-5
+        published: false
+    published: false
   - module_id: 10
     module_name: Performance & Optimization
     module_duration: 3hr 40 mins read
@@ -688,7 +785,7 @@ content:
       - id: 41
         topic_name: Memory Management & Garbage Collection
         sub_topic: Javascript
-        publish_date: 2026-09-26
+        publish_date: 2026-02-21
         description: >
           Deep dive into JavaScript's memory model, garbage collection
           algorithms, and memory leak prevention. Learn to profile memory usage
@@ -700,10 +797,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-10-1
+        published: false
       - id: 42
         topic_name: Performance Profiling & Optimization
         sub_topic: Javascript
-        publish_date: 2026-09-26
+        publish_date: 2026-02-21
         description: >
           Master the art of measuring and improving JavaScript performance.
           Learn to use browser DevTools, identify bottlenecks, and apply
@@ -715,10 +813,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-10-2
+        published: false
       - id: 43
         topic_name: Debouncing, Throttling & Lazy Loading
         sub_topic: Javascript
-        publish_date: 2026-09-26
+        publish_date: 2026-02-21
         description: >
           Implement essential performance patterns for handling frequent events
           and loading resources efficiently. Master debouncing, throttling, and
@@ -730,10 +829,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-10-3
+        published: false
       - id: 44
         topic_name: Code Splitting & Bundle Optimization
         sub_topic: Javascript
-        publish_date: 2026-09-26
+        publish_date: 2026-02-21
         description: >
           Optimize application loading with strategic code splitting and bundle
           analysis. Learn to reduce initial bundle size and implement smart
@@ -745,10 +845,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-10-4
+        published: false
       - id: 45
         topic_name: Web Workers & Parallel Processing
         sub_topic: Javascript
-        publish_date: 2026-09-26
+        publish_date: 2026-02-21
         description: >
           Unlock parallel processing in JavaScript with Web Workers. Learn to
           offload heavy computations, implement background data processing, and
@@ -760,6 +861,8 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-10-5
+        published: false
+    published: false
   - module_id: 11
     module_name: TypeScript
     module_duration: 2 hrs 30 mins
@@ -770,7 +873,7 @@ content:
       - id: 1
         topic_name: Module Overview
         sub_topic: Understand JavaScript Completely
-        publish_date: 2026-02-13
+        publish_date: 2026-02-21
         description: Master TypeScript confidently with our free, complete video
           playlist. Learn practical concepts and boost your development skills
           in React, Express, and more.
@@ -781,10 +884,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-11-1
+        published: true
       - id: 2
         topic_name: Introduction to Typescript
         sub_topic: Understand JavaScript Completely
-        publish_date: 2026-02-13
+        publish_date: 2026-02-21
         description: Learn TypeScript basics and its advantages over JavaScript in this
           fast-paced, beginner-friendly guide. Understand types, type safety,
           tooling, and setup essentials.
@@ -795,10 +899,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-11-2
+        published: true
       - id: 3
         topic_name: How Typescript works?
         sub_topic: Understand JavaScript Completely
-        publish_date: 2026-02-13
+        publish_date: 2026-02-21
         description: Explore the behind-the-scenes journey of TypeScript compilation,
           from source code to JavaScript, with detailed insights into lexers,
           parsers, binders, checkers, and emitters.
@@ -809,10 +914,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-11-3
+        published: true
       - id: 4
         topic_name: How to setup Typescript in project
         sub_topic: Understand JavaScript Completely
-        publish_date: 2026-02-13
+        publish_date: 2026-02-21
         description: Learn how to set up TypeScript traditionally in your project with
           step-by-step guidance, including key configurations and best practices
           for seamless coding.
@@ -823,10 +929,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-11-4
+        published: true
       - id: 5
         topic_name: Type Annotations & Inference in TS
         sub_topic: Understand JavaScript Completely
-        publish_date: 2026-02-13
+        publish_date: 2026-02-21
         description: Learn TypeScript’s powerful type inference and type annotation
           features with simple examples, and avoid common errors in your code
           effortlessly.
@@ -837,10 +944,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-11-5
+        published: true
       - id: 6
         topic_name: Understanding Unions & Any
         sub_topic: Understand JavaScript Completely
-        publish_date: 2026-02-13
+        publish_date: 2026-02-21
         description: Learn how to effectively use Union and Any types in TypeScript to
           write cleaner, safer code while avoiding common pitfalls with
           practical examples.
@@ -851,10 +959,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-11-6
+        published: true
       - id: 7
         topic_name: Type Narrowing & Type Guards
         sub_topic: Understand JavaScript Completely
-        publish_date: 2026-02-13
+        publish_date: 2026-02-21
         description: Learn Type Guards in TypeScript for safer and cleaner code with
           examples on type narrowing, anonymous types, and best practices for
           handling data types effectively.
@@ -865,10 +974,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-11-7
+        published: true
       - id: 8
         topic_name: Assertion, Unknown & Never in TS
         sub_topic: Understand JavaScript Completely
-        publish_date: 2026-02-13
+        publish_date: 2026-02-21
         description: Learn TypeScript data types, type assertions, never type, and best
           practices for error handling and role-based access in this
           comprehensive guide.
@@ -879,10 +989,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-11-8
+        published: true
       - id: 9
         topic_name: Types and Interface in typescript
         sub_topic: Understand JavaScript Completely
-        publish_date: 2026-02-13
+        publish_date: 2026-02-21
         description: Learn TypeScript basics including type aliases, interfaces, unions,
           intersections, and class implementations for clean, maintainable code.
         topics:
@@ -892,10 +1003,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-11-9
+        published: true
       - id: 10
         topic_name: Object discussion in Typescript
         sub_topic: Understand JavaScript Completely
-        publish_date: 2026-02-13
+        publish_date: 2026-02-21
         description: Learn how to master TypeScript objects with detailed explanations
           on typing, partial updates, pick, omit, and duck typing for clean,
           error-free code.
@@ -906,10 +1018,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-11-10
+        published: true
       - id: 11
         topic_name: Functions in Typescript
         sub_topic: Understand JavaScript Completely
-        publish_date: 2026-02-13
+        publish_date: 2026-02-21
         description: "Learn TypeScript functions with ease: parameters, return types,
           optional/default values, and best practices for safe and secure
           coding."
@@ -920,10 +1033,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-11-11
+        published: true
       - id: 12
         topic_name: Array, enum and tuples in Typescript
         sub_topic: Understand JavaScript Completely
-        publish_date: 2026-02-13
+        publish_date: 2026-02-21
         description: Learn TypeScript arrays, tuples, and enums with practical examples
           to build robust, error-free applications. Master foundational data
           structures easily.
@@ -934,10 +1048,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-11-12
+        published: true
       - id: 13
         topic_name: OOP concepts in Typescript
         sub_topic: Understand JavaScript Completely
-        publish_date: 2026-02-13
+        publish_date: 2026-02-21
         description: Learn TypeScript OOP concepts like classes, constructors, access
           modifiers, getters/setters, static members, abstract classes, and
           composition with practical examples.
@@ -948,10 +1063,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-11-13
+        published: true
       - id: 14
         topic_name: Interface and Generics in Typescript
         sub_topic: Understand JavaScript Completely
-        publish_date: 2026-02-13
+        publish_date: 2026-02-21
         description: Learn TypeScript interfaces and generics with clear examples and
           best practices to structure data and write reusable code efficiently.
         topics:
@@ -961,10 +1077,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-11-14
+        published: true
       - id: 15
         topic_name: Type definations & Axios in TS
         sub_topic: Understand JavaScript Completely
-        publish_date: 2026-02-13
+        publish_date: 2026-02-21
         description: Learn TypeScript type declarations, web requests using Axios and
           Fetch, and practical tips to write better typed code with interfaces
           and generics.
@@ -975,10 +1092,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-11-15
+        published: true
       - id: 16
         topic_name: TS with React
         sub_topic: Understand JavaScript Completely
-        publish_date: 2026-02-13
+        publish_date: 2026-02-21
         description: Learn how to use TypeScript with React effectively, including
           components, hooks, props, and forms with hands-on examples to boost
           your coding confidence.
@@ -989,6 +1107,10 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: understand-javascript-complete-11-16
+        published: true
+    published: true
+published: true
+datePublished: 2026-02-21
 ---
 ---
 title: Understand JavaScript Completely

@@ -1,17 +1,20 @@
 ---
-title: "In-Depth Understanding of IAM Policies in AWS"
-description: "This chapter provided a comprehensive overview of IAM policies in AWS, emphasizing their critical role in securing cloud resources through controlled access."
-datePublished: 2026-01-31
-dateModified: 2026-01-31
+title: In-Depth Understanding of IAM Policies in AWS
+description: This chapter provided a comprehensive overview of IAM policies in
+  AWS, emphasizing their critical role in securing cloud resources through
+  controlled access.
+datePublished: 2026-02-21
+dateModified: 2026-02-21
 topics:
   - javascript
 courseName: 05-aws-solution-architect
 showOnArticles: false
 featured: false
 resources:
-  - title: "Notes"
-    type: "Documents"
-    url: "https://arkalim.notion.site/Notes-143374c83daa4d4991b07400056a2aa9"
+  - title: Notes
+    type: Documents
+    url: https://arkalim.notion.site/Notes-143374c83daa4d4991b07400056a2aa9
+published: true
 ---
 
 

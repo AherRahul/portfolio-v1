@@ -1,13 +1,15 @@
 ---
 title: "Functions: Basics, Parameters & Return Values"
-description: "Learn JavaScript functions basics, parameters, return values, and scope with practical examples to boost your coding skills in React and beyond."
-datePublished: 2026-02-14
-dateModified: 2026-02-14
+description: Learn JavaScript functions basics, parameters, return values, and
+  scope with practical examples to boost your coding skills in React and beyond.
+datePublished: 2026-02-21
+dateModified: 2026-02-21
 topics:
   - javascript
 courseName: 00-understand-javascript-complete
 showOnArticles: false
 featured: false
+published: false
 ---
 
 ## Introduction to JavaScript Functions  

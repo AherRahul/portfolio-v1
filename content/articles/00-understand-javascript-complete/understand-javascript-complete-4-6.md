@@ -4,8 +4,8 @@ description: setTimeout doesn't always behave as expected! Understanding the
   nuances of setTimeout, its minimum delays, and how it interacts with the event
   loop will help you write more predictable asynchronous code.
 slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
-dateModified: 2026-01-29
-datePublished: 2026-09-25
+dateModified: 2026-02-21
+datePublished: 2026-02-21
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
@@ -27,6 +27,7 @@ resources:
     type: tool
     url: http://latentflip.com/loupe/
     description: Interactive tool to visualize setTimeout and event loop behavior
+published: false
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758811617/Portfolio/javaScriptCourse/images/all%20title%20images/17_d5t5i3.png)

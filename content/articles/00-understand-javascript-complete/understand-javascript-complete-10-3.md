@@ -4,8 +4,8 @@ description: Master rate limiting techniques to control function execution
   frequency. Learn debouncing and throttling patterns to optimize performance,
   improve user experience, and prevent excessive API calls or computations.
 slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
-dateModified: 2026-01-29
-datePublished: 2026-09-26
+dateModified: 2026-02-21
+datePublished: 2026-02-21
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
@@ -27,6 +27,7 @@ resources:
     type: reference
     url: https://rxjs.dev/api/operators/debounceTime
     description: Reactive programming approach to rate limiting
+published: false
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758811611/Portfolio/javaScriptCourse/images/all%20title%20images/44_jf6ftw.png)

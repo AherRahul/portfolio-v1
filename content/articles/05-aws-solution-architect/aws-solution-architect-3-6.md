@@ -1,13 +1,18 @@
 ---
-title: "Understanding IAM Roles in AWS"
-description: "By integrating IAM Roles effectively, AWS users can ensure that services operate within strict permission boundaries, reducing risk and improving governance across cloud resources. This chapter’s overview and practical insights provide a foundational understanding necessary for advancing in AWS identity and access management."
-datePublished: 2026-02-02
-dateModified: 2026-02-02
+title: Understanding IAM Roles in AWS
+description: By integrating IAM Roles effectively, AWS users can ensure that
+  services operate within strict permission boundaries, reducing risk and
+  improving governance across cloud resources. This chapter’s overview and
+  practical insights provide a foundational understanding necessary for
+  advancing in AWS identity and access management.
+datePublished: 2026-02-21
+dateModified: 2026-02-21
 topics:
   - javascript
 courseName: 05-aws-solution-architect
 showOnArticles: false
 featured: false
+published: true
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png)

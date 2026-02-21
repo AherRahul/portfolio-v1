@@ -62,6 +62,9 @@ const query = computed(() => {
     sortBy.value === 'az' ? [{ title: 1 as 1 }] :
     sortBy.value === 'za' ? [{ title: -1 as -1 }] : undefined
 
+  // Always filter to published courses only for public view
+  and.push({ published: true })
+
   return {
     path: '/courses',
     without: ['body', 'excerpt'],

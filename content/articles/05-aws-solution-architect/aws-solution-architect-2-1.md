@@ -1,10 +1,15 @@
 ---
-title: "The Evolution & Global Infrastructure of AWS Cloud"
-description: AWS has transformed from an internal Amazon tool into the world’s leading cloud platform. Its global infrastructure—comprising regions, availability zones, and edge locations—provides unparalleled scalability, reliability, and geographic reach. The platform’s extensive service catalog supports nearly any application, empowering industries from entertainment to science.
+title: The Evolution & Global Infrastructure of AWS Cloud
+description: AWS has transformed from an internal Amazon tool into the world’s
+  leading cloud platform. Its global infrastructure—comprising regions,
+  availability zones, and edge locations—provides unparalleled scalability,
+  reliability, and geographic reach. The platform’s extensive service catalog
+  supports nearly any application, empowering industries from entertainment to
+  science.
 tutor: 1
 slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles/aws-solution-architect-exam-guide.md
-dateModified: 2026-01-31
-datePublished: 2026-01-31
+dateModified: 2026-02-21
+datePublished: 2026-02-21
 showOnArticles: false
 courseName: 05-aws-solution-architect
 topics:
@@ -12,12 +17,13 @@ topics:
   - aws
   - lld
 resources:
-  - title: "YouTube Video - Cloud World"
-    type: "Video"
-    url: "https://youtu.be/SVW2HBZ3QNA?si=RbOQxymPdbOEeI-l"
-  - title: "Notes"
-    type: "Documents"
-    url: "https://arkalim.notion.site/Notes-143374c83daa4d4991b07400056a2aa9"
+  - title: YouTube Video - Cloud World
+    type: Video
+    url: https://youtu.be/SVW2HBZ3QNA?si=RbOQxymPdbOEeI-l
+  - title: Notes
+    type: Documents
+    url: https://arkalim.notion.site/Notes-143374c83daa4d4991b07400056a2aa9
+published: true
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png)

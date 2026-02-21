@@ -24,7 +24,7 @@ content:
       - id: 1
         topic_name: Introduction to Course
         sub_topic: DVA-C02 certification
-        publish_date: 2026-01-29
+        publish_date: 2026-02-21
         description: AWS Certified Developer Associate is one of the most popular cloud
           computing certifications. In this full course taught by an expert
           trainer, you will learn the major parts of Amazon Web Services, &
@@ -40,6 +40,8 @@ content:
         enable_ai_notes: false
         enable_ai_quiz: false
         _path: aws-solution-architect-1-1
+        published: true
+    published: true
   - module_id: 2
     module_name: AWS Fundamentals
     module_duration: 44 mins
@@ -49,7 +51,7 @@ content:
       - id: 1
         topic_name: The Evolution of AWS Cloud
         sub_topic: DVA-C02 certification
-        publish_date: 2026-01-29
+        publish_date: 2026-02-21
         description: >
           AWS has transformed from an internal Amazon tool into the world’s
           leading cloud platform. Its global infrastructure—comprising regions,
@@ -64,10 +66,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: aws-solution-architect-2-1
+        published: true
       - id: 2
         topic_name: Who Owns What in the Cloud?
         sub_topic: DVA-C02 certification
-        publish_date: 2026-01-29
+        publish_date: 2026-02-21
         description: >
           It explores the shared responsibility model of cloud computing. In
           this model, AWS manages the infrastructure's security, such as
@@ -82,10 +85,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: aws-solution-architect-2-2
+        published: true
       - id: 3
         topic_name: Compute, Storage, DB & Networking
         sub_topic: DVA-C02 certification
-        publish_date: 2026-01-29
+        publish_date: 2026-02-21
         description: >
           It covers the core AWS services that power cloud applications. Compute
           services like EC2 & Lambda handle processing, while storage solutions
@@ -100,6 +104,8 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: aws-solution-architect-2-3
+        published: true
+    published: true
   - module_id: 3
     module_name: IAM & AWS CLI
     module_duration: 45 mins
@@ -110,7 +116,7 @@ content:
       - id: 1
         topic_name: "IAM Introduction: Users, Groups, Policies"
         sub_topic: AWS Certified Developer Associate
-        publish_date: 2026-01-31
+        publish_date: 2026-02-21
         description: IAM is a cornerstone service that enables AWS users to manage
           identities and regulate access securely and efficiently. By
           transitioning from a single root user to a comprehensive system of
@@ -125,10 +131,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: aws-solution-architect-3-1
+        published: true
       - id: 2
         topic_name: IAM Users & Groups Hands On
         sub_topic: AWS Certified Developer Associate
-        publish_date: 2026-01-31
+        publish_date: 2026-02-21
         description: This detailed understanding equips learners and professionals to
           confidently manage AWS identities and access controls, ensuring
           security and operational efficiency.
@@ -139,10 +146,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: aws-solution-architect-3-2
+        published: true
       - id: 3
         topic_name: IAM Policies in AWS
         sub_topic: AWS Certified Developer Associate
-        publish_date: 2026-01-31
+        publish_date: 2026-02-21
         description: This chapter provided a comprehensive overview of IAM policies in
           AWS, emphasizing their critical role in securing cloud resources
           through controlled access.
@@ -153,10 +161,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: aws-solution-architect-3-3
+        published: true
       - id: 4
         topic_name: Multi-Factor Authentication (MFA)
         sub_topic: AWS Certified Developer Associate
-        publish_date: 2026-02-02
+        publish_date: 2026-02-21
         description: "This content explains two primary defense mechanisms to protect
           AWS users in groups from account compromise: password policies and
           Multi-Factor Authentication (MFA). Both are critical for securing AWS
@@ -169,10 +178,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: aws-solution-architect-3-4
+        published: true
       - id: 5
         topic_name: Accessing AWS – Management Console, CLI, and SDK
         sub_topic: AWS Certified Developer Associate
-        publish_date: 2026-02-02
+        publish_date: 2026-02-21
         description: This chapter provides a foundational understanding of AWS access
           mechanisms, ensuring learners are equipped to interact with AWS
           securely and effectively, whether via the console, CLI, or SDK.
@@ -183,10 +193,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: aws-solution-architect-3-5
+        published: true
       - id: 6
         topic_name: Understanding IAM Roles in AWS
         sub_topic: AWS Certified Developer Associate
-        publish_date: 2026-02-02
+        publish_date: 2026-02-21
         description: By integrating IAM Roles effectively, AWS users can ensure that
           services operate within strict permission boundaries, reducing risk
           and improving governance across cloud resources. This chapter’s
@@ -199,10 +210,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: aws-solution-architect-3-6
+        published: true
       - id: 7
         topic_name: Security Tools in IAM
         sub_topic: AWS Certified Developer Associate
-        publish_date: 2026-02-02
+        publish_date: 2026-02-21
         description: This chapter underscores the importance of using AWS’s built-in
           security tools to maintain a secure, compliant, and efficiently
           managed cloud environment.
@@ -213,10 +225,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: aws-solution-architect-3-7
+        published: true
       - id: 8
         topic_name: IAM Summary
         sub_topic: AWS Certified Developer Associate
-        publish_date: 2026-02-02
+        publish_date: 2026-02-21
         description: Proper IAM implementation not only protects organizational assets
           but also ensures compliance and operational efficiency. As the cloud
           landscape evolves, adhering to these principles is vital for
@@ -230,6 +243,10 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: aws-solution-architect-3-8
+        published: true
+    published: true
+published: true
+datePublished: 2026-02-21
 ---
 
 ## AWS Certified Developer Associate Exam Preparation Guide  

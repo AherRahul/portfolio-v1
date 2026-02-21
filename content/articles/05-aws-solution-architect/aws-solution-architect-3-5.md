@@ -1,13 +1,16 @@
 ---
-title: "Accessing AWS – Management Console, CLI, and SDK"
-description: "This chapter provides a foundational understanding of AWS access mechanisms, ensuring learners are equipped to interact with AWS securely and effectively, whether via the console, CLI, or SDK."
-datePublished: 2026-02-02
-dateModified: 2026-02-02
+title: Accessing AWS – Management Console, CLI, and SDK
+description: This chapter provides a foundational understanding of AWS access
+  mechanisms, ensuring learners are equipped to interact with AWS securely and
+  effectively, whether via the console, CLI, or SDK.
+datePublished: 2026-02-21
+dateModified: 2026-02-21
 topics:
   - javascript
 courseName: 05-aws-solution-architect
 showOnArticles: false
 featured: false
+published: true
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png)

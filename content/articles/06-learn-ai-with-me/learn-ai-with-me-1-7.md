@@ -4,8 +4,8 @@ description: "As with any emerging technology that becomes integral to our daily
   lives, AI models—specifically LLMs—come with their unique inherent features.
   These features set the stage for both their capabilities and limitations:"
 slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
-dateModified: 2026-01-29
-datePublished: 2026-04-10
+dateModified: 2026-02-21
+datePublished: 2026-02-21
 showOnArticles: false
 courseName: 06-learn-ai-with-me
 topics:
@@ -15,6 +15,7 @@ resources:
     type: PDF
     url: ""
     description: A PDF Notes.
+published: true
 ---
 
 ---

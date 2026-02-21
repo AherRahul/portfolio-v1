@@ -4,8 +4,8 @@ description: Callback Hell is the nightmare of nested callbacks that makes code
   unreadable and unmaintainable. Understanding this problem is the first step
   toward mastering modern asynchronous JavaScript patterns.
 slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
-dateModified: 2026-01-29
-datePublished: 2026-09-25
+dateModified: 2026-02-21
+datePublished: 2026-02-21
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
@@ -27,6 +27,7 @@ resources:
     type: article
     url: https://javascript.info/callbacks
     description: Understanding callbacks and their problems
+published: false
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758811619/Portfolio/javaScriptCourse/images/all%20title%20images/22_ma9iq2.png)

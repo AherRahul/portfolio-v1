@@ -4,8 +4,8 @@ description: The holy trinity of array methods - map, filter, and reduce - are
   essential tools for functional programming in JavaScript. These methods allow
   you to transform, filter, and aggregate data in elegant, readable ways.
 slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
-dateModified: 2026-01-29
-datePublished: 2026-09-25
+dateModified: 2026-02-21
+datePublished: 2026-02-21
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
@@ -27,6 +27,7 @@ resources:
     type: documentation
     url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
     description: Complete reference for the reduce method
+published: false
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758811618/Portfolio/javaScriptCourse/images/all%20title%20images/20_lzukxv.png)

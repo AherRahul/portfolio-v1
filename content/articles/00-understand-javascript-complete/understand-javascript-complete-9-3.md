@@ -4,8 +4,8 @@ description: Master creational design patterns for flexible object creation.
   Learn factory methods, abstract factories, and builder patterns for
   constructing complex objects with clean, maintainable code.
 slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
-dateModified: 2026-01-29
-datePublished: 2026-09-26
+dateModified: 2026-02-21
+datePublished: 2026-02-21
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
@@ -27,6 +27,7 @@ resources:
     type: article
     url: https://martinfowler.com/bliki/FluentInterface.html
     description: Martin Fowler's guide to fluent interfaces
+published: false
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758811626/Portfolio/javaScriptCourse/images/all%20title%20images/39_qbdpup.png)

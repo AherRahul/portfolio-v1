@@ -4,8 +4,8 @@ description: Learn the modern module system that replaced the chaos of global
   variables and script tags. Master static imports/exports and dynamic imports
   for code splitting and lazy loading.
 slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
-dateModified: 2026-01-29
-datePublished: 2026-09-26
+dateModified: 2026-02-21
+datePublished: 2026-02-21
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
@@ -27,6 +27,7 @@ resources:
     type: article
     url: https://web.dev/reduce-javascript-payloads-with-code-splitting/
     description: Code splitting and performance optimization with modules
+published: false
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758811623/Portfolio/javaScriptCourse/images/all%20title%20images/31_jca3sy.png)

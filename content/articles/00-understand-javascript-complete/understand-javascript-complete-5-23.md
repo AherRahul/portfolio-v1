@@ -1,13 +1,15 @@
 ---
 title: "Scope: Let, Var & Const"
-description: "Understand JavaScript scope, including let, var, and const, with practical examples to avoid common programming errors and write cleaner code."
-datePublished: 2026-02-14
-dateModified: 2026-02-14
+description: Understand JavaScript scope, including let, var, and const, with
+  practical examples to avoid common programming errors and write cleaner code.
+datePublished: 2026-02-21
+dateModified: 2026-02-21
 topics:
   - javascript
 courseName: 00-understand-javascript-complete
 showOnArticles: false
 featured: false
+published: false
 ---
 
 ## Mastering JavaScript Scope: Let, Var & Const Explained

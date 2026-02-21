@@ -1,13 +1,16 @@
 ---
-title: "Type Narrowing & Type Guards"
-description: "Learn Type Guards in TypeScript for safer and cleaner code with examples on type narrowing, anonymous types, and best practices for handling data types effectively."
-datePublished: 2026-02-13
-dateModified: 2026-02-13
+title: Type Narrowing & Type Guards
+description: Learn Type Guards in TypeScript for safer and cleaner code with
+  examples on type narrowing, anonymous types, and best practices for handling
+  data types effectively.
+datePublished: 2026-02-21
+dateModified: 2026-02-21
 topics:
   - javascript
 courseName: 00-understand-javascript-complete
 showOnArticles: false
 featured: false
+published: true
 ---
 
 

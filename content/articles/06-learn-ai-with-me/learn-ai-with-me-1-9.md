@@ -5,8 +5,8 @@ description: Just as the software development stack encounters security
   primarily is on the developers' shoulders, you—as a user or potential owner of
   an AI product—should be informed about these risks.
 slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
-dateModified: 2026-01-29
-datePublished: 2026-04-10
+dateModified: 2026-02-21
+datePublished: 2026-02-21
 showOnArticles: false
 courseName: 06-learn-ai-with-me
 topics:
@@ -16,6 +16,7 @@ resources:
     type: PDF
     url: ""
     description: A PDF Notes.
+published: true
 ---
 
 ![](https://res.cloudinary.com/duojkrgue/image/upload/v1758777282/Portfolio/aiCourse/Learn_AI_eyag79.png)

@@ -51,13 +51,19 @@ const props = defineProps<{
   isOlderThanOneYear?: boolean
   enableAiNotes?: boolean
   enableAiQuiz?: boolean
+  contentTheme?: 'dark' | 'light'
 }>()
+
+// Computed theme — falls back to 'dark' if parent didn't pass the prop
+const theme = computed(() => props.contentTheme ?? 'dark')
+const isLight = computed(() => theme.value === 'light')
 
 // Setup image modal for course topic content
 const { setupContentImages } = useContentImages()
 
 // Tab state
 const activeTab = ref('content')
+
 const tabs = computed(() => {
   const allTabs = [
     { id: 'content', title: 'Content', icon: 'heroicons:document-text' },
@@ -352,22 +358,22 @@ const canGenerateSummary = computed(() => {
 })
 
 function onKeydownTabs(e: KeyboardEvent) {
-  const currentIndex = tabs.findIndex(t => t.id === activeTab.value)
+  const currentIndex = tabs.value.findIndex((t: { id: string }) => t.id === activeTab.value)
   if (currentIndex === -1) return
   
   if (e.key === 'ArrowRight') {
-    const next = (currentIndex + 1) % tabs.length
-    setActiveTab(tabs[next].id)
+    const next = (currentIndex + 1) % tabs.value.length
+    setActiveTab(tabs.value[next].id)
     e.preventDefault()
   } else if (e.key === 'ArrowLeft') {
-    const prev = (currentIndex - 1 + tabs.length) % tabs.length
-    setActiveTab(tabs[prev].id)
+    const prev = (currentIndex - 1 + tabs.value.length) % tabs.value.length
+    setActiveTab(tabs.value[prev].id)
     e.preventDefault()
   } else if (e.key === 'Home') {
-    setActiveTab(tabs[0].id)
+    setActiveTab(tabs.value[0].id)
     e.preventDefault()
   } else if (e.key === 'End') {
-    setActiveTab(tabs[tabs.length - 1].id)
+    setActiveTab(tabs.value[tabs.value.length - 1].id)
     e.preventDefault()
   }
 }
@@ -419,10 +425,14 @@ onMounted(() => {
 <template>
   <div class="w-full">
     <!-- Outer card background -->
-    <div class="border border-zinc-800 bg-zinc-900">
+    <div
+      class="border transition-colors duration-500"
+      :class="isLight ? 'border-stone-300 bg-stone-50' : 'border-zinc-800 bg-zinc-900'"
+    >
       <!-- Tab Navigation -->
       <div
-        class="relative bg-zinc-700"
+        class="relative transition-colors duration-500"
+        :class="isLight ? 'bg-stone-300' : 'bg-zinc-700'"
         role="tablist"
         aria-orientation="horizontal"
       >
@@ -438,10 +448,12 @@ onMounted(() => {
               :key="tab.id"
               @click="setActiveTab(tab.id)"
               :class="[
-                'snap-start rounded-none bg-zinc-800 px-4 py-3 text-sm font-medium transition-all duration-200 flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-500 flex-shrink-0 min-w-max',
+                'snap-start rounded-none px-4 py-3 text-sm font-medium transition-all duration-200 flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-500 flex-shrink-0 min-w-max',
                 activeTab === tab.id
-                  ? 'bg-gradient-to-r from-red-500 to-pink-600 text-white'
-                  : 'text-zinc-300 hover:text-white hover:bg-zinc-700'
+                  ? 'bg-gradient-to-r from-red-500 to-pink-600 text-white shadow-lg'
+                  : isLight
+                    ? 'bg-stone-200 text-stone-700 hover:text-stone-900 hover:bg-stone-100 border-b-2 border-transparent'
+                    : 'bg-zinc-800 text-zinc-300 hover:text-white hover:bg-zinc-700'
               ]"
               role="tab"
               :aria-selected="activeTab === tab.id"
@@ -465,10 +477,12 @@ onMounted(() => {
               :key="tab.id"
               @click="setActiveTab(tab.id)"
               :class="[
-                'rounded-none bg-zinc-800 px-4 py-3 text-sm font-medium transition-all duration-200 flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-500 flex-1 justify-center',
+                'rounded-none px-4 py-3 text-sm font-semibold transition-all duration-200 flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-500 flex-1 justify-center',
                 activeTab === tab.id
-                  ? 'bg-gradient-to-r from-red-500 to-pink-600 text-white'
-                  : 'text-zinc-300 hover:text-white hover:bg-zinc-700'
+                  ? 'bg-gradient-to-r from-red-500 to-pink-600 text-white shadow-md'
+                  : isLight
+                    ? 'bg-stone-200 text-stone-700 hover:text-stone-900 hover:bg-stone-100'
+                    : 'bg-zinc-800 text-zinc-300 hover:text-white hover:bg-zinc-700'
               ]"
               role="tab"
               :aria-selected="activeTab === tab.id"
@@ -483,14 +497,24 @@ onMounted(() => {
       </div>
 
       <!-- Tab Content -->
-      <div class="bg-zinc-800 border-t border-zinc-800 p-3 sm:p-4 md:p-6 min-h-[350px] sm:min-h-[400px]">
+      <div
+        class="border-t transition-colors duration-500 p-3 sm:p-4 md:p-6 min-h-[350px] sm:min-h-[400px]"
+        :class="isLight ? 'bg-stone-100 border-stone-300 theme-light' : 'bg-zinc-800 border-zinc-800'"
+      >
         
         <!-- Content Tab -->
         <div v-if="activeTab === 'content'" :id="'panel-content'" role="tabpanel" aria-labelledby="tab-content">
           <div>
             <ArticleAgeWarning v-if="isOlderThanOneYear" />
             <ClientOnly>
-              <LazyContentReader :prepend="topicTitle" :doc-class="'prose md:prose-lg lg:prose-xl ' + (isOlderThanOneYear ? 'pt-8' : 'pt-4')" />
+              <LazyContentReader
+                :prepend="topicTitle"
+                :doc-class="[
+                  'prose md:prose-lg lg:prose-xl',
+                  isOlderThanOneYear ? 'pt-8' : 'pt-4',
+                  isLight ? 'prose-light-theme' : ''
+                ].filter(Boolean).join(' ')"
+              />
             </ClientOnly>
           </div>
         </div>
@@ -982,3 +1006,263 @@ onMounted(() => {
     </div>
   </div>
 </template>
+
+<style>
+/* ── Light mode prose overrides ─────────────────────────────────────────────
+   Applied globally to all tabs when the user toggles to light mode.
+   Uses warm stone/paper tones instead of pure white for less eye strain.
+   Overrides the dark‐mode CSS custom properties defined in typography.ts.
+──────────────────────────────────────────────────────────────────────────── */
+.prose-light-theme {
+  --tw-prose-body:            #1c1917;  /* stone-900  — warm near-black */
+  --tw-prose-headings:        #0c0a09;  /* stone-950  */
+  --tw-prose-links:           #dc2626;  /* red-600    — keep brand accent */
+  --tw-prose-links-hover:     #b91c1c;  /* red-700    */
+  --tw-prose-underline:       #fca5a5;  /* red-300    */
+  --tw-prose-underline-hover: #dc2626;
+  --tw-prose-bold:            #171717;  /* neutral-900 */
+  --tw-prose-counters:        #44403c;  /* stone-700  */
+  --tw-prose-bullets:         #44403c;
+  --tw-prose-hr:              #d6d3d1;  /* stone-300  */
+  --tw-prose-quote-borders:   #a8a29e;  /* stone-400  */
+  --tw-prose-captions:        #78716c;  /* stone-500  */
+  --tw-prose-code:            #0f172a;  /* slate-900  */
+  --tw-prose-code-bg:         rgba(0,0,0,0.06);
+  --tw-prose-pre-code:        #f1f5f9;  /* slate-100  */
+  --tw-prose-pre-bg:          #1e293b;  /* slate-800  — keep code blocks dark */
+  --tw-prose-pre-border:      rgba(0,0,0,0.10);
+  --tw-prose-th-borders:      #d6d3d1;  /* stone-300  */
+  --tw-prose-td-borders:      #e7e5e4;  /* stone-200  */
+
+  color: var(--tw-prose-body);
+}
+
+/* h1 border accent keeps brand red on light bg */
+.prose-light-theme h1 {
+  border-left-color: #dc2626;
+}
+
+/* image wrapper — warm stone shadow on paper bg */
+.prose-light-theme .content-img-wrapper {
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.10) !important;
+  background: #e7e5e4 !important;  /* stone-200 — slightly darker than bg for contrast */
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   LIGHT THEME — ALL-TAB CASCADE
+   .theme-light is applied to the tab content wrapper when isLight is true.
+   Rules cascade to every sub-element across Content, AI Notes, Quiz,
+   and Resources panels without touching each element individually.
+
+   Colour palette used:
+     stone-950 #0c0a09   headings
+     stone-900 #1c1917   primary text
+     stone-800 #292524   slightly lighter text
+     stone-700 #44403c   secondary text
+     stone-600 #57534e   muted text
+     stone-500 #78716c   placeholder / captions
+     stone-400 #a8a29e   icons, dividers
+     stone-300 #d6d3d1   card borders
+     stone-200 #e7e5e4   card backgrounds
+     stone-100 #f5f5f4   section backgrounds (matches outer bg-stone-100)
+══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Generic text overrides ── */
+/* NOTE: exclude elements that carry a red gradient bg so button text stays white */
+.theme-light .text-white:not([class*="from-red-"]):not([class*="from-pink-"]) {
+  color: #1c1917 !important;   /* stone-900 */
+}
+.theme-light .text-zinc-200 { color: #292524 !important; }   /* stone-800 */
+.theme-light .text-zinc-300 { color: #57534e !important; }   /* stone-600 */
+.theme-light .text-zinc-400 { color: #78716c !important; }   /* stone-500 */
+.theme-light .text-zinc-500 { color: #a8a29e !important; }   /* stone-400 */
+.theme-light .text-zinc-600 { color: #d6d3d1 !important; }   /* stone-300 — empty-state icons */
+
+/* ── AppButton PRIMARY: keep gradient vivid, always white text ── */
+/* The gradient lives on the button element itself; force text-white even
+   though .text-white above would otherwise darken it. */
+.theme-light [class*="from-red-5"],
+.theme-light [class*="from-red-6"],
+.theme-light [class*="from-pink-"] {
+  color: #ffffff !important;
+}
+/* Also ensure children (icon text etc.) inside gradient elements stay white */
+.theme-light [class*="from-red-5"] *,
+.theme-light [class*="from-red-6"] *,
+.theme-light [class*="from-pink-"] * {
+  color: #ffffff !important;
+}
+
+/* ── Card / panel backgrounds ── */
+/* bg-zinc-700/50 — main content cards (Summary, Key Points, etc.) */
+.theme-light [class*="bg-zinc-700"][class*="50"],
+.theme-light [class*="bg-zinc-700"][class*="70"] {
+  background-color: rgba(231, 229, 228, 0.7) !important;   /* stone-200/70 */
+}
+/* bg-zinc-600/50 — inner concept chips */
+.theme-light [class*="bg-zinc-600"][class*="50"] {
+  background-color: rgba(214, 211, 209, 0.65) !important;  /* stone-300/65 */
+}
+/* bg-zinc-800, bg-zinc-800/50 — quiz config box, score cards, answer blocks */
+.theme-light [class*="bg-zinc-800"]:not([class*="rounded-full"]) {
+  background-color: rgba(231, 229, 228, 0.8) !important;   /* stone-200/80 */
+}
+/* Solid bg-zinc-700 — resource icon box */
+.theme-light .bg-zinc-700:not([class*="/"]) {
+  background-color: #e7e5e4 !important;   /* stone-200 */
+}
+/* Solid bg-zinc-600 — resource icon bg */
+.theme-light .bg-zinc-600:not([class*="/"]) {
+  background-color: #d6d3d1 !important;   /* stone-300 */
+}
+
+/* ── Borders ── */
+.theme-light .border-zinc-700 { border-color: #d6d3d1 !important; }  /* stone-300 */
+.theme-light .border-zinc-600 { border-color: #a8a29e !important; }  /* stone-400 */
+
+/* ── Quiz config: inactive difficulty / question-count buttons ── */
+.theme-light .border-zinc-600.bg-zinc-700 {
+  background-color: #ede8e4 !important;   /* warm cream */
+  border-color: #a8a29e !important;
+  color: #44403c !important;
+}
+.theme-light .border-zinc-600.bg-zinc-700:hover {
+  background-color: #d6d3d1 !important;
+  border-color: #78716c !important;
+}
+
+/* ── Question-type badge (bg-zinc-700 text-zinc-300 in dark) ── */
+.theme-light .bg-zinc-700.text-zinc-300 {
+  background-color: #d6d3d1 !important;
+  color: #44403c !important;
+}
+
+
+/* ── Quiz explanation boxes override — keep tinted but lighter ── */
+.theme-light .bg-green-900\/20  { background-color: rgba(187, 247, 208, 0.3)  !important; }
+.theme-light .bg-blue-900\/20   { background-color: rgba(191, 219, 254, 0.3)  !important; }
+.theme-light .bg-red-900\/20    { background-color: rgba(254, 202, 202, 0.35) !important; }
+
+/* Keep tinted explanation text readable on light bg */
+.theme-light .text-green-200 { color: #14532d !important; }  /* green-900 */
+.theme-light .text-blue-200  { color: #1e3a5f !important; }  /* blue-950 */
+.theme-light .text-red-300   { color: #991b1b !important; }  /* red-800  */
+
+/* One-time generation badge */
+.theme-light .bg-blue-500\/20 { background-color: rgba(191, 219, 254, 0.4) !important; }
+
+/* ── Resource hover ── */
+.theme-light [class*="hover:bg-zinc-700"] {
+  --tw-hover-bg: #d6d3d1;
+}
+
+/* ── Tab sub-header descriptions ── */
+.theme-light p.text-zinc-300 { color: #57534e !important; }
+
+/* ── Quiz meta info bar at bottom ── */
+.theme-light .bg-zinc-800.border.border-zinc-700 {
+  background-color: #ede8e4 !important;
+  border-color: #d6d3d1 !important;
+}
+
+/* ── Label text for quiz config ── */
+.theme-light label.text-zinc-300 { color: #44403c !important; }
+
+/* ── Quiz tip / hint text ── */
+.theme-light p.text-xs.text-zinc-400 { color: #78716c !important; }
+
+/* ── Quiz meta small text ── */
+.theme-light .text-sm.text-zinc-400 { color: #78716c !important; }
+
+/* ── Font colour safety net — ensure no text disappears into the bg ── */
+.theme-light h1, .theme-light h2, .theme-light h3,
+.theme-light h4, .theme-light h5, .theme-light h6 {
+  color: #1c1917 !important;   /* stone-900 */
+}
+.theme-light p   { color: #44403c; }   /* stone-700 — readable body text */
+.theme-light li  { color: #44403c; }
+.theme-light span:not([class*="text-"])  { color: inherit; }
+
+/* AppButton SECONDARY — the pseudo after-element uses bg-black which looks
+   broken on a cream background. Swap it to stone-100. */
+.theme-light .bg-black {
+  background-color: #f5f5f4 !important;  /* stone-100 — matches panel bg */
+}
+
+/* ── QuizContainer — quiz answer option buttons ── */
+/* Unselected option:  dark bg-zinc-700 border-zinc-600 text-zinc-300 */
+.theme-light .bg-zinc-700.border-zinc-600.text-zinc-300 {
+  background-color: #f0ede9 !important;  /* off-white warm */
+  border-color: #c4bfba !important;      /* stone-350 approx */
+  color: #292524 !important;             /* stone-800 */
+}
+.theme-light .bg-zinc-700.border-zinc-600:hover {
+  background-color: #e7e1d9 !important;
+}
+
+/* Selected option:  bg-red-500/20 border-red-500 text-white */
+.theme-light .bg-red-500\/20.border-red-500 {
+  background-color: rgba(239, 68, 68, 0.12) !important;
+  border-color: #dc2626 !important;
+  color: #7f1d1d !important;  /* red-900 — dark enough on light bg */
+}
+
+/* ── Fill-in-blank input ── */
+.theme-light input.bg-zinc-700,
+.theme-light input[class*="bg-zinc-"] {
+  background-color: #faf9f7 !important;   /* near white warm */
+  border-color: #d6d3d1 !important;       /* stone-300 */
+  color: #1c1917 !important;              /* stone-900 */
+}
+.theme-light input::placeholder { color: #a8a29e !important; }  /* stone-400 */
+.theme-light input:focus {
+  border-color: #dc2626 !important;       /* keep brand red focus ring */
+}
+
+/* ── Quiz border-t divider ── */
+.theme-light .border-t.border-zinc-700 {
+  border-color: #d6d3d1 !important;
+}
+
+/* ── QuizContainer gradient header (from-zinc-800 to-zinc-900) ── */
+/* Use attribute selectors so we ONLY match the zinc header, never red gradients */
+.theme-light [class*="from-zinc-800"] {
+  background: linear-gradient(to right, #e7e5e4, #ede9e5) !important;
+  border-left-color: #dc2626 !important;
+}
+.theme-light [class*="from-zinc-800"] h2,
+.theme-light [class*="from-zinc-800"] h3 {
+  color: #1c1917 !important;
+}
+.theme-light [class*="from-zinc-800"] .text-white  { color: #1c1917 !important; }
+.theme-light [class*="from-zinc-800"] .text-zinc-300 { color: #57534e !important; }
+.theme-light [class*="from-zinc-800"] .text-zinc-400 { color: #78716c !important; }
+.theme-light [class*="from-zinc-800"] .bg-zinc-700  { background-color: #d6d3d1 !important; }
+
+/* ── Quiz results score header (from-green-900/30 to-blue-900/30) ── */
+.theme-light [class*="from-green-900"] {
+  background: linear-gradient(to right,
+    rgba(187, 247, 208, 0.25),
+    rgba(191, 219, 254, 0.25)) !important;
+  border-color: rgba(34, 197, 94, 0.25) !important;
+}
+
+/* ── Correct/wrong answer border-l-4 blocks in review ── */
+.theme-light .bg-zinc-700.border-l-4 {
+  background-color: #f0ede9 !important;
+  color: #1c1917 !important;
+}
+.theme-light .bg-zinc-700.border-l-4 span.text-white { color: #1c1917 !important; }
+
+/* ── Explanation block in review (bg-zinc-700/50) ── */
+.theme-light .bg-zinc-700\/50.p-4 {
+  background-color: rgba(231, 229, 228, 0.6) !important;
+}
+
+/* ── Score circle in quiz results ── */
+.theme-light .w-24.h-24.border-4 {
+  background-color: transparent !important;
+}
+</style>
+

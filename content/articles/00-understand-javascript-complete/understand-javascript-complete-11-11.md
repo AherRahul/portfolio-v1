@@ -1,13 +1,15 @@
 ---
-title: "Functions in Typescript"
-description: "Learn TypeScript functions with ease: parameters, return types, optional/default values, and best practices for safe and secure coding."
-datePublished: 2026-02-13
-dateModified: 2026-02-13
+title: Functions in Typescript
+description: "Learn TypeScript functions with ease: parameters, return types,
+  optional/default values, and best practices for safe and secure coding."
+datePublished: 2026-02-21
+dateModified: 2026-02-21
 topics:
   - javascript
 courseName: 00-understand-javascript-complete
 showOnArticles: false
 featured: false
+published: true
 ---
 
 

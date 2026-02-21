@@ -1,17 +1,20 @@
 ---
-title: "IAM Users & Groups Hands On"
-description: "This detailed understanding equips learners and professionals to confidently manage AWS identities and access controls, ensuring security and operational efficiency."
-datePublished: 2026-01-31
-dateModified: 2026-01-31
+title: IAM Users & Groups Hands On
+description: This detailed understanding equips learners and professionals to
+  confidently manage AWS identities and access controls, ensuring security and
+  operational efficiency.
+datePublished: 2026-02-21
+dateModified: 2026-02-21
 topics:
   - javascript
 courseName: 05-aws-solution-architect
 showOnArticles: false
 featured: false
 resources:
-  - title: "Notes"
-    type: "Documents"
-    url: "https://arkalim.notion.site/Notes-143374c83daa4d4991b07400056a2aa9"
+  - title: Notes
+    type: Documents
+    url: https://arkalim.notion.site/Notes-143374c83daa4d4991b07400056a2aa9
+published: true
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png)

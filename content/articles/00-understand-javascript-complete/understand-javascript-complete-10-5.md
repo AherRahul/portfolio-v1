@@ -4,8 +4,8 @@ description: Master Web Workers and concurrent programming in JavaScript. Learn
   to move intensive computations off the main thread, implement parallel
   processing, and build responsive applications that never block the UI.
 slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
-dateModified: 2026-01-29
-datePublished: 2026-09-26
+dateModified: 2026-02-21
+datePublished: 2026-02-21
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
@@ -27,6 +27,7 @@ resources:
     type: article
     url: https://github.com/GoogleChromeLabs/comlink
     description: Simplified communication with Web Workers
+published: false
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758811614/Portfolio/javaScriptCourse/images/all%20title%20images/46_uyspil.png)

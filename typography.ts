@@ -46,8 +46,8 @@ export function typographyStyles({ theme }: PluginUtils) {
           fontSize: theme('fontSize.3xl')[0],
           lineHeight: theme('lineHeight.tight'),
           fontWeight: theme('fontWeight.bold'),
-          marginTop: theme('spacing.10'),
-          marginBottom: theme('spacing.4'),
+          marginTop: theme('spacing.16'),
+          marginBottom: theme('spacing.14'),
           paddingLeft: theme('spacing.4'),
           borderLeftWidth: '4px',
           borderLeftColor: theme('colors.red.500'),
@@ -99,18 +99,33 @@ export function typographyStyles({ theme }: PluginUtils) {
           fontWeight: theme('fontWeight.bold'),
         },
 
-        // Images
+        // Images — wrapper + overlay handled by useContentImages at runtime
+        // Base styles apply before JS wraps the image (SSR / no-JS fallback)
         img: {
           borderRadius: theme('borderRadius.lg'),
           width: '100%',
-          maxWidth: '40rem', // 448px (28rem)
-          height: '25rem', // 256px (16rem)
-          objectFit: 'cover',
-          cursor: 'pointer',
-          transition: 'opacity 0.2s ease',
-          '&:hover': {
-            opacity: '0.8',
-          },
+          maxWidth: '100%',
+          height: 'auto',
+          objectFit: 'contain',
+          display: 'block',
+        },
+
+        // Wrapper injected by useContentImages — keeps consistent sizing box
+        '.content-img-wrapper': {
+          display: 'block',
+          lineHeight: 0,              // removes inline-block gap below image
+        },
+        '.content-img-wrapper img': {
+          marginTop: '0 !important',
+          marginBottom: '0 !important',
+        },
+
+        // Nuxt renders `![](src)` as <p><img></p>. Remove paragraph gaps while JS
+        // hasn't yet replaced the <p> with the wrapper div.
+        'p:has(> img:only-child)': {
+          marginTop: 0,
+          marginBottom: 0,
+          lineHeight: 0,
         },
 
         // Inline elements

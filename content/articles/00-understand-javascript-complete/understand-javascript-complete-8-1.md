@@ -4,8 +4,8 @@ description: Master the Document Object Model with modern techniques for
   selecting, creating, modifying, and removing elements. Learn
   performance-optimized DOM manipulation patterns used in real applications.
 slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
-dateModified: 2026-01-29
-datePublished: 2026-09-26
+dateModified: 2026-02-21
+datePublished: 2026-02-21
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
@@ -27,6 +27,7 @@ resources:
     type: article
     url: https://developer.chrome.com/blog/DOM-node-removal/
     description: Latest DOM APIs and performance improvements
+published: false
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758811622/Portfolio/javaScriptCourse/images/all%20title%20images/32_eheuqw.png)

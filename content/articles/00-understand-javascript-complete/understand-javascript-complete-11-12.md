@@ -1,13 +1,16 @@
 ---
-title: "Array, enum and tuples in Typescript"
-description: "Learn TypeScript arrays, tuples, and enums with practical examples to build robust, error-free applications. Master foundational data structures easily."
-datePublished: 2026-02-13
-dateModified: 2026-02-13
+title: Array, enum and tuples in Typescript
+description: Learn TypeScript arrays, tuples, and enums with practical examples
+  to build robust, error-free applications. Master foundational data structures
+  easily.
+datePublished: 2026-02-21
+dateModified: 2026-02-21
 topics:
   - javascript
 courseName: 00-understand-javascript-complete
 showOnArticles: false
 featured: false
+published: true
 ---
 
 

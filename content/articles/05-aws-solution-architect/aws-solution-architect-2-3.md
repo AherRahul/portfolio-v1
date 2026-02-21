@@ -7,8 +7,8 @@ description: Consistency and standards are important for building a unified
   our solutions.
 tutor: 1
 slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles/aws-solution-architect-exam-guide.md
-dateModified: 2026-01-29
-datePublished: 2026-05-22
+dateModified: 2026-02-21
+datePublished: 2026-02-21
 showOnArticles: false
 courseName: 05-aws-solution-architect
 topics:
@@ -16,12 +16,13 @@ topics:
   - aws
   - lld
 resources:
-  - title: "YouTube Video - Cloud World"
-    type: "Video"
-    url: "https://youtu.be/ULfTWvsHw20?si=N1H4UFMoJqfhmyHR"
-  - title: "Notes"
-    type: "Documents"
-    url: "https://arkalim.notion.site/Notes-143374c83daa4d4991b07400056a2aa9"
+  - title: YouTube Video - Cloud World
+    type: Video
+    url: https://youtu.be/ULfTWvsHw20?si=N1H4UFMoJqfhmyHR
+  - title: Notes
+    type: Documents
+    url: https://arkalim.notion.site/Notes-143374c83daa4d4991b07400056a2aa9
+published: true
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png)

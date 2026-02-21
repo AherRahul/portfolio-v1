@@ -5,8 +5,8 @@ description: Closures are JavaScript's superpower - they allow functions to
   executing. This concept is fundamental to understanding advanced JavaScript
   patterns and is a favorite interview topic.
 slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
-dateModified: 2026-01-29
-datePublished: 2026-09-25
+dateModified: 2026-02-21
+datePublished: 2026-02-21
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
@@ -28,6 +28,7 @@ resources:
     type: book
     url: https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/scope-closures/ch7.md
     description: Deep dive into closures from the You Don't Know JS series
+published: false
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758811616/Portfolio/javaScriptCourse/images/all%20title%20images/15_fpg92y.png)

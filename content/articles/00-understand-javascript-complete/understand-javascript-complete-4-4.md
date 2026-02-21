@@ -4,8 +4,8 @@ description: The classic setTimeout with closures in a loop is one of the most
   frequently asked JavaScript interview questions. Understanding this concept
   will help you master both closures and asynchronous JavaScript behavior.
 slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
-dateModified: 2026-01-29
-datePublished: 2026-09-25
+dateModified: 2026-02-21
+datePublished: 2026-02-21
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
@@ -27,6 +27,7 @@ resources:
     type: tool
     url: http://latentflip.com/loupe/
     description: Interactive tool to visualize setTimeout and event loop behavior
+published: false
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758811617/Portfolio/javaScriptCourse/images/all%20title%20images/16_msnwox.png)

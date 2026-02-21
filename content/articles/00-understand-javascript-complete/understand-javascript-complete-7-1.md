@@ -5,8 +5,8 @@ description: Master the art of extracting values from arrays and objects with
   efficiently. These modern syntax features make your code more readable and
   concise.
 slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
-dateModified: 2026-01-29
-datePublished: 2026-09-26
+dateModified: 2026-02-21
+datePublished: 2026-02-21
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
@@ -28,6 +28,7 @@ resources:
     type: article
     url: https://github.com/lukehoban/es6features#destructuring
     description: Overview of ES6 destructuring and spread features
+published: false
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758811621/Portfolio/javaScriptCourse/images/all%20title%20images/27_hmmpq5.png)

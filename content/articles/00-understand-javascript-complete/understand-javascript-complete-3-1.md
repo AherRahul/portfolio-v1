@@ -1,9 +1,11 @@
 ---
 title: Objects and this keyword
-description: Learn JavaScript objects comprehensively, including declaration, access methods, symbols, freezing objects, and interview tips in this detailed guide.
+description: Learn JavaScript objects comprehensively, including declaration,
+  access methods, symbols, freezing objects, and interview tips in this detailed
+  guide.
 slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
-dateModified: 2026-01-29
-datePublished: 2026-09-25
+dateModified: 2026-02-21
+datePublished: 2026-02-21
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
@@ -25,6 +27,7 @@ resources:
     type: article
     url: https://javascript.info/object
     description: Detailed tutorial on JavaScript objects with practical examples
+published: false
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758811615/Portfolio/javaScriptCourse/images/all%20title%20images/10_ng3jhr.png)

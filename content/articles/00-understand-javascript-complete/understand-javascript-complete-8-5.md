@@ -4,8 +4,8 @@ description: Build progressive web applications with service workers for offline
   functionality, background sync, and push notifications. Transform web apps
   into app-like experiences.
 slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
-dateModified: 2026-01-29
-datePublished: 2026-09-26
+dateModified: 2026-02-21
+datePublished: 2026-02-21
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
@@ -27,6 +27,7 @@ resources:
     type: article
     url: https://github.com/mdn/serviceworker-cookbook
     description: Practical service worker patterns and recipes
+published: false
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758811627/Portfolio/javaScriptCourse/images/all%20title%20images/36_cbrn79.png)

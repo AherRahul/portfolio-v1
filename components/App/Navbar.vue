@@ -4,11 +4,12 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
 const route = useRoute()
 
 const MENU_ITEMS = [
-  { text: 'Articles', to: '/articles/', activeRoutes: [] },
-  { text: 'Courses', to: '/courses/', activeRoutes: [] },
-  { text: 'Services', to: '/services/', activeRoutes: ['/consulting/'] },
-  { text: 'About', to: '/about/', activeRoutes: [] },
-  { text: 'Contact', to: '/contact/', activeRoutes: [] },
+  { text: 'Articles', to: '/articles/', activeRoutes: [], badge: null },
+  { text: 'Courses', to: '/courses/', activeRoutes: [], badge: null },
+  { text: 'System Design', to: '/system-design/', activeRoutes: [], badge: 'NEW' },
+  { text: 'Services', to: '/services/', activeRoutes: ['/consulting/'], badge: null },
+  { text: 'About', to: '/about/', activeRoutes: [], badge: null },
+  { text: 'Contact', to: '/contact/', activeRoutes: [], badge: null },
 ] as const
 
 // const streamChangesEndpoint = 'https://raw.githubusercontent.com/aherrahul/portfolio-v1-twitch-status/main/latest.json'
@@ -59,8 +60,10 @@ onMounted(() => {
           <div class="flex gap-x-4 items-center">
             <AppLink v-for="item in MENU_ITEMS" :to="item.to"
               :class="{ '!border-red-500 text-red-500': $route.path.startsWith(item.to) || item.activeRoutes.some(route => $route.path.startsWith(route)) }"
-              class="transition-all duration-200 border-b-2 border-transparent pt-1 py-1 px-2 md:px-3 md:py-2 text-base font-medium text-gray-300 hover:text-red-500">
-              {{ item.text }}</AppLink>
+              class="transition-all duration-200 border-b-2 border-transparent pt-1 py-1 px-2 md:px-3 md:py-2 text-base font-medium text-gray-300 hover:text-red-500 flex items-center gap-1.5">
+              {{ item.text }}
+              <span v-if="item.badge" class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-red-500 text-white leading-none">{{ item.badge }}</span>
+            </AppLink>
             <!-- <AppLink :to="isLive ? SOCIALS.twitch : undefined" title="To my Twitch Channel" :aria-disabled="!isLive" active-class="!border-red-500 text-red-500"
               class="transition-all inline-block relative duration-200 border-b-2 border-transparent py-1 md:px-3 md:py-2 text-base font-medium text-gray-300 hover:text-red-500">
               <template v-if="isLive">

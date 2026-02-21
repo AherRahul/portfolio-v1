@@ -4,8 +4,8 @@ description: Explore the power of template literals for string interpolation and
   multiline strings, plus advanced tagged template functions for custom string
   processing and domain-specific languages.
 slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
-dateModified: 2026-01-29
-datePublished: 2026-09-26
+dateModified: 2026-02-21
+datePublished: 2026-02-21
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
@@ -27,6 +27,7 @@ resources:
     type: article
     url: https://wesbos.com/tagged-template-literals
     description: Real-world applications of tagged templates
+published: false
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758811621/Portfolio/javaScriptCourse/images/all%20title%20images/28_czivkn.png)

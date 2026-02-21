@@ -1,13 +1,16 @@
 ---
-title: "OOP concepts in Typescript"
-description: "Learn TypeScript OOP concepts like classes, constructors, access modifiers, getters/setters, static members, abstract classes, and composition with practical examples."
-datePublished: 2026-02-13
-dateModified: 2026-02-13
+title: OOP concepts in Typescript
+description: Learn TypeScript OOP concepts like classes, constructors, access
+  modifiers, getters/setters, static members, abstract classes, and composition
+  with practical examples.
+datePublished: 2026-02-21
+dateModified: 2026-02-21
 topics:
   - javascript
 courseName: 00-understand-javascript-complete
 showOnArticles: false
 featured: false
+published: true
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758725512/Portfolio/javaScriptCourse/images/0_eestcm.png)  

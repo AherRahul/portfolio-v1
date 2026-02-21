@@ -100,6 +100,14 @@ function collapseAll() {
 //   ogDescription: () => course.value.description,
 // });
 
+// Filter to only published modules/topics for public view
+const publishedModules = computed(() => {
+  return (course.value?.content || []).filter((mod: any) => mod.published !== false).map((mod: any) => ({
+    ...mod,
+    topics: (mod.topics || []).filter((t: any) => t.published !== false)
+  }))
+})
+
 onContentNotFound(course);
 
 defineOgImageComponent('Course', {
@@ -151,7 +159,7 @@ defineOgImageComponent('Course', {
                 Course Modules
               </h3>
               <ol class="space-y-2">
-                <li v-for="(module, index) in (course.content || [])" :key="module.module_id">
+                <li v-for="(module, index) in publishedModules" :key="module.module_id">
                   <a :href="`#module-${index+1}`" 
                      class="flex items-center gap-3 p-2 text-zinc-300 hover:text-white hover:bg-zinc-700 transition-all duration-200 group">
                     <span class="flex-shrink-0 w-6 h-6 bg-zinc-700 group-hover:bg-red-500 flex items-center justify-center text-xs font-semibold">
@@ -169,8 +177,8 @@ defineOgImageComponent('Course', {
                 <h2 class="text-3xl font-semibold mb-2">Course Content</h2>
                 <!-- Course stats -->
                 <div class="flex flex-wrap gap-4 text-sm text-zinc-400">
-                  <span>{{ course.content?.length || 0 }} modules</span>
-                  <span>{{ course.content?.reduce((total: number, module: any) => total + (module.topics?.length || 0), 0) || 0 }} lectures</span>
+                  <span>{{ publishedModules.length }} modules</span>
+                  <span>{{ publishedModules.reduce((total: number, module: any) => total + (module.topics?.length || 0), 0) }} lectures</span>
                   <span>{{ course.time }} total length</span>
                 </div>
               </div>
@@ -187,7 +195,7 @@ defineOgImageComponent('Course', {
             </div>
             <div class="space-y-4">
           <div
-            v-for="(module, index) in (course.content || [])"
+            v-for="(module, index) in publishedModules"
             :key="module.module_id"
             :id="`module-${index+1}`"
             class="bg-zinc-800 shadow-lg transition-all hover:shadow-xl border-l-4 border-red-500 overflow-hidden"
@@ -210,7 +218,6 @@ defineOgImageComponent('Course', {
                   <!-- Module stats -->
                   <div class="flex items-center gap-4 mt-1 text-xs text-zinc-400">
                     <span>{{ module.topics?.length || 0 }} lectures</span>
-                    <span v-if="module.topics_count">{{ module.topics_count }} topics</span>
                     <span class="hidden sm:inline">{{ module.tutor }} instructor{{ module.tutor > 1 ? 's' : '' }}</span>
                     <span class="text-green-600">{{ getModuleProgress(module) }}% complete</span>
                   </div>

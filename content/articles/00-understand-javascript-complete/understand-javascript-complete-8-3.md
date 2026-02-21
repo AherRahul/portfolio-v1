@@ -4,8 +4,8 @@ description: Master modern HTTP communication with the Fetch API. Learn to
   handle different request types, manage headers, process responses, and
   implement robust error handling for network operations.
 slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
-dateModified: 2026-01-29
-datePublished: 2026-09-26
+dateModified: 2026-02-21
+datePublished: 2026-02-21
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
@@ -27,6 +27,7 @@ resources:
     type: article
     url: https://web.dev/fetch-api/
     description: Best practices for fetch error handling and resilience
+published: false
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758811627/Portfolio/javaScriptCourse/images/all%20title%20images/34_ij8qbd.png)

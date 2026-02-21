@@ -4,8 +4,8 @@ description: Master the Observer pattern for building reactive, loosely-coupled
   applications. Learn to implement custom event systems and understand the
   foundation of modern reactive programming.
 slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
-dateModified: 2026-01-29
-datePublished: 2026-09-26
+dateModified: 2026-02-21
+datePublished: 2026-02-21
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
@@ -27,6 +27,7 @@ resources:
     type: documentation
     url: https://rxjs.dev/guide/overview
     description: Advanced reactive programming with observables
+published: false
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758811625/Portfolio/javaScriptCourse/images/all%20title%20images/38_s8fo3c.png)

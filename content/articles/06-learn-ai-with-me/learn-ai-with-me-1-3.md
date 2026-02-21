@@ -6,8 +6,8 @@ description: Language models (LMs) are sophisticated artificial intelligence
   text sequences, and they play a crucial role in various applications,
   including chatbots and content generation.
 slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
-dateModified: 2026-01-29
-datePublished: 2026-04-10
+dateModified: 2026-02-21
+datePublished: 2026-02-21
 showOnArticles: false
 courseName: 06-learn-ai-with-me
 topics:
@@ -17,6 +17,7 @@ resources:
     type: PDF
     url: ""
     description: A PDF Notes.
+published: true
 ---
 
 ![](https://res.cloudinary.com/duojkrgue/image/upload/v1758777282/Portfolio/aiCourse/Learn_AI_eyag79.png)

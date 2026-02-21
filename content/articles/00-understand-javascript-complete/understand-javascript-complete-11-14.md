@@ -1,13 +1,15 @@
 ---
-title: "Interface and Generics in Typescript"
-description: "Learn TypeScript interfaces and generics with clear examples and best practices to structure data and write reusable code efficiently."
-datePublished: 2026-02-13
-dateModified: 2026-02-13
+title: Interface and Generics in Typescript
+description: Learn TypeScript interfaces and generics with clear examples and
+  best practices to structure data and write reusable code efficiently.
+datePublished: 2026-02-21
+dateModified: 2026-02-21
 topics:
   - javascript
 courseName: 00-understand-javascript-complete
 showOnArticles: false
 featured: false
+published: true
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758725512/Portfolio/javaScriptCourse/images/0_eestcm.png)  

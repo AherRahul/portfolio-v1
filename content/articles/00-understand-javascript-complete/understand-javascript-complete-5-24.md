@@ -1,13 +1,15 @@
 ---
-title: "Scope and Closures"
-description: "Learn JavaScript scope, closures, and function execution with clear examples and error handling tips to master coding concepts effectively."
-datePublished: 2026-02-14
-dateModified: 2026-02-14
+title: Scope and Closures
+description: Learn JavaScript scope, closures, and function execution with clear
+  examples and error handling tips to master coding concepts effectively.
+datePublished: 2026-02-21
+dateModified: 2026-02-21
 topics:
   - javascript
 courseName: 00-understand-javascript-complete
 showOnArticles: false
 featured: false
+published: false
 ---
 
 ## Introduction to JavaScript Scope and Closures

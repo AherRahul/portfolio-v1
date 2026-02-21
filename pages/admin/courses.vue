@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { parse as parseYaml } from 'yaml'
+
 definePageMeta({
   middleware: 'admin',
   layout: false,
@@ -13,6 +15,7 @@ const isEditing = ref(false)
 const saving = ref(false)
 const deleting = ref(false)
 const creating = ref(false)
+const publishing = ref(false)
 const newCourseData = ref({
   fileName: '',
   title: '',
@@ -24,6 +27,21 @@ const markdownEditor = ref()
 const courseContentEditor = ref()
 
 const contentType = 'courses'
+
+// Parse frontmatter from current file to determine publish status
+const parsedFrontmatter = computed(() => {
+  const match = fileContent.value.match(/^---\r?\n([\s\S]*?)\r?\n---/)
+  if (match) {
+    try { return parseYaml(match[1].trim()) } catch { return {} }
+  }
+  return {}
+})
+
+const isPublished = computed(() => !!parsedFrontmatter.value?.published)
+
+const courseSlug = computed(() => {
+  return selectedFile.value.replace('.md', '')
+})
 
 // No additional watchers needed for courses-only view
 
@@ -186,6 +204,30 @@ async function createNewCourse() {
   }
 }
 
+async function handlePublishCourse(action: 'publish' | 'unpublish') {
+  if (!selectedFile.value) return
+  publishing.value = true
+  try {
+    await $fetch('/api/admin/courses/publish', {
+      method: 'POST',
+      body: { courseSlug: courseSlug.value, action, target: 'course' }
+    })
+    // Reload file to get updated frontmatter
+    const response = await $fetch('/api/admin/content/file', {
+      query: { type: contentType, path: selectedFile.value }
+    })
+    fileContent.value = response.content
+    const msg = action === 'publish'
+      ? 'Course, all modules and topics published successfully! datePublished updated.'
+      : 'Course unpublished. All modules and topics hidden from public.'
+    alert(msg)
+  } catch (err: any) {
+    alert(`Error: ${err.data?.message || err.message}`)
+  } finally {
+    publishing.value = false
+  }
+}
+
 function handleDirectoryOpen(path: string) {
   currentPath.value = path
 }
@@ -292,6 +334,32 @@ function handleOpenContentEditor() {
               </div>
               
               <div class="flex items-center gap-2">
+                <!-- Publish status badge -->
+                <span
+                  :class="isPublished ? 'bg-green-500/20 text-green-400 border-green-500/40' : 'bg-amber-900/30 text-amber-400 border-amber-700/40'"
+                  class="text-xs font-medium px-2.5 py-1.5 rounded-full border flex items-center gap-1.5"
+                >
+                  <span :class="isPublished ? 'bg-green-400' : 'bg-amber-500'" class="w-1.5 h-1.5 rounded-full inline-block"></span>
+                  {{ isPublished ? 'Published' : 'Draft' }}
+                </span>
+                <button
+                  v-if="!isPublished"
+                  @click="handlePublishCourse('publish')"
+                  :disabled="publishing"
+                  class="bg-green-600 hover:bg-green-500 disabled:bg-zinc-700 disabled:cursor-not-allowed text-white px-4 py-2 rounded-md flex items-center gap-2 transition-colors font-medium"
+                >
+                  <Icon name="heroicons:rocket-launch" />
+                  {{ publishing ? 'Publishing...' : 'Publish' }}
+                </button>
+                <button
+                  v-else
+                  @click="handlePublishCourse('unpublish')"
+                  :disabled="publishing"
+                  class="bg-zinc-700 hover:bg-zinc-600 disabled:bg-zinc-700 disabled:cursor-not-allowed text-zinc-300 px-4 py-2 rounded-md flex items-center gap-2 transition-colors"
+                >
+                  <Icon name="heroicons:eye-slash" />
+                  {{ publishing ? 'Updating...' : 'Unpublish' }}
+                </button>
                 <button
                   @click="handleOpenContentEditor"
                   class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-md flex items-center gap-2 transition-colors"
@@ -302,7 +370,7 @@ function handleOpenContentEditor() {
                 <button
                   @click="handleSave"
                   :disabled="saving"
-                  class="bg-green-600 hover:bg-green-700 disabled:bg-zinc-700 disabled:cursor-not-allowed text-white px-4 py-2 rounded-md flex items-center gap-2 transition-colors"
+                  class="bg-blue-600 hover:bg-blue-700 disabled:bg-zinc-700 disabled:cursor-not-allowed text-white px-4 py-2 rounded-md flex items-center gap-2 transition-colors"
                 >
                   <Icon name="heroicons:check" />
                   {{ saving ? 'Saving...' : 'Save' }}

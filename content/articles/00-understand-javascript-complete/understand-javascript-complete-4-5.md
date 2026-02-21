@@ -4,8 +4,8 @@ description: Callback functions are the foundation of asynchronous JavaScript
   and event-driven programming. Understanding how callbacks work with event
   listeners is essential for building interactive web applications.
 slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
-dateModified: 2026-01-29
-datePublished: 2026-09-25
+dateModified: 2026-02-21
+datePublished: 2026-02-21
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
@@ -27,6 +27,7 @@ resources:
     type: article
     url: https://javascript.info/introduction-browser-events
     description: Comprehensive guide to browser events and event handling
+published: false
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758811617/Portfolio/javaScriptCourse/images/all%20title%20images/17_d5t5i3.png)

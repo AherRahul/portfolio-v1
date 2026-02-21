@@ -57,6 +57,12 @@ async function copyLinkToClipboard(): Promise<void> {
   addNotification({ heading: 'Link copied to clipboard', body: 'You can now paste the link anywhere you want.', iconName: 'heroicons:check-badge', iconClass: 'text-green-500', durationInMs: 2000 })
 }
 
+// ── Content theme (dark / light) ──────────────────────────────────────────────
+const contentTheme = ref<'dark' | 'light'>('dark')
+function toggleContentTheme() {
+  contentTheme.value = contentTheme.value === 'dark' ? 'light' : 'dark'
+}
+
 function isArticle(entry?: ParsedContent): Boolean {
   return Boolean(entry?._path?.startsWith('/articles/'))
 }
@@ -205,6 +211,7 @@ onMounted(() => { setupContentImages('.prose'); loadProgress() })
           :is-older-than-one-year="isOlderThanOneYear"
           :enable-ai-notes="currentLecture?.enable_ai_notes ?? true"
           :enable-ai-quiz="currentLecture?.enable_ai_quiz ?? true"
+          :content-theme="contentTheme"
         />
       </div>
       
@@ -282,25 +289,25 @@ onMounted(() => { setupContentImages('.prose'); loadProgress() })
       </div>
     </AppSection>
 
-    <!-- ════════════════════════════════════════════════════
-         FIXED BOTTOM NAVIGATION BAR
-         ════════════════════════════════════════════════════ -->
     <div
       v-if="isCourseArticle && courseDoc"
-      class="fixed bottom-0 left-0 right-0 z-50 bg-zinc-900/95 backdrop-blur border-t border-zinc-700 flex items-center justify-between px-4 py-2.5 gap-2"
+      class="fixed bottom-0 left-0 right-0 z-50 bg-zinc-900/95 backdrop-blur border-t border-zinc-700 px-4 py-2.5"
+      style="display: grid; grid-template-columns: 1fr auto 1fr;"
     >
-      <!-- Prev topic -->
-      <button
-        @click="goToPrevTopic"
-        :disabled="isFirstTopic"
-        class="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium transition-all duration-150 disabled:opacity-30 disabled:cursor-not-allowed"
-        :class="isFirstTopic ? 'text-zinc-500' : 'text-zinc-300 hover:text-white hover:bg-zinc-800'"
-      >
-        <Icon name="heroicons:chevron-left" class="text-base" />
-        <span class="hidden sm:inline max-w-[150px] truncate">{{ prevLecture?.topic_name || 'Previous' }}</span>
-      </button>
+      <!-- Prev topic (col 1 – left aligned) -->
+      <div class="flex items-center">
+        <button
+          @click="goToPrevTopic"
+          :disabled="isFirstTopic"
+          class="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium transition-all duration-150 disabled:opacity-30 disabled:cursor-not-allowed"
+          :class="isFirstTopic ? 'text-zinc-500' : 'text-zinc-300 hover:text-white hover:bg-zinc-800'"
+        >
+          <Icon name="heroicons:chevron-left" class="text-base flex-shrink-0" />
+          <span class="hidden sm:inline max-w-[150px] truncate">{{ prevLecture?.topic_name || 'Previous' }}</span>
+        </button>
+      </div>
 
-      <!-- Center actions -->
+      <!-- Center actions (col 2 – always centred) -->
       <div class="flex items-center gap-2">
         <!-- Mark as complete toggle -->
         <button
@@ -314,6 +321,23 @@ onMounted(() => { setupContentImages('.prose'); loadProgress() })
           <span class="hidden sm:inline">{{ isCurrentTopicCompleted ? 'Completed ✓' : 'Mark as Complete' }}</span>
         </button>
 
+        <!-- Theme toggle -->
+        <button
+          @click="toggleContentTheme"
+          :title="contentTheme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'"
+          :aria-label="contentTheme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'"
+          class="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium border transition-all duration-200"
+          :class="contentTheme === 'dark'
+            ? 'bg-zinc-800 border-zinc-600 text-zinc-400 hover:text-amber-300 hover:border-amber-400'
+            : 'bg-amber-950/40 border-amber-700 text-amber-300 hover:border-amber-500'"
+        >
+          <Icon
+            :name="contentTheme === 'dark' ? 'heroicons:sun' : 'heroicons:moon'"
+            class="text-base"
+          />
+          <span class="hidden sm:inline">{{ contentTheme === 'dark' ? 'Light' : 'Dark' }}</span>
+        </button>
+
         <!-- Share -->
         <button
           @click="copyLinkToClipboard"
@@ -325,16 +349,18 @@ onMounted(() => { setupContentImages('.prose'); loadProgress() })
         </button>
       </div>
 
-      <!-- Next topic -->
-      <button
-        @click="goToNextTopic"
-        :disabled="isLastTopic"
-        class="flex items-center gap-1.5 px-4 py-1.5 rounded-md text-sm font-medium transition-all duration-150 disabled:opacity-30 disabled:cursor-not-allowed"
-        :class="isLastTopic ? 'text-zinc-500 bg-zinc-800 border border-zinc-700' : 'text-white bg-red-600 hover:bg-red-500'"
-      >
-        <span class="hidden sm:inline max-w-[150px] truncate">{{ nextLecture?.topic_name || 'Next' }}</span>
-        <Icon name="heroicons:chevron-right" class="text-base" />
-      </button>
+      <!-- Next topic (col 3 – right aligned) -->
+      <div class="flex items-center justify-end">
+        <button
+          @click="goToNextTopic"
+          :disabled="isLastTopic"
+          class="flex items-center gap-1.5 px-4 py-1.5 rounded-md text-sm font-medium transition-all duration-150 disabled:opacity-30 disabled:cursor-not-allowed"
+          :class="isLastTopic ? 'text-zinc-500 bg-zinc-800 border border-zinc-700' : 'text-white bg-red-600 hover:bg-red-500'"
+        >
+          <span class="hidden sm:inline max-w-[150px] truncate">{{ nextLecture?.topic_name || 'Next' }}</span>
+          <Icon name="heroicons:chevron-right" class="text-base flex-shrink-0" />
+        </button>
+      </div>
     </div>
 
   </div>

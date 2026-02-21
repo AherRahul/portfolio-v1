@@ -1,13 +1,16 @@
 ---
-title: "Type Annotations and Inference in TypeScript"
-description: "Learn TypeScript’s powerful type inference and type annotation features with simple examples, and avoid common errors in your code effortlessly."
-datePublished: 2026-02-13
-dateModified: 2026-02-13
+title: Type Annotations and Inference in TypeScript
+description: Learn TypeScript’s powerful type inference and type annotation
+  features with simple examples, and avoid common errors in your code
+  effortlessly.
+datePublished: 2026-02-21
+dateModified: 2026-02-21
 topics:
   - javascript
 courseName: 00-understand-javascript-complete
 showOnArticles: false
 featured: false
+published: true
 ---
 
 

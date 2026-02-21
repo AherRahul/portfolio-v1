@@ -4,8 +4,11 @@ provideUseId(() => useId())
 
 const route = useRoute()
 
-// Check if current route is an admin route
-const isAdminRoute = computed(() => route.path.startsWith('/admin'))
+// Check if current route is an admin or practice route
+const isFullscreenRoute = computed(() => 
+  route.path.startsWith('/admin') || 
+  route.path.startsWith('/system-design/practice/')
+)
 
 useAppSeo()
 useSiteNotifications()
@@ -134,8 +137,8 @@ function useSiteNotifications() {
 
 <template>
   <div class="bg-black antialiased min-h-screen text-white">
-    <AppNavbar v-if="!isAdminRoute" />
-    <div :class="isAdminRoute ? '' : 'mt-8'">
+    <AppNavbar v-if="!isFullscreenRoute" />
+    <div :class="isFullscreenRoute ? '' : 'mt-8'">
       <NuxtPage />
     </div>
     <!-- Gradient "hack" for icons -->
@@ -146,8 +149,8 @@ function useSiteNotifications() {
         <stop offset="1" style="stop-color:#D90575" />
       </linearGradient>
     </svg>
-    <LazyAppFooter v-if="!isAdminRoute" />
-    <LazyAppNotificationArea v-if="!isAdminRoute" />
+    <LazyAppFooter v-if="!isFullscreenRoute" />
+    <LazyAppNotificationArea v-if="!isFullscreenRoute" />
     <ClientOnly>
       <ImageModal />
     </ClientOnly>

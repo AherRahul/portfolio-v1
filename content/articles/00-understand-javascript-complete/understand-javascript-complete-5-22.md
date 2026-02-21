@@ -1,13 +1,16 @@
 ---
 title: "Functions: Rest Operator & Object"
-description: "Learn how to master JavaScript functions, parameters, rest operator, and object handling with clear examples and best practices for your coding journey."
-datePublished: 2026-02-14
-dateModified: 2026-02-14
+description: Learn how to master JavaScript functions, parameters, rest
+  operator, and object handling with clear examples and best practices for your
+  coding journey.
+datePublished: 2026-02-21
+dateModified: 2026-02-21
 topics:
   - javascript
 courseName: 00-understand-javascript-complete
 showOnArticles: false
 featured: false
+published: false
 ---
 
 ## Mastering JavaScript Functions: Parameters, Rest Operator & Scope Explained

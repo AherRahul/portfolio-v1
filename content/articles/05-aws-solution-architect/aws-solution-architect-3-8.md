@@ -1,13 +1,19 @@
 ---
-title: "IAM Summary"
-description: "Proper IAM implementation not only protects organizational assets but also ensures compliance and operational efficiency. As the cloud landscape evolves, adhering to these principles is vital for maintaining trust and security in AWS environments. This chapter serves as a comprehensive guide for administrators and users alike, laying a strong foundation for secure and effective AWS usage."
-datePublished: 2026-02-02
-dateModified: 2026-02-02
+title: IAM Summary
+description: Proper IAM implementation not only protects organizational assets
+  but also ensures compliance and operational efficiency. As the cloud landscape
+  evolves, adhering to these principles is vital for maintaining trust and
+  security in AWS environments. This chapter serves as a comprehensive guide for
+  administrators and users alike, laying a strong foundation for secure and
+  effective AWS usage.
+datePublished: 2026-02-21
+dateModified: 2026-02-21
 topics:
   - javascript
 courseName: 05-aws-solution-architect
 showOnArticles: false
 featured: false
+published: true
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png)

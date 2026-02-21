@@ -1,17 +1,23 @@
 ---
-title: "Understanding IAM – Identity and Access Management in AWS"
-description: "This topic is all about Identity and Access Management (IAM) in AWS, which is the foundation for secure access to cloud resources. You'll learn about the root user, individual users, groups, and policies - and why it's crucial to follow the principle of least privilege. By the end, you'll understand how IAM enables organizations to control who can do what in the cloud, keeping everything safe and cost-effective."
-datePublished: 2026-01-31
-dateModified: 2026-01-31
+title: Understanding IAM – Identity and Access Management in AWS
+description: This topic is all about Identity and Access Management (IAM) in
+  AWS, which is the foundation for secure access to cloud resources. You'll
+  learn about the root user, individual users, groups, and policies - and why
+  it's crucial to follow the principle of least privilege. By the end, you'll
+  understand how IAM enables organizations to control who can do what in the
+  cloud, keeping everything safe and cost-effective.
+datePublished: 2026-02-21
+dateModified: 2026-02-21
 topics:
   - javascript
 courseName: 05-aws-solution-architect
 showOnArticles: false
 featured: false
 resources:
-  - title: "Notes"
-    type: "Documents"
-    url: "https://arkalim.notion.site/Notes-143374c83daa4d4991b07400056a2aa9"
+  - title: Notes
+    type: Documents
+    url: https://arkalim.notion.site/Notes-143374c83daa4d4991b07400056a2aa9
+published: true
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png)

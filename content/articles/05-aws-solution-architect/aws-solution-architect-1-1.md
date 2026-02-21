@@ -6,8 +6,8 @@ description: Consistency and standards are important for building a unified
   this sense, the context and needs of our users are priorities when developing
   our solutions.
 slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles/aws-solution-architect-exam-guide.md
-dateModified: 2026-01-29
-datePublished: 2026-01-29
+dateModified: 2026-02-21
+datePublished: 2026-02-21
 topics:
   - system-design
   - aws
@@ -16,12 +16,13 @@ tutor: 1
 showOnArticles: false
 courseName: 05-aws-solution-architect
 resources:
-  - title: "AWS Certified Developer - Associate"
-    type: "Article"
-    url: "https://aws.amazon.com/certification/certified-developer-associate/"
-  - title: "Notes"
-    type: "Documents"
-    url: "https://arkalim.notion.site/Notes-143374c83daa4d4991b07400056a2aa9"
+  - title: AWS Certified Developer - Associate
+    type: Article
+    url: https://aws.amazon.com/certification/certified-developer-associate/
+  - title: Notes
+    type: Documents
+    url: https://arkalim.notion.site/Notes-143374c83daa4d4991b07400056a2aa9
+published: true
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1769797069/Portfolio/awsCourse/01/610f47d6-3b28-4902-b972-21666b12f6f8.png)

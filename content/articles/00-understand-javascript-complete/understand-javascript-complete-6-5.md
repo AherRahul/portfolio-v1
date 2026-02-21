@@ -4,8 +4,8 @@ description: Master advanced Promise patterns, performance optimization, and the
   most challenging asynchronous JavaScript interview questions. The ultimate
   test of your async programming expertise.
 slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
-dateModified: 2026-01-29
-datePublished: 2026-09-25
+dateModified: 2026-02-21
+datePublished: 2026-02-21
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
@@ -27,6 +27,7 @@ resources:
     type: article
     url: https://blog.logrocket.com/javascript-promises-advanced-patterns/
     description: Advanced Promise patterns and real-world applications
+published: false
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758811620/Portfolio/javaScriptCourse/images/all%20title%20images/26_ekazlq.png)
