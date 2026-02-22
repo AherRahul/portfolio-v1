@@ -8,6 +8,7 @@ import {
     buildDeepDivePrompt,
     buildScalingPrompt
 } from '../../utils/systemDesignPrompts'
+import { healJson } from '../../utils/jsonHealer'
 
 interface EvaluationRequest {
     questionTitle: string
@@ -120,17 +121,12 @@ export default defineEventHandler(async (event) => {
                 try {
                     const msg = await anthropic.messages.create({
                         model: 'claude-sonnet-4-6',
-                        max_tokens: 2048,
+                        max_tokens: 4096,
                         messages: [{ role: 'user', content: prompt }],
                     })
 
                     const raw = msg.content[0].type === 'text' ? msg.content[0].text : '{}'
-                    let cleaned = raw.trim()
-                    const start = cleaned.indexOf('{')
-                    if (start >= 0) cleaned = cleaned.substring(start)
-                    const end = cleaned.lastIndexOf('}')
-                    if (end >= 0) cleaned = cleaned.substring(0, end + 1)
-
+                    const cleaned = healJson(raw)
                     const parsed = JSON.parse(cleaned)
                     return {
                         section: sec.label,
@@ -197,26 +193,7 @@ Return ONLY the JSON object, no markdown.`
 
         let summaryParsed: any
         try {
-            // Robust JSON extraction: Find first { and last }
-            let cleaned = summaryRaw.trim()
-            const start = cleaned.indexOf('{')
-            const end = cleaned.lastIndexOf('}')
-
-            if (start >= 0 && end >= 0) {
-                cleaned = cleaned.substring(start, end + 1)
-            } else if (start >= 0) {
-                // Truncated JSON healing: If it starts but doesn't end, try to close it
-                cleaned = cleaned.substring(start)
-                // Basic healing for common truncation points
-                if (cleaned.includes('"keyTakeaways": [')) {
-                    if (!cleaned.includes(']')) cleaned += '"]'
-                }
-                if (!cleaned.endsWith('}')) {
-                    if (!cleaned.endsWith(']')) cleaned += ']'
-                    cleaned += '}}'
-                }
-            }
-
+            const cleaned = healJson(summaryRaw)
             summaryParsed = JSON.parse(cleaned)
         } catch (e) {
             console.error('Final Summary JSON parse failed:', e, summaryRaw)

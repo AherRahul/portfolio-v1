@@ -119,7 +119,16 @@ const stepError = ref<Record<string, string>>({})
 const showAnalysisHub = ref(false)
 const showQuitModal = ref(false)
 
+const stepEvalCounts = ref<Record<string, number>>({})
+const MAX_STEP_EVALS = 3
+
 async function callStepEval(stepId: string, stepData: unknown): Promise<boolean> {
+  const currentCount = stepEvalCounts.value[stepId] || 0
+  if (currentCount >= MAX_STEP_EVALS) {
+    stepError.value[stepId] = `Maximum evaluation attempts (${MAX_STEP_EVALS}) reached for this step to control API usage.`
+    return false
+  }
+
   stepEvaluating.value[stepId] = true
   stepError.value[stepId] = ''
   try {
@@ -136,6 +145,7 @@ async function callStepEval(stepId: string, stepData: unknown): Promise<boolean>
       }
     })
     stepResults.value[stepId] = result
+    stepEvalCounts.value[stepId] = currentCount + 1
     showAnalysisHub.value = true
     return true
   } catch (err: any) {
@@ -371,15 +381,53 @@ const evalError = ref('')
 const showEvalModal = ref(false)
 const showStepResultModal = ref(false)
 const currentStepResult = ref<StepResult | null>(null)
+const showRestrictionModal = ref(false)
+
+const averageScore = computed(() => {
+  const evaluatedSteps = steps.value.filter(s => stepResults.value[s.id])
+  if (evaluatedSteps.length === 0) return 0
+  const sum = evaluatedSteps.reduce((acc, s) => acc + (stepResults.value[s.id]?.score || 0), 0)
+  return sum / evaluatedSteps.length
+})
 
 const allStepsCompleted = computed(() => {
-  // A step is considered complete if we have a result for it or it was explicitly skipped
-  return steps.value.every(s => (stepResults.value[s.id] !== undefined && stepResults.value[s.id] !== null) || s.skipped)
+  // 1. All steps must have a result or be skipped
+  const allTouched = steps.value.every(s => stepResults.value[s.id] !== undefined || s.skipped)
+  if (!allTouched) return false
+
+  // 2. Must not have too many skipped steps (e.g., at least 75% steps must be evaluated)
+  const skippedCount = steps.value.filter(s => s.skipped).length
+  if (skippedCount > steps.value.length / 2) return false
+
+  // 3. Average score must be >= 5 (half marks)
+  if (averageScore.value < 5) return false
+
+  return true
+})
+
+const evalRestrictionReason = computed(() => {
+  const evaluatedSteps = steps.value.filter(s => stepResults.value[s.id] !== undefined || s.skipped)
+  if (evaluatedSteps.length < steps.value.length) {
+    return `Complete ${steps.value.length - evaluatedSteps.length} more step(s).`
+  }
+  const skippedCount = steps.value.filter(s => s.skipped).length
+  if (skippedCount > steps.value.length / 2) {
+    return `Too many skipped steps. Evaluate at least ${Math.ceil(steps.value.length / 2)} phases.`
+  }
+  if (averageScore.value < 5) {
+    return `Average score too low (${averageScore.value.toFixed(1)}/10). Aim for at least 5.0 to generate report.`
+  }
+  return ''
 })
 
 async function evaluate() {
+  if (evaluation.value) {
+    showEvalModal.value = true
+    return
+  }
+
   if (!allStepsCompleted.value) {
-    evalError.value = 'Please complete and evaluate all steps before viewing the final report.'
+    showRestrictionModal.value = true
     return
   }
   
@@ -417,6 +465,18 @@ async function evaluate() {
       }
     })
     evaluation.value = result
+    
+    // Persist to local storage
+    if (typeof window !== 'undefined') {
+      const storageKey = `sd_eval_${slug}`
+      localStorage.setItem(storageKey, JSON.stringify({
+        evaluation: result,
+        timestamp: new Date().toISOString(),
+        difficulty: selectedDifficulty.value,
+        language: codeLanguage.value
+      }))
+    }
+
     showEvalModal.value = true
     pauseTimer() // Stop the clock when evaluation is shown
   } catch (err: any) {
@@ -425,6 +485,25 @@ async function evaluate() {
     evaluating.value = false
   }
 }
+
+const savedReportData = ref<{ timestamp: string } | null>(null)
+
+// Load saved evaluation on mount
+onMounted(() => {
+  if (typeof window !== 'undefined') {
+    const storageKey = `sd_eval_${slug}`
+    const saved = localStorage.getItem(storageKey)
+    if (saved) {
+      try {
+        const parsed = JSON.parse(saved)
+        evaluation.value = parsed.evaluation
+        savedReportData.value = { timestamp: parsed.timestamp }
+      } catch (e) {
+        console.error('Failed to parse saved evaluation')
+      }
+    }
+  }
+})
 
 async function downloadReport() {
   if (!evaluation.value) return
@@ -551,22 +630,40 @@ async function runSimulation() {
 
         <!-- Final Evaluate -->
         <div class="relative flex items-center group">
-          <div v-if="!allStepsCompleted" class="absolute bottom-full right-0 mb-3 w-56 p-3 bg-zinc-900 border border-zinc-700 rounded-xl text-[11px] text-zinc-400 opacity-0 group-hover:opacity-100 transition-all pointer-events-none shadow-2xl z-[100] backdrop-blur-md">
-             <div class="flex items-center gap-2 mb-1.5 text-zinc-100 font-bold">
+          <div v-if="!allStepsCompleted && !evaluation" class="absolute bottom-full right-0 mb-3 w-64 p-4 bg-zinc-900 border border-zinc-800 rounded-2xl text-[11px] text-zinc-400 opacity-0 group-hover:opacity-100 transition-all pointer-events-none shadow-2xl z-[100] backdrop-blur-xl">
+             <div class="flex items-center gap-2 mb-2 text-zinc-100 font-black uppercase tracking-widest">
                <Icon name="heroicons:lock-closed" class="text-amber-500" />
-               Evaluation Locked
+               Audit Locked
              </div>
-             Complete all {{ steps.length }} steps to unlock official engineering assessment.
+             <p class="mb-2 text-zinc-500 leading-tight">{{ evalRestrictionReason }}</p>
+             <div class="flex items-center gap-2 text-[10px]">
+                <div class="h-1 flex-1 bg-zinc-800 rounded-full overflow-hidden">
+                   <div :class="['h-full transition-all', averageScore >= 5 ? 'bg-emerald-500' : 'bg-amber-500']" :style="{ width: `${(averageScore / 10) * 100}%` }"></div>
+                </div>
+                <span :class="['font-black', averageScore >= 5 ? 'text-emerald-400' : 'text-zinc-500']">{{ averageScore.toFixed(1) }} <span class="opacity-50">/ 10</span></span>
+             </div>
+
              <div class="absolute w-2 h-2 bg-zinc-900 border-r border-b border-zinc-700 rotate-45 bottom-[-5px] right-4"></div>
           </div>
           <button
             @click="evaluate"
-            :disabled="evaluating || !allStepsCompleted"
+            :disabled="evaluating"
             class="px-4 py-1.5 text-xs font-bold bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg transition-colors disabled:opacity-30 flex items-center gap-1.5 shadow-lg shadow-emerald-500/10">
             <Icon v-if="evaluating" name="heroicons:arrow-path" class="animate-spin text-sm" />
             <Icon v-else name="heroicons:trophy" class="text-sm" />
-            {{ evaluating ? 'Evaluating...' : 'Final Eval' }}
+            {{ evaluating ? 'Evaluating...' : (evaluation ? 'View Final Report' : 'Generate Final Eval') }}
           </button>
+        </div>
+
+        <!-- Saved Badge -->
+        <div v-if="savedReportData" @click="showEvalModal = true" class="cursor-pointer group relative">
+          <div class="flex items-center gap-2 px-3 py-1.5 text-[10px] font-black uppercase tracking-widest text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 rounded-lg hover:bg-emerald-500/20 transition-all">
+            <Icon name="heroicons:cloud-arrow-down" class="text-xs" />
+            History
+          </div>
+          <div class="absolute top-full right-0 mt-2 p-2 bg-zinc-900 border border-zinc-800 rounded-lg text-[10px] text-zinc-500 opacity-0 group-hover:opacity-100 whitespace-nowrap pointer-events-none z-[60]">
+             Last Audit: {{ new Date(savedReportData.timestamp).toLocaleString() }}
+          </div>
         </div>
 
         <!-- Audit Hub Toggle -->
@@ -1245,92 +1342,142 @@ async function runSimulation() {
 
     <!-- ── EVALUATION RESULT MODAL ── -->
     <div v-if="showEvalModal && evaluation"
-      class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm overflow-y-auto p-4">
-      <div class="max-w-3xl mx-auto my-8">
-        <div class="bg-zinc-900 border border-zinc-700 rounded-2xl overflow-hidden shadow-2xl">
-          <!-- Header -->
-          <div class="bg-gradient-to-r from-zinc-800 to-zinc-900 px-6 py-5 border-b border-zinc-700 flex items-center justify-between">
-            <div>
-              <h2 class="text-lg font-bold text-white">AI Evaluation Results</h2>
-              <p class="text-xs text-zinc-400">{{ question.title }}</p>
-            </div>
-            <div class="flex items-center gap-4">
-              <div class="text-center">
-                <div :class="['text-4xl font-black', gradeColor(evaluation.grade)]">{{ evaluation.grade }}</div>
-                <div class="text-xs text-zinc-500">Grade</div>
+      class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md overflow-y-auto p-4 md:p-8">
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-zinc-900 border border-zinc-800 rounded-[2.5rem] overflow-hidden shadow-[0_0_100px_rgba(0,0,0,0.5)] border-zinc-700/50">
+          <!-- Premium Header -->
+          <div class="relative bg-zinc-900 px-8 py-10 border-b border-zinc-800">
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-500 via-pink-500 to-red-500"></div>
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-8">
+              <div class="space-y-2">
+                <div class="flex items-center gap-2">
+                  <span class="text-[10px] font-black uppercase tracking-[0.3em] text-red-500 bg-red-500/10 px-3 py-1 rounded-full">Engineering Audit Report</span>
+                </div>
+                <h2 class="text-3xl font-black text-white tracking-tight">{{ question.title }}</h2>
+                <p class="text-zinc-400 text-sm font-medium">Session Evaluation & Backend Architectural Integrity Audit</p>
               </div>
-              <div class="text-center">
-                <div class="text-3xl font-black text-white">{{ evaluation.totalScore }}<span class="text-lg text-zinc-400">/{{ evaluation.maxScore }}</span></div>
-                <div class="text-xs text-zinc-500">Score</div>
+              
+              <div class="flex items-center gap-6 bg-zinc-950/50 p-6 rounded-3xl border border-zinc-800/50 shadow-inner">
+                <div class="text-center group">
+                  <div :class="['text-5xl font-black transition-transform group-hover:scale-110 duration-500', gradeColor(evaluation.grade)]">{{ evaluation.grade }}</div>
+                  <div class="text-[10px] font-black uppercase tracking-widest text-zinc-600 mt-1">Final Grade</div>
+                </div>
+                <div class="w-px h-12 bg-zinc-800"></div>
+                <div class="text-center">
+                  <div class="text-3xl font-black text-white">{{ evaluation.totalScore }}<span class="text-lg text-zinc-500">/{{ evaluation.maxScore }}</span></div>
+                  <div class="text-[10px] font-black uppercase tracking-widest text-zinc-600 mt-1">Score</div>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="p-6">
-            <!-- Summary -->
-            <div class="bg-zinc-800 rounded-xl p-4 mb-5 border border-zinc-700">
-              <div class="prose prose-sm prose-invert max-w-none" v-html="renderMarkdown(evaluation.summary)"></div>
-            </div>
-
-            <!-- Score breakdown -->
-            <h3 class="text-sm font-bold text-white mb-3">Score Breakdown</h3>
-            <div class="space-y-3 mb-6">
-              <div v-for="section in evaluation.breakdown" :key="section.section"
-                class="bg-zinc-800 border border-zinc-700 rounded-xl p-4">
-                <div class="flex items-center justify-between mb-2">
-                  <span class="text-xs font-bold text-white">{{ section.section }}</span>
-                  <span class="text-xs font-mono text-zinc-400">{{ section.score }} / {{ section.maxScore }}</span>
-                </div>
-                <div class="h-1.5 bg-zinc-700 rounded-full mb-2">
-                  <div :class="['h-full rounded-full transition-all', scoreBarColor(Math.round(section.score / section.maxScore * 100))]"
-                    :style="{ width: scoreBarWidth(section.score, section.maxScore) }" />
-                </div>
-                <div class="prose prose-sm prose-invert max-w-none mb-2" v-html="renderMarkdown(section.feedback)"></div>
-                <ul v-if="section.improvements?.length" class="space-y-1">
-                  <li v-for="imp in section.improvements" :key="imp" class="text-xs text-amber-400 flex items-start gap-1.5">
-                    <Icon name="heroicons:arrow-right" class="text-xs flex-shrink-0 mt-0.5" />
-                    <span v-html="renderMarkdown(imp)"></span>
-                  </li>
-                </ul>
+          <div class="p-8 space-y-10">
+            <!-- Executive Summary Card -->
+            <section class="space-y-4">
+              <div class="flex items-center gap-2 mb-2">
+                <Icon name="heroicons:bolt" class="text-amber-500 text-lg" />
+                <h3 class="text-sm font-black uppercase tracking-widest text-zinc-400">Executive Summary</h3>
               </div>
-            </div>
-
-            <!-- Model Solution -->
-            <h3 class="text-sm font-bold text-white mb-3">Model Solution</h3>
-            <div class="bg-zinc-800 border border-zinc-700 rounded-xl p-4 mb-5 space-y-4">
-              <div v-for="sec in evaluation.modelSolution?.sections" :key="sec.heading">
-                <h4 class="text-xs font-bold text-red-400 mb-1">{{ sec.heading }}</h4>
-                <div class="prose prose-sm prose-invert max-w-none" v-html="renderMarkdown(sec.content)"></div>
+              <div class="bg-zinc-950 p-8 rounded-3xl border border-zinc-800/50 relative overflow-hidden group">
+                <div class="absolute -right-20 -top-20 w-64 h-64 bg-red-500/5 rounded-full blur-3xl group-hover:bg-red-500/10 transition-colors duration-700"></div>
+                <div class="markdown-container prose prose-invert max-w-none" v-html="renderMarkdown(evaluation.summary)"></div>
               </div>
-            </div>
+            </section>
 
-            <!-- Key Takeaways -->
-            <h3 class="text-sm font-bold text-white mb-3">Key Takeaways</h3>
-            <ul class="space-y-2 mb-6">
-              <li v-for="kp in evaluation.keyTakeaways" :key="kp"
-                class="flex items-start gap-2 text-xs text-zinc-300 bg-zinc-800 rounded-lg px-3 py-2 border border-zinc-700">
-                <Icon name="heroicons:light-bulb" class="text-amber-400 flex-shrink-0 mt-0.5" />
-                <span v-html="renderMarkdown(kp)"></span>
-              </li>
-            </ul>
+            <!-- Detailed Breakdown Grid -->
+            <section class="space-y-6">
+              <div class="flex items-center gap-2 mb-2">
+                <Icon name="heroicons:chart-bar" class="text-blue-500 text-lg" />
+                <h3 class="text-sm font-black uppercase tracking-widest text-zinc-400">Architectural Breakdown</h3>
+              </div>
+              <div class="grid md:grid-cols-2 gap-6">
+                <div v-for="section in evaluation.breakdown" :key="section.section"
+                  class="bg-zinc-800/40 border border-zinc-800/50 rounded-3xl p-6 hover:border-zinc-700 transition-all group">
+                  <div class="flex items-center justify-between mb-4">
+                    <span class="text-xs font-black uppercase tracking-widest text-white">{{ section.section }}</span>
+                    <span class="text-sm font-black text-blue-400">{{ section.score }} / {{ section.maxScore }}</span>
+                  </div>
+                  <div class="h-1 bg-zinc-900 rounded-full mb-4 overflow-hidden">
+                    <div :class="['h-full rounded-full transition-all duration-1000', scoreBarColor(Math.round(section.score / section.maxScore * 100))]"
+                      :style="{ width: scoreBarWidth(section.score, section.maxScore) }" />
+                  </div>
+                  <div class="markdown-container prose prose-sm prose-invert max-w-none mb-4 opacity-80" v-html="renderMarkdown(section.feedback)"></div>
+                  
+                  <div v-if="section.improvements?.length" class="mt-4 pt-4 border-t border-zinc-800">
+                    <p class="text-[10px] font-black uppercase tracking-widest text-zinc-500 mb-3">Critical Improvements</p>
+                    <ul class="space-y-2">
+                      <li v-for="imp in section.improvements" :key="imp" class="text-xs text-amber-500/80 flex items-start gap-2 group-hover:text-amber-400 transition-colors">
+                        <Icon name="heroicons:arrow-trending-up" class="text-[10px] flex-shrink-0 mt-1" />
+                        <span v-html="renderMarkdown(imp)"></span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Masterpiece Solution Tabbed -->
+            <section class="space-y-6">
+              <div class="flex items-center gap-2 mb-2">
+                <Icon name="heroicons:sparkles" class="text-purple-500 text-lg" />
+                <h3 class="text-sm font-black uppercase tracking-widest text-zinc-400">Masterpiece Solution</h3>
+              </div>
+              <div class="bg-zinc-950 rounded-[2rem] border border-zinc-800/50 overflow-hidden">
+                <div class="space-y-px">
+                  <div v-for="sec in evaluation.modelSolution?.sections" :key="sec.heading" 
+                       class="border-b border-zinc-900 last:border-0">
+                    <div class="px-8 py-5 flex items-center gap-3 bg-zinc-900/10">
+                       <div class="w-1.5 h-1.5 rounded-full bg-red-500 shadow-[0_0_8px_rgba(239,68,68,0.5)]"></div>
+                       <h4 class="text-xs font-black uppercase tracking-[0.2em] text-zinc-300">{{ sec.heading }}</h4>
+                    </div>
+                    <div class="px-8 py-8 markdown-container prose prose-invert max-w-none bg-zinc-950/30" v-html="renderMarkdown(sec.content)"></div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Strategic Takeaways -->
+            <section class="space-y-4">
+              <div class="flex items-center gap-2 mb-2">
+                <Icon name="heroicons:light-bulb" class="text-emerald-500 text-lg" />
+                <h3 class="text-sm font-black uppercase tracking-widest text-zinc-400">Strategic Takeaways</h3>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <div v-for="kp in evaluation.keyTakeaways" :key="kp"
+                  class="flex items-start gap-4 text-xs text-zinc-400 bg-zinc-900/50 hover:bg-zinc-900 hover:text-zinc-200 transition-all rounded-2xl px-5 py-4 border border-zinc-800/50 shadow-sm">
+                  <Icon name="heroicons:check-badge" class="text-emerald-500 text-lg flex-shrink-0" />
+                  <span v-html="renderMarkdown(kp)"></span>
+                </div>
+              </div>
+            </section>
+
             <!-- Actions -->
-            <div class="flex gap-3 mt-8">
+            <div class="flex flex-col md:flex-row gap-4 pt-10 border-t border-zinc-800">
               <button @click="showEvalModal = false"
-                class="flex-1 py-3 text-sm font-bold border border-zinc-700 text-zinc-400 hover:text-white hover:bg-zinc-800 rounded-xl transition-all">
-                Continue Refining
+                class="flex-1 py-4 text-xs font-black uppercase tracking-widest border border-zinc-800 text-zinc-500 hover:text-white hover:bg-zinc-800 rounded-2xl transition-all">
+                Continue Refining Design
               </button>
               
               <button @click="downloadReport" 
-                class="flex-1 py-3 text-sm font-bold bg-zinc-800 border border-zinc-700 text-white rounded-xl hover:bg-zinc-700 transition-all flex items-center justify-center gap-2">
-                <Icon name="heroicons:arrow-down-tray" class="text-sm" />
-                Download PDF
+                class="flex-1 py-4 text-xs font-black uppercase tracking-widest bg-zinc-800 border border-zinc-700 text-white rounded-2xl hover:bg-zinc-700 transition-all flex items-center justify-center gap-3 shadow-xl">
+                <Icon name="heroicons:arrow-down-tray" class="text-base" />
+                Download PDF Report
               </button>
 
               <NuxtLink to="/system-design/practice"
-                class="flex-1 py-3 text-sm font-bold bg-gradient-to-r from-emerald-600 to-teal-700 text-white rounded-xl hover:shadow-[0_0_20px_rgba(16,185,129,0.3)] transition-all text-center">
-                Finish Problem
+                class="flex-[1.5] py-4 text-xs font-black uppercase tracking-widest bg-gradient-to-r from-red-600 to-pink-700 text-white rounded-2xl hover:shadow-[0_0_40px_rgba(239,68,68,0.2)] transition-all text-center flex items-center justify-center gap-2">
+                Finish Problem Interview
+                <Icon name="heroicons:chevron-right" />
               </NuxtLink>
             </div>
+          </div>
+          
+          <!-- Modal Footer Decor -->
+          <div class="px-8 py-6 bg-zinc-950 flex items-center justify-center border-t border-zinc-900/50">
+             <div class="flex items-center gap-2 text-[9px] font-black uppercase tracking-[0.4em] text-zinc-700">
+                 <Icon name="heroicons:cpu-chip" />
+                 Synchronized Architectural Integrity Audit v2.4
+             </div>
           </div>
         </div>
       </div>
@@ -1400,110 +1547,179 @@ async function runSimulation() {
 
     <!-- ── ANALYSIS HUB MODAL ── -->
     <div v-if="showAnalysisHub" class="fixed inset-0 z-[100] flex items-center justify-center p-4">
-      <div class="absolute inset-0 bg-black/60 backdrop-blur-md" @click="showAnalysisHub = false"></div>
-      <div class="relative bg-zinc-950 border border-zinc-800 w-full max-w-5xl max-h-[85vh] rounded-3xl shadow-2xl flex flex-col overflow-hidden">
+      <div class="absolute inset-0 bg-black/80 backdrop-blur-xl" @click="showAnalysisHub = false"></div>
+      <div class="relative bg-zinc-950 border border-zinc-800 w-full max-w-6xl max-h-[90vh] rounded-[2.5rem] shadow-[0_0_100px_rgba(0,0,0,0.8)] flex flex-col overflow-hidden border-zinc-800/50">
         <!-- Header -->
-        <div class="px-8 py-6 border-b border-zinc-900 bg-zinc-900/10 flex items-center justify-between">
-          <div class="flex items-center gap-4">
-            <div class="w-12 h-12 rounded-2xl bg-blue-600/10 border border-blue-500/20 flex items-center justify-center">
-              <Icon name="heroicons:cpu-chip" class="text-2xl text-blue-500" />
+        <div class="px-10 py-8 border-b border-zinc-900 bg-zinc-900/10 flex items-center justify-between">
+          <div class="flex items-center gap-5">
+            <div class="w-14 h-14 rounded-2xl bg-blue-600/10 border border-blue-500/20 flex items-center justify-center shadow-inner">
+              <Icon name="heroicons:cpu-chip" class="text-3xl text-blue-500" />
             </div>
             <div>
-              <h2 class="text-xl font-black text-white tracking-tight">AI Engineering Audit Hub</h2>
-              <p class="text-[11px] text-zinc-500 font-bold uppercase tracking-widest mt-1">Holistic Architectural Performance</p>
+              <h2 class="text-2xl font-black text-white tracking-tight uppercase">Engineering Audit Hub</h2>
+              <p class="text-[10px] text-zinc-500 font-black uppercase tracking-[0.3em] mt-1 opacity-60">Phase-by-Phase Architectural Analysis</p>
             </div>
           </div>
-          <button @click="showAnalysisHub = false" class="p-2 hover:bg-zinc-800 rounded-xl text-zinc-500 hover:text-white transition-all">
+          <button @click="showAnalysisHub = false" class="p-3 hover:bg-zinc-800 rounded-2xl text-zinc-500 hover:text-white transition-all border border-transparent hover:border-zinc-700">
             <Icon name="heroicons:x-mark" class="text-2xl" />
           </button>
         </div>
 
         <!-- Scrollable Content -->
-        <div class="flex-1 overflow-y-auto no-scrollbar p-8 pt-6">
-          <div class="space-y-12">
+        <div class="flex-1 overflow-y-auto no-scrollbar p-10 pt-6 bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.03)_0,transparent_50%)]">
+          <div class="space-y-16">
             <!-- Step Results Loop -->
-            <div v-for="step in steps" :key="step.id" class="relative pl-8 border-l border-zinc-900">
-               <div :class="['absolute left-[-5px] top-0 w-[9px] h-[9px] rounded-full', stepResults[step.id] ? 'bg-blue-500' : 'bg-zinc-800']"></div>
+            <div v-for="step in steps" :key="step.id" class="relative pl-10 border-l-2 border-zinc-900">
+               <div :class="['absolute left-[-9px] top-0 w-4 h-4 rounded-full border-4 border-zinc-950 z-10', stepResults[step.id] ? 'bg-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.5)]' : 'bg-zinc-800']"></div>
                
-               <div class="flex items-center justify-between mb-4">
-                  <div class="flex items-center gap-3">
-                     <span class="text-[10px] font-black tracking-[0.2em] uppercase text-zinc-600">{{ step.label }}</span>
-                      <div v-if="stepResults[step.id]" :class="['px-2 py-0.5 rounded-full text-[9px] font-black uppercase', stepResults[step.id]?.passing ? 'bg-green-500/10 text-green-400' : 'bg-amber-500/10 text-amber-400']">
-                         {{ stepResults[step.id]?.passing ? 'Passed' : 'Needs Work' }}
-                      </div>
+               <div class="flex items-start justify-between mb-6">
+                  <div class="space-y-1">
+                     <span class="text-[10px] font-black tracking-[0.3em] uppercase text-zinc-600 block mb-1">Phase {{ steps.indexOf(step) + 1 }}</span>
+                     <h3 class="text-lg font-black text-white">{{ step.label }}</h3>
                    </div>
-                   <div v-if="stepResults[step.id]" class="text-lg font-black text-white">{{ stepResults[step.id]?.score }}/10</div>
+                   <div v-if="stepResults[step.id]" class="flex items-center gap-4 bg-zinc-900/50 px-4 py-2 rounded-2xl border border-zinc-800/50">
+                      <div :class="['px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest', stepResults[step.id]?.passing ? 'bg-green-500/10 text-green-400' : 'bg-amber-500/10 text-amber-400']">
+                         {{ stepResults[step.id]?.passing ? 'Passed' : 'Needs Optimization' }}
+                      </div>
+                      <div class="w-px h-4 bg-zinc-800"></div>
+                      <div class="text-2xl font-black text-white leading-none">{{ stepResults[step.id]?.score }}<span class="text-xs text-zinc-600 font-bold ml-1">/10</span></div>
+                   </div>
                </div>
 
-                <div v-if="stepResults[step.id]" class="bg-zinc-900/40 border border-zinc-800/50 rounded-2xl p-6 shadow-inner">
+                <div v-if="stepResults[step.id]" class="bg-zinc-900/30 border border-zinc-800/40 rounded-[2rem] p-8 shadow-inner backdrop-blur-sm group hover:border-zinc-700/50 transition-colors">
                   <!-- Metrics if Code -->
-                  <div v-if="step.id === 'code' && stepResults[step.id]?.metrics" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 mb-8">
-                     <div v-for="m in stepResults[step.id]?.metrics" :key="m.label" class="space-y-2">
-                        <div class="flex justify-between text-[9px] font-black text-zinc-500">
+                  <div v-if="step.id === 'code' && stepResults[step.id]?.metrics" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mb-10 pb-8 border-b border-zinc-800/50">
+                     <div v-for="m in stepResults[step.id]?.metrics" :key="m.label" class="space-y-3">
+                        <div class="flex justify-between items-center text-[10px] font-black uppercase tracking-tighter text-zinc-500">
                            <span class="truncate">{{ m.label }}</span>
                            <span :class="m.score >= 8 ? 'text-green-400' : 'text-amber-400'">{{ m.score }}</span>
                         </div>
-                        <div class="h-1 bg-zinc-800 rounded-full overflow-hidden">
-                           <div :class="['h-full', m.score >= 8 ? 'bg-green-500' : 'bg-amber-500']" :style="{ width: `${m.score * 10}%` }"></div>
+                        <div class="h-1.5 bg-zinc-950 rounded-full overflow-hidden shadow-inner">
+                           <div :class="['h-full transition-all duration-1000', m.score >= 8 ? 'bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.3)]' : 'bg-amber-500 shadow-[0_0_10px_rgba(245,158,11,0.3)]']" :style="{ width: `${m.score * 10}%` }"></div>
                         </div>
                      </div>
                   </div>
 
-                  <div class="grid md:grid-cols-3 gap-8">
+                  <div class="grid lg:grid-cols-3 gap-12">
                      <!-- Strengths -->
-                     <div>
-                        <h4 class="text-[10px] font-black uppercase tracking-widest text-zinc-400 mb-3 flex items-center gap-2">
-                           <Icon name="heroicons:check-circle" class="text-green-500" /> Key Strengths
-                        </h4>
-                        <ul class="space-y-2.5">
-                           <li v-for="w in stepResults[step.id]?.whatWentWell" :key="w" class="text-[11px] text-zinc-400 leading-relaxed flex items-start gap-2">
-                              <span class="mt-1 flex-shrink-0 text-green-700 font-bold">•</span> {{ w }}
+                     <div class="space-y-5">
+                        <div class="flex items-center gap-3">
+                           <div class="w-8 h-8 rounded-xl bg-green-500/10 flex items-center justify-center">
+                              <Icon name="heroicons:check-badge" class="text-green-500" />
+                           </div>
+                           <h4 class="text-[10px] font-black uppercase tracking-widest text-zinc-300">Key Strengths</h4>
+                        </div>
+                        <ul class="space-y-4">
+                           <li v-for="w in stepResults[step.id]?.whatWentWell" :key="w" class="text-xs text-zinc-400 leading-relaxed flex items-start gap-4 p-4 bg-zinc-950/20 rounded-2xl border border-zinc-800/10">
+                              <span class="text-green-500 font-black">•</span> {{ w }}
                            </li>
                         </ul>
                      </div>
 
                      <!-- Improvements -->
-                     <div>
-                        <h4 class="text-[10px] font-black uppercase tracking-widest text-zinc-400 mb-3 flex items-center gap-2">
-                           <Icon name="heroicons:bolt" class="text-amber-500" /> Improvement Areas
-                        </h4>
-                        <ul class="space-y-2.5">
-                           <li v-for="imp in stepResults[step.id]?.improvements" :key="imp" class="text-[11px] text-zinc-400 leading-relaxed flex items-start gap-2">
-                              <span class="mt-1 flex-shrink-0 text-amber-900 font-bold">•</span> {{ imp }}
+                     <div class="space-y-5">
+                        <div class="flex items-center gap-3">
+                           <div class="w-8 h-8 rounded-xl bg-amber-500/10 flex items-center justify-center">
+                              <Icon name="heroicons:bolt-slash" class="text-amber-500" />
+                           </div>
+                           <h4 class="text-[10px] font-black uppercase tracking-widest text-zinc-300">Target Improvements</h4>
+                        </div>
+                        <ul class="space-y-4">
+                           <li v-for="imp in stepResults[step.id]?.improvements" :key="imp" class="text-xs text-zinc-400 leading-relaxed flex items-start gap-4 p-4 bg-zinc-950/20 rounded-2xl border border-zinc-800/10">
+                              <span class="text-amber-600 font-black">•</span> {{ imp }}
                            </li>
                         </ul>
                      </div>
 
                      <!-- Model Solution -->
-                     <div>
-                        <h4 class="text-[10px] font-black uppercase tracking-widest text-zinc-400 mb-3 flex items-center gap-2">
-                           <Icon name="heroicons:light-bulb" class="text-blue-500" /> Engineering Best Practice
-                        </h4>
-                        <div class="prose prose-xs prose-invert max-w-none bg-zinc-950/50 p-4 rounded-xl border border-zinc-800/50 italic opacity-80" 
+                     <div class="space-y-5">
+                        <div class="flex items-center gap-3">
+                           <div class="w-8 h-8 rounded-xl bg-blue-500/10 flex items-center justify-center">
+                              <Icon name="heroicons:light-bulb" class="text-blue-500" />
+                           </div>
+                           <h4 class="text-[10px] font-black uppercase tracking-widest text-zinc-300">Best Practice Patterns</h4>
+                        </div>
+                        <div class="markdown-container prose prose-invert max-w-none bg-zinc-950/50 p-6 rounded-3xl border border-zinc-800/30 overflow-hidden shadow-2xl" 
                              v-html="renderMarkdown(stepResults[step.id]?.modelAnswer || '')">
                         </div>
                      </div>
                   </div>
-               </div>
-               <div v-else class="text-[11px] text-zinc-700 italic border border-zinc-900/50 border-dashed rounded-2xl p-6 text-center">
-                  Evaluation for this phase has not been triggered yet.
-               </div>
+                </div>
+                <div v-else class="bg-zinc-900/10 border-2 border-zinc-900 border-dashed rounded-[2rem] p-12 text-center group hover:bg-zinc-900/20 transition-all">
+                  <Icon name="heroicons:lock-closed" class="text-4xl text-zinc-800 mb-4 group-hover:text-zinc-700 transition-colors" />
+                  <p class="text-xs text-zinc-600 font-black uppercase tracking-widest">Phase Evaluation Pending</p>
+                  <p class="text-[10px] text-zinc-700 mt-2">Submit this phase to unlock deep architectural analysis.</p>
+                </div>
             </div>
           </div>
         </div>
 
         <!-- Footer -->
-        <div class="px-8 py-6 bg-zinc-900/20 border-t border-zinc-900 flex items-center justify-between">
-           <div class="text-[10px] font-bold text-zinc-600">
-             Pro tip: Review the "Engineering Best Practice" to align with senior-level architectural patterns.
+        <div class="px-10 py-8 bg-zinc-900/30 border-t border-zinc-900 flex items-center justify-between">
+           <div class="flex items-center gap-4">
+              <div class="flex -space-x-3">
+                 <div v-for="i in 3" :key="i" class="w-8 h-8 rounded-full border-4 border-zinc-950 bg-zinc-800 flex items-center justify-center">
+                    <Icon name="heroicons:sparkles" class="text-[10px] text-zinc-600" />
+                 </div>
+              </div>
+              <p class="text-[10px] font-bold text-zinc-500 max-w-xs">AI audit uses senior engineering rubrics to evaluate your architectural decision making.</p>
            </div>
-           <button @click="showAnalysisHub = false" class="px-8 py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-[11px] font-black uppercase tracking-widest rounded-xl transition-all shadow-xl shadow-blue-500/10">
-              Continue Designing
+           <button @click="showAnalysisHub = false" class="px-10 py-4 bg-blue-600 hover:bg-blue-500 text-white text-[11px] font-black uppercase tracking-widest rounded-2xl transition-all shadow-xl shadow-blue-500/20 active:scale-95">
+              Confirm & Return to Workspace
            </button>
         </div>
       </div>
     </div>
-    <!-- ── QUIT CONFIRMATION MODAL ── -->
+    <!-- ── RESTRICTION MODAL ── -->
+    <div v-if="showRestrictionModal" class="fixed inset-0 z-[250] flex items-center justify-center p-4">
+      <div class="absolute inset-0 bg-black/90 backdrop-blur-xl" @click="showRestrictionModal = false"></div>
+      <div class="relative bg-zinc-950 border border-zinc-800 w-full max-w-md p-8 rounded-[2.5rem] shadow-2xl text-center border-amber-500/20">
+        <div class="w-16 h-16 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mx-auto mb-6 shadow-inner">
+          <Icon name="heroicons:lock-closed" class="text-3xl text-amber-500" />
+        </div>
+        <h2 class="text-2xl font-black text-white mb-2 tracking-tight">Audit Requirements Not Met</h2>
+        <p class="text-zinc-500 text-xs mb-8 leading-relaxed font-bold uppercase tracking-widest opacity-60">
+          Unlock your final engineering audit and masterpiece solution
+        </p>
+
+        <div class="space-y-3 mb-8 text-left">
+           <div class="flex items-center gap-4 p-4 rounded-2xl bg-zinc-900/50 border border-zinc-800/50">
+              <div :class="['w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0', steps.filter(s => stepResults[s.id] !== undefined || s.skipped).length >= steps.length ? 'bg-emerald-500/20 text-emerald-400' : 'bg-red-500/10 text-red-400']">
+                 <Icon :name="steps.filter(s => stepResults[s.id] !== undefined || s.skipped).length >= steps.length ? 'heroicons:check-circle' : 'heroicons:x-circle'" class="text-sm" />
+              </div>
+              <div class="flex-1">
+                 <p class="text-[11px] font-black text-white uppercase tracking-wider">Phase Competition</p>
+                 <p class="text-[10px] text-zinc-500">{{ steps.filter(s => stepResults[s.id] !== undefined || s.skipped).length }}/{{ steps.length }} phases touched</p>
+              </div>
+           </div>
+
+           <div class="flex items-center gap-4 p-4 rounded-2xl bg-zinc-900/50 border border-zinc-800/50">
+              <div :class="['w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0', steps.filter(s => s.skipped).length <= steps.length / 2 ? 'bg-emerald-500/20 text-emerald-400' : 'bg-red-500/10 text-red-400']">
+                 <Icon :name="steps.filter(s => s.skipped).length <= steps.length / 2 ? 'heroicons:check-circle' : 'heroicons:x-circle'" class="text-sm" />
+              </div>
+              <div class="flex-1">
+                 <p class="text-[11px] font-black text-white uppercase tracking-wider">Fidelity Requirement</p>
+                 <p class="text-[10px] text-zinc-500">Maximum 50% phases can be skipped (Current: {{ steps.filter(s => s.skipped).length }})</p>
+              </div>
+           </div>
+
+           <div class="flex items-center gap-4 p-4 rounded-2xl bg-zinc-900/50 border border-zinc-800/50">
+              <div :class="['w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0', averageScore >= 5 ? 'bg-emerald-500/20 text-emerald-400' : 'bg-red-500/10 text-red-400']">
+                 <Icon :name="averageScore >= 5 ? 'heroicons:check-circle' : 'heroicons:x-circle'" class="text-sm" />
+              </div>
+              <div class="flex-1">
+                 <p class="text-[11px] font-black text-white uppercase tracking-wider">Engineering Score</p>
+                 <p class="text-[10px] text-zinc-500">Minimum 5.0/10 avg score needed (Current: {{ averageScore.toFixed(1) }})</p>
+              </div>
+           </div>
+        </div>
+
+        <button @click="showRestrictionModal = false" 
+          class="w-full py-4 bg-zinc-800 hover:bg-zinc-700 text-white text-xs font-black rounded-2xl transition-all uppercase tracking-widest border border-zinc-700">
+          Continue Refining Design
+        </button>
+      </div>
+    </div>
     <div v-if="showQuitModal" class="fixed inset-0 z-[200] flex items-center justify-center p-4">
       <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" @click="showQuitModal = false"></div>
       <div class="relative bg-zinc-900 border border-zinc-800 w-full max-w-md p-8 rounded-3xl shadow-2xl text-center">
@@ -1557,3 +1773,84 @@ async function runSimulation() {
     </div>
   </div>
 </template>
+
+<style scoped>
+.markdown-container :deep(h1), 
+.markdown-container :deep(h2), 
+.markdown-container :deep(h3), 
+.markdown-container :deep(h4), 
+.markdown-container :deep(h5) {
+  @apply font-black text-white tracking-tight leading-tight;
+}
+
+.markdown-container :deep(h1) { @apply text-2xl mb-6 mt-8; }
+.markdown-container :deep(h2) { @apply text-xl mb-4 mt-8 pt-4 border-t border-zinc-800/50; }
+.markdown-container :deep(h3) { @apply text-lg mb-3 mt-6 text-zinc-200; }
+
+.markdown-container :deep(p) {
+  @apply text-zinc-400 leading-relaxed mb-4 text-[13px] md:text-sm;
+}
+
+.markdown-container :deep(ul), 
+.markdown-container :deep(ol) {
+  @apply my-4 ml-4 space-y-2 list-outside;
+}
+
+.markdown-container :deep(ul) { @apply list-disc; }
+.markdown-container :deep(ol) { @apply list-decimal; }
+
+.markdown-container :deep(li) {
+  @apply pl-2 text-zinc-400 text-[13px] md:text-sm leading-relaxed;
+}
+
+.markdown-container :deep(code) {
+  @apply bg-zinc-800/50 px-1.5 py-0.5 rounded text-[11px] text-blue-400 font-mono border border-zinc-700/50;
+}
+
+.markdown-container :deep(.code-block-wrapper) {
+  @apply my-6 rounded-3xl overflow-hidden border border-zinc-800 shadow-2xl;
+}
+
+.markdown-container :deep(pre) {
+  @apply bg-zinc-950 p-6 m-0 overflow-x-auto;
+}
+
+.markdown-container :deep(pre code) {
+  @apply block p-0 bg-transparent border-0 text-[12px] leading-[1.8] text-zinc-300 font-mono;
+}
+
+.markdown-container :deep(.code-lang-label) {
+  @apply block text-[10px] font-black uppercase tracking-[0.2em] text-zinc-600 mb-4 border-b border-zinc-900 pb-2;
+}
+
+.markdown-container :deep(blockquote) {
+  @apply border-l-4 border-red-500/50 pl-6 my-6 italic text-zinc-400 bg-red-500/5 py-4 rounded-r-3xl;
+}
+
+.markdown-container :deep(.table-wrapper) {
+  @apply my-8 rounded-3xl overflow-hidden border border-zinc-800 shadow-inner;
+}
+
+.markdown-container :deep(table) {
+  @apply w-full border-collapse text-xs;
+}
+
+.markdown-container :deep(th) {
+  @apply bg-zinc-900 px-4 py-3 text-left font-black text-white uppercase tracking-widest border-b border-zinc-800;
+}
+
+.markdown-container :deep(td) {
+  @apply px-4 py-3 text-zinc-400 border-b border-zinc-800/50;
+}
+
+.markdown-container :deep(tr:last-child td) {
+  @apply border-b-0;
+}
+
+/* Animations */
+.fade-enter-active, .fade-leave-active { transition: opacity 0.5s ease; }
+.fade-enter-from, .fade-leave-to { opacity: 0; }
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+</style>

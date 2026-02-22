@@ -231,16 +231,21 @@ class PDFGenerator {
         this.currentY += 2
       })
     } else {
-      // Improved content parsing (Code blocks, Tables, etc.)
-      const lines = content.split('\n')
+      // Standardize newlines and remove excessive gaps
+      const cleanedContent = content.replace(/\r\n/g, '\n').replace(/\n{3,}/g, '\n\n')
+      const lines = cleanedContent.split('\n')
       let inTable = false
       let tableRows: string[][] = []
 
       for (let i = 0; i < lines.length; i++) {
         const line = lines[i].trim()
 
-        // Skip horizontal lines
-        if (line === '---' || line === '***' || line === '___') continue
+        // Skip horizontal lines or strictly dashed lines
+        if (/^[-*_]{3,}$/.test(line)) continue
+        if (!line && !inTable) {
+          this.currentY += 2
+          continue
+        }
 
         // Detect Table Start
         if (line.startsWith('|') && line.endsWith('|')) {
@@ -322,12 +327,13 @@ class PDFGenerator {
   }
 
   private renderCodeBlock(code: string) {
-    const codeLines = code.split('\n')
+    const trimmedCode = code.trim()
+    const codeLines = trimmedCode.split('\n')
     this.doc.setFont('courier', 'normal')
-    this.doc.setFontSize(9)
+    this.doc.setFontSize(8.5)
     this.doc.setTextColor(230, 230, 230)
 
-    const lineHeight = 5
+    const lineHeight = 4.5
 
     // If we are at the bottom of a page, move to next
     if (this.currentY > this.pageHeight - 30) {

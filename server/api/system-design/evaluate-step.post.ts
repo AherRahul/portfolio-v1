@@ -8,6 +8,7 @@ import {
     buildDeepDivePrompt,
     buildScalingPrompt
 } from '../../utils/systemDesignPrompts'
+import { healJson } from '../../utils/jsonHealer'
 
 export interface StepEvalRequest {
     questionTitle: string
@@ -73,7 +74,7 @@ export default defineEventHandler(async (event) => {
 
         const message = await anthropic.messages.create({
             model: 'claude-sonnet-4-6',
-            max_tokens: 4096,
+            max_tokens: 8192,
             messages: [{ role: 'user', content: prompt }]
         })
 
@@ -81,14 +82,7 @@ export default defineEventHandler(async (event) => {
 
         let result: StepEvalResponse
         try {
-            let cleaned = rawText.trim()
-            const start = cleaned.indexOf('{')
-            const end = cleaned.lastIndexOf('}')
-
-            if (start >= 0 && end >= 0) {
-                cleaned = cleaned.substring(start, end + 1)
-            }
-
+            const cleaned = healJson(rawText)
             result = JSON.parse(cleaned)
         } catch (e) {
             console.error('Step Eval JSON parse failed:', e, rawText)
