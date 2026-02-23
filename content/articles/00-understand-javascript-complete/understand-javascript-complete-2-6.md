@@ -55,7 +55,7 @@ Strings are sequences of characters enclosed in single or double quotes. They re
 
 Example:  
 ```js
-let name = "Hitesh";  
+let name = "Rahul";  
 ```
 
 #### 3. Boolean  

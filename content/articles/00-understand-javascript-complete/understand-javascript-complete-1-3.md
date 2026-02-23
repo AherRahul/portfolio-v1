@@ -45,8 +45,8 @@ If you don't already have a GitHub account, head over to [GitHub.com](https://gi
 Once logged in:
 
 1. Click on the **“New repository”** button.
-2. Name your repository, for example, `js-hindi`.
-3. Add a description such as “JavaScript series for Chai and Code YouTube channel.”
+2. Name your repository, for example, `js-practice`.
+3. Add a description such as “JavaScript practice series.”
 4. Select **Public** visibility to share your code freely.
 5. Add a README file by ticking the checkbox.
 6. Click **Create repository**.
