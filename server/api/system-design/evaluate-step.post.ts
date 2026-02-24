@@ -6,7 +6,10 @@ import {
     buildCodePrompt,
     buildArchitecturePrompt,
     buildDeepDivePrompt,
-    buildScalingPrompt
+    buildScalingPrompt,
+    buildApiDesignPrompt,
+    buildDatabaseDesignPrompt,
+    buildAnalyticsPrompt
 } from '../../utils/systemDesignPrompts'
 import { healJson } from '../../utils/jsonHealer'
 
@@ -68,6 +71,9 @@ export default defineEventHandler(async (event) => {
             case 'architecture': prompt = buildArchitecturePrompt(body, d as string); break
             case 'deep-dive': prompt = buildDeepDivePrompt(body, d as string); break
             case 'scaling': prompt = buildScalingPrompt(body, d as string); break
+            case 'api': prompt = buildApiDesignPrompt(body, d); break
+            case 'database': prompt = buildDatabaseDesignPrompt(body, d); break
+            case 'analytics': prompt = buildAnalyticsPrompt(body, d as string); break
             default:
                 throw createError({ statusCode: 400, statusMessage: `Unknown stepId: ${body.stepId}` })
         }

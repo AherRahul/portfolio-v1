@@ -337,304 +337,437 @@ const mathTips = [
   <div class="min-h-screen">
 
     <!-- ══ HERO ══ -->
-    <AppSection class="mb-0 pb-0">
-      <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 border border-zinc-700 px-6 py-12 md:px-14 md:py-16 mb-10">
-        <!-- bg grid decoration -->
-        <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(circle, #fff 1px, transparent 1px); background-size: 32px 32px;" />
-        <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-red-500/20 to-transparent rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
-
-        <div class="relative z-10 max-w-3xl">
-          <div class="flex items-center gap-2 mb-4">
-            <span class="px-3 py-1 text-xs font-bold bg-red-500/20 text-red-400 border border-red-500/30 rounded-full uppercase tracking-wider">Interview Prep</span>
-            <span class="px-3 py-1 text-xs font-bold bg-zinc-700 text-zinc-300 border border-zinc-600 rounded-full uppercase tracking-wider">HLD + LLD</span>
-          </div>
-          <h1 class="text-3xl md:text-5xl font-extrabold text-white leading-tight mb-4">
-            System Design<br/>
-            <span class="bg-gradient-to-r from-red-400 to-pink-500 bg-clip-text text-transparent">Interview Platform</span>
-          </h1>
-          <p class="text-zinc-300 text-lg max-w-2xl leading-relaxed mb-6">
-            Everything you need to crack HLD &amp; LLD interviews — structured frameworks, real-world case studies,
-            design patterns, capacity estimation math, and an interactive readiness checklist.
-          </p>
-          <!-- CTA buttons -->
-          <div class="flex flex-wrap gap-3 mb-8">
-            <NuxtLink to="/system-design/practice"
-              class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-red-500 to-pink-600 text-white font-bold rounded-xl hover:opacity-90 transition-opacity text-sm shadow-lg shadow-red-500/25">
-              <Icon name="heroicons:play-circle" class="text-base" />
-              Start Practicing
-            </NuxtLink>
-            <a href="#tabs"
-              class="inline-flex items-center gap-2 px-6 py-3 bg-zinc-800 border border-zinc-600 text-zinc-300 hover:text-white font-semibold rounded-xl transition-colors text-sm">
-              <Icon name="heroicons:book-open" class="text-base" />
-              Study Guides
-            </a>
-          </div>
-          <!-- Quick stats -->
-          <div class="flex flex-wrap gap-6">
-            <div v-for="stat in [
-              { v: '40+', l: 'Practice Problems' },
-              { v: '18', l: 'Design Patterns' },
-              { v: '2', l: 'Complete Frameworks' },
-              { v: '20+', l: 'Checklist Items' },
-            ]" :key="stat.l" class="flex flex-col">
-              <span class="text-2xl font-bold text-white">{{ stat.v }}</span>
-              <span class="text-xs text-zinc-400 uppercase tracking-wide">{{ stat.l }}</span>
+    <AppSection class="mb-0 pb-0 overflow-hidden relative">
+      <!-- Premium Background elements -->
+      <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-red-600/20 rounded-full blur-[120px] -z-10 animate-pulse" style="animation-duration: 8s" />
+      <div class="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-pink-600/10 rounded-full blur-[100px] -z-10 animate-pulse" style="animation-duration: 12s" />
+      
+      <div class="relative group">
+        <!-- Glow effect behind hero -->
+        <div class="absolute -inset-1 bg-gradient-to-r from-red-500 to-pink-600 rounded-3xl blur opacity-20 group-hover:opacity-30 transition duration-1000 group-hover:duration-200" />
+        
+        <div class="relative overflow-hidden rounded-3xl bg-zinc-900/40 backdrop-blur-3xl border border-white/10 px-8 py-16 md:px-20 md:py-24 mb-12 shadow-2xl">
+          <!-- bg grid decoration -->
+          <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle, #fff 1px, transparent 1px); background-size: 24px 24px;" />
+          
+          <div class="relative z-10 text-center md:text-left">
+            <div class="flex flex-wrap justify-center md:justify-start items-center gap-2 mb-8 scale-in">
+              <span class="px-4 py-1.5 text-[10px] font-black bg-white/5 text-red-400 border border-red-500/20 rounded-full uppercase tracking-[0.2em] backdrop-blur-sm">Interview Forge</span>
+              <span class="px-4 py-1.5 text-[10px] font-black bg-white/5 text-zinc-400 border border-white/10 rounded-full uppercase tracking-[0.2em] backdrop-blur-sm">HLD + LLD Mastery</span>
+            </div>
+            
+            <h1 class="text-4xl md:text-7xl font-black text-white leading-[1.1] mb-8 tracking-tight">
+              Master the Art of<br/>
+              <span class="bg-gradient-to-r from-red-500 via-pink-500 to-rose-500 bg-clip-text text-transparent drop-shadow-sm">System Design</span>
+            </h1>
+            
+            <p class="text-zinc-400 text-lg md:text-xl max-w-2xl leading-relaxed mb-10 font-medium mx-auto md:mx-0">
+              A comprehensive blueprint for cracking top-tier architecture interviews. 
+              From <span class="text-white border-b border-red-500/50">distributed systems</span> to <span class="text-white border-b border-pink-500/50">pattern-perfect code</span>.
+            </p>
+            
+            <!-- CTA buttons -->
+            <div class="flex flex-wrap justify-center md:justify-start gap-4 mb-12">
+              <NuxtLink to="/system-design/practice"
+                class="group/btn relative inline-flex items-center gap-3 px-8 py-4 bg-white text-black font-black rounded-2xl hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-red-500/20 overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-r from-red-500 to-pink-500 opacity-0 group-hover/btn:opacity-100 transition-opacity" />
+                <Icon name="heroicons:bolt-20-solid" class="text-xl relative z-10 group-hover/btn:text-white transition-colors" />
+                <span class="relative z-10 group-hover/btn:text-white transition-colors uppercase tracking-wider text-sm">Start Practicing</span>
+              </NuxtLink>
+              
+              <a href="#tabs"
+                class="inline-flex items-center gap-3 px-8 py-4 bg-zinc-800/50 backdrop-blur-md border border-white/10 text-zinc-300 hover:text-white hover:bg-zinc-800 hover:border-white/20 font-bold rounded-2xl transition-all duration-300 uppercase tracking-wider text-sm">
+                <Icon name="heroicons:academic-cap" class="text-xl" />
+                Curriculum
+              </a>
+            </div>
+            
+            <!-- Floating stats -->
+            <div class="flex flex-wrap justify-center md:justify-start gap-x-12 gap-y-6 pt-10 border-t border-white/5">
+              <div v-for="stat in [
+                { v: '40+', l: 'Scenarios', icon: 'heroicons:squares-2x2' },
+                { v: '18', l: 'Patterns', icon: 'heroicons:puzzle-piece' },
+                { v: 'JSON', l: 'Structures', icon: 'heroicons:code-bracket' },
+                { v: '∞', l: 'Readiness', icon: 'heroicons:check-badge' },
+              ]" :key="stat.l" class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
+                  <Icon :name="stat.icon" class="text-red-400 text-lg" />
+                </div>
+                <div class="flex flex-col">
+                  <span class="text-xl font-black text-white leading-none">{{ stat.v }}</span>
+                  <span class="text-[10px] text-zinc-500 font-bold uppercase tracking-widest">{{ stat.l }}</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </AppSection>
 
-    <!-- ══ ESTIMATION CHEAT SHEET ══ -->
+    <!-- ══ ESTIMATION FLOATING HUB ══ -->
     <AppSection class="mb-0 pb-0">
-      <div class="mb-8 bg-zinc-900 border border-zinc-700 rounded-xl p-5">
-        <div class="flex items-center gap-2 mb-4">
-          <Icon name="heroicons:calculator" class="text-amber-400 text-xl" />
-          <h2 class="text-base font-bold text-white uppercase tracking-widest">Quick Estimation Cheat Sheet</h2>
-        </div>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
-          <div v-for="tip in mathTips" :key="tip.label"
-            class="bg-zinc-800 border border-zinc-700 rounded-lg p-3 flex flex-col gap-1">
-            <span class="text-xs text-zinc-400">{{ tip.label }}</span>
-            <span class="text-sm font-bold text-amber-400">{{ tip.value }}</span>
+      <div class="relative -mt-20 z-20 group">
+        <div class="absolute -inset-0.5 bg-gradient-to-r from-zinc-700 to-zinc-800 rounded-2xl blur opacity-20" />
+        <div class="relative bg-zinc-900/80 backdrop-blur-2xl border border-white/10 rounded-2xl p-8 shadow-2xl">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-red-500/10 border border-red-500/20 rounded-xl flex items-center justify-center">
+                <Icon name="heroicons:beaker" class="text-red-400 text-2xl" />
+              </div>
+              <div>
+                <h2 class="text-lg font-black text-white uppercase tracking-tighter">Capacity Cheat Sheet</h2>
+                <p class="text-xs text-zinc-500 font-medium">Quick math for back-of-the-envelope estimations</p>
+              </div>
+            </div>
+            <div class="hidden lg:flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full">
+              <div class="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+              <span class="text-[10px] font-bold text-zinc-400 uppercase tracking-widest">Real-time reference active</span>
+            </div>
+          </div>
+          
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div v-for="tip in mathTips" :key="tip.label"
+              class="group/math relative overflow-hidden bg-white/5 border border-white/10 rounded-xl p-4 transition-all duration-300 hover:bg-white/10 hover:-translate-y-1">
+              <div class="absolute bottom-0 right-0 p-1 opacity-0 group-hover/math:opacity-10 transition-opacity">
+                <Icon name="heroicons:calculator" class="text-4xl" />
+              </div>
+              <span class="block text-[10px] font-black text-zinc-500 uppercase tracking-[0.1em] mb-1 group-hover/math:text-red-400/70 transition-colors">{{ tip.label }}</span>
+              <span class="text-base font-black text-zinc-100 tabular-nums">{{ tip.value }}</span>
+            </div>
           </div>
         </div>
       </div>
     </AppSection>
 
     <!-- ══ TAB NAV ══ -->
-    <AppSection id="tabs" class="mb-0 pb-0">
-      <div class="flex gap-1 overflow-x-auto pb-1 scrollbar-hide mb-6" style="scrollbar-width:none">
-        <button
-          v-for="tab in tabs" :key="tab.id"
-          @click="activeTab = tab.id as any"
-          :class="[
-            'flex items-center gap-1.5 px-4 py-2.5 rounded-lg text-sm font-semibold whitespace-nowrap transition-all duration-200 flex-shrink-0',
-            activeTab === tab.id
-              ? 'bg-gradient-to-r from-red-500 to-pink-600 text-white shadow-lg shadow-red-500/25'
-              : 'bg-zinc-800 text-zinc-400 hover:text-white hover:bg-zinc-700 border border-zinc-700'
-          ]"
-        >
-          <Icon :name="tab.icon" class="text-base" />
-          {{ tab.label }}
-        </button>
-      </div>
-    </AppSection>
-
-    <!-- ══ HLD GUIDE ══ -->
-    <AppSection v-if="activeTab === 'hld'" class="mb-16">
-      <div class="mb-8">
-        <h2 class="text-2xl font-bold text-white mb-2">High-Level Design Framework</h2>
-        <p class="text-zinc-400">Follow this 6-step framework during every HLD interview. Walk the interviewer through each step explicitly.</p>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div v-for="step in hldSteps" :key="step.step"
-          class="bg-zinc-900 border border-zinc-700 rounded-xl p-6 hover:border-zinc-500 transition-all duration-200 group">
-          <div class="flex items-start gap-4 mb-4">
-            <div :class="`bg-gradient-to-br ${step.color} w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 text-white`">
-              <Icon :name="step.icon" class="text-lg" />
-            </div>
-            <div>
-              <span class="text-xs text-zinc-500 font-mono">Step {{ step.step }}</span>
-              <h3 class="text-white font-bold text-base">{{ step.title }}</h3>
-            </div>
-          </div>
-          <ul class="space-y-2">
-            <li v-for="tip in step.tips" :key="tip" class="flex items-start gap-2 text-sm text-zinc-400 group-hover:text-zinc-300 transition-colors">
-              <Icon name="heroicons:chevron-right" class="text-red-400 text-xs mt-0.5 flex-shrink-0" />
-              <span>{{ tip }}</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- HLD Tips box -->
-      <div class="mt-10 bg-gradient-to-r from-red-500/10 to-pink-500/10 border border-red-500/30 rounded-xl p-6">
-        <div class="flex items-center gap-2 mb-3">
-          <Icon name="heroicons:fire" class="text-red-400 text-xl" />
-          <h3 class="text-white font-bold">Pro Tips for HLD Interviews</h3>
-        </div>
-        <div class="grid md:grid-cols-2 gap-3 text-sm text-zinc-300">
-          <div v-for="tip in hldProTips" :key="tip"
-            class="bg-zinc-900/60 rounded-lg px-4 py-2.5 border border-zinc-800">
-            {{ tip }}
-          </div>
+    <AppSection id="tabs" class="mb-0 pb-0 sticky top-0 z-40">
+      <div class="px-2 py-4">
+        <div class="flex p-1.5 gap-1.5 overflow-x-auto bg-zinc-900/60 backdrop-blur-xl border border-white/10 rounded-2xl scrollbar-hide" style="scrollbar-width:none">
+          <button
+            v-for="tab in tabs" :key="tab.id"
+            @click="activeTab = tab.id as any"
+            :class="[
+              'flex items-center gap-2.5 px-6 py-3 rounded-xl text-xs font-black uppercase tracking-widest transition-all duration-300 whitespace-nowrap',
+              activeTab === tab.id
+                ? 'bg-white text-black shadow-lg shadow-white/10'
+                : 'text-zinc-500 hover:text-white hover:bg-white/5'
+            ]"
+          >
+            <Icon :name="tab.icon" class="text-sm" />
+            {{ tab.label }}
+          </button>
         </div>
       </div>
     </AppSection>
 
-    <!-- ══ LLD GUIDE ══ -->
-    <AppSection v-if="activeTab === 'lld'" class="mb-16">
-      <div class="mb-8">
-        <h2 class="text-2xl font-bold text-white mb-2">Low-Level Design Framework</h2>
-        <p class="text-zinc-400">Structure your LLD interviews using this 6-step approach. Focus on clean abstractions and justifying every design decision.</p>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div v-for="step in lldSteps" :key="step.step"
-          class="bg-zinc-900 border border-zinc-700 rounded-xl p-6 hover:border-zinc-500 transition-all duration-200 group">
-          <div class="flex items-start gap-4 mb-4">
-            <div :class="`bg-gradient-to-br ${step.color} w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 text-white`">
-              <Icon :name="step.icon" class="text-lg" />
-            </div>
-            <div>
-              <span class="text-xs text-zinc-500 font-mono">Step {{ step.step }}</span>
-              <h3 class="text-white font-bold text-base">{{ step.title }}</h3>
-            </div>
+    <div class="">
+      <!-- ══ HLD GUIDE ══ -->
+      <AppSection v-if="activeTab === 'hld'" class="mb-16">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <div class="max-w-2xl">
+            <h2 class="text-3xl md:text-5xl font-black text-white mb-4 tracking-tighter">High-Level Design<span class="text-red-500">.</span></h2>
+            <p class="text-zinc-400 text-lg leading-relaxed">A strategic blueprint for scaling systems to millions. Focus on components, interactions, and data flow.</p>
           </div>
-          <ul class="space-y-2">
-            <li v-for="tip in step.tips" :key="tip" class="flex items-start gap-2 text-sm text-zinc-400 group-hover:text-zinc-300 transition-colors">
-              <Icon name="heroicons:chevron-right" class="text-purple-400 text-xs mt-0.5 flex-shrink-0" />
-              <span>{{ tip }}</span>
-            </li>
-          </ul>
+          <div class="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-zinc-500 bg-white/5 border border-white/10 px-4 py-2 rounded-full">
+            <span class="w-2 h-2 rounded-full bg-red-500" />
+            Strategic Phase
+          </div>
         </div>
-      </div>
 
-      <!-- SOLID Principles card -->
-      <div class="mt-10 bg-zinc-900 border border-zinc-700 rounded-xl p-6">
-        <div class="flex items-center gap-2 mb-4">
-          <Icon name="heroicons:cube-transparent" class="text-purple-400 text-xl" />
-          <h3 class="text-white font-bold">SOLID Principles — Quick Reference</h3>
-        </div>
-        <div class="grid md:grid-cols-5 gap-3">
-          <div v-for="s in [
-            { letter:'S', name:'Single Responsibility', desc:'One reason to change per class' },
-            { letter:'O', name:'Open / Closed', desc:'Open for extension, closed for modification' },
-            { letter:'L', name:'Liskov Substitution', desc:'Subtypes replaceable for their base types' },
-            { letter:'I', name:'Interface Segregation', desc:'Small focused interfaces over fat ones' },
-            { letter:'D', name:'Dependency Inversion', desc:'Depend on abstractions, not concretions' },
-          ]" :key="s.letter"
-          class="bg-zinc-800 rounded-lg p-4 border border-zinc-700 flex flex-col gap-2">
-            <span class="text-2xl font-black text-purple-400">{{ s.letter }}</span>
-            <span class="text-xs font-bold text-white">{{ s.name }}</span>
-            <span class="text-xs text-zinc-400">{{ s.desc }}</span>
-          </div>
-        </div>
-      </div>
-    </AppSection>
-
-    <!-- ══ PATTERNS ══ -->
-    <AppSection v-if="activeTab === 'patterns'" class="mb-16">
-      <div class="mb-8">
-        <h2 class="text-2xl font-bold text-white mb-2">Design Patterns Reference</h2>
-        <p class="text-zinc-400">Master these patterns — interviewers expect you to name, explain, and justify them on the spot.</p>
-      </div>
-      <div class="flex flex-col gap-8">
-        <div v-for="group in designPatterns" :key="group.category"
-          :class="`bg-zinc-900 border-l-4 ${group.color} border border-zinc-700 rounded-xl p-6`">
-          <div class="flex items-center gap-2 mb-5">
-            <span :class="`px-3 py-1 text-xs font-bold rounded-full ${group.badge}`">{{ group.category }}</span>
-          </div>
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <div v-for="item in group.items" :key="item.name"
-              class="bg-zinc-800 rounded-lg p-4 border border-zinc-700 hover:border-zinc-500 transition-all">
-              <div class="font-bold text-white text-sm mb-1">{{ item.name }}</div>
-              <div class="text-xs text-zinc-400 leading-relaxed">{{ item.desc }}</div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div v-for="step in hldSteps" :key="step.step"
+            class="group relative overflow-hidden bg-zinc-900/40 backdrop-blur-md border border-white/5 rounded-3xl p-8 hover:border-red-500/30 transition-all duration-500">
+            <div class="absolute top-0 right-0 p-8 text-6xl font-black text-white/[0.03] group-hover:text-red-500/[0.05] transition-colors">
+              {{ step.step }}
             </div>
-          </div>
-        </div>
-      </div>
-    </AppSection>
-
-    <!-- ══ CASE STUDIES ══ -->
-    <AppSection v-if="activeTab === 'cases'" class="mb-16">
-      <div class="mb-8">
-        <h2 class="text-2xl font-bold text-white mb-2">Real-World Case Studies</h2>
-        <p class="text-zinc-400">Practice these popular interview questions. Use the key points and numbers as mental anchors.</p>
-      </div>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div v-for="cs in caseStudies" :key="cs.title"
-          :class="`bg-zinc-900 border border-zinc-700 border-l-4 ${cs.color} rounded-xl p-6 hover:border-zinc-500 transition-all group`">
-          <div class="flex items-start justify-between mb-4">
-            <div class="flex items-center gap-3">
-              <div class="w-9 h-9 bg-zinc-800 rounded-lg flex items-center justify-center border border-zinc-700">
-                <Icon :name="cs.icon" class="text-white text-base" />
+            
+            <div class="relative z-10">
+              <div :class="`bg-gradient-to-br ${step.color} w-14 h-14 rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-white/5`">
+                <Icon :name="step.icon" class="text-2xl text-white" />
               </div>
-              <h3 class="text-white font-bold text-base">{{ cs.title }}</h3>
+              
+              <h3 class="text-xl font-black text-white mb-6 tracking-tight group-hover:text-red-400 transition-colors">{{ step.title }}</h3>
+              
+              <ul class="space-y-4">
+                <li v-for="tip in step.tips" :key="tip" class="flex items-start gap-3 group/li">
+                  <div class="mt-1.5 w-1.5 h-1.5 rounded-full bg-zinc-700 group-hover/li:bg-red-500 transition-colors" />
+                  <span class="text-sm text-zinc-500 leading-relaxed font-medium group-hover/li:text-zinc-300 transition-colors">{{ tip }}</span>
+                </li>
+              </ul>
             </div>
-            <div class="flex flex-col items-end gap-1">
-              <span :class="`text-xs px-2 py-0.5 rounded-full font-semibold ${cs.diffColor}`">{{ cs.difficulty }}</span>
-              <span class="text-xs text-zinc-500 bg-zinc-800 px-2 py-0.5 rounded-full">{{ cs.tag }}</span>
-            </div>
-          </div>
-          <ul class="space-y-1.5 mb-4">
-            <li v-for="kp in cs.keyPoints" :key="kp" class="flex items-start gap-2 text-sm text-zinc-400 group-hover:text-zinc-300 transition-colors">
-              <Icon name="heroicons:check-circle" class="text-green-400 text-sm mt-0.5 flex-shrink-0" />
-              <span>{{ kp }}</span>
-            </li>
-          </ul>
-          <div class="flex gap-4 pt-3 border-t border-zinc-800 text-xs text-zinc-500">
-            <span>⚡ <b class="text-zinc-400">QPS:</b> {{ cs.qps }}</span>
-            <span>💾 <b class="text-zinc-400">Storage:</b> {{ cs.storage }}</span>
           </div>
         </div>
-      </div>
-    </AppSection>
 
-    <!-- ══ CHECKLIST ══ -->
-    <AppSection v-if="activeTab === 'checklist'" class="mb-16">
-      <div class="mb-8">
-        <div class="flex items-center justify-between flex-wrap gap-4">
-          <div>
-            <h2 class="text-2xl font-bold text-white mb-2">Interview Readiness Checklist</h2>
-            <p class="text-zinc-400">Track what you've covered. Check off items as you prepare.</p>
+        <!-- HLD Tips box -->
+        <div class="mt-16 group">
+          <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-red-600/10 to-pink-600/10 border border-red-500/20 p-8 md:p-12">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-red-500/10 blur-[80px] -z-10" />
+            <div class="flex items-center gap-4 mb-8">
+              <div class="w-12 h-12 bg-red-500 rounded-2xl flex items-center justify-center shadow-lg shadow-red-500/20">
+                <Icon name="heroicons:bolt-solid" class="text-white text-2xl" />
+              </div>
+              <h3 class="text-2xl font-black text-white tracking-tight uppercase px-2">Interview Mastery</h3>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div v-for="tip in hldProTips" :key="tip"
+                class="flex items-center gap-4 bg-black/40 backdrop-blur-md border border-white/5 rounded-2xl px-6 py-4 hover:bg-black/60 transition-colors">
+                <Icon name="heroicons:check-badge" class="text-red-500 text-xl shrink-0" />
+                <span class="text-sm font-bold text-zinc-300 leading-tight">{{ tip }}</span>
+              </div>
+            </div>
           </div>
-          <!-- Progress -->
-          <div class="bg-zinc-900 border border-zinc-700 rounded-xl px-6 py-4 min-w-[180px]">
-            <div class="text-center">
-              <div class="text-3xl font-black text-white">{{ progress }}%</div>
-              <div class="text-xs text-zinc-400 mb-2">Ready</div>
-              <div class="h-2 bg-zinc-700 rounded-full overflow-hidden">
+        </div>
+      </AppSection>
+
+      <!-- ══ LLD GUIDE ══ -->
+      <AppSection v-if="activeTab === 'lld'" class="mb-16">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <div class="max-w-2xl">
+            <h2 class="text-3xl md:text-5xl font-black text-white mb-4 tracking-tighter">Low-Level Design<span class="text-purple-500">.</span></h2>
+            <p class="text-zinc-400 text-lg leading-relaxed">Turning concepts into executable reality. Focus on SOLID principles, clean code, and design patterns.</p>
+          </div>
+          <div class="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-zinc-500 bg-white/5 border border-white/10 px-4 py-2 rounded-full">
+            <span class="w-2 h-2 rounded-full bg-purple-500" />
+            Tactical Phase
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div v-for="step in lldSteps" :key="step.step"
+            class="group relative overflow-hidden bg-zinc-900/40 backdrop-blur-md border border-white/5 rounded-3xl p-8 hover:border-purple-500/30 transition-all duration-500">
+            <div class="absolute top-0 right-0 p-8 text-6xl font-black text-white/[0.03] group-hover:text-purple-500/[0.05] transition-colors">
+              {{ step.step }}
+            </div>
+            
+            <div class="relative z-10">
+              <div :class="`bg-gradient-to-br ${step.color} w-14 h-14 rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-white/5`">
+                <Icon :name="step.icon" class="text-2xl text-white" />
+              </div>
+              
+              <h3 class="text-xl font-black text-white mb-6 tracking-tight group-hover:text-purple-400 transition-colors">{{ step.title }}</h3>
+              
+              <ul class="space-y-4">
+                <li v-for="tip in step.tips" :key="tip" class="flex items-start gap-3 group/li">
+                  <div class="mt-1.5 w-1.5 h-1.5 rounded-full bg-zinc-700 group-hover/li:bg-purple-500 transition-colors" />
+                  <span class="text-sm text-zinc-500 leading-relaxed font-medium group-hover/li:text-zinc-300 transition-colors">{{ tip }}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- SOLID Principles card -->
+        <div class="mt-16 group">
+          <div class="relative overflow-hidden rounded-3xl bg-zinc-900 border border-white/10 p-1">
+            <div class="bg-zinc-900/40 backdrop-blur-3xl rounded-[22px] p-8 md:p-12">
+              <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12">
+                <div class="flex items-center gap-4">
+                  <div class="w-12 h-12 bg-purple-500 rounded-2xl flex items-center justify-center shadow-lg shadow-purple-500/20">
+                    <Icon name="heroicons:cube-transparent-solid" class="text-white text-2xl" />
+                  </div>
+                  <h3 class="text-2xl font-black text-white tracking-tight uppercase">The SOLID Manifesto</h3>
+                </div>
+              </div>
+              
+              <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6">
+                <div v-for="s in [
+                  { letter:'S', name:'Single Responsibility', desc:'One reason to change' },
+                  { letter:'O', name:'Open / Closed', desc:'Extend, don\'t modify' },
+                  { letter:'L', name:'Liskov Substitution', desc:'Safe subtype swaps' },
+                  { letter:'I', name:'Interface Segregation', desc:'Focused protocols' },
+                  { letter:'D', name:'Dependency Inversion', desc:'Trust abstractions' },
+                ]" :key="s.letter"
+                class="group/solid relative bg-white/5 border border-white/5 rounded-2xl p-6 transition-all duration-300 hover:bg-purple-500/10 hover:border-purple-500/30">
+                  <span class="block text-4xl font-black text-purple-500 mb-2 transition-transform group-hover/solid:scale-110">{{ s.letter }}</span>
+                  <span class="block text-xs font-black text-white uppercase tracking-tighter mb-1">{{ s.name }}</span>
+                  <span class="block text-[10px] font-bold text-zinc-500 uppercase leading-snug">{{ s.desc }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </AppSection>
+    </div>
+
+      <!-- ══ PATTERNS ══ -->
+      <AppSection v-if="activeTab === 'patterns'" class="mb-16">
+        <div class="mb-12">
+          <h2 class="text-3xl md:text-5xl font-black text-white mb-4 tracking-tighter">Architecture Patterns<span class="text-blue-500">.</span></h2>
+          <p class="text-zinc-400 text-lg leading-relaxed">The reusable solutions to common system design challenges. Speak this language fluently.</p>
+        </div>
+        
+        <div class="flex flex-col gap-12">
+          <div v-for="group in designPatterns" :key="group.category"
+            class="relative overflow-hidden bg-zinc-900/40 backdrop-blur-md border border-white/5 rounded-3xl p-8">
+            <div class="flex items-center gap-4 mb-10">
+              <span :class="`px-4 py-1.5 text-[10px] font-black rounded-full uppercase tracking-widest ${group.badge} border border-white/5 shadow-sm`">
+                {{ group.category }}
+              </span>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div v-for="item in group.items" :key="item.name"
+                class="group/pattern bg-white/5 border border-white/5 rounded-2xl p-6 hover:bg-white/10 hover:border-white/10 transition-all duration-300">
+                <div class="flex items-center justify-between mb-4">
+                  <div class="font-black text-white text-base tracking-tight group-hover/pattern:text-blue-400 transition-colors">{{ item.name }}</div>
+                  <Icon name="heroicons:arrow-up-right" class="text-zinc-600 transition-transform group-hover/pattern:translate-x-0.5 group-hover/pattern:-translate-y-0.5" />
+                </div>
+                <div class="text-sm text-zinc-500 leading-relaxed font-medium group-hover/pattern:text-zinc-400 transition-colors">{{ item.desc }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </AppSection>
+
+      <!-- ══ CASE STUDIES ══ -->
+      <AppSection v-if="activeTab === 'cases'" class="mb-16">
+        <div class="mb-12">
+          <h2 class="text-3xl md:text-5xl font-black text-white mb-4 tracking-tighter">Real-World Cases<span class="text-emerald-500">.</span></h2>
+          <p class="text-zinc-400 text-lg leading-relaxed">Reverse-engineering the world's most scalable platforms. Identify the core bottlenecks first.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div v-for="cs in caseStudies" :key="cs.title"
+            class="group relative overflow-hidden bg-zinc-900/40 backdrop-blur-md border border-white/5 rounded-3xl p-8 hover:border-emerald-500/30 transition-all duration-500">
+            <div class="flex items-start justify-between mb-8">
+              <div class="flex items-center gap-4">
+                <div class="w-14 h-14 bg-zinc-800 rounded-2xl flex items-center justify-center border border-white/5 shadow-xl transition-transform group-hover:scale-110">
+                  <Icon :name="cs.icon" class="text-white text-2xl" />
+                </div>
+                <div>
+                  <h3 class="text-xl font-black text-white tracking-tight leading-tight group-hover:text-emerald-400 transition-colors">{{ cs.title }}</h3>
+                  <div class="flex items-center gap-2 mt-1">
+                    <span :class="`text-[8px] px-2 py-0.5 rounded-full font-black uppercase tracking-widest ${cs.diffColor}`">{{ cs.difficulty }}</span>
+                    <span class="text-[8px] text-zinc-500 bg-white/5 border border-white/10 px-2 py-0.5 rounded-full font-black uppercase tracking-widest">{{ cs.tag }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="space-y-4 mb-10">
+              <div v-for="kp in cs.keyPoints" :key="kp" class="flex items-start gap-3 group/li">
+                <div class="mt-1.5 w-1.5 h-1.5 rounded-full bg-zinc-700 group-hover/li:bg-emerald-500 transition-colors shrink-0" />
+                <span class="text-sm text-zinc-500 leading-relaxed font-medium group-hover/li:text-zinc-300 transition-colors">{{ kp }}</span>
+              </div>
+            </div>
+
+            <div class="flex gap-8 pt-6 border-t border-white/5">
+              <div class="flex flex-col gap-1">
+                <span class="text-[9px] font-black text-zinc-600 uppercase tracking-widest">Read Peak</span>
+                <span class="text-xs font-black text-emerald-400/80">{{ cs.qps }}</span>
+              </div>
+              <div class="flex flex-col gap-1">
+                <span class="text-[9px] font-black text-zinc-600 uppercase tracking-widest">Storage Scale</span>
+                <span class="text-xs font-black text-emerald-400/80">{{ cs.storage }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </AppSection>
+
+      <!-- ══ CHECKLIST ══ -->
+      <AppSection v-if="activeTab === 'checklist'" class="mb-16">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-12 mb-16">
+          <div class="max-w-2xl">
+            <h2 class="text-3xl md:text-5xl font-black text-white mb-4 tracking-tighter">Readiness Metrics<span class="text-amber-500">.</span></h2>
+            <p class="text-zinc-400 text-lg leading-relaxed">Quantify your interview readiness. Aim for 80%+ across all categories before your first mock.</p>
+          </div>
+          
+          <!-- Premium Progress Tracker -->
+          <div class="relative group shrink-0">
+            <div class="absolute -inset-1 bg-gradient-to-r from-amber-500 to-orange-600 rounded-3xl blur opacity-20 group-hover:opacity-40 transition duration-500" />
+            <div class="relative bg-zinc-900 border border-white/10 rounded-3xl p-8 min-w-[240px]">
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-[10px] font-black text-zinc-500 uppercase tracking-widest">System Health</span>
+                <span class="text-lg font-black text-white tabular-nums">{{ progress }}%</span>
+              </div>
+              <div class="h-4 bg-zinc-800 rounded-full overflow-hidden p-1 shadow-inner">
                 <div
-                  class="h-full rounded-full bg-gradient-to-r from-red-500 to-pink-500 transition-all duration-500"
+                  class="h-full rounded-full bg-gradient-to-r from-amber-500 to-orange-600 transition-all duration-1000 ease-out shadow-lg shadow-amber-500/20"
                   :style="`width: ${progress}%`"
                 />
               </div>
-              <div class="text-xs text-zinc-400 mt-1">{{ doneItems }} / {{ totalItems }} done</div>
+              <div class="flex justify-between mt-4">
+                <span class="text-[9px] font-bold text-zinc-600 uppercase">Input: {{ totalItems }} items</span>
+                <span class="text-[9px] font-bold text-amber-500 uppercase">Processed: {{ doneItems }}</span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="flex flex-col gap-8">
-        <div v-for="(group, gi) in checkGroups" :key="group.title"
-          class="bg-zinc-900 border border-zinc-700 rounded-xl p-6">
-          <div class="flex items-center gap-2 mb-5">
-            <Icon :name="group.icon" :class="`text-xl ${group.color}`" />
-            <h3 class="text-white font-bold text-lg">{{ group.title }}</h3>
-            <span class="ml-auto text-xs text-zinc-500">
-              {{ group.items.filter(i => i.done).length }} / {{ group.items.length }}
-            </span>
-          </div>
-          <div class="space-y-3">
-            <label
-              v-for="item in group.items" :key="item.id"
-              :for="`chk-${item.id}`"
-              class="flex items-center gap-3 cursor-pointer group"
-            >
-              <input
-                :id="`chk-${item.id}`"
-                type="checkbox"
-                :checked="item.done"
-                @change="toggleCheck(gi, item.id)"
-                class="sr-only"
-              />
-              <div
-                :class="[
-                  'w-5 h-5 rounded border-2 flex items-center justify-center flex-shrink-0 transition-all duration-200',
-                  item.done ? 'bg-green-500 border-green-500' : 'border-zinc-600 group-hover:border-zinc-400'
-                ]"
-              >
-                <Icon v-if="item.done" name="heroicons:check" class="text-white text-xs" />
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div v-for="(group, gi) in checkGroups" :key="group.title"
+            class="group relative overflow-hidden bg-zinc-900/40 backdrop-blur-md border border-white/10 rounded-3xl p-8 hover:border-white/20 transition-all">
+            <div class="flex items-center gap-4 mb-8">
+              <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/5 flex items-center justify-center">
+                <Icon :name="group.icon" :class="`text-xl ${group.color}`" />
               </div>
-              <span :class="['text-sm transition-colors', item.done ? 'text-zinc-500 line-through' : 'text-zinc-300 group-hover:text-white']">
-                {{ item.text }}
-              </span>
-            </label>
+              <div>
+                <h3 class="text-base font-black text-white tracking-tight uppercase leading-none mb-1">{{ group.title }}</h3>
+                <span class="text-[10px] font-black text-zinc-500 uppercase tracking-widest">
+                  {{ group.items.filter(i => i.done).length }} of {{ group.items.length }} bitwise complete
+                </span>
+              </div>
+            </div>
+            
+            <div class="space-y-3">
+              <label
+                v-for="item in group.items" :key="item.id"
+                :for="`chk-${item.id}`"
+                class="flex items-center gap-4 cursor-pointer group/label select-none"
+              >
+                <input
+                  :id="`chk-${item.id}`"
+                  type="checkbox"
+                  :checked="item.done"
+                  @change="toggleCheck(gi, item.id)"
+                  class="sr-only"
+                />
+                <div
+                  :class="[
+                    'w-6 h-6 rounded-lg border-2 flex items-center justify-center flex-shrink-0 transition-all duration-300',
+                    item.done ? 'bg-amber-500 border-amber-500 scale-110 shadow-lg shadow-amber-500/20' : 'border-zinc-800 bg-white/5 group-hover/label:border-zinc-600 group-hover/label:scale-105'
+                  ]"
+                >
+                  <Icon v-if="item.done" name="heroicons:check-16-solid" class="text-black text-xs" />
+                </div>
+                <span :class="['text-xs font-bold transition-all duration-300', item.done ? 'text-zinc-600 line-through' : 'text-zinc-400 group-hover/label:text-white']">
+                  {{ item.text }}
+                </span>
+              </label>
+            </div>
           </div>
         </div>
-      </div>
-    </AppSection>
+      </AppSection>
+
 
   </div>
 </template>
+
+<style scoped>
+.scale-in {
+  animation: scale-in 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes scale-in {
+  0% { opacity: 0; transform: scale(0.95) translateY(10px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.1; transform: scale(1); }
+  50% { opacity: 0.2; transform: scale(1.05); }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 8s infinite ease-in-out;
+}
+</style>

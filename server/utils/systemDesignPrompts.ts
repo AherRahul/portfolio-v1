@@ -248,21 +248,59 @@ ${GLOBAL_FORMATTING_RULES}
 ${data || '(empty)'}
 
 Evaluate ONLY the scaling strategy. 
-SCORING RUBRIC (Stricter for higher difficulty):
-- **Accurate Bottleneck identification (3pts):** Identifying hot partitions, N+1s, IOPS limits.
-- **Scaling concrete solutions (3pts):** Sharding, Consistent Hashing, Replication lag management.
-- **SPOF Awareness (2pts):** Network, AZ failure, Quorum issues.
-- **Pragmatic trade-offs (2pts):** Complexity vs Gains. Lead candidates MUST handle this.
+SCORING RUBRIC:
+- **Accurate Bottleneck identification (3pts)**
+- **Scaling concrete solutions (3pts)**
+- **SPOF Awareness (2pts)**
+- **Pragmatic trade-offs (2pts)**
 
-Respond with ONLY valid JSON:
-{
-  "score": <0-10>,
-  "maxScore": 10,
-  "passing": <true if score >= 6>,
-  "feedback": "<2 sentence scaling audit summary>",
-  "whatWentWell": ["<specific bottleneck or strategy correctly identified>"],
-  "improvements": ["<major scaling gap>", "<SPOF missed>"],
-  "modelAnswer": "<Top bottlenecks and scaling strategies according to a high-level architect. Use clean Markdown sub-headings. NO horizontal lines.>"
+Respond with ONLY valid JSON (score, maxScore, passing, feedback, whatWentWell, improvements, modelAnswer).`
 }
-Return ONLY the JSON object, no markdown, no extra text.`
+
+export function buildApiDesignPrompt(q: StepEvalRequest, data: any[]): string {
+  return `You are a world-class API architect.
+${getDifficultyContext(q.difficulty)}
+${GLOBAL_FORMATTING_RULES}
+
+**Problem:** "${q.questionTitle}"
+**Step:** API Design
+
+**Candidate's Endpoints:**
+${data.map(e => `- ${e.method} ${e.path}: ${e.description}`).join('\n')}
+
+Evaluate the API design for RESTful best practices, naming consistency, and completeness for the problem requirements.
+
+Respond with ONLY valid JSON (score, maxScore, passing, feedback, whatWentWell, improvements, modelAnswer).`
+}
+
+export function buildDatabaseDesignPrompt(q: StepEvalRequest, data: any[]): string {
+  return `You are a world-class Database Architect.
+${getDifficultyContext(q.difficulty)}
+${GLOBAL_FORMATTING_RULES}
+
+**Problem:** "${q.questionTitle}"
+**Step:** Database Design
+
+**Candidate's Storage Choices:**
+${data.map(s => `- ${s.type} (${s.technology}): ${s.schema}`).join('\n')}
+
+Evaluate the storage choices (SQL vs NoSQL) and the schema design.
+
+Respond with ONLY valid JSON (score, maxScore, passing, feedback, whatWentWell, improvements, modelAnswer).`
+}
+
+export function buildAnalyticsPrompt(q: StepEvalRequest, data: string): string {
+  return `You are a world-class Data Engineer.
+${getDifficultyContext(q.difficulty)}
+${GLOBAL_FORMATTING_RULES}
+
+**Problem:** "${q.questionTitle}"
+**Step:** Click Count Analytics / Event Tracking
+
+**Candidate's Design:**
+${data}
+
+Evaluate the design for real-time tracking, aggregation strategies (count-min sketch, hyperloglog, or batch processing), and storage efficiency.
+
+Respond with ONLY valid JSON (score, maxScore, passing, feedback, whatWentWell, improvements, modelAnswer).`
 }

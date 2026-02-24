@@ -68,7 +68,8 @@ const timerDisplay = computed(() => {
 const timerWarning = computed(() => timeLeft.value < 300)
 
 // ── Active Step & Left Panel Tab ─────────────────────────────────────────────
-const isLLD = computed(() => question.type === 'LLD' || question.type === 'Both')
+const mode = route.query.mode as string || (question.type === 'HLD' ? 'HLD' : 'LLD')
+const isLLD = computed(() => mode === 'LLD')
 const leftTab = ref<'guidelines' | 'description'>('guidelines')
 
 interface Step { id: string; label: string; subtitle: string; locked: boolean; skipped: boolean }
@@ -80,10 +81,12 @@ const steps = ref<Step[]>(
     { id: 'classes',      label: 'Designing Classes & Relationships', subtitle: 'Define attributes, methods, and relationships', locked: true, skipped: false },
     { id: 'code',         label: 'Code Implementation', subtitle: 'Implement your design following OOP principles', locked: true, skipped: false },
   ] : [
-    { id: 'requirements', label: 'Requirements & Estimation', subtitle: 'Clarify scope and do capacity estimation', locked: false, skipped: false },
-    { id: 'architecture', label: 'High-Level Architecture', subtitle: 'Draw the system components and data flow', locked: true, skipped: false },
-    { id: 'deep-dive',    label: 'Deep Dive Key Components', subtitle: 'Explain the critical components in detail', locked: true, skipped: false },
-    { id: 'scaling',      label: 'Scaling & Bottlenecks', subtitle: 'Address failure points and scaling strategies', locked: true, skipped: false },
+    { id: 'requirements', label: '1. Requirements Gathering', subtitle: 'Identify the functional and non-functional requirements', locked: false, skipped: false },
+    { id: 'api',          label: '2. API Design', subtitle: 'Define the API endpoints, methods, and request/response formats', locked: true, skipped: false },
+    { id: 'architecture', label: '3. High-Level Design', subtitle: 'Design the system architecture with components, services, and data flow', locked: true, skipped: false },
+    { id: 'database',      label: '4. Database Design', subtitle: 'Design the database schema, tables, and relationships for data storage', locked: true, skipped: false },
+    { id: 'deep-dive',    label: '5. Deep Dive 1 - Caching Strategy', subtitle: 'Design the caching layer to handle high read traffic', locked: true, skipped: false },
+    { id: 'analytics',    label: '6. Deep Dive 2 - Click Count Analytics', subtitle: 'Design a system for real-time click/event tracking and analytics', locked: true, skipped: false },
   ]
 )
 
@@ -96,6 +99,33 @@ function goToStep(id: string) {
   if (steps.value[idx].locked) return
   activeStepId.value = id
 }
+
+// ── Sidebar & Whiteboard State ───────────────────────────────────────────────
+const isSidebarCollapsed = ref(false)
+const isWhiteboardFullscreen = ref<string | null>(null) // stepId of fullscreen whiteboard
+const showStorageDropdown = ref(false)
+
+function toggleSidebar() { isSidebarCollapsed.value = !isSidebarCollapsed.value }
+function toggleWhiteboardFullscreen(stepId: string) {
+  if (isWhiteboardFullscreen.value === stepId) isWhiteboardFullscreen.value = null
+  else isWhiteboardFullscreen.value = stepId
+}
+
+onMounted(() => {
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && isWhiteboardFullscreen.value) {
+      isWhiteboardFullscreen.value = null
+    }
+  })
+
+  // Close dropdown on click outside
+  window.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement
+    if (!target.closest('.storage-dropdown-container')) {
+      showStorageDropdown.value = false
+    }
+  })
+})
 
 function unlockNext() {
   const idx = activeStepIndex.value
@@ -355,16 +385,119 @@ async function submitCode() {
 }
 
 // ── HLD – Steps ──────────────────────────────────────────────────────────────
-const hldRequirements = ref('')
+const hldApiEndpoints = ref<{ method: 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH'; path: string; description: string }[]>([
+  { method: 'GET', path: '/api/v1/resource', description: '' }
+])
 const hldArchitecture = ref('')
-const hldDeepDive = ref('')
-const hldScaling = ref('')
 
-async function submitHldStep(stepId: string, content: string, minLength = 50) {
-  if (!content.trim() || content.trim().length < minLength) {
-    stepError.value[stepId] = `Please write at least ${minLength} characters for a meaningful answer.`
-    return
+function addEndpoint() { hldApiEndpoints.value.push({ method: 'GET', path: '', description: '' }) }
+function removeEndpoint(i: number) { if (hldApiEndpoints.value.length > 1) hldApiEndpoints.value.splice(i, 1) }
+
+// --- Rich Database Storage System ---
+interface DBColumn { name: string; type: string; isPrimary: boolean; isNullable: boolean; isIndexed: boolean }
+interface DBTable { name: string; columns: DBColumn[] }
+interface DBStorage { id: string; type: string; tech: string; icon: string; category: string; tables: DBTable[] }
+
+const hldDatabaseStorage = ref<DBStorage[]>([])
+const activeStorageIdx = ref(0)
+const hldDeepDive = ref('')
+const hldAnalytics = ref('')
+
+const STORAGE_CATALOG = [
+  { group: 'SQL Database', items: [
+    { name: 'PostgreSQL', icon: 'logos:postgresql', type: 'SQL' },
+    { name: 'MySQL', icon: 'logos:mysql', type: 'SQL' },
+    { name: 'Oracle', icon: 'logos:oracle', type: 'SQL' }
+  ]},
+  { group: 'NoSQL Database', items: [
+    { name: 'MongoDB', icon: 'logos:mongodb-icon', type: 'Document' },
+    { name: 'Cassandra', icon: 'logos:cassandra', type: 'Wide-Column' },
+    { name: 'DynamoDB', icon: 'logos:aws-dynamodb', type: 'Key-Value' },
+    { name: 'ScyllaDB', icon: 'logos:scylladb', type: 'Wide-Column' }
+  ]},
+  { group: 'Cache', items: [
+    { name: 'Redis', icon: 'logos:redis', type: 'In-Memory' },
+    { name: 'Memcached', icon: 'logos:memcached', type: 'In-Memory' },
+    { name: 'Dragonfly', icon: 'heroicons:bolt-solid', type: 'In-Memory' }
+  ]},
+  { group: 'Search Engine', items: [
+    { name: 'ElasticSearch', icon: 'logos:elasticsearch', type: 'Search' },
+    { name: 'OpenSearch', icon: 'logos:opensearch', type: 'Search' },
+    { name: 'Meilisearch', icon: 'heroicons:magnifying-glass-circle', type: 'Search' }
+  ]},
+  { group: 'Object Storage', items: [
+    { name: 'AWS S3', icon: 'logos:aws-s3', type: 'Object' },
+    { name: 'Google Cloud Storage', icon: 'logos:google-cloud', type: 'Object' },
+    { name: 'MinIO', icon: 'heroicons:square-3-stack-3d', type: 'Object' }
+  ]},
+  { group: 'Message Queue', items: [
+    { name: 'Kafka', icon: 'logos:kafka-icon', type: 'Stream' },
+    { name: 'RabbitMQ', icon: 'logos:rabbitmq-icon', type: 'Queue' },
+    { name: 'Pulsar', icon: 'heroicons:signal', type: 'Stream' }
+  ]}
+]
+
+const COLUMN_TYPES = ['VARCHAR(255)', 'TEXT', 'INT', 'SERIAL', 'BOOLEAN', 'TIMESTAMP', 'JSONB', 'UUID', 'FLOAT', 'DECIMAL']
+
+function addStorage(tech: string, icon: string, category: string, type: string) {
+  hldDatabaseStorage.value.push({
+    id: Math.random().toString(36).substr(2, 9),
+    tech, icon, category, type,
+    tables: []
+  })
+  activeStorageIdx.value = hldDatabaseStorage.value.length - 1
+  showStorageDropdown.value = false
+}
+
+function removeStorage(i: number) { 
+  hldDatabaseStorage.value.splice(i, 1)
+  if (activeStorageIdx.value >= hldDatabaseStorage.value.length) {
+    activeStorageIdx.value = Math.max(0, hldDatabaseStorage.value.length - 1)
   }
+}
+
+function addTable(storageIdx: number) {
+  hldDatabaseStorage.value[storageIdx].tables.push({
+    name: 'new_table',
+    columns: [{ name: 'id', type: 'SERIAL', isPrimary: true, isNullable: false, isIndexed: true }]
+  })
+}
+
+function addColumn(storageIdx: number, tableIdx: number) {
+  hldDatabaseStorage.value[storageIdx].tables[tableIdx].columns.push({
+    name: 'new_column', type: 'VARCHAR(255)', isPrimary: false, isNullable: true, isIndexed: false
+  })
+}
+
+const EXCALIDRAW_URL_BASE = "https://excalidraw.com?theme=dark&zoom=0.7"
+function getWhiteboardUrl(stepId: string) {
+  // Excalidraw needs a specific hash format for isolation: #room=ID,KEY
+  // - ID must be stable and unique to the step
+  // - KEY must be exactly 22 characters
+  const cleanSlug = slug.replace(/[^a-z0-9]/gi, '').toLowerCase()
+  const cleanStep = stepId.replace(/[^a-z0-9]/gi, '').toLowerCase()
+  
+  // Ensure stepId is at the front so it's never cut off by the substring
+  const roomId = `${cleanStep}_${cleanSlug}`.substring(0, 20).padEnd(20, '0')
+  const key = `${cleanStep}${cleanSlug}boardsecret`.substring(0, 22).padEnd(22, 'x')
+  
+  return `${EXCALIDRAW_URL_BASE}#room=${roomId},${key}`
+}
+const EXCALIDRAW_LIBRARIES = `https://libraries.excalidraw.com/?target=_blank&referrer=https%3A%2F%2Frahulaher.netlify.app%2Fsystem-design%2Fpractice%2F${slug}&useHash=true&token=_GiFZuhUvGZYG2NBOXls2&theme=light&version=2&sort=default`
+
+async function submitHldStep(stepId: string, content: any, minLength = 50) {
+  if (typeof content === 'string') {
+    if (!content.trim() || content.trim().length < minLength) {
+      stepError.value[stepId] = `Please write at least ${minLength} characters for a meaningful answer.`
+      return
+    }
+  } else if (Array.isArray(content)) {
+    if (content.length === 0) {
+       stepError.value[stepId] = `Please add at least one entry.`
+       return
+    }
+  }
+  
   stepError.value[stepId] = ''
   
   // For requirements, we want to structure it for the AI
@@ -447,10 +580,15 @@ async function evaluate() {
       },
       code: codeFiles.value.map(f => `// File: ${f.path}\n${f.content}`).join('\n\n'),
     } : {
-      requirements: { functional: [hldRequirements.value], nonFunctional: [] },
+      requirements: { 
+        functional: functionalReqs.value.filter(r => r.trim().length >= MIN_REQ_CHARS), 
+        nonFunctional: nonFunctionalReqs.value.filter(r => r.trim().length >= MIN_REQ_CHARS) 
+      },
+      api: hldApiEndpoints.value,
       architecture: hldArchitecture.value,
+      database: hldDatabaseStorage.value,
       deepDive: hldDeepDive.value,
-      scaling: hldScaling.value,
+      analytics: hldAnalytics.value,
     }
 
     const result = await $fetch('/api/system-design/evaluate', {
@@ -628,34 +766,7 @@ async function runSimulation() {
           {{ timerDisplay }}
         </button>
 
-        <!-- Final Evaluate -->
-        <div class="relative flex items-center group">
-          <div v-if="!allStepsCompleted && !evaluation" class="absolute bottom-full right-0 mb-3 w-64 p-4 bg-zinc-900 border border-zinc-800 rounded-2xl text-[11px] text-zinc-400 opacity-0 group-hover:opacity-100 transition-all pointer-events-none shadow-2xl z-[100] backdrop-blur-xl">
-             <div class="flex items-center gap-2 mb-2 text-zinc-100 font-black uppercase tracking-widest">
-               <Icon name="heroicons:lock-closed" class="text-amber-500" />
-               Audit Locked
-             </div>
-             <p class="mb-2 text-zinc-500 leading-tight">{{ evalRestrictionReason }}</p>
-             <div class="flex items-center gap-2 text-[10px]">
-                <div class="h-1 flex-1 bg-zinc-800 rounded-full overflow-hidden">
-                   <div :class="['h-full transition-all', averageScore >= 5 ? 'bg-emerald-500' : 'bg-amber-500']" :style="{ width: `${(averageScore / 10) * 100}%` }"></div>
-                </div>
-                <span :class="['font-black', averageScore >= 5 ? 'text-emerald-400' : 'text-zinc-500']">{{ averageScore.toFixed(1) }} <span class="opacity-50">/ 10</span></span>
-             </div>
-
-             <div class="absolute w-2 h-2 bg-zinc-900 border-r border-b border-zinc-700 rotate-45 bottom-[-5px] right-4"></div>
-          </div>
-          <button
-            @click="evaluate"
-            :disabled="evaluating"
-            class="px-4 py-1.5 text-xs font-bold bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg transition-colors disabled:opacity-30 flex items-center gap-1.5 shadow-lg shadow-emerald-500/10">
-            <Icon v-if="evaluating" name="heroicons:arrow-path" class="animate-spin text-sm" />
-            <Icon v-else name="heroicons:trophy" class="text-sm" />
-            {{ evaluating ? 'Evaluating...' : (evaluation ? 'View Final Report' : 'Generate Final Eval') }}
-          </button>
-        </div>
-
-        <!-- Saved Badge -->
+        <!-- Saved Badge / History -->
         <div v-if="savedReportData" @click="showEvalModal = true" class="cursor-pointer group relative">
           <div class="flex items-center gap-2 px-3 py-1.5 text-[10px] font-black uppercase tracking-widest text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 rounded-lg hover:bg-emerald-500/20 transition-all">
             <Icon name="heroicons:cloud-arrow-down" class="text-xs" />
@@ -707,17 +818,19 @@ async function runSimulation() {
         <button @click="leftTab = 'guidelines'" :class="['p-2 rounded-lg transition-all', leftTab === 'guidelines' ? 'bg-blue-500 text-white shadow-lg shadow-blue-500/20' : 'text-zinc-500 hover:text-zinc-300']">
           <Icon name="heroicons:book-open" class="text-lg" />
         </button>
-        <button @click="leftTab = 'description'" :class="['p-2 rounded-lg transition-all', leftTab === 'description' ? 'bg-blue-500 text-white shadow-lg shadow-blue-500/20' : 'text-zinc-500 hover:text-zinc-300']">
+        <button @click="leftTab = 'description'" :class="['p-2 rounded-lg transition-all', leftTab === 'description' ? 'bg-blue-500 text-white shadow-lg shadow-blue-500/20' : 'text-zinc-500 hover:text-zinc-300']" title="Problem Description">
           <Icon name="heroicons:document-text" class="text-lg" />
         </button>
-        <!-- <div class="mt-auto flex flex-col items-center gap-4">
-          <button class="p-2 text-zinc-600 hover:text-zinc-300"><Icon name="heroicons:cpu-chip" class="text-lg" /></button>
-          <button class="p-2 text-zinc-600 hover:text-zinc-300"><Icon name="heroicons:chat-bubble-left-right" class="text-lg" /></button>
-        </div> -->
+        <div class="mt-auto border-t border-zinc-900 pt-4 w-full flex flex-col items-center gap-4">
+          <button @click="toggleSidebar" class="p-2 text-zinc-500 hover:text-white transition-colors" :title="isSidebarCollapsed ? 'Expand Sidebar' : 'Collapse Sidebar'">
+            <Icon :name="isSidebarCollapsed ? 'heroicons:chevron-double-right' : 'heroicons:chevron-double-left'" class="text-sm" />
+          </button>
+        </div>
       </div>
 
       <!-- LEFT PANEL – content -->
-      <div class="w-64 flex-shrink-0 bg-zinc-950 border-r border-zinc-800 overflow-y-auto hidden md:flex flex-col">
+      <transition name="sidebar-slide">
+        <div v-if="!isSidebarCollapsed" class="w-64 flex-shrink-0 bg-zinc-950 border-r border-zinc-800 overflow-y-auto hidden md:flex flex-col">
         <div class="px-4 py-3 border-b border-zinc-800 flex items-center justify-between bg-zinc-900/10">
            <span class="text-[10px] font-black uppercase tracking-widest text-zinc-400">{{ leftTab }}</span>
            <button @click="leftTab = leftTab === 'guidelines' ? 'description' : 'guidelines'" class="text-zinc-600 hover:text-zinc-400 italic text-[10px]">Switch</button>
@@ -772,27 +885,27 @@ async function runSimulation() {
           </div>
         </div>
       </div>
+    </transition>
 
       <!-- RIGHT PANEL – steps workspace -->
-      <div :class="['flex-1 flex flex-col bg-zinc-950 min-h-0', activeStepId === 'code' ? 'overflow-hidden' : '']">
+      <div :class="['flex-1 flex flex-col bg-zinc-950 min-h-0', !isWhiteboardFullscreen ? 'transition-all duration-300' : '', activeStepId === 'code' ? 'overflow-hidden' : '']">
         <!-- Step progress breadcrumb -->
-        <div :class="['flex-shrink-0 flex items-center gap-2 flex-wrap border-zinc-800', activeStepId === 'code' ? 'p-4 border-b bg-zinc-900/10' : 'p-4 md:p-6 pb-0 mb-6']">
+        <div :class="['flex-shrink-0 flex items-center gap-1.5 overflow-x-auto custom-scrollbar border-zinc-800 scroll-smooth px-4 py-2.5', activeStepId === 'code' ? 'border-b bg-zinc-900/10' : 'mb-1']" style="flex-wrap: nowrap;">
           <button v-for="(step, i) in steps" :key="step.id"
             @click="goToStep(step.id)"
             :class="[
-              'flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full border transition-all',
+              'flex items-center gap-2 text-[10px] font-black uppercase tracking-wider px-3 py-1.5 rounded-full border transition-all flex-shrink-0 whitespace-nowrap',
               step.id === activeStepId ? 'bg-red-500 border-red-500 text-white shadow-lg shadow-red-500/10' :
-              step.locked ? 'border-zinc-700 text-zinc-600 cursor-not-allowed opacity-50' :
-              step.skipped ? 'border-zinc-600 text-zinc-500 line-through' :
-              'border-zinc-600 text-zinc-400 hover:border-zinc-400 cursor-pointer'
+              step.locked ? 'border-zinc-800 text-zinc-700 cursor-not-allowed opacity-50' :
+              step.skipped ? 'border-zinc-700 text-zinc-500 line-through' :
+              'border-zinc-800 text-zinc-500 hover:border-zinc-600 cursor-pointer'
             ]">
-            <span :class="['w-4 h-4 rounded-full flex items-center justify-center text-[10px] font-black', step.id === activeStepId ? 'bg-white text-red-500' : 'bg-zinc-700 text-zinc-400']">{{ i + 1 }}</span>
-            <span class="hidden sm:inline">{{ step.label }}</span>
-            <span v-if="step.skipped" class="text-[10px] text-zinc-500">(Skipped)</span>
+            <span :class="['w-3.5 h-3.5 rounded-full flex items-center justify-center text-[9px]', step.id === activeStepId ? 'bg-white text-red-500' : 'bg-zinc-800 text-zinc-500']">{{ i + 1 }}</span>
+            <span>{{ step.label }}</span>
           </button>
         </div>
 
-        <div :class="['flex-1 min-h-0', activeStepId === 'code' ? 'overflow-hidden' : 'overflow-y-auto p-4 md:p-6 pt-0']">
+        <div :class="['flex-1 min-h-0', activeStepId === 'code' ? 'overflow-hidden' : 'overflow-y-auto p-4 pt-0']">
 
         <!-- ─ REQUIREMENTS STEP ─ -->
         <div v-if="activeStepId === 'requirements'">
@@ -850,17 +963,21 @@ async function runSimulation() {
             <span class="px-2.5 py-1 rounded-full font-semibold bg-zinc-800 text-zinc-500">Each must be ≥ {{ MIN_REQ_CHARS }} characters</span>
           </div>
 
-          <div class="flex items-center gap-3 mt-4">
-            <button @click="submitRequirements" :disabled="!canEvaluateReqs || stepEvaluating['requirements']"
-              class="px-5 py-2 text-xs font-bold bg-green-600 hover:bg-green-500 disabled:opacity-40 disabled:cursor-not-allowed text-white rounded-lg transition-colors flex items-center gap-1.5">
-              <svg v-if="stepEvaluating['requirements']" class="animate-spin w-3.5 h-3.5" fill="none" viewBox="0 0 24 24">
-                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/>
-                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"/>
-              </svg>
-              <Icon v-else name="heroicons:sparkles" class="text-sm" />
-              {{ stepEvaluating['requirements'] ? 'Evaluating...' : 'Evaluate Requirements' }}
-            </button>
-            <button @click="skipStep" :disabled="stepEvaluating['requirements']" class="px-5 py-2 text-xs font-semibold text-zinc-400 hover:text-white border border-zinc-700 rounded-lg transition-colors disabled:opacity-50">Skip →</button>
+          <div class="flex flex-col gap-3 pt-6 border-t border-zinc-900 mt-6">
+            <p v-if="stepError['requirements']" class="text-[10px] text-red-400 font-bold flex items-center gap-2 bg-red-500/10 p-2 rounded-lg border border-red-500/20">
+               <Icon name="heroicons:exclamation-circle" /> {{ stepError['requirements'] }}
+            </p>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-4">
+                <button @click="submitRequirements" :disabled="!canEvaluateReqs || stepEvaluating['requirements']"
+                  class="px-5 py-2.5 text-xs font-black uppercase tracking-widest bg-emerald-600 hover:bg-emerald-500 disabled:opacity-30 text-white rounded-xl transition-all flex items-center gap-2 shadow-lg shadow-emerald-500/10">
+                  <Icon v-if="stepEvaluating['requirements']" name="heroicons:arrow-path" class="animate-spin" />
+                  <Icon v-else name="heroicons:sparkles" />
+                  {{ stepEvaluating['requirements'] ? 'Checking...' : 'Evaluate Requirements' }}
+                </button>
+              </div>
+              <button @click="skipStep" class="px-5 py-2.5 text-xs font-black uppercase tracking-widest text-zinc-500 hover:text-white border border-zinc-800 rounded-xl transition-colors">Skip →</button>
+            </div>
           </div>
 
           <!-- Inline step result -->
@@ -927,17 +1044,21 @@ async function runSimulation() {
             <span class="px-2.5 py-1 rounded-full font-semibold bg-zinc-800 text-zinc-500">Name ≥2 chars &amp; Description ≥10 chars</span>
           </div>
 
-          <div class="flex items-center gap-3 mt-4">
-            <button @click="submitEntities" :disabled="!canEvaluateEntities || stepEvaluating['entities']"
-              class="px-5 py-2 text-xs font-bold bg-green-600 hover:bg-green-500 disabled:opacity-40 disabled:cursor-not-allowed text-white rounded-lg transition-colors flex items-center gap-1.5">
-              <svg v-if="stepEvaluating['entities']" class="animate-spin w-3.5 h-3.5" fill="none" viewBox="0 0 24 24">
-                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/>
-                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"/>
-              </svg>
-              <Icon v-else name="heroicons:sparkles" class="text-sm" />
-              {{ stepEvaluating['entities'] ? 'Evaluating...' : 'Evaluate Entities' }}
-            </button>
-            <button @click="skipStep" :disabled="stepEvaluating['entities']" class="px-5 py-2 text-xs font-semibold text-zinc-400 hover:text-white border border-zinc-700 rounded-lg transition-colors disabled:opacity-50">Skip →</button>
+          <div class="flex flex-col gap-3 pt-6 border-t border-zinc-900 mt-6">
+            <p v-if="stepError['entities']" class="text-[10px] text-red-400 font-bold flex items-center gap-2 bg-red-500/10 p-2 rounded-lg border border-red-500/20">
+               <Icon name="heroicons:exclamation-circle" /> {{ stepError['entities'] }}
+            </p>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-4">
+                <button @click="submitEntities" :disabled="!canEvaluateEntities || stepEvaluating['entities']"
+                  class="px-5 py-2.5 text-xs font-black uppercase tracking-widest bg-emerald-600 hover:bg-emerald-500 disabled:opacity-30 text-white rounded-xl transition-all flex items-center gap-2 shadow-lg shadow-emerald-500/10">
+                  <Icon v-if="stepEvaluating['entities']" name="heroicons:arrow-path" class="animate-spin" />
+                  <Icon v-else name="heroicons:sparkles" />
+                  {{ stepEvaluating['entities'] ? 'Checking...' : 'Evaluate Entities' }}
+                </button>
+              </div>
+              <button @click="skipStep" class="px-5 py-2.5 text-xs font-black uppercase tracking-widest text-zinc-500 hover:text-white border border-zinc-800 rounded-xl transition-colors">Skip →</button>
+            </div>
           </div>
 
           <div v-if="stepResults['entities']" class="mt-5 rounded-xl border overflow-hidden"
@@ -1037,17 +1158,21 @@ async function runSimulation() {
             </span>
           </div>
 
-          <div class="flex items-center gap-3 mt-4">
-            <button @click="submitClasses" :disabled="!canEvaluateClasses || stepEvaluating['classes']"
-              class="px-5 py-2 text-xs font-bold bg-green-600 hover:bg-green-500 disabled:opacity-40 disabled:cursor-not-allowed text-white rounded-lg transition-colors flex items-center gap-1.5">
-              <svg v-if="stepEvaluating['classes']" class="animate-spin w-3.5 h-3.5" fill="none" viewBox="0 0 24 24">
-                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/>
-                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"/>
-              </svg>
-              <Icon v-else name="heroicons:sparkles" class="text-sm" />
-              {{ stepEvaluating['classes'] ? 'Evaluating...' : 'Evaluate Design' }}
-            </button>
-            <button @click="skipStep" :disabled="stepEvaluating['classes']" class="px-5 py-2 text-xs font-semibold text-zinc-400 hover:text-white border border-zinc-700 rounded-lg transition-colors disabled:opacity-50">Skip →</button>
+          <div class="flex flex-col gap-3 pt-6 border-t border-zinc-900 mt-6">
+            <p v-if="stepError['classes']" class="text-[10px] text-red-400 font-bold flex items-center gap-2 bg-red-500/10 p-2 rounded-lg border border-red-500/20">
+               <Icon name="heroicons:exclamation-circle" /> {{ stepError['classes'] }}
+            </p>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-4">
+                <button @click="submitClasses" :disabled="!canEvaluateClasses || stepEvaluating['classes']"
+                  class="px-5 py-2.5 text-xs font-black uppercase tracking-widest bg-emerald-600 hover:bg-emerald-500 disabled:opacity-30 text-white rounded-xl transition-all flex items-center gap-2 shadow-lg shadow-emerald-500/10">
+                  <Icon v-if="stepEvaluating['classes']" name="heroicons:arrow-path" class="animate-spin" />
+                  <Icon v-else name="heroicons:sparkles" />
+                  {{ stepEvaluating['classes'] ? 'Checking...' : 'Evaluate Design' }}
+                </button>
+              </div>
+              <button @click="skipStep" class="px-5 py-2.5 text-xs font-black uppercase tracking-widest text-zinc-500 hover:text-white border border-zinc-800 rounded-xl transition-colors">Skip →</button>
+            </div>
           </div>
 
           <div v-if="stepResults['classes']" class="mt-5 rounded-xl border overflow-hidden"
@@ -1195,140 +1320,448 @@ async function runSimulation() {
           </div>
         </div>
 
-        <!-- ─ HLD STEPS ─ -->
-        <div v-else-if="activeStepId === 'architecture'">
-          <div class="flex items-center gap-2 mb-4">
-            <span class="w-6 h-6 rounded-full bg-purple-500 text-white text-xs font-black flex items-center justify-center">2</span>
-            <h2 class="text-base font-bold text-white">High-Level Architecture</h2>
-          </div>
-          <div class="bg-zinc-900 border border-zinc-700 rounded-xl p-4">
-            <p class="text-xs text-zinc-400 mb-2">Describe the main components and data flow (client → LB → services → DB/cache):</p>
-            <textarea v-model="hldArchitecture" placeholder="e.g., Client sends requests to Load Balancer → API Servers → reads from Redis cache, writes to PostgreSQL primary → read from replicas..."
-              class="w-full bg-zinc-800 border border-zinc-700 rounded-lg p-3 text-xs text-white placeholder-zinc-600 focus:outline-none focus:border-purple-500 resize-none"
-              style="min-height: 200px;" />
-          </div>
-          <p v-if="stepError['architecture']" class="mt-3 text-xs text-red-400 flex items-center gap-1.5">
-            <Icon name="heroicons:exclamation-circle" class="text-sm" /> {{ stepError['architecture'] }}
-          </p>
+        <!-- ─ HLD – REQUIREMENTS ─ -->
+        <!-- Handled by the generic 'requirements' div at line 798, now enabled for HLD too -->
 
-          <!-- Live progress hint -->
-          <div v-if="hldArchitecture.trim().length < 50" class="mt-3">
-             <span class="px-2.5 py-1 rounded-full font-semibold bg-zinc-800 text-zinc-500 text-xs">
-              ✓ Need at least 50 characters: {{ hldArchitecture.trim().length }}/50
-             </span>
+        <!-- ─ HLD – API DESIGN ─ -->
+        <div v-else-if="activeStepId === 'api'">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="w-6 h-6 rounded-full bg-indigo-500 text-white text-xs font-black flex items-center justify-center">2</span>
+            <h2 class="text-base font-bold text-white">{{ steps[1].label }}</h2>
           </div>
+          <p class="text-xs text-zinc-500 ml-8 mb-4">{{ steps[1].subtitle }}</p>
 
-          <div class="flex gap-3 mt-4">
-            <button @click="submitHldStep('architecture', hldArchitecture)" :disabled="hldArchitecture.trim().length < 50 || stepEvaluating['architecture']"
-              class="px-5 py-2 text-xs font-bold bg-green-600 hover:bg-green-500 disabled:opacity-40 disabled:cursor-not-allowed text-white rounded-lg transition-colors flex items-center gap-1.5">
-              <svg v-if="stepEvaluating['architecture']" class="animate-spin w-3.5 h-3.5" fill="none" viewBox="0 0 24 24">
-                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/>
-                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"/>
-              </svg>
-              <Icon v-else name="heroicons:sparkles" class="text-sm" />
-              {{ stepEvaluating['architecture'] ? 'Evaluating...' : 'Evaluate Architecture' }}
-            </button>
-            <button @click="skipStep" :disabled="stepEvaluating['architecture']" class="px-5 py-2 text-xs font-semibold text-zinc-400 hover:text-white border border-zinc-700 rounded-lg transition-colors disabled:opacity-50">Skip →</button>
-          </div>
-          <div v-if="stepResults['architecture']" class="mt-5 rounded-xl border overflow-hidden"
-            :class="stepResults['architecture'].passing ? 'border-green-500/40 bg-green-500/5' : 'border-amber-500/40 bg-amber-500/5'">
-            <div class="flex items-center gap-3 px-4 py-3" :class="stepResults['architecture'].passing ? 'border-green-500/30' : 'border-amber-500/30'">
-              <span class="text-lg font-black" :class="stepResults['architecture'].passing ? 'text-green-400' : 'text-amber-400'">{{ stepResults['architecture'].score }}/10</span>
-              <span class="text-xs font-bold" :class="stepResults['architecture'].passing ? 'text-green-400' : 'text-amber-400'">{{ stepResults['architecture'].passing ? '✓ Passing' : '⚠ Needs work' }}</span>
-              <button @click="showAnalysisHub = true" class="ml-4 text-[10px] font-bold text-blue-400 hover:underline uppercase tracking-widest">View Details in Hub</button>
-              <button @click="goToStep(steps[activeStepIndex + 1]?.id)" class="ml-auto px-4 py-1.5 text-xs font-bold bg-gradient-to-r from-red-500 to-pink-600 text-white rounded-lg hover:opacity-90 transition-opacity shadow-lg shadow-red-500/10">Continue → Next Step</button>
+          <div class="bg-zinc-900 border border-zinc-700 rounded-xl p-6">
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-black uppercase tracking-widest text-zinc-400">API Endpoints</span>
+              <button @click="addEndpoint" class="text-[10px] font-black uppercase bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 px-3 py-1.5 rounded-lg text-zinc-300 transition-all">+ Add Endpoint</button>
             </div>
+
+            <div class="space-y-3">
+              <div v-for="(ep, i) in hldApiEndpoints" :key="i" class="flex gap-3">
+                <select v-model="ep.method" class="bg-zinc-800 border border-zinc-700 rounded-lg px-2 py-2 text-[10px] font-bold text-white focus:border-indigo-500 w-24">
+                  <option>GET</option><option>POST</option><option>PUT</option><option>DELETE</option><option>PATCH</option>
+                </select>
+                <input v-model="ep.path" placeholder="/api/v1/resource" class="flex-1 bg-zinc-800 border border-zinc-700 rounded-lg px-3 py-2 text-xs text-white focus:border-indigo-500" />
+                <input v-model="ep.description" placeholder="Description (optional)" class="flex-1 bg-zinc-800 border border-zinc-700 rounded-lg px-3 py-2 text-xs text-white focus:border-indigo-500" />
+                <button v-if="hldApiEndpoints.length > 1" @click="removeEndpoint(i)" class="w-9 h-9 rounded-lg bg-zinc-800 hover:bg-red-500/20 text-zinc-500 hover:text-red-400 transition-all flex items-center justify-center border border-zinc-700">
+                  <Icon name="heroicons:trash" class="text-xs" />
+                </button>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-6 border-t border-zinc-800">
+               <p class="text-[10px] text-zinc-500 font-bold uppercase mb-2">Examples:</p>
+               <div class="space-y-1 font-mono text-[10px] text-zinc-600">
+                 <p><span class="text-green-500">POST</span> /api/v1/urls → Create short URL</p>
+                 <p><span class="text-blue-500">GET</span> /api/v1/urls/:id → Get URL details</p>
+               </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-3 pt-6 border-t border-zinc-900 mt-6">
+            <p v-if="stepError['api']" class="text-[10px] text-red-400 font-bold flex items-center gap-2 bg-red-500/10 p-2 rounded-lg border border-red-500/20">
+               <Icon name="heroicons:exclamation-circle" /> {{ stepError['api'] }}
+            </p>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-4">
+                <button @click="submitHldStep('api', hldApiEndpoints)" :disabled="stepEvaluating['api']"
+                  class="px-5 py-2.5 text-xs font-black uppercase tracking-widest bg-emerald-600 hover:bg-emerald-500 disabled:opacity-30 text-white rounded-xl transition-all flex items-center gap-2 shadow-lg shadow-emerald-500/10">
+                  <Icon v-if="stepEvaluating['api']" name="heroicons:arrow-path" class="animate-spin" />
+                  <Icon v-else name="heroicons:sparkles" />
+                  {{ stepEvaluating['api'] ? 'Checking...' : 'Evaluate API Design' }}
+                </button>
+              </div>
+              <button @click="skipStep" class="px-5 py-2.5 text-xs font-black uppercase tracking-widest text-zinc-500 hover:text-white border border-zinc-800 rounded-xl transition-colors">Skip →</button>
+            </div>
+          </div>
+
+          <div v-if="stepResults['api']" class="mt-5 rounded-xl border border-blue-500/30 bg-blue-500/5 overflow-hidden">
+             <div class="flex items-center gap-3 px-4 py-3">
+               <span class="text-lg font-black text-blue-400">{{ stepResults['api'].score }}/10</span>
+               <button @click="showAnalysisHub = true" class="ml-4 text-[10px] font-bold text-blue-400 hover:underline uppercase tracking-widest">Audit Details</button>
+               <button @click="goToStep(steps[activeStepIndex + 1]?.id)" class="ml-auto px-4 py-1.5 text-xs font-bold bg-red-600 text-white rounded-lg">Next Step →</button>
+             </div>
           </div>
         </div>
 
-        <div v-else-if="activeStepId === 'deep-dive'">
-          <div class="flex items-center gap-2 mb-4">
-            <span class="w-6 h-6 rounded-full bg-blue-500 text-white text-xs font-black flex items-center justify-center">3</span>
-            <h2 class="text-base font-bold text-white">Deep Dive Key Components</h2>
-          </div>
-          <div class="bg-zinc-900 border border-zinc-700 rounded-xl p-4">
-            <p class="text-xs text-zinc-400 mb-2">Explain the most critical component in detail (DB schema, API design, caching strategy, etc.):</p>
-            <textarea v-model="hldDeepDive" placeholder="e.g., Database: PostgreSQL with users table (id, email, created_at), cached lookup by email in Redis with TTL 5min..."
-              class="w-full bg-zinc-800 border border-zinc-700 rounded-lg p-3 text-xs text-white placeholder-zinc-600 focus:outline-none focus:border-blue-500 resize-none"
-              style="min-height: 200px;" />
-          </div>
-          <p v-if="stepError['deep-dive']" class="mt-3 text-xs text-red-400 flex items-center gap-1.5">
-            <Icon name="heroicons:exclamation-circle" class="text-sm" /> {{ stepError['deep-dive'] }}
-          </p>
-
-          <!-- Live progress hint -->
-          <div v-if="hldDeepDive.trim().length < 50" class="mt-3">
-             <span class="px-2.5 py-1 rounded-full font-semibold bg-zinc-800 text-zinc-500 text-xs">
-              ✓ Need at least 50 characters: {{ hldDeepDive.trim().length }}/50
-             </span>
-          </div>
-
-          <div class="flex gap-3 mt-4">
-            <button @click="submitHldStep('deep-dive', hldDeepDive)" :disabled="hldDeepDive.trim().length < 50 || stepEvaluating['deep-dive']"
-              class="px-5 py-2 text-xs font-bold bg-green-600 hover:bg-green-500 disabled:opacity-40 disabled:cursor-not-allowed text-white rounded-lg transition-colors flex items-center gap-1.5">
-              <svg v-if="stepEvaluating['deep-dive']" class="animate-spin w-3.5 h-3.5" fill="none" viewBox="0 0 24 24">
-                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/>
-                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"/>
-              </svg>
-              <Icon v-else name="heroicons:sparkles" class="text-sm" />
-              {{ stepEvaluating['deep-dive'] ? 'Evaluating...' : 'Evaluate Deep Dive' }}
-            </button>
-            <button @click="skipStep" :disabled="stepEvaluating['deep-dive']" class="px-5 py-2 text-xs font-semibold text-zinc-400 hover:text-white border border-zinc-700 rounded-lg transition-colors disabled:opacity-50">Skip →</button>
-          </div>
-          <div v-if="stepResults['deep-dive']" class="mt-5 rounded-xl border overflow-hidden"
-            :class="stepResults['deep-dive'].passing ? 'border-green-500/40 bg-green-500/5' : 'border-amber-500/40 bg-amber-500/5'">
-            <div class="flex items-center gap-3 px-4 py-3" :class="stepResults['deep-dive'].passing ? 'border-green-500/30' : 'border-amber-500/30'">
-              <span class="text-lg font-black" :class="stepResults['deep-dive'].passing ? 'text-green-400' : 'text-amber-400'">{{ stepResults['deep-dive'].score }}/10</span>
-              <span class="text-xs font-bold" :class="stepResults['deep-dive'].passing ? 'text-green-400' : 'text-amber-400'">{{ stepResults['deep-dive'].passing ? '✓ Passing' : '⚠ Needs work' }}</span>
-              <button @click="showAnalysisHub = true" class="ml-4 text-[10px] font-bold text-blue-400 hover:underline uppercase tracking-widest">View Details in Hub</button>
-              <button @click="goToStep(steps[activeStepIndex + 1]?.id)" class="ml-auto px-4 py-1.5 text-xs font-bold bg-gradient-to-r from-red-500 to-pink-600 text-white rounded-lg hover:opacity-90 transition-opacity shadow-lg shadow-red-500/10">Continue → Next Step</button>
+        <!-- ─ HLD – ARCHITECTURE ─ -->
+        <div v-else-if="activeStepId === 'architecture'" class="space-y-4">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <span class="w-7 h-7 rounded-xl bg-purple-500 text-white text-xs font-black flex items-center justify-center shadow-lg shadow-purple-500/20">3</span>
+              <div>
+                <h2 class="text-sm font-black text-white uppercase tracking-tight">{{ steps[2].label }}</h2>
+                <p class="text-[10px] text-zinc-500 font-bold uppercase tracking-widest">{{ steps[2].subtitle }}</p>
+              </div>
             </div>
+            <div class="flex items-center gap-3">
+               <button v-if="!isWhiteboardFullscreen" @click="toggleWhiteboardFullscreen('architecture')" class="px-3 py-1.5 bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 rounded-lg text-[9px] font-black uppercase tracking-wider text-zinc-300 transition-all flex items-center gap-2">
+                  <Icon name="heroicons:arrows-pointing-out" class="text-purple-400" /> Fullscreen
+               </button>
+               <a v-if="!isWhiteboardFullscreen" :href="EXCALIDRAW_LIBRARIES" target="_blank" class="px-3 py-1.5 bg-indigo-600 hover:bg-indigo-500 rounded-lg text-[9px] font-black uppercase tracking-wider text-white transition-all flex items-center gap-2 shadow-lg shadow-indigo-500/10">
+                  <Icon name="heroicons:command-line" /> Libraries
+               </a>
+            </div>
+          </div>
+
+          <div :class="['grid transition-all duration-300', isWhiteboardFullscreen === 'architecture' ? 'opacity-0' : 'grid lg:grid-cols-[1fr_300px] h-[520px] gap-4']">
+             <!-- Whiteboard Integration -->
+             <div class="bg-zinc-950 border border-zinc-800 rounded-2xl flex flex-col overflow-hidden relative group">
+                <iframe :key="`board_arch_${slug}`" :src="getWhiteboardUrl('architecture')" class="w-full h-full border-0" allow="clipboard-read; clipboard-write; check-visibility" />
+             </div>
+
+             <!-- Teleport Fullscreen for Architecture -->
+             <Teleport to="body">
+               <div v-if="isWhiteboardFullscreen === 'architecture'" class="fixed inset-0 z-[9999] bg-zinc-950 p-4 flex flex-col">
+                  <!-- Fullscreen Exit Overlay -->
+                  <div class="absolute top-6 right-6 z-[10000] flex gap-3">
+                     <a :href="EXCALIDRAW_LIBRARIES" target="_blank" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-black uppercase rounded-xl transition-all shadow-2xl flex items-center gap-2">
+                        <Icon name="heroicons:command-line" /> Load Libraries
+                     </a>
+                     <button @click="isWhiteboardFullscreen = null" class="px-4 py-2 bg-red-600 hover:bg-red-500 text-white text-xs font-black uppercase rounded-xl transition-all shadow-2xl flex items-center gap-2 border border-white/10">
+                        <Icon name="heroicons:arrows-pointing-in" /> Exit Fullscreen
+                     </button>
+                  </div>
+                  <iframe :key="`board_arch_full_${slug}`" :src="getWhiteboardUrl('architecture')" class="flex-1 w-full border-0 rounded-2xl" allow="clipboard-read; clipboard-write; check-visibility" />
+               </div>
+             </Teleport>
+
+             <!-- Explanation Box -->
+             <div v-if="!isWhiteboardFullscreen" class="bg-zinc-900 border border-zinc-700 rounded-2xl flex flex-col overflow-hidden">
+                <div class="px-4 py-3 border-b border-zinc-800 bg-zinc-800/10 flex items-center gap-2">
+                   <Icon name="heroicons:chat-bubble-bottom-center-text" class="text-purple-400" />
+                   <span class="text-[10px] font-black uppercase tracking-widest text-zinc-300">Explain Design</span>
+                </div>
+                <textarea v-model="hldArchitecture" placeholder="Describe component flow (Client → LB → API → DB)..."
+                  class="flex-1 w-full bg-zinc-950 border-0 p-4 text-xs text-zinc-300 placeholder-zinc-700 focus:outline-none resize-none leading-relaxed" />
+             </div>
+          </div>
+
+          <div class="flex flex-col gap-3 pt-4 border-t border-zinc-900">
+            <p v-if="stepError['architecture']" class="text-[10px] text-red-400 font-bold flex items-center gap-2 bg-red-500/10 p-2 rounded-lg border border-red-500/20">
+               <Icon name="heroicons:exclamation-circle" /> {{ stepError['architecture'] }}
+            </p>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-4">
+                <button @click="submitHldStep('architecture', hldArchitecture)" :disabled="stepEvaluating['architecture']"
+                  class="px-5 py-2.5 text-xs font-black uppercase tracking-widest bg-emerald-600 hover:bg-emerald-500 disabled:opacity-30 text-white rounded-xl transition-all flex items-center gap-2 shadow-lg shadow-emerald-500/10">
+                  <Icon v-if="stepEvaluating['architecture']" name="heroicons:arrow-path" class="animate-spin" />
+                  <Icon v-else name="heroicons:sparkles" />
+                  {{ stepEvaluating['architecture'] ? 'Checking...' : 'Evaluate' }}
+                </button>
+                <span v-if="hldArchitecture.length < 50" class="text-[9px] text-zinc-600 font-black uppercase tracking-widest">Min 50 chars: {{ hldArchitecture.length }}/50</span>
+              </div>
+              <button @click="skipStep" class="px-5 py-2.5 text-xs font-black uppercase tracking-widest text-zinc-500 hover:text-white border border-zinc-800 rounded-xl transition-colors">Skip →</button>
+            </div>
+          </div>
+
+          <div v-if="stepResults['architecture']" class="mt-5 rounded-xl border border-purple-500/30 bg-purple-500/5 overflow-hidden">
+             <div class="flex items-center gap-3 px-4 py-3">
+               <span class="text-lg font-black text-purple-400">{{ stepResults['architecture'].score }}/10</span>
+               <button @click="showAnalysisHub = true" class="ml-4 text-[10px] font-bold text-purple-400 hover:underline uppercase tracking-widest">Audit Details</button>
+               <button @click="goToStep(steps[activeStepIndex + 1]?.id)" class="ml-auto px-4 py-1.5 text-xs font-bold bg-red-600 text-white rounded-lg">Next Step →</button>
+             </div>
           </div>
         </div>
 
-        <div v-else-if="activeStepId === 'scaling'">
-          <div class="flex items-center gap-2 mb-4">
-            <span class="w-6 h-6 rounded-full bg-amber-500 text-white text-xs font-black flex items-center justify-center">4</span>
-            <h2 class="text-base font-bold text-white">Scaling & Bottlenecks</h2>
-          </div>
-          <div class="bg-zinc-900 border border-zinc-700 rounded-xl p-4">
-            <p class="text-xs text-zinc-400 mb-2">Identify single points of failure and how you would scale the system:</p>
-            <textarea v-model="hldScaling" placeholder="e.g., SPOF: Single DB → add read replicas + failover. Hot keys in Redis → consistent hashing. Peak load → auto-scaling groups..."
-              class="w-full bg-zinc-800 border border-zinc-700 rounded-lg p-3 text-xs text-white placeholder-zinc-600 focus:outline-none focus:border-amber-500 resize-none"
-              style="min-height: 200px;" />
-          </div>
-          <p v-if="stepError['scaling']" class="mt-3 text-xs text-red-400 flex items-center gap-1.5">
-            <Icon name="heroicons:exclamation-circle" class="text-sm" /> {{ stepError['scaling'] }}
-          </p>
-
-          <!-- Live progress hint -->
-          <div v-if="hldScaling.trim().length < 50" class="mt-3">
-             <span class="px-2.5 py-1 rounded-full font-semibold bg-zinc-800 text-zinc-500 text-xs">
-              ✓ Need at least 50 characters: {{ hldScaling.trim().length }}/50
-             </span>
-          </div>
-
-          <div class="flex gap-3 mt-4">
-            <button @click="submitHldStep('scaling', hldScaling)" :disabled="hldScaling.trim().length < 50 || stepEvaluating['scaling']"
-              class="px-5 py-2 text-xs font-bold bg-green-600 hover:bg-green-500 disabled:opacity-40 disabled:cursor-not-allowed text-white rounded-lg transition-colors flex items-center gap-1.5">
-              <svg v-if="stepEvaluating['scaling']" class="animate-spin w-3.5 h-3.5" fill="none" viewBox="0 0 24 24">
-                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/>
-                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"/>
-              </svg>
-              <Icon v-else name="heroicons:sparkles" class="text-sm" />
-              {{ stepEvaluating['scaling'] ? 'Evaluating...' : 'Evaluate Scaling' }}
-            </button>
-            <button @click="skipStep" :disabled="stepEvaluating['scaling']" class="px-5 py-2 text-xs font-semibold text-zinc-400 hover:text-white border border-zinc-700 rounded-lg transition-colors disabled:opacity-50">Skip →</button>
-            <button @click="evaluate" class="ml-auto px-5 py-2 text-xs font-bold bg-gradient-to-r from-red-500 to-pink-600 text-white rounded-lg hover:opacity-90 transition-opacity" title="Generate Final Performance Report">View Full Report 🏆</button>
-          </div>
-          <div v-if="stepResults['scaling']" class="mt-5 rounded-xl border overflow-hidden"
-            :class="stepResults['scaling'].passing ? 'border-green-500/40 bg-green-500/5' : 'border-amber-500/40 bg-amber-500/5'">
-            <div class="flex items-center gap-3 px-4 py-3" :class="stepResults['scaling'].passing ? 'border-green-500/30' : 'border-amber-500/30'">
-              <span class="text-lg font-black" :class="stepResults['scaling'].passing ? 'text-green-400' : 'text-amber-400'">{{ stepResults['scaling'].score }}/10</span>
-              <span class="text-xs font-bold" :class="stepResults['scaling'].passing ? 'text-green-400' : 'text-amber-400'">{{ stepResults['scaling'].passing ? '✓ Passing' : '⚠ Needs work' }}</span>
-              <button @click="showAnalysisHub = true" class="ml-4 text-[10px] font-bold text-blue-400 hover:underline uppercase tracking-widest">View Details in Hub</button>
-              <button @click="evaluate" class="ml-auto px-4 py-1.5 text-xs font-bold bg-gradient-to-r from-red-500 to-pink-600 text-white rounded-lg hover:opacity-90 transition-opacity shadow-lg shadow-red-500/10">View Full Report 🏆</button>
+        <!-- ─ HLD – DATABASE ─ -->
+        <div v-else-if="activeStepId === 'database'" class="space-y-4">
+          <div class="flex items-center gap-3">
+            <span class="w-7 h-7 rounded-xl bg-emerald-500 text-white text-xs font-black flex items-center justify-center shadow-lg shadow-emerald-500/20">4</span>
+            <div>
+              <h2 class="text-sm font-black text-white uppercase tracking-tight">{{ steps[3].label }}</h2>
+              <p class="text-[10px] text-zinc-500 font-bold uppercase tracking-widest">{{ steps[3].subtitle }}</p>
             </div>
+          </div>
+
+          <div class="grid lg:grid-cols-[280px_1fr] gap-6">
+            <!-- Sidebar: Storage List -->
+            <div class="space-y-4">
+              <div class="relative storage-dropdown-container">
+                <button @click.stop="showStorageDropdown = !showStorageDropdown" 
+                  :class="['w-full text-[10px] font-black uppercase border p-3 rounded-xl transition-all flex items-center justify-between',
+                    showStorageDropdown ? 'bg-zinc-700 border-emerald-500 text-white' : 'bg-zinc-800 border-zinc-700 text-zinc-300 hover:bg-zinc-700']">
+                   <div class="flex items-center gap-2"><Icon name="heroicons:plus" class="text-emerald-500" /> Add Storage</div>
+                   <Icon name="heroicons:chevron-down" :class="['text-zinc-600 transition-transform duration-300', showStorageDropdown ? 'rotate-180' : '']" />
+                </button>
+                
+                <!-- Luxury Categorized Dropdown -->
+                <transition name="dropdown">
+                  <div v-if="showStorageDropdown" class="absolute top-full left-0 mt-2 bg-zinc-900 border border-zinc-800 rounded-2xl shadow-2xl py-2 w-72 z-[60] overflow-hidden ring-1 ring-white/5">
+                    <div v-for="cat in STORAGE_CATALOG" :key="cat.group" class="mb-2 last:mb-0">
+                        <div class="px-4 py-1.5 text-[9px] font-black uppercase tracking-widest text-zinc-500 bg-zinc-800/30">{{ cat.group }}</div>
+                        <button v-for="item in cat.items" :key="item.name" @click="addStorage(item.name, item.icon, cat.group, item.type)"
+                          class="w-full px-4 py-2 text-left text-[11px] font-bold text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors flex items-center gap-3">
+                          <Icon :name="item.icon" class="text-sm" /> {{ item.name }}
+                        </button>
+                    </div>
+                  </div>
+                </transition>
+              </div>
+
+              <!-- Added Storages List -->
+              <div class="space-y-2 max-h-[400px] overflow-y-auto pr-2 custom-scrollbar">
+                 <div v-for="(s, i) in hldDatabaseStorage" :key="s.id" 
+                   @click="activeStorageIdx = i"
+                   class="group/item flex items-center gap-3 p-3 rounded-xl border transition-all cursor-pointer relative overflow-hidden"
+                   :class="activeStorageIdx === i ? 'bg-emerald-500/10 border-emerald-500/50' : 'bg-zinc-900 border-zinc-800 hover:border-zinc-700'">
+                    <div v-if="activeStorageIdx === i" class="absolute left-0 top-0 bottom-0 w-1 bg-emerald-500"></div>
+                    <Icon :name="s.icon" class="text-lg shrink-0" />
+                    <div class="min-w-0 flex-1">
+                       <p class="text-[10px] font-black uppercase text-white truncate">{{ s.tech }}</p>
+                       <p class="text-[9px] text-zinc-500 font-bold uppercase truncate">{{ s.category }} • {{ s.tables.length }} Tables</p>
+                    </div>
+                    <button @click.stop="removeStorage(i)" class="opacity-0 group-hover/item:opacity-100 p-1.5 rounded-lg hover:bg-red-500/20 text-zinc-600 hover:text-red-400 transition-all">
+                       <Icon name="heroicons:trash" />
+                    </button>
+                 </div>
+                 <div v-if="hldDatabaseStorage.length === 0" class="py-12 border-2 border-dashed border-zinc-800 rounded-2xl flex flex-col items-center justify-center opacity-40">
+                    <Icon name="heroicons:circle-stack" class="text-2xl mb-2" />
+                    <p class="text-[10px] font-black uppercase">No storage selected</p>
+                 </div>
+              </div>
+            </div>
+
+            <!-- Content: Table Editor -->
+            <div class="bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden flex flex-col min-h-[500px]">
+               <div v-if="hldDatabaseStorage[activeStorageIdx]" class="flex-1 flex flex-col">
+                  <!-- Storage Header -->
+                  <div class="px-6 py-4 border-b border-zinc-800 bg-zinc-800/10 flex items-center justify-between">
+                     <div class="flex items-center gap-3">
+                        <Icon :name="hldDatabaseStorage[activeStorageIdx].icon" class="text-2xl" />
+                        <div>
+                           <h3 class="text-xs font-black uppercase text-white tracking-widest">{{ hldDatabaseStorage[activeStorageIdx].tech }}</h3>
+                           <p class="text-[9px] font-black uppercase text-emerald-500">{{ hldDatabaseStorage[activeStorageIdx].type }} SCHEMA</p>
+                        </div>
+                     </div>
+                     <button @click="addTable(activeStorageIdx)" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white text-[10px] font-black uppercase rounded-lg transition-all shadow-lg shadow-emerald-500/10 flex items-center gap-2">
+                        <Icon name="heroicons:plus" /> Add Table
+                     </button>
+                  </div>
+
+                  <!-- Tables List -->
+                  <div class="p-6 space-y-6 flex-1 overflow-y-auto custom-scrollbar">
+                     <div v-for="(table, ti) in hldDatabaseStorage[activeStorageIdx].tables" :key="ti" class="bg-zinc-950 border border-zinc-800 rounded-2xl overflow-hidden shadow-xl">
+                        <div class="px-4 py-3 bg-zinc-900 border-b border-zinc-800 flex items-center justify-between">
+                           <input v-model="table.name" class="bg-transparent border-0 text-xs font-black text-white focus:outline-none focus:ring-1 focus:ring-emerald-500 rounded px-2 py-1 uppercase tracking-widest w-64" placeholder="TABLE_NAME" />
+                           <div class="flex items-center gap-2">
+                              <button @click="addColumn(activeStorageIdx, ti)" class="p-1.5 rounded-lg hover:bg-emerald-500/10 text-emerald-500 transition-all" title="Add Column"><Icon name="heroicons:plus-circle" /></button>
+                              <button @click="hldDatabaseStorage[activeStorageIdx].tables.splice(ti, 1)" class="p-1.5 rounded-lg hover:bg-red-500/10 text-red-500 transition-all"><Icon name="heroicons:trash" /></button>
+                           </div>
+                        </div>
+
+                        <!-- Columns Table -->
+                        <div class="p-4 overflow-x-auto">
+                           <table class="w-full text-[10px] border-separate border-spacing-y-1.5">
+                              <thead>
+                                 <tr class="text-zinc-500 font-black uppercase tracking-widest text-left">
+                                    <th class="px-3 py-1 pb-2">Column</th>
+                                    <th class="px-3 py-1 pb-2">Type</th>
+                                    <th class="px-3 py-1 pb-2 text-center">PK</th>
+                                    <th class="px-3 py-1 pb-2 text-center">Null</th>
+                                    <th class="px-3 py-1 pb-2 text-center">Idx</th>
+                                    <th></th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr v-for="(col, ci) in table.columns" :key="ci" class="group/col">
+                                    <td class="px-1"><input v-model="col.name" class="w-full bg-zinc-900 border border-zinc-800 rounded-lg px-2 py-1.5 text-white focus:border-emerald-500 transition-all font-mono" /></td>
+                                    <td class="px-1">
+                                       <select v-model="col.type" class="w-full bg-zinc-900 border border-zinc-800 rounded-lg px-2 py-1.5 text-white focus:border-emerald-500 transition-all font-mono">
+                                          <option v-for="t in COLUMN_TYPES" :key="t" :value="t">{{ t }}</option>
+                                       </select>
+                                    </td>
+                                    <td class="text-center px-1">
+                                       <input type="checkbox" v-model="col.isPrimary" class="w-4 h-4 rounded bg-zinc-800 border-zinc-700 text-emerald-500 focus:ring-emerald-500 focus:ring-offset-zinc-950" />
+                                    </td>
+                                    <td class="text-center px-1">
+                                       <input type="checkbox" v-model="col.isNullable" class="w-4 h-4 rounded bg-zinc-800 border-zinc-700 text-emerald-500 focus:ring-emerald-500 focus:ring-offset-zinc-950" />
+                                    </td>
+                                    <td class="text-center px-1">
+                                       <input type="checkbox" v-model="col.isIndexed" class="w-4 h-4 rounded bg-zinc-800 border-zinc-700 text-emerald-500 focus:ring-emerald-500 focus:ring-offset-zinc-950" />
+                                    </td>
+                                    <td class="text-right px-1">
+                                       <button @click="table.columns.splice(ci, 1)" class="opacity-0 group-hover/col:opacity-100 p-1.5 text-zinc-600 hover:text-red-400"><Icon name="heroicons:x-mark" /></button>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                     </div>
+                     <div v-if="hldDatabaseStorage[activeStorageIdx].tables.length === 0" class="py-20 flex flex-col items-center justify-center opacity-30">
+                        <Icon name="heroicons:table-cells" class="text-4xl mb-3" />
+                        <p class="text-xs font-black uppercase tracking-widest">Click "Add Table" to define your schema</p>
+                     </div>
+                  </div>
+               </div>
+               <div v-else class="flex-1 flex flex-col items-center justify-center opacity-20">
+                  <Icon name="heroicons:arrow-left" class="text-4xl mb-4" />
+                  <p class="text-sm font-black uppercase tracking-widest">Select a storage from the left to edit schema</p>
+               </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-3 mt-8 border-t border-zinc-900 pt-4">
+            <p v-if="stepError['database']" class="text-[10px] text-red-400 font-bold flex items-center gap-2 bg-red-500/10 p-2 rounded-lg border border-red-500/20">
+               <Icon name="heroicons:exclamation-circle" /> {{ stepError['database'] }}
+            </p>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <button @click="submitHldStep('database', hldDatabaseStorage)" :disabled="stepEvaluating['database'] || hldDatabaseStorage.length === 0"
+                  class="px-6 py-2.5 text-xs font-bold bg-green-600 hover:bg-green-500 disabled:opacity-30 text-white rounded-lg transition-all flex items-center gap-2 shadow-xl shadow-green-500/10">
+                  <Icon v-if="stepEvaluating['database']" name="heroicons:arrow-path" class="animate-spin" />
+                  <Icon v-else name="heroicons:sparkles" />
+                  {{ stepEvaluating['database'] ? 'Evaluating Catalog...' : 'Evaluate Database Design' }}
+                </button>
+              </div>
+              <button @click="skipStep" class="px-5 py-2.5 text-xs font-black uppercase tracking-widest text-zinc-500 hover:text-white border border-zinc-800 rounded-xl transition-colors">Skip →</button>
+            </div>
+          </div>
+
+          <div v-if="stepResults['database']" class="mt-5 rounded-2xl border border-emerald-500/30 bg-emerald-500/5 overflow-hidden shadow-2xl">
+             <div class="flex items-center gap-3 px-6 py-4">
+               <span class="text-xl font-black text-emerald-400">{{ stepResults['database'].score }}/10</span>
+               <div class="w-px h-6 bg-zinc-800 mx-2"></div>
+               <button @click="showAnalysisHub = true" class="text-[10px] font-black text-emerald-400 hover:underline uppercase tracking-widest">Audit Analytics</button>
+               <button @click="goToStep(steps[activeStepIndex + 1]?.id)" class="ml-auto px-6 py-2 text-xs font-black bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl transition-all uppercase tracking-widest shadow-lg shadow-emerald-500/20">Proceed → Next Step</button>
+             </div>
+          </div>
+        </div>
+
+        <!-- ─ HLD – DEEP DIVE 1 – CACHING ─ -->
+        <div v-else-if="activeStepId === 'deep-dive'" class="space-y-4">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <span class="w-7 h-7 rounded-xl bg-blue-500 text-white text-xs font-black flex items-center justify-center shadow-lg shadow-blue-500/20">5</span>
+              <div>
+                <h2 class="text-sm font-black text-white uppercase tracking-tight">{{ steps[4].label }}</h2>
+                <p class="text-[10px] text-zinc-500 font-bold uppercase tracking-widest">{{ steps[4].subtitle }}</p>
+              </div>
+            </div>
+            <button v-if="!isWhiteboardFullscreen" @click="toggleWhiteboardFullscreen('deep-dive')" class="px-3 py-1.5 bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 rounded-lg text-[9px] font-black uppercase tracking-wider text-zinc-300 transition-all flex items-center gap-2">
+               <Icon name="heroicons:arrows-pointing-out" class="text-blue-400" /> Fullscreen
+            </button>
+          </div>
+
+          <div :class="['grid transition-all duration-300', isWhiteboardFullscreen === 'deep-dive' ? 'opacity-0' : 'grid lg:grid-cols-[1fr_300px] h-[520px] gap-4']">
+             <div class="bg-zinc-950 border border-zinc-800 rounded-2xl flex flex-col overflow-hidden relative">
+                <iframe :key="`board_deep_${slug}`" :src="getWhiteboardUrl('deep-dive')" class="w-full h-full border-0" allow="clipboard-read; clipboard-write; check-visibility" />
+             </div>
+
+             <!-- Teleport Fullscreen for Deep Dive -->
+             <Teleport to="body">
+               <div v-if="isWhiteboardFullscreen === 'deep-dive'" class="fixed inset-0 z-[9999] bg-zinc-950 p-4 flex flex-col">
+                  <!-- Fullscreen Exit Overlay -->
+                  <div class="absolute top-6 right-6 z-[10000]">
+                     <button @click="isWhiteboardFullscreen = null" class="px-4 py-2 bg-red-600 hover:bg-red-500 text-white text-xs font-black uppercase rounded-xl transition-all shadow-2xl flex items-center gap-2 border border-white/10">
+                        <Icon name="heroicons:arrows-pointing-in" /> Exit Fullscreen
+                     </button>
+                  </div>
+                  <iframe :key="`board_deep_full_${slug}`" :src="getWhiteboardUrl('deep-dive')" class="flex-1 w-full border-0 rounded-2xl" allow="clipboard-read; clipboard-write; check-visibility" />
+               </div>
+             </Teleport>
+             <div v-if="!isWhiteboardFullscreen" class="bg-zinc-900 border border-zinc-700 rounded-2xl flex flex-col overflow-hidden">
+                <div class="px-4 py-3 border-b border-zinc-800 bg-zinc-800/10 flex items-center gap-2">
+                   <Icon name="heroicons:chat-bubble-bottom-center-text" class="text-blue-400" />
+                   <span class="text-[10px] font-black uppercase tracking-widest text-zinc-300">Explain Design</span>
+                </div>
+                <textarea v-model="hldDeepDive" placeholder="Describe logic..."
+                  class="flex-1 w-full bg-zinc-950 border-0 p-4 text-xs text-zinc-300 placeholder-zinc-700 focus:outline-none resize-none leading-relaxed" />
+             </div>
+          </div>
+
+          <div class="flex flex-col gap-3 pt-4 border-t border-zinc-900">
+            <p v-if="stepError['deep-dive']" class="text-[10px] text-red-400 font-bold flex items-center gap-2 bg-red-500/10 p-2 rounded-lg border border-red-500/20">
+               <Icon name="heroicons:exclamation-circle" /> {{ stepError['deep-dive'] }}
+            </p>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-4">
+                <button @click="submitHldStep('deep-dive', hldDeepDive)" :disabled="stepEvaluating['deep-dive']"
+                  class="px-5 py-2.5 text-xs font-black uppercase tracking-widest bg-emerald-600 hover:bg-emerald-500 disabled:opacity-30 text-white rounded-xl transition-all flex items-center gap-2 shadow-lg shadow-emerald-500/10">
+                  <Icon v-if="stepEvaluating['deep-dive']" name="heroicons:arrow-path" class="animate-spin" />
+                  <Icon v-else name="heroicons:sparkles" />
+                  {{ stepEvaluating['deep-dive'] ? 'Checking...' : 'Evaluate' }}
+                </button>
+                <span v-if="hldDeepDive.length < 50" class="text-[9px] text-zinc-600 font-black uppercase tracking-widest">Min 50 chars: {{ hldDeepDive.length }}/50</span>
+              </div>
+              <button @click="skipStep" class="px-5 py-2.5 text-xs font-black uppercase tracking-widest text-zinc-500 hover:text-white border border-zinc-800 rounded-xl transition-colors">Skip →</button>
+            </div>
+          </div>
+
+          <div v-if="stepResults['deep-dive']" class="mt-5 rounded-xl border border-blue-500/30 bg-blue-500/5 overflow-hidden">
+             <div class="flex items-center gap-3 px-4 py-3">
+               <span class="text-lg font-black text-blue-400">{{ stepResults['deep-dive'].score }}/10</span>
+               <button @click="showAnalysisHub = true" class="ml-4 text-[10px] font-bold text-blue-400 hover:underline uppercase tracking-widest">Audit Details</button>
+               <button @click="goToStep(steps[activeStepIndex + 1]?.id)" class="ml-auto px-4 py-1.5 text-xs font-bold bg-red-600 text-white rounded-lg">Next Step →</button>
+             </div>
+          </div>
+        </div>
+
+        <!-- ─ HLD – DEEP DIVE 2 – ANALYTICS ─ -->
+        <div v-else-if="activeStepId === 'analytics'" class="space-y-4">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <span class="w-7 h-7 rounded-xl bg-pink-500 text-white text-xs font-black flex items-center justify-center shadow-lg shadow-pink-500/20">6</span>
+              <div>
+                <h2 class="text-sm font-black text-white uppercase tracking-tight">{{ steps[5].label }}</h2>
+                <p class="text-[10px] text-zinc-500 font-bold uppercase tracking-widest">{{ steps[5].subtitle }}</p>
+              </div>
+            </div>
+            <button v-if="!isWhiteboardFullscreen" @click="toggleWhiteboardFullscreen('analytics')" class="px-3 py-1.5 bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 rounded-lg text-[9px] font-black uppercase tracking-wider text-zinc-300 transition-all flex items-center gap-2">
+               <Icon name="heroicons:arrows-pointing-out" class="text-pink-400" /> Fullscreen
+            </button>
+          </div>
+
+          <div :class="['grid transition-all duration-300 mb-4', isWhiteboardFullscreen === 'analytics' ? 'opacity-0' : 'grid lg:grid-cols-[1fr_300px] h-[520px] gap-4']">
+             <div class="bg-zinc-950 border border-zinc-800 rounded-2xl flex flex-col overflow-hidden relative">
+                <iframe :key="`board_analytics_${slug}`" :src="getWhiteboardUrl('analytics')" class="w-full h-full border-0" allow="clipboard-read; clipboard-write; check-visibility" />
+             </div>
+
+             <!-- Teleport Fullscreen for Analytics -->
+             <Teleport to="body">
+               <div v-if="isWhiteboardFullscreen === 'analytics'" class="fixed inset-0 z-[9999] bg-zinc-950 p-4 flex flex-col">
+                  <!-- Fullscreen Exit Overlay -->
+                  <div class="absolute top-6 right-6 z-[10000]">
+                     <button @click="isWhiteboardFullscreen = null" class="px-4 py-2 bg-red-600 hover:bg-red-500 text-white text-xs font-black uppercase rounded-xl transition-all shadow-2xl flex items-center gap-2 border border-white/10">
+                        <Icon name="heroicons:arrows-pointing-in" /> Exit Fullscreen
+                     </button>
+                  </div>
+                  <iframe :key="`board_analytics_full_${slug}`" :src="getWhiteboardUrl('analytics')" class="flex-1 w-full border-0 rounded-2xl" allow="clipboard-read; clipboard-write; check-visibility" />
+               </div>
+             </Teleport>
+             <div v-if="!isWhiteboardFullscreen" class="bg-zinc-900 border border-zinc-700 rounded-2xl flex flex-col overflow-hidden">
+                <div class="px-4 py-3 border-b border-zinc-800 bg-zinc-800/10 flex items-center gap-2">
+                   <Icon name="heroicons:chat-bubble-bottom-center-text" class="text-pink-400" />
+                   <span class="text-[10px] font-black uppercase tracking-widest text-zinc-300">Explain Pipeline</span>
+                </div>
+                <textarea v-model="hldAnalytics" placeholder="Describe data flow..."
+                  class="flex-1 w-full bg-zinc-950 border-0 p-4 text-xs text-zinc-300 placeholder-zinc-700 focus:outline-none resize-none leading-relaxed" />
+             </div>
+          </div>
+
+          <div class="flex flex-col gap-3 pt-4 border-t border-zinc-900">
+            <p v-if="stepError['analytics']" class="text-[10px] text-red-400 font-bold flex items-center gap-2 bg-red-500/10 p-2 rounded-lg border border-red-500/20">
+               <Icon name="heroicons:exclamation-circle" /> {{ stepError['analytics'] }}
+            </p>
+            <div class="flex items-center">
+              <div class="flex items-center gap-4">
+                <button @click="submitHldStep('analytics', hldAnalytics)" :disabled="stepEvaluating['analytics']"
+                  class="px-5 py-2.5 text-xs font-black uppercase tracking-widest bg-emerald-600 hover:bg-emerald-500 disabled:opacity-30 text-white rounded-xl transition-all flex items-center gap-2 shadow-lg shadow-emerald-500/10">
+                  <Icon v-if="stepEvaluating['analytics']" name="heroicons:arrow-path" class="animate-spin" />
+                  <Icon v-else name="heroicons:sparkles" />
+                  {{ stepEvaluating['analytics'] ? 'Checking...' : 'Evaluate' }}
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div v-if="stepResults['analytics']" class="mt-5 rounded-xl border border-pink-500/30 bg-pink-500/5 overflow-hidden">
+             <div class="flex items-center gap-3 px-4 py-3">
+               <span class="text-lg font-black text-pink-400">{{ stepResults['analytics'].score }}/10</span>
+               <button @click="showAnalysisHub = true" class="ml-4 text-[10px] font-bold text-pink-400 hover:underline uppercase tracking-widest">Audit Details</button>
+               <button @click="evaluate" class="ml-auto px-4 py-1.5 text-xs font-bold bg-gradient-to-r from-red-500 to-pink-600 text-white rounded-lg">View Full Report 🏆</button>
+             </div>
           </div>
         </div>
 
@@ -1853,4 +2286,35 @@ async function runSimulation() {
 
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+.sidebar-slide-enter-active, .sidebar-slide-leave-active {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.sidebar-slide-enter-from, .sidebar-slide-leave-to {
+  width: 0;
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.dropdown-enter-active, .dropdown-leave-active {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.dropdown-enter-from, .dropdown-leave-to {
+  opacity: 0;
+  transform: translateY(-10px) scale(0.95);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #18181b;
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #27272a;
+}
 </style>

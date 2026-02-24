@@ -1,5 +1,5 @@
-export function renderMarkdown(markdown: string): string {
-    if (!markdown) return ''
+export function renderMarkdown(markdown: any): string {
+    if (typeof markdown !== 'string' || !markdown) return ''
 
     let html = markdown
 

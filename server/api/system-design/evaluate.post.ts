@@ -6,7 +6,10 @@ import {
     buildCodePrompt,
     buildArchitecturePrompt,
     buildDeepDivePrompt,
-    buildScalingPrompt
+    buildScalingPrompt,
+    buildApiDesignPrompt,
+    buildDatabaseDesignPrompt,
+    buildAnalyticsPrompt
 } from '../../utils/systemDesignPrompts'
 import { healJson } from '../../utils/jsonHealer'
 
@@ -26,8 +29,10 @@ interface EvaluationRequest {
         }
         code?: string
         architecture?: string
+        api?: any[]
+        database?: any[]
         deepDive?: string
-        scaling?: string
+        analytics?: string
     }
 }
 
@@ -93,10 +98,12 @@ export default defineEventHandler(async (event) => {
                 { key: 'code', label: 'Code Implementation', data: { language: body.language || 'Code', code: a.code || '' }, skip: !a.code || a.code.includes('Implement your') || a.code.split('\n').length < 5 },
             ]
             : [
-                { key: 'requirements', label: 'Requirements & Scope', data: a.requirements || {}, skip: !a.requirements || (!a.requirements.functional?.length && !a.requirements.nonFunctional?.length) },
-                { key: 'architecture', label: 'High-Level Architecture', data: a.architecture || '', skip: !a.architecture?.trim() },
-                { key: 'deep-dive', label: 'Deep Dive Key Components', data: a.deepDive || '', skip: !a.deepDive?.trim() },
-                { key: 'scaling', label: 'Scaling & Bottlenecks', data: a.scaling || '', skip: !a.scaling?.trim() },
+                { key: 'requirements', label: '1. Requirements Gathering', data: a.requirements || {}, skip: !a.requirements || (!a.requirements.functional?.length && !a.requirements.nonFunctional?.length) },
+                { key: 'api', label: '2. API Design', data: a.api || [], skip: !a.api?.length },
+                { key: 'architecture', label: '3. High-Level Architecture', data: a.architecture || '', skip: !a.architecture?.trim() },
+                { key: 'database', label: '4. Database Design', data: a.database || [], skip: !a.database?.length },
+                { key: 'deep-dive', label: '5. Deep Dive - Caching', data: a.deepDive || '', skip: !a.deepDive?.trim() },
+                { key: 'analytics', label: '6. Click Count Analytics', data: a.analytics || '', skip: !a.analytics?.trim() },
             ]
 
         const sectionResults = await Promise.all(
@@ -116,6 +123,9 @@ export default defineEventHandler(async (event) => {
                     case 'architecture': prompt = buildArchitecturePrompt(qBody, sec.data as string); break
                     case 'deep-dive': prompt = buildDeepDivePrompt(qBody, sec.data as string); break
                     case 'scaling': prompt = buildScalingPrompt(qBody, sec.data as string); break
+                    case 'api': prompt = buildApiDesignPrompt(qBody, sec.data as any[]); break
+                    case 'database': prompt = buildDatabaseDesignPrompt(qBody, sec.data as any[]); break
+                    case 'analytics': prompt = buildAnalyticsPrompt(qBody, sec.data as string); break
                 }
 
                 try {
