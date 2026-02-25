@@ -1,69 +1,141 @@
 /**
- * Attempts to heal truncated JSON strings from AI responses.
- * Handles unclosed strings, brackets, and braces.
+ * Attempts to heal truncated or malformed JSON strings from AI responses.
  */
 export function healJson(raw: string): string {
-    let cleaned = raw.trim()
-    const start = cleaned.indexOf('{')
-    const end = cleaned.lastIndexOf('}')
+    // 1. Pre-strip: remove invisible junk and trim
+    // This removes non-printable characters that can cause position-based parse errors
+    let cleaned = raw.replace(/[^\x20-\x7E\r\n\t]/g, '').trim()
 
-    if (start >= 0 && end >= 0) {
-        cleaned = cleaned.substring(start, end + 1)
-        // Basic check: try to parse it. If it fails, it might still have unclosed strings inside
-        // even if it has a closing brace (e.g. if the AI added extra text after the JSON)
-        try {
-            JSON.parse(cleaned)
-            return cleaned
-        } catch (e) {
-            // If it fails, continue to healing logic below
+    // 2. Extract from Markdown blocks if present
+    if (cleaned.includes('```json')) {
+        const parts = cleaned.split('```json')
+        if (parts.length > 1) {
+            const afterJson = parts[1].split('```')[0]
+            cleaned = afterJson.trim()
+        }
+    } else if (cleaned.includes('```')) {
+        const parts = cleaned.split('```')
+        if (parts.length > 1) {
+            cleaned = parts[1].trim()
         }
     }
 
-    if (start >= 0) {
-        cleaned = cleaned.substring(start)
+    // 3. Find the absolute first '{'
+    const start = cleaned.indexOf('{')
+    if (start < 0) return cleaned
+    cleaned = cleaned.substring(start)
 
-        // Count unclosed characters
-        let openBraces = 0
-        let openBrackets = 0
-        let inString = false
-        let escapeNext = false
+    // 4. Fix literal control characters inside string values and handle structure
+    let fixed = ''
+    let inString = false
+    let escapeNext = false
 
-        for (let i = 0; i < cleaned.length; i++) {
-            const char = cleaned[i]
-            if (escapeNext) {
-                escapeNext = false
-                continue
-            }
-            if (char === '\\') {
-                escapeNext = true
-            } else if (char === '"') {
-                inString = !inString
-            } else if (!inString) {
-                if (char === '{') openBraces++
-                else if (char === '}') openBraces--
-                else if (char === '[') openBrackets++
-                else if (char === ']') openBrackets--
-            }
+    // Pass 1: Handle string escaping and control characters
+    for (let i = 0; i < cleaned.length; i++) {
+        const char = cleaned[i]
+        const code = char.charCodeAt(0)
+
+        if (escapeNext) {
+            fixed += char
+            escapeNext = false
+            continue
         }
 
-        if (inString) cleaned += '"'
-        while (openBrackets > 0) {
-            cleaned += ']'
-            openBrackets--
-        }
-        while (openBraces > 0) {
-            cleaned += '}'
-            openBraces--
+        if (char === '\\') {
+            fixed += char
+            escapeNext = true
+            continue
         }
 
-        // Final attempt to find a valid JSON sub-structure if healing added too many closing braces
-        // or if there's trailing garbage
-        try {
-            JSON.parse(cleaned)
-        } catch (e) {
-            // If still failing, try to find the last valid structure by stripping one char at a time
-            // Though the above logic should handle most truncation cases.
+        if (char === '"') {
+            inString = !inString
+            fixed += char
+            continue
         }
+
+        if (inString && code < 32) {
+            // Control character inside a string! Escape it.
+            if (char === '\n') fixed += '\\n'
+            else if (char === '\r') fixed += '\\r'
+            else if (char === '\t') fixed += '\\t'
+            else fixed += '\\u' + code.toString(16).padStart(4, '0')
+        } else {
+            fixed += char
+        }
+    }
+    cleaned = fixed
+
+    // Pass 2: Check structural integrity (closing braces/brackets)
+    let openBraces = 0
+    let openBrackets = 0
+    inString = false
+    escapeNext = false
+
+    for (let i = 0; i < cleaned.length; i++) {
+        const char = cleaned[i]
+        if (escapeNext) {
+            escapeNext = false
+            continue
+        }
+        if (char === '\\') {
+            escapeNext = true
+        } else if (char === '"') {
+            inString = !inString
+        } else if (!inString) {
+            if (char === '{') openBraces++
+            else if (char === '}') openBraces--
+            else if (char === '[') openBrackets++
+            else if (char === ']') openBrackets--
+        }
+    }
+
+    // If we're stuck in an escape state at the very end, drop the backslash
+    if (escapeNext) {
+        cleaned = cleaned.substring(0, cleaned.length - 1)
+    }
+
+    const removeTrailingComma = () => {
+        cleaned = cleaned.trim()
+        while (cleaned.endsWith(',')) {
+            cleaned = cleaned.substring(0, cleaned.length - 1).trim()
+        }
+    }
+
+    // Close open string
+    if (inString) {
+        cleaned += '"'
+    }
+
+    // Close open brackets
+    while (openBrackets > 0) {
+        removeTrailingComma()
+        cleaned += ']'
+        openBrackets--
+    }
+
+    // Close open braces
+    while (openBraces > 0) {
+        removeTrailingComma()
+        cleaned += '}'
+        openBraces--
+    }
+
+    // Final safety: ensure no dangling comma before the last structurally valid closer
+    const lastBrace = cleaned.lastIndexOf('}')
+    const lastBracket = cleaned.lastIndexOf(']')
+    const lastCloser = Math.max(lastBrace, lastBracket)
+
+    if (lastCloser > 0) {
+        const beforeCloser = cleaned.substring(0, lastCloser).trim()
+        if (beforeCloser.endsWith(',')) {
+            cleaned = beforeCloser.replace(/,+$/, '').trim() + cleaned.substring(lastCloser)
+        }
+    }
+
+    // Strip trailing garbage after the final object
+    const finalEnd = cleaned.lastIndexOf('}')
+    if (finalEnd >= 0) {
+        cleaned = cleaned.substring(0, finalEnd + 1)
     }
 
     return cleaned

@@ -130,7 +130,7 @@ export default defineEventHandler(async (event) => {
 
                 try {
                     const msg = await anthropic.messages.create({
-                        model: 'claude-sonnet-4-6',
+                        model: 'claude-3-haiku-20240307',
                         max_tokens: 4096,
                         messages: [{ role: 'user', content: prompt }],
                     })
@@ -253,8 +253,8 @@ Return ONLY the JSON object.`
 
         const summaryMsg = await anthropic.messages.create({
             model: 'claude-sonnet-4-6',
-            max_tokens: 8192,
-            messages: [{ role: 'user', content: summaryPrompt }],
+            max_tokens: 4096,
+            messages: [{ role: 'user', content: summaryPrompt + '\n\nIMPORTANT: Respond ONLY with valid JSON. No preamble, no explanation.' }],
         })
 
         const summaryRaw = summaryMsg.content[0].type === 'text' ? summaryMsg.content[0].text : '{}'
@@ -262,7 +262,17 @@ Return ONLY the JSON object.`
         let summaryParsed: any
         try {
             const cleaned = healJson(summaryRaw)
-            summaryParsed = JSON.parse(cleaned)
+            try {
+                summaryParsed = JSON.parse(cleaned)
+            } catch (innerError) {
+                // If standard parse fails, try the unescape fallback
+                const unescaped = cleaned.replace(/\\"/g, '"').replace(/\\n/g, '\n')
+                if (unescaped.includes('"summary"')) {
+                    summaryParsed = JSON.parse(healJson(unescaped))
+                } else {
+                    throw innerError
+                }
+            }
         } catch (e) {
             console.error('Final Summary JSON parse failed:', e, summaryRaw)
 

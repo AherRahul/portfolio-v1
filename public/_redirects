@@ -1,0 +1,7 @@
+/api/quiz/generate    /.netlify/functions/quiz-generate    200
+/api/summary/generate /.netlify/functions/summary-generate 200
+/api/system-design/evaluate-step /.netlify/functions/sd-evaluate-step 200
+/api/system-design/evaluate /.netlify/functions/sd-evaluate 200
+
+/timeline/    /about/    301
+/support-me/  /sponsors/ 301

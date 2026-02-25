@@ -6,20 +6,29 @@ export const useApiEndpoints = () => {
     // Always use the redirected URLs in production
     // The redirects in netlify.toml will handle routing to the functions
     if (process.client && typeof window !== 'undefined') {
-      // Client-side: check if we're on Netlify
-      const isNetlify = window.location.hostname.includes('netlify.app') ||
-        window.location.hostname.includes('rahulaher.netlify.app')
+      const hostname = window.location.hostname
+      const isNetlify = hostname.includes('netlify.app') ||
+        hostname.includes('rahulaher.netlify.app') ||
+        hostname.endsWith('.netlify.app')
 
       if (isNetlify) {
-        // On Netlify, use the function URLs directly to avoid redirect issues
+        let resolved = endpoint
         switch (endpoint) {
           case '/api/quiz/generate':
-            return '/.netlify/functions/quiz-generate'
+            resolved = '/.netlify/functions/quiz-generate'
+            break
           case '/api/summary/generate':
-            return '/.netlify/functions/summary-generate'
-          default:
-            return endpoint
+            resolved = '/.netlify/functions/summary-generate'
+            break
+          case '/api/system-design/evaluate':
+            resolved = '/.netlify/functions/sd-evaluate'
+            break
+          case '/api/system-design/evaluate-step':
+            resolved = '/.netlify/functions/sd-evaluate-step'
+            break
         }
+        // console.log(`[useApiEndpoints] Resolving ${endpoint} -> ${resolved} (Netlify detected)`)
+        return resolved
       }
     }
 
@@ -32,9 +41,10 @@ export const useApiEndpoints = () => {
     const url = getApiUrl(endpoint)
 
     try {
-      return await $fetch(url, {
+      // Use any for url to avoid excessive stack depth in Nuxt's route types
+      return await $fetch(url as any, {
         ...options,
-        timeout: 30000, // 30 second timeout
+        timeout: 120000, // Increased to 120s for slow AI models like Opus
         retry: 1 // Retry once on failure
       }) as T
     } catch (error: any) {
@@ -44,9 +54,9 @@ export const useApiEndpoints = () => {
       if (url.includes('/.netlify/functions/')) {
         const fallbackUrl = endpoint // Original endpoint with redirect
         // console.log(`Retrying with fallback URL: ${fallbackUrl}`)
-        return await $fetch(fallbackUrl, {
+        return await $fetch(fallbackUrl as any, {
           ...options,
-          timeout: 30000,
+          timeout: 120000,
           retry: 0 // No retry for fallback
         })
       }

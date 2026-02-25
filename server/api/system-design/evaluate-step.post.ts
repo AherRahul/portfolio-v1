@@ -80,19 +80,37 @@ export default defineEventHandler(async (event) => {
 
         const message = await anthropic.messages.create({
             model: 'claude-sonnet-4-6',
-            max_tokens: 8192,
-            messages: [{ role: 'user', content: prompt }]
+            max_tokens: 4096,
+            messages: [{ role: 'user', content: prompt + '\n\nIMPORTANT: Respond ONLY with valid JSON. No preamble, no explanation.' }]
         })
 
         const rawText = message.content[0].type === 'text' ? message.content[0].text : ''
 
         let result: StepEvalResponse
         try {
+            if (!rawText || rawText.trim().length === 0) {
+                throw new Error('AI returned an empty response')
+            }
             const cleaned = healJson(rawText)
-            result = JSON.parse(cleaned)
-        } catch (e) {
+            try {
+                result = JSON.parse(cleaned)
+            } catch (innerError) {
+                // If standard parse fails, try one last ultra-aggressive fix: 
+                // Sometimes AI returns escaped quotes for no reason
+                const unescaped = cleaned.replace(/\\"/g, '"').replace(/\\n/g, '\n')
+                if (unescaped.includes('"score"')) {
+                    result = JSON.parse(healJson(unescaped))
+                } else {
+                    throw innerError
+                }
+            }
+        } catch (e: any) {
             console.error('Step Eval JSON parse failed:', e, rawText)
-            throw createError({ statusCode: 500, statusMessage: 'Failed to parse AI step evaluation response' })
+            const snippet = rawText.length > 200 ? rawText.substring(0, 200) + '...' : rawText
+            throw createError({
+                statusCode: 500,
+                statusMessage: `Failed to parse AI response: ${e.message}. Status: Please try again or check the requirements complexity.`
+            })
         }
 
         return result
