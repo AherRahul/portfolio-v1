@@ -24,3 +24,13 @@
   from = "/api/summary/generate"
   to = "/.netlify/functions/summary-generate"
   status = 200
+
+[[redirects]]
+  from = "/api/system-design/evaluate-step"
+  to = "/.netlify/functions/sd-evaluate-step"
+  status = 200
+
+[[redirects]]
+  from = "/api/system-design/evaluate"
+  to = "/.netlify/functions/sd-evaluate"
+  status = 200

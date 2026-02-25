@@ -29,6 +29,7 @@ export interface SystemDesignEval {
   totalScore: number
   maxScore: number
   summary: string
+  designType?: 'LLD' | 'HLD' | 'Both'   // passed through from caller
   breakdown: Array<{
     section: string
     score: number
@@ -642,39 +643,69 @@ class PDFGenerator {
     return this.doc.output('datauristring')
   }
 
-  async generateSystemDesignPDF(title: string, evaluation: SystemDesignEval): Promise<string> {
+  // ── LLD Report ────────────────────────────────────────────────────────────
+  async generateLLDReportPDF(title: string, evaluation: SystemDesignEval): Promise<string> {
     await this.loadLogo()
-    this.addHeader('System Design Evaluation', title)
+    this.addHeader('LLD Engineering Audit', title)
 
-    // Overall Score & Grade
+    // Grade + Score banner
     this.doc.setFont('helvetica', 'bold')
     this.doc.setFontSize(24)
     this.doc.setTextColor(...brandConfig.primaryColor)
     this.doc.text(evaluation.grade, this.margin, this.currentY)
-
     this.doc.setFontSize(16)
     this.doc.setTextColor(100, 100, 100)
-    this.doc.text(`${evaluation.totalScore} / ${evaluation.maxScore}`, this.margin + 20, this.currentY)
-    this.currentY += 15
+    this.doc.text(`${evaluation.totalScore} / ${evaluation.maxScore}`, this.margin + 22, this.currentY)
+    this.currentY += 8
 
-    // Summary
+    // Interview type tag
+    this.doc.setFont('helvetica', 'italic')
+    this.doc.setFontSize(10)
+    this.doc.setTextColor(120, 120, 120)
+    this.doc.text('Low-Level Design (LLD) Interview Report', this.margin, this.currentY)
+    this.currentY += 14
+
+    // Overall Summary
     this.addSection('Overall Summary', evaluation.summary)
 
-    // Breakdown Sections
-    evaluation.breakdown.forEach(section => {
-      const sectionText = [
-        `Score: ${section.score}/${section.maxScore}`,
+    // Stage-by-stage breakdown with rich descriptions
+    const stageDescriptions: Record<string, string> = {
+      'Requirements Gathering': 'Evaluates the candidate\'s ability to extract precise functional and non-functional requirements, define scope, and articulate constraints for the low-level system.',
+      'Core Entity Identification': 'Assesses the candidate\'s domain modeling skills — identifying the right domain objects, their responsibilities, and ensuring single-responsibility principles.',
+      'Class Design & OOP': 'Reviews the class hierarchy, OOP principle adherence (SOLID), use of design patterns, and the quality of relationships (inheritance vs composition).',
+      'Code Implementation': 'Audits the actual implementation for correctness, clean code practices, enterprise-grade error handling, testability, and alignment with the class design.',
+    }
+
+    // LLD expected stage order
+    const lldOrder = ['Requirements Gathering', 'Core Entity Identification', 'Class Design & OOP', 'Code Implementation']
+    const sortedBreakdown = [...evaluation.breakdown].sort((a, b) => {
+      const ai = lldOrder.findIndex(s => a.section.includes(s.replace('1. ', '').replace('2. ', '').replace('3. ', '').replace('4. ', '')))
+      const bi = lldOrder.findIndex(s => b.section.includes(s.replace('1. ', '').replace('2. ', '').replace('3. ', '').replace('4. ', '')))
+      return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi)
+    })
+
+    this.addSection('Stage-by-Stage Evaluation', '')
+    sortedBreakdown.forEach((section, idx) => {
+      const descKey = Object.keys(stageDescriptions).find(k => section.section.includes(k)) || ''
+      const desc = stageDescriptions[descKey] || ''
+      const lines = [
+        `Stage ${idx + 1}: ${section.section}`,
+        `Score: ${section.score} / ${section.maxScore}`,
+        desc ? `About: ${desc}` : '',
         `Feedback: ${section.feedback}`,
-        ...(section.improvements?.length ? ['Improvements:', ...section.improvements.map(i => `  • ${i}`)] : [])
-      ]
-      this.addSection(section.section, sectionText)
+        ...(section.improvements?.length ? ['Areas to Improve:', ...section.improvements.map(i => `  • ${i}`)] : []),
+      ].filter(Boolean)
+      this.addSection(section.section, lines)
     })
 
     // Key Takeaways
-    this.addSection('Key Takeaways', evaluation.keyTakeaways)
+    if (evaluation.keyTakeaways?.length) {
+      this.addSection('Key Takeaways & Learning Points', evaluation.keyTakeaways)
+    }
 
     // Model Solution
-    if (evaluation.modelSolution?.sections) {
+    if (evaluation.modelSolution?.sections?.length) {
+      this.addSection('Masterpiece Model Solution', 'The following is an expert-level reference solution showing how a senior/staff engineer would approach this LLD problem:')
       evaluation.modelSolution.sections.forEach(sec => {
         this.addSection(sec.heading, sec.content)
       })
@@ -683,7 +714,91 @@ class PDFGenerator {
     this.addFooter()
     return this.doc.output('datauristring')
   }
-}
+
+  // ── HLD Report ────────────────────────────────────────────────────────────
+  async generateHLDReportPDF(title: string, evaluation: SystemDesignEval): Promise<string> {
+    await this.loadLogo()
+    this.addHeader('HLD Engineering Audit', title)
+
+    // Grade + Score banner
+    this.doc.setFont('helvetica', 'bold')
+    this.doc.setFontSize(24)
+    this.doc.setTextColor(...brandConfig.primaryColor)
+    this.doc.text(evaluation.grade, this.margin, this.currentY)
+    this.doc.setFontSize(16)
+    this.doc.setTextColor(100, 100, 100)
+    this.doc.text(`${evaluation.totalScore} / ${evaluation.maxScore}`, this.margin + 22, this.currentY)
+    this.currentY += 8
+
+    // Interview type tag
+    this.doc.setFont('helvetica', 'italic')
+    this.doc.setFontSize(10)
+    this.doc.setTextColor(120, 120, 120)
+    this.doc.text('High-Level Design (HLD) Interview Report', this.margin, this.currentY)
+    this.currentY += 14
+
+    // Overall Summary
+    this.addSection('Overall Summary', evaluation.summary)
+
+    // Stage descriptions specific to HLD
+    const hldStageDescriptions: Record<string, string> = {
+      '1. Requirements Gathering': 'Evaluates the candidate\'s ability to define functional features (user flows, APIs) and non-functional requirements (scalability, availability, latency targets) for a distributed system at scale.',
+      '2. API Design': 'Assesses RESTful API design quality — endpoint naming, HTTP method usage, versioning, request/response contract clarity, and alignment with the system\'s functional requirements.',
+      '3. High-Level Design': 'Reviews the overall system blueprint — presence of critical components (Load Balancer, API Gateway, Services, Cache, DB, Message Queue), data flow correctness, and CAP theorem trade-off decisions.',
+      '4. Database Design': 'Audits the storage strategy — SQL vs NoSQL justification, schema design, indexing strategy, sharding/replication approach, and alignment with read/write access patterns.',
+      '5. Deep Dive 1 - Caching Strategy': 'Evaluates the caching layer design — cache topology (CDN, reverse proxy, application cache), eviction policies, cache invalidation strategies, and handling of cache stampedes or cold starts.',
+      '6. Deep Dive 2 - Click Count Analytics': 'Assesses the real-time analytics pipeline design — event ingestion strategy, aggregation approaches (count-min sketch, HyperLogLog, batch vs stream), storage choices, and query efficiency at scale.',
+    }
+
+    // HLD expected stage order — must match labels returned by the API exactly
+    const hldOrder = [
+      '1. Requirements Gathering',
+      '2. API Design',
+      '3. High-Level Design',
+      '4. Database Design',
+      '5. Deep Dive 1 - Caching Strategy',
+      '6. Deep Dive 2 - Click Count Analytics',
+    ]
+
+    const sortedBreakdown = [...evaluation.breakdown].sort((a, b) => {
+      const ai = hldOrder.findIndex(s => a.section.toLowerCase().includes(s.toLowerCase().replace(/^\d+\.\s*/, '').substring(0, 12)))
+      const bi = hldOrder.findIndex(s => b.section.toLowerCase().includes(s.toLowerCase().replace(/^\d+\.\s*/, '').substring(0, 12)))
+      return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi)
+    })
+
+    this.addSection('Stage-by-Stage Evaluation', '')
+    sortedBreakdown.forEach((section) => {
+      const descKey = Object.keys(hldStageDescriptions).find(k =>
+        section.section.toLowerCase().includes(k.toLowerCase().replace(/^\d+\.\s*/, '').substring(0, 12))
+      ) || ''
+      const desc = hldStageDescriptions[descKey] || ''
+      const lines = [
+        `Score: ${section.score} / ${section.maxScore}`,
+        desc ? `Stage Overview: ${desc}` : '',
+        `Interviewer Feedback: ${section.feedback}`,
+        ...(section.improvements?.length ? ['Improvement Areas:', ...section.improvements.map(i => `  • ${i}`)] : []),
+      ].filter(Boolean)
+      this.addSection(section.section, lines)
+    })
+
+    // Key Takeaways
+    if (evaluation.keyTakeaways?.length) {
+      this.addSection('Key Takeaways & Learning Points', evaluation.keyTakeaways)
+    }
+
+    // Model Solution
+    if (evaluation.modelSolution?.sections?.length) {
+      this.addSection('Reference Architecture — Model Solution', 'The following is a senior engineer\'s reference solution demonstrating ideal HLD decisions, trade-offs, and component choices for this problem:')
+      evaluation.modelSolution.sections.forEach(sec => {
+        this.addSection(sec.heading, sec.content)
+      })
+    }
+
+    this.addFooter()
+    return this.doc.output('datauristring')
+  }
+} // end PDFGenerator class
+
 
 export async function downloadSummaryPDF(topicTitle: string, summaryData: SummaryData) {
   try {
@@ -814,11 +929,20 @@ export async function downloadQuizAnalysisPDF(
   }
 }
 
-export async function downloadSystemDesignPDF(title: string, evaluation: SystemDesignEval) {
+export async function downloadSystemDesignPDF(
+  title: string,
+  evaluation: SystemDesignEval,
+  designType: 'LLD' | 'HLD' | 'Both' = 'LLD'
+) {
   try {
     const generator = new PDFGenerator()
-    const pdfDataUri = await generator.generateSystemDesignPDF(title, evaluation)
-    const fileName = `${title.replace(/[^a-zA-Z0-9]/g, '_')}_Evaluation.pdf`
+    const isHLD = designType === 'HLD' || designType === 'Both'
+    const pdfDataUri = isHLD
+      ? await generator.generateHLDReportPDF(title, evaluation)
+      : await generator.generateLLDReportPDF(title, evaluation)
+
+    const reportLabel = isHLD ? 'HLD_Audit' : 'LLD_Audit'
+    const fileName = `${title.replace(/[^a-zA-Z0-9]/g, '_')}_${reportLabel}.pdf`
 
     if (typeof window !== 'undefined') {
       const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)

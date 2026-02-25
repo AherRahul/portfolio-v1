@@ -100,10 +100,10 @@ export default defineEventHandler(async (event) => {
             : [
                 { key: 'requirements', label: '1. Requirements Gathering', data: a.requirements || {}, skip: !a.requirements || (!a.requirements.functional?.length && !a.requirements.nonFunctional?.length) },
                 { key: 'api', label: '2. API Design', data: a.api || [], skip: !a.api?.length },
-                { key: 'architecture', label: '3. High-Level Architecture', data: a.architecture || '', skip: !a.architecture?.trim() },
+                { key: 'architecture', label: '3. High-Level Design', data: a.architecture || '', skip: !a.architecture?.trim() },
                 { key: 'database', label: '4. Database Design', data: a.database || [], skip: !a.database?.length },
-                { key: 'deep-dive', label: '5. Deep Dive - Caching', data: a.deepDive || '', skip: !a.deepDive?.trim() },
-                { key: 'analytics', label: '6. Click Count Analytics', data: a.analytics || '', skip: !a.analytics?.trim() },
+                { key: 'deep-dive', label: '5. Deep Dive 1 - Caching Strategy', data: a.deepDive || '', skip: !a.deepDive?.trim() },
+                { key: 'analytics', label: '6. Deep Dive 2 - Click Count Analytics', data: a.analytics || '', skip: !a.analytics?.trim() },
             ]
 
         const sectionResults = await Promise.all(
@@ -156,42 +156,100 @@ export default defineEventHandler(async (event) => {
         const totalScore = sectionResults.reduce((s, r) => s + r.score, 0)
         const grade = gradeFromPct((totalScore / totalMax) * 100)
 
-        // ── Final holistic summary + model solution via single prompt ─────────
-        const summaryPrompt = `You are a world-class engineering interviewer. Summarize this candidate's overall performance and provide a MASTERPIECE model solution.
+        // ── Two separate prompts: one for LLD, one for HLD ─────────────────
 
-**Problem:** "${body.questionTitle}" (${body.designType}, ${body.difficulty})
+        const lldSummaryPrompt = `You are a world-class Low-Level Design (LLD) interviewer and code auditor.
+Your job is to summarize this candidate's LLD interview performance and generate a REFERENCE implementation.
 
-**Section Scores:**
+**Problem:** "${body.questionTitle}" (LLD Interview, ${body.difficulty})
+
+**Stage Scores:**
 ${sectionResults.map(r => `- ${r.section}: ${r.score}/${r.maxScore} — ${r.feedback}`).join('\n')}
 
-**Overall Assessment:** ${totalScore}/${totalMax} (${grade})
+**Overall:** ${totalScore}/${totalMax} (${grade})
 
-**Requirements for Model Solution:**
-1. ${isLLD ? `Provide a COMPLETE, production-ready implementation. 
-   - **MANDATORY**: Group code by class/interface.
-   - For EACH class, provide a markdown sub-heading (e.g., "### Class: ParkingManager") followed immediately by its code block. 
-   - DO NOT concatenate all code into one block.
-   - DO NOT use horizontal lines (---) anywhere in the report.` : `Provide a comprehensive architecture breakdown. 
-   - Use clear markdown sub-headings for different components.
-   - DO NOT use horizontal lines (---) anywhere in the report.`}
-2. Use the ${body.language || 'specified'} programming language for all code.
-3. Include brief justifications for key design patterns or technology choices.
-4. Ensure all content is formatted in clean Markdown.
+**STRICT RULES FOR YOUR RESPONSE — LLD REPORT:**
+1. Write a 3-sentence holistic assessment focusing on: OOP design quality, class responsibility separation, SOLID adherence, and implementation completeness.
+2. The model solution MUST be a complete, production-ready code implementation.
+3. Group code BY CLASS — each class/interface gets its own markdown sub-heading: "### Class: ClassName" followed immediately by its code block.
+4. DO NOT write architecture diagrams, system components, load balancers, databases, caches, or any distributed systems concepts.
+5. DO NOT concatenate all code into one block.
+6. DO NOT use horizontal lines (---) anywhere.
+7. Use the ${body.language || 'Java'} programming language exclusively.
+8. Cover: class hierarchy, design patterns used, key method logic, and edge case handling.
 
-Respond with ONLY valid JSON:
+Respond with ONLY valid JSON — no markdown, no extra text:
 {
-  "summary": "<3-sentence holistic assessment of the candidate's solution strength and biggest gap>",
+  "summary": "<3-sentence LLD assessment: OOP quality, class design, implementation strength, biggest gap>",
   "modelSolution": {
-    "title": "Masterpiece Solution: ${body.questionTitle}",
+    "title": "Reference LLD Implementation: ${body.questionTitle}",
     "sections": [
-      { "heading": "${isLLD ? 'Architectural Patterns' : 'High-Level Architecture'}", "content": "..." },
-      { "heading": "${isLLD ? 'Detailed Implementation' : 'Data Schema & API Design'}", "content": "..." },
-      { "heading": "Critical Design Considerations", "content": "..." }
+      { "heading": "Design Patterns & Class Architecture", "content": "<Markdown: which patterns, why, class hierarchy overview. NO code here.>" },
+      { "heading": "Core Class Implementations", "content": "<Markdown: ### Class: X\n\`\`\`${body.language || 'java'}\n...code...\n\`\`\`\n### Class: Y\n\`\`\`${body.language || 'java'}\n...code...\n\`\`\`>" },
+      { "heading": "SOLID Principles & OOP Best Practices", "content": "<Markdown: how SRP, OCP, LSP, ISP, DIP are demonstrated in the reference solution>" },
+      { "heading": "Testing & Edge Case Strategy", "content": "<Markdown: key test cases, error handling patterns, concurrency considerations if applicable>" }
     ]
   },
-  "keyTakeaways": ["<top learning 1>", "<top learning 2>", "<top learning 3>"]
+  "keyTakeaways": ["<LLD lesson 1>", "<LLD lesson 2>", "<LLD lesson 3>", "<LLD lesson 4>"]
 }
-Return ONLY the JSON object, no markdown.`
+Return ONLY the JSON object.`
+
+        const hldSummaryPrompt = `You are a world-class High-Level Design (HLD) / System Design interviewer and distributed systems architect.
+Your job is to summarize this candidate's HLD interview performance and generate a REFERENCE system architecture.
+
+**Problem:** "${body.questionTitle}" (HLD Interview, ${body.difficulty})
+
+**Stage Scores (6 HLD Stages):**
+${sectionResults.map(r => `- ${r.section}: ${r.score}/${r.maxScore} — ${r.feedback}`).join('\n')}
+
+**Overall:** ${totalScore}/${totalMax} (${grade})
+
+**STRICT RULES FOR YOUR RESPONSE — HLD REPORT:**
+1. Write a 3-sentence holistic assessment focusing on: system scalability, API quality, storage strategy, caching design, analytics pipeline, and trade-off analysis.
+2. The model solution MUST be a complete architectural reference — NOT code.
+3. DO NOT write any source code, class definitions, method bodies, or programming language syntax.
+4. DO NOT use horizontal lines (---) anywhere.
+5. Use distributed systems terminology: Load Balancers, API Gateways, Microservices, Message Queues (Kafka/RabbitMQ), CDN, Redis/Memcached, Consistent Hashing, CAP Theorem, Sharding, Replication, Rate Limiting, Circuit Breakers, Service Discovery, etc.
+6. Each section must map to one of the 6 HLD interview stages.
+
+Respond with ONLY valid JSON — no markdown, no extra text:
+{
+  "summary": "<3-sentence HLD assessment: scalability decisions, API design quality, storage strategy, biggest architectural gap>",
+  "modelSolution": {
+    "title": "Reference System Architecture: ${body.questionTitle}",
+    "sections": [
+      {
+        "heading": "1. Requirements Gathering",
+        "content": "<Markdown: Functional requirements, NFRs with concrete numbers (e.g., 100M DAU, p99 latency < 100ms, 99.99% uptime), capacity estimation, and scope decisions. NO code.>"
+      },
+      {
+        "heading": "2. API Design",
+        "content": "<Markdown: RESTful endpoints, HTTP methods, request/response schemas, versioning strategy, rate limiting, authentication approach. Use tables or lists — NO code blocks.>"
+      },
+      {
+        "heading": "3. High-Level Design",
+        "content": "<Markdown: Component diagram in text (Client → CDN → LB → API Gateway → Services → DB/Cache), data flow narrative, service decomposition rationale, CAP theorem positioning, fault tolerance strategy. NO code.>"
+      },
+      {
+        "heading": "4. Database Design",
+        "content": "<Markdown: Primary DB choice + justification (SQL/NoSQL), schema design, indexing strategy, read replicas, sharding approach, secondary storage choices (object store, search index). NO code.>"
+      },
+      {
+        "heading": "5. Deep Dive 1 - Caching Strategy",
+        "content": "<Markdown: Cache topology (CDN, reverse proxy, app-level), Redis/Memcached usage, eviction policies (LRU/LFU), TTL decisions, cache invalidation strategy (write-through/write-behind/cache-aside), thundering herd prevention. NO code.>"
+      },
+      {
+        "heading": "6. Deep Dive 2 - Click Count Analytics",
+        "content": "<Markdown: Event ingestion (Kafka topics, partitioning strategy), real-time aggregation (count-min sketch or HyperLogLog), batch processing (Spark/Flink), storage (ClickHouse/Cassandra), query API design for dashboards. NO code.>"
+      }
+    ]
+  },
+  "keyTakeaways": ["<HLD lesson 1>", "<HLD lesson 2>", "<HLD lesson 3>", "<HLD lesson 4>"]
+}
+Return ONLY the JSON object.`
+
+        const summaryPrompt = isLLD ? lldSummaryPrompt : hldSummaryPrompt
+
 
         const summaryMsg = await anthropic.messages.create({
             model: 'claude-sonnet-4-6',

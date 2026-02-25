@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { shallowRef, type Component } from 'vue'
 import { getQuestionBySlug } from '~/data/system-design-questions'
 import { renderMarkdown } from '~/utils/markdownRenderer'
 
@@ -17,6 +18,12 @@ const question = questionRaw // narrowed, never undefined past this line
 useSeoMeta({
   title: `${question.title} – System Design Practice`,
   description: question.description,
+})
+
+useHead({
+  script: [
+    { src: 'https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js', defer: true }
+  ]
 })
 
 // ── Difficulty Modal ─────────────────────────────────────────────────────────
@@ -149,8 +156,280 @@ const stepError = ref<Record<string, string>>({})
 const showAnalysisHub = ref(false)
 const showQuitModal = ref(false)
 
+// ── File System Modal State ──
+const showNewFSModal = ref(false)
+const fsModalType = ref<'file' | 'folder'>('file')
+const fsModalName = ref('')
+const fsModalError = ref('')
+const fsNameInputRef = ref<HTMLInputElement | null>(null)
+
 const stepEvalCounts = ref<Record<string, number>>({})
 const MAX_STEP_EVALS = 3
+
+// ── IDE UI State ──
+const isTerminalOpen = ref(false)
+const isEditorFullscreen = ref(false)
+
+// ── Guidelines Modal ──────────────────────────────────────────────────────────
+const showGuidelinesModal = ref(false)
+
+// ── Simulation Modal – real interactive components per question ───────────────
+const showSimulationModal = ref(false)
+
+// Lazy-load the correct simulation component based on the question slug
+const simulationComponent = shallowRef<Component | null>(null)
+
+async function openSimulationModal() {
+  showSimulationModal.value = true
+  if (simulationComponent.value) return // already loaded
+  const map: Record<string, () => Promise<{ default: Component }>> = {
+    'design-tic-tac-toe':         () => import('~/components/SystemDesign/Simulations/TicTacToe.vue'),
+    'design-url-shortener':       () => import('~/components/SystemDesign/Simulations/UrlShortener.vue'),
+    'design-rate-limiter':        () => import('~/components/SystemDesign/Simulations/RateLimiter.vue'),
+    'design-lru-cache':           () => import('~/components/SystemDesign/Simulations/LruCache.vue'),
+    'design-parking-lot':         () => import('~/components/SystemDesign/Simulations/ParkingLot.vue'),
+    'design-chat-application':    () => import('~/components/SystemDesign/Simulations/ChatApp.vue'),
+    'design-snake-and-ladder':    () => import('~/components/SystemDesign/Simulations/SnakeAndLadder.vue'),
+    'design-minesweeper':         () => import('~/components/SystemDesign/Simulations/Minesweeper.vue'),
+    'design-bloom-filter':        () => import('~/components/SystemDesign/Simulations/BloomFilter.vue'),
+    'design-autocomplete':        () => import('~/components/SystemDesign/Simulations/Autocomplete.vue'),
+    'design-search-engine':       () => import('~/components/SystemDesign/Simulations/SearchEngine.vue'),
+    'design-atm':                 () => import('~/components/SystemDesign/Simulations/AtmMachine.vue'),
+    'design-vending-machine':     () => import('~/components/SystemDesign/Simulations/VendingMachine.vue'),
+    'design-elevator':            () => import('~/components/SystemDesign/Simulations/Elevator.vue'),
+    'design-traffic-control':     () => import('~/components/SystemDesign/Simulations/TrafficControl.vue'),
+    'design-coffee-machine':      () => import('~/components/SystemDesign/Simulations/CoffeeMachine.vue'),
+    'design-pub-sub':             () => import('~/components/SystemDesign/Simulations/PubSub.vue'),
+    'design-notification-system': () => import('~/components/SystemDesign/Simulations/NotificationSystem.vue'),
+  }
+  const loader = map[slug]
+  if (loader) {
+    const mod = await loader()
+    simulationComponent.value = mod.default
+  } else {
+    simulationComponent.value = null // question has no simulation
+  }
+}
+
+// ── Stage Tooltip State – Teleport-based to escape overflow clipping ──────────
+const activeTooltipStep = ref<string | null>(null)
+const tooltipPos = ref({ top: 0, left: 0 })
+
+function toggleTooltip(e: MouseEvent, id: string) {
+  if (activeTooltipStep.value === id) {
+    activeTooltipStep.value = null
+    return
+  }
+  const btn = (e.currentTarget as HTMLElement)
+  const rect = btn.getBoundingClientRect()
+  // Position the tooltip below the pill, aligned left, but clamped to viewport
+  const left = Math.min(rect.left, window.innerWidth - 336)
+  tooltipPos.value = { top: rect.bottom + 8 + window.scrollY, left: Math.max(8, left) }
+  activeTooltipStep.value = id
+}
+
+// Close tooltip when clicking outside
+if (typeof document !== 'undefined') {
+  document.addEventListener('click', (e) => {
+    if (!(e.target as HTMLElement).closest('.step-pill-wrapper')) {
+      activeTooltipStep.value = null
+    }
+  })
+}
+
+
+// ── Stage Info Data ───────────────────────────────────────────────────────────
+interface StageInfo {
+  icon: string; color: string; duration: string
+  what: string; expected: string[]; tips: string[]; scoringFocus: string
+}
+
+const lldStageInfo: Record<string, StageInfo> = {
+  requirements: {
+    icon: 'heroicons:clipboard-document-list', color: 'text-green-400',
+    duration: '~5 min',
+    what: 'Identify what the system must do (functional) and quality attributes it must meet (non-functional).',
+    expected: [
+      '4–6 functional requirements (core user actions)',
+      '3–4 non-functional requirements (thread safety, modularity, extensibility)',
+      'Mention constraints: in-memory vs persistent, concurrent access',
+    ],
+    tips: [
+      'Nouns in the problem → data models; verbs → operations',
+      'Ask: who are the actors? what are the key use cases?',
+      'State assumptions explicitly — interviewers reward clarity',
+    ],
+    scoringFocus: 'Completeness of FR/NFR coverage and clarity of constraints',
+  },
+  entities: {
+    icon: 'heroicons:rectangle-group', color: 'text-blue-400',
+    duration: '~5 min',
+    what: 'Identify the core domain objects and interfaces that will form your class hierarchy.',
+    expected: [
+      '4–8 core entities with names and 1-line descriptions',
+      'Distinguish value objects, domain entities, services, repositories',
+      'Avoid a "God object" — each entity should have one clear responsibility',
+    ],
+    tips: [
+      'Extract nouns from requirements — these are candidate entities',
+      'Group by domain layer: model, service, repository, factory',
+      'If unsure, lean toward more fine-grained entities (easier to merge later)',
+    ],
+    scoringFocus: 'Entity cohesion, correct abstraction level, SRP adherence',
+  },
+  classes: {
+    icon: 'heroicons:code-bracket-square', color: 'text-purple-400',
+    duration: '~10–15 min',
+    what: 'Design the full class hierarchy, attributes, methods, and relationships including design patterns.',
+    expected: [
+      'Classes with typed attributes and method signatures',
+      'Explicit relationships: inheritance, composition, aggregation, dependency',
+      'At least one design pattern (Strategy, Observer, Factory, Builder…)',
+      'Interfaces to enforce contracts (key for OCP and DIP)',
+    ],
+    tips: [
+      'Favour composition over inheritance unless true IS-A relationship',
+      'Each class should have a single, named responsibility',
+      'Use interfaces at every cross-cutting boundary (storage, encoding, validation)',
+    ],
+    scoringFocus: 'SOLID adherence, pattern appropriateness, interface design quality',
+  },
+  code: {
+    icon: 'heroicons:command-line', color: 'text-orange-400',
+    duration: '~15–20 min',
+    what: 'Implement the core classes with real, compilable code following OOP best practices.',
+    expected: [
+      'Complete, production-quality implementation of 3–5 key classes',
+      'Constructor-injected dependencies (DI pattern)',
+      'Guard clauses and domain-specific exceptions',
+      'Thread safety where relevant (volatile, synchronized, ConcurrentHashMap)',
+    ],
+    tips: [
+      'Start with the domain model, then services, then factories',
+      'Favour immutability for value objects — use final fields',
+      'Add a brief main() or test block to show usage',
+    ],
+    scoringFocus: 'Code correctness, exception handling, immutability, concurrency awareness',
+  },
+}
+
+const hldStageInfo: Record<string, StageInfo> = {
+  requirements: {
+    icon: 'heroicons:clipboard-document-list', color: 'text-green-400',
+    duration: '~5 min',
+    what: 'Define what the system must do at scale: user-facing features and system quality targets.',
+    expected: [
+      '4–6 functional requirements (core API actions, user journeys)',
+      '4–5 non-functional requirements with concrete numbers: 100M DAU, p99 < 100ms, 99.99% uptime',
+      'Explicit scope decisions: what\'s out of scope?',
+      'Capacity estimation: storage per day, peak RPS, bandwidth',
+    ],
+    tips: [
+      'Always anchor NFRs to numbers — "fast" is not an NFR, "p99 < 50ms" is',
+      'Estimate scale early: it drives every architectural decision below',
+      'State assumed read:write ratio (e.g., 100:1 for this system)',
+    ],
+    scoringFocus: 'Concreteness of NFRs, scale estimation accuracy, scope clarity',
+  },
+  api: {
+    icon: 'heroicons:arrows-right-left', color: 'text-cyan-400',
+    duration: '~7 min',
+    what: 'Define the RESTful API contract: endpoints, methods, request/response shapes, auth, and versioning.',
+    expected: [
+      '4–6 endpoints covering all core functional requirements',
+      'Correct HTTP semantics (GET/POST/PUT/DELETE), versioned paths (/v1/…)',
+      'Request body fields and response field names',
+      'Authentication strategy: JWT Bearer token / API Key in header',
+      'Rate limiting: X-RateLimit-Limit / X-RateLimit-Remaining headers',
+    ],
+    tips: [
+      'Use nouns for resources (/urls/:id), not verbs (/getUrl)',
+      'Mention idempotency for write operations (PUT/DELETE)',
+      'Call out pagination strategy for list endpoints (cursor vs offset)',
+    ],
+    scoringFocus: 'REST correctness, completeness vs requirements, versioning and auth strategy',
+  },
+  architecture: {
+    icon: 'heroicons:server-stack', color: 'text-indigo-400',
+    duration: '~10 min',
+    what: 'Design the high-level component diagram and justify every architectural decision.',
+    expected: [
+      'Full component flow: Client → CDN → Load Balancer → API Gateway → Services → DB/Cache',
+      'Service decomposition rationale (monolith vs microservices)',
+      'CAP theorem positioning: which guarantee do you sacrifice and why?',
+      'Fault tolerance: circuit breaker, retry with exponential backoff, health checks',
+      'Async processing: where do you use a message queue?',
+    ],
+    tips: [
+      'Draw the data-path first (read), then the write path',
+      'For URL shortener, explain redirect flow specifically (301 vs 302)',
+      'Mention stateless application servers (horizontal scaling)',
+    ],
+    scoringFocus: 'Component completeness, data flow clarity, trade-off justification, fault tolerance',
+  },
+  database: {
+    icon: 'heroicons:circle-stack', color: 'text-amber-400',
+    duration: '~7 min',
+    what: 'Choose and justify primary + secondary storage, schema design, and data access patterns.',
+    expected: [
+      'Primary DB choice with SQL vs NoSQL justification tied to access patterns',
+      'Key schema fields and their data types',
+      'Indexing strategy: which columns get indexes and why',
+      'Sharding key choice with justification',
+      'Read replica count for the expected read:write ratio',
+      'Secondary stores: object store (S3) for large blobs, search index if needed',
+    ],
+    tips: [
+      'For write-heavy: Cassandra/DynamoDB; for complex queries: PostgreSQL',
+      'Always justify sharding key — hotspot vs even distribution',
+      'Mention write-ahead log (WAL) for data durability',
+    ],
+    scoringFocus: 'DB choice justification, schema quality, index strategy, sharding approach',
+  },
+  'deep-dive': {
+    icon: 'heroicons:bolt', color: 'text-yellow-400',
+    duration: '~8 min',
+    what: 'Design the multi-layer caching strategy to handle high read traffic efficiently.',
+    expected: [
+      'Cache layers: CDN edge cache → Nginx reverse proxy cache → Redis application cache',
+      'Eviction policy choice: LRU or LFU with justification',
+      'TTL values for each cache tier',
+      'Invalidation strategy: write-through, write-behind, or cache-aside — justify which',
+      'Thundering herd prevention: distributed mutex lock or probabilistic early expiry',
+    ],
+    tips: [
+      'Cache-aside is most flexible but risks stale reads — state your mitigation',
+      'For URL shortener: cache popular short codes in Redis with 24h TTL',
+      'Mention cache warming for newly deployed instances',
+    ],
+    scoringFocus: 'Cache topology, invalidation correctness, thundering herd handling',
+  },
+  analytics: {
+    icon: 'heroicons:chart-bar', color: 'text-pink-400',
+    duration: '~8 min',
+    what: 'Design a real-time click-count analytics pipeline from event ingestion to dashboard query API.',
+    expected: [
+      'Event ingestion: Kafka topics partitioned by URL hash for ordered fan-out',
+      'Real-time aggregation: count-min sketch (approximate) or exact Redis INCR for hot URLs',
+      'Batch layer: Spark/Flink jobs for hourly/daily rollups stored in ClickHouse or Apache Druid',
+      'Cold storage strategy for historical data (S3 + Parquet)',
+      'Query API design for dashboards: time-windowed aggregation endpoints',
+    ],
+    tips: [
+      'Mention Lambda architecture (speed layer + batch layer) for reconciliation',
+      'HyperLogLog for unique visitor counts (memory-efficient)',
+      'Druid over Cassandra for OLAP-style time-series queries',
+    ],
+    scoringFocus: 'Ingestion scalability, counting accuracy vs cost trade-off, query efficiency',
+  },
+}
+
+const currentStageInfo = computed<StageInfo | null>(() => {
+  const map = isLLD.value ? lldStageInfo : hldStageInfo
+  return map[activeStepId.value] || null
+})
+
+
 
 async function callStepEval(stepId: string, stepData: unknown): Promise<boolean> {
   const currentCount = stepEvalCounts.value[stepId] || 0
@@ -161,13 +440,15 @@ async function callStepEval(stepId: string, stepData: unknown): Promise<boolean>
 
   stepEvaluating.value[stepId] = true
   stepError.value[stepId] = ''
+  showGlobalLoader('Evaluating your step response...')
   try {
     const result = await $fetch<StepResult>('/api/system-design/evaluate-step', {
       method: 'POST',
       body: {
         questionTitle: question.title,
         questionDescription: question.description,
-        designType: question.type,
+        // Use effective session type so step prompts match the interview mode
+        designType: isLLD.value ? 'LLD' : 'HLD',
         difficulty: selectedDifficulty.value,
         language: codeLanguage.value,
         stepId,
@@ -176,13 +457,22 @@ async function callStepEval(stepId: string, stepData: unknown): Promise<boolean>
     })
     stepResults.value[stepId] = result
     stepEvalCounts.value[stepId] = currentCount + 1
+    // Persist step result to localStorage so it survives page refresh
+    if (typeof window !== 'undefined') {
+      const stepKey = `sd_step_${slug}_${isLLD.value ? 'lld' : 'hld'}`
+      const saved = JSON.parse(localStorage.getItem(stepKey) || '{}')
+      saved[stepId] = result
+      localStorage.setItem(stepKey, JSON.stringify(saved))
+    }
     showAnalysisHub.value = true
     return true
   } catch (err: any) {
-    stepError.value[stepId] = err?.data?.statusMessage || 'Evaluation failed. Please try again.'
+    // Handle both Nuxt server errors (statusMessage) and Netlify function errors (message)
+    stepError.value[stepId] = err?.data?.statusMessage || err?.data?.message || err?.message || 'Evaluation failed. Please try again.'
     return false
   } finally {
     stepEvaluating.value[stepId] = false
+    hideGlobalLoader()
   }
 }
 
@@ -309,28 +599,128 @@ async function submitClasses() {
   if (ok) { unlockNext() }
 }
 
-// ── Code Step (Multi-file) ───────────────────────────────────────────────────
+// ── Code Step (IDE Environment) ────────────────────────────────────────────────
 const codeLanguage = ref('java')
 const activeFilePath = ref('Main.java')
+const openTabs = ref<string[]>(['Main.java'])
 const codeFiles = ref([
-  { path: 'Main.java', content: `public class Main {\n    public static void main(String[] args) {\n        System.out.println("Hello World");\n    }\n}` }
+  { path: 'Main.java', content: `/**\n * ${question.title}\n * Implement your solution here.\n */\npublic class Main {\n    public static void main(String[] args) {\n        System.out.println("Initializing ${question.title}...");\n    }\n}` }
 ])
 
+const expandedFolders = ref<Set<string>>(new Set(['src']))
 const activeFile = computed(() => codeFiles.value.find(f => f.path === activeFilePath.value) || codeFiles.value[0])
 
+// Sync tabs with active file
+watch(activeFilePath, (newPath) => {
+  if (newPath && !newPath.endsWith('.keep') && !openTabs.value.includes(newPath)) {
+    openTabs.value.push(newPath)
+  }
+}, { immediate: true })
+
+function closeTab(path: string) {
+  openTabs.value = openTabs.value.filter(t => t !== path)
+  if (activeFilePath.value === path) {
+    activeFilePath.value = openTabs.value[openTabs.value.length - 1] || codeFiles.value[0]?.path || ''
+  }
+}
+
+const breadcrumbs = computed(() => {
+  if (!activeFilePath.value) return []
+  return activeFilePath.value.split('/')
+})
+
 const LANGUAGES = [
-  { id: 'java', label: 'Java', ext: '.java' },
-  { id: 'python', label: 'Python', ext: '.py' },
-  { id: 'javascript', label: 'JavaScript', ext: '.js' },
-  { id: 'typescript', label: 'TypeScript', ext: '.ts' },
-  { id: 'cpp', label: 'C++', ext: '.cpp' },
+  { id: 'java', label: 'Java', ext: '.java', icon: 'logos:java' },
+  { id: 'python', label: 'Python', ext: '.py', icon: 'logos:python' },
+  { id: 'javascript', label: 'JavaScript', ext: '.js', icon: 'logos:javascript' },
+  { id: 'typescript', label: 'TypeScript', ext: '.ts', icon: 'logos:typescript-icon' },
+  { id: 'cpp', label: 'C++', ext: '.cpp', icon: 'logos:c-plusplus' },
 ]
 
-function addFile() {
-  const ext = LANGUAGES.find(l => l.id === codeLanguage.value)?.ext || '.txt'
-  const newName = `NewFile${codeFiles.value.length + 1}${ext}`
-  codeFiles.value.push({ path: newName, content: '// New file logic...' })
-  activeFilePath.value = newName
+function getFileIcon(path: string) {
+  if (path.endsWith('.java')) return 'logos:java'
+  if (path.endsWith('.py')) return 'logos:python'
+  if (path.endsWith('.js')) return 'logos:javascript'
+  if (path.endsWith('.ts')) return 'logos:typescript-icon'
+  if (path.endsWith('.cpp')) return 'logos:c-plusplus'
+  return 'heroicons:document-text'
+}
+
+const fsModalParentPath = ref('')
+
+function openNSModal(type: 'file' | 'folder', parentPath: string = '') {
+  fsModalType.value = type
+  fsModalName.value = ''
+  fsModalError.value = ''
+  fsModalParentPath.value = parentPath
+  showNewFSModal.value = true
+  // Focus after animation
+  setTimeout(() => fsNameInputRef.value?.focus(), 100)
+}
+
+function addFile(parentPath: string = '') { 
+  if (typeof parentPath !== 'string') parentPath = ''
+  openNSModal('file', parentPath) 
+}
+function addFolder(parentPath: string = '') { 
+  if (typeof parentPath !== 'string') parentPath = ''
+  openNSModal('folder', parentPath) 
+}
+
+function confirmFSAction() {
+  const name = fsModalName.value.trim()
+  if (!name) {
+    fsModalError.value = 'Name is required'
+    return
+  }
+
+  const prefix = fsModalParentPath.value ? `${fsModalParentPath.value}/` : ''
+  const fullPath = `${prefix}${name}`
+
+  if (fsModalType.value === 'file') {
+    // Ensure extension
+    let finalPath = fullPath
+    const ext = LANGUAGES.find(l => l.id === codeLanguage.value)?.ext || ''
+    if (!name.includes('.')) finalPath += ext
+
+    if (codeFiles.value.some(f => f.path === finalPath)) {
+      fsModalError.value = 'File already exists!'
+      return
+    }
+    
+    codeFiles.value.push({ path: finalPath, content: `// Source code for ${name}\n` })
+    activeFilePath.value = finalPath
+    
+    // Expand parent folders
+    const parts = finalPath.split('/')
+    if (parts.length > 1) {
+      let currentPath = ''
+      for (let i = 0; i < parts.length - 1; i++) {
+          currentPath += (currentPath ? '/' : '') + parts[i]
+          expandedFolders.value.add(currentPath)
+      }
+    }
+  } else {
+    // Folder action - Create a hidden .keep file instead of README
+    const keepFile = `${fullPath}/.keep`
+    
+    if (codeFiles.value.some(f => f.path.startsWith(fullPath + '/'))) {
+      fsModalError.value = 'Folder already exists!'
+      return
+    }
+
+    codeFiles.value.push({ path: keepFile, content: '' })
+    
+    // Expand all levels
+    const parts = fullPath.split('/')
+    let currentPath = ''
+    for (const part of parts) {
+      currentPath += (currentPath ? '/' : '') + part
+      expandedFolders.value.add(currentPath)
+    }
+  }
+
+  showNewFSModal.value = false
 }
 
 function deleteFile(path: string) {
@@ -342,24 +732,183 @@ function deleteFile(path: string) {
   }
 }
 
-function addFolder() {
-  const folderName = prompt('Enter folder name:', 'utils')
-  if (!folderName) return
-  const ext = LANGUAGES.find(l => l.id === codeLanguage.value)?.ext || '.txt'
-  const newPath = `${folderName}/NewFile${ext}`
-  codeFiles.value.push({ path: newPath, content: '// New folder file...' })
-  activeFilePath.value = newPath
+function toggleFolder(path: string) {
+  if (expandedFolders.value.has(path)) expandedFolders.value.delete(path)
+  else expandedFolders.value.add(path)
 }
 
 function changeLang(id: string) {
   codeLanguage.value = id
   const ext = LANGUAGES.find(l => l.id === id)?.ext || '.txt'
-  // Rename existing files extensions if they make sense or just reset
   codeFiles.value = [
     { path: `Main${ext}`, content: `// Start implementing ${question.title} in ${id}\n` }
   ]
   activeFilePath.value = `Main${ext}`
 }
+
+async function exportProject() {
+  const JSZip = (window as any).JSZip
+  if (!JSZip) {
+    alert('Export engine is initializing. Please try again in a few seconds.')
+    return
+  }
+
+  const zip = new JSZip()
+  codeFiles.value.forEach(file => {
+    // Only export real files (skip .keep placeholders)
+    if (!file.path.endsWith('.keep')) {
+      zip.file(file.path, file.content)
+    }
+  });
+
+  // Include project metadata for seamless re-import
+  const meta = {
+    projectName: question.title,
+    slug: question.slug,
+    language: codeLanguage.value,
+    files: codeFiles.value,
+    version: '1.0.0'
+  }
+  zip.file('.design-config.json', JSON.stringify(meta, null, 2))
+
+  const content = await zip.generateAsync({ type: 'blob' })
+  const url = URL.createObjectURL(content)
+  const a = document.createElement('a')
+  a.href = url
+  a.download = `${question.slug}-architecture.zip`
+  a.click()
+  URL.revokeObjectURL(url)
+}
+
+function triggerImport() {
+  const input = document.createElement('input')
+  input.type = 'file'
+  input.accept = '.json,.zip'
+  input.onchange = async (e: any) => {
+    const file = e.target.files[0]
+    if (!file) return
+
+    if (file.name.endsWith('.json')) {
+      const reader = new FileReader()
+      reader.onload = (re: any) => {
+        try {
+          const data = JSON.parse(re.target.result)
+          if (data.files && Array.isArray(data.files)) {
+            codeFiles.value = data.files
+            if (data.language) codeLanguage.value = data.language
+            activeFilePath.value = codeFiles.value[0].path
+            refreshExpandedFolders()
+          }
+        } catch (err) { alert('Invalid JSON architecture file.') }
+      }
+      reader.readAsText(file)
+    } else if (file.name.endsWith('.zip')) {
+      const JSZip = (window as any).JSZip
+      if (!JSZip) { alert('ZIP engine not ready.'); return }
+      
+      try {
+        const zip = await JSZip.loadAsync(file)
+        const newFiles: any[] = []
+        
+        const configFile = zip.file('.design-config.json')
+        if (configFile) {
+          const data = JSON.parse(await configFile.async('string'))
+          codeFiles.value = data.files
+          codeLanguage.value = data.language || codeLanguage.value
+          activeFilePath.value = codeFiles.value[0].path
+        } else {
+          for (const [path, f] of Object.entries(zip.files) as [string, any][]) {
+            if (!f.dir && !path.startsWith('__MACOSX')) {
+              newFiles.push({ path, content: await f.async('string') })
+            }
+          }
+          if (newFiles.length > 0) {
+            codeFiles.value = newFiles
+            activeFilePath.value = newFiles[0].path
+          }
+        }
+        refreshExpandedFolders()
+      } catch (err) { alert('Failed to parse ZIP architecture.') }
+    }
+  }
+  input.click()
+}
+
+function triggerFolderImport() {
+  const input = document.createElement('input')
+  input.type = 'file'
+  input.setAttribute('webkitdirectory', '')
+  input.setAttribute('directory', '')
+  input.onchange = async (e: any) => {
+    const files = Array.from(e.target.files) as File[]
+    if (files.length === 0) return
+
+    const newFiles: any[] = []
+    for (const f of files) {
+      // Remove root folder from path
+      const path = f.webkitRelativePath.split('/').slice(1).join('/')
+      if (!path) continue
+      newFiles.push({ path, content: await f.text() })
+    }
+
+    if (newFiles.length > 0) {
+      codeFiles.value = newFiles
+      activeFilePath.value = newFiles[0].path
+      refreshExpandedFolders()
+    }
+  }
+  input.click()
+}
+
+function refreshExpandedFolders() {
+  codeFiles.value.forEach(f => {
+    const parts = f.path.split('/')
+    let curr = ''
+    for(let i=0; i<parts.length-1; i++) {
+        curr += (curr ? '/' : '') + parts[i]
+        expandedFolders.value.add(curr)
+    }
+  })
+}
+
+// ── File Tree Generation ─────────────────────────────────────────────────────
+const fileTree = computed(() => {
+  const root: any[] = []
+  
+  codeFiles.value.forEach(file => {
+    const parts = file.path.split('/')
+    let currentLevel = root
+    let currentPath = ''
+    
+    parts.forEach((part, i) => {
+      currentPath += (currentPath ? '/' : '') + part
+      const isLast = i === parts.length - 1
+      
+      let existing = currentLevel.find(item => item.name === part)
+      
+      if (!existing) {
+        existing = {
+          name: part,
+          path: currentPath,
+          type: isLast ? 'file' : 'folder',
+          children: isLast ? undefined : []
+        }
+        currentLevel.push(existing)
+        // Sort: folders first, then files alphabetically
+        currentLevel.sort((a, b) => {
+          if (a.type !== b.type) return a.type === 'folder' ? -1 : 1
+          return a.name.localeCompare(b.name)
+        })
+      }
+      
+      if (!isLast) {
+        currentLevel = existing.children
+      }
+    })
+  })
+  
+  return root
+})
 
 const canEvaluateCode = computed(() => {
   const totalLength = codeFiles.value.reduce((acc, f) => acc + f.content.trim().length, 0)
@@ -516,6 +1065,21 @@ const showStepResultModal = ref(false)
 const currentStepResult = ref<StepResult | null>(null)
 const showRestrictionModal = ref(false)
 
+// ── Global Loading Overlay ─────────────────────────────────────────────────
+const globalLoading = ref(false)
+const loadingMessage = ref('Analysing your solution...')
+
+function showGlobalLoader(msg = 'Analysing your solution...') {
+  loadingMessage.value = msg
+  globalLoading.value = true
+}
+function hideGlobalLoader() {
+  globalLoading.value = false
+}
+
+// ── Read-Only Mode (already attempted) ────────────────────────────────────
+const isReadOnly = ref(false)
+
 const averageScore = computed(() => {
   const evaluatedSteps = steps.value.filter(s => stepResults.value[s.id])
   if (evaluatedSteps.length === 0) return 0
@@ -559,13 +1123,15 @@ async function evaluate() {
     return
   }
 
+  // ⚠️ TESTING ONLY — restrictions bypassed. Restore the block below when done.
   if (!allStepsCompleted.value) {
     showRestrictionModal.value = true
     return
   }
-  
+
   evaluating.value = true
   evalError.value = ''
+  showGlobalLoader('Generating your full evaluation report...')
   try {
     const answers = isLLD.value ? {
       requirements: {
@@ -580,9 +1146,9 @@ async function evaluate() {
       },
       code: codeFiles.value.map(f => `// File: ${f.path}\n${f.content}`).join('\n\n'),
     } : {
-      requirements: { 
-        functional: functionalReqs.value.filter(r => r.trim().length >= MIN_REQ_CHARS), 
-        nonFunctional: nonFunctionalReqs.value.filter(r => r.trim().length >= MIN_REQ_CHARS) 
+      requirements: {
+        functional: functionalReqs.value.filter(r => r.trim().length >= MIN_REQ_CHARS),
+        nonFunctional: nonFunctionalReqs.value.filter(r => r.trim().length >= MIN_REQ_CHARS)
       },
       api: hldApiEndpoints.value,
       architecture: hldArchitecture.value,
@@ -596,58 +1162,122 @@ async function evaluate() {
       body: {
         questionTitle: question.title,
         questionDescription: question.description,
-        designType: question.type,
+        // Send the effective interview type, NOT question.type ('Both' would wrongly trigger LLD)
+        designType: isLLD.value ? 'LLD' : 'HLD',
         difficulty: selectedDifficulty.value,
         language: codeLanguage.value,
         answers,
       }
     })
     evaluation.value = result
-    
-    // Persist to local storage
+
+    // Persist full evaluation + user answers to localStorage
     if (typeof window !== 'undefined') {
-      const storageKey = `sd_eval_${slug}`
+      const storageKey = `sd_eval_${slug}_${isLLD.value ? 'lld' : 'hld'}`
       localStorage.setItem(storageKey, JSON.stringify({
         evaluation: result,
+        answers,
         timestamp: new Date().toISOString(),
         difficulty: selectedDifficulty.value,
-        language: codeLanguage.value
+        language: codeLanguage.value,
+        designType: isLLD.value ? 'LLD' : 'HLD',
       }))
     }
 
+    isReadOnly.value = true
     showEvalModal.value = true
-    pauseTimer() // Stop the clock when evaluation is shown
+    pauseTimer()
   } catch (err: any) {
-    evalError.value = err?.data?.statusMessage || 'Evaluation failed. Please try again.'
+    evalError.value = err?.data?.statusMessage || err?.data?.message || err?.message || 'Evaluation failed. Please try again.'
   } finally {
     evaluating.value = false
+    hideGlobalLoader()
   }
 }
 
-const savedReportData = ref<{ timestamp: string } | null>(null)
+const savedReportData = ref<{ timestamp: string; difficulty: string; language: string } | null>(null)
 
-// Load saved evaluation on mount
+// ── Restore cached session on mount ────────────────────────────────────────
 onMounted(() => {
-  if (typeof window !== 'undefined') {
-    const storageKey = `sd_eval_${slug}`
-    const saved = localStorage.getItem(storageKey)
-    if (saved) {
-      try {
-        const parsed = JSON.parse(saved)
-        evaluation.value = parsed.evaluation
-        savedReportData.value = { timestamp: parsed.timestamp }
-      } catch (e) {
-        console.error('Failed to parse saved evaluation')
+  if (typeof window === 'undefined') return
+
+  const effectiveMode = isLLD.value ? 'lld' : 'hld'
+  const evalKey  = `sd_eval_${slug}_${effectiveMode}`
+  const stepKey  = `sd_step_${slug}_${effectiveMode}`
+
+  // 1. Restore final evaluation (marks question as attempted / read-only)
+  const savedEval = localStorage.getItem(evalKey)
+  if (savedEval) {
+    try {
+      const parsed = JSON.parse(savedEval)
+      evaluation.value    = parsed.evaluation
+      savedReportData.value = {
+        timestamp:  parsed.timestamp,
+        difficulty: parsed.difficulty || '',
+        language:   parsed.language   || '',
       }
+      isReadOnly.value = true
+
+      // 2. Restore user answers so they can view (but not edit) their submission
+      if (parsed.answers) {
+        const a = parsed.answers
+        if (isLLD.value) {
+          functionalReqs.value    = a.requirements?.functional    || []
+          nonFunctionalReqs.value = a.requirements?.nonFunctional || []
+          entities.value          = a.entities  || []
+          if (a.classes) {
+            classDefs.value      = a.classes.classes       || []
+            relationships.value  = a.classes.relationships || []
+            selectedPatterns.value = a.classes.patterns    || []
+          }
+          // Code is restored read-only via the codeFiles ref
+          if (a.code) {
+            // The code was joined; restore it as a single visible file
+            if (codeFiles.value.length > 0) codeFiles.value[0].content = a.code
+          }
+        } else {
+          functionalReqs.value    = a.requirements?.functional    || []
+          nonFunctionalReqs.value = a.requirements?.nonFunctional || []
+          hldApiEndpoints.value   = a.api          || []
+          hldArchitecture.value   = a.architecture || ''
+          hldDatabaseStorage.value= a.database     || []
+          hldDeepDive.value       = a.deepDive     || ''
+          hldAnalytics.value      = a.analytics    || ''
+        }
+      }
+    } catch (e) {
+      console.error('Failed to parse saved evaluation:', e)
     }
   }
+
+  // 3. Restore individual step AI results (even if final eval isn't done yet)
+  const savedSteps = localStorage.getItem(stepKey)
+  if (savedSteps) {
+    try {
+      const parsed = JSON.parse(savedSteps)
+      Object.entries(parsed).forEach(([id, result]) => {
+        stepResults.value[id] = result as StepResult
+      })
+    } catch (e) {
+      console.error('Failed to parse saved step results:', e)
+    }
+  }
+
+  // 4. Unlock steps that already have cached results so user can view previous work
+  steps.value.forEach(step => {
+    if (stepResults.value[step.id] !== undefined) {
+      step.locked = false
+    }
+  })
 })
 
 async function downloadReport() {
   if (!evaluation.value) return
   try {
     const { downloadSystemDesignPDF } = await import('~/utils/pdfGenerator')
-    await downloadSystemDesignPDF(question.title, evaluation.value as any)
+    // Use the effective session type so LLD/HLD PDF templates are always correct
+    const effectiveType = isLLD.value ? 'LLD' : 'HLD'
+    await downloadSystemDesignPDF(question.title, evaluation.value as any, effectiveType)
   } catch (err) {
     console.error('Download failed:', err)
   }
@@ -666,27 +1296,70 @@ function scoreBarColor(pct: number) {
   if (pct >= 60) return 'bg-amber-500'
   return 'bg-red-500'
 }
-// ── Run Simulation ───────────────────────────────────────────────────────────
-const runningSimulation = ref(false)
-const simulationOutput = ref<string[]>([])
 
-async function runSimulation() {
-  runningSimulation.value = true
-  simulationOutput.value = ['> Building system architecture...', '> Initializing domain models...', '> Running design pattern validation...']
-  
-  setTimeout(() => {
-    simulationOutput.value.push('> All modules integrated.')
-    simulationOutput.value.push('> System simulation started successfully.')
-    simulationOutput.value.push('> Latency: 42ms | Throughput: 12k req/s')
-    runningSimulation.value = false
-  }, 2000)
-}
 </script>
 
 <template>
   <div class="h-screen flex flex-col overflow-hidden bg-zinc-950">
 
-    <!-- ── DIFFICULTY MODAL ── -->
+    <!-- ── GLOBAL LOADING OVERLAY ── -->
+    <Transition name="fade-overlay">
+      <div
+        v-if="globalLoading"
+        class="fixed inset-0 z-[9999] bg-black/75 backdrop-blur-md flex flex-col items-center justify-center gap-6 select-none"
+        style="pointer-events: all;"
+      >
+        <!-- Animated ring + spinner -->
+        <div class="relative w-24 h-24">
+          <div class="absolute inset-0 rounded-full border-4 border-orange-500/20 animate-ping" />
+          <div class="absolute inset-0 rounded-full border-4 border-t-orange-500 border-r-transparent border-b-transparent border-l-transparent animate-spin" />
+          <div class="absolute inset-2 rounded-full border-4 border-t-amber-400 border-r-transparent border-b-transparent border-l-transparent animate-spin" style="animation-duration: 0.6s; animation-direction: reverse;" />
+          <div class="absolute inset-0 flex items-center justify-center">
+            <svg class="w-8 h-8 text-orange-400" fill="none" viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-width="1.5" stroke-linecap="round" d="M12 3v3M12 18v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M3 12h3M18 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/>
+            </svg>
+          </div>
+        </div>
+        <!-- Message -->
+        <div class="text-center space-y-1">
+          <p class="text-white font-semibold text-lg tracking-wide">{{ loadingMessage }}</p>
+          <p class="text-zinc-400 text-sm">This may take 20–40 seconds. Please wait…</p>
+        </div>
+        <!-- Animated dots -->
+        <div class="flex gap-2">
+          <div class="w-2 h-2 rounded-full bg-orange-500 animate-bounce" style="animation-delay: 0ms" />
+          <div class="w-2 h-2 rounded-full bg-orange-400 animate-bounce" style="animation-delay: 150ms" />
+          <div class="w-2 h-2 rounded-full bg-amber-400 animate-bounce" style="animation-delay: 300ms" />
+        </div>
+      </div>
+    </Transition>
+
+    <!-- ── READ-ONLY BANNER (question already attempted) ── -->
+    <div
+      v-if="isReadOnly"
+      class="fixed top-0 inset-x-0 z-[200] bg-amber-500/10 border-b border-amber-500/30 backdrop-blur-sm px-4 py-2 flex items-center justify-between gap-4"
+    >
+      <div class="flex items-center gap-2 text-amber-400 text-sm font-medium">
+        <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24">
+          <path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 9v4m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+        </svg>
+        <span>
+          <strong>Read-Only Mode</strong> — You have already submitted this question.
+          <template v-if="savedReportData?.timestamp">
+            Submitted {{ new Date(savedReportData.timestamp).toLocaleDateString('en-US', { day: 'numeric', month: 'short', year: 'numeric' }) }}.
+          </template>
+          Your answers are displayed for review only.
+        </span>
+      </div>
+      <button
+        @click="showEvalModal = true"
+        class="shrink-0 text-xs font-semibold px-3 py-1.5 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/30 transition-colors"
+      >
+        View Report →
+      </button>
+    </div>
+
+
     <div v-if="showDifficultyModal"
       class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
       <div class="bg-zinc-900 border border-zinc-700 rounded-2xl p-8 max-w-lg w-full shadow-2xl">
@@ -735,7 +1408,7 @@ async function runSimulation() {
     </div>
 
     <!-- ── TOP BAR ── -->
-    <div class="sticky top-0 z-40 bg-zinc-900 border-b border-zinc-700 px-4 py-2 flex items-center gap-3 flex-wrap">
+    <div :class="['sticky z-40 bg-zinc-900 border-b border-zinc-700 px-4 py-2 flex items-center gap-3 flex-wrap', isReadOnly ? 'top-[36px]' : 'top-0']">
       <NuxtLink to="/system-design/practice"
         class="text-zinc-400 hover:text-white transition-colors text-sm flex items-center gap-1 flex-shrink-0">
         <Icon name="heroicons:arrow-left" class="text-sm" /> Back
@@ -785,15 +1458,28 @@ async function runSimulation() {
           Audit Hub
         </button>
 
+        <!-- Quit -->
         <button @click="showQuitModal = true"
-          class="px-4 py-1.5 text-xs font-bold bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 text-white rounded-lg transition-colors">
-          Quit
+          class="px-4 py-1.5 text-xs font-bold bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 text-white rounded-lg transition-colors">Quit</button>
+
+        <!-- Guidelines button -->
+        <button @click="showGuidelinesModal = true"
+          class="flex items-center gap-1.5 px-3 py-1.5 text-[10px] font-black uppercase tracking-widest text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 rounded-lg hover:bg-emerald-500/20 transition-all">
+          <Icon name="heroicons:book-open" class="text-xs" />
+          Guidelines
+        </button>
+
+        <!-- Simulation button -->
+        <button @click="openSimulationModal()"
+          class="flex items-center gap-1.5 px-3 py-1.5 text-[10px] font-black uppercase tracking-widest text-violet-400 bg-violet-500/10 border border-violet-500/30 rounded-lg hover:bg-violet-500/20 transition-all">
+          <Icon name="heroicons:play-circle" class="text-xs" />
+          Simulation
         </button>
       </div>
     </div>
 
     <!-- ── MAIN CONTENT ── -->
-    <div v-if="!showDifficultyModal" class="relative flex flex-1 min-h-0 overflow-hidden">
+    <div v-if="!showDifficultyModal" :class="['relative flex flex-1 min-h-0 overflow-hidden', isReadOnly ? 'readonly-mask' : '']">
       
       <!-- Paused Overlay -->
       <transition name="fade">
@@ -889,23 +1575,79 @@ async function runSimulation() {
 
       <!-- RIGHT PANEL – steps workspace -->
       <div :class="['flex-1 flex flex-col bg-zinc-950 min-h-0', !isWhiteboardFullscreen ? 'transition-all duration-300' : '', activeStepId === 'code' ? 'overflow-hidden' : '']">
-        <!-- Step progress breadcrumb -->
-        <div :class="['flex-shrink-0 flex items-center gap-1.5 overflow-x-auto custom-scrollbar border-zinc-800 scroll-smooth px-4 py-2.5', activeStepId === 'code' ? 'border-b bg-zinc-900/10' : 'mb-1']" style="flex-wrap: nowrap;">
-          <button v-for="(step, i) in steps" :key="step.id"
-            @click="goToStep(step.id)"
-            :class="[
-              'flex items-center gap-2 text-[10px] font-black uppercase tracking-wider px-3 py-1.5 rounded-full border transition-all flex-shrink-0 whitespace-nowrap',
-              step.id === activeStepId ? 'bg-red-500 border-red-500 text-white shadow-lg shadow-red-500/10' :
-              step.locked ? 'border-zinc-800 text-zinc-700 cursor-not-allowed opacity-50' :
-              step.skipped ? 'border-zinc-700 text-zinc-500 line-through' :
-              'border-zinc-800 text-zinc-500 hover:border-zinc-600 cursor-pointer'
-            ]">
-            <span :class="['w-3.5 h-3.5 rounded-full flex items-center justify-center text-[9px]', step.id === activeStepId ? 'bg-white text-red-500' : 'bg-zinc-800 text-zinc-500']">{{ i + 1 }}</span>
-            <span>{{ step.label }}</span>
-          </button>
+        <!-- Step progress breadcrumb WITH tooltip -->
+        <div :class="['flex-shrink-0 flex items-center gap-1.5 overflow-x-auto custom-scrollbar border-b border-zinc-800/50 scroll-smooth px-4 py-2.5 bg-zinc-900/10']" style="flex-wrap: nowrap;">
+          <div v-for="(step, i) in steps" :key="step.id" class="relative flex-shrink-0 step-pill-wrapper">
+            <!-- Pill button -->
+            <button
+              @click="goToStep(step.id)"
+              :class="[
+                'flex items-center gap-2 text-[10px] font-black uppercase tracking-wider px-3 py-1.5 rounded-full border transition-all whitespace-nowrap',
+                step.id === activeStepId ? 'bg-red-500 border-red-500 text-white shadow-lg shadow-red-500/10' :
+                step.locked ? 'border-zinc-800 text-zinc-700 cursor-not-allowed opacity-50' :
+                step.skipped ? 'border-zinc-700 text-zinc-500 line-through' :
+                'border-zinc-800 text-zinc-500 hover:border-zinc-600 cursor-pointer'
+              ]">
+              <span :class="['w-3.5 h-3.5 rounded-full flex items-center justify-center text-[9px]', step.id === activeStepId ? 'bg-white text-red-500' : 'bg-zinc-800 text-zinc-500']">{{ i + 1 }}</span>
+              <span>{{ step.label }}</span>
+            </button>
+            <!-- Tooltip trigger (? icon) -->
+            <button
+              @click.stop="toggleTooltip($event, step.id)"
+              class="absolute -top-1.5 -right-1.5 w-4 h-4 rounded-full bg-zinc-700 hover:bg-blue-500 text-white text-[8px] font-black flex items-center justify-center z-10 transition-colors"
+              title="Stage info"
+            >?</button>
+            <!-- Tooltip popover (Teleported to body to avoid overflow clipping) -->
+            <Teleport to="body">
+              <Transition name="tooltip-pop">
+                <div
+                  v-if="activeTooltipStep === step.id"
+                  class="fixed z-[9999] w-80 bg-zinc-900 border border-zinc-700 rounded-2xl shadow-2xl p-4 text-xs pointer-events-auto"
+                  :style="{ top: tooltipPos.top + 'px', left: tooltipPos.left + 'px' }"
+                >
+                  <!-- Header -->
+                  <div class="flex items-start justify-between mb-3">
+                    <div class="flex items-center gap-2">
+                      <Icon :name="(isLLD ? lldStageInfo : hldStageInfo)[step.id]?.icon || 'heroicons:information-circle'" :class="[(isLLD ? lldStageInfo : hldStageInfo)[step.id]?.color || 'text-zinc-400', 'text-base']" />
+                      <div>
+                        <p class="font-black text-white leading-tight">{{ step.label }}</p>
+                        <p class="text-zinc-500 text-[10px]">{{ (isLLD ? lldStageInfo : hldStageInfo)[step.id]?.duration }}</p>
+                      </div>
+                    </div>
+                    <button @click.stop="activeTooltipStep = null" class="text-zinc-600 hover:text-white text-lg leading-none">&times;</button>
+                  </div>
+                  <!-- What is this stage -->
+                  <p class="text-zinc-300 mb-3 leading-relaxed">{{ (isLLD ? lldStageInfo : hldStageInfo)[step.id]?.what }}</p>
+                  <!-- Expected -->
+                  <div class="mb-3">
+                    <p class="text-[10px] font-black text-zinc-400 uppercase tracking-widest mb-1.5">✅ What's Expected</p>
+                    <ul class="space-y-1">
+                      <li v-for="e in (isLLD ? lldStageInfo : hldStageInfo)[step.id]?.expected" :key="e" class="flex items-start gap-1.5 text-zinc-400">
+                        <span class="text-green-400 mt-0.5 flex-shrink-0">›</span> {{ e }}
+                      </li>
+                    </ul>
+                  </div>
+                  <!-- Pro Tips -->
+                  <div class="mb-3">
+                    <p class="text-[10px] font-black text-zinc-400 uppercase tracking-widest mb-1.5">💡 Pro Tips</p>
+                    <ul class="space-y-1">
+                      <li v-for="t in (isLLD ? lldStageInfo : hldStageInfo)[step.id]?.tips" :key="t" class="flex items-start gap-1.5 text-zinc-400">
+                        <span class="text-amber-400 mt-0.5 flex-shrink-0">›</span> {{ t }}
+                      </li>
+                    </ul>
+                  </div>
+                  <!-- Scoring Focus -->
+                  <div class="bg-zinc-800/60 rounded-xl p-2.5">
+                    <p class="text-[10px] font-black text-zinc-400 uppercase tracking-widest mb-1">🎯 Scoring Focus</p>
+                    <p class="text-zinc-300">{{ (isLLD ? lldStageInfo : hldStageInfo)[step.id]?.scoringFocus }}</p>
+                  </div>
+                </div>
+              </Transition>
+            </Teleport>
+          </div>
         </div>
 
-        <div :class="['flex-1 min-h-0', activeStepId === 'code' ? 'overflow-hidden' : 'overflow-y-auto p-4 pt-0']">
+        <div :class="['flex-1 min-h-0 flex flex-col', activeStepId === 'code' ? 'overflow-hidden' : 'overflow-y-auto p-4 pt-0']">
 
         <!-- ─ REQUIREMENTS STEP ─ -->
         <div v-if="activeStepId === 'requirements'">
@@ -1187,136 +1929,277 @@ async function runSimulation() {
         </div>
 
         <!-- ─ CODE STEP (IDE EXPERIENCE) ─ -->
-        <div v-else-if="activeStepId === 'code'" class="flex flex-col h-full bg-zinc-950">
-          <!-- Inner Layout -->
-          <div class="flex flex-1 min-h-0">
-            <!-- File Explorer Sidebar -->
-            <div class="w-64 bg-zinc-900/40 border-r border-zinc-800 flex flex-col">
-              <div class="px-4 py-3 border-b border-zinc-800 flex items-center justify-between bg-zinc-900/20">
-                <div class="flex items-center gap-2">
-                  <Icon name="heroicons:folder-open" class="text-zinc-400" />
-                  <span class="text-[11px] font-black uppercase tracking-widest text-zinc-400">Files</span>
-                  <span class="text-[10px] bg-zinc-800 text-zinc-500 px-1.5 py-0.5 rounded-md">{{ codeFiles.length }}</span>
+        <div v-else-if="activeStepId === 'code'" class="flex-1 flex flex-col min-h-0">
+          <!-- IDE Header / Toolbar -->
+          <div class="bg-zinc-950 border border-zinc-800 px-6 py-3 flex items-center justify-between shadow-sm shrink-0">
+            <div class="flex items-center gap-4">
+              <div class="flex items-center gap-2.5">
+                <div class="w-2.5 h-2.5 rounded-full bg-red-500/20 flex items-center justify-center">
+                  <div class="w-1 h-1 rounded-full bg-red-500"></div>
                 </div>
-                <div class="flex items-center gap-1">
-                  <button @click="addFile" class="p-1.5 rounded-md hover:bg-zinc-800 text-zinc-500 hover:text-white transition-all" title="New File">
-                    <Icon name="heroicons:document-plus" class="text-xs" />
-                  </button>
-                  <button @click="addFolder" class="p-1.5 rounded-md hover:bg-zinc-800 text-zinc-500 hover:text-white transition-all" title="New Folder">
-                    <Icon name="heroicons:folder-plus" class="text-xs" />
-                  </button>
-                </div>
+                <h3 class="text-[10px] font-black text-white uppercase tracking-widest">Workspace</h3>
+              </div>
+              <div class="h-4 w-px bg-zinc-800"></div>
+              <div class="flex items-center gap-2">
+                <button @click="() => addFile()" class="p-1.5 rounded-lg hover:bg-zinc-800 text-zinc-500 hover:text-blue-400 transition-all group" title="New File">
+                  <Icon name="heroicons:document-plus" class="text-xs group-hover:scale-110" />
+                </button>
+                <button @click="() => addFolder()" class="p-1.5 rounded-lg hover:bg-zinc-800 text-zinc-500 hover:text-amber-400 transition-all group" title="New Folder">
+                  <Icon name="heroicons:folder-plus" class="text-xs group-hover:scale-110" />
+                </button>
+              </div>
+              <div class="h-4 w-px bg-zinc-800"></div>
+              <button @click="isEditorFullscreen = !isEditorFullscreen" 
+                :class="['p-1.5 rounded-lg transition-all', isEditorFullscreen ? 'text-blue-400 bg-blue-500/10' : 'text-zinc-500 hover:text-white hover:bg-zinc-800']"
+                :title="isEditorFullscreen ? 'Exit Fullscreen' : 'Enter Fullscreen'">
+                <Icon :name="isEditorFullscreen ? 'heroicons:arrows-pointing-in' : 'heroicons:arrows-pointing-out'" class="text-xs" />
+              </button>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <div class="flex items-center gap-1 bg-zinc-900 border border-zinc-800 rounded-lg p-0.5">
+                <button @click="triggerImport" class="px-3 py-1 text-[10px] font-black uppercase text-zinc-500 hover:text-white transition-colors flex items-center gap-1.5" title="Import JSON or ZIP">
+                  <Icon name="heroicons:arrow-up-tray" /> Import
+                </button>
+                <div class="w-px h-3 bg-zinc-800"></div>
+                <button @click="triggerFolderImport" class="px-3 py-1 text-[10px] font-black uppercase text-zinc-500 hover:text-white transition-colors flex items-center gap-1.5" title="Import Local Folder">
+                  <Icon name="heroicons:folder-arrow-down" /> Folder
+                </button>
+                <div class="w-px h-3 bg-zinc-800"></div>
+                <button @click="exportProject" class="px-3 py-1 text-[10px] font-black uppercase text-zinc-500 hover:text-white transition-colors flex items-center gap-1.5" title="Export as ZIP">
+                  <Icon name="heroicons:arrow-down-tray" /> Export (ZIP)
+                </button>
+              </div>
+              <div class="h-4 w-px bg-zinc-800"></div>
+              <div class="flex items-center gap-2 bg-zinc-900 border border-zinc-800 rounded-lg pr-2">
+                  <div class="w-8 h-8 rounded-l-lg bg-zinc-800 flex items-center justify-center">
+                    <Icon :name="getFileIcon(activeFilePath)" class="text-xs" />
+                  </div>
+                  <select v-model="codeLanguage" @change="changeLang(codeLanguage)"
+                    class="bg-transparent border-none py-1 text-[10px] font-black text-zinc-300 focus:ring-0 cursor-pointer uppercase">
+                    <option v-for="l in LANGUAGES" :key="l.id" :value="l.id">{{ l.label }}</option>
+                  </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- IDE Main Layout -->
+          <div class="flex-1 flex min-h-0 bg-[#0c0c0e] border-x border-zinc-800 relative">
+            <!-- Sidebar / File Explorer -->
+            <div class="w-64 border-r border-zinc-800/50 flex flex-col bg-zinc-950/50 backdrop-blur-3xl shrink-0 overflow-hidden">
+              <div class="px-4 py-3 border-b border-zinc-800/50 flex items-center justify-between shrink-0 drop-shadow-sm">
+                <span class="text-[9px] font-black text-zinc-600 uppercase tracking-[0.2em]">File Explorer</span>
+                <span class="text-[9px] font-mono text-zinc-700 bg-zinc-900 px-1.5 py-0.5 rounded">{{ codeFiles.length }} Entrie{{ codeFiles.length !== 1 ? 's' : '' }}</span>
               </div>
               
-              <div class="flex-1 overflow-y-auto p-2 space-y-0.5">
-                <div v-for="file in codeFiles" :key="file.path"
-                  @click="activeFilePath = file.path"
-                  :class="['group flex items-center justify-between px-3 py-2 rounded-xl cursor-pointer transition-all border', 
-                    activeFilePath === file.path ? 'bg-blue-500/10 border-blue-500/30 text-blue-400' : 'text-zinc-500 border-transparent hover:bg-zinc-800/50 hover:text-zinc-300']">
-                  <div class="flex items-center gap-2.5 min-w-0">
-                    <Icon :name="file.path.endsWith('.java') ? 'logos:java' : file.path.endsWith('.py') ? 'logos:python' : file.path.endsWith('.js') ? 'logos:javascript' : file.path.endsWith('.ts') ? 'logos:typescript-icon' : 'heroicons:document-text'" class="text-xs flex-shrink-0" />
-                    <span class="text-[11px] font-semibold truncate">{{ file.path }}</span>
+              <div class="flex-1 overflow-y-auto p-2 pt-4 space-y-0.5 custom-scrollbar">
+                <!-- Recursive Tree Style Rendering -->
+                <template v-for="item in fileTree" :key="item.path">
+                  <!-- Folder Template -->
+                  <div v-if="item.type === 'folder'" class="space-y-0.5">
+                    <div @click="toggleFolder(item.path)"
+                      class="flex items-center gap-2 px-2 py-1.5 rounded-lg cursor-pointer hover:bg-zinc-800/50 text-zinc-500 hover:text-zinc-300 transition-all group">
+                      <Icon :name="expandedFolders.has(item.path) ? 'heroicons:chevron-down' : 'heroicons:chevron-right'" class="text-[10px]" />
+                      <Icon :name="expandedFolders.has(item.path) ? 'heroicons:folder-open' : 'heroicons:folder'" class="text-xs text-amber-500/70" />
+                      <span class="text-[11px] font-bold truncate uppercase tracking-tight flex-1">{{ item.name }}</span>
+                      <!-- Folder Action Icons -->
+                      <div class="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity pr-1">
+                        <button @click.stop="addFile(item.path)" class="p-1 hover:text-blue-400" title="New File in this folder">
+                          <Icon name="heroicons:document-plus" class="text-[10px]" />
+                        </button>
+                        <button @click.stop="addFolder(item.path)" class="p-1 hover:text-amber-500" title="New Folder in this folder">
+                          <Icon name="heroicons:folder-plus" class="text-[10px]" />
+                        </button>
+                      </div>
+                    </div>
+                    
+                    <!-- Folder Children -->
+                    <div v-if="expandedFolders.has(item.path)" class="ml-4 border-l border-zinc-800/50 space-y-0.5">
+                      <template v-for="child in item.children" :key="child.path">
+                        <div v-if="!child.name.startsWith('.')"
+                          @click="child.type === 'file' ? activeFilePath = child.path : toggleFolder(child.path)"
+                          :class="['flex items-center gap-2 px-3 py-1.5 rounded-lg cursor-pointer transition-all border shadow-sm group/child', 
+                            activeFilePath === child.path ? 'bg-blue-600/5 border-blue-500/20 text-blue-400' : 'text-zinc-500 border-transparent hover:bg-zinc-800/30 hover:text-zinc-300']">
+                          <Icon v-if="child.type === 'folder'" :name="expandedFolders.has(child.path) ? 'heroicons:chevron-down' : 'heroicons:chevron-right'" class="text-[9px]" />
+                          <Icon :name="child.type === 'file' ? getFileIcon(child.name) : (expandedFolders.has(child.path) ? 'heroicons:folder-open' : 'heroicons:folder')" 
+                            :class="['text-[10px]', child.type === 'folder' ? 'text-amber-500/60' : '']" />
+                          <span class="text-[11px] font-semibold truncate tracking-tight flex-1">{{ child.name }}</span>
+                          
+                          <!-- Inline Actions for Child Folders -->
+                          <div v-if="child.type === 'folder'" class="flex items-center gap-1 opacity-0 group-hover/child:opacity-100 transition-opacity">
+                            <button @click.stop="addFile(child.path)" class="p-1 hover:text-blue-400">
+                              <Icon name="heroicons:document-plus" class="text-[10px]" />
+                            </button>
+                            <button @click.stop="addFolder(child.path)" class="p-1 hover:text-amber-500">
+                              <Icon name="heroicons:folder-plus" class="text-[10px]" />
+                            </button>
+                          </div>
+
+                          <button v-if="child.type === 'file' && codeFiles.length > 1" @click.stop="deleteFile(child.path)" class="opacity-0 group-hover/child:opacity-100 hover:text-red-500 transition-opacity">
+                            <Icon name="heroicons:trash" class="text-[10px]" />
+                          </button>
+                        </div>
+                      </template>
+                    </div>
                   </div>
-                  <button v-if="codeFiles.length > 1" @click.stop="deleteFile(file.path)" 
-                    class="opacity-0 group-hover:opacity-100 hover:text-red-400 transition-opacity p-1">
-                    <Icon name="heroicons:x-mark" class="text-xs" />
-                  </button>
-                </div>
+                  
+                  <!-- File Template (Root Level) -->
+                  <div v-else-if="!item.name.startsWith('.')" @click="activeFilePath = item.path"
+                    :class="['flex items-center gap-2 px-3 py-1.5 rounded-lg cursor-pointer transition-all border shadow-sm group', 
+                      activeFilePath === item.path ? 'bg-blue-600/5 border-blue-500/20 text-blue-400' : 'text-zinc-500 border-transparent hover:bg-zinc-800/30 hover:text-zinc-300']">
+                    <Icon :name="getFileIcon(item.name)" class="text-[10px]" />
+                    <span class="text-[11px] font-semibold truncate tracking-tight">{{ item.name }}</span>
+                    <button v-if="codeFiles.length > 1" @click.stop="deleteFile(item.path)" class="ml-auto opacity-0 group-hover:opacity-100 hover:text-red-500 transition-opacity">
+                      <Icon name="heroicons:trash" class="text-[10px]" />
+                    </button>
+                  </div>
+                </template>
               </div>
             </div>
 
-            <!-- Editor Area -->
+            <!-- Editor Workspace -->
             <div class="flex-1 flex flex-col min-w-0">
-              <!-- Tabs -->
-              <div class="flex bg-zinc-900/40 border-b border-zinc-800 items-center overflow-x-auto no-scrollbar">
-                <div v-for="file in codeFiles" :key="file.path"
-                  @click="activeFilePath = file.path"
-                  :class="['px-4 py-2.5 text-[11px] font-bold border-r border-zinc-800 flex items-center gap-2 cursor-pointer transition-all min-w-[120px] max-w-[200px]', 
-                    activeFilePath === file.path ? 'bg-zinc-950 text-white border-t-2 border-t-blue-500' : 'bg-transparent text-zinc-500 hover:text-zinc-300']">
-                  <Icon :name="file.path.endsWith('.java') ? 'logos:java' : file.path.endsWith('.py') ? 'logos:python' : file.path.endsWith('.js') ? 'logos:javascript' : 'heroicons:document-text'" class="text-[10px]" />
-                  <span class="truncate">{{ file.path }}</span>
-                  <button v-if="codeFiles.length > 1 && activeFilePath === file.path" @click.stop="deleteFile(file.path)" class="ml-auto hover:text-red-400">
+              <!-- Advanced Tab Bar -->
+              <div class="flex bg-zinc-950 border-b border-zinc-900/50 items-center overflow-x-auto no-scrollbar shrink-0">
+                <div v-for="tabPath in openTabs" :key="tabPath"
+                  @click="activeFilePath = tabPath"
+                  @click.middle="closeTab(tabPath)"
+                  :class="['flex items-center gap-2.5 px-4 py-2.5 cursor-pointer transition-all border-r border-zinc-900 group/tab relative', 
+                    activeFilePath === tabPath ? 'bg-zinc-900/50 text-blue-400 font-bold' : 'text-zinc-600 hover:text-zinc-400 hover:bg-zinc-900/30']">
+                  
+                  <div v-if="activeFilePath === tabPath" class="absolute bottom-0 left-0 w-full h-0.5 bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.3)]"></div>
+                  
+                  <Icon :name="getFileIcon(tabPath)" class="text-[10px]" />
+                  <span :class="['text-[11px] font-black uppercase tracking-widest whitespace-nowrap', activeFilePath === tabPath ? 'opacity-100' : 'opacity-60']">
+                    {{ tabPath.split('/').pop() }}
+                  </span>
+                  
+                  <button @click.stop="closeTab(tabPath)" class="ml-1 p-0.5 rounded-md hover:bg-zinc-800 opacity-0 group-hover/tab:opacity-100 transition-opacity">
                     <Icon name="heroicons:x-mark" class="text-[10px]" />
                   </button>
                 </div>
                 
-                <button @click="addFile" class="px-4 text-zinc-600 hover:text-zinc-300 transition-colors">
-                  <Icon name="heroicons:plus" class="text-xs" />
-                </button>
-
-                <!-- Language Selector -->
-                <div class="ml-auto px-4 flex items-center gap-2">
-                  <span class="text-[10px] text-zinc-600 uppercase font-black">Language</span>
-                  <select v-model="codeLanguage" @change="changeLang(codeLanguage)"
-                    class="bg-zinc-800 border border-zinc-700 rounded-md px-2 py-1 text-[10px] font-bold text-white focus:outline-none focus:border-blue-500">
-                    <option v-for="l in LANGUAGES" :key="l.id" :value="l.id">{{ l.label }}</option>
-                  </select>
+                <div class="flex-1 min-w-[50px]"></div>
+                
+                <div class="px-4 flex items-center gap-3 border-l border-zinc-900 h-full">
+                   <span class="text-[9px] font-black text-zinc-700 uppercase tracking-widest">{{ codeLanguage }} project</span>
                 </div>
               </div>
 
-              <!-- Main Editor -->
-              <div class="flex-1 relative">
+              <!-- Breadcrumbs -->
+              <div v-if="activeFilePath" class="px-6 py-2 bg-zinc-950/40 border-b border-zinc-900/50 flex items-center gap-2 overflow-x-auto no-scrollbar">
+                <Icon name="heroicons:folder-open" class="text-[10px] text-zinc-700" />
+                <template v-for="(part, i) in breadcrumbs" :key="i">
+                  <span class="text-[10px] font-bold text-zinc-500 hover:text-blue-400 cursor-default transition-colors">{{ part }}</span>
+                  <Icon v-if="i < breadcrumbs.length - 1" name="heroicons:chevron-right" class="text-[8px] text-zinc-800" />
+                </template>
+              </div>
+
+              <!-- Content Area -->
+              <div class="flex-1 relative bg-zinc-950 overflow-hidden">
                 <SystemDesignEditor 
                   v-if="activeFile"
                   v-model="activeFile.content" 
                   :language="codeLanguage" 
                   :path="activeFile.path"
                 />
+                
+                <!-- Floating Path Indicator - Removed in favor of Breadcrumbs -->
               </div>
 
-              <!-- Analysis & Output Area -->
-              <div class="h-48 border-t border-zinc-800 bg-zinc-900/10 flex flex-col overflow-hidden">
-                <!-- Console Output Panel -->
-                <div class="flex-1 flex flex-col min-h-0 bg-zinc-900/20">
-                  <div class="px-4 py-1.5 border-b border-zinc-800 flex items-center justify-between text-[10px] font-black uppercase tracking-widest text-zinc-500">
-                    <span class="flex items-center gap-2"><Icon name="heroicons:command-line" /> Terminal</span>
-                    <div class="flex gap-2">
-                      <button @click="simulationOutput = []" class="hover:text-zinc-300" title="Clear"><Icon name="heroicons:trash" /></button>
-                      <button class="hover:text-zinc-300"><Icon name="heroicons:chevron-down" /></button>
+              <!-- Terminal Area -->
+              <div :class="['border-t border-zinc-800/50 bg-black/40 flex flex-col overflow-hidden shrink-0 transition-all duration-300', isTerminalOpen ? 'h-48' : 'h-10']">
+                <div @click="isTerminalOpen = !isTerminalOpen" class="px-5 py-2.5 border-b border-zinc-800/50 flex items-center justify-between text-[10px] font-black uppercase tracking-[0.2em] text-zinc-600 bg-zinc-950/50 cursor-pointer hover:bg-zinc-900/50 transition-colors">
+                  <div class="flex items-center gap-3">
+                    <Icon name="heroicons:command-line" :class="isTerminalOpen ? 'text-blue-500' : 'text-zinc-500'" /> 
+                    <span>Console Log</span>
+                  </div>
+                  <div class="flex items-center gap-4">
+                    <div v-if="simulationOutput.length > 0 && !isTerminalOpen" class="flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span>
+                        <span class="text-[9px] normal-case font-mono text-zinc-500 tracking-normal">{{ simulationOutput[simulationOutput.length - 1] }}</span>
+                    </div>
+                    <div class="flex gap-4" @click.stop="">
+                        <button @click="simulationOutput = []" class="hover:text-white transition-colors flex items-center gap-1.5"><Icon name="heroicons:trash" /> Clear</button>
+                        <Icon :name="isTerminalOpen ? 'heroicons:chevron-down' : 'heroicons:chevron-up'" class="text-xs" />
                     </div>
                   </div>
-                  <div class="flex-1 p-4 font-mono text-[11px] text-zinc-500 overflow-y-auto space-y-1 no-scrollbar">
-                    <p v-if="!stepEvaluating['code'] && simulationOutput.length === 0">$ system simulation ready...</p>
-                    <p v-else-if="stepEvaluating['code']" class="text-blue-500/70 animate-pulse">> Evaluate Implementation: Analyzing architectural integrity...</p>
-                    <template v-else>
-                       <p v-for="(line, i) in simulationOutput" :key="i" :class="i === simulationOutput.length - 1 && runningSimulation ? 'text-zinc-300 animate-pulse' : 'text-zinc-500'">
+                </div>
+                <div v-show="isTerminalOpen" class="flex-1 p-6 font-mono text-[11px] text-zinc-500 overflow-y-auto space-y-2 custom-scrollbar bg-black/20">
+                  <div class="flex gap-3 px-2">
+                    <span class="text-zinc-700 select-none">$</span>
+                    <p v-if="!stepEvaluating['code'] && simulationOutput.length === 0" class="text-zinc-600">system kernel cluster initialized. ready for simulation sequence...</p>
+                    <p v-else-if="stepEvaluating['code']" class="text-blue-500/80 animate-pulse">analyzing solution architecture and oop integrity...</p>
+                  </div>
+                  <template v-for="(line, i) in simulationOutput" :key="i">
+                     <div class="flex gap-3 px-2">
+                       <span class="text-zinc-700 select-none">></span>
+                       <p :class="[i === simulationOutput.length - 1 && runningSimulation ? 'text-zinc-200 animate-pulse' : 'text-zinc-500']">
                          {{ line }}
                        </p>
-                    </template>
-                  </div>
+                     </div>
+                  </template>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Bottom Action Bar -->
-          <div class="bg-zinc-900 border-t border-zinc-800 px-6 py-4 flex items-center justify-between">
-            <div class="flex items-center gap-6">
-              <div class="flex items-center gap-3">
-                <div :class="['w-1.5 h-1.5 rounded-full', canEvaluateCode ? 'bg-green-500' : 'bg-red-500 shadow-[0_0_8px_rgba(239,68,68,0.4)]']"></div>
-                <span class="text-[10px] font-black uppercase tracking-widest text-zinc-400">Compilation Ready</span>
+          <!-- Bottom Status Bar -->
+          <div class="bg-zinc-950 border border-zinc-800 border-t-0 px-6 py-4 flex items-center justify-between shadow-2xl">
+            <div class="flex items-center gap-8">
+              <div class="flex items-center gap-4 group">
+                <div :class="['w-2 h-2 rounded-full transition-all duration-500', canEvaluateCode ? 'bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.3)]' : 'bg-red-500 shadow-[0_0_10px_rgba(239,68,68,0.3)]']"></div>
+                <span class="text-[9px] font-black uppercase tracking-[0.2em] text-zinc-500 group-hover:text-zinc-300 transition-colors">System Ready State</span>
               </div>
-              <div class="flex items-center gap-3">
-                <span class="text-[10px] font-black uppercase tracking-widest text-zinc-500">Usage:</span>
+              <div class="h-4 w-px bg-zinc-800"></div>
+              <div class="flex items-center gap-4">
+                <span class="text-[9px] font-black uppercase tracking-[0.2em] text-zinc-600">Buffer Usage</span>
                 <div class="flex gap-1.5">
-                   <div v-for="i in 3" :key="i" class="w-3 h-1 rounded-full bg-blue-500/20" :class="{'bg-blue-500': i === 1}"></div>
+                   <div v-for="i in 5" :key="i" :class="['w-4 h-1 rounded-full transition-colors', i <= (codeFiles.length) ? 'bg-blue-500' : 'bg-zinc-800']"></div>
                 </div>
               </div>
             </div>
             
-            <div class="flex items-center gap-3">
+            <div class="flex items-center gap-4">
               <button @click="runSimulation" :disabled="runningSimulation"
-                class="px-5 py-2 text-[11px] font-black border border-zinc-700 text-zinc-400 hover:text-white hover:bg-zinc-800 rounded-xl transition-all flex items-center gap-2">
-                <Icon :name="runningSimulation ? 'heroicons:arrow-path' : 'heroicons:play'" :class="['text-xs', { 'animate-spin': runningSimulation }]" /> 
-                {{ runningSimulation ? 'Simulating...' : 'Run Solution' }}
+                class="group px-6 py-2.5 text-[10px] font-black border border-zinc-800 text-zinc-400 hover:text-white hover:bg-zinc-900 rounded-xl transition-all flex items-center gap-3 active:scale-95 disabled:opacity-50">
+                <Icon :name="runningSimulation ? 'heroicons:arrow-path' : 'heroicons:play-solid'" :class="['text-sm transition-transform group-hover:scale-110', { 'animate-spin': runningSimulation, 'text-blue-500': !runningSimulation }]" /> 
+                <span class="uppercase tracking-widest">{{ runningSimulation ? 'Simulating...' : 'Run Simulation' }}</span>
               </button>
               <button @click="submitCode" :disabled="!canEvaluateCode || stepEvaluating['code']"
-                :class="['px-6 py-2 text-[11px] font-black rounded-xl transition-all flex items-center gap-2 shadow-xl', 
-                  canEvaluateCode ? 'bg-blue-600 text-white hover:bg-blue-500 hover:shadow-blue-500/20' : 'bg-zinc-800 text-zinc-500 cursor-not-allowed']">
-                <Icon name="heroicons:sparkles" class="text-xs" />
-                {{ stepEvaluating['code'] ? 'Evaluating...' : 'Evaluate Implementation' }}
+                :class="['relative overflow-hidden group px-8 py-2.5 text-[10px] font-black rounded-xl transition-all flex items-center gap-3 shadow-2xl active:scale-95', 
+                  canEvaluateCode ? 'bg-white text-black hover:bg-zinc-200' : 'bg-zinc-900 text-zinc-700 cursor-not-allowed border border-zinc-800']">
+                <Icon name="heroicons:sparkles-solid" :class="['text-sm', canEvaluateCode ? 'text-blue-600' : '']" />
+                <span class="uppercase tracking-widest">{{ stepEvaluating['code'] ? 'Calculating...' : 'Evaluate Implementation' }}</span>
               </button>
             </div>
+          </div>
+
+          <!-- LLD Code Step Result scorecard -->
+          <div v-if="stepResults['code']" class="mt-4 mx-6 mb-6 rounded-3xl border border-emerald-500/30 bg-emerald-500/5 overflow-hidden shadow-2xl animate-in fade-in slide-in-from-bottom-4 duration-700">
+             <div class="flex items-center gap-6 px-8 py-5">
+               <div class="flex items-center gap-4">
+                 <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 flex items-center justify-center border border-emerald-500/20">
+                   <span class="text-xl font-black text-emerald-400">{{ stepResults['code'].score }}</span>
+                 </div>
+                 <div class="flex flex-col">
+                   <span class="text-[9px] font-black text-zinc-500 uppercase tracking-widest leading-tight">Implementation Integrity</span>
+                   <button @click="showAnalysisHub = true" class="text-[10px] font-bold text-blue-400 hover:text-blue-300 transition-colors uppercase tracking-widest text-left">View Detailed Technical Audit</button>
+                 </div>
+               </div>
+               
+               <div class="h-10 w-px bg-zinc-800 hidden sm:block"></div>
+               
+               <p class="hidden lg:block text-[11px] text-zinc-500 font-medium max-w-sm leading-relaxed">
+                 Architectural evaluation complete. All OOP patterns and structural constraints have been analyzed by the system kernel.
+               </p>
+
+               <button @click="evaluate" 
+                 class="ml-auto px-8 py-3 text-[10px] font-black uppercase tracking-widest bg-gradient-to-r from-red-600 to-pink-700 text-white rounded-xl shadow-xl shadow-red-500/10 hover:shadow-red-500/20 transition-all flex items-center gap-3 group/btn">
+                 Generate Master Report
+                 <Icon name="heroicons:chevron-right" class="text-sm group-hover/btn:translate-x-1 transition-transform" />
+               </button>
+             </div>
           </div>
         </div>
 
@@ -1773,6 +2656,31 @@ async function runSimulation() {
     </div>
   </div>
 
+  <!-- ── GLOBAL STATUS BAR ── -->
+  <div v-if="!showDifficultyModal && activeStepId !== 'code' && !isEditorFullscreen" class="h-8 flex-shrink-0 bg-zinc-900 border-t border-zinc-800 flex items-center px-6 justify-between select-none z-50">
+    <div class="flex items-center gap-6">
+      <div class="flex items-center gap-2.5">
+         <div :class="['w-2 h-2 rounded-full animate-pulse', stepResults[activeStepId]?.passing ? 'bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.4)]' : 'bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.4)]']"></div>
+         <span class="text-[10px] font-black uppercase tracking-widest text-zinc-400">
+           {{ stepResults[activeStepId] ? `${stepResults[activeStepId]!.score}/10 - ${stepResults[activeStepId]!.passing ? 'Passing' : 'Needs Work'}` : 'Evaluation Pending' }}
+         </span>
+      </div>
+      <div class="h-3 w-px bg-zinc-800"></div>
+      <span class="text-[9px] text-zinc-600 font-bold uppercase tracking-tight">Auto-save: enabled</span>
+      <div class="h-3 w-px bg-zinc-800"></div>
+      <span class="text-[9px] text-zinc-600 font-bold uppercase tracking-tight">Sync Status: Online</span>
+    </div>
+    
+    <div class="flex items-center gap-5">
+      <div class="flex items-center gap-2">
+         <span class="text-[9px] text-zinc-700 font-black uppercase tracking-widest">UTF-8</span>
+         <div class="w-1 h-1 rounded-full bg-zinc-800"></div>
+         <span class="text-[9px] text-zinc-500 font-black uppercase tracking-widest">{{ activeStepId }} MODE</span>
+      </div>
+    </div>
+  </div>
+
+
     <!-- ── EVALUATION RESULT MODAL ── -->
     <div v-if="showEvalModal && evaluation"
       class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md overflow-y-auto p-4 md:p-8">
@@ -1959,24 +2867,7 @@ async function runSimulation() {
       </div>
     </div>
 
-    <!-- ── STATUS BAR ── -->
-    <div class="h-8 flex-shrink-0 bg-zinc-900 border-t border-zinc-800 flex items-center px-4 justify-between select-none">
-      <div class="flex items-center gap-4">
-        <div class="flex items-center gap-2">
-           <div :class="['w-2 h-2 rounded-full animate-pulse', stepResults[activeStepId]?.passing ? 'bg-green-500' : 'bg-blue-500 font-bold']"></div>
-           <span class="text-[10px] font-black uppercase tracking-tighter text-zinc-400">
-             {{ stepResults[activeStepId] ? `${stepResults[activeStepId]!.score}/10 - ${stepResults[activeStepId]!.passing ? 'Passing' : 'Needs Work'}` : 'Evaluation Pending' }}
-           </span>
-        </div>
-        <div class="h-3 w-px bg-zinc-800"></div>
-        <span class="text-[10px] text-zinc-600 font-medium">Auto-save: enabled</span>
-      </div>
-      
-      <div class="flex items-center gap-3">
-        <span class="text-[10px] text-zinc-600 uppercase font-black tracking-widest">UTF-8</span>
-        <span class="text-[10px] text-zinc-600 uppercase font-black tracking-widest">{{ activeStepId }} MODE</span>
-      </div>
-    </div>
+
 
     <!-- ── ANALYSIS HUB MODAL ── -->
     <div v-if="showAnalysisHub" class="fixed inset-0 z-[100] flex items-center justify-center p-4">
@@ -2204,8 +3095,396 @@ async function runSimulation() {
         </div>
       </div>
     </div>
+
+    <!-- ── NEW FILE/FOLDER MODAL ── -->
+    <transition name="fade">
+      <div v-if="showNewFSModal" class="fixed inset-0 z-[200] flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-black/90 backdrop-blur-md" @click="showNewFSModal = false"></div>
+        <div class="relative w-full max-w-sm bg-zinc-900 border border-white/10 rounded-2xl shadow-2xl overflow-hidden">
+          <div class="px-6 py-4 border-b border-white/5 flex items-center justify-between bg-zinc-950/50">
+              <div class="flex items-center gap-3">
+                  <Icon :name="fsModalType === 'file' ? 'heroicons:document-plus' : 'heroicons:folder-plus'" 
+                    :class="['text-lg', fsModalType === 'file' ? 'text-blue-500' : 'text-amber-500']" />
+                  <div class="flex flex-col">
+                    <h3 class="text-xs font-black text-white uppercase tracking-widest">
+                       New {{ fsModalType === 'file' ? 'File' : 'Folder' }}
+                    </h3>
+                    <span v-if="fsModalParentPath" class="text-[8px] font-bold text-zinc-500 uppercase tracking-tighter">In: {{ fsModalParentPath }}</span>
+                  </div>
+              </div>
+              <button @click="showNewFSModal = false" class="text-zinc-500 hover:text-white transition-colors">
+                  <Icon name="heroicons:x-mark" class="text-sm" />
+              </button>
+          </div>
+          <div class="p-6">
+              <p class="text-[10px] text-zinc-500 font-bold uppercase mb-2 tracking-widest">Name</p>
+              <div class="relative group">
+                  <input ref="fsNameInputRef" v-model="fsModalName" @keyup.enter="confirmFSAction"
+                    :placeholder="fsModalType === 'file' ? 'e.g. Main.java' : 'e.g. src/models'"
+                    class="w-full bg-zinc-950 border border-white/10 rounded-xl px-4 py-3 text-xs text-white placeholder-zinc-700 focus:outline-none focus:border-blue-500 transition-all" />
+              </div>
+              <p v-if="fsModalError" class="mt-2 text-[10px] text-red-500 font-bold flex items-center gap-1.5 animate-pulse">
+                  <Icon name="heroicons:exclamation-triangle" /> {{ fsModalError }}
+              </p>
+              <div class="mt-6 flex gap-3">
+                  <button @click="showNewFSModal = false" class="flex-1 py-2.5 text-[10px] font-black uppercase tracking-widest text-zinc-500 hover:text-white bg-zinc-800 hover:bg-zinc-700 rounded-xl transition-all">Cancel</button>
+                  <button @click="confirmFSAction" class="flex-1 py-2.5 text-[10px] font-black uppercase tracking-widest bg-blue-600 hover:bg-blue-500 text-white rounded-xl transition-all shadow-lg active:scale-95">Create</button>
+              </div>
+          </div>
+        </div>
+      </div>
+    </transition>
+
+    <!-- ── IDE FULLSCREEN OVERLAY ── -->
+    <transition name="fade">
+      <div v-if="isEditorFullscreen" class="fixed inset-0 z-[150] bg-[#0c0c0e] flex flex-col overflow-hidden">
+        <!-- Fullscreen Header with full controls -->
+        <div class="px-6 py-3 bg-zinc-900/80 border-b border-zinc-800 backdrop-blur-md flex items-center justify-between shrink-0">
+            <div class="flex items-center gap-6">
+                <div class="flex items-center gap-3">
+                  <span class="text-[9px] font-black text-white uppercase tracking-[0.3em] bg-blue-600 px-2 py-1 rounded">IDE Fullscreen</span>
+                  <div class="h-4 w-px bg-zinc-800"></div>
+                  <span class="text-[10px] font-black text-zinc-500 uppercase tracking-widest">{{ question.title }}</span>
+                </div>
+
+                <!-- Action Toolbar replicated in Fullscreen -->
+                <div class="flex items-center gap-3 border-l border-zinc-800 pl-6">
+                    <div class="flex items-center gap-1 bg-zinc-950 border border-white/5 rounded-lg p-0.5 shadow-xl">
+                      <button @click="addFile('')" class="p-1.5 rounded-md hover:bg-zinc-800 text-zinc-500 hover:text-blue-400 transition-all group" title="New File">
+                        <Icon name="heroicons:document-plus" />
+                      </button>
+                      <button @click="addFolder('')" class="p-1.5 rounded-md hover:bg-zinc-800 text-zinc-500 hover:text-amber-400 transition-all group" title="New Folder">
+                        <Icon name="heroicons:folder-plus" />
+                      </button>
+                      <div class="w-px h-3 bg-zinc-800 mx-1"></div>
+                      <button @click="triggerImport" class="px-3 py-1 text-[9px] font-black uppercase text-zinc-500 hover:text-white flex items-center gap-1.5">
+                        <Icon name="heroicons:arrow-up-tray" /> Import
+                      </button>
+                      <button @click="triggerFolderImport" class="px-3 py-1 text-[9px] font-black uppercase text-zinc-500 hover:text-white flex items-center gap-1.5">
+                        <Icon name="heroicons:folder-arrow-down" /> Folder
+                      </button>
+                      <button @click="exportProject" class="px-3 py-1 text-[9px] font-black uppercase text-zinc-500 hover:text-white flex items-center gap-1.5">
+                        <Icon name="heroicons:arrow-down-tray" /> Export
+                      </button>
+                    </div>
+                </div>
+            </div>
+            
+            <button @click="isEditorFullscreen = false" class="flex items-center gap-2 px-5 py-2 bg-red-600/10 hover:bg-red-600 text-red-500 hover:text-white text-[10px] font-black uppercase rounded-lg transition-all border border-red-500/20 active:scale-95 shadow-lg shadow-red-500/5">
+                <Icon name="heroicons:x-mark" class="text-xs" /> Exit Workspace
+            </button>
+        </div>
+
+        <div class="flex-1 flex min-h-0 relative">
+            <!-- Reuse Sidebar Component Style -->
+            <div class="w-72 border-r border-zinc-800 flex flex-col bg-zinc-950/50 backdrop-blur-xl shrink-0 overflow-hidden">
+                <div class="px-5 py-4 border-b border-zinc-800/50 flex items-center justify-between shrink-0">
+                  <span class="text-[9px] font-black text-zinc-600 uppercase tracking-[0.2em]">Structure</span>
+                  <span class="text-[8px] font-mono text-zinc-700 bg-zinc-900/50 px-2 py-0.5 rounded border border-white/5">{{ codeFiles.length }} Entrie{{ codeFiles.length !== 1 ? 's' : '' }}</span>
+                </div>
+                
+                <div class="flex-1 overflow-y-auto p-4 space-y-0.5 custom-scrollbar">
+                  <template v-for="item in fileTree" :key="item.path">
+                    <!-- Recursive rendering logic should be simplified or components should be used. 
+                         For now, I'll replicate the core UI style to avoid huge diff complexity. -->
+                    <div v-if="item.type === 'folder'" class="space-y-0.5 mb-1">
+                      <div @click="toggleFolder(item.path)"
+                        class="flex items-center gap-2.5 px-3 py-2 rounded-xl cursor-pointer hover:bg-white/[0.03] text-zinc-500 hover:text-zinc-300 transition-all group">
+                        <Icon :name="expandedFolders.has(item.path) ? 'heroicons:chevron-down' : 'heroicons:chevron-right'" class="text-[10px]" />
+                        <Icon :name="expandedFolders.has(item.path) ? 'heroicons:folder-open' : 'heroicons:folder'" class="text-sm text-amber-500/70" />
+                        <span class="text-[11px] font-black uppercase tracking-tight flex-1">{{ item.name }}</span>
+                        <!-- Inline Folder Actions -->
+                        <div class="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <button @click.stop="addFile(item.path)" class="p-1 hover:text-blue-400"><Icon name="heroicons:document-plus" class="text-[10px]" /></button>
+                            <button @click.stop="addFolder(item.path)" class="p-1 hover:text-amber-500"><Icon name="heroicons:folder-plus" class="text-[10px]" /></button>
+                        </div>
+                      </div>
+                      <!-- Sub-items -->
+                      <div v-if="expandedFolders.has(item.path)" class="ml-4 pl-2 border-l border-white/5 space-y-0.5">
+                        <div v-for="child in item.children" :key="child.path"
+                          v-show="!child.name.startsWith('.')"
+                          @click="child.type === 'file' ? activeFilePath = child.path : toggleFolder(child.path)"
+                          :class="['flex items-center gap-3 px-3 py-2 rounded-xl cursor-pointer transition-all border shadow-sm group/child', 
+                            activeFilePath === child.path ? 'bg-blue-600/5 border-blue-500/20 text-blue-400' : 'text-zinc-500 border-transparent hover:bg-zinc-800/50 hover:text-zinc-300']">
+                          <Icon :name="child.type === 'file' ? getFileIcon(child.name) : (expandedFolders.has(child.path) ? 'heroicons:folder-open' : 'heroicons:folder')" 
+                            :class="['text-sm', child.type === 'folder' ? 'text-amber-500/60' : '']" />
+                          <span class="text-[11px] font-bold truncate tracking-tight flex-1">{{ child.name }}</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div v-else-if="!item.name.startsWith('.')" @click="activeFilePath = item.path"
+                      :class="['flex items-center gap-3 px-4 py-2 rounded-xl cursor-pointer transition-all border shadow-sm group mb-0.5', 
+                        activeFilePath === item.path ? 'bg-blue-600/5 border-blue-500/20 text-blue-400 shadow-xl' : 'text-zinc-500 border-transparent hover:bg-zinc-800/50 hover:text-zinc-300']">
+                      <Icon :name="getFileIcon(item.name)" class="text-sm" />
+                      <span class="text-[11px] font-bold truncate tracking-tight">{{ item.name }}</span>
+                    </div>
+                  </template>
+                </div>
+            </div>
+
+            <!-- Content Area Replicated -->
+            <div class="flex-1 flex flex-col min-w-0 bg-[#0c0c0e]">
+                <!-- Tabs in Fullscreen -->
+                <div class="flex bg-zinc-950 border-b border-zinc-800/50 items-center overflow-x-auto no-scrollbar shrink-0">
+                  <div v-for="tabPath in openTabs" :key="tabPath"
+                    @click="activeFilePath = tabPath"
+                    :class="['flex items-center gap-3 px-6 py-3 cursor-pointer transition-all border-r border-zinc-900 group/tab relative', 
+                      activeFilePath === tabPath ? 'bg-zinc-900/50 text-blue-400 shadow-inner' : 'text-zinc-600 hover:text-zinc-400 hover:bg-zinc-900/30']">
+                    <div v-if="activeFilePath === tabPath" class="absolute bottom-0 left-0 w-full h-0.5 bg-blue-500 shadow-lg"></div>
+                    <Icon :name="getFileIcon(tabPath)" class="text-sm" />
+                    <span class="text-[11px] font-black uppercase tracking-[0.2em] whitespace-nowrap">{{ tabPath.split('/').pop() }}</span>
+                    <button @click.stop="closeTab(tabPath)" class="ml-2 p-1 rounded-md hover:bg-zinc-800 opacity-0 group-hover/tab:opacity-100 transition-opacity">
+                      <Icon name="heroicons:x-mark" class="text-[10px]" />
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Breadcrumbs in Fullscreen -->
+                <div v-if="activeFilePath" class="px-8 py-3 bg-zinc-950/20 border-b border-zinc-900/50 flex items-center gap-3">
+                  <Icon name="heroicons:home-modern" class="text-[10px] text-zinc-700" />
+                  <template v-for="(part, i) in breadcrumbs" :key="i">
+                    <span class="text-[10px] font-black text-zinc-600">{{ part }}</span>
+                    <Icon v-if="i < breadcrumbs.length - 1" name="heroicons:chevron-right" class="text-[8px] text-zinc-800" />
+                  </template>
+                </div>
+
+                <div class="flex-1 relative overflow-hidden">
+                    <SystemDesignEditor v-if="activeFile" v-model="activeFile.content" :language="codeLanguage" :path="activeFile.path" />
+                </div>
+            </div>
+        </div>
+      </div>
+    </transition>
+    <!-- ── GUIDELINES MODAL ── -->
+    <Transition name="fade-overlay">
+      <div v-if="showGuidelinesModal" class="fixed inset-0 z-[500] bg-black/80 backdrop-blur-md flex items-start justify-center p-4 overflow-y-auto">
+        <div class="bg-zinc-900 border border-zinc-700 rounded-3xl shadow-2xl w-full max-w-3xl my-8">
+          <!-- Header -->
+          <div class="flex items-center justify-between p-6 border-b border-zinc-800">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center">
+                <Icon name="heroicons:book-open" class="text-emerald-400 text-xl" />
+              </div>
+              <div>
+                <h2 class="text-lg font-black text-white">Interview Guidelines</h2>
+                <p class="text-xs text-zinc-400">{{ isLLD ? 'Low-Level Design' : 'High-Level Design' }} · {{ question.title }}</p>
+              </div>
+            </div>
+            <button @click="showGuidelinesModal = false" class="p-2 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-zinc-400 hover:text-white transition-colors">
+              <Icon name="heroicons:x-mark" class="text-lg" />
+            </button>
+          </div>
+
+          <div class="p-6 space-y-6 overflow-y-auto max-h-[70vh] custom-scrollbar">
+
+            <!-- General Interview Tips -->
+            <div class="bg-zinc-800/40 rounded-2xl p-5 border border-zinc-700/50">
+              <h3 class="text-sm font-black text-white mb-3 flex items-center gap-2">
+                <Icon name="heroicons:light-bulb" class="text-amber-400" /> General Interview Tips
+              </h3>
+              <div class="grid sm:grid-cols-2 gap-2 text-xs text-zinc-400">
+                <div class="flex items-start gap-2"><span class="text-amber-400 mt-0.5">›</span> Think out loud — silence is your enemy</div>
+                <div class="flex items-start gap-2"><span class="text-amber-400 mt-0.5">›</span> Ask clarifying questions before diving in</div>
+                <div class="flex items-start gap-2"><span class="text-amber-400 mt-0.5">›</span> State trade-offs explicitly — both sides</div>
+                <div class="flex items-start gap-2"><span class="text-amber-400 mt-0.5">›</span> Validate assumptions with data/numbers</div>
+                <div class="flex items-start gap-2"><span class="text-amber-400 mt-0.5">›</span> Start simple, then iterate toward scale</div>
+                <div class="flex items-start gap-2"><span class="text-amber-400 mt-0.5">›</span> Each Audit step unlocks the next — don't skip</div>
+              </div>
+            </div>
+
+            <!-- Stage-by-stage guide -->
+            <h3 class="text-sm font-black text-white flex items-center gap-2">
+              <Icon name="heroicons:list-bullet" class="text-blue-400" /> Stage-by-Stage Breakdown
+            </h3>
+
+            <!-- LLD stages -->
+            <template v-if="isLLD">
+              <div v-for="(info, id) in lldStageInfo" :key="id" class="bg-zinc-800/30 rounded-2xl border border-zinc-800 overflow-hidden">
+                <div class="flex items-center gap-3 p-4 border-b border-zinc-800/60">
+                  <Icon :name="info.icon" :class="[info.color, 'text-lg']" />
+                  <div class="flex-1">
+                    <p class="font-black text-white text-sm">{{ steps.find(s => s.id === id)?.label }}</p>
+                    <p class="text-[10px] text-zinc-500">{{ info.duration }}</p>
+                  </div>
+                  <span class="text-[10px] px-2 py-1 rounded-full bg-zinc-700 text-zinc-400">{{ info.duration }}</span>
+                </div>
+                <div class="p-4 space-y-3 text-xs">
+                  <p class="text-zinc-300 leading-relaxed">{{ info.what }}</p>
+                  <div>
+                    <p class="text-[10px] font-black text-zinc-500 uppercase tracking-widest mb-1.5">✅ Expected Deliverables</p>
+                    <ul class="space-y-1">
+                      <li v-for="e in info.expected" :key="e" class="flex items-start gap-1.5 text-zinc-400">
+                        <span class="text-green-400 flex-shrink-0 mt-0.5">›</span> {{ e }}
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p class="text-[10px] font-black text-zinc-500 uppercase tracking-widest mb-1.5">💡 Pro Tips</p>
+                    <ul class="space-y-1">
+                      <li v-for="t in info.tips" :key="t" class="flex items-start gap-1.5 text-zinc-400">
+                        <span class="text-amber-400 flex-shrink-0 mt-0.5">›</span> {{ t }}
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="bg-zinc-800/60 rounded-xl p-2.5">
+                    <p class="text-[10px] font-black text-zinc-500 uppercase tracking-widest mb-1">🎯 Scoring Focus</p>
+                    <p class="text-zinc-300">{{ info.scoringFocus }}</p>
+                  </div>
+                </div>
+              </div>
+            </template>
+
+            <!-- HLD stages -->
+            <template v-else>
+              <div v-for="(info, id) in hldStageInfo" :key="id" class="bg-zinc-800/30 rounded-2xl border border-zinc-800 overflow-hidden">
+                <div class="flex items-center gap-3 p-4 border-b border-zinc-800/60">
+                  <Icon :name="info.icon" :class="[info.color, 'text-lg']" />
+                  <div class="flex-1">
+                    <p class="font-black text-white text-sm">{{ steps.find(s => s.id === id)?.label }}</p>
+                  </div>
+                  <span class="text-[10px] px-2 py-1 rounded-full bg-zinc-700 text-zinc-400">{{ info.duration }}</span>
+                </div>
+                <div class="p-4 space-y-3 text-xs">
+                  <p class="text-zinc-300 leading-relaxed">{{ info.what }}</p>
+                  <div>
+                    <p class="text-[10px] font-black text-zinc-500 uppercase tracking-widest mb-1.5">✅ Expected Deliverables</p>
+                    <ul class="space-y-1">
+                      <li v-for="e in info.expected" :key="e" class="flex items-start gap-1.5 text-zinc-400">
+                        <span class="text-green-400 flex-shrink-0 mt-0.5">›</span> {{ e }}
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p class="text-[10px] font-black text-zinc-500 uppercase tracking-widest mb-1.5">💡 Pro Tips</p>
+                    <ul class="space-y-1">
+                      <li v-for="t in info.tips" :key="t" class="flex items-start gap-1.5 text-zinc-400">
+                        <span class="text-amber-400 flex-shrink-0 mt-0.5">›</span> {{ t }}
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="bg-zinc-800/60 rounded-xl p-2.5">
+                    <p class="text-[10px] font-black text-zinc-500 uppercase tracking-widest mb-1">🎯 Scoring Focus</p>
+                    <p class="text-zinc-300">{{ info.scoringFocus }}</p>
+                  </div>
+                </div>
+              </div>
+            </template>
+
+            <!-- Scoring overview -->
+            <div class="bg-gradient-to-br from-blue-500/10 to-purple-500/10 border border-blue-500/20 rounded-2xl p-5">
+              <h3 class="text-sm font-black text-white mb-3 flex items-center gap-2">
+                <Icon name="heroicons:trophy" class="text-yellow-400" /> How You're Scored
+              </h3>
+              <div class="grid sm:grid-cols-2 gap-3 text-xs">
+                <div class="bg-zinc-900/50 rounded-xl p-3">
+                  <p class="font-bold text-white mb-1">Per-Step Audit</p>
+                  <p class="text-zinc-400">Each step is scored 0–10. The AI evaluates completeness, depth, and correctness against a model answer.</p>
+                </div>
+                <div class="bg-zinc-900/50 rounded-xl p-3">
+                  <p class="font-bold text-white mb-1">Final Report</p>
+                  <p class="text-zinc-400">Requires an average ≥ 5.0 across all evaluated steps. Generates a full PDF report with AI model answers.</p>
+                </div>
+                <div class="bg-zinc-900/50 rounded-xl p-3">
+                  <p class="font-bold text-white mb-1">Grades</p>
+                  <p class="text-zinc-400">A+ ≥ 90% · A ≥ 80% · B ≥ 70% · C ≥ 60% · D ≥ 50% · F below 50%</p>
+                </div>
+                <div class="bg-zinc-900/50 rounded-xl p-3">
+                  <p class="font-bold text-white mb-1">Attempts</p>
+                  <p class="text-zinc-400">Max 3 Audit attempts per step. Final report locks the question in read-only mode after submission.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Footer -->
+          <div class="p-6 border-t border-zinc-800 flex justify-end">
+            <button @click="showGuidelinesModal = false"
+              class="px-6 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-black font-black rounded-xl transition-colors text-sm">
+              Got it, let's go!
+            </button>
+          </div>
+        </div>
+      </div>
+    </Transition>
+
+    <!-- ── SIMULATION MODAL ── -->
+    <Transition name="fade-overlay">
+      <div v-if="showSimulationModal" class="fixed inset-0 z-[500] bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="bg-zinc-900 border border-zinc-700 rounded-3xl shadow-2xl w-full max-w-4xl max-h-[90vh] flex flex-col overflow-hidden">
+          <!-- Header -->
+          <div class="flex items-center justify-between p-5 border-b border-zinc-800 shrink-0">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-xl bg-violet-500/20 flex items-center justify-center">
+                <Icon name="heroicons:play-circle" class="text-violet-400 text-lg" />
+              </div>
+              <div>
+                <h2 class="font-black text-white">System Simulation</h2>
+                <p class="text-[10px] text-zinc-400">Interactive design validation for {{ question.title }}</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-2">
+              <button @click="showSimulationModal = false" class="p-2 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-zinc-400 hover:text-white transition-colors">
+                <Icon name="heroicons:x-mark" class="text-lg" />
+              </button>
+            </div>
+          </div>
+          
+          <!-- Simulation Component Area -->
+          <div class="flex-1 overflow-y-auto custom-scrollbar p-6 bg-zinc-950">
+            <template v-if="simulationComponent">
+              <component :is="simulationComponent" />
+            </template>
+            <div v-else class="flex flex-col items-center justify-center py-20 text-center">
+              <div class="w-16 h-16 rounded-2xl bg-zinc-900 flex items-center justify-center mb-4">
+                <Icon name="heroicons:command-line" class="text-3xl text-zinc-700" />
+              </div>
+              <p class="text-white font-bold tracking-tight">Simulation Engine Not Found</p>
+              <p class="text-xs text-zinc-500 max-w-xs mt-1">
+                The interactive simulation for this specific design challenge is currently under development or not available for your current tier.
+              </p>
+            </div>
+          </div>
+
+          <!-- Footer/Status -->
+          <div class="px-5 py-3 border-t border-zinc-800 bg-zinc-900/50 flex items-center justify-between shrink-0">
+            <div class="flex items-center gap-4">
+              <div class="flex items-center gap-1.5">
+                <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                <span class="text-[10px] font-black text-zinc-400 uppercase tracking-widest">Engine Active</span>
+              </div>
+              <div class="text-[10px] text-zinc-600 font-mono">v1.0.8-stable</div>
+            </div>
+            <button @click="showSimulationModal = false" class="px-4 py-1.5 bg-zinc-800 hover:bg-zinc-700 text-white text-xs font-bold rounded-lg border border-zinc-700 transition-colors">
+              Close Simulation
+            </button>
+          </div>
+        </div>
+      </div>
+    </Transition>
+
   </div>
 </template>
+
+
+
+<style>
+/* Global Custom Scrollbar for IDE */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+</style>
 
 <style scoped>
 .markdown-container :deep(h1), 
@@ -2316,5 +3595,37 @@ async function runSimulation() {
 }
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: #27272a;
+}
+
+/* ── Global Loading Overlay Transition ──────────────────────────────────── */
+.fade-overlay-enter-active,
+.fade-overlay-leave-active {
+  transition: opacity 0.25s ease, backdrop-filter 0.25s ease;
+}
+.fade-overlay-enter-from,
+.fade-overlay-leave-to {
+  opacity: 0;
+}
+
+/* ── Stage Tooltip Transition ───────────────────────────────────────────── */
+.tooltip-pop-enter-active { transition: all 0.18s cubic-bezier(0.34, 1.56, 0.64, 1); }
+.tooltip-pop-leave-active  { transition: all 0.12s ease; }
+.tooltip-pop-enter-from    { opacity: 0; transform: translateY(-6px) scale(0.96); }
+.tooltip-pop-leave-to      { opacity: 0; transform: translateY(-4px) scale(0.97); }
+
+/* ── Read-Only mask: dims interactive areas when question is already done ─ */
+.readonly-mask {
+  position: relative;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.65;
+}
+.readonly-mask::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: transparent;
+  cursor: not-allowed;
 }
 </style>

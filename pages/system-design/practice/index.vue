@@ -1,6 +1,14 @@
 <script setup lang="ts">
 import { QUESTION_CATEGORIES, ALL_QUESTIONS } from '~/data/system-design-questions'
 import type { Difficulty, DesignType } from '~/data/system-design-questions'
+import SystemDesignSimulationsTicTacToe from '~/components/SystemDesign/Simulations/TicTacToe.vue'
+import SystemDesignSimulationsUrlShortener from '~/components/SystemDesign/Simulations/UrlShortener.vue'
+import SystemDesignSimulationsRateLimiter from '~/components/SystemDesign/Simulations/RateLimiter.vue'
+import SystemDesignSimulationsLruCache from '~/components/SystemDesign/Simulations/LruCache.vue'
+import SystemDesignSimulationsParkingLot from '~/components/SystemDesign/Simulations/ParkingLot.vue'
+import SystemDesignSimulationsChatApp from '~/components/SystemDesign/Simulations/ChatApp.vue'
+import SystemDesignSimulationsSnakeAndLadder from '~/components/SystemDesign/Simulations/SnakeAndLadder.vue'
+import SystemDesignSimulationsMinesweeper from '~/components/SystemDesign/Simulations/Minesweeper.vue'
 import SystemDesignSimulationsBloomFilter from '~/components/SystemDesign/Simulations/BloomFilter.vue'
 import SystemDesignSimulationsAutocomplete from '~/components/SystemDesign/Simulations/Autocomplete.vue'
 import SystemDesignSimulationsSearchEngine from '~/components/SystemDesign/Simulations/SearchEngine.vue'
@@ -89,7 +97,7 @@ function openSimulation(slug: string) {
                 <SystemDesignSimulationsRateLimiter v-else-if="activeSimulationSlug === 'design-rate-limiter'" />
                 <SystemDesignSimulationsLruCache v-else-if="activeSimulationSlug === 'design-lru-cache'" />
                 <SystemDesignSimulationsParkingLot v-else-if="activeSimulationSlug === 'design-parking-lot'" />
-                <SystemDesignSimulationsChatApp v-else-if="activeSimulationSlug === 'design-chat-app'" />
+                <SystemDesignSimulationsChatApp v-else-if="activeSimulationSlug === 'design-chat-application'" />
                 <SystemDesignSimulationsSnakeAndLadder v-else-if="activeSimulationSlug === 'design-snake-and-ladder'" />
                 <SystemDesignSimulationsMinesweeper v-else-if="activeSimulationSlug === 'design-minesweeper'" />
                 <SystemDesignSimulationsBloomFilter v-else-if="activeSimulationSlug === 'design-bloom-filter'" />

@@ -53,7 +53,7 @@ export const QUESTION_CATEGORIES: QuestionCategory[] = [
         tab: 'LLD',
         questions: [
             { slug: 'design-tic-tac-toe', title: 'Design Tic Tac Toe', type: 'LLD', difficulty: 'Easy', category: 'Games', tags: ['OOP', 'Grid'], description: 'Design a Tic Tac Toe game supporting 2 players on an NxN board.', hasSimulation: true },
-            { slug: 'design-snake-ladder', title: 'Design Snake and Ladder Game', type: 'LLD', difficulty: 'Easy', category: 'Games', tags: ['OOP', 'Board'], description: 'Design a Snake and Ladder game with snakes, ladders, and dice.', hasSimulation: true },
+            { slug: 'design-snake-and-ladder', title: 'Design Snake and Ladder Game', type: 'LLD', difficulty: 'Easy', category: 'Games', tags: ['OOP', 'Board'], description: 'Design a Snake and Ladder game with snakes, ladders, and dice.', hasSimulation: true },
             { slug: 'design-minesweeper', title: 'Design Minesweeper Game', type: 'LLD', difficulty: 'Medium', category: 'Games', tags: ['OOP', 'Recursion'], description: 'Design Minesweeper with cell reveal, flood-fill, and mine placement.', hasSimulation: true },
         ]
     },
