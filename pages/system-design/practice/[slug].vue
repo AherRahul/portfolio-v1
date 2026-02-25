@@ -15,6 +15,8 @@ if (!questionRaw) {
 
 const question = questionRaw // narrowed, never undefined past this line
 
+const { makeApiCall } = useApiEndpoints()
+
 useSeoMeta({
   title: `${question.title} – System Design Practice`,
   description: question.description,
@@ -177,7 +179,7 @@ const showGuidelinesModal = ref(false)
 const showSimulationModal = ref(false)
 
 // Lazy-load the correct simulation component based on the question slug
-const simulationComponent = shallowRef<Component | null>(null)
+const simulationComponent = shallowRef<any>(null)
 
 async function openSimulationModal() {
   showSimulationModal.value = true
@@ -442,12 +444,11 @@ async function callStepEval(stepId: string, stepData: unknown): Promise<boolean>
   stepError.value[stepId] = ''
   showGlobalLoader('Evaluating your step response...')
   try {
-    const result = await $fetch<StepResult>('/api/system-design/evaluate-step', {
+    const result = await makeApiCall<StepResult>('/api/system-design/evaluate-step', {
       method: 'POST',
       body: {
         questionTitle: question.title,
         questionDescription: question.description,
-        // Use effective session type so step prompts match the interview mode
         designType: isLLD.value ? 'LLD' : 'HLD',
         difficulty: selectedDifficulty.value,
         language: codeLanguage.value,
@@ -1157,7 +1158,7 @@ async function evaluate() {
       analytics: hldAnalytics.value,
     }
 
-    const result = await $fetch('/api/system-design/evaluate', {
+    const result = await makeApiCall('/api/system-design/evaluate', {
       method: 'POST',
       body: {
         questionTitle: question.title,
@@ -2103,43 +2104,6 @@ function scoreBarColor(pct: number) {
                   :language="codeLanguage" 
                   :path="activeFile.path"
                 />
-                
-                <!-- Floating Path Indicator - Removed in favor of Breadcrumbs -->
-              </div>
-
-              <!-- Terminal Area -->
-              <div :class="['border-t border-zinc-800/50 bg-black/40 flex flex-col overflow-hidden shrink-0 transition-all duration-300', isTerminalOpen ? 'h-48' : 'h-10']">
-                <div @click="isTerminalOpen = !isTerminalOpen" class="px-5 py-2.5 border-b border-zinc-800/50 flex items-center justify-between text-[10px] font-black uppercase tracking-[0.2em] text-zinc-600 bg-zinc-950/50 cursor-pointer hover:bg-zinc-900/50 transition-colors">
-                  <div class="flex items-center gap-3">
-                    <Icon name="heroicons:command-line" :class="isTerminalOpen ? 'text-blue-500' : 'text-zinc-500'" /> 
-                    <span>Console Log</span>
-                  </div>
-                  <div class="flex items-center gap-4">
-                    <div v-if="simulationOutput.length > 0 && !isTerminalOpen" class="flex items-center gap-2">
-                        <span class="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span>
-                        <span class="text-[9px] normal-case font-mono text-zinc-500 tracking-normal">{{ simulationOutput[simulationOutput.length - 1] }}</span>
-                    </div>
-                    <div class="flex gap-4" @click.stop="">
-                        <button @click="simulationOutput = []" class="hover:text-white transition-colors flex items-center gap-1.5"><Icon name="heroicons:trash" /> Clear</button>
-                        <Icon :name="isTerminalOpen ? 'heroicons:chevron-down' : 'heroicons:chevron-up'" class="text-xs" />
-                    </div>
-                  </div>
-                </div>
-                <div v-show="isTerminalOpen" class="flex-1 p-6 font-mono text-[11px] text-zinc-500 overflow-y-auto space-y-2 custom-scrollbar bg-black/20">
-                  <div class="flex gap-3 px-2">
-                    <span class="text-zinc-700 select-none">$</span>
-                    <p v-if="!stepEvaluating['code'] && simulationOutput.length === 0" class="text-zinc-600">system kernel cluster initialized. ready for simulation sequence...</p>
-                    <p v-else-if="stepEvaluating['code']" class="text-blue-500/80 animate-pulse">analyzing solution architecture and oop integrity...</p>
-                  </div>
-                  <template v-for="(line, i) in simulationOutput" :key="i">
-                     <div class="flex gap-3 px-2">
-                       <span class="text-zinc-700 select-none">></span>
-                       <p :class="[i === simulationOutput.length - 1 && runningSimulation ? 'text-zinc-200 animate-pulse' : 'text-zinc-500']">
-                         {{ line }}
-                       </p>
-                     </div>
-                  </template>
-                </div>
               </div>
             </div>
           </div>
@@ -2161,11 +2125,6 @@ function scoreBarColor(pct: number) {
             </div>
             
             <div class="flex items-center gap-4">
-              <button @click="runSimulation" :disabled="runningSimulation"
-                class="group px-6 py-2.5 text-[10px] font-black border border-zinc-800 text-zinc-400 hover:text-white hover:bg-zinc-900 rounded-xl transition-all flex items-center gap-3 active:scale-95 disabled:opacity-50">
-                <Icon :name="runningSimulation ? 'heroicons:arrow-path' : 'heroicons:play-solid'" :class="['text-sm transition-transform group-hover:scale-110', { 'animate-spin': runningSimulation, 'text-blue-500': !runningSimulation }]" /> 
-                <span class="uppercase tracking-widest">{{ runningSimulation ? 'Simulating...' : 'Run Simulation' }}</span>
-              </button>
               <button @click="submitCode" :disabled="!canEvaluateCode || stepEvaluating['code']"
                 :class="['relative overflow-hidden group px-8 py-2.5 text-[10px] font-black rounded-xl transition-all flex items-center gap-3 shadow-2xl active:scale-95', 
                   canEvaluateCode ? 'bg-white text-black hover:bg-zinc-200' : 'bg-zinc-900 text-zinc-700 cursor-not-allowed border border-zinc-800']">

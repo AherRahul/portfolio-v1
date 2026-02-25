@@ -9,10 +9,10 @@ const path = require('path');
 function runCommand(command, options = {}) {
   try {
     // console.log(`▶️ Running: ${command}`);
-    const result = execSync(command, { 
-      stdio: 'inherit', 
+    const result = execSync(command, {
+      stdio: 'inherit',
       timeout: 300000,
-      ...options 
+      ...options
     });
     // console.log(`✅ Command completed: ${command}`);
     return result;
@@ -28,13 +28,13 @@ function copyDirectory(src, dest) {
   if (!existsSync(dest)) {
     mkdirSync(dest, { recursive: true });
   }
-  
+
   const items = readdirSync(src);
-  
+
   for (const item of items) {
     const srcPath = path.join(src, item);
     const destPath = path.join(dest, item);
-    
+
     if (statSync(srcPath).isDirectory()) {
       copyDirectory(srcPath, destPath);
     } else {
@@ -66,7 +66,7 @@ try {
   if (existsSync(functionsDir)) {
     // console.log('🔧 Installing function dependencies...');
     runCommand('npm install', { cwd: functionsDir });
-    
+
     // console.log('🔨 Compiling TypeScript functions...');
     runCommand('npm run build', { cwd: functionsDir });
   }
@@ -90,25 +90,25 @@ try {
   // For manual deployment, copy functions to root netlify/functions structure
   const functionsJsDir = path.join(functionsDir);
   const deployFunctionsDir = path.join(deployDir, 'netlify', 'functions');
-  
+
   if (existsSync(functionsJsDir)) {
     // console.log('📁 Copying compiled functions...');
     mkdirSync(deployFunctionsDir, { recursive: true });
-    
+
     // Copy only .js files (compiled from TypeScript)
     const functionFiles = readdirSync(functionsJsDir).filter(file => file.endsWith('.js'));
-    
+
     for (const file of functionFiles) {
       const srcFile = path.join(functionsJsDir, file);
       const destFile = path.join(deployFunctionsDir, file);
       copyFileSync(srcFile, destFile);
       // console.log(`📁 Copied function: ${file}`);
     }
-    
+
     // Also copy to the expected location for manual deployments
     const altFunctionsDir = path.join(deployDir, 'functions');
     mkdirSync(altFunctionsDir, { recursive: true });
-    
+
     for (const file of functionFiles) {
       const srcFile = path.join(functionsJsDir, file);
       const destFile = path.join(altFunctionsDir, file);
@@ -164,8 +164,18 @@ try {
   from = "/api/summary/generate"
   to = "/.netlify/functions/summary-generate"
   status = 200
+
+[[redirects]]
+  from = "/api/system-design/evaluate"
+  to = "/.netlify/functions/sd-evaluate"
+  status = 200
+
+[[redirects]]
+  from = "/api/system-design/evaluate-step"
+  to = "/.netlify/functions/sd-evaluate-step"
+  status = 200
 `;
-  
+
   require('fs').writeFileSync(path.join(deployDir, 'netlify.toml'), netlifyConfig);
   // console.log('📁 Created netlify.toml for manual deployment');
 
@@ -173,6 +183,8 @@ try {
   const redirectsContent = `# API redirects for manual deployment
 /api/quiz/generate /.netlify/functions/quiz-generate 200
 /api/summary/generate /.netlify/functions/summary-generate 200
+/api/system-design/evaluate /.netlify/functions/sd-evaluate 200
+/api/system-design/evaluate-step /.netlify/functions/sd-evaluate-step 200
 
 # SPA fallback
 /* /200.html 200`;
@@ -183,7 +195,7 @@ try {
   // console.log('✅ Build completed successfully!');
   // console.log('📂 Deploy directory: deploy-package/');
   // console.log('🚀 Ready for manual deployment!');
-  
+
   // console.log('\n📋 Next steps:');
   // console.log('1. Go to your Netlify dashboard');
   // console.log('2. Go to "Sites" and find your site');
