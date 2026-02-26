@@ -1,0 +1,259 @@
+---
+title: Longest Substring Without Repeating Characters
+description: Master Longest Substring Without Repeating Characters in the
+  Sliding Window module. Comprehensive guide and algorithmic problem solving.
+datePublished: 2026-02-26
+dateModified: 2026-02-26
+topics:
+  - dsa
+courseName: 10-dsa-roadmap
+showOnArticles: false
+published: true
+---
+
+# Problem Description
+
+Question
+
+Given a string `s`, find the length of the **longest** **substring** without duplicate characters\. 
+
+##### **Example 1:**
+
+Input:s=abcabcbb
+
+0
+
+a
+
+1
+
+b
+
+2
+
+c
+
+3
+
+a
+
+4
+
+b
+
+5
+
+c
+
+6
+
+b
+
+7
+
+b
+
+Output:3
+
+3
+
+**Explanation:** The answer is "abc", with the length of 3\.
+
+##### **Example 2:**
+
+Input:s=bbbbb
+
+0
+
+b
+
+1
+
+b
+
+2
+
+b
+
+3
+
+b
+
+4
+
+b
+
+Output:1
+
+1
+
+**Explanation:** The answer is "b", with the length of 1\.
+
+##### **Example 3:**
+
+Output:s=pwwkew
+
+0
+
+p
+
+1
+
+w
+
+2
+
+w
+
+3
+
+k
+
+4
+
+e
+
+5
+
+w
+
+Output:3
+
+3
+
+**Explanation:** The answer is "wke", with the length of 3\.
+
+Notice that the answer must be a substring, "pwke" is a subsequence and not a substring\.
+
+##### **Constraints:**
+
+*   **0 <= s\.length <= 5 \* 10****4**
+*   `s` consists of English letters, digits, symbols and spaces\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/longest-substring-without-repeating-characters)
+
+# Approaches
+
+## 1\. Brute Force
+
+#### Intuition:
+
+The most straightforward way to solve this problem is by checking each possible substring to see if it contains all unique characters\. We can iterate over all possible starting points and ending points for substrings and check for uniqueness\.
+
+#### Code:
+
+Java
+
+```java
+class Solution {
+   public int lengthOfLongestSubstring(String s) {
+       int n = s.length();
+       int maxLength = 0;
+       
+       for (int i = 0; i < n; i++) {
+           for (int j = i; j < n; j++) {
+               if (isUnique(s, i, j)) {
+                   maxLength = Math.max(maxLength, j - i + 1);
+               }
+           }
+       }
+       
+       return maxLength;
+   }
+
+   private boolean isUnique(String s, int start, int end) {
+       // Use a set to track characters in the current substring
+       Set<Character> chars = new HashSet<>();
+       
+       for (int k = start; k <= end; k++) {
+           // If character is already in the set, it's not unique
+           if (chars.contains(s.charAt(k))) {
+               return false;
+           }
+           chars.add(s.charAt(k));
+       }
+       return true;
+   }
+}
+```
+
+Complexity Analysis
+
+*   **Time Complexity:** O\(n^3\)\. There are two nested loops and checking whether a substring contains all unique characters is O\(n\)\.
+*   **Space Complexity:** O\(min\(n, m\)\), where n is the length of the string and m is the character set size \(limited to 26 for this problem\)\.
+
+## 2\. Sliding Window using HashSet
+
+#### Intuition:
+
+To reduce the complexity, we can use a sliding window technique\. Instead of checking every substring, we can maintain a window and move it to the right while ensuring all characters within the window are unique\.
+
+#### Code:
+
+Java
+
+```java
+class Solution {
+   public int lengthOfLongestSubstring(String s) {
+       int n = s.length();
+       int maxLength = 0;
+       int i = 0, j = 0;
+       Set<Character> charSet = new HashSet<>();
+       
+       while (i < n && j < n) {
+           if (!charSet.contains(s.charAt(j))) {
+               charSet.add(s.charAt(j));
+               j++;
+               maxLength = Math.max(maxLength, j - i);
+           } else {
+               charSet.remove(s.charAt(i));
+               i++;
+           }
+       }
+       
+       return maxLength;
+   }
+}
+```
+
+Complexity Analysis
+
+*   **Time Complexity:** O\(2n\) = O\(n\)\. In the worst case, each character will be visited twice\.
+*   **Space Complexity:** O\(min\(n, m\)\)\. The set is used to store the unique characters in the window\.
+
+## 3\. Sliding Window using HashMap
+
+#### Intuition:
+
+Further optimization can be done by optimizing the move of the start pointer\. We can use a hash map to track the last seen index of each character, which allows skipping over sections of the string already known to contain non\-unique characters\.
+
+#### Code:
+
+Java
+
+```java
+class Solution {
+   public int lengthOfLongestSubstring(String s) {
+       int n = s.length();
+       int maxLength = 0;
+       int i = 0;
+       Map<Character, Integer> map = new HashMap<>();
+       
+       for (int j = 0; j < n; j++) {
+           if (map.containsKey(s.charAt(j))) {
+               // Update start of window to new position
+               i = Math.max(i, map.get(s.charAt(j)) + 1);
+           }
+           map.put(s.charAt(j), j);
+           maxLength = Math.max(maxLength, j - i + 1);
+       }
+       
+       return maxLength;
+   }
+}
+```
+
+Complexity Analysis
+
+*   **Time Complexity:** O\(n\)\. Each character in the string is processed at most once\.
+*   **Space Complexity:** O\(min\(n, m\)\)\. HashMap space is used to store last indices of characters\.

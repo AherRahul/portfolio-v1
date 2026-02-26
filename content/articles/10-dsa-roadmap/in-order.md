@@ -1,0 +1,24 @@
+---
+title: In Order
+description: Master In Order in the Binary Tree module. Comprehensive guide and
+  algorithmic problem solving.
+datePublished: 2026-02-26
+dateModified: 2026-02-26
+topics:
+  - dsa
+courseName: 10-dsa-roadmap
+showOnArticles: false
+published: true
+---
+
+## In Order
+
+This lesson covers **In Order** from the **Binary Tree** module.
+
+_Note: This content is generated based on the course roadmap. Stay tuned for highly detailed examples, code snippets, and complexity analyses!_
+
+### Coming Soon
+- Problem Statement
+- Brute Force Approach
+- Optimal Approach
+- Time & Space Complexity Analysis
