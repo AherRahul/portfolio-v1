@@ -5,8 +5,8 @@ description: Higher-order functions are functions that take other functions as
   in JavaScript and enable powerful programming patterns like map, filter, and
   reduce.
 slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
-dateModified: 2026-02-21
-datePublished: 2026-02-21
+dateModified: 2026-02-25
+datePublished: 2026-02-25
 showOnArticles: false
 courseName: 00-understand-javascript-complete
 topics:
@@ -28,7 +28,7 @@ resources:
     type: article
     url: https://javascript.info/function-object
     description: Understanding functions as objects in JavaScript
-published: false
+published: true
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758811617/Portfolio/javaScriptCourse/images/all%20title%20images/19_sm8mdu.png)

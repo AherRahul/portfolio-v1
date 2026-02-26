@@ -109,7 +109,7 @@ function setActiveTab(tabId: string) {
   if (tabId === 'content') {
     // Small delay to ensure content is rendered
     setTimeout(() => {
-      setupContentImages('.prose')
+      setupContentImages('.prose', true)
     }, 100)
   }
   
@@ -409,15 +409,15 @@ onMounted(() => {
   }
   
   // Setup image modal for course topic content - with retry for lazy-loaded content
-  const cleanup = setupContentImages('.prose')
+  const cleanup = setupContentImages('.prose', true)
   
   // Retry setup after a delay to catch lazy-loaded content
   setTimeout(() => {
-    setupContentImages('.prose')
+    setupContentImages('.prose', true)
   }, 1000)
   
   setTimeout(() => {
-    setupContentImages('.prose')
+    setupContentImages('.prose', true)
   }, 3000)
 })
 </script>
@@ -512,7 +512,7 @@ onMounted(() => {
                 :doc-class="[
                   'prose md:prose-lg lg:prose-xl',
                   isOlderThanOneYear ? 'pt-8' : 'pt-4',
-                  isLight ? 'prose-light-theme' : ''
+                  isLight ? 'prose-stone' : 'prose-invert'
                 ].filter(Boolean).join(' ')"
               />
             </ClientOnly>

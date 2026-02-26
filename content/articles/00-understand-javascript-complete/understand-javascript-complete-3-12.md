@@ -3,14 +3,14 @@ title: Object - Part 2
 description: Learn how to effectively create, access, and merge JavaScript
   objects with practical examples and advanced tips for building robust web
   applications.
-datePublished: 2026-02-21
-dateModified: 2026-02-21
+datePublished: 2026-02-25
+dateModified: 2026-02-25
 topics:
   - javascript
 courseName: 00-understand-javascript-complete
 showOnArticles: false
 featured: false
-published: false
+published: true
 ---
 
 

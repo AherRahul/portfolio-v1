@@ -1,7 +1,7 @@
 export const useContentImages = () => {
   const { openModal } = useImageModal()
 
-  const setupContentImages = (containerSelector: string = '.prose') => {
+  const setupContentImages = (containerSelector: string = '.prose', useIntro: boolean = true) => {
     if (process.server) return
 
     const setupImages = () => {
@@ -15,7 +15,7 @@ export const useContentImages = () => {
           if (img.dataset.imageModalSetup) return
           img.dataset.imageModalSetup = 'true'
 
-          const isIntro = index === 0
+          const isIntro = useIntro && index === 0
 
           // ── Build wrapper ──────────────────────────────────────────────
           const wrapper = document.createElement('div')

@@ -83,7 +83,7 @@ const { setupContentImages } = useContentImages()
 
 // Setup image modal for content images
 onMounted(() => {
-  setupContentImages('.article-content')
+  setupContentImages('.article-content', false)
 })
 
 // --- Course-aware navigation (only when article belongs to a course) ---
@@ -239,7 +239,7 @@ const resourcesForTabs = computed(() => {
       <!-- Regular article content for standalone articles -->
       <div v-else class="article-content">
         <ArticleAgeWarning v-if="isOlderThanOneYear" />
-        <ContentDoc class="prose md:prose-lg lg:prose-xl" :class="isOlderThanOneYear ? 'pt-8' : 'pt-4'" />
+        <ContentDoc class="prose prose-invert md:prose-lg lg:prose-xl" :class="isOlderThanOneYear ? 'pt-8' : 'pt-4'" />
       </div>
 
       <div v-if="article" class="mt-16 md:mt-32">

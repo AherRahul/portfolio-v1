@@ -2,14 +2,14 @@
 title: JavaScript Objects, Destructuring & APIs
 description: Learn how to master JavaScript objects, destructuring, and APIs
   with practical examples to build a strong foundation for advanced coding.
-datePublished: 2026-02-21
-dateModified: 2026-02-21
+datePublished: 2026-02-25
+dateModified: 2026-02-25
 topics:
   - javascript
 courseName: 00-understand-javascript-complete
 showOnArticles: false
 featured: false
-published: false
+published: true
 ---
 
 

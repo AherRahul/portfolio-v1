@@ -10,6 +10,7 @@ const container = ref<HTMLDivElement | null>(null)
 let editor: any = null
 let monaco: any = null
 
+
 function normalizeLanguage(lang?: string): string {
   const value = (lang || '').toLowerCase()
   const map: Record<string, string> = {
@@ -31,11 +32,11 @@ function updateHeight() {
   if (!editor || !container.value || !monaco) return
   const model = editor.getModel()
   const lineCount = model ? model.getLineCount() : 1
-  const lineHeight = editor.getOption(monaco.editor.EditorOption.lineHeight)
+  const lineHeight = editor.getOption(monaco.editor.EditorOption.lineHeight) || 18
   const padding = editor.getOption(monaco.editor.EditorOption.padding)
   const paddingTop = padding?.top || 0
   const paddingBottom = padding?.bottom || 0
-  const height = lineCount * lineHeight + paddingTop + paddingBottom + 8
+  const height = Math.max(lineCount * lineHeight + paddingTop + paddingBottom + 8, 50)
   container.value.style.height = `${height}px`
   editor.layout()
 }
@@ -65,10 +66,16 @@ onMounted(async () => {
     lineNumbers: 'on',
     renderLineHighlight: 'none',
     renderValidationDecorations: 'off',
-    padding: { top: 12, bottom: 12 }
+    padding: { top: 12, bottom: 12 },
+    // Ensure it doesn't have a 0 height initially
+    fixedOverflowWidgets: true
   })
+  
+  // Call updateHeight twice: immediately and after a short delay for font loading
   updateHeight()
+  setTimeout(updateHeight, 500)
 })
+
 
 watch(
   () => props.code,

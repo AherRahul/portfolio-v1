@@ -6,7 +6,7 @@ definePageMeta({
   documentDriven: false
 })
 
-const query: QueryBuilderParams = { path: '/articles', sort: [{ dateModified: -1, datePublished: -1 }] }
+const query: QueryBuilderParams = { path: '/articles', where: [{ showOnArticles: true }], sort: [{ dateModified: -1, datePublished: -1 }] }
 
 const title = 'Articles'
 const description = 'I am regularly writing articles about web development, JavaScript, TypeScript, Vue.js, Nuxt.js, and other topics. From introductions to deep dives and tutorials, you can find a wide range of content.'

@@ -82,7 +82,7 @@ Hands-on experience is the best way to learn Git. To get you started, we provide
 1. Open your terminal.
 2. Run the following command to clone the repository to your local machine:
    ```bash
-   git clone https://github.com/ashishps1/git-practice-repo.git
+   git clone https://github.com/aherrahul/git-practice-repo.git
    ```
 3. Navigate into the cloned directory:
    ```bash
