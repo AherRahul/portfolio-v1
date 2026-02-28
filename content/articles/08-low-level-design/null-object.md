@@ -1,12 +1,15 @@
 ---
-title: "Null Object Pattern"
-description: "Learn how the Null Object Pattern simplifies code by eliminating null checks, improving readability, and enhancing maintainability in Java applications.."
-datePublished: 2026-02-02
-dateModified: 2026-02-02
+title: Null Object Pattern
+description: Learn how the Null Object Pattern simplifies code by eliminating
+  null checks, improving readability, and enhancing maintainability in Java
+  applications..
+datePublished: 2026-02-27
+dateModified: 2026-02-27
 topics:
   - lld
 courseName: 08-low-level-design
 showOnArticles: false
+published: true
 ---
 
 ## Mastering the Null Object Pattern for Cleaner Java Code

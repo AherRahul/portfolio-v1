@@ -1,12 +1,15 @@
 ---
-title: "Template Method Pattern"
-description: "Learn how the Template Method Design Pattern enhances code reuse and maintainability by defining algorithm skeletons and allowing subclass customization in report exporting."
-datePublished: 2026-02-02
-dateModified: 2026-02-02
+title: Template Method Pattern
+description: Learn how the Template Method Design Pattern enhances code reuse
+  and maintainability by defining algorithm skeletons and allowing subclass
+  customization in report exporting.
+datePublished: 2026-02-27
+dateModified: 2026-02-27
 topics:
   - lld
 courseName: 08-low-level-design
 showOnArticles: false
+published: true
 ---
 
 ## Mastering the Template Method Pattern for Efficient Report Exporting

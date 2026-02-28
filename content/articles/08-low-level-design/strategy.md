@@ -1,12 +1,15 @@
 ---
-title: "Strategy Design Pattern"
-description: "Learn how the Strategy Design Pattern simplifies algorithm management by encapsulating behaviors, enabling flexible, maintainable, and testable code in real-world applications."
-datePublished: 2026-02-02
-dateModified: 2026-02-02
+title: Strategy Design Pattern
+description: Learn how the Strategy Design Pattern simplifies algorithm
+  management by encapsulating behaviors, enabling flexible, maintainable, and
+  testable code in real-world applications.
+datePublished: 2026-02-27
+dateModified: 2026-02-27
 topics:
   - lld
 courseName: 08-low-level-design
 showOnArticles: false
+published: true
 ---
 
 ## Mastering the Strategy Design Pattern for Flexible Algorithms

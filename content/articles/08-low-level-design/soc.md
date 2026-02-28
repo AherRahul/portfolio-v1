@@ -1,12 +1,16 @@
 ---
-title: "Separation of Concerns"
-description: "Separation of Concerns (SoC) is a fundamental architectural principle in software engineering that promotes dividing a software system into distinct sections, each addressing a separate concern or responsibility. "
-datePublished: 2026-02-02
-dateModified: 2026-02-02
+title: Separation of Concerns
+description: "Separation of Concerns (SoC) is a fundamental architectural
+  principle in software engineering that promotes dividing a software system
+  into distinct sections, each addressing a separate concern or responsibility.
+  "
+datePublished: 2026-02-27
+dateModified: 2026-02-27
 topics:
   - lld
 courseName: 08-low-level-design
 showOnArticles: false
+published: true
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770051377/Portfolio/lldSystemDesign/LLD-banner_huzyvn.png)

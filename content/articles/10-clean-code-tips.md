@@ -9,7 +9,6 @@ topics:
   - dsa
 ---
 
-# Clean Code Best Practices for Maintainable Software
 
 ## Introduction
 

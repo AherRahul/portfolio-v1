@@ -1,12 +1,15 @@
 ---
-title: "Chain of Responsibility Pattern"
-description: "Learn how the Chain of Responsibility design pattern simplifies request handling by decoupling logic, improving modularity, and enhancing extensibility in software design."
-datePublished: 2026-02-02
-dateModified: 2026-02-02
+title: Chain of Responsibility Pattern
+description: Learn how the Chain of Responsibility design pattern simplifies
+  request handling by decoupling logic, improving modularity, and enhancing
+  extensibility in software design.
+datePublished: 2026-02-27
+dateModified: 2026-02-27
 topics:
   - lld
 courseName: 08-low-level-design
 showOnArticles: false
+published: true
 ---
 
 ## Mastering Chain of Responsibility Pattern for Flexible Request Handling

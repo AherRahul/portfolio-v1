@@ -1,12 +1,15 @@
 ---
-title: "Bridge Design Pattern"
-description: "Learn how the Bridge Design Pattern decouples abstraction from implementation to create flexible, scalable, and maintainable software architectures."
-datePublished: 2026-02-02
-dateModified: 2026-02-02
+title: Bridge Design Pattern
+description: Learn how the Bridge Design Pattern decouples abstraction from
+  implementation to create flexible, scalable, and maintainable software
+  architectures.
+datePublished: 2026-02-27
+dateModified: 2026-02-27
 topics:
   - lld
 courseName: 08-low-level-design
 showOnArticles: false
+published: true
 ---
 
 ## Mastering the Bridge Design Pattern for Scalable Software

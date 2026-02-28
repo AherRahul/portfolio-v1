@@ -1,12 +1,14 @@
 ---
-title: "Command Design Pattern"
-description: "Learn how the Command Design Pattern decouples requests from execution, enabling scalable, undoable, and flexible smart home controls."
-datePublished: 2026-02-02
-dateModified: 2026-02-02
+title: Command Design Pattern
+description: Learn how the Command Design Pattern decouples requests from
+  execution, enabling scalable, undoable, and flexible smart home controls.
+datePublished: 2026-02-27
+dateModified: 2026-02-27
 topics:
   - lld
 courseName: 08-low-level-design
 showOnArticles: false
+published: true
 ---
 
 ## Mastering the Command Design Pattern for Smart Home Control

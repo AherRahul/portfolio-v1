@@ -1,12 +1,14 @@
 ---
-title: "Class Diagram"
-description: "Class Diagram helps you visualize design before you write code. It is a simple way to explain structure and flow to others."
-datePublished: 2026-02-02
-dateModified: 2026-02-02
+title: Class Diagram
+description: Class Diagram helps you visualize design before you write code. It
+  is a simple way to explain structure and flow to others.
+datePublished: 2026-02-27
+dateModified: 2026-02-27
 topics:
   - lld
 courseName: 08-low-level-design
 showOnArticles: false
+published: true
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770051377/Portfolio/lldSystemDesign/LLD-banner_huzyvn.png)

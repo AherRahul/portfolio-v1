@@ -1,12 +1,14 @@
 ---
-title: "Choosing Design Patterns"
-description: "This lesson gives practical advice to help you perform well in low-level design interviews."
-datePublished: 2026-02-02
-dateModified: 2026-02-02
+title: Choosing Design Patterns
+description: This lesson gives practical advice to help you perform well in
+  low-level design interviews.
+datePublished: 2026-02-27
+dateModified: 2026-02-27
 topics:
   - lld
 courseName: 08-low-level-design
 showOnArticles: false
+published: true
 ---
 
 ## Choosing Design Patterns

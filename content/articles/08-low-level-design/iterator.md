@@ -1,12 +1,15 @@
 ---
-title: "Iterator Design Pattern"
-description: "Learn how the Iterator Design Pattern enables safe, flexible, and encapsulated traversal of collections, improving code maintainability and flexibility in software development."
-datePublished: 2026-02-02
-dateModified: 2026-02-02
+title: Iterator Design Pattern
+description: Learn how the Iterator Design Pattern enables safe, flexible, and
+  encapsulated traversal of collections, improving code maintainability and
+  flexibility in software development.
+datePublished: 2026-02-27
+dateModified: 2026-02-27
 topics:
   - lld
 courseName: 08-low-level-design
 showOnArticles: false
+published: true
 ---
 
 ## Mastering the Iterator Pattern for Flexible Collection Traversal

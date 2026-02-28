@@ -1,12 +1,14 @@
 ---
-title: "Design URL Shortener"
-description: "Design a clean object model for a url shortener. Focus on responsibilities, relationships, and core flows."
-datePublished: 2026-02-02
-dateModified: 2026-02-02
+title: Design URL Shortener
+description: Design a clean object model for a url shortener. Focus on
+  responsibilities, relationships, and core flows.
+datePublished: 2026-02-27
+dateModified: 2026-02-27
 topics:
   - lld
 courseName: 08-low-level-design
 showOnArticles: false
+published: true
 ---
 
 ## Design URL Shortener

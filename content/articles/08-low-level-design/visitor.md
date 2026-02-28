@@ -1,12 +1,15 @@
 ---
-title: "Visitor Design Pattern"
-description: "Discover how the Visitor Design Pattern simplifies adding new operations to object structures without modifying existing classes. Enhance maintainability and flexibility."
-datePublished: 2026-02-02
-dateModified: 2026-02-02
+title: Visitor Design Pattern
+description: Discover how the Visitor Design Pattern simplifies adding new
+  operations to object structures without modifying existing classes. Enhance
+  maintainability and flexibility.
+datePublished: 2026-02-27
+dateModified: 2026-02-27
 topics:
   - lld
 courseName: 08-low-level-design
 showOnArticles: false
+published: true
 ---
 
 ## Mastering the Visitor Design Pattern for Flexible Object OperationsHandling

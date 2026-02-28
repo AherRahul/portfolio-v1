@@ -1,12 +1,15 @@
 ---
-title: "Facade Design Pattern"
-description: "Simplify complex systems with the Facade Design Pattern. Learn how a unified interface improves deployment automation, reduces client complexity, and boosts maintainability."
-datePublished: 2026-02-02
-dateModified: 2026-02-02
+title: Facade Design Pattern
+description: Simplify complex systems with the Facade Design Pattern. Learn how
+  a unified interface improves deployment automation, reduces client complexity,
+  and boosts maintainability.
+datePublished: 2026-02-27
+dateModified: 2026-02-27
 topics:
   - lld
 courseName: 08-low-level-design
 showOnArticles: false
+published: true
 ---
 
 ## Understanding the Facade Design Pattern: Simplifying Complex Systems

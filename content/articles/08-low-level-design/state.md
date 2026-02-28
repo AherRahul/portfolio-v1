@@ -1,12 +1,15 @@
 ---
-title: "State Design Pattern"
-description: "Learn the State Design Pattern to manage dynamic object behavior by encapsulating states, improving code scalability, readability, and maintainability in complex systems."
-datePublished: 2026-02-02
-dateModified: 2026-02-02
+title: State Design Pattern
+description: Learn the State Design Pattern to manage dynamic object behavior by
+  encapsulating states, improving code scalability, readability, and
+  maintainability in complex systems.
+datePublished: 2026-02-27
+dateModified: 2026-02-27
 topics:
   - lld
 courseName: 08-low-level-design
 showOnArticles: false
+published: true
 ---
 
 ## Mastering the State Design Pattern for Scalable Behavior Management

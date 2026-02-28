@@ -1,12 +1,15 @@
 ---
-title: "Factory Method Design Pattern"
-description: "Learn how the Factory Method Design Pattern improves scalable object creation by delegating instantiation to subclasses, enhancing maintainability and adhering to SOLID principles."
-datePublished: 2026-02-02
-dateModified: 2026-02-02
+title: Factory Method Design Pattern
+description: Learn how the Factory Method Design Pattern improves scalable
+  object creation by delegating instantiation to subclasses, enhancing
+  maintainability and adhering to SOLID principles.
+datePublished: 2026-02-27
+dateModified: 2026-02-27
 topics:
   - lld
 courseName: 08-low-level-design
 showOnArticles: false
+published: true
 ---
 
 ## Understanding the Factory Method Design Pattern for Scalable Object Creation

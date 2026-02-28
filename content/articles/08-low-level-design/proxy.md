@@ -1,12 +1,15 @@
 ---
-title: "Proxy Design Pattern"
-description: "Learn how the Proxy Design Pattern optimizes resource use and access control by acting as a placeholder for resource-heavy objects, improving performance and security."
-datePublished: 2026-02-02
-dateModified: 2026-02-02
+title: Proxy Design Pattern
+description: Learn how the Proxy Design Pattern optimizes resource use and
+  access control by acting as a placeholder for resource-heavy objects,
+  improving performance and security.
+datePublished: 2026-02-27
+dateModified: 2026-02-27
 topics:
   - lld
 courseName: 08-low-level-design
 showOnArticles: false
+published: true
 ---
 
 ## Understanding the Proxy Design Pattern: A Complete Guide

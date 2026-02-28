@@ -1,12 +1,15 @@
 ---
-title: "Mediator Design Pattern"
-description: "Learn how the Mediator Design Pattern simplifies component interaction by promoting loose coupling and centralizing communication in UI development."
-datePublished: 2026-02-02
-dateModified: 2026-02-02
+title: Mediator Design Pattern
+description: Learn how the Mediator Design Pattern simplifies component
+  interaction by promoting loose coupling and centralizing communication in UI
+  development.
+datePublished: 2026-02-27
+dateModified: 2026-02-27
 topics:
   - lld
 courseName: 08-low-level-design
 showOnArticles: false
+published: true
 ---
 
 ## Mastering the Mediator Design Pattern for Loose Coupling in UI

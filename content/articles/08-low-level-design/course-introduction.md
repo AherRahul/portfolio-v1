@@ -1,12 +1,15 @@
 ---
-title: "Course Introduction"
-description: "Welcome to the Low-Level Design course. This course helps you build strong, interview-ready designs with clear class responsibilities and clean code practices."
-datePublished: 2026-02-02
-dateModified: 2026-02-02
+title: Course Introduction
+description: Welcome to the Low-Level Design course. This course helps you build
+  strong, interview-ready designs with clear class responsibilities and clean
+  code practices.
+datePublished: 2026-02-27
+dateModified: 2026-02-27
 topics:
   - lld
 courseName: 08-low-level-design
 showOnArticles: false
+published: true
 ---
 
 ### Introduction: Understanding the Significance of Low-Level Design Interviews

@@ -1,12 +1,15 @@
 ---
-title: "Writing Clean Code"
-description: "Master clean coding with 10 practical tips to write readable, maintainable code that developers love. Learn to avoid magic numbers, use meaningful names, and more."
-datePublished: 2026-02-02
-dateModified: 2026-02-02
+title: Writing Clean Code
+description: Master clean coding with 10 practical tips to write readable,
+  maintainable code that developers love. Learn to avoid magic numbers, use
+  meaningful names, and more.
+datePublished: 2026-02-27
+dateModified: 2026-02-27
 topics:
   - lld
 courseName: 08-low-level-design
 showOnArticles: false
+published: true
 ---
 
 ![Smart Watch](https://res.cloudinary.com/duojkrgue/image/upload/v1770051377/Portfolio/lldSystemDesign/LLD-banner_huzyvn.png)

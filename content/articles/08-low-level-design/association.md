@@ -1,12 +1,15 @@
 ---
-title: "Association"
-description: "This comprehensive grasp of association empowers developers to design nuanced and realistic object models, a cornerstone of effective OOP practice."
-datePublished: 2026-02-02
-dateModified: 2026-02-02
+title: Association
+description: This comprehensive grasp of association empowers developers to
+  design nuanced and realistic object models, a cornerstone of effective OOP
+  practice.
+datePublished: 2026-02-27
+dateModified: 2026-02-27
 topics:
   - lld
 courseName: 08-low-level-design
 showOnArticles: false
+published: true
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770051377/Portfolio/lldSystemDesign/LLD-banner_huzyvn.png)

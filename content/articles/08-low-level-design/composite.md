@@ -1,12 +1,15 @@
 ---
-title: "Composite Design Pattern"
-description: "Learn how the Composite Design Pattern simplifies handling hierarchical structures by treating individual and composite objects uniformly, enhancing scalability and maintainability."
-datePublished: 2026-02-02
-dateModified: 2026-02-02
+title: Composite Design Pattern
+description: Learn how the Composite Design Pattern simplifies handling
+  hierarchical structures by treating individual and composite objects
+  uniformly, enhancing scalability and maintainability.
+datePublished: 2026-02-27
+dateModified: 2026-02-27
 topics:
   - lld
 courseName: 08-low-level-design
 showOnArticles: false
+published: true
 ---
 
 ## Mastering the Composite Design Pattern for Scalable Hierarchies

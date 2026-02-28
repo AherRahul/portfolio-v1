@@ -1,12 +1,14 @@
 ---
-title: "Design Patterns"
-description: "Design patterns are reusable solutions to common design problems. They help you write code that is easier to change and test."
-datePublished: 2026-02-02
-dateModified: 2026-02-02
+title: Design Patterns
+description: Design patterns are reusable solutions to common design problems.
+  They help you write code that is easier to change and test.
+datePublished: 2026-02-27
+dateModified: 2026-02-27
 topics:
   - lld
 courseName: 08-low-level-design
 showOnArticles: false
+published: true
 ---
 
 

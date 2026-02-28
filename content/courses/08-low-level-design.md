@@ -19,7 +19,7 @@ content:
       - id: 1
         topic_name: Course Introduction
         sub_topic: Welcome
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Welcome to the Low-Level Design course. This course helps you build
           strong, interview-ready designs with clear class responsibilities and
@@ -31,6 +31,8 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: course-introduction
+        published: true
+    published: true
   - module_id: 2
     module_name: LLD Introduction
     module_duration: 8 mins read
@@ -41,7 +43,7 @@ content:
       - id: 4
         topic_name: What is LLD
         sub_topic: LLD Introduction
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           This lesson explains What is LLD in simple terms and shows how it
           helps you design clear, testable code.
@@ -52,10 +54,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: what-is-lld
+        published: true
       - id: 5
         topic_name: LLD vs HLD
         sub_topic: LLD Introduction
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           This lesson explains LLD vs HLD in simple terms and shows how it helps
           you design clear, testable code.
@@ -66,10 +69,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: lld-vs-hld
+        published: true
       - id: 6
         topic_name: LLD Interview Types
         sub_topic: LLD Introduction
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           This lesson explains LLD Interview Types in simple terms and shows how
           it helps you design clear, testable code.
@@ -80,6 +84,8 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: lld-interview-types
+        published: true
+    published: true
   - module_id: 3
     module_name: OOP Fundamentals
     module_duration: 16 mins read
@@ -90,7 +96,7 @@ content:
       - id: 8
         topic_name: Classes and Objects
         sub_topic: OOP Fundamentals
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           This lesson explains Classes and Objects in simple terms and shows how
           it helps you design clear, testable code.
@@ -101,10 +107,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: classes-and-objects
+        published: true
       - id: 9
         topic_name: Enums
         sub_topic: OOP Fundamentals
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           This lesson explains Enums in simple terms and shows how it helps you
           design clear, testable code.
@@ -115,10 +122,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: enums
+        published: true
       - id: 10
         topic_name: Interfaces
         sub_topic: OOP Fundamentals
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           This lesson explains Interfaces in simple terms and shows how it helps
           you design clear, testable code.
@@ -129,10 +137,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: interfaces
+        published: true
       - id: 11
         topic_name: Encapsulation
         sub_topic: OOP Fundamentals
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           This lesson explains Encapsulation in simple terms and shows how it
           helps you design clear, testable code.
@@ -143,10 +152,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: encapsulation
+        published: true
       - id: 12
         topic_name: Abstraction
         sub_topic: OOP Fundamentals
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           This lesson explains Abstraction in simple terms and shows how it
           helps you design clear, testable code.
@@ -157,10 +167,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: abstraction
+        published: true
       - id: 13
         topic_name: Inheritance
         sub_topic: OOP Fundamentals
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           This lesson explains Inheritance in simple terms and shows how it
           helps you design clear, testable code.
@@ -171,10 +182,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: inheritance
+        published: true
       - id: 14
         topic_name: Polymorphism
         sub_topic: OOP Fundamentals
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           This lesson explains Polymorphism in simple terms and shows how it
           helps you design clear, testable code.
@@ -185,6 +197,8 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: polymorphism
+        published: true
+    published: true
   - module_id: 4
     module_name: Class Relationships
     module_duration: 12 mins read
@@ -195,7 +209,7 @@ content:
       - id: 16
         topic_name: Association
         sub_topic: Class Relationships
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           This lesson explains Association in simple terms and shows how it
           helps you design clear, testable code.
@@ -206,10 +220,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: association
+        published: true
       - id: 17
         topic_name: Aggregation
         sub_topic: Class Relationships
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           This lesson explains Aggregation in simple terms and shows how it
           helps you design clear, testable code.
@@ -220,10 +235,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: aggregation
+        published: true
       - id: 18
         topic_name: Composition
         sub_topic: Class Relationships
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           This lesson explains Composition in simple terms and shows how it
           helps you design clear, testable code.
@@ -234,10 +250,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: composition
+        published: true
       - id: 19
         topic_name: Dependency
         sub_topic: Class Relationships
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           This lesson explains Dependency in simple terms and shows how it helps
           you design clear, testable code.
@@ -248,10 +265,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: dependency
+        published: true
       - id: 20
         topic_name: Realization
         sub_topic: Class Relationships
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           This lesson explains Realization in simple terms and shows how it
           helps you design clear, testable code.
@@ -262,6 +280,8 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: realization
+        published: true
+    published: true
   - module_id: 5
     module_name: Design Principles
     module_duration: 16 mins read
@@ -272,7 +292,7 @@ content:
       - id: 22
         topic_name: DRY Principle
         sub_topic: Design Principles
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           This lesson explains Dry in simple terms and shows how it helps you
           design clear, testable code.
@@ -283,10 +303,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: dry
+        published: true
       - id: 23
         topic_name: KISS Principle
         sub_topic: Design Principles
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           This lesson explains Kiss in simple terms and shows how it helps you
           design clear, testable code.
@@ -297,10 +318,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: kiss
+        published: true
       - id: 24
         topic_name: YAGNI Principle
         sub_topic: Design Principles
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           This lesson explains Yagni in simple terms and shows how it helps you
           design clear, testable code.
@@ -311,10 +333,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: yagni
+        published: true
       - id: 25
         topic_name: Law of Demeter
         sub_topic: Design Principles
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           This lesson explains Lod in simple terms and shows how it helps you
           design clear, testable code.
@@ -325,10 +348,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: lod
+        published: true
       - id: 26
         topic_name: Separation of Concerns
         sub_topic: Design Principles
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           This lesson explains Soc in simple terms and shows how it helps you
           design clear, testable code.
@@ -339,10 +363,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: soc
+        published: true
       - id: 27
         topic_name: Coupling and Cohesion
         sub_topic: Design Principles
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           This lesson explains Coupling and Cohesion in simple terms and shows
           how it helps you design clear, testable code.
@@ -353,10 +378,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: coupling-and-cohesion
+        published: true
       - id: 28
         topic_name: Composing Objects Principle
         sub_topic: Design Principles
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           This lesson explains Composing Objects in simple terms and shows how
           it helps you design clear, testable code.
@@ -367,6 +393,8 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: composing-objects
+        published: true
+    published: true
   - module_id: 6
     module_name: SOLID Principles
     module_duration: 12 mins read
@@ -377,7 +405,7 @@ content:
       - id: 30
         topic_name: Single Responsibility Principle (SRP)
         sub_topic: SOLID Principles
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           This lesson explains Single Responsibility Principle (SRP) in simple
           terms and shows how it helps you design clear, testable code.
@@ -388,10 +416,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: srp
+        published: true
       - id: 31
         topic_name: Open-Closed Principle
         sub_topic: SOLID Principles
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           This lesson explains Open-Closed Principle in simple terms and shows
           how it helps you design clear, testable code.
@@ -402,10 +431,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: ocp
+        published: true
       - id: 32
         topic_name: Liskov Substitution Principle (LSP)
         sub_topic: SOLID Principles
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           This lesson explains LSP in simple terms and shows how it helps you
           design clear, testable code.
@@ -416,10 +446,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: lsp
+        published: true
       - id: 33
         topic_name: Interface Segregation Principle (ISP)
         sub_topic: SOLID Principles
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           This lesson explains ISP in simple terms and shows how it helps you
           design clear, testable code.
@@ -430,10 +461,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: isp
+        published: true
       - id: 34
         topic_name: Dependency Inversion Principle (DIP)
         sub_topic: SOLID Principles
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           This lesson explains DIP in simple terms and shows how it helps you
           design clear, testable code.
@@ -444,6 +476,8 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: dip
+        published: true
+    published: true
   - module_id: 7
     module_name: UML
     module_duration: 10 mins read
@@ -454,7 +488,7 @@ content:
       - id: 36
         topic_name: Class Diagram
         sub_topic: UML
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Class Diagram helps you visualize design before you write code. It is
           a simple way to explain structure and flow to others.
@@ -465,10 +499,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: class-diagram
+        published: true
       - id: 37
         topic_name: Use Case Diagram
         sub_topic: UML
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Use Case Diagram helps you visualize design before you write code. It
           is a simple way to explain structure and flow to others.
@@ -479,10 +514,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: use-case-diagram
+        published: true
       - id: 38
         topic_name: Sequence Diagram
         sub_topic: UML
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Sequence Diagram helps you visualize design before you write code. It
           is a simple way to explain structure and flow to others.
@@ -493,10 +529,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: sequence-diagram
+        published: true
       - id: 39
         topic_name: Activity Diagram
         sub_topic: UML
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Activity Diagram helps you visualize design before you write code. It
           is a simple way to explain structure and flow to others.
@@ -507,6 +544,8 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: activity-diagram
+        published: true
+    published: true
   - module_id: 8
     module_name: Design Patterns - Overview
     module_duration: 2 mins read
@@ -517,7 +556,7 @@ content:
       - id: 41
         topic_name: Design Patterns
         sub_topic: Design Patterns - Overview
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Design patterns are reusable solutions to common design problems. They
           help you write code that is easier to change and test.
@@ -528,6 +567,8 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: design-patterns
+        published: true
+    published: true
   - module_id: 9
     module_name: Design Patterns - Creational
     module_duration: 12 mins read
@@ -538,7 +579,7 @@ content:
       - id: 42
         topic_name: Singleton
         sub_topic: Design Patterns - Creational
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Singleton is a reusable way to solve a common design problem. It gives
           you a proven structure so your code stays clean as it grows.
@@ -549,10 +590,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: singleton
+        published: true
       - id: 43
         topic_name: Builder
         sub_topic: Design Patterns - Creational
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Builder is a reusable way to solve a common design problem. It gives
           you a proven structure so your code stays clean as it grows.
@@ -563,10 +605,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: builder
+        published: true
       - id: 44
         topic_name: Factory Method
         sub_topic: Design Patterns - Creational
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Factory Method is a reusable way to solve a common design problem. It
           gives you a proven structure so your code stays clean as it grows.
@@ -577,10 +620,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: factory-method
+        published: true
       - id: 45
         topic_name: Abstract Factory
         sub_topic: Design Patterns - Creational
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Abstract Factory is a reusable way to solve a common design problem.
           It gives you a proven structure so your code stays clean as it grows.
@@ -591,10 +635,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: abstract-factory
+        published: true
       - id: 46
         topic_name: Prototype
         sub_topic: Design Patterns - Creational
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Prototype is a reusable way to solve a common design problem. It gives
           you a proven structure so your code stays clean as it grows.
@@ -605,6 +650,8 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: prototype
+        published: true
+    published: true
   - module_id: 10
     module_name: Design Patterns - Structural
     module_duration: 16 mins read
@@ -615,7 +662,7 @@ content:
       - id: 48
         topic_name: Adapter
         sub_topic: Design Patterns - Structural
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Adapter is a reusable way to solve a common design problem. It gives
           you a proven structure so your code stays clean as it grows.
@@ -626,10 +673,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: adapter
+        published: true
       - id: 49
         topic_name: Facade
         sub_topic: Design Patterns - Structural
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Facade is a reusable way to solve a common design problem. It gives
           you a proven structure so your code stays clean as it grows.
@@ -640,10 +688,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: facade
+        published: true
       - id: 50
         topic_name: Decorator
         sub_topic: Design Patterns - Structural
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Decorator is a reusable way to solve a common design problem. It gives
           you a proven structure so your code stays clean as it grows.
@@ -654,10 +703,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: decorator
+        published: true
       - id: 51
         topic_name: Composite
         sub_topic: Design Patterns - Structural
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Composite is a reusable way to solve a common design problem. It gives
           you a proven structure so your code stays clean as it grows.
@@ -668,10 +718,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: composite
+        published: true
       - id: 52
         topic_name: Proxy
         sub_topic: Design Patterns - Structural
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Proxy is a reusable way to solve a common design problem. It gives you
           a proven structure so your code stays clean as it grows.
@@ -682,10 +733,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: proxy
+        published: true
       - id: 53
         topic_name: Bridge
         sub_topic: Design Patterns - Structural
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Bridge is a reusable way to solve a common design problem. It gives
           you a proven structure so your code stays clean as it grows.
@@ -696,10 +748,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: bridge
+        published: true
       - id: 54
         topic_name: Flyweight
         sub_topic: Design Patterns - Structural
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Flyweight is a reusable way to solve a common design problem. It gives
           you a proven structure so your code stays clean as it grows.
@@ -710,6 +763,8 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: flyweight
+        published: true
+    published: true
   - module_id: 11
     module_name: Design Patterns - Behavioral
     module_duration: 22 mins read
@@ -720,7 +775,7 @@ content:
       - id: 56
         topic_name: Strategy
         sub_topic: Design Patterns - Behavioral
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Strategy is a reusable way to solve a common design problem. It gives
           you a proven structure so your code stays clean as it grows.
@@ -731,10 +786,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: strategy
+        published: true
       - id: 57
         topic_name: Iterator
         sub_topic: Design Patterns - Behavioral
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Iterator is a reusable way to solve a common design problem. It gives
           you a proven structure so your code stays clean as it grows.
@@ -745,10 +801,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: iterator
+        published: true
       - id: 58
         topic_name: Observer
         sub_topic: Design Patterns - Behavioral
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Observer is a reusable way to solve a common design problem. It gives
           you a proven structure so your code stays clean as it grows.
@@ -759,10 +816,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: observer
+        published: true
       - id: 59
         topic_name: Command
         sub_topic: Design Patterns - Behavioral
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Command is a reusable way to solve a common design problem. It gives
           you a proven structure so your code stays clean as it grows.
@@ -773,10 +831,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: command
+        published: true
       - id: 60
         topic_name: State
         sub_topic: Design Patterns - Behavioral
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           State is a reusable way to solve a common design problem. It gives you
           a proven structure so your code stays clean as it grows.
@@ -787,10 +846,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: state
+        published: true
       - id: 61
         topic_name: Template Method
         sub_topic: Design Patterns - Behavioral
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Template Method is a reusable way to solve a common design problem. It
           gives you a proven structure so your code stays clean as it grows.
@@ -801,10 +861,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: template-method
+        published: true
       - id: 62
         topic_name: Chain of Responsibility
         sub_topic: Design Patterns - Behavioral
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Chain of Responsibility is a reusable way to solve a common design
           problem. It gives you a proven structure so your code stays clean as
@@ -816,10 +877,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: chain-of-responsibility
+        published: true
       - id: 63
         topic_name: Visitor
         sub_topic: Design Patterns - Behavioral
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Visitor is a reusable way to solve a common design problem. It gives
           you a proven structure so your code stays clean as it grows.
@@ -830,10 +892,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: visitor
+        published: true
       - id: 64
         topic_name: Mediator
         sub_topic: Design Patterns - Behavioral
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Mediator is a reusable way to solve a common design problem. It gives
           you a proven structure so your code stays clean as it grows.
@@ -844,10 +907,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: mediator
+        published: true
       - id: 65
         topic_name: Memento
         sub_topic: Design Patterns - Behavioral
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Memento is a reusable way to solve a common design problem. It gives
           you a proven structure so your code stays clean as it grows.
@@ -858,6 +922,8 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: memento
+        published: true
+    published: true
   - module_id: 12
     module_name: Design Patterns - Additional Patterns
     module_duration: 18 mins read
@@ -868,7 +934,7 @@ content:
       - id: 67
         topic_name: Null Object
         sub_topic: Design Patterns - Additional Patterns
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Null Object is a reusable way to solve a common design problem. It
           gives you a proven structure so your code stays clean as it grows.
@@ -879,10 +945,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: null-object
+        published: true
       - id: 68
         topic_name: Repository
         sub_topic: Design Patterns - Additional Patterns
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Repository is a reusable way to solve a common design problem. It
           gives you a proven structure so your code stays clean as it grows.
@@ -893,10 +960,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: repository
+        published: true
       - id: 69
         topic_name: MVC
         sub_topic: Design Patterns - Additional Patterns
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           MVC is a reusable way to solve a common design problem. It gives you a
           proven structure so your code stays clean as it grows.
@@ -907,10 +975,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: mvc
+        published: true
       - id: 70
         topic_name: Dependency Injection
         sub_topic: Design Patterns - Additional Patterns
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Dependency Injection is a reusable way to solve a common design
           problem. It gives you a proven structure so your code stays clean as
@@ -922,10 +991,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: dependency-injection
+        published: true
       - id: 71
         topic_name: Specification
         sub_topic: Design Patterns - Additional Patterns
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Specification is a reusable way to solve a common design problem. It
           gives you a proven structure so your code stays clean as it grows.
@@ -936,10 +1006,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: specification
+        published: true
       - id: 72
         topic_name: Game Loop
         sub_topic: Design Patterns - Additional Patterns
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Game Loop is a reusable way to solve a common design problem. It gives
           you a proven structure so your code stays clean as it grows.
@@ -950,10 +1021,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: game-loop
+        published: true
       - id: 73
         topic_name: Thread Pool
         sub_topic: Design Patterns - Additional Patterns
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Thread Pool is a reusable way to solve a common design problem. It
           gives you a proven structure so your code stays clean as it grows.
@@ -964,10 +1036,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: thread-pool
+        published: true
       - id: 74
         topic_name: Producer Consumer
         sub_topic: Design Patterns - Additional Patterns
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Producer Consumer is a reusable way to solve a common design problem.
           It gives you a proven structure so your code stays clean as it grows.
@@ -978,6 +1051,8 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: producer-consumer
+        published: true
+    published: true
   - module_id: 13
     module_name: LLD Interview Tips
     module_duration: 6 mins read
@@ -988,7 +1063,7 @@ content:
       - id: 76
         topic_name: Approach
         sub_topic: LLD Interview Tips
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           This lesson gives practical advice to help you perform well in
           low-level design interviews.
@@ -999,10 +1074,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: approach
+        published: true
       - id: 77
         topic_name: Writing Clean Code
         sub_topic: LLD Interview Tips
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           This lesson gives practical advice to help you perform well in
           low-level design interviews.
@@ -1013,10 +1089,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: writing-clean-code
+        published: true
       - id: 78
         topic_name: Choosing Design Patterns
         sub_topic: LLD Interview Tips
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           This lesson gives practical advice to help you perform well in
           low-level design interviews.
@@ -1027,6 +1104,8 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: choosing-design-patterns
+        published: true
+    published: true
   - module_id: 14
     module_name: LLD Interview Questions - Easy
     module_duration: 16 mins read
@@ -1037,7 +1116,7 @@ content:
       - id: 79
         topic_name: Design Tic Tac Toe
         sub_topic: LLD Interview Questions - Easy
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Design a clean object model for a tic tac toe. Focus on
           responsibilities, relationships, and core flows.
@@ -1048,10 +1127,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: design-tic-tac-toe
+        published: true
       - id: 80
         topic_name: Design Snake and Ladder
         sub_topic: LLD Interview Questions - Easy
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Design a clean object model for a snake and ladder. Focus on
           responsibilities, relationships, and core flows.
@@ -1062,10 +1142,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: design-snake-and-ladder
+        published: true
       - id: 81
         topic_name: Design Lru Cache
         sub_topic: LLD Interview Questions - Easy
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Design a clean object model for a lru cache. Focus on
           responsibilities, relationships, and core flows.
@@ -1076,10 +1157,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: design-lru-cache
+        published: true
       - id: 82
         topic_name: Design Bloom Filter
         sub_topic: LLD Interview Questions - Easy
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Design a clean object model for a bloom filter. Focus on
           responsibilities, relationships, and core flows.
@@ -1090,10 +1172,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: design-bloom-filter
+        published: true
       - id: 83
         topic_name: Design Parking Lot
         sub_topic: LLD Interview Questions - Easy
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Design a clean object model for a parking lot. Focus on
           responsibilities, relationships, and core flows.
@@ -1104,10 +1187,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: design-parking-lot
+        published: true
       - id: 84
         topic_name: Design Search Autocomplete
         sub_topic: LLD Interview Questions - Easy
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Design a clean object model for a search autocomplete. Focus on
           responsibilities, relationships, and core flows.
@@ -1118,10 +1202,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: design-search-autocomplete
+        published: true
       - id: 85
         topic_name: Design Task Management System
         sub_topic: LLD Interview Questions - Easy
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Design a clean object model for a task management system. Focus on
           responsibilities, relationships, and core flows.
@@ -1132,10 +1217,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: design-task-management-system
+        published: true
       - id: 86
         topic_name: Design Notification System
         sub_topic: LLD Interview Questions - Easy
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Design a clean object model for a notification system. Focus on
           responsibilities, relationships, and core flows.
@@ -1146,6 +1232,8 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: design-notification-system
+        published: true
+    published: true
   - module_id: 15
     module_name: LLD Interview Questions - Medium
     module_duration: 36 mins read
@@ -1156,7 +1244,7 @@ content:
       - id: 87
         topic_name: Design Stack Overflow
         sub_topic: LLD Interview Questions - Medium
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Design a clean object model for a stack overflow. Focus on
           responsibilities, relationships, and core flows.
@@ -1167,10 +1255,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: design-stack-overflow
+        published: true
       - id: 88
         topic_name: Design Atm
         sub_topic: LLD Interview Questions - Medium
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Design a clean object model for a atm. Focus on responsibilities,
           relationships, and core flows.
@@ -1181,10 +1270,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: design-atm
+        published: true
       - id: 89
         topic_name: Design Logging Framework
         sub_topic: LLD Interview Questions - Medium
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Design a clean object model for a logging framework. Focus on
           responsibilities, relationships, and core flows.
@@ -1195,10 +1285,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: design-logging-framework
+        published: true
       - id: 90
         topic_name: Design Pub Sub
         sub_topic: LLD Interview Questions - Medium
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Design a clean object model for a pub sub. Focus on responsibilities,
           relationships, and core flows.
@@ -1209,10 +1300,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: design-pub-sub
+        published: true
       - id: 91
         topic_name: Design Elevator System
         sub_topic: LLD Interview Questions - Medium
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Design a clean object model for a elevator system. Focus on
           responsibilities, relationships, and core flows.
@@ -1223,10 +1315,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: design-elevator-system
+        published: true
       - id: 92
         topic_name: Design Chat Application
         sub_topic: LLD Interview Questions - Medium
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Design a clean object model for a chat application. Focus on
           responsibilities, relationships, and core flows.
@@ -1237,10 +1330,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: design-chat-application
+        published: true
       - id: 93
         topic_name: Design Search Engine
         sub_topic: LLD Interview Questions - Medium
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Design a clean object model for a search engine. Focus on
           responsibilities, relationships, and core flows.
@@ -1251,10 +1345,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: design-search-engine
+        published: true
       - id: 94
         topic_name: Design Splitwise
         sub_topic: LLD Interview Questions - Medium
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Design a clean object model for a splitwise. Focus on
           responsibilities, relationships, and core flows.
@@ -1265,10 +1360,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: design-splitwise
+        published: true
       - id: 95
         topic_name: Design Payment Gateway
         sub_topic: LLD Interview Questions - Medium
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Design a clean object model for a payment gateway. Focus on
           responsibilities, relationships, and core flows.
@@ -1279,10 +1375,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: design-payment-gateway
+        published: true
       - id: 96
         topic_name: Design URL Shortener
         sub_topic: LLD Interview Questions - Medium
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Design a clean object model for a url shortener. Focus on
           responsibilities, relationships, and core flows.
@@ -1293,10 +1390,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: design-url-shortener
+        published: true
       - id: 97
         topic_name: Design Rate Limiter
         sub_topic: LLD Interview Questions - Medium
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Design a clean object model for a rate limiter. Focus on
           responsibilities, relationships, and core flows.
@@ -1307,10 +1405,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: design-rate-limiter
+        published: true
       - id: 98
         topic_name: Design Inventory Management System
         sub_topic: LLD Interview Questions - Medium
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Design a clean object model for a inventory management system. Focus
           on responsibilities, relationships, and core flows.
@@ -1321,10 +1420,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: design-inventory-management-system
+        published: true
       - id: 99
         topic_name: Design Vending Machine
         sub_topic: LLD Interview Questions - Medium
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Design a clean object model for a vending machine. Focus on
           responsibilities, relationships, and core flows.
@@ -1335,10 +1435,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: design-vending-machine
+        published: true
       - id: 100
         topic_name: Design Library Management System
         sub_topic: LLD Interview Questions - Medium
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Design a clean object model for a library management system. Focus on
           responsibilities, relationships, and core flows.
@@ -1349,10 +1450,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: design-library-management-system
+        published: true
       - id: 101
         topic_name: Design Traffic Control System
         sub_topic: LLD Interview Questions - Medium
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Design a clean object model for a traffic control system. Focus on
           responsibilities, relationships, and core flows.
@@ -1363,10 +1465,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: design-traffic-control-system
+        published: true
       - id: 102
         topic_name: Design Social Network
         sub_topic: LLD Interview Questions - Medium
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Design a clean object model for a social network. Focus on
           responsibilities, relationships, and core flows.
@@ -1377,10 +1480,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: design-social-network
+        published: true
       - id: 103
         topic_name: Design Learning Platform
         sub_topic: LLD Interview Questions - Medium
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Design a clean object model for a learning platform. Focus on
           responsibilities, relationships, and core flows.
@@ -1391,10 +1495,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: design-learning-platform
+        published: true
       - id: 104
         topic_name: Design Minesweeper
         sub_topic: LLD Interview Questions - Medium
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Design a clean object model for a minesweeper. Focus on
           responsibilities, relationships, and core flows.
@@ -1405,6 +1510,8 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: design-minesweeper
+        published: true
+    published: true
   - module_id: 16
     module_name: LLD Interview Questions - Hard
     module_duration: 28 mins read
@@ -1415,7 +1522,7 @@ content:
       - id: 105
         topic_name: Design Spotify
         sub_topic: LLD Interview Questions - Hard
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Design a clean object model for a spotify. Focus on responsibilities,
           relationships, and core flows.
@@ -1426,10 +1533,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: design-spotify
+        published: true
       - id: 106
         topic_name: Design Amazon
         sub_topic: LLD Interview Questions - Hard
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Design a clean object model for a amazon. Focus on responsibilities,
           relationships, and core flows.
@@ -1440,10 +1548,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: design-amazon
+        published: true
       - id: 107
         topic_name: Design Linkedin
         sub_topic: LLD Interview Questions - Hard
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Design a clean object model for a linkedin. Focus on responsibilities,
           relationships, and core flows.
@@ -1454,10 +1563,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: design-linkedin
+        published: true
       - id: 108
         topic_name: Design Cricinfo
         sub_topic: LLD Interview Questions - Hard
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Design a clean object model for a cricinfo. Focus on responsibilities,
           relationships, and core flows.
@@ -1468,10 +1578,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: design-cricinfo
+        published: true
       - id: 109
         topic_name: Design Coffee Vending Machine
         sub_topic: LLD Interview Questions - Hard
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Design a clean object model for a coffee vending machine. Focus on
           responsibilities, relationships, and core flows.
@@ -1482,10 +1593,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: design-coffee-vending-machine
+        published: true
       - id: 110
         topic_name: Design Restaurant Management System
         sub_topic: LLD Interview Questions - Hard
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Design a clean object model for a restaurant management system. Focus
           on responsibilities, relationships, and core flows.
@@ -1496,10 +1608,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: design-restaurant-management-system
+        published: true
       - id: 111
         topic_name: Design Online Stock Exchange
         sub_topic: LLD Interview Questions - Hard
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Design a clean object model for a online stock exchange. Focus on
           responsibilities, relationships, and core flows.
@@ -1510,10 +1623,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: design-online-stock-exchange
+        published: true
       - id: 112
         topic_name: Design Movie Booking System
         sub_topic: LLD Interview Questions - Hard
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Design a clean object model for a movie booking system. Focus on
           responsibilities, relationships, and core flows.
@@ -1524,10 +1638,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: design-movie-booking-system
+        published: true
       - id: 113
         topic_name: Design Online Auction System
         sub_topic: LLD Interview Questions - Hard
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Design a clean object model for a online auction system. Focus on
           responsibilities, relationships, and core flows.
@@ -1538,10 +1653,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: design-online-auction-system
+        published: true
       - id: 114
         topic_name: Design in Memory File System
         sub_topic: LLD Interview Questions - Hard
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Design a clean object model for a in memory file system. Focus on
           responsibilities, relationships, and core flows.
@@ -1552,10 +1668,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: design-in-memory-file-system
+        published: true
       - id: 115
         topic_name: Design Version Control System
         sub_topic: LLD Interview Questions - Hard
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Design a clean object model for a version control system. Focus on
           responsibilities, relationships, and core flows.
@@ -1566,10 +1683,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: design-version-control-system
+        published: true
       - id: 116
         topic_name: Design Online Food Delivery Service
         sub_topic: LLD Interview Questions - Hard
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Design a clean object model for a online food delivery service. Focus
           on responsibilities, relationships, and core flows.
@@ -1580,10 +1698,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: design-online-food-delivery-service
+        published: true
       - id: 117
         topic_name: Design Uber
         sub_topic: LLD Interview Questions - Hard
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Design a clean object model for a uber. Focus on responsibilities,
           relationships, and core flows.
@@ -1594,10 +1713,11 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: design-uber
+        published: true
       - id: 118
         topic_name: Design Task Scheduler
         sub_topic: LLD Interview Questions - Hard
-        publish_date: 2026-02-02
+        publish_date: 2026-02-27
         description: >
           Design a clean object model for a task scheduler. Focus on
           responsibilities, relationships, and core flows.
@@ -1608,6 +1728,10 @@ content:
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: design-task-scheduler
+        published: true
+    published: true
+published: true
+datePublished: 2026-02-27
 ---
 
 ## Course Introduction

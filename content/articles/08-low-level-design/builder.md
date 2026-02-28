@@ -1,12 +1,15 @@
 ---
-title: "Builder Pattern"
-description: "Learn how the Builder Design Pattern simplifies creating complex objects like HTTP requests with optional parameters, making code cleaner and more maintainable."
-datePublished: 2026-02-02
-dateModified: 2026-02-02
+title: Builder Pattern
+description: Learn how the Builder Design Pattern simplifies creating complex
+  objects like HTTP requests with optional parameters, making code cleaner and
+  more maintainable.
+datePublished: 2026-02-27
+dateModified: 2026-02-27
 topics:
   - lld
 courseName: 08-low-level-design
 showOnArticles: false
+published: true
 ---
 
 ## Mastering the Builder Pattern for Flexible HTTP Request Construction

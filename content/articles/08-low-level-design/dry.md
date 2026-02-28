@@ -1,12 +1,16 @@
 ---
-title: "DRY Principle"
-description: "The DRY Principle transcends a coding technique—it is a mindset fostering risk reduction, consistency, and software evolution. It encourages developers to think critically before duplicating logic and to seek single authoritative representations of knowledge."
-datePublished: 2026-02-02
-dateModified: 2026-02-02
+title: DRY Principle
+description: The DRY Principle transcends a coding technique—it is a mindset
+  fostering risk reduction, consistency, and software evolution. It encourages
+  developers to think critically before duplicating logic and to seek single
+  authoritative representations of knowledge.
+datePublished: 2026-02-27
+dateModified: 2026-02-27
 topics:
   - lld
 courseName: 08-low-level-design
 showOnArticles: false
+published: true
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770051377/Portfolio/lldSystemDesign/LLD-banner_huzyvn.png)

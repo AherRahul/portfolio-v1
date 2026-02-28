@@ -1,12 +1,14 @@
 ---
-title: "Specification"
-description: "Specification is a reusable way to solve a common design problem. It gives you a proven structure so your code stays clean as it grows."
-datePublished: 2026-02-02
-dateModified: 2026-02-02
+title: Specification
+description: Specification is a reusable way to solve a common design problem.
+  It gives you a proven structure so your code stays clean as it grows.
+datePublished: 2026-02-27
+dateModified: 2026-02-27
 topics:
   - lld
 courseName: 08-low-level-design
 showOnArticles: false
+published: true
 ---
 
 ## Specification

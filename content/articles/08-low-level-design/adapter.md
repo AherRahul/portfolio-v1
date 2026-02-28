@@ -1,12 +1,15 @@
 ---
-title: "Adapter Design Pattern"
-description: "Learn how the Adapter Design Pattern enables incompatible interfaces to work together seamlessly, enhancing flexibility and maintainability in software integration."
-datePublished: 2026-02-02
-dateModified: 2026-02-02
+title: Adapter Design Pattern
+description: Learn how the Adapter Design Pattern enables incompatible
+  interfaces to work together seamlessly, enhancing flexibility and
+  maintainability in software integration.
+datePublished: 2026-02-27
+dateModified: 2026-02-27
 topics:
   - lld
 courseName: 08-low-level-design
 showOnArticles: false
+published: true
 ---
 
 

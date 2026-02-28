@@ -1,12 +1,15 @@
 ---
-title: "Observer Design Pattern"
-description: "Learn how the Observer Design Pattern creates scalable, loosely coupled systems to manage dynamic updates in event-driven apps like a fitness tracker."
-datePublished: 2026-02-02
-dateModified: 2026-02-02
+title: Observer Design Pattern
+description: Learn how the Observer Design Pattern creates scalable, loosely
+  coupled systems to manage dynamic updates in event-driven apps like a fitness
+  tracker.
+datePublished: 2026-02-27
+dateModified: 2026-02-27
 topics:
   - lld
 courseName: 08-low-level-design
 showOnArticles: false
+published: true
 ---
 
 ## Mastering the Observer Pattern for Scalable Fitness Apps

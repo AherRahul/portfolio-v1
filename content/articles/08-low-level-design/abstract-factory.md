@@ -1,12 +1,15 @@
 ---
-title: "Abstract Factory Pattern"
-description: "Learn how the Abstract Factory Design Pattern creates platform-specific UI components flexibly, ensuring consistency and scalability without tight coupling or conditional logic."
-datePublished: 2026-02-02
-dateModified: 2026-02-02
+title: Abstract Factory Pattern
+description: Learn how the Abstract Factory Design Pattern creates
+  platform-specific UI components flexibly, ensuring consistency and scalability
+  without tight coupling or conditional logic.
+datePublished: 2026-02-27
+dateModified: 2026-02-27
 topics:
   - lld
 courseName: 08-low-level-design
 showOnArticles: false
+published: true
 ---
 
 

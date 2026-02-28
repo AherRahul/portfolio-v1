@@ -1,12 +1,15 @@
 ---
-title: "Flyweight Pattern"
-description: "Learn how the Flyweight Design Pattern optimizes memory by sharing common object data, boosting performance in text editors and similar high-volume applications."
-datePublished: 2026-02-02
-dateModified: 2026-02-02
+title: Flyweight Pattern
+description: Learn how the Flyweight Design Pattern optimizes memory by sharing
+  common object data, boosting performance in text editors and similar
+  high-volume applications.
+datePublished: 2026-02-27
+dateModified: 2026-02-27
 topics:
   - lld
 courseName: 08-low-level-design
 showOnArticles: false
+published: true
 ---
 
 ## Mastering the Flyweight Pattern for Efficient Memory Use in Java

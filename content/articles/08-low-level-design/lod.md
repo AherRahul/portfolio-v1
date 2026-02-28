@@ -1,12 +1,16 @@
 ---
-title: "Law of Demeter"
-description: "Law of Demeter is not merely a coding style but a strategic approach to managing complexity in object-oriented systems, ensuring that each component remains a responsible keeper of its own data and behavior while interacting gracefully with its neighbors."
-datePublished: 2026-02-02
-dateModified: 2026-02-02
+title: Law of Demeter
+description: Law of Demeter is not merely a coding style but a strategic
+  approach to managing complexity in object-oriented systems, ensuring that each
+  component remains a responsible keeper of its own data and behavior while
+  interacting gracefully with its neighbors.
+datePublished: 2026-02-27
+dateModified: 2026-02-27
 topics:
   - lld
 courseName: 08-low-level-design
 showOnArticles: false
+published: true
 ---
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1770051377/Portfolio/lldSystemDesign/LLD-banner_huzyvn.png)

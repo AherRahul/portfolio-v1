@@ -1,12 +1,15 @@
 ---
-title: "Memento Pattern"
-description: "Learn how the Memento Design Pattern enables efficient undo functionality by capturing and restoring object states without breaking encapsulation."
-datePublished: 2026-02-02
-dateModified: 2026-02-02
+title: Memento Pattern
+description: Learn how the Memento Design Pattern enables efficient undo
+  functionality by capturing and restoring object states without breaking
+  encapsulation.
+datePublished: 2026-02-27
+dateModified: 2026-02-27
 topics:
   - lld
 courseName: 08-low-level-design
 showOnArticles: false
+published: true
 ---
 
 ## Mastering the Memento Pattern for Robust Undo Functionality

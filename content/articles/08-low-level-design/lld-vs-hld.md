@@ -1,12 +1,14 @@
 ---
-title: "LLD vs HLD"
-description: "This lesson explains LLD vs HLD in simple terms and shows how it helps you design clear, testable code."
-datePublished: 2026-02-02
-dateModified: 2026-02-02
+title: LLD vs HLD
+description: This lesson explains LLD vs HLD in simple terms and shows how it
+  helps you design clear, testable code.
+datePublished: 2026-02-27
+dateModified: 2026-02-27
 topics:
   - lld
 courseName: 08-low-level-design
 showOnArticles: false
+published: true
 ---
 
 

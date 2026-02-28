@@ -1,11 +1,14 @@
 ---
-title: "Decorator Pattern"
-description: "Learn how the Decorator Design Pattern enables dynamic, flexible feature addition without subclassing, demonstrated through a rich text renderer example."
-datePublished: 2026-02-02
-dateModified: 2026-02-02
+title: Decorator Pattern
+description: Learn how the Decorator Design Pattern enables dynamic, flexible
+  feature addition without subclassing, demonstrated through a rich text
+  renderer example.
+datePublished: 2026-02-27
+dateModified: 2026-02-27
 topics:
   - lld
 courseName: 08-low-level-design
+published: true
 ---
 
 ## Understanding the Decorator Design Pattern for Flexible Text Rendering

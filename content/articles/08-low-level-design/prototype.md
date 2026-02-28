@@ -1,12 +1,15 @@
 ---
-title: "Prototype Design Pattern"
-description: "Learn how the Prototype Design Pattern enables efficient object cloning to reduce complexity, improve flexibility, and streamline object creation in software development."
-datePublished: 2026-02-02
-dateModified: 2026-02-02
+title: Prototype Design Pattern
+description: Learn how the Prototype Design Pattern enables efficient object
+  cloning to reduce complexity, improve flexibility, and streamline object
+  creation in software development.
+datePublished: 2026-02-27
+dateModified: 2026-02-27
 topics:
   - lld
 courseName: 08-low-level-design
 showOnArticles: false
+published: true
 ---
 
 ## Mastering the Prototype Design Pattern for Efficient Object Cloning
