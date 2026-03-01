@@ -11,7 +11,7 @@ featured: false
 published: true
 ---
 
-![hero image](https://algomaster.io/og-image.png)
+
 
 The idea of running multiple threads in a program can feel a bit like hosting a dinner party. You want everyone to have a good time, and that often means juggling multiple tasks at once. But just like with dinner guests, if you don’t manage them well, things can get chaotic.
 

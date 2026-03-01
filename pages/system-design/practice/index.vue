@@ -19,6 +19,7 @@ import SystemDesignSimulationsTrafficControl from '~/components/SystemDesign/Sim
 import SystemDesignSimulationsCoffeeMachine from '~/components/SystemDesign/Simulations/CoffeeMachine.vue'
 import SystemDesignSimulationsPubSub from '~/components/SystemDesign/Simulations/PubSub.vue'
 import SystemDesignSimulationsNotificationSystem from '~/components/SystemDesign/Simulations/NotificationSystem.vue'
+import SystemDesignSimulationsTaskManager from '~/components/SystemDesign/Simulations/TaskManager.vue'
 
 definePageMeta({ documentDriven: false })
 useSeoMeta({
@@ -110,6 +111,7 @@ function openSimulation(slug: string) {
                 <SystemDesignSimulationsCoffeeMachine v-else-if="activeSimulationSlug === 'design-coffee-machine'" />
                 <SystemDesignSimulationsPubSub v-else-if="activeSimulationSlug === 'design-pub-sub'" />
                 <SystemDesignSimulationsNotificationSystem v-else-if="activeSimulationSlug === 'design-notification-system'" />
+                <SystemDesignSimulationsTaskManager v-else-if="activeSimulationSlug === 'design-task-manager'" />
                 <div v-else class="text-center py-20 text-zinc-500">
                    <Icon name="heroicons:bolt-slash" class="text-4xl mb-4" />
                    <p>Simulation module for this system is under development.</p>

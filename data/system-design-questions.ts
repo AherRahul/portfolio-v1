@@ -89,7 +89,7 @@ export const QUESTION_CATEGORIES: QuestionCategory[] = [
         tab: 'LLD',
         questions: [
             { slug: 'design-parking-lot', title: 'Design Parking Lot', type: 'LLD', difficulty: 'Easy', category: 'Management', tags: ['OOP', 'Strategy'], description: 'Design a multi-floor parking lot system.', hasSimulation: true },
-            { slug: 'design-task-manager', title: 'Design Task Management System', type: 'LLD', difficulty: 'Easy', category: 'Management', tags: ['OOP', 'Observer'], description: 'Design a Trello-like task management board.' },
+            { slug: 'design-task-manager', title: 'Design Task Management System', type: 'LLD', difficulty: 'Easy', category: 'Management', tags: ['OOP', 'Observer'], description: 'Design a Trello-like task management board.', hasSimulation: true },
             { slug: 'design-inventory', title: 'Design Inventory Management System', type: 'LLD', difficulty: 'Medium', category: 'Management', tags: ['OOP', 'Stock-Tracking'], description: 'Design a system to track stock levels and reorder triggers.' },
             { slug: 'design-library', title: 'Design Library Management System', type: 'LLD', difficulty: 'Medium', category: 'Management', tags: ['OOP', 'Library'], description: 'Design a library handling book catalog and reservations.' },
             { slug: 'design-restaurant', title: 'Design Restaurant Management System', type: 'LLD', difficulty: 'Hard', category: 'Management', tags: ['OOP', 'Order-Processing'], description: 'Design a restaurant system for table booking and order management.' },

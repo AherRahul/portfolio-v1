@@ -11,7 +11,7 @@ featured: false
 published: true
 ---
 
-![hero image](https://algomaster.io/og-image.png)
+
 
 Lambda expressions in Java have revolutionized the way we write code, making it more concise and expressive. If you've ever found yourself buried in boilerplate code, particularly when dealing with functional interfaces, you'll appreciate the clarity and efficiency that lambdas bring to the table.
 

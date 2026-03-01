@@ -11,7 +11,7 @@ featured: false
 published: true
 ---
 
-![hero image](https://algomaster.io/og-image.png)
+
 
 LinkedHashSet is a powerful yet often underappreciated part of Java's Collections Framework. It combines the features of a `HashSet` and a linked list, giving us a unique data structure that maintains both uniqueness and insertion order.
 
@@ -19,8 +19,4 @@ This means you can have all the benefits of a setâ€”like preventing duplicatesâ€
 
 Let's dive in and explore how this works.
 
-### Premium Content
-
-Subscribe to unlock full access to this content and more premium articles.
-
-[Subscribe Now](/premium)
+Launching Soon...!!

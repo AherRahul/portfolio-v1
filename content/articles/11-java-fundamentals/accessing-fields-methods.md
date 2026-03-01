@@ -1,5 +1,5 @@
 ---
-title: Accessing Fields &amp; Methods
+title: Accessing Fields and Methods
 description: Learn about Accessing Fields Methods in Java programming.
 datePublished: 2026-02-27
 dateModified: 2026-02-27
@@ -11,7 +11,7 @@ featured: false
 published: true
 ---
 
-![hero image](https://algomaster.io/og-image.png)
+
 
 width=device-width, initial-scale=1
 

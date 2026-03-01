@@ -10,7 +10,7 @@ showOnArticles: false
 featured: false
 ---
 
-![hero image](https://algomaster.io/og-image.png)
+
 
 Java has always been a language that values clarity and type safety, but starting with Java 10, it introduced a feature that allows developers to enjoy a bit more flexibility with variable declarations. Enter the `**var**` **keyword**. This feature is all about type inference, making your code cleaner and more readable without sacrificing the benefits of strong typing.
 

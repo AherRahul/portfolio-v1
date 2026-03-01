@@ -203,6 +203,7 @@ async function openSimulationModal() {
     'design-coffee-machine':      () => import('~/components/SystemDesign/Simulations/CoffeeMachine.vue'),
     'design-pub-sub':             () => import('~/components/SystemDesign/Simulations/PubSub.vue'),
     'design-notification-system': () => import('~/components/SystemDesign/Simulations/NotificationSystem.vue'),
+    'design-task-manager':        () => import('~/components/SystemDesign/Simulations/TaskManager.vue'),
   }
   const loader = map[slug]
   if (loader) {

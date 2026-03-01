@@ -11,7 +11,7 @@ featured: false
 published: true
 ---
 
-![hero image](https://algomaster.io/og-image.png)
+
 
 The Java Collections Framework is a powerful toolkit that simplifies the way we handle groups of objects. Among its many utilities, the `Collections` utility class stands out as a versatile companion for working with collections.
 
@@ -19,8 +19,4 @@ Whether you're sorting, searching, or manipulating data, this class provides a r
 
 Let’s dive into the capabilities of the `Collections` utility class and explore how it can help streamline your coding tasks.
 
-### Premium Content
-
-Subscribe to unlock full access to this content and more premium articles.
-
-[Subscribe Now](/premium)
+Launching Soon...!!

@@ -11,7 +11,7 @@ featured: false
 published: true
 ---
 
-![hero image](https://algomaster.io/og-image.png)
+
 
 Building applications that interact with databases is a fundamental skill for any Java developer. At the core of this interaction is the Java Database Connectivity (JDBC) API, which provides the methods and mechanisms needed to connect Java applications to a variety of databases.
 

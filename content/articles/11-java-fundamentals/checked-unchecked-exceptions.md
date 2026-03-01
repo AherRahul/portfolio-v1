@@ -10,7 +10,7 @@ showOnArticles: false
 featured: false
 ---
 
-![hero image](https://algomaster.io/og-image.png)
+
 
 Understanding the distinction between checked and unchecked exceptions in Java is crucial for any developer aiming to write robust and maintainable code.
 
@@ -18,8 +18,4 @@ You may have encountered exceptions before, but grasping the nuances of these tw
 
 Let’s dive into the specifics of checked and unchecked exceptions, explore their differences, and see practical examples that illustrate when to use each.
 
-### Premium Content
-
-Subscribe to unlock full access to this content and more premium articles.
-
-[Subscribe Now](/premium)
+Launching Soon...!!

@@ -11,7 +11,7 @@ featured: false
 published: true
 ---
 
-![hero image](https://algomaster.io/og-image.png)
+
 
 Coding standards in Java are like the traffic rules of programming. They guide us in writing code that is not only functional but also clean, maintainable, and readable.
 

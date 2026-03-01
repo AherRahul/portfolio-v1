@@ -10,7 +10,7 @@ showOnArticles: false
 featured: false
 ---
 
-![hero image](https://algomaster.io/og-image.png)
+
 
 Java has become one of the most popular programming languages in the world. Its features are carefully designed to offer developers a robust, versatile, and powerful environment.
 

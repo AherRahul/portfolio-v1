@@ -11,7 +11,7 @@ featured: false
 published: true
 ---
 
-![hero image](https://algomaster.io/og-image.png)
+
 
 File handling in Java is a crucial skill for any developer, as it allows us to read from and write to files on our systems. Among the key players in Java's file handling ecosystem is the **File class**.
 

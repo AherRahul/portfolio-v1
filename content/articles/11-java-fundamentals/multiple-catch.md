@@ -10,7 +10,7 @@ showOnArticles: false
 featured: false
 ---
 
-![hero image](https://algomaster.io/og-image.png)
+
 
 Understanding how to handle exceptions effectively in Java is a crucial skill for any developer.
 
@@ -18,8 +18,4 @@ One powerful feature of Java's exception handling mechanism is the ability to us
 
 Let's dive into the details of how we can leverage multiple catch blocks to enhance our error-handling strategies.
 
-### Premium Content
-
-Subscribe to unlock full access to this content and more premium articles.
-
-[Subscribe Now](/premium)
+Launching Soon...!!
