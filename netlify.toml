@@ -34,3 +34,8 @@
   from = "/api/system-design/evaluate"
   to = "/.netlify/functions/sd-evaluate"
   status = 200
+
+[[redirects]]
+  from = "/api/translate"
+  to = "/.netlify/functions/translate"
+  status = 200
