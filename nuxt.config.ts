@@ -94,40 +94,48 @@ export default defineNuxtConfig({
       }
     },
     prerender: {
-      // Only prerender the top-level shell pages.
-      // Root cause of previous Netlify timeout (18min limit):
-      //   - /feed.xml alone took 757,910ms (~12.6 min)
-      //   - discoverContentRoutes() added ~1,000+ article/course routes (~1-2s each)
-      //   - crawlLinks then discovered /__og-image__/** and /api/_content/query/** on top
-      // All article/course content is now SSR'd on first request via Netlify Functions.
+      // IMPORTANT: This site uses `nuxt generate` (netlify-static preset).
+      // All pages MUST be prerendered — there is no SSR function fallback.
+      //
+      // Previous build timeout root causes:
+      //   1. /feed.xml alone took 757,910ms (~12.6 min) — excluded below
+      //   2. crawlLinks was discovering /__og-image__/** routes after each page render
+      //      adding hundreds more routes (OG image generation per article)
+      //   3. concurrency:1 made rendering of 1315 routes sequential and very slow
+      //
+      // Fix: exclude feed.xml + OG images, set crawl:false, use concurrency:2
       routes: [
+        // Core pages
         '/',
         '/about/',
         '/contact/',
         '/services/',
         '/consulting/',
         '/sponsors/',
+        // Index pages
         '/articles/',
         '/courses/',
         '/projects/',
         '/npmpackages/',
         '/learning/',
-        // NOTE: /feed.xml intentionally excluded — it fetches all content and takes 750s+
-        // NOTE: discoverContentRoutes() intentionally excluded — adds 1000+ routes
-        // NOTE: OG image routes intentionally excluded — generated on-demand
+        // All article/course/project/npmpackage content pages
+        // (required for static generation — without these, users get 404)
+        ...discoverContentRoutes(['articles', 'projects', 'courses', 'npmpackages']),
+        // NOTE: /feed.xml intentionally excluded — it alone takes 757s (>12 min)
+        // NOTE: OG image routes excluded — they add 500+ extra routes and slow builds
       ],
-      crawl: false,      // Do NOT auto-crawl rendered pages for additional routes
-      crawlLinks: false, // Belt-and-suspenders: also disable link crawling
-      concurrency: 1,    // Render one route at a time to avoid OOM on Netlify
+      crawl: false,      // Critical: stops auto-crawling pages and discovering OG image routes
+      crawlLinks: false, // Belt-and-suspenders alongside crawl:false
+      concurrency: 2,    // 2 parallel renders: 2x faster than concurrency:1, still stable
       failOnError: false,
       ignore: [
-        '/feed.xml',
+        '/feed.xml',      // Excluded from routes AND ignored if discovered
         '/projects/-',
         '/npmpackages/-',
         '/articles/-_',
         '/courses/-',
-        '/__og-image__/**',
-        '/api/_content/query/**',
+        '/__og-image__/**',       // OG image generation — too many routes, too slow
+        '/api/_content/query/**', // Content query API — not needed as static files
         '/topics/**',
         '/admin/**',
         '/api/admin/**'
