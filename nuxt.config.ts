@@ -94,39 +94,41 @@ export default defineNuxtConfig({
       }
     },
     prerender: {
+      // Only prerender the top-level shell pages.
+      // Root cause of previous Netlify timeout (18min limit):
+      //   - /feed.xml alone took 757,910ms (~12.6 min)
+      //   - discoverContentRoutes() added ~1,000+ article/course routes (~1-2s each)
+      //   - crawlLinks then discovered /__og-image__/** and /api/_content/query/** on top
+      // All article/course content is now SSR'd on first request via Netlify Functions.
       routes: [
-        '/feed.xml',
-        // Core pages
         '/',
         '/about/',
         '/contact/',
         '/services/',
         '/consulting/',
         '/sponsors/',
-        // Index pages
         '/articles/',
         '/courses/',
         '/projects/',
         '/npmpackages/',
         '/learning/',
-        // Content routes
-        ...discoverContentRoutes(['articles', 'projects', 'courses', 'npmpackages']),
-        // Temporarily disable OG image generation to fix build issues
-        // ...discoverOgImageRoutes(),
+        // NOTE: /feed.xml intentionally excluded — it fetches all content and takes 750s+
+        // NOTE: discoverContentRoutes() intentionally excluded — adds 1000+ routes
+        // NOTE: OG image routes intentionally excluded — generated on-demand
       ],
-      crawlLinks: false, // Disable crawling to prevent memory issues
+      crawl: false,      // Do NOT auto-crawl rendered pages for additional routes
+      crawlLinks: false, // Belt-and-suspenders: also disable link crawling
+      concurrency: 1,    // Render one route at a time to avoid OOM on Netlify
       failOnError: false,
       ignore: [
+        '/feed.xml',
         '/projects/-',
         '/npmpackages/-',
         '/articles/-_',
         '/courses/-',
-        // Ignore potential memory-heavy routes
         '/__og-image__/**',
         '/api/_content/query/**',
-        // Ignore topic pages that are extremely slow to render
         '/topics/**',
-        // Ignore admin routes - should not be prerendered
         '/admin/**',
         '/api/admin/**'
       ]
