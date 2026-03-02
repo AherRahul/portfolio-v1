@@ -151,6 +151,106 @@ const resourcesForTabs = computed(() => {
   return parseResourcesFromContent(extractContentText((article.value as any)?.body || {}))
 })
 
+// Raw body for Hinglish translation — walk the Nuxt Content v2 MDC AST
+// and reconstruct proper markdown with images, code blocks, and headings.
+// _rawBody is not available in Nuxt Content v2, so we derive it from the parsed body.
+function extractMarkdownFromAst(body: any): string {
+  if (!body?.children) return ''
+
+  function nodeToMd(node: any, depth = 0): string {
+    if (!node) return ''
+    // Raw text node
+    if (node.type === 'text' || typeof node === 'string') return node.value ?? node
+
+    const tag = node.tag || node.type || ''
+    const children = node.children || []
+    const childMd = () => children.map((c: any) => nodeToMd(c, depth)).join('')
+
+    // Images — most important: reconstruct ![alt](src)
+    if (tag === 'img') {
+      const src = node.props?.src || ''
+      const alt = node.props?.alt || ''
+      return `![${alt}](${src})`
+    }
+
+    // Fenced code blocks
+    if (tag === 'pre') {
+      const codeNode = children[0]
+      const langClass = codeNode?.props?.class || codeNode?.props?.className?.[0] || ''
+      const lang = (langClass.replace('language-', '') || '').trim()
+      const code = children.map((c: any) => extractText(c)).join('').trimEnd()
+      return `\`\`\`${lang}\n${code}\n\`\`\``
+    }
+
+    // Inline code
+    if (tag === 'code') return `\`${extractText(node)}\``
+
+    // Headings
+    if (/^h[1-6]$/.test(tag)) {
+      const level = parseInt(tag[1])
+      return `${'#'.repeat(level)} ${childMd()}`
+    }
+
+    // Paragraph
+    if (tag === 'p') return childMd()
+
+    // Bold / italic
+    if (tag === 'strong') return `**${childMd()}**`
+    if (tag === 'em') return `*${childMd()}*`
+
+    // Links
+    if (tag === 'a') return `[${childMd()}](${node.props?.href || ''})`
+
+    // Blockquote
+    if (tag === 'blockquote') {
+      return childMd().split('\n').map((l: string) => `> ${l}`).join('\n')
+    }
+
+    // Unordered list
+    if (tag === 'ul') {
+      return children.map((li: any) => `- ${nodeToMd(li, depth)}`).join('\n')
+    }
+
+    // Ordered list
+    if (tag === 'ol') {
+      return children.map((li: any, i: number) => `${i + 1}. ${nodeToMd(li, depth)}`).join('\n')
+    }
+
+    // List item — just recurse into children
+    if (tag === 'li') return childMd()
+
+    // Horizontal rule
+    if (tag === 'hr') return '---'
+
+    // Ignore script, style, comment nodes
+    if (['script', 'style', 'comment'].includes(tag)) return ''
+
+    // Fallback: recurse into children (handles div, section, span, etc.)
+    return childMd()
+  }
+
+  // Plain text extractor for code block contents
+  function extractText(node: any): string {
+    if (!node) return ''
+    if (node.type === 'text' || typeof node === 'string') return node.value ?? node
+    return (node.children || []).map(extractText).join('')
+  }
+
+  // Produce one block per top-level child, separated by blank lines
+  return body.children
+    .map((node: any) => nodeToMd(node))
+    .filter(Boolean)
+    .join('\n\n')
+}
+
+const rawBodyForTranslation = computed<string>(() => {
+  const a = article.value as any
+  // Prefer _rawBody if Nuxt Content ever exposes it
+  if (a?._rawBody && typeof a._rawBody === 'string') return a._rawBody
+  // Otherwise reconstruct markdown from the parsed body AST
+  return extractMarkdownFromAst(a?.body || {})
+})
+
 defineOgImageComponent('Article', {
   title: article.value?.title || '',
   topics: article.value?.topics || [],
@@ -206,6 +306,7 @@ onMounted(() => { setupContentImages('.prose'); loadProgress() })
         <LazyCourseTabsContainer
           :topic-title="article?.title || 'Course Topic'"
           :content="extractContentText(article?.body)"
+          :raw-body="rawBodyForTranslation"
           :resources="resourcesForTabs"
           :difficulty="'medium'"
           :is-older-than-one-year="isOlderThanOneYear"

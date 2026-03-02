@@ -21,6 +21,13 @@ export interface CourseProgressStorage {
         }
       }
       
+      hinglish?: {
+        translatedContent: string
+        metadata: {
+          createdAt: string
+        }
+      }
+      
       quiz?: {
         questions: any[]
         metadata: {
@@ -59,6 +66,13 @@ export interface CourseData {
     metadata: {
       createdAt: string
       difficulty?: string
+    }
+  }
+  
+  hinglish?: {
+    translatedContent: string
+    metadata: {
+      createdAt: string
     }
   }
   
@@ -401,5 +415,32 @@ export function hasExistingQuiz(content: string, topicTitle: string): boolean {
     return !!courseData.quiz
   } catch {
     return false
+  }
+}
+
+// Hinglish translation caching functions
+export function getCachedHinglish(content: string, topicTitle: string): string | null {
+  try {
+    const courseData = getCourseData(content, topicTitle)
+    if (!courseData.hinglish) return null
+    return courseData.hinglish.translatedContent
+  } catch (error) {
+    console.error('Error reading cached hinglish:', error)
+    return null
+  }
+}
+
+export function setCachedHinglish(content: string, topicTitle: string, translatedContent: string): void {
+  try {
+    const courseData = getCourseData(content, topicTitle)
+    courseData.hinglish = {
+      translatedContent,
+      metadata: {
+        createdAt: new Date().toISOString()
+      }
+    }
+    saveCourseData(courseData)
+  } catch (error) {
+    console.error('Error caching hinglish translation:', error)
   }
 }

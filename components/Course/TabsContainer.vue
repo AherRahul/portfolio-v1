@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue'
 import { downloadSummaryPDF } from '~/utils/pdfGenerator'
+import { renderMarkdown } from '~/utils/markdownRenderer'
 import { 
   getCachedSummary, 
   setCachedSummary, 
@@ -9,6 +10,8 @@ import {
   updateQuizCompletion,
   hasExistingSummary,
   hasExistingQuiz,
+  getCachedHinglish,
+  setCachedHinglish,
   type CachedSummary,
   type CachedQuiz
 } from '~/utils/aiContentCache'
@@ -46,6 +49,7 @@ interface QuizQuestion {
 const props = defineProps<{
   topicTitle: string
   content: string
+  rawBody?: string
   resources?: ResourceItem[]
   difficulty?: 'easy' | 'medium' | 'hard'
   isOlderThanOneYear?: boolean
@@ -67,6 +71,7 @@ const activeTab = ref('content')
 const tabs = computed(() => {
   const allTabs = [
     { id: 'content', title: 'Content', icon: 'heroicons:document-text' },
+    { id: 'hinglish', title: 'Hinglish', icon: 'heroicons:language' },
     { id: 'notes', title: 'AI Notes', icon: 'heroicons:light-bulb' },
     { id: 'quiz', title: 'Quiz', icon: 'heroicons:academic-cap' },
     { id: 'resources', title: 'Resources', icon: 'heroicons:link' }
@@ -86,6 +91,12 @@ const summaryLoading = ref(false)
 const summaryError = ref('')
 const downloadingPdf = ref(false)
 
+// Hinglish state
+const hinglishHtml = ref<string | null>(null)
+const hinglishLoading = ref(false)
+const hinglishError = ref('')
+const hinglishFromCache = ref(false)
+
 // Quiz state
 const quizData = ref<QuizQuestion[]>([])
 const quizLoading = ref(false)
@@ -103,6 +114,10 @@ function setActiveTab(tabId: string) {
   // Load data when tab is activated
   if (tabId === 'notes' && !summaryData.value && !summaryLoading.value) {
     generateSummary()
+  }
+  
+  if (tabId === 'hinglish' && !hinglishHtml.value && !hinglishLoading.value) {
+    convertToHinglish()
   }
   
   // Setup image modal when content tab is activated
@@ -170,6 +185,112 @@ async function generateSummary() {
     console.error('Summary generation failed:', err)
   } finally {
     summaryLoading.value = false
+  }
+}
+
+/**
+ * Replace HTML blocks and code fences with unique placeholder tokens so
+ * the translate API only receives text content. After translation, restoreBlocks()
+ * puts the originals back in the exact same positions.
+ */
+function extractBlocksWithPlaceholders(raw: string): { cleaned: string; blocks: string[] } {
+  const blocks: string[] = []
+
+  let text = raw
+
+  // 1. Protect code fences (``` ... ```) — they must not be translated
+  text = text.replace(/(`{3,}[\s\S]*?`{3,})/g, (match) => {
+    const idx = blocks.length
+    blocks.push(match)
+    return `[[BLOCK_${idx}]]`
+  })
+
+  // 2. Protect multi-line HTML block elements (<div>, <table>, etc.)
+  //    Articles have single-line massive <div> visualizations — the regex handles both.
+  text = text.replace(/(<(?:div|table|figure|section|article|aside|header|footer|nav|main|ul|ol)[^>]*>[\s\S]*?<\/(?:div|table|figure|section|article|aside|header|footer|nav|main|ul|ol)>)/gi, (match) => {
+    const idx = blocks.length
+    blocks.push(match)
+    return `[[BLOCK_${idx}]]`
+  })
+
+  // 3. Protect markdown images ![alt](url)
+  text = text.replace(/(!\[[^\]]*\]\([^)]+\))/g, (match) => {
+    const idx = blocks.length
+    blocks.push(match)
+    return `[[BLOCK_${idx}]]`
+  })
+
+  // Collapse extra blank lines
+  text = text.replace(/\n{3,}/g, '\n\n')
+
+  return { cleaned: text.trim(), blocks }
+}
+
+function restoreBlocks(translated: string, blocks: string[]): string {
+  return translated.replace(/\[\[BLOCK_(\d+)\]\]/g, (_match, idx) => {
+    return blocks[parseInt(idx)] ?? _match
+  })
+}
+
+async function convertToHinglish() {
+  // Check cache first
+  const cached = getCachedHinglish(props.content, props.topicTitle)
+  if (cached) {
+    hinglishHtml.value = cached
+    hinglishFromCache.value = true
+    return
+  }
+
+  const source = props.rawBody || props.content
+  if (!source) {
+    hinglishError.value = 'No content available to convert.'
+    return
+  }
+
+  // Extract HTML/code blocks into placeholders — only translatable text is sent to the API
+  const { cleaned, blocks } = extractBlocksWithPlaceholders(source)
+
+  if (!cleaned) {
+    hinglishError.value = 'No translatable content found in this article.'
+    return
+  }
+
+  hinglishLoading.value = true
+  hinglishError.value = ''
+  hinglishFromCache.value = false
+
+  const { makeApiCall } = useApiEndpoints()
+
+  try {
+    const response = await makeApiCall('/api/translate', {
+      method: 'POST',
+      body: {
+        content: cleaned,
+        title: props.topicTitle,
+        description: '',
+        targetLanguage: 'hi'
+      }
+    }) as { translatedContent: string; translatedTitle: string; translatedDescription: string; language: string }
+
+    const translatedMarkdown = response.translatedContent
+    if (!translatedMarkdown || translatedMarkdown.trim().length < 10) {
+      throw new Error('Empty translation received. Please try again.')
+    }
+
+    // Restore the original HTML blocks, code fences, and images at their exact positions
+    const restored = restoreBlocks(translatedMarkdown, blocks)
+
+    // Render the fully-restored markdown+HTML to display HTML
+    const html = renderMarkdown(restored)
+    hinglishHtml.value = html
+
+    // Cache result to avoid re-translating on switching tabs
+    setCachedHinglish(props.content, props.topicTitle, html)
+  } catch (err: any) {
+    hinglishError.value = err.data?.message || err.message || 'Failed to convert content to Hinglish. Please try again.'
+    console.error('Hinglish conversion failed:', err)
+  } finally {
+    hinglishLoading.value = false
   }
 }
 
@@ -516,6 +637,76 @@ onMounted(() => {
                 ].filter(Boolean).join(' ')"
               />
             </ClientOnly>
+          </div>
+        </div>
+
+        <!-- Hinglish Tab -->
+        <div v-else-if="activeTab === 'hinglish'" :id="'panel-hinglish'" role="tabpanel" aria-labelledby="tab-hinglish">
+          <!-- Header -->
+          <div class="flex flex-col sm:flex-row items-start gap-3 sm:gap-4 mb-6">
+            <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-orange-500 to-amber-600 flex items-center justify-center text-white flex-shrink-0">
+              <Icon name="heroicons:language" class="text-lg sm:text-xl" />
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2 mt-0 flex items-center gap-2">
+                🇮🇳 Hinglish Version
+                <span v-if="hinglishHtml && hinglishFromCache" class="text-blue-400 text-xs bg-blue-500/20 px-2 py-1 rounded">
+                  <Icon name="heroicons:cloud-arrow-down" class="inline mr-1 text-xs" />
+                  Cached
+                </span>
+              </h3>
+              <p class="text-zinc-300 mb-2">
+                Yeh content Hinglish mein hai — Hindi aur English mix — taaki Indian developers ke liye samajhna easy ho.
+              </p>
+              <p class="text-zinc-500 text-xs">
+                Images, code blocks, aur diagrams bilkul same rahenge.
+              </p>
+            </div>
+          </div>
+
+          <!-- Loading State -->
+          <div v-if="hinglishLoading" class="text-center py-12">
+            <div class="relative inline-flex mb-4">
+              <Icon name="heroicons:arrow-path" class="animate-spin text-5xl text-orange-400 mx-auto" />
+              <span class="absolute inset-0 flex items-center justify-center text-lg">🇮🇳</span>
+            </div>
+            <h4 class="text-lg font-semibold text-white mb-2">Converting to Hinglish...</h4>
+            <p class="text-zinc-400">AI text translate kar raha hai — images aur code safe hain.</p>
+            <p class="text-zinc-500 text-sm mt-2">This may take 10–20 seconds for long articles.</p>
+          </div>
+
+          <!-- Error State -->
+          <div v-else-if="hinglishError" class="bg-red-900/20 border border-red-500/50 p-6">
+            <div class="flex items-center gap-3 mb-3">
+              <Icon name="heroicons:exclamation-triangle" class="text-red-400 text-2xl" />
+              <h4 class="text-xl font-semibold text-red-400">Conversion Failed</h4>
+            </div>
+            <p class="text-red-300 mb-4">{{ hinglishError }}</p>
+            <AppButton @click="convertToHinglish" :disabled="hinglishLoading">
+              <Icon name="heroicons:arrow-path" class="mr-2" />
+              Try Again
+            </AppButton>
+          </div>
+
+          <!-- Converted Content -->
+          <div v-else-if="hinglishHtml" class="hinglish-content">
+            <div
+              class="prose md:prose-lg lg:prose-xl prose-invert pt-4"
+              v-html="hinglishHtml"
+            />
+          </div>
+
+          <!-- Empty / Not Yet Converted State -->
+          <div v-else class="text-center py-12">
+            <div class="text-6xl mb-4">🇮🇳</div>
+            <h4 class="text-lg font-semibold text-white mb-2">Convert to Hinglish</h4>
+            <p class="text-zinc-400 mb-6 max-w-md mx-auto">
+              Is article ko Hinglish mein convert karein — Hindi aur English mix — taaki aasaani se samajh sakein. Code aur images safe rahenge.
+            </p>
+            <AppButton @click="convertToHinglish" :disabled="hinglishLoading">
+              <Icon name="heroicons:language" class="mr-2" />
+              Convert to Hinglish
+            </AppButton>
           </div>
         </div>
 
@@ -1263,6 +1454,75 @@ onMounted(() => {
 /* ── Score circle in quiz results ── */
 .theme-light .w-24.h-24.border-4 {
   background-color: transparent !important;
+}
+
+/* ── Hinglish tab: Shiki-highlighted code blocks ── */
+.hinglish-content :deep(.shiki-code-block) {
+  position: relative;
+  margin: 1.25rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Language badge */
+.hinglish-content :deep(.shiki-code-block[data-lang])::before {
+  content: attr(data-lang);
+  display: block;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #a0a0b0;
+  font-size: 11px;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Shiki pre/code styles */
+.hinglish-content :deep(.shiki-code-block .shiki) {
+  margin: 0 !important;
+  border-radius: 0 !important;
+  background: #121212 !important;
+  padding: 1rem 1.25rem !important;
+  overflow-x: auto;
+}
+
+.hinglish-content :deep(.shiki-code-block code) {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+  font-size: 0.82rem;
+  line-height: 1.65;
+}
+
+/* Fallback plain code blocks inside Hinglish content */
+.hinglish-content :deep(.code-block-wrapper) {
+  margin: 1.25rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #121212;
+}
+
+.hinglish-content :deep(.code-block-wrapper pre) {
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: #d4d4d4;
+}
+
+.hinglish-content :deep(.code-lang-label) {
+  display: block;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #a0a0b0;
+  font-size: 11px;
+  font-family: monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 </style>
 

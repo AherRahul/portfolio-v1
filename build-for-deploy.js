@@ -174,6 +174,11 @@ try {
   from = "/api/system-design/evaluate-step"
   to = "/.netlify/functions/sd-evaluate-step"
   status = 200
+
+[[redirects]]
+  from = "/api/translate"
+  to = "/.netlify/functions/translate"
+  status = 200
 `;
 
   require('fs').writeFileSync(path.join(deployDir, 'netlify.toml'), netlifyConfig);
@@ -185,6 +190,7 @@ try {
 /api/summary/generate /.netlify/functions/summary-generate 200
 /api/system-design/evaluate /.netlify/functions/sd-evaluate 200
 /api/system-design/evaluate-step /.netlify/functions/sd-evaluate-step 200
+/api/translate /.netlify/functions/translate 200
 
 # SPA fallback
 /* /200.html 200`;

@@ -9,12 +9,12 @@ import { join, basename } from 'node:path'
 function discoverContentRoutes(directories: string[]): string[] {
   const projectRoot = process.cwd()
   const routes: string[] = []
-  
+
   function scanDirectory(baseDir: string, subPath: string = ''): void {
     try {
       const fullPath = join(baseDir, subPath)
       const files = readdirSync(fullPath, { withFileTypes: true })
-      
+
       for (const entry of files) {
         if (entry.isFile() && entry.name.endsWith('.md')) {
           const slug = basename(entry.name, '.md')
@@ -29,7 +29,7 @@ function discoverContentRoutes(directories: string[]): string[] {
       // ignore missing directories or files
     }
   }
-  
+
   for (const dir of directories) {
     try {
       const contentDir = join(projectRoot, 'content', dir)
@@ -84,6 +84,15 @@ export default defineNuxtConfig({
 
   nitro: {
     preset: 'netlify',
+    storage: {
+      // Persistent translation cache using Netlify Blobs (free, built-in to Netlify).
+      // Falls back to in-memory automatically in local dev (no NETLIFY env vars present).
+      // All translated articles are stored here so any user benefits from a prior translation.
+      'cache': {
+        driver: process.env.NETLIFY ? 'netlifyBlobs' : 'memory',
+        name: 'translation-cache',
+      }
+    },
     prerender: {
       routes: [
         '/feed.xml',

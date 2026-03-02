@@ -1,4 +1,17 @@
 import Anthropic from '@anthropic-ai/sdk'
+import { createHash } from 'node:crypto'
+import { highlightCodeBlocks } from '../utils/shikiHighlighter'
+
+/**
+ * Server-side translation cache keyed by MD5(content + language).
+ * Uses Nitro's useStorage() — in-memory by default (shared within the
+ * same server process / Lambda warm period). To make it persistent across
+ * deployments, configure a Nitro storage driver in nuxt.config.ts, e.g.:
+ *   nitro: { storage: { 'translation-cache': { driver: 'redis', url: '...' } } }
+ */
+function getTranslationCacheKey(content: string, lang: string): string {
+  return `translations:${createHash('md5').update(content + lang).digest('hex')}`
+}
 
 interface TranslationResponse {
   translatedContent: string
@@ -45,22 +58,33 @@ export default defineEventHandler(async (event) => {
       }
     }
 
+    // ── Server-side cache check ──────────────────────────────────────────────
+    const storage = useStorage('cache')
+    const cacheKey = getTranslationCacheKey(content, targetLanguage)
+    const cachedResult = await storage.getItem<TranslationResponse>(cacheKey)
+    if (cachedResult) {
+      console.log(`[translate] Cache HIT for key ${cacheKey.slice(-8)} (${targetLanguage})`)
+      return cachedResult
+    }
+    console.log(`[translate] Cache MISS — calling AI for ${cacheKey.slice(-8)} (${targetLanguage})`)
+    // ────────────────────────────────────────────────────────────────────────
+
     const anthropic = new Anthropic({
       apiKey: anthropicApiKey,
     })
 
     // Create a comprehensive prompt for translation with Hinglish/English-Mix style
     const languageStyle = languageName === 'Hindi' ? 'Hinglish (Hindi-English mix)' : 'English-Marathi mix'
-    
+
     // Extract and log images from original content
     const imagesInContent = content.match(/!\[.*?\]\(https?:\/\/[^\)]+\)/g) || []
     console.log('📸 Images in original content:', imagesInContent.length)
     if (imagesInContent.length > 0) {
       console.log('First image:', imagesInContent[0])
     }
-    
+
     const sampleImage = imagesInContent[0] || '![image](url)'
-    
+
     const prompt = `Translate to ${languageStyle}. Indian developers understand English + ${languageName}.
 
 ⚠️ CRITICAL - DO NOT REMOVE ANYTHING:
@@ -94,10 +118,10 @@ JSON OUTPUT (escape \\n, \\"):
 {"translatedTitle":"...","translatedDescription":"...","translatedContent":"..."}`
 
     const message = await anthropic.messages.create({
-      model: 'claude-3-5-sonnet-20240620', // Using stable Sonnet version
-      max_tokens: 4096,
+      model: 'claude-sonnet-4-6',
+      max_tokens: 8192,
       temperature: 0, // Zero temperature for maximum consistency
-      system: `You MUST preserve ALL markdown syntax EXACTLY. DO NOT remove images, code blocks, or any formatting. Only translate text content to ${languageStyle}. Keep ALL technical terms in English.`,
+      system: `You MUST preserve ALL markdown syntax EXACTLY. DO NOT remove images, code blocks, or any formatting. Only translate text content to ${languageStyle}. Keep ALL technical terms in English. CRITICAL: Any token matching the pattern [[BLOCK_N]] (where N is a number) is a placeholder — leave it EXACTLY as-is, do not translate, modify, or remove it.`,
       messages: [{
         role: 'user',
         content: prompt
@@ -105,15 +129,15 @@ JSON OUTPUT (escape \\n, \\"):
     })
 
     const responseText = message.content[0].type === 'text' ? message.content[0].text : ''
-    
+
     // Clean and parse the response
     let cleanedResponse = responseText.trim()
-    
+
     // Remove any prefixes like "JSON OUTPUT:"
     if (cleanedResponse.startsWith('JSON OUTPUT:')) {
       cleanedResponse = cleanedResponse.replace(/^JSON OUTPUT:\s*/, '')
     }
-    
+
     // Remove any markdown code blocks if present
     if (cleanedResponse.startsWith('```json')) {
       cleanedResponse = cleanedResponse.replace(/^```json\s*/, '').replace(/\s*```$/, '')
@@ -126,42 +150,42 @@ JSON OUTPUT (escape \\n, \\"):
       // First, try to find the JSON object boundaries
       const jsonStart = jsonStr.indexOf('{')
       if (jsonStart === -1) return jsonStr
-      
+
       let fixed = jsonStr.substring(jsonStart)
-      
+
       // First pass: fix escaped single quotes (\') which are invalid in JSON
       // Single quotes don't need escaping in JSON strings
       fixed = fixed.replace(/\\'/g, "'")
-      
+
       // More robust approach: find string values and escape control characters
       // This handles multiline strings properly
       let result = ''
       let inString = false
       let escapeNext = false
-      
+
       for (let i = 0; i < fixed.length; i++) {
         const char = fixed[i]
         const prevChar = i > 0 ? fixed[i - 1] : ''
-        
+
         if (escapeNext) {
           // If we're escaping, add the character as-is
           result += char
           escapeNext = false
           continue
         }
-        
+
         if (char === '\\') {
           result += char
           escapeNext = true
           continue
         }
-        
+
         if (char === '"' && prevChar !== '\\') {
           inString = !inString
           result += char
           continue
         }
-        
+
         if (inString) {
           // Escape control characters inside strings
           if (char === '\n') {
@@ -181,7 +205,7 @@ JSON OUTPUT (escape \\n, \\"):
           result += char
         }
       }
-      
+
       return result
     }
 
@@ -200,7 +224,7 @@ JSON OUTPUT (escape \\n, \\"):
       translationData = JSON.parse(cleanedResponse)
     } catch (parseError: any) {
       console.log('Initial parse failed, attempting to fix JSON...')
-      
+
       try {
         // Try fixing the JSON
         const fixedJson = fixJsonString(cleanedResponse)
@@ -210,18 +234,18 @@ JSON OUTPUT (escape \\n, \\"):
         console.error('Failed to parse translation response after fixes:', secondError)
         console.error('Error position:', secondError.message?.match(/position (\d+)/)?.[1])
         console.error('Raw response (first 1000 chars):', responseText.substring(0, 1000))
-        
+
         // Try to extract JSON manually using a more robust approach
         try {
           // Find the content between quotes for each field, handling multiline content
           const titleRegex = /"translatedTitle"\s*:\s*"((?:[^"\\]|\\.|\\n)*)"/
           const descRegex = /"translatedDescription"\s*:\s*"((?:[^"\\]|\\.|\\n)*)"/
           const contentRegex = /"translatedContent"\s*:\s*"((?:[^"\\]|\\.|\\n)*)"/
-          
+
           // Alternative: find content between quotes, including newlines until closing quote
           const titleMatch = cleanedResponse.match(/"translatedTitle"\s*:\s*"([^"]*(?:\\.[^"]*)*)"/)
           const descMatch = cleanedResponse.match(/"translatedDescription"\s*:\s*"([^"]*(?:\\.[^"]*)*)"/)
-          
+
           // For content, we need to handle multiline - manually parse the string value
           const contentStart = cleanedResponse.indexOf('"translatedContent"')
           let contentValue = ''
@@ -261,14 +285,14 @@ JSON OUTPUT (escape \\n, \\"):
               }
             }
           }
-          
+
           translationData = {
             translatedTitle: titleMatch ? titleMatch[1].replace(/\\n/g, '\n').replace(/\\"/g, '"').replace(/\\\\/g, '\\') : title || '',
             translatedDescription: descMatch ? descMatch[1].replace(/\\n/g, '\n').replace(/\\"/g, '"').replace(/\\\\/g, '\\') : description || '',
             translatedContent: contentValue || cleanedResponse.replace(/^[\s\S]*?"translatedContent"\s*:\s*"/, '').replace(/"\s*\}[\s\S]*$/, ''),
             language: targetLanguage
           }
-          
+
           console.log('Extracted translation data using regex fallback')
         } catch (extractError) {
           console.error('All parsing methods failed, using raw response')
@@ -309,25 +333,41 @@ JSON OUTPUT (escape \\n, \\"):
     console.log('📝 Sample of translated content (first 500 chars):')
     console.log(translationData.translatedContent.substring(0, 500))
 
-    return {
-      translatedContent: translationData.translatedContent || content,
+    // Apply Shiki syntax highlighting to code blocks in the translated content
+    // so the client receives pre-highlighted HTML — matching the rest of the site
+    let finalContent = translationData.translatedContent || content
+    try {
+      finalContent = await highlightCodeBlocks(finalContent)
+      console.log('[translate] Code blocks highlighted with Shiki')
+    } catch (highlightErr) {
+      console.warn('[translate] Shiki highlighting failed, using plain code blocks:', highlightErr)
+    }
+
+    const responsePayload: TranslationResponse = {
+      translatedContent: finalContent,
       translatedTitle: translationData.translatedTitle || title || '',
       translatedDescription: translationData.translatedDescription || description || '',
       language: targetLanguage
     }
+
+    // Store in server-side cache so all future users get it instantly
+    await storage.setItem(cacheKey, responsePayload)
+    console.log(`[translate] Cached result for key ${cacheKey.slice(-8)} (${targetLanguage})`)
+
+    return responsePayload
 
   } catch (error: any) {
     console.error('❌ Translation error:', error)
     console.error('Error message:', error.message)
     console.error('Error name:', error.name)
     console.error('Error stack:', error.stack)
-    
+
     // Log Anthropic-specific errors
     if (error.status) {
       console.error('Anthropic API Status:', error.status)
       console.error('Anthropic API Error:', error.error)
     }
-    
+
     if (error.statusCode) {
       throw error
     }

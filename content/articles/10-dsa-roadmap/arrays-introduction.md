@@ -1,5 +1,5 @@
 ---
-title: Introduction
+title: Array - Introduction
 description: Master Introduction in the Arrays module. Comprehensive guide and
   algorithmic problem solving.
 datePublished: 2026-02-26

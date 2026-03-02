@@ -6,7 +6,7 @@ description: Master Data Structures and Algorithms with a comprehensive roadmap
 tutor: 1
 time: 50hr 0 mins
 video: false
-published: false
+published: true
 datePublished: 2026-02-26
 topics:
   - data-structures
