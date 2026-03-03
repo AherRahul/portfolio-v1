@@ -26,6 +26,9 @@ export const useApiEndpoints = () => {
           case '/api/system-design/evaluate-step':
             resolved = '/.netlify/functions/sd-evaluate-step'
             break
+          case '/api/translate':
+            resolved = '/.netlify/functions/translate'
+            break
         }
         // console.log(`[useApiEndpoints] Resolving ${endpoint} -> ${resolved} (Netlify detected)`)
         return resolved

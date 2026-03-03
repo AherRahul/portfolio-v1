@@ -3,18 +3,6 @@ import { ref, onMounted, onBeforeUnmount, watch, computed } from 'vue'
 
 const props = defineProps<{ docClass?: string; prepend?: string; contentSelector?: string }>()
 
-// Google TTS integration
-const { 
-  isGoogleTTSAvailable, 
-  googleVoices, 
-  checkGoogleTTSAvailability, 
-  synthesizeWithGoogle, 
-  getRecommendedVoice 
-} = useTTS()
-
-// Global TTS manager for cleanup
-const { registerReader } = useTTSManager()
-
 const contentRoot = ref<HTMLElement | null>(null)
 const isSupported = ref<boolean>(false)
 const isPlaying = ref<boolean>(false)
@@ -25,10 +13,6 @@ const selectedRate = ref<string>('1')
 const voices = ref<SpeechSynthesisVoice[]>([])
 const selectedVoice = ref<string>('')
 const isContentReady = ref<boolean>(false)
-const isOpen = ref<boolean>(false)
-const useGoogleTTS = ref<boolean>(false)
-const googleVoiceName = ref<string>('hi-IN-Wavenet-A')
-const isLoadingAudio = ref<boolean>(false)
 
 // Enhanced features
 const currentSentence = ref<number>(0)
@@ -48,19 +32,15 @@ let isInitializing = false
 let mutationObserver: MutationObserver | null = null
 let refreshTimer: number | null = null
 let utterance: SpeechSynthesisUtterance | null = null
-let currentAudio: HTMLAudioElement | null = null
 let isCleaningUp = false
-let unregisterFromManager: (() => void) | null = null
 
 // Event handlers for cleanup (defined at module level for proper cleanup)
 const handlePageUnload = (event: Event) => {
-  // console.log('Page unload detected, stopping TTS playback')
   stopAllPlayback()
 }
 
 const handleVisibilityChange = () => {
   if (document.hidden && isPlaying.value) {
-    // console.log('Page hidden, stopping TTS playback')
     stopAllPlayback()
   }
 }
@@ -77,16 +57,13 @@ const wordCount = computed(() => {
 })
 
 const averageWPM = computed(() => {
-  // Average speaking rate varies by speed
   const baseWPM = 150
   return Math.round(baseWPM * rate.value)
 })
 
 function collectTextFromContent(el: HTMLElement | null): string {
   if (!el) return ''
-  // Prefer readable text content; ignore nav/control elements
   const clone = el.cloneNode(true) as HTMLElement
-  // Remove code blocks to avoid noisy reading
   clone.querySelectorAll('pre, code, nav, aside, figure, figcaption, .sr-only').forEach(n => n.remove())
   const text = clone.innerText || ''
   return text.replace(/\s+\n/g, '\n').replace(/\n{2,}/g, '\n\n').trim()
@@ -94,12 +71,11 @@ function collectTextFromContent(el: HTMLElement | null): string {
 
 function splitIntoSentences(text: string): string[] {
   if (!text) return []
-  // Improved sentence splitting with better punctuation handling
   const parts = text
     .split(/(?<=[.!?])\s+(?=[A-Z])|(?<=\n\n)/)
     .map(s => s.trim())
     .filter(Boolean)
-    .filter(s => s.length > 10) // Filter out very short fragments
+    .filter(s => s.length > 10)
   return parts
 }
 
@@ -131,27 +107,22 @@ function loadVoices() {
   try {
     voices.value = window.speechSynthesis.getVoices()
     if (!selectedVoice.value && voices.value.length) {
-      // Enhanced voice selection for mobile compatibility
       const byName = (predicate: (name: string) => boolean) => voices.value.find(v => predicate(v.name))
       const byLang = (regex: RegExp) => voices.value.find(v => regex.test(v.lang))
       const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent)
       const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
 
-      // For iOS, prefer system voices that work well
       if (isIOS) {
-        // iOS Hindi voices (system built-in)
-        const iosHindi = byName(name => /lekha|kanya/i.test(name)) // iOS Hindi voice names
+        const iosHindi = byName(name => /lekha|kanya/i.test(name))
           || byLang(/^hi[-_]IN$/i)
           || byName(name => /(hindi|हिन्दी)/i.test(name))
         
-        // iOS English voices (high quality)
         const iosEnglish = byName(name => /samantha|alex|victoria|karen|daniel/i.test(name))
           || byLang(/^en[-_]US$/i)
           || byLang(/^en[-_]GB$/i)
         
         selectedVoice.value = (iosHindi || iosEnglish || voices.value[0])?.name || ''
       }
-      // For Android, prefer Google voices
       else if (isMobile && /Android/i.test(navigator.userAgent)) {
         const androidHindi = byName(name => /google/i.test(name) && /(hindi|हिन्दी)/i.test(name))
           || byLang(/^hi[-_]IN$/i)
@@ -163,7 +134,6 @@ function loadVoices() {
         
         selectedVoice.value = (androidHindi || androidEnglish || voices.value[0])?.name || ''
       }
-      // Desktop - original logic with Google preference
       else {
         const googleHindi = byName(name => /google/i.test(name) && /(हिन्दी|hindi)/i.test(name))
           || byLang(/^hi[-_]IN$/i)
@@ -175,9 +145,6 @@ function loadVoices() {
         selectedVoice.value = (anyHindi || enVoice || voices.value[0])?.name || ''
       }
 
-      // console.log('Voice selected:', selectedVoice.value, 'Platform:', isIOS ? 'iOS' : isMobile ? 'Mobile' : 'Desktop')
-      
-      // Debug: Log available voices on mobile for troubleshooting
       if (isMobile) {
         console.log('Available voices on mobile:', voices.value.map(v => ({
           name: v.name,
@@ -223,27 +190,13 @@ function stopAllPlayback() {
   isCleaningUp = true
   
   try {
-    // console.log('🛑 ContentReader: Stopping all playback')
-    
     // Stop browser TTS aggressively
     if (typeof window !== 'undefined' && window.speechSynthesis) {
       window.speechSynthesis.cancel()
-      // Force stop by setting rate to 0 and canceling again
       if (window.speechSynthesis.speaking) {
         window.speechSynthesis.pause()
         window.speechSynthesis.cancel()
       }
-    }
-    
-    // Stop Google TTS audio
-    if (currentAudio) {
-      currentAudio.pause()
-      currentAudio.currentTime = 0
-      currentAudio.src = ''
-      currentAudio.onended = null
-      currentAudio.onerror = null
-      currentAudio.onloadedmetadata = null
-      currentAudio = null
     }
     
     // Clear utterance reference and its events
@@ -257,17 +210,14 @@ function stopAllPlayback() {
     // Reset all state immediately
     isPlaying.value = false
     isPaused.value = false
-    isLoadingAudio.value = false
     progress.value = 0
     currentSentence.value = 0
     currentIndex = 0
     
     // Clear highlights
     clearHighlights()
-    
-    // console.log('✅ ContentReader: All TTS playback stopped and cleaned up')
   } catch (error) {
-    console.warn('❌ Error during TTS cleanup:', error)
+    console.warn('Error during TTS cleanup:', error)
   } finally {
     isCleaningUp = false
   }
@@ -280,20 +230,16 @@ function prepareTextForHighlighting() {
     const target = getTargetElement()
     if (!target) return
     
-    // Clear any existing highlights
     clearHighlights()
     
-    // Build a complete text mapping that matches our speech synthesis input
     const completeText = sentences.join(' ')
     let globalCharPosition = 0
     
-    // Wrap each word in a span for individual highlighting
     const walker = document.createTreeWalker(
       target,
       NodeFilter.SHOW_TEXT,
       {
         acceptNode: (node) => {
-          // Skip script, style, and already processed nodes
           const parent = node.parentElement
           if (!parent) return NodeFilter.FILTER_REJECT
           if (['SCRIPT', 'STYLE', 'CODE', 'PRE'].includes(parent.tagName)) return NodeFilter.FILTER_REJECT
@@ -326,7 +272,6 @@ function prepareTextForHighlighting() {
             span.style.transition = 'all 0.2s ease'
             fragment.appendChild(span)
             
-            // Map this word to its position in the complete speech text
             const wordInCompleteText = completeText.toLowerCase().indexOf(word.toLowerCase(), globalCharPosition)
             if (wordInCompleteText !== -1) {
               wordMap.value.push({
@@ -347,7 +292,6 @@ function prepareTextForHighlighting() {
       }
     })
     
-    // Sort word map by global index to ensure proper order
     wordMap.value.sort((a, b) => a.globalIndex - b.globalIndex)
   } catch (e) {
     console.warn('Text preparation failed:', e)
@@ -358,18 +302,14 @@ function highlightWordByWord(sentenceIndex: number, charIndexInSentence: number)
   if (!isHighlighting.value || !wordMap.value.length) return
   
   try {
-    // Calculate the global character position across all sentences
     let globalCharPosition = 0
     
-    // Add character counts from previous sentences
     for (let i = 0; i < sentenceIndex; i++) {
-      globalCharPosition += sentences[i].length + 1 // +1 for space between sentences
+      globalCharPosition += sentences[i].length + 1
     }
     
-    // Add current position within the current sentence
     globalCharPosition += charIndexInSentence
     
-    // Find the word that corresponds to this global position
     let targetWordIndex = -1
     for (let i = 0; i < wordMap.value.length; i++) {
       const wordData = wordMap.value[i]
@@ -382,7 +322,6 @@ function highlightWordByWord(sentenceIndex: number, charIndexInSentence: number)
     }
     
     if (targetWordIndex >= 0) {
-      // Clear all highlights first
       wordMap.value.forEach((wordData, index) => {
         const el = wordData.element
         el.classList.remove('reading-word-highlight', 'reading-word-read')
@@ -390,17 +329,14 @@ function highlightWordByWord(sentenceIndex: number, charIndexInSentence: number)
         el.style.color = ''
         
         if (index < targetWordIndex) {
-          // Mark as read
           el.classList.add('reading-word-read')
-          el.style.backgroundColor = 'rgba(34, 197, 94, 0.1)' // green tint
-          el.style.color = 'rgb(134, 239, 172)' // light green text
+          el.style.backgroundColor = 'rgba(34, 197, 94, 0.1)'
+          el.style.color = 'rgb(134, 239, 172)'
         } else if (index === targetWordIndex) {
-          // Current word
           el.classList.add('reading-word-highlight')
-          el.style.backgroundColor = 'rgba(239, 68, 68, 0.3)' // red highlight
-          el.style.color = 'rgb(254, 226, 226)' // light red text
+          el.style.backgroundColor = 'rgba(239, 68, 68, 0.3)'
+          el.style.color = 'rgb(254, 226, 226)'
           
-          // Auto-scroll to current word
           if (autoScroll.value) {
             el.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' })
           }
@@ -414,136 +350,11 @@ function highlightWordByWord(sentenceIndex: number, charIndexInSentence: number)
   }
 }
 
-async function buildAndSpeakWithGoogle(fromIndex = 0) {
-  if (!useGoogleTTS.value || !isGoogleTTSAvailable.value) {
-    return buildAndSpeak(fromIndex)
-  }
-
-  currentIndex = fromIndex
-  currentSentence.value = fromIndex
-  isLoadingAudio.value = true
-  
-  if (!sentences.length) {
-    isPlaying.value = false
-    isPaused.value = false
-    isLoadingAudio.value = false
-    return
-  }
-
-  const playNextSentence = async () => {
-    if (currentIndex >= sentences.length) {
-      isPlaying.value = false
-      isPaused.value = false
-      currentSentence.value = 0
-      progress.value = 100
-      isLoadingAudio.value = false
-      clearHighlights()
-      return
-    }
-    
-    currentSentence.value = currentIndex
-    progress.value = (currentIndex / sentences.length) * 100
-    updateTimeEstimates()
-    
-    try {
-      isLoadingAudio.value = true
-      
-      // Get recommended voice based on content
-      const recommendedVoice = await getRecommendedVoice(sentences[currentIndex])
-      const voiceToUse = googleVoiceName.value || recommendedVoice
-      
-      // Synthesize audio with Google TTS
-      const audioUrl = await synthesizeWithGoogle(
-        sentences[currentIndex], 
-        voiceToUse, 
-        parseFloat(selectedRate.value)
-      )
-      
-      isLoadingAudio.value = false
-      
-      if (audioUrl) {
-        // Create audio element for playback with word highlighting simulation
-        currentAudio = new Audio(audioUrl)
-        
-        // Simulate word-by-word highlighting during Google TTS playback
-        const sentence = sentences[currentIndex]
-        const words = sentence.split(/\s+/)
-        const avgWordDuration = (currentAudio.duration || 3) / words.length // Estimate word timing
-        
-        currentAudio.onloadedmetadata = () => {
-          const actualDuration = currentAudio!.duration
-          const wordDuration = actualDuration / words.length
-          
-          // Start word highlighting simulation
-          let wordIndex = 0
-          const highlightInterval = setInterval(() => {
-            if (!isPlaying.value || !currentAudio || currentAudio.paused) {
-              clearInterval(highlightInterval)
-              return
-            }
-            
-            if (wordIndex < words.length) {
-              // Simulate word boundary event for highlighting
-              const charIndex = words.slice(0, wordIndex).join(' ').length + (wordIndex > 0 ? 1 : 0)
-              highlightWordByWord(currentIndex, charIndex)
-              wordIndex++
-            } else {
-              clearInterval(highlightInterval)
-            }
-          }, wordDuration * 1000)
-        }
-        
-        currentAudio.onended = () => {
-          currentIndex += 1
-          currentAudio = null
-          playNextSentence()
-        }
-        
-        currentAudio.onerror = (error) => {
-          console.error('Google TTS audio playback error:', error)
-          currentAudio = null
-          // Fallback to browser TTS
-          useGoogleTTS.value = false
-          buildAndSpeak(currentIndex)
-        }
-        
-        // Play the audio
-        try {
-          await currentAudio.play()
-        } catch (error) {
-          console.error('Failed to play Google TTS audio:', error)
-          currentAudio = null
-          // Fallback to browser TTS
-          useGoogleTTS.value = false
-          buildAndSpeak(currentIndex)
-        }
-      } else {
-        // Fallback to browser TTS
-        console.warn('Google TTS failed, falling back to browser TTS')
-        useGoogleTTS.value = false
-        buildAndSpeak(currentIndex)
-      }
-    } catch (error) {
-      console.error('Google TTS playback error:', error)
-      isLoadingAudio.value = false
-      
-      // Fallback to browser TTS
-      useGoogleTTS.value = false
-      buildAndSpeak(currentIndex)
-    }
-  }
-
-  isPlaying.value = true
-  isPaused.value = false
-  await playNextSentence()
-}
-
 function buildAndSpeak(fromIndex = 0) {
   if (typeof window === 'undefined') return
   const synth = window.speechSynthesis
   if (!synth) return
 
-  // Cancel any current speech before starting fresh
   synth.cancel()
 
   currentIndex = fromIndex
@@ -571,7 +382,6 @@ function buildAndSpeak(fromIndex = 0) {
     
     utterance = new SpeechSynthesisUtterance(sentences[currentIndex])
     
-    // Enhanced mobile configuration
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent)
     const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
     
@@ -583,27 +393,20 @@ function buildAndSpeak(fromIndex = 0) {
     if (voice) {
       utterance.voice = voice
       
-      // iOS-specific optimizations
       if (isIOS) {
-        // iOS works better with slightly slower rates
         utterance.rate = Math.min(rate.value, 1.5)
-        // Ensure proper language setting for iOS
         utterance.lang = voice.lang || (/(hindi|हिन्दी)/i.test(selectedVoice.value) ? 'hi-IN' : 'en-US')
       }
-      // Android optimizations
       else if (isMobile && /Android/i.test(navigator.userAgent)) {
-        // Android handles higher rates better
         utterance.rate = rate.value
         utterance.lang = voice.lang || 'en-US'
       }
     } else if (isMobile) {
-      // Fallback language setting for mobile when no voice is found
       utterance.lang = 'en-US'
     }
     
     utterance.onend = () => {
       currentIndex += 1
-      // Small delay for mobile stability
       if (isMobile) {
         setTimeout(() => speakNext(), 50)
       } else {
@@ -613,32 +416,26 @@ function buildAndSpeak(fromIndex = 0) {
     utterance.onerror = (event) => {
       console.error('Speech synthesis error:', event)
       
-      // On mobile, try to recover by reloading voices
       if (isMobile) {
         setTimeout(() => {
           loadVoices()
-          // Skip problematic segment and continue
           currentIndex += 1
           speakNext()
         }, 1000)
       } else {
-        // Skip problematic segment
         currentIndex += 1
         speakNext()
       }
     }
     utterance.onboundary = (event) => {
-      // Real-time word highlighting and progress
       if (event.name === 'word') {
         const wordProgress = (event.charIndex / sentences[currentIndex].length) * (1 / sentences.length) * 100
         progress.value = ((currentIndex / sentences.length) * 100) + wordProgress
         
-        // Highlight current word being spoken with proper sentence tracking
         highlightWordByWord(currentIndex, event.charIndex)
       }
     }
     
-    // iOS Safari requires user interaction to start speech
     if (isIOS && synth.paused) {
       synth.resume()
     }
@@ -655,7 +452,6 @@ function playPause() {
   if (!isSupported.value) return
   const synth = window.speechSynthesis
   
-  // Ensure we have content before starting
   if (!sentences.length) {
     refreshContentSentences()
   }
@@ -664,11 +460,7 @@ function playPause() {
       refreshContentSentences()
       if (!isPlaying.value && sentences.length) {
         prepareTextForHighlighting()
-        if (useGoogleTTS.value && isGoogleTTSAvailable.value) {
-          buildAndSpeakWithGoogle(0)
-        } else {
-          buildAndSpeak(0)
-        }
+        buildAndSpeak(0)
       }
     }, 100)
     return
@@ -686,15 +478,8 @@ function playPause() {
     return
   }
   
-  // Prepare text for word-by-word highlighting
   prepareTextForHighlighting()
-  
-  // Start reading from current position or beginning
-  if (useGoogleTTS.value && isGoogleTTSAvailable.value) {
-    buildAndSpeakWithGoogle(currentSentence.value)
-  } else {
-    buildAndSpeak(currentSentence.value)
-  }
+  buildAndSpeak(currentSentence.value)
 }
 
 function resetReading() {
@@ -744,9 +529,6 @@ function onVoiceChange(e: Event) {
 
 // Keyboard shortcuts
 function onKeydown(e: KeyboardEvent) {
-  if (!isOpen.value) return
-  
-  // Only handle if reader is focused or no other input is focused
   const activeElement = document.activeElement
   if (activeElement && ['INPUT', 'TEXTAREA', 'SELECT'].includes(activeElement.tagName)) return
   
@@ -771,27 +553,12 @@ function onKeydown(e: KeyboardEvent) {
 }
 
 onMounted(async () => {
-  // Immediately stop any existing TTS when this component mounts
-  const { stopAllReaders } = useTTSManager()
-  stopAllReaders()
-  
   isSupported.value = typeof window !== 'undefined' && 'speechSynthesis' in window
   if (!isSupported.value) return
 
-  // Load voices
   loadVoices()
   try { window.speechSynthesis.onvoiceschanged = loadVoices } catch {}
 
-  // Check Google TTS availability
-  const googleAvailable = await checkGoogleTTSAvailability()
-  if (googleAvailable) {
-    useGoogleTTS.value = true
-    // console.log('Google Cloud TTS is available and enabled')
-  } else {
-    // console.log('Using browser TTS as fallback')
-  }
-
-  // Initialize content
   isInitializing = true
   setTimeout(() => {
     refreshContentSentences()
@@ -799,25 +566,17 @@ onMounted(async () => {
   }, 0)
   selectedRate.value = String(rate.value)
 
-  // Register with global TTS manager for cleanup
-  unregisterFromManager = registerReader(stopAllPlayback)
-  
-  // Keyboard shortcuts
   window.addEventListener('keydown', onKeydown)
   
-  // Page lifecycle events for cleanup - Multiple event listeners for different scenarios
   window.addEventListener('beforeunload', handlePageUnload, { capture: true })
   window.addEventListener('unload', handlePageUnload, { capture: true })
   window.addEventListener('pagehide', handlePageUnload, { capture: true })
-  // On mobile, switching apps or locking screen often triggers blur/visibilitychange
   window.addEventListener('blur', handlePageUnload, { capture: true })
   document.addEventListener('visibilitychange', handleVisibilityChange)
   
-  // Additional cleanup for navigation
   window.addEventListener('popstate', handlePageUnload)
   window.addEventListener('hashchange', handlePageUnload)
 
-  // Observe content changes
   try {
     mutationObserver = new MutationObserver(() => {
       if (refreshTimer) window.clearTimeout(refreshTimer)
@@ -837,16 +596,8 @@ onMounted(async () => {
 })
 
 onBeforeUnmount(() => {
-  // Stop all playback
   stopAllPlayback()
   
-  // Unregister from global manager
-  if (unregisterFromManager) {
-    unregisterFromManager()
-    unregisterFromManager = null
-  }
-  
-  // Remove event listeners
   try { window.speechSynthesis.onvoiceschanged = null as any } catch {}
   try { window.removeEventListener('keydown', onKeydown) } catch {}
   try { window.removeEventListener('beforeunload', handlePageUnload) } catch {}
@@ -857,13 +608,11 @@ onBeforeUnmount(() => {
   try { window.removeEventListener('hashchange', handlePageUnload) } catch {}
   try { document.removeEventListener('visibilitychange', handleVisibilityChange) } catch {}
   
-  // Cleanup observers and timers
   try { mutationObserver?.disconnect() } catch {}
   try { if (refreshTimer) window.clearTimeout(refreshTimer) } catch {}
 })
 
 watch(() => contentRoot.value, (el) => {
-  // Stop any ongoing playback when content changes
   if (isPlaying.value) {
     stopAllPlayback()
   }
@@ -872,20 +621,12 @@ watch(() => contentRoot.value, (el) => {
   refreshContentSentences()
 }, { flush: 'post' })
 
-// Watch for route changes to stop playback using Nuxt router
 if (process.client) {
-  const router = useRouter()
   const route = useRoute()
   
-  // Watch route changes
   watch(() => route.path, (newPath, oldPath) => {
     if (oldPath && newPath !== oldPath) {
-      // console.log(`🔄 Route changed from ${oldPath} to ${newPath}, stopping TTS`)
       stopAllPlayback()
-      
-      // Also trigger global cleanup
-      const { stopAllReaders } = useTTSManager()
-      stopAllReaders()
     }
   }, { immediate: false })
 }
@@ -904,272 +645,3 @@ if (process.client) {
   </div>
   
 </template>
-
-<!-- 
-
- Compact Trigger Bar
-    <div class="flex items-center justify-between p-3 sm:p-2 mb-2 border border-red-500/30 bg-zinc-900/70 rounded-lg sm:rounded-sm">
-      <div class="flex items-center gap-2 min-w-0 flex-1">
-        <Icon name="heroicons:speaker-wave" class="text-red-400 text-base sm:text-sm flex-shrink-0" />
-        <span class="text-sm sm:text-xs text-zinc-300 font-medium">Content Reader</span>
-        <span class="text-xs sm:text-[10px] text-zinc-500 truncate">
-          {{ isLoadingAudio ? 'Generating audio...' : isPlaying ? (isPaused ? 'Paused' : `Reading ${progressPercentage}%`) : (isContentReady ? `${wordCount} words • ${estimatedTime}` : 'Loading') }}
-          {{ useGoogleTTS && isGoogleTTSAvailable ? ' • Google TTS' : ' • Browser TTS' }}
-        </span>
-      </div>
-      <button
-        class="px-3 py-2 sm:px-2 sm:py-1 bg-gradient-to-r from-red-500 to-pink-600 text-white text-sm sm:text-xs disabled:opacity-50 rounded-md sm:rounded-sm flex-shrink-0 min-w-[60px] sm:min-w-0"
-        :disabled="!isSupported"
-        @click="isOpen = !isOpen"
-        :aria-expanded="isOpen"
-        aria-controls="reader-controls"
-      >
-        <Icon :name="isOpen ? 'heroicons:chevron-up' : 'heroicons:chevron-down'" class="mr-1" />
-        <span class="sm:hidden">{{ isOpen ? 'Hide' : 'Read' }}</span>
-        <span class="hidden sm:inline">{{ isOpen ? 'Hide' : 'Read' }}</span>
-      </button>
-    </div>
-
-    Enhanced Reader Controls
-    <Transition name="slide-y">
-    <div v-show="isOpen" id="reader-controls" class="border border-zinc-800 bg-zinc-900 rounded-lg sm:rounded-sm mb-2">
-      Progress Bar
-      <div v-if="isContentReady" class="px-3 sm:px-2 py-2 sm:py-1 border-b border-zinc-800">
-        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-0 text-xs text-zinc-400 mb-2 sm:mb-1">
-          <span class="text-sm sm:text-xs font-medium">{{ currentSentence + 1 }} / {{ sentences.length }} sentences</span>
-          <span class="text-xs sm:text-xs">{{ remainingTime }} remaining</span>
-        </div>
-        <div class="w-full bg-zinc-800 h-2 sm:h-1 rounded-full overflow-hidden">
-          <div 
-            class="h-full bg-gradient-to-r from-red-500 to-pink-600 transition-all duration-300"
-            :style="{ width: `${progress}%` }"
-          ></div>
-        </div>
-      </div>
-
-      Main Controls
-      <div class="flex flex-col gap-3 p-3 sm:p-2">
-        Mobile: Playback Controls (Full Width)
-        <div class="flex sm:hidden items-center gap-2 w-full">
-          <button
-            class="px-3 py-3 bg-zinc-700 text-white text-sm border border-zinc-600 disabled:opacity-50 rounded-lg min-w-[48px]"
-            :disabled="!isSupported || currentSentence <= 0"
-            @click="skipBackward"
-            aria-label="Skip backward 5 sentences"
-          >
-            <Icon name="heroicons:backward" class="mx-auto" />
-          </button>
-          <button
-            class="flex-1 px-4 py-3 bg-gradient-to-r from-red-500 to-pink-600 text-white text-sm disabled:opacity-50 rounded-lg font-medium"
-            :disabled="!isSupported"
-            @click="playPause"
-            aria-label="Play or pause content reading"
-          >
-            <div class="flex items-center justify-center gap-2">
-              <Icon :name="isPlaying && !isPaused ? 'heroicons:pause' : 'heroicons:play'" />
-              <span>{{ isPlaying && !isPaused ? 'Pause' : 'Play' }}</span>
-            </div>
-          </button>
-          <button
-            class="px-3 py-3 bg-zinc-700 text-white text-sm border border-zinc-600 disabled:opacity-50 rounded-lg min-w-[48px]"
-            :disabled="!isSupported || currentSentence >= sentences.length - 1"
-            @click="skipForward"
-            aria-label="Skip forward 5 sentences"
-          >
-            <Icon name="heroicons:forward" class="mx-auto" />
-          </button>
-          <button
-            class="px-3 py-3 bg-zinc-700 text-white text-sm border border-zinc-600 disabled:opacity-50 rounded-lg min-w-[48px]"
-            :disabled="!isSupported"
-            @click="resetReading"
-            aria-label="Reset to beginning"
-          >
-            <Icon name="heroicons:arrow-path" class="mx-auto" />
-          </button>
-        </div>
-
-        Desktop: Compact Playback Controls 
-        <div class="hidden sm:flex items-center gap-1">
-          <button
-            class="px-2 py-1 bg-zinc-700 text-white text-xs border border-zinc-600 disabled:opacity-50"
-            :disabled="!isSupported || currentSentence <= 0"
-            @click="skipBackward"
-            aria-label="Skip backward 5 sentences"
-            title="Skip backward (←)"
-          >
-            <Icon name="heroicons:backward" />
-          </button>
-          <button
-            class="px-3 py-1 bg-gradient-to-r from-red-500 to-pink-600 text-white text-xs disabled:opacity-50"
-            :disabled="!isSupported"
-            @click="playPause"
-            aria-label="Play or pause content reading"
-            title="Play/Pause (Space)"
-          >
-            <Icon :name="isPlaying && !isPaused ? 'heroicons:pause' : 'heroicons:play'" class="mr-1" />
-            <span>{{ isPlaying && !isPaused ? 'Pause' : 'Play' }}</span>
-          </button>
-          <button
-            class="px-2 py-1 bg-zinc-700 text-white text-xs border border-zinc-600 disabled:opacity-50"
-            :disabled="!isSupported || currentSentence >= sentences.length - 1"
-            @click="skipForward"
-            aria-label="Skip forward 5 sentences"
-            title="Skip forward (→)"
-          >
-            <Icon name="heroicons:forward" />
-          </button>
-          <button
-            class="px-2 py-1 bg-zinc-700 text-white text-xs border border-zinc-600 disabled:opacity-50"
-            :disabled="!isSupported"
-            @click="resetReading"
-            aria-label="Reset to beginning"
-            title="Reset (Esc)"
-          >
-            <Icon name="heroicons:arrow-path" />
-          </button>
-        </div>
-
-        Mobile: Controls Row
-        <div class="flex sm:hidden flex-col gap-3">
-          Speed & Voice Row
-          <div class="grid grid-cols-1 gap-3">
-            <div class="flex items-center gap-3">
-              <label class="text-xs font-medium text-zinc-400 min-w-[50px]">Speed</label>
-              <select
-                class="bg-zinc-800 border border-zinc-700 text-zinc-100 text-sm px-3 py-2 rounded-lg flex-1"
-                :value="selectedRate"
-                @change="onRateSelect"
-                aria-label="Reading speed"
-              >
-                <option v-for="r in rateOptions" :key="r" :value="r">
-                  {{ r.toFixed(2).replace(/0+$/,'').replace(/\.$/,'') }}× • {{ getRateLabel(r) }}
-                </option>
-              </select>
-            </div>
-            
-            <div v-if="voices.length" class="flex items-center gap-3">
-              <label class="text-xs font-medium text-zinc-400 min-w-[50px]">Voice</label>
-              <select
-                class="bg-zinc-800 border border-zinc-700 text-zinc-100 text-sm px-3 py-2 rounded-lg flex-1 min-w-0"
-                :value="selectedVoice"
-                @change="onVoiceChange"
-                aria-label="Select reading voice"
-              >
-                <option v-for="v in voices" :key="v.name" :value="v.name">
-                  {{ v.name.split(' ')[0] }}{{ v.localService ? ' 📱' : ' ☁️' }}
-                </option>
-              </select>
-            </div>
-          </div>
-
-          Settings Row
-          <div class="flex flex-col gap-3">
-            <div class="flex items-center justify-center gap-6">
-              <label class="flex items-center gap-2 text-sm text-zinc-400">
-                <input
-                  type="checkbox"
-                  v-model="isHighlighting"
-                  class="w-4 h-4 text-red-500 bg-zinc-900 border-zinc-700 rounded focus:ring-red-500"
-                />
-                <span>Highlight Words</span>
-              </label>
-              <label class="flex items-center gap-2 text-sm text-zinc-400">
-                <input
-                  type="checkbox"
-                  v-model="autoScroll"
-                  class="w-4 h-4 text-red-500 bg-zinc-900 border-zinc-700 rounded focus:ring-red-500"
-                />
-                <span>Auto Scroll</span>
-              </label>
-            </div>
-            
-            Google TTS Toggle
-            <div v-if="isGoogleTTSAvailable" class="flex items-center justify-center">
-              <label class="flex items-center gap-2 text-sm text-zinc-400">
-                <input
-                  type="checkbox"
-                  v-model="useGoogleTTS"
-                  class="w-4 h-4 text-red-500 bg-zinc-900 border-zinc-700 rounded focus:ring-red-500"
-                />
-                <span>Use Google TTS (Better Quality)</span>
-              </label>
-            </div>
-          </div>
-        </div>
-
-        Desktop: Compact Controls Row
-        <div class="hidden sm:flex items-center gap-2">
-          Speed Control
-          <div class="flex items-center gap-2">
-            <label class="text-[10px] uppercase tracking-wide text-zinc-400">Speed</label>
-            <select
-              class="bg-zinc-900 border border-zinc-700 text-zinc-100 text-xs px-2 py-1"
-              :value="selectedRate"
-              @change="onRateSelect"
-              aria-label="Reading speed"
-            >
-              <option v-for="r in rateOptions" :key="r" :value="r">
-                {{ r.toFixed(2).replace(/0+$/,'').replace(/\.$/,'') }}× • {{ getRateLabel(r) }}
-              </option>
-            </select>
-          </div>
-
-          Voice Control
-          <div v-if="voices.length" class="flex items-center gap-2 min-w-[140px]">
-            <label class="text-[10px] uppercase tracking-wide text-zinc-400">Voice</label>
-            <select
-              class="bg-zinc-900 border border-zinc-700 text-zinc-100 text-xs px-2 py-1 w-full"
-              :value="selectedVoice"
-              @change="onVoiceChange"
-              aria-label="Select reading voice"
-            >
-              <option v-for="v in voices" :key="v.name" :value="v.name">
-                {{ v.name.split(' ')[0] }} ({{ v.lang }}){{ v.localService ? ' 📱' : ' ☁️' }}
-              </option>
-            </select>
-          </div>
-
-            Settings
-          <div class="flex items-center gap-2 ml-auto">
-            <label class="flex items-center gap-1 text-xs text-zinc-400">
-              <input
-                type="checkbox"
-                v-model="isHighlighting"
-                class="w-3 h-3 text-red-500 bg-zinc-900 border-zinc-700 rounded focus:ring-red-500"
-              />
-              <span>Highlight</span>
-            </label>
-            <label class="flex items-center gap-1 text-xs text-zinc-400">
-              <input
-                type="checkbox"
-                v-model="autoScroll"
-                class="w-3 h-3 text-red-500 bg-zinc-900 border-zinc-700 rounded focus:ring-red-500"
-              />
-              <span>Scroll</span>
-            </label>
-            <label v-if="isGoogleTTSAvailable" class="flex items-center gap-1 text-xs text-zinc-400">
-              <input
-                type="checkbox"
-                v-model="useGoogleTTS"
-                class="w-3 h-3 text-red-500 bg-zinc-900 border-zinc-700 rounded focus:ring-red-500"
-              />
-              <span>Google TTS</span>
-            </label>
-          </div>
-        </div>
-
-        Status
-        <div v-if="!isSupported" class="text-sm sm:text-xs text-zinc-400 text-center sm:text-left">
-          Text-to-speech not supported in this browser.
-        </div>
-      </div>
-
-      Keyboard Shortcuts Help
-      <div class="px-3 sm:px-2 py-2 sm:py-1 border-t border-zinc-800 text-xs sm:text-[10px] text-zinc-500 text-center sm:text-left">
-        <span class="hidden md:inline">Shortcuts: Space (play/pause) • Esc (reset) • ← → (skip) • </span>
-        <span class="block sm:inline">{{ wordCount }} words • {{ averageWPM }} WPM</span>
-      </div>
-    </div>
-    </Transition>
-
--->

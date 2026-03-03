@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 import { downloadSummaryPDF } from '~/utils/pdfGenerator'
 import { renderMarkdown } from '~/utils/markdownRenderer'
 import { 
@@ -71,7 +71,7 @@ const activeTab = ref('content')
 const tabs = computed(() => {
   const allTabs = [
     { id: 'content', title: 'Content', icon: 'heroicons:document-text' },
-    { id: 'hinglish', title: 'Hinglish', icon: 'heroicons:language' },
+    // hinglish tab intentionally hidden — accessible via Ctrl+H shortcut only
     { id: 'notes', title: 'AI Notes', icon: 'heroicons:light-bulb' },
     { id: 'quiz', title: 'Quiz', icon: 'heroicons:academic-cap' },
     { id: 'resources', title: 'Resources', icon: 'heroicons:link' }
@@ -84,6 +84,67 @@ const tabs = computed(() => {
     return true
   })
 })
+
+// ── Hidden Hinglish overlay (Ctrl+H on desktop, long-press Content tab on mobile) ────────
+const isHinglishOverlayOpen = ref(false)
+
+function openHinglishOverlay() {
+  isHinglishOverlayOpen.value = true
+  if (!hinglishHtml.value && !hinglishLoading.value) {
+    convertToHinglish()
+  }
+}
+
+function closeHinglishOverlay() {
+  isHinglishOverlayOpen.value = false
+}
+
+function handleCtrlH(e: KeyboardEvent) {
+  // Only trigger if no input/textarea is focused
+  const tag = (e.target as HTMLElement)?.tagName
+  if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return
+  if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'h') {
+    e.preventDefault()
+    if (isHinglishOverlayOpen.value) {
+      closeHinglishOverlay()
+    } else {
+      openHinglishOverlay()
+    }
+  }
+}
+
+// ── Long-press on Content tab (mobile hidden trigger) ─────────────────────
+let longPressTimer: ReturnType<typeof setTimeout> | null = null
+const LONG_PRESS_MS = 1500
+
+function onContentTabTouchStart(e: TouchEvent) {
+  // Must be the Content tab
+  longPressTimer = setTimeout(() => {
+    longPressTimer = null
+    // Prevent the normal click from also firing
+    e.preventDefault()
+    if (isHinglishOverlayOpen.value) {
+      closeHinglishOverlay()
+    } else {
+      openHinglishOverlay()
+    }
+  }, LONG_PRESS_MS)
+}
+
+function onContentTabTouchEnd() {
+  if (longPressTimer !== null) {
+    clearTimeout(longPressTimer)
+    longPressTimer = null
+  }
+}
+
+function onContentTabTouchMove() {
+  // Cancel long-press if the user scrolls
+  if (longPressTimer !== null) {
+    clearTimeout(longPressTimer)
+    longPressTimer = null
+  }
+}
 
 // AI Summary state
 const summaryData = ref<SummaryData | null>(null)
@@ -540,6 +601,13 @@ onMounted(() => {
   setTimeout(() => {
     setupContentImages('.prose', true)
   }, 3000)
+
+  // Register hidden Ctrl+H shortcut for Hinglish translation
+  window.addEventListener('keydown', handleCtrlH)
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('keydown', handleCtrlH)
 })
 </script>
 
@@ -568,6 +636,10 @@ onMounted(() => {
               v-for="tab in tabs"
               :key="tab.id"
               @click="setActiveTab(tab.id)"
+              @touchstart="tab.id === 'content' ? onContentTabTouchStart($event) : undefined"
+              @touchend="tab.id === 'content' ? onContentTabTouchEnd() : undefined"
+              @touchmove="tab.id === 'content' ? onContentTabTouchMove() : undefined"
+              @touchcancel="tab.id === 'content' ? onContentTabTouchEnd() : undefined"
               :class="[
                 'snap-start rounded-none px-4 py-3 text-sm font-medium transition-all duration-200 flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-500 flex-shrink-0 min-w-max',
                 activeTab === tab.id
@@ -597,6 +669,10 @@ onMounted(() => {
               v-for="tab in tabs"
               :key="tab.id"
               @click="setActiveTab(tab.id)"
+              @touchstart="tab.id === 'content' ? onContentTabTouchStart($event) : undefined"
+              @touchend="tab.id === 'content' ? onContentTabTouchEnd() : undefined"
+              @touchmove="tab.id === 'content' ? onContentTabTouchMove() : undefined"
+              @touchcancel="tab.id === 'content' ? onContentTabTouchEnd() : undefined"
               :class="[
                 'rounded-none px-4 py-3 text-sm font-semibold transition-all duration-200 flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-500 flex-1 justify-center',
                 activeTab === tab.id
@@ -640,75 +716,7 @@ onMounted(() => {
           </div>
         </div>
 
-        <!-- Hinglish Tab -->
-        <div v-else-if="activeTab === 'hinglish'" :id="'panel-hinglish'" role="tabpanel" aria-labelledby="tab-hinglish">
-          <!-- Header -->
-          <div class="flex flex-col sm:flex-row items-start gap-3 sm:gap-4 mb-6">
-            <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-orange-500 to-amber-600 flex items-center justify-center text-white flex-shrink-0">
-              <Icon name="heroicons:language" class="text-lg sm:text-xl" />
-            </div>
-            <div class="flex-1 min-w-0">
-              <h3 class="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2 mt-0 flex items-center gap-2">
-                🇮🇳 Hinglish Version
-                <span v-if="hinglishHtml && hinglishFromCache" class="text-blue-400 text-xs bg-blue-500/20 px-2 py-1 rounded">
-                  <Icon name="heroicons:cloud-arrow-down" class="inline mr-1 text-xs" />
-                  Cached
-                </span>
-              </h3>
-              <p class="text-zinc-300 mb-2">
-                Yeh content Hinglish mein hai — Hindi aur English mix — taaki Indian developers ke liye samajhna easy ho.
-              </p>
-              <p class="text-zinc-500 text-xs">
-                Images, code blocks, aur diagrams bilkul same rahenge.
-              </p>
-            </div>
-          </div>
-
-          <!-- Loading State -->
-          <div v-if="hinglishLoading" class="text-center py-12">
-            <div class="relative inline-flex mb-4">
-              <Icon name="heroicons:arrow-path" class="animate-spin text-5xl text-orange-400 mx-auto" />
-              <span class="absolute inset-0 flex items-center justify-center text-lg">🇮🇳</span>
-            </div>
-            <h4 class="text-lg font-semibold text-white mb-2">Converting to Hinglish...</h4>
-            <p class="text-zinc-400">AI text translate kar raha hai — images aur code safe hain.</p>
-            <p class="text-zinc-500 text-sm mt-2">This may take 10–20 seconds for long articles.</p>
-          </div>
-
-          <!-- Error State -->
-          <div v-else-if="hinglishError" class="bg-red-900/20 border border-red-500/50 p-6">
-            <div class="flex items-center gap-3 mb-3">
-              <Icon name="heroicons:exclamation-triangle" class="text-red-400 text-2xl" />
-              <h4 class="text-xl font-semibold text-red-400">Conversion Failed</h4>
-            </div>
-            <p class="text-red-300 mb-4">{{ hinglishError }}</p>
-            <AppButton @click="convertToHinglish" :disabled="hinglishLoading">
-              <Icon name="heroicons:arrow-path" class="mr-2" />
-              Try Again
-            </AppButton>
-          </div>
-
-          <!-- Converted Content -->
-          <div v-else-if="hinglishHtml" class="hinglish-content">
-            <div
-              class="prose md:prose-lg lg:prose-xl prose-invert pt-4"
-              v-html="hinglishHtml"
-            />
-          </div>
-
-          <!-- Empty / Not Yet Converted State -->
-          <div v-else class="text-center py-12">
-            <div class="text-6xl mb-4">🇮🇳</div>
-            <h4 class="text-lg font-semibold text-white mb-2">Convert to Hinglish</h4>
-            <p class="text-zinc-400 mb-6 max-w-md mx-auto">
-              Is article ko Hinglish mein convert karein — Hindi aur English mix — taaki aasaani se samajh sakein. Code aur images safe rahenge.
-            </p>
-            <AppButton @click="convertToHinglish" :disabled="hinglishLoading">
-              <Icon name="heroicons:language" class="mr-2" />
-              Convert to Hinglish
-            </AppButton>
-          </div>
-        </div>
+        <!-- Hinglish content is now shown via the hidden Ctrl+H overlay only -->
 
         <!-- AI Notes Tab -->
         <div v-else-if="activeTab === 'notes'" :id="'panel-notes'" role="tabpanel" aria-labelledby="tab-notes">
@@ -1196,9 +1204,88 @@ onMounted(() => {
       
     </div>
   </div>
+    <!-- ── Hidden Hinglish Overlay (Ctrl+H) — not visible to regular users ── -->
+    <Teleport to="body">
+      <Transition name="hinglish-overlay">
+        <div
+          v-if="isHinglishOverlayOpen"
+          class="fixed inset-0 z-[9999] flex flex-col"
+          style="background: rgba(9,9,11,0.97); backdrop-filter: blur(2px);"
+          @keydown.esc="closeHinglishOverlay"
+          tabindex="-1"
+        >
+          <!-- Header bar -->
+          <div class="flex items-center justify-between px-4 sm:px-8 py-3 border-b border-zinc-800 flex-shrink-0">
+            <div class="flex items-center gap-3">
+              <span class="text-xl">&#127470;&#127475;</span>
+              <span class="text-base font-semibold text-zinc-100 tracking-wide">Hinglish</span>
+              <span v-if="hinglishFromCache" class="text-[10px] text-blue-400 bg-blue-500/15 px-2 py-0.5 rounded">
+                cached
+              </span>
+            </div>
+            <button
+              @click="closeHinglishOverlay"
+              class="text-zinc-500 hover:text-white transition-colors p-1 focus:outline-none"
+              aria-label="Close (Escape)"
+              title="Close (Esc)"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+            </button>
+          </div>
+
+          <!-- Scrollable content area -->
+          <div class="flex-1 overflow-y-auto px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 py-8">
+
+            <!-- Loading -->
+            <div v-if="hinglishLoading" class="text-center py-20">
+              <div class="relative inline-flex mb-6">
+                <svg class="animate-spin w-12 h-12 text-orange-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/>
+                  <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"/>
+                </svg>
+                <span class="absolute inset-0 flex items-center justify-center text-lg">&#127470;&#127475;</span>
+              </div>
+              <h4 class="text-lg font-semibold text-white mb-2">Converting...</h4>
+              <p class="text-zinc-400 text-sm">AI text translate kar raha hai — images aur code safe hain.</p>
+            </div>
+
+            <!-- Error -->
+            <div v-else-if="hinglishError" class="max-w-xl mx-auto bg-red-900/20 border border-red-500/40 p-6 rounded-lg">
+              <p class="text-red-300 mb-4 text-sm">{{ hinglishError }}</p>
+              <button
+                @click="convertToHinglish"
+                class="px-4 py-2 bg-red-600 hover:bg-red-700 text-white text-sm rounded transition-colors"
+              >
+                Try Again
+              </button>
+            </div>
+
+            <!-- Translated content -->
+            <div
+              v-else-if="hinglishHtml"
+              class="prose md:prose-lg lg:prose-xl prose-invert hinglish-content max-w-none"
+              v-html="hinglishHtml"
+            />
+
+          </div>
+        </div>
+      </Transition>
+    </Teleport>
+
 </template>
 
 <style>
+/* ── Hidden Hinglish overlay transition ─────────────────────────────────── */
+.hinglish-overlay-enter-active,
+.hinglish-overlay-leave-active {
+  transition: opacity 0.2s ease;
+}
+.hinglish-overlay-enter-from,
+.hinglish-overlay-leave-to {
+  opacity: 0;
+}
+
 /* ── Light mode prose overrides ─────────────────────────────────────────────
    Applied globally to all tabs when the user toggles to light mode.
    Uses warm stone/paper tones instead of pure white for less eye strain.
