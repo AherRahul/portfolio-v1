@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given two strings `ransomNote` and `magazine`, return `true` _if_ `ransomNote` _can be constructed by using the letters from_ `magazine` _and_ `false` _otherwise_\.
 
@@ -42,11 +40,10 @@ Each letter in `magazine` can only be used once in `ransomNote`\. 
 *   **1 <= ransomNote\.length, magazine\.length <= 10****5**
 *   `ransomNote` and `magazine` consist of lowercase English letters\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/ransom-note)
 
-# Approaches
+## Approaches
 
-## 1\. Frequency Counting Using Arrays
+### 1\. Frequency Counting Using Arrays
 
 #### **Intuition:**
 
@@ -57,8 +54,6 @@ The basic idea is to count the frequency of each character in both `ransomNote`
 #### **Code:**
 
 We can use an integer array of size 26 to count the frequency of characters since the problem guarantees lowercase English letters only\.
-
-Java
 
 ```java
 class Solution {
@@ -87,12 +82,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(m \+ n\), where `m` is the length of the `magazine` and `n` is the length of `ransomNote`, since we iterate over both strings once\.
 *   **Space Complexity:** O\(1\), since the space used is constant \(26\), regardless of the input size\.
 
-## 2\. Frequency Counting Using HashMap
+### 2\. Frequency Counting Using HashMap
 
 #### **Intuition:**
 
@@ -101,8 +96,6 @@ Similar to the array\-based approach, but using a HashMap allows the solution to
 #### **Code:**
 
 We will use a HashMap to store frequencies of characters in `magazine` and then check each character in `ransomNote` against this frequency map\.
-
-Java
 
 ```java
 class Solution {
@@ -130,7 +123,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(m \+ n\), where `m` is the length of the `magazine` and `n` is the length of `ransomNote`, since we iterate over both strings once\.
 *   **Space Complexity:** O\(1\) theoretically because the map keys are bounded by a fixed range \(26 lowercase letters\), though practically hash maps might grow depending on collisions and load\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/ransom-note)

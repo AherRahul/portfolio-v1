@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given an array of `digits` which is sorted in **non\-decreasing** order\. You can write numbers using each `digits[i]` as many times as we want\. For example, if `digits = ['1','3','5']`, we may write numbers such as `'13'`, `'551'`, and `'1351315'`\.
 
@@ -22,6 +20,15 @@ Return _the number of positive integers that can be generated_ that are less t
 ##### **Example 1:**
 
 **Input:** digits = \["1","3","5","7"\], n = 100
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">7</span></div>
+  </div>
+</div>
 
 **Output:** 20
 
@@ -34,6 +41,14 @@ The 20 numbers that can be written are:
 ##### **Example 2:**
 
 **Input:** digits = \["1","4","9"\], n = 1000000000
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">9</span></div>
+  </div>
+</div>
 
 **Output:** 29523
 
@@ -51,6 +66,12 @@ In total, this is 29523 integers that can be written using the digits array\.
 
 **Input:** digits = \["7"\], n = 8
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">7</span></div>
+  </div>
+</div>
+
 **Output:** 1
 
 ##### **Constraints:**
@@ -62,11 +83,10 @@ In total, this is 29523 integers that can be written using the digits array\.
 *   `digits` is sorted in **non\-decreasing** order\.
 *   `1 <= n <= 10``9`
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/numbers-at-most-n-given-digit-set)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force Enumeration
+### 1\. Brute Force Enumeration
 
 #### Intuition:
 
@@ -79,8 +99,6 @@ The brute force method involves generating all possible numbers from the given d
 3.  For each generated number, check if it is less than or equal to `N` and count it\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -122,12 +140,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** `O((D.length)^(log10 N))` where `log10 N` is the number of digits in `N`\.
 *   **Space Complexity:** `O(log10 N)` for the recursive stack\.
 
-## 2\. Dynamic Programming with Digit DP
+### 2\. Dynamic Programming with Digit DP
 
 #### Intuition:
 
@@ -140,8 +158,6 @@ This approach leverages digit dynamic programming to count the valid numbers dir
 3.  Accumulate results from the DP table to get the final count of valid numbers\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -180,12 +196,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** `O(nLen * D.length)` where `nLen` is the number of digits in `N`\.
 *   **Space Complexity:** `O(nLen * D.length)` for memoization table\.
 
-## 3\. Mathematical Counting
+### 3\. Mathematical Counting
 
 #### Intuition:
 
@@ -198,8 +214,6 @@ Instead of generating numbers one\-by\-one, this approach leverages counting pri
 3.  Accumulate the count based on the above computations\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -233,7 +247,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** `O(nLen * D.length)` where `nLen` is the number of digits in `N`\.
 *   **Space Complexity:** `O(1)` no extra space required beyond variables\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/numbers-at-most-n-given-digit-set)

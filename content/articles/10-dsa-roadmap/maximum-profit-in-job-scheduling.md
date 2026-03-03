@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 We have `n` jobs, where every job is scheduled to be done from `startTime[i]` to `endTime[i]`, obtaining a profit of `profit[i]`\.
 
@@ -53,11 +51,10 @@ Profit obtained 150 = 20 \+ 70 \+ 60\.
 *   **1 <= startTime\[i\] < endTime\[i\] <= 10****9**
 *   **1 <= profit\[i\] <= 10****4**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/maximum-profit-in-job-scheduling)
 
-# Approaches
+## Approaches
 
-## 1\. Recursion with Memoization \(Dynamic Programming\)
+### 1\. Recursion with Memoization \(Dynamic Programming\)
 
 #### Intuition:
 
@@ -77,8 +74,6 @@ The problem can be broken down into deciding which jobs to take to maximize the 
 *   Use memoization to store and reuse results for each `index`\.
 
 #### Code:
-
-Java
 
 ```java
 class Job {
@@ -142,12 +137,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity**: O\(n log n\) due to sorting and binary search for each job\.
 *   **Space Complexity**: O\(n\) for the memoization array\.
 
-## 2\. Iterative Dynamic Programming Using Sorting and Binary Search
+### 2\. Iterative Dynamic Programming Using Sorting and Binary Search
 
 #### Intuition:
 
@@ -163,8 +158,6 @@ Instead of using recursion, this approach uses an iterative method to build up s
 *   Update `dp[i]` by comparing the addition of the current job's profit and the maximum profit of the last non\-overlapping job with `dp[i-1]`\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -212,7 +205,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity**: O\(n log n\) due to sorting and binary search for each job\.
 *   **Space Complexity**: O\(n\) for maintaining the dynamic programming table\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/maximum-profit-in-job-scheduling)

@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given a **1\-indexed** array of integers `numbers` that is already _**sorted in non\-decreasing order**_, find two numbers such that they add up to a specific `target` number\. Let these two numbers be **numbers\[index****1****\]** and **numbers\[index****2****\]** where **1 <= index****1** **< index****2** **<= numbers\.length**\.
 
@@ -27,9 +25,14 @@ Your solution must use only constant extra space\.
 
 **Input:** numbers = \[2,7,11,15\], target = 9
 
-2
-
-7
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">7</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">11</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">15</span></div>
+  </div>
+</div>
 
 11
 
@@ -37,19 +40,35 @@ Your solution must use only constant extra space\.
 
 **Output:** \[1,2\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+  </div>
+</div>
+
 **Explanation:** The sum of 2 and 7 is 9\. Therefore, index1 = 1, index2 = 2\. We return \[1, 2\]\.
 
 ##### **Example 2:**
 
 **Input:** numbers = \[2,3,4\], target = 6
 
-2
-
-3
-
-4
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">4</span></div>
+  </div>
+</div>
 
 **Output:** \[1,3\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">3</span></div>
+  </div>
+</div>
 
 **Explanation:** The sum of 2 and 4 is 6\. Therefore index1 = 1, index2 = 3\. We return \[1, 3\]\.
 
@@ -57,11 +76,23 @@ Your solution must use only constant extra space\.
 
 **Input:** numbers = \[\-1,0\], target = \-1
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">-1</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">1</span><span class="arr-val">0</span></div>
+  </div>
+</div>
+
 \-1
 
-0
-
 **Output:** \[1,2\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+  </div>
+</div>
 
 **Explanation:** The sum of \-1 and 0 is \-1\. Therefore index1 = 1, index2 = 2\. We return \[1, 2\]\. 
 
@@ -73,19 +104,16 @@ Your solution must use only constant extra space\.
 *   **\-1000 <= target <= 1000**
 *   The tests are generated such that there is **exactly one solution**\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force
+### 1\. Brute Force
 
 #### Intuition:
 
 The simplest way to solve this problem is by checking every possible pair in the array to see if it adds up to the target\. Since the array is sorted, once the sum exceeds the target, we can stop checking further elements with the current element\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -110,12 +138,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:**  O\(n^2\) \- We are checking every possible pair\.
 *   **Space Complexity:** O\(1\) \- No additional space is used\.
 
-## 2\. Two Pointers
+### 2\. Two Pointers
 
 #### Intuition:
 
@@ -126,8 +154,6 @@ Since the array is sorted, we can use a two\-pointer technique\. Start with one 
 *   If the sum is more than the target, move the right pointer to the left to decrease the sum\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -156,9 +182,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:**  O\(n\) \- Each element is visited at most once by either of the pointers\.
 *   **Space Complexity:** O\(1\) \- No additional space is used\.
 
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted)

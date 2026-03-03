@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given the `root` of a binary tree, return _the postorder traversal of its nodes' values_\.
 
@@ -21,17 +19,65 @@ Given the `root` of a binary tree, return _the postorder traversal of its no
 
 Input:root=\[1,null,2,3\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">1</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">3</span></div>
+  </div>
+</div>
+
 123
 
 **Output:** \[3,2,1\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 ##### **Example 2:**
 
 Input:root=\[1,2,3,4,5,null,8,null,null,6,7,9\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">5</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">8</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">7</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">8</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">9</span><span class="arr-val">6</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">10</span><span class="arr-val">7</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">11</span><span class="arr-val">9</span></div>
+  </div>
+</div>
+
 124567389
 
 **Output:** \[4,6,7,5,2,9,8,3,1\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">6</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">7</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">5</span><span class="arr-val">9</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">6</span><span class="arr-val">8</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">7</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">8</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 ##### **Example 3:**
 
@@ -43,7 +89,19 @@ Input:root=\[1,2,3,4,5,null,8,null,null,6,7,9\]
 
 **Input:** root = \[1\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+  </div>
+</div>
+
 **Output:** \[1\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 #### **Constraints:**
 
@@ -52,19 +110,16 @@ Input:root=\[1,2,3,4,5,null,8,null,null,6,7,9\]
 
 **Follow up:** Recursive solution is trivial, could you do it iteratively?
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/binary-tree-postorder-traversal)
 
-# Approaches
+## Approaches
 
-## 1\. Recursive Approach
+### 1\. Recursive Approach
 
 #### Intuition:
 
 The simplest way to perform a postorder traversal on a binary tree is by using recursion\. The nature of postorder traversal is to access children nodes before their parent nodes \(Left\-Right\-Root\)\. Recursion naturally takes care of this backtracking for us\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -84,20 +139,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\), where N is the number of nodes in the tree\.
 *   **Space Complexity:** O\(N\) due to the recursion call stack\.
 
-## 2\. Iterative Approach using Two Stacks
+### 2\. Iterative Approach using Two Stacks
 
 #### Intuition:
 
 The iterative approach using two stacks mimics the recursive postorder traversal process by using stacks to explore nodes\. We can push nodes into the first stack to manage depth, and the second stack to reverse the traversal order temporarily\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -125,20 +178,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\), because we process each node twice \(pushed into two stacks\)\.
 *   **Space Complexity:** O\(N\) due to the extra space used by the two stacks\.
 
-## 3\. Iterative Approach with One Stack
+### 3\. Iterative Approach with One Stack
 
 #### Intuition:
 
 Using one stack to mimic the backtracking operations needed for postorder traversal is more efficient\. We need to keep track of previously visited nodes to correctly process the right subtrees after finishing the left subtrees\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -168,7 +219,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\), since each node is visited exactly once\.
 *   **Space Complexity:** O\(N\) in the worst case, elements in the stack might be as large as the height of the tree\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/binary-tree-postorder-traversal)

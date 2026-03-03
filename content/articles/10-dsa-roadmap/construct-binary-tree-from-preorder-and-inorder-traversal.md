@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given two integer arrays `preorder` and `inorder` where `preorder` is the preorder traversal of a binary tree and `inorder` is the inorder traversal of the same tree, construct and return _the binary tree_\.
 
@@ -23,6 +21,18 @@ Given two integer arrays `preorder` and `inorder` where `preorder` is the 
 
 Output:\[3,9,20,null,null,15,7\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">9</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">20</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">5</span><span class="arr-val">15</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">6</span><span class="arr-val">7</span></div>
+  </div>
+</div>
+
 3920157
 
 ##### **Example 2:**
@@ -30,6 +40,12 @@ Output:\[3,9,20,null,null,15,7\]
 **Input:** preorder = \[\-1\], inorder = \[\-1\]
 
 **Output:** \[\-1\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">-1</span></div>
+  </div>
+</div>
 
 **Constraints:**
 
@@ -41,11 +57,10 @@ Output:\[3,9,20,null,null,15,7\]
 *   `preorder` is **guaranteed** to be the preorder traversal of the tree\.
 *   `inorder` is **guaranteed** to be the inorder traversal of the tree\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal)
 
-# Approaches
+## Approaches
 
-## 1\. Recursive Construction \(Naive\)
+### 1\. Recursive Construction \(Naive\)
 
 #### **Intuition:**
 
@@ -62,8 +77,6 @@ We can recursively construct the tree by following these steps:
 4.  Recursively build the left and right subtrees\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -103,20 +116,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N^2\), where N is the number of nodes\. This is because for each node, we potentially scan the entire inorder array\.
 *   **Space Complexity:** O\(N\), for the recursion call stack\.
 
-## 2\. Optimized Recursive Construction using HashMap
+### 2\. Optimized Recursive Construction using HashMap
 
 #### **Intuition:**
 
 The inefficiency in the previous approach is due to scanning the inorder array to find the root index\. We can use a HashMap to store the index of each value in the inorder array, allowing O\(1\) lookup for the root index\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -154,7 +165,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\), where N is the number of nodes\. We avoid repeated scanning of inorder by using HashMap\.
 *   **Space Complexity:** O\(N\), for the recursion call stack and the HashMap\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal)

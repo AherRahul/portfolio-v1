@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Design your implementation of the linked list\. You can choose to use a singly or doubly linked list\.A node in a singly linked list should have two attributes: `val` and `next`\. `val` is the value of the current node, and `next` is a pointer/reference to the next node\.If you want to use the doubly linked list, you will need one more attribute `prev` to indicate the previous node in the linked list\. Assume all nodes in the linked list are **0\-indexed**\.
 
@@ -56,11 +54,10 @@ myLinkedList.get(1);              // return 3
 *   Please do not use the built\-in LinkedList library\.
 *   At most `2000` calls will be made to `get`, `addAtHead`, `addAtTail`, `addAtIndex` and `deleteAtIndex`\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/design-linked-list)
 
-# Approaches
+## Approaches
 
-## 1\. Singly Linked List
+### 1\. Singly Linked List
 
 #### Intuition:
 
@@ -76,8 +73,6 @@ For a singly linked list:
 *   The delete operation involves traversing and re\-linking the list to skip the deleted node\.
 
 #### Code:
-
-Java
 
 ```java
 class MyLinkedList {
@@ -166,12 +161,12 @@ class MyLinkedList {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** `O(n)` for get, add, and delete operations as each requires traversal\.
 *   **Space Complexity:** `O(1)` for each operation as we maintain a fixed number of references regardless of input size\.
 
-## 2\. Doubly Linked List
+### 2\. Doubly Linked List
 
 #### Intuition:
 
@@ -186,8 +181,6 @@ For a doubly linked list:
 *   Update operations \(add, delete\) ensure that previous pointers are maintained along with next pointers\.
 
 #### Code:
-
-Java
 
 ```java
 class MyDoublyLinkedList {
@@ -317,7 +310,9 @@ class MyDoublyLinkedList {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** `O(n)` for get, add, and delete operations\. The selection between forward or backward traversal provides a slight optimization\.
 *   **Space Complexity:** `O(1)` for each operation; each node holds additional reference, but overall the space is linear with the number of elements\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/design-linked-list)

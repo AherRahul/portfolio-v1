@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You have a **browser** of one tab where you start on the `homepage` and you can visit another `url`, get back in the history number of `steps` or move forward in the history number of `steps`\.
 
@@ -60,11 +58,10 @@ browserHistory.back(7);                   // You are in "google.com", you can mo
 *   `homepage` and `url` consist of  '\.' or lower case English letters\.
 *   At most `5000` calls will be made to `visit`, `back`, and `forward`\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/design-browser-history)
 
-# Approaches
+## Approaches
 
-## 1\. Using a List to Store History
+### 1\. Using a List to Store History
 
 #### **Intuition:**
 
@@ -83,8 +80,6 @@ The most straightforward approach to manage browsing history is by using a list\
 3.  **forward\(int steps\):** Move the current position forward by `steps` or until reaching the last page\.
 
 #### Code:
-
-Java
 
 ```java
 class BrowserHistory {
@@ -121,7 +116,7 @@ class BrowserHistory {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:**
 
@@ -130,7 +125,7 @@ Complexity Analysis
 
 *   **Space Complexity:** O\(N\), where N is the number of URLs stored\.
 
-## 2\. Using Two Stacks
+### 2\. Using Two Stacks
 
 #### **Intuition:**
 
@@ -153,8 +148,6 @@ To optimize the operations for forward and backward navigation, two stacks can b
 3.  **forward\(int steps\):** Move as many steps forward from the forward stack, adjusting the current page\.
 
 #### Code:
-
-Java
 
 ```java
 class BrowserHistory {
@@ -197,7 +190,7 @@ class BrowserHistory {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:**
 
@@ -205,3 +198,5 @@ Complexity Analysis
 *   `back()` and `forward()`: O\(steps\)\. Maximum O\(N\) where N is the number of URLs\.
 
 *   **Space Complexity:** O\(N\), where N is the number of URLs stored\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/design-browser-history)

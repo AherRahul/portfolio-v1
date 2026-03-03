@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given two strings `word1` and `word2`, return _the minimum number of operations required to convert_ `_word1_` _to_ `_word2_`\.
 
@@ -60,11 +58,10 @@ exection \-> execution \(insert 'u'\)
 *   `0 <= word1.length, word2.length <= 500`
 *   `word1` and `word2` consist of lowercase English letters\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/edit-distance)
 
-# Approaches
+## Approaches
 
-## 1\. Recursive Solution \(Basic\)
+### 1\. Recursive Solution \(Basic\)
 
 #### Intuition:
 
@@ -81,12 +78,12 @@ The minimum of these operations would be our answer for the sub\-problem\.
 
 #### Code:
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(3^\(m\+n\)\), where m and n are the lengths of the two strings\. This is because for each element, we make three recursive calls\.
 *   **Space Complexity:** O\(m \+ n\), due to the recursion stack\.
 
-## 2\. Recursive Solution with Memoization
+### 2\. Recursive Solution with Memoization
 
 #### Intuition:
 
@@ -94,12 +91,12 @@ The basic recursive solution computes the same sub\-problems multiple times\. Us
 
 #### Code:
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(m \* n\), since each subproblem is computed once\.
 *   **Space Complexity:** O\(m \* n\), for the memoization array and recursion stack\.
 
-## 3\. Dynamic Programming \(Optimal\)
+### 3\. Dynamic Programming \(Optimal\)
 
 #### Intuition:
 
@@ -113,7 +110,9 @@ The dynamic programming approach iteratively builds up solutions to smaller sub\
 
 #### Code:
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(m \* n\), because we fill out the entire dp table\.
 *   **Space Complexity:** O\(m \* n\), for the dp array\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/edit-distance)

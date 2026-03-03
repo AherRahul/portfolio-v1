@@ -63,8 +63,6 @@ Now, lets look at how a trie is represented in code\.
 
 To represent a trie in code, we first need to define the building block of the trie — the **TrieNode**\.
 
-Java
-
 ```java
 class TrieNode {
    TrieNode[] children;

@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given an array of points in the **X\-Y** plane `points` where **points\[i\] = \[x****i****, y****i****\]**\.
 
@@ -25,6 +23,27 @@ Answers within **10****\-5** of the actual answer will be accepted\.
 
 **Input:** points = \[\[1,2\],\[2,1\],\[1,0\],\[0,1\]\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+  </div>
+</div>
+
 **Output:** 2\.00000
 
 **Explanation:** The minimum area rectangle occurs at \[1,2\],\[2,1\],\[1,0\],\[0,1\], with an area of 2\.
@@ -33,6 +52,31 @@ Answers within **10****\-5** of the actual answer will be accepted\.
 
 **Input:** points = \[\[0,1\],\[2,1\],\[1,1\],\[1,0\],\[2,0\]\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+    </div>
+  </div>
+</div>
+
 **Output:** 1\.00000
 
 **Explanation:** The minimum area rectangle occurs at \[1,0\],\[1,1\],\[2,1\],\[2,0\], with an area of 1\.
@@ -40,6 +84,31 @@ Answers within **10****\-5** of the actual answer will be accepted\.
 ##### **Example 3:**
 
 **Input:** points = \[\[0,3\],\[1,2\],\[3,1\],\[1,3\],\[2,1\]\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+  </div>
+</div>
 
 **Output:** 0
 
@@ -52,11 +121,10 @@ Answers within **10****\-5** of the actual answer will be accepted\.
 *   **0 <= x****i****, y****i** **<= 4 \* 10****4**
 *   All the given points are **unique**\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/minimum-area-rectangle-ii)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force Approach
+### 1\. Brute Force Approach
 
 #### **Intuition:**
 
@@ -69,8 +137,6 @@ The logic involves:
 *   Updating the minimum area if a rectangle is formed\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -119,12 +185,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^4\), where n is the number of points\. We check every combination of four points\.
 *   **Space Complexity:** O\(1\), only constant extra space used\.
 
-## 2\. Optimized Approach with Efficient Checking
+### 2\. Optimized Approach with Efficient Checking
 
 #### **Intuition:**
 
@@ -136,8 +202,6 @@ The steps involve:
 *   Checking for valid rectangles by verifying vector properties for the diagonals\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -189,7 +253,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^2\), because we process each pair of points and use a map to store distances\.
 *   **Space Complexity:** O\(n^2\), due to storage in the hash maps for diagonal information\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/minimum-area-rectangle-ii)

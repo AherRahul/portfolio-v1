@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given the `head` of a singly linked list, reverse the list, and return _the reversed list_\. 
 
@@ -21,29 +19,29 @@ Given the `head` of a singly linked list, reverse the list, and return _the r
 
 Input:head=\[1,2,3,4,5\]
 
-1
-
-2
-
-3
-
-4
-
-5
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">5</span></div>
+  </div>
+</div>
 
 null
 
 Output:\[5,4,3,2,1\]
 
-5
-
-4
-
-3
-
-2
-
-1
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 null
 
@@ -51,17 +49,23 @@ null
 
 Input:head=\[1,2\]
 
-1
-
-2
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+  </div>
+</div>
 
 null
 
 Output:\[2,1\]
 
-2
-
-1
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 null
 
@@ -82,11 +86,10 @@ null
 
 **Follow up:** A linked list can be reversed either iteratively or recursively\. Could you implement both?
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/reverse-linked-list)
 
-# Approaches
+## Approaches
 
-## 1\. Iterative Solution
+### 1\. Iterative Solution
 
 #### Intuition:
 
@@ -106,8 +109,6 @@ The iterative approach involves using a loop to reverse the pointers of the link
 
 #### Code:
 
-Java
-
 ```java
 class Solution {
    public ListNode reverseList(ListNode head) {
@@ -124,12 +125,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\) – We are iterating through the list once, where `n` is the number of elements in the list\.
 *   **Space Complexity:** O\(1\) – We use only a constant amount of extra space\.
 
-## 2\. Recursive Solution
+### 2\. Recursive Solution
 
 #### Intuition:
 
@@ -143,8 +144,6 @@ The recursive approach involves diving deeper into the list until we reach the e
 4.  Return the new head obtained from the recursive call\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -160,9 +159,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\) – Each node's operation is constant, and we perform it for every node\.
 *   **Space Complexity:** O\(n\) – The recursion stack will have `n` frames, one for each node in the list\.
 
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/reverse-linked-list)

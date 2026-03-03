@@ -12,9 +12,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 There are `n` tasks assigned to you\. The task times are represented as an integer array `tasks` of length `n`, where the `i``th` task takes `tasks[i]` hours to finish\. A **work session** is when you work for **at most** `sessionTime` consecutive hours and then take a break\.
 
@@ -32,6 +30,14 @@ The tests are generated such that `sessionTime` is **greater** than or **eq
 
 **Input:** tasks = \[1,2,3\], sessionTime = 3
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+  </div>
+</div>
+
 **Output:** 2
 
 **Explanation:** You can finish the tasks in two work sessions\.
@@ -43,6 +49,16 @@ The tests are generated such that `sessionTime` is **greater** than or **eq
 ##### **Example 2:**
 
 **Input:** tasks = \[3,1,3,1,1\], sessionTime = 8
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 **Output:** 2
 
@@ -56,6 +72,16 @@ The tests are generated such that `sessionTime` is **greater** than or **eq
 
 **Input:** tasks = \[1,2,3,4,5\], sessionTime = 15
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">5</span></div>
+  </div>
+</div>
+
 **Output:** 1
 
 **Explanation:** You can finish all the tasks in one work session\.
@@ -67,11 +93,10 @@ The tests are generated such that `sessionTime` is **greater** than or **eq
 *   `1 <= tasks[i] <= 10`
 *   `max(tasks[i]) <= sessionTime <= 15`
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/minimum-number-of-work-sessions-to-finish-the-tasks)
 
-# Approaches
+## Approaches
 
-## 1\. Backtracking
+### 1\. Backtracking
 
 In this approach, we will use simple backtracking\. The basic idea is to try all possible ways to assign tasks to work sessions and keep track of the minimum number of sessions needed\.
 
@@ -87,8 +112,6 @@ In this approach, we will use simple backtracking\. The basic idea is to try all
 5.  Base Case: When all the tasks are assigned, count the number of sessions used and record the result if it's the minimum so far\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -124,12 +147,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\!\), where n is the number of tasks\. This is because of all the possible permutations of task assignments\.
 *   **Space Complexity:** O\(n\), for the recursive call stack and additional space used by the `sessions`\.
 
-## 2\. Dynamic Programming with State Compression
+### 2\. Dynamic Programming with State Compression
 
 This approach improves efficiency by using dynamic programming combined with bitmasking to represent task assignments in sessions\.
 
@@ -141,8 +164,6 @@ This approach improves efficiency by using dynamic programming combined with bit
 4.  Iterate all subsets and use previously computed results to find the minimum sessions needed\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -183,7 +204,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(2^n \* n\), where n is the number of tasks\. Each state is visited, and for each state, we explore its subsets\.
 *   **Space Complexity:** O\(2^n\), for storing results of each submask in the dynamic programming array\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/minimum-number-of-work-sessions-to-finish-the-tasks)

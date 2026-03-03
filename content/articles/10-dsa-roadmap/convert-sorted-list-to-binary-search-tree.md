@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given the `head` of a singly linked list where elements are sorted in **ascending order**, convert _it to a_ _**height\-balanced**_ _binary search tree_\.
 
@@ -21,19 +19,34 @@ Given the `head` of a singly linked list where elements are sorted in **ascen
 
 Input:head=\[\-10,\-3,0,5,9\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">-10</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">-3</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">2</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">9</span></div>
+  </div>
+</div>
+
 \-10
 
 \-3
 
-0
-
-5
-
-9
-
 null
 
 Output:\[0,\-3,9,\-10,null,5\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">-3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">9</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">-10</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">5</span><span class="arr-val">5</span></div>
+  </div>
+</div>
 
 0\-3\-1095
 
@@ -50,11 +63,10 @@ Output:\[0,\-3,9,\-10,null,5\]
 *   The number of nodes in `head` is in the range **\[0, 2 \* 10****4****\]**\.
 *   **\-10****5** **<= Node\.val <= 10****5**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/convert-sorted-list-to-binary-search-tree)
 
-# Approaches
+## Approaches
 
-## 1\. Naive Approach: Convert List to Array
+### 1\. Naive Approach: Convert List to Array
 
 #### Intuition:
 
@@ -71,8 +83,6 @@ This method is straightforward as it leverages the property of arrays that allow
 *   Recursively create left and right subtrees using the subarrays to the left and right of the middle element\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {    
@@ -107,12 +117,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\), where N is the number of elements in the list\. Converting the list to an array takes O\(N\), and creating the BST takes O\(N\) as each element is processed once\.
 *   **Space Complexity:** O\(N\), due to the additional space required to store the array\.
 
-## 2\. Optimized Approach: Inorder Simulation
+### 2\. Optimized Approach: Inorder Simulation
 
 #### Intuition:
 
@@ -128,8 +138,6 @@ Instead of first converting the linked list to an array, we can directly use the
 4.  Recursively apply the same process to the left and right sublists\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {    
@@ -161,7 +169,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N log N\), each node is processed in O\(log N\) time and each call to find the middle takes linear time across all levels of the recursive tree\.
 *   **Space Complexity:** O\(log N\), due to the recursion stack used during the divide process\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/convert-sorted-list-to-binary-search-tree)

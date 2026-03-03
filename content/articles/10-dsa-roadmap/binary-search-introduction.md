@@ -29,16 +29,6 @@ The key requirement is that the search space must have a monotonic property\. In
 
 Sorted Array
 
-1
-
-3
-
-5
-
-7
-
-9
-
 11
 
 13
@@ -111,8 +101,6 @@ This is the classic version\. Given a sorted array, find if a target exists and 
 
 **Template:**
 
-Java
-
 ```java
 public int binarySearch(int[] nums, int target) {
    int left = 0;
@@ -164,8 +152,6 @@ When duplicates exist, standard binary search might return any occurrence\. This
 
 **Template:**
 
-Java
-
 ```java
 public int lowerBound(int[] nums, int target) {
    int left = 0;
@@ -198,8 +184,6 @@ public int lowerBound(int[] nums, int target) {
 
 **Example Walkthrough:**
 
-Plaintext
-
 ```plaintext
 Array: [1, 2, 2, 2, 3, 4], Target: 2
 
@@ -225,8 +209,6 @@ Step 4: left=1, right=1, loop ends
 This variant finds the last \(rightmost\) occurrence of the target\.
 
 **Template:**
-
-Java
 
 ```java
 public int upperBound(int[] nums, int target) {
@@ -286,8 +268,6 @@ Sometimes you need the first element strictly greater than a given value\. This 
 
 **Template:**
 
-Java
-
 ```java
 public int firstGreater(int[] nums, int target) {
    int left = 0;
@@ -310,8 +290,6 @@ public int firstGreater(int[] nums, int target) {
 ```
 
 **Example Walkthrough:**
-
-Plaintext
 
 ```plaintext
 Array: [1, 3, 5, 7, 9], Target: 6
@@ -337,8 +315,6 @@ Step 4: left=3, right=3, loop ends
 This is equivalent to finding the insertion point if you were to insert the target while maintaining sorted order\.
 
 **Template:**
-
-Java
 
 ```java
 public int firstGreaterOrEqual(int[] nums, int target) {
@@ -367,8 +343,6 @@ This is identical to the lower bound template\. The difference is in how you use
 This is perhaps the most powerful variant\. Instead of searching in an array, you search in a range of possible answers\. The key insight is that if a certain value works as an answer, then all values more lenient than it also work\.
 
 **Template:**
-
-Java
 
 ```java
 public int binarySearchOnAnswer(int minAnswer, int maxAnswer) {
@@ -404,8 +378,6 @@ private boolean isFeasible(int candidate) {
 **Example: Minimum Capacity to Ship Packages**
 
 Given packages with weights and a required number of days, find the minimum ship capacity needed\.
-
-Plaintext
 
 ```plaintext
 Weights: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], Days: 5
@@ -508,8 +480,6 @@ Let us solve a problem that combines multiple variants\. Given a sorted array wi
 
 **Solution:** Find the first element >= 2 and the first element > 3\. The count is the difference of their indices\.
 
-Java
-
 ```java
 public int countInRange(int[] nums, int lo, int hi) {
    int leftBound = firstGreaterOrEqual(nums, lo);   // First >= lo
@@ -540,8 +510,6 @@ The most common source of bugs is mixing up `left <= right` and `left < right`\.
 
 ### Mistake 2: Integer Overflow in Mid Calculation
 
-Java
-
 ```java
 // WRONG: Can overflow if left + right exceeds Integer.MAX_VALUE
 int mid = (left + right) / 2;
@@ -551,8 +519,6 @@ int mid = left + (right - left) / 2;
 ```
 
 ### Mistake 3: Infinite Loop from Wrong Update
-
-Java
 
 ```java
 // WRONG: If left = mid when left + 1 = right, infinite loop
@@ -573,8 +539,6 @@ if (condition) {
 When using `left = mid`, use `mid = left + (right - left + 1) / 2` \(round up\) to avoid infinite loops\.
 
 ### Mistake 4: Wrong Initial Bounds
-
-Java
 
 ```java
 // For finding in array of length n:

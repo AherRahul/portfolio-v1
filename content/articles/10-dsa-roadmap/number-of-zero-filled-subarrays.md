@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given an integer array `nums`, return _the number of_ _**subarrays**_ _filled with_ `0`\.
 
@@ -23,41 +21,20 @@ A **subarray** is a contiguous non\-empty sequence of elements within an array
 
 Input:nums=\[1,3,0,0,2,0,0,4\]
 
-0
-
-1
-
-1
-
-3
-
-2
-
-0
-
-3
-
-0
-
-4
-
-2
-
-5
-
-0
-
-6
-
-0
-
-7
-
-4
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">2</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">3</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">5</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">6</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">7</span><span class="arr-val">4</span></div>
+  </div>
+</div>
 
 Output:6
-
-6
 
 **Explanation:**
 
@@ -69,33 +46,18 @@ Output:6
 
 Input:nums=\[0,0,0,2,0,0\]
 
-0
-
-0
-
-1
-
-0
-
-2
-
-0
-
-3
-
-2
-
-4
-
-0
-
-5
-
-0
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">0</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">1</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">2</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">4</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">5</span><span class="arr-val">0</span></div>
+  </div>
+</div>
 
 Output:9
-
-9
 
 **Explanation:**
 
@@ -108,21 +70,15 @@ Output:9
 
 Input:nums=\[2,10,2019\]
 
-0
-
-2
-
-1
-
-10
-
-2
-
-2019
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">10</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">2019</span></div>
+  </div>
+</div>
 
 Output:0
-
-0
 
 **Explanation:** There is no subarray filled with 0\. Therefore, we return 0\.
 
@@ -131,11 +87,10 @@ Output:0
 *   **1 <= nums\.length <= 10****5**
 *   **\-10****9** **<= nums\[i\] <= 10****9**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/number-of-zero-filled-subarrays)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force
+### 1\. Brute Force
 
 #### **Intuition**:
 
@@ -148,8 +103,6 @@ The simplest approach to solve this problem is to consider all possible subarray
 3.  Count the subarrays when a complete run of zeroes is detected\.
 
 #### **Code**:
-
-Java
 
 ```java
 class Solution {
@@ -171,12 +124,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^2\) \- As we check each subarray which takes quadratic time\.
 *   **Space Complexity:** O\(1\) \- No additional space is used beyond input size\.
 
-## 2\. Optimized Linear Scan
+### 2\. Optimized Linear Scan
 
 #### **Intuition**:
 
@@ -193,8 +146,6 @@ Specifically, a contiguous run of `k` zeroes contributes `k * (k + 1) / 2` z
 5.  Return the result\.
 
 #### **Code**:
-
-Java
 
 ```java
 class Solution {
@@ -223,43 +174,13 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\) \- We pass through the array a single time\.
 *   **Space Complexity:** O\(1\) \- Only a constant amount of extra space is used\.
 
 #### Example Walkthrough:
 
-0
-
-0
-
-1
-
-0
-
-2
-
-1
-
-3
-
-0
-
-4
-
-0
-
-5
-
-0
-
-6
-
-2
-
 zeroCount = 0, result = 0
 
-Step 1 / 9
-
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/number-of-zero-filled-subarrays)

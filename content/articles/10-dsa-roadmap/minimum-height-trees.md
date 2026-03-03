@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 A tree is an undirected graph in which any two vertices are connected by _exactly_ one path\. In other words, any connected graph without simple cycles is a tree\.
 
@@ -27,7 +25,30 @@ The **height** of a rooted tree is the number of edges on the longest downward
 
 **Input:** n = 4, edges = \[\[1,0\],\[1,2\],\[1,3\]\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+    </div>
+  </div>
+</div>
+
 **Output:** \[1\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 **Explanation:** As shown, the height of the tree is 1 when the root is the node with label 1 which is the only MHT\.
 
@@ -35,7 +56,39 @@ The **height** of a rooted tree is the number of edges on the longest downward
 
 **Input:** n = 6, edges = \[\[3,0\],\[3,1\],\[3,2\],\[3,4\],\[5,4\]\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">4</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">5</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">4</span></div>
+    </div>
+  </div>
+</div>
+
 **Output:** \[3,4\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">4</span></div>
+  </div>
+</div>
 
 ##### **Constraints:**
 
@@ -46,11 +99,10 @@ The **height** of a rooted tree is the number of edges on the longest downward
 *   All the pairs **\(a****i****, b****i****\)** are distinct\.
 *   The given input is **guaranteed** to be a tree and there will be **no repeated** edges\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/minimum-height-trees)
 
-# Approaches
+## Approaches
 
-## 1\. BFS with Degree Count
+### 1\. BFS with Degree Count
 
 #### Intuition:
 
@@ -79,8 +131,6 @@ The key is to iteratively remove leaf nodes \(nodes with only one connection\) l
 *   When we can't remove any more edges \(when the remaining pending nodes are 1 or 2\), these nodes are the desired roots of MHTs\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -119,7 +169,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), where \(n\) is the number of nodes\. Each node and edge is added and removed at most once from the list\.
 *   **Space Complexity:** O\(n\)\. The space mainly depends on the graph structure and any auxiliary space used for tracking nodes and leaves\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/minimum-height-trees)

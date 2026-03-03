@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given an array of `events` where **events\[i\] = \[startDay****i****, endDay****i****\]**\. Every event `i` starts at **startDay****i** and ends at **endDay****i**\.
 
@@ -24,6 +22,23 @@ Return _the maximum number of events you can attend_\.
 ##### **Example 1:**
 
 **Input:** events = \[\[1,2\],\[2,3\],\[3,4\]\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">4</span></div>
+    </div>
+  </div>
+</div>
 
 **Output:** 3
 
@@ -41,6 +56,27 @@ Attend the third event on day 3\.
 
 **Input:** events= \[\[1,2\],\[2,3\],\[3,4\],\[1,2\]\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">4</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+    </div>
+  </div>
+</div>
+
 **Output:** 4
 
 ##### **Constraints:**
@@ -49,19 +85,16 @@ Attend the third event on day 3\.
 *   **events\[i\]\.length == 2**
 *   **1 <= startDay****i** **<= endDay****i** **<= 10****5**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/maximum-number-of-events-that-can-be-attended)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force
+### 1\. Brute Force
 
 #### Intuition:
 
 The brute force approach involves tracking the days individually and checking which events can be attended day\-by\-day\. For each day, check all events to see which event can finish by the current day \- if none can, proceed to the next day\. This method aims to maximize the number of events attended by linearly scanning available events day\-by\-day\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -88,20 +121,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n \* d\) where `n` is the number of events and `d` is the range of days\. Typically infeasible for large inputs\.
 *   **Space Complexity:** O\(d\) where `d` is the range of days for marking attended days\.
 
-## 2\. Greedy Using a Priority Queue
+### 2\. Greedy Using a Priority Queue
 
 #### Intuition:
 
 The greedy approach utilizes a priority queue to efficiently choose events in a way that maximizes the number of days available for future events\. Sort the events by their start date and use a priority queue to keep track of events that can be attended each day \- this allows attending events that end the earliest if multiple events are possible on the same day\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -145,7 +176,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n log n\), where `n` is the number of events due to sorting and priority queue operations\.
 *   **Space Complexity:** O\(n\), where `n` is the number of events for the priority queue\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/maximum-number-of-events-that-can-be-attended)

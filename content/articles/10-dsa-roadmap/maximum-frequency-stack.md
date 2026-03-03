@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Design a stack\-like data structure to push elements to the stack and pop the most frequent element from the stack\.
 
@@ -59,11 +57,10 @@ freqStack.pop();   // return 4, as 4, 5 and 7 is the most frequent, but 4 is clo
 *   At most `2 * 10``4` calls will be made to `push` and `pop`\.
 *   It is guaranteed that there will be at least one element in the stack before calling `pop`\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/maximum-frequency-stack)
 
-# Approaches
+## Approaches
 
-## 1\. Brute\-force with Stack
+### 1\. Brute\-force with Stack
 
 #### **Intuition:**
 
@@ -72,8 +69,6 @@ The problem requires us to mimic a stack but with the constraint of popping the 
 A basic approach is to maintain a simple stack and a frequency counter dictionary to keep track of the element count\. On popping, we traverse the stack from top to bottom to find the element with the maximum frequency\.
 
 #### **Code:**
-
-Java
 
 ```java
 class FreqStack {
@@ -113,7 +108,7 @@ class FreqStack {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:**
 
@@ -122,7 +117,7 @@ Complexity Analysis
 
 *   **Space Complexity:** O\(n\) where n is the number of elements in the stack\.
 
-## 2\. Frequency and Grouped Stacks
+### 2\. Frequency and Grouped Stacks
 
 #### **Intuition:**
 
@@ -134,8 +129,6 @@ To optimize, we can use two hash maps:
 This ensures that when we are popping, we can instantly retrieve the most frequent and recent element by looking at the top element of the stack at the current maximum frequency\.
 
 #### **Code:**
-
-Java
 
 ```java
 class FreqStack {
@@ -175,7 +168,7 @@ class FreqStack {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:**
 
@@ -183,3 +176,5 @@ Complexity Analysis
 *   `pop()`: O\(1\) for directly accessing and popping from the stack of the maximum frequency\.
 
 *   **Space Complexity:** O\(n\) where n is the number of elements in the stack\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/maximum-frequency-stack)

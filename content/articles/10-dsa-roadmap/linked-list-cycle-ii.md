@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given the `head` of a linked list, return _the node where the cycle begins\. If there is no cycle, return_ `null`\.
 
@@ -25,6 +23,15 @@ There is a cycle in a linked list if there is some node in the list that can be 
 
 **Input:** head = \[3,2,0,\-4\], pos = 1
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">2</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">-4</span></div>
+  </div>
+</div>
+
 **Output:** tail connects to node index 1
 
 **Explanation:** There is a cycle in the linked list, where tail connects to the second node\.
@@ -33,6 +40,13 @@ There is a cycle in a linked list if there is some node in the list that can be 
 
 **Input:** head = \[1,2\], pos = 0
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+  </div>
+</div>
+
 **Output:** tail connects to node index 0
 
 **Explanation:** There is a cycle in the linked list, where tail connects to the first node\.
@@ -40,6 +54,12 @@ There is a cycle in a linked list if there is some node in the list that can be 
 ##### **Example 3:**
 
 **Input:** head = \[1\], pos = \-1
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 **Output:** no cycle
 
@@ -53,11 +73,10 @@ There is a cycle in a linked list if there is some node in the list that can be 
 
 **Follow up:** Can you solve it using `O(1)` \(i\.e\. constant\) memory?
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/linked-list-cycle-ii)
 
-# Approaches
+## Approaches
 
-## 1\. HashSet
+### 1\. HashSet
 
 #### **Intuition:**
 
@@ -75,8 +94,6 @@ One straightforward way to determine if there's a cycle in a linked list is to k
 5.  If the traversal reaches the end of the list \(`null`\), then there is no cycle\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {
@@ -103,12 +120,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:**  `O(n)`, where `n` is the number of nodes in the linked list, because each node is visited at most once\.
 *   **Space Complexity:** `O(n)` due to the space required for storing visited nodes in the `HashSet`\.
 
-## 2\. Floyd’s Cycle Detection Algorithm \(Tortoise and Hare\)
+### 2\. Floyd’s Cycle Detection Algorithm \(Tortoise and Hare\)
 
 #### **Intuition:**
 
@@ -124,8 +141,6 @@ Once a cycle is detected, reset one pointer to the start of the list and keep th
 4.  To find the starting node of the cycle, reset `slow` to the head of the list and move both `slow` and `fast` one step at a time; the node where they meet is the start of the cycle\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {
@@ -158,9 +173,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** `O(n)`, as each node is visited at most twice\.
 *   **Space Complexity:** `O(1)`, since no additional data structures are used for storage\.
 
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/linked-list-cycle-ii)

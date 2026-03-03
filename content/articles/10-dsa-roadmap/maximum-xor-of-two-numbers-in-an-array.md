@@ -11,15 +11,24 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given an integer array `nums`, return _the maximum result of_ `nums[i] XOR nums[j]`, where `0 <= i <= j < n`\.
 
 ##### **Example 1:**
 
 **Input:** nums = \[3,10,5,25,2,8\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">10</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">25</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">8</span></div>
+  </div>
+</div>
 
 **Output:** 28
 
@@ -29,6 +38,23 @@ Given an integer array `nums`, return _the maximum result of_ `nums[i] XOR nu
 
 **Input:** nums = \[14,70,53,83,49,91,36,80,92,51,66,70\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">14</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">70</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">53</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">83</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">49</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">91</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">36</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">7</span><span class="arr-val">80</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">8</span><span class="arr-val">92</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">9</span><span class="arr-val">51</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">10</span><span class="arr-val">66</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">11</span><span class="arr-val">70</span></div>
+  </div>
+</div>
+
 **Output:** 127
 
 ##### **Constraints:**
@@ -36,11 +62,10 @@ Given an integer array `nums`, return _the maximum result of_ `nums[i] XOR nu
 *   **1 <= nums\.length <= 2 \* 10****5**
 *   **0 <= nums\[i\] <= 2****31** **\- 1**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force Approach
+### 1\. Brute Force Approach
 
 #### Intuition:
 
@@ -54,8 +79,6 @@ For the brute force method, we consider each possible pair of numbers in the arr
 4.  Return `maxXOR`\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -74,12 +97,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^2\) \- We iterate over all possible pairs in the array\.
 *   **Space Complexity:** O\(1\) \- No additional space is used except for a few variables\.
 
-## 2\. Optimal Approach Using Trie
+### 2\. Optimal Approach Using Trie
 
 #### Intuition:
 
@@ -93,8 +116,6 @@ The key idea is to use a Trie \(prefix tree\) to efficiently find two numbers in
 4.  Return the highest XOR obtained\.
 
 #### Code:
-
-Java
 
 ```java
 class TrieNode {
@@ -136,7 +157,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n \* 32\) \- Each number is pushed into the Trie in O\(32\) time complexity, equivalent to the number of bits in an integer, and we process each number\.
 *   **Space Complexity:** O\(n \* 32\) \- Space used in the Trie for storing all n numbers, each represented by a sequence of 32 bits\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array)

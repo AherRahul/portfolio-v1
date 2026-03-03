@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given a string containing just the characters `'('` and `')'`, return _the length of the longest valid \(well\-formed\) parentheses substring_\. 
 
@@ -44,11 +42,10 @@ Given a string containing just the characters `'('` and `')'`, return _the l
 *   **0 <= s\.length <= 3 \* 10****4**
 *   `s[i]` is `'('`, or `')'`\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/longest-valid-parentheses)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force
+### 1\. Brute Force
 
 #### Intuition:
 
@@ -61,8 +58,6 @@ The simplest way to solve this problem is to generate all possible substrings an
 *   Track the length of the longest valid substring found\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -93,12 +88,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^3\), due to generating and checking each substring\.
 *   **Space Complexity:** O\(n\), to store substrings temporarily\.
 
-## 2\. Using a Stack
+### 2\. Using a Stack
 
 #### Intuition:
 
@@ -111,8 +106,6 @@ A stack can help keep track of indices of unmatched '\(' characters\. Whenever a
 *   Maintain a max length of such valid substrings\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -138,14 +131,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), scan through the string once\.
 *   **Space Complexity:** O\(n\), space used by the stack\.
 
-View Animation
-
-## 3\. Optimized Two\-Pass Counter
+### 3\. Optimized Two\-Pass Counter
 
 #### Intuition:
 
@@ -165,8 +156,6 @@ Instead of using a stack, two traversals maintaining counters \(`left` and `ri
 *   Reset counters if `left` becomes greater than `right`\.
 
 ### Code:
-
-Java
 
 ```java
 class Solution {
@@ -204,7 +193,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\) for scanning the string twice\.
 *   **Space Complexity:** O\(1\), constant space usage\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/longest-valid-parentheses)

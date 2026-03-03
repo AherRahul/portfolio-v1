@@ -13,8 +13,6 @@ published: true
 
 A matrix is a 2D array organized into rows and columns\. In programming, we typically represent it as an array of arrays, where the first index selects the row and the second index selects the column\.
 
-Java
-
 ```java
 // A 3x4 matrix (3 rows, 4 columns)
 int[][] matrix = {
@@ -49,8 +47,6 @@ The most important technique for matrix traversal is the **direction array**\. I
 
 For problems where you can move up, down, left, and right:
 
-Java
-
 ```java
 // Direction arrays for 4 neighbors
 int[] rowDir = {-1, 1, 0, 0};  // up, down, same, same
@@ -82,8 +78,6 @@ Right
 ### 8\-Directional Movement
 
 For problems that include diagonal movement:
-
-Java
 
 ```java
 // Direction arrays for 8 neighbors (including diagonals)
@@ -125,8 +119,6 @@ int[][] directions = {
 
 Here is how you use direction arrays to explore neighbors:
 
-Java
-
 ```java
 int rows = grid.length;
 int cols = grid[0].length;
@@ -150,8 +142,6 @@ This pattern appears in almost every matrix traversal problem\. Memorize it\.
 
 One of the most common sources of bugs in matrix problems is going out of bounds\. Always check that the new coordinates are valid before accessing the array\.
 
-Java
-
 ```java
 // Always validate before accessing grid[newRow][newCol]
 boolean isValid(int row, int col, int rows, int cols) {
@@ -160,8 +150,6 @@ boolean isValid(int row, int col, int rows, int cols) {
 ```
 
 A useful helper method makes your code cleaner and less error\-prone:
-
-Java
 
 ```java
 private boolean inBounds(int r, int c, int[][] grid) {
@@ -176,8 +164,6 @@ There are several ways to traverse a matrix, each useful for different problems\
 ### Linear Traversal
 
 The simplest approach: visit every cell in row\-major or column\-major order\.
-
-Java
 
 ```java
 // Row-major: left to right, top to bottom
@@ -201,8 +187,6 @@ for (int c = 0; c < cols; c++) {
 
 Visit cells along diagonals\. Useful for problems involving diagonal patterns\.
 
-Java
-
 ```java
 // Main diagonal and parallel diagonals
 for (int d = 0; d < rows + cols - 1; d++) {
@@ -219,8 +203,6 @@ for (int d = 0; d < rows + cols - 1; d++) {
 ### Spiral Traversal
 
 Visit cells in a spiral pattern, starting from the outer edge and moving inward\.
-
-Java
 
 ```java
 public List<Integer> spiralOrder(int[][] matrix) {
@@ -273,8 +255,6 @@ Depth\-First Search explores as far as possible along each branch before backtra
 
 ### Recursive DFS Template
 
-Java
-
 ```java
 private void dfs(int[][] grid, int row, int col, boolean[][] visited) {
    int rows = grid.length;
@@ -303,8 +283,6 @@ private void dfs(int[][] grid, int row, int col, boolean[][] visited) {
 ```
 
 ### Iterative DFS Template \(Using Stack\)
-
-Java
 
 ```java
 private void dfsIterative(int[][] grid, int startRow, int startCol) {
@@ -343,8 +321,6 @@ private void dfsIterative(int[][] grid, int startRow, int startCol) {
 
 For many problems, instead of using a separate visited array, you can modify the grid itself to mark visited cells\. This saves space\.
 
-Java
-
 ```java
 private void dfs(char[][] grid, int row, int col) {
    int rows = grid.length;
@@ -375,8 +351,6 @@ private void dfs(char[][] grid, int row, int col) {
 Breadth\-First Search explores all neighbors at the current depth before moving to the next level\. On a grid, this means exploring all cells at distance 1, then all cells at distance 2, and so on\.
 
 ### BFS Template
-
-Java
 
 ```java
 private void bfs(int[][] grid, int startRow, int startCol) {
@@ -417,8 +391,6 @@ private void bfs(int[][] grid, int startRow, int startCol) {
 ### BFS for Shortest Path
 
 BFS naturally finds the shortest path in an unweighted graph\. To track the distance, process the queue level by level:
-
-Java
 
 ```java
 private int shortestPath(int[][] grid, int startRow, int startCol, int endRow, int endCol) {

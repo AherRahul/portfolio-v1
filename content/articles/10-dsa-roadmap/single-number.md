@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given a **non\-empty** array of integers `nums`, every element appears _twice_ except for one\. Find that single one\.
 
@@ -23,61 +21,43 @@ You must implement a solution with a linear runtime complexity and use only co
 
 Input:nums=\[2,2,1\]
 
-0
-
-2
-
-1
-
-2
-
-2
-
-1
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 Output:1
-
-1
 
 ##### **Example 2:**
 
 Input:nums=\[4,1,2,1,2\]
 
-0
-
-4
-
-1
-
-1
-
-2
-
-2
-
-3
-
-1
-
-4
-
-2
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">2</span></div>
+  </div>
+</div>
 
 Output:4
-
-4
 
 ##### **Example 3:**
 
 Input:nums=\[1\]
 
-0
-
-1
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 Output:1
-
-1
 
 ##### **Constraints:**
 
@@ -85,19 +65,16 @@ Output:1
 *   **\-3 \* 10****4** **<= nums\[i\] <= 3 \* 10****4**
 *   Each element in the array appears twice except for one element which appears only once\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/single-number/)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force
+### 1\. Brute Force
 
 #### **Intuition:**
 
 In a brute force approach, for each element in the array, we can check if it appears again in the array\. We can do this by comparing each element against all others\. The element that doesn't have a duplicate is the single number\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -122,20 +99,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^2\), due to nested loops
 *   **Space Complexity:** O\(1\)
 
-## 2\. HashMap
+### 2\. HashMap
 
 #### **Intuition:**
 
 Utilize a HashMap to count the occurrences of each element\. Then, iterate over the HashMap to find the element with a count of one, which is our single number\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -160,12 +135,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\),
 *   **Space Complexity:** O\(n\), due to hash map
 
-## 3\. Bit Manipulation
+### 3\. Bit Manipulation
 
 #### **Intuition:**
 
@@ -180,8 +155,6 @@ XOR has three important properties:
 **Putting these together:**
 
 When we XOR all elements in the array, every duplicate pair cancels out to **0**, and only the unique element survives\.
-
-Java
 
 ```java
 class Solution {
@@ -198,33 +171,13 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\)
 *   **Space Complexity:** O\(1\)
 
 #### Example Walkthrough:
 
-0
-
-4
-
-1
-
-1
-
-2
-
-2
-
-3
-
-1
-
-4
-
-2
-
 result = 0
 
-Step 1 / 6
+#### [Solve it on LeetCode](https://leetcode.com/problems/single-number/)

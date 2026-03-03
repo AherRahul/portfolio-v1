@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given a list of airline `tickets` where `tickets[i] = [from``i``, to``i``]` represent the departure and the arrival airports of one flight\. Reconstruct the itinerary in order and return it\.
 
@@ -27,13 +25,80 @@ You may assume all tickets form at least one valid itinerary\. You must use all 
 
 **Input:** tickets = \[\["MUC","LHR"\],\["JFK","MUC"\],\["SFO","SJC"\],\["LHR","SFO"\]\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">MUC</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">LHR</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">JFK</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">MUC</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">SFO</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">SJC</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">LHR</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">SFO</span></div>
+    </div>
+  </div>
+</div>
+
 **Output:** \["JFK","MUC","LHR","SFO","SJC"\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">JFK</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">MUC</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">LHR</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">SFO</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">SJC</span></div>
+  </div>
+</div>
 
 ##### **Example 2:**
 
 **Input:** tickets = \[\["JFK","SFO"\],\["JFK","ATL"\],\["SFO","ATL"\],\["ATL","JFK"\],\["ATL","SFO"\]\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">JFK</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">SFO</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">JFK</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">ATL</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">SFO</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">ATL</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">ATL</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">JFK</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">ATL</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">SFO</span></div>
+    </div>
+  </div>
+</div>
+
 **Output:** \["JFK","ATL","JFK","SFO","ATL","SFO"\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">JFK</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">ATL</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">JFK</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">SFO</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">ATL</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">5</span><span class="arr-val">SFO</span></div>
+  </div>
+</div>
 
 **Explanation:** Another possible reconstruction is \["JFK","SFO","ATL","JFK","ATL","SFO"\] but it is larger in lexical order\.
 
@@ -46,11 +111,10 @@ You may assume all tickets form at least one valid itinerary\. You must use all 
 *   **from****i** **and to****i** **consist of uppercase English letters\.**
 *   **from****i** **\!= to****i**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/reconstruct-itinerary)
 
-# Approaches
+## Approaches
 
-## 1\. Hierholzer’s Algorithm with DFS \(Backtracking\)
+### 1\. Hierholzer’s Algorithm with DFS \(Backtracking\)
 
 Hierholzer’s algorithm is a method to find an Eulerian path or cycle \(a path or cycle that visits every edge exactly once\) in a graph\. Since the given problem is about reconstructing an itinerary that visits all flights \(edges\) exactly once, and starts from "JFK", we can use this approach directly\.
 
@@ -68,8 +132,6 @@ The idea behind Hierholzer’s algorithm in this context is:
 4.  Reverse the itinerary at the end to get the correct order\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -105,12 +167,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(E logV\) time, where E is the number of edges \(tickets\) and V is the number of vertices \(airports\)\. This is because for each airport, we may sort its list of destinations \(inserting each destination into a priority queue which takes logV time\)\.
 *   **Space Complexity:** O\(V \+ E\) as we need to store the graph \(connections between airports\) and the list of destinations for each airport\.
 
-## 2\. Hierholzer’s Algorithm with Iterative DFS \(Using Stack\)
+### 2\. Hierholzer’s Algorithm with Iterative DFS \(Using Stack\)
 
 Instead of performing the DFS recursively, this approach uses a stack to iteratively perform DFS\. The principle remains the same—ensure all edges are visited exactly once, storing the itinerary in a reverse manner and then reversing it at the end\.
 
@@ -127,8 +189,6 @@ Instead of performing the DFS recursively, this approach uses a stack to iterati
 5.  Reverse the itinerary list to construct the final itinerary correctly\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -166,7 +226,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(E logV\), given that each airport's priority queue operations require logV time\.
 *   **Space Complexity:** O\(V \+ E\) to store each airport’s destinations and stack operations\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/reconstruct-itinerary)

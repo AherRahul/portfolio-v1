@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given the `head` of a sorted linked list, _delete all nodes that have duplicate numbers, leaving only distinct numbers from the original list_\. Return _the linked list_ _**sorted**_ _as well_\. 
 
@@ -21,25 +19,27 @@ Given the `head` of a sorted linked list, _delete all nodes that have duplica
 
 Input:head=\[1,3,3,4,4,5\]
 
-1
-
-3
-
-3
-
-4
-
-4
-
-5
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">5</span></div>
+  </div>
+</div>
 
 null
 
 Output:\[1,5\]
 
-1
-
-5
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">5</span></div>
+  </div>
+</div>
 
 null
 
@@ -47,23 +47,26 @@ null
 
 Input:head=\[1,1,1,2,3\]
 
-1
-
-1
-
-1
-
-2
-
-3
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">3</span></div>
+  </div>
+</div>
 
 null
 
 Output:\[2,3\]
 
-2
-
-3
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">3</span></div>
+  </div>
+</div>
 
 null
 
@@ -73,11 +76,10 @@ null
 *   `-100 <= Node.val <= 100`
 *   The list is guaranteed to be **sorted** in ascending order\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii)
 
-# Approaches
+## Approaches
 
-## 1\. Two Pointers with Dummy Node
+### 1\. Two Pointers with Dummy Node
 
 #### **Intuition:**
 
@@ -99,8 +101,6 @@ In this problem, we are dealing with a sorted linked list\. The goal is to remov
 8.  Finally, return `dummy.next` because `dummy` was pointing to the beginning of the list structure we have built\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {
@@ -139,9 +139,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), where n is the number of nodes in the list\. We traverse the list once\.
 *   **Space Complexity:** O\(1\), because we only use a fixed amount of extra space \(pointers\)\.
 
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii)

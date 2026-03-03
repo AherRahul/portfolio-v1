@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given an integer array `coins` representing coins of different denominations and an integer `amount` representing a total amount of money\.
 
@@ -25,6 +23,14 @@ You may assume that you have an infinite number of each kind of coin\.
 
 **Input:** coins = \[1,2,5\], amount = 11
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">5</span></div>
+  </div>
+</div>
+
 **Output:** 3
 
 **Explanation:** 11 = 5 \+ 5 \+ 1
@@ -33,11 +39,23 @@ You may assume that you have an infinite number of each kind of coin\.
 
 **Input:** coins = \[2\], amount = 3
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">2</span></div>
+  </div>
+</div>
+
 **Output:** \-1
 
 ##### **Example 3:**
 
 **Input:** coins = \[1\], amount = 0
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 **Output:** 0
 
@@ -47,17 +65,14 @@ You may assume that you have an infinite number of each kind of coin\.
 *   **1 <= coins\[i\] <= 2****31** **\- 1**
 *   **0 <= amount <= 10****4**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/coin-change)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force \- Recursive
+### 1\. Brute Force \- Recursive
 
 The brute force approach is to try all possible combinations of coins to determine the minimum number needed for the given amount\. The intuition is to recursively subtract each coin from the amount and solve the problem for the reduced amount until the amount is 0\. This tries out all possible combinations\.
 
 #### Code:
-
-Java
 
 ```java
 class CoinChange {
@@ -77,18 +92,16 @@ class CoinChange {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(S^n\) where S is the amount and n is the number of coins, as we explore all possibilities\.
 *   **Space Complexity:** O\(S\) due to the recursion stack\.
 
-## 2\. Dynamic Programming \- Top Down \(Memoization\)
+### 2\. Dynamic Programming \- Top Down \(Memoization\)
 
 To optimize the recursive solution, we use memoization to store the results of subproblems to avoid redundant calculations\. The idea is the same as the recursive approach but with a cache to store previously computed results\.
 
 #### Code:
-
-Java
 
 ```java
 class CoinChange {
@@ -115,18 +128,16 @@ class CoinChange {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(S \* n\) where S is the amount and n is the number of coins\.
 *   **Space Complexity:** O\(S\) for the memoization table\.
 
-## 3\. Dynamic Programming \- Bottom Up \(Tabulation\)
+### 3\. Dynamic Programming \- Bottom Up \(Tabulation\)
 
 The most efficient approach uses dynamic programming with a bottom\-up technique by creating a table to store the minimum coins required for all values from 0 to the amount\. We build the solution iteratively\.
 
 #### Code:
-
-Java
 
 ```java
 class CoinChange {
@@ -148,7 +159,9 @@ class CoinChange {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(S \* n\) where S is the amount and n is the number of coins\.
 *   **Space Complexity:** O\(S\) for the DP table\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/coin-change)

@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given an `m x n` integer matrix `points` \(**0\-indexed**\)\. Starting with `0` points, you want to **maximize** the number of points you can get from the matrix\.
 
@@ -32,35 +30,25 @@ Return _the_ _**maximum**_ _number of points you can achieve_\.
 
 Input:points=\[\[1,2,3\],\[1,5,1\],\[3,1,1\]\]
 
-0
-
-1
-
-2
-
-0
-
-1
-
-2
-
-3
-
-1
-
-1
-
-5
-
-1
-
-2
-
-3
-
-1
-
-1
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">5</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+  </div>
+</div>
 
 **Output:** 9
 
@@ -78,27 +66,22 @@ Your final score is 11 \- 2 = 9\.
 
 Input:points=\[\[1,5\],\[2,3\],\[4,2\]\]
 
-0
-
-1
-
-0
-
-1
-
-5
-
-1
-
-2
-
-3
-
-2
-
-4
-
-2
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">5</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">4</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+    </div>
+  </div>
+</div>
 
 **Output:** 11
 
@@ -120,11 +103,10 @@ Your final score is 12 \- 1 = 11\.
 *   1 <= m \* n <= 105
 *   0 <= points\[r\]\[c\] <= 105
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/maximum-number-of-points-with-cost)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force
+### 1\. Brute Force
 
 #### Intuition:
 
@@ -135,8 +117,6 @@ The Brute Force approach for this problem involves considering every possible pa
 The naive way to solve this problem is to iterate over each row and for every cell in the current row, consider every possible previous cell in the row above\. For each combination, we calculate the cost using the given formula, and we keep track of the maximum cost encountered thus far\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -174,12 +154,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity**: O\(m \* n^2\), as we are iterating through each cell of the matrix and comparing it with every cell of the row above\.
 *   **Space Complexity**: O\(n\), using a temporary array for dynamic programming storage\.
 
-## 2\. Optimized Dynamic Programming
+### 2\. Optimized Dynamic Programming
 
 #### Intuition:
 
@@ -190,8 +170,6 @@ We can optimize the brute\-force solution by utilizing dynamic programming to pr
 To optimize our solution, we can pass through the matrix twice for each row\. The first pass calculates the maximum possible score for each cell considering penalties from the left neighbor direction\. The second pass does the same from the right neighbor direction\. Thus, each cell will have the maximum score via the least penalized neighbor direction\. By maintaining efficient transitions between computations, the solution is achieved more rapidly than the naive method\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -241,7 +219,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity**: O\(m \* n\), a significant improvement since we take advantage of linear computations for each row\.
 *   **Space Complexity**: O\(n\), as we use additional space for temporary storage in dynamic programming approach\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/maximum-number-of-points-with-cost)

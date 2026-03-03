@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given a binary tree
 
@@ -33,6 +31,18 @@ Initially, all next pointers are set to `NULL`\.
 ##### **Example 1:**
 
 **Input:** root = \[1,2,3,4,5,null,7\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">5</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">7</span></div>
+  </div>
+</div>
 
 **Output:** \[1,\#,2,3,\#,4,5,7,\#\]
 
@@ -54,11 +64,10 @@ Initially, all next pointers are set to `NULL`\.
 *   You may only use constant extra space\.
 *   The recursive approach is fine\. You may assume implicit stack space does not count as extra space for this problem\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii)
 
-# Approaches
+## Approaches
 
-## 1\. Level Order Traversal using Queue
+### 1\. Level Order Traversal using Queue
 
 #### Intuition:
 
@@ -71,8 +80,6 @@ The basic idea is to use a queue to perform a level order traversal of the tree\
 5.  Repeat the above steps until all levels are processed\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -109,12 +116,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\), where N is the total number of nodes\. Each node is processed once\.
 *   **Space Complexity:** O\(N\), the space used by the queue in the worst case\.
 
-## 2\. Using Previously Established Next Pointers
+### 2\. Using Previously Established Next Pointers
 
 #### Intuition:
 
@@ -126,8 +133,6 @@ To optimize space, we can avoid using a queue and instead leverage the `next` 
 4.  Move to the next level by setting the current pointer to `dummy.next` once the current level is completely processed\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -163,7 +168,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\), where N is the total number of nodes\. Each node is processed once\.
 *   **Space Complexity:** O\(1\), as we're only using a few additional pointers, not a queue\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii)

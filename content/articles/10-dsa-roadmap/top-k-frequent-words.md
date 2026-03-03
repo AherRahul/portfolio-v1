@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given an array of strings `words` and an integer `k`, return _the_ `k` _most frequent strings_\.
 
@@ -23,7 +21,25 @@ Return the answer **sorted** by **the frequency** from highest to lowest\. S
 
 **Input:** words = \["i","love","leetcode","i","love","coding"\], k = 2
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">i</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">love</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">leetcode</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">i</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">love</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">coding</span></div>
+  </div>
+</div>
+
 **Output:** \["i","love"\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">i</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">love</span></div>
+  </div>
+</div>
 
 **Explanation:** "i" and "love" are the two most frequent words\.
 
@@ -33,7 +49,31 @@ Note that "i" comes before "love" due to a lower alphabetical order\.
 
 **Input:** words = \["the","day","is","sunny","the","the","the","sunny","is","is"\], k = 4
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">the</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">day</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">is</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">sunny</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">the</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">the</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">the</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">7</span><span class="arr-val">sunny</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">8</span><span class="arr-val">is</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">9</span><span class="arr-val">is</span></div>
+  </div>
+</div>
+
 **Output:** \["the","is","sunny","day"\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">the</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">is</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">sunny</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">day</span></div>
+  </div>
+</div>
 
 **Explanation:** "the", "is", "sunny" and "day" are the four most frequent words, with the number of occurrence being 4, 3, 2 and 1 respectively\.
 
@@ -46,11 +86,10 @@ Note that "i" comes before "love" due to a lower alphabetical order\.
 
 **Follow\-up:** Could you solve it in `O(n log(k))` time and `O(n)` extra space?
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/top-k-frequent-words)
 
-# Approaches
+## Approaches
 
-## 1\. Frequency Map with Sorting
+### 1\. Frequency Map with Sorting
 
 #### Intuition:
 
@@ -68,8 +107,6 @@ The main idea is to count the frequency of each word and then sort them by frequ
 5.  Extract the first k elements from the sorted list\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -98,12 +135,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N log N\), where N is the number of unique words\. Sorting the list of words dictates the complexity\.
 *   **Space Complexity:** O\(N\), where N is the number of unique words \(storing in hashmap and list\)\.
 
-## 2\. Min\-Heap
+### 2\. Min\-Heap
 
 #### Intuition:
 
@@ -120,8 +157,6 @@ A min\-heap can efficiently help maintain the k most frequent elements, especial
 4.  Extract elements from the heap to form the result list\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -156,7 +191,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N log k\), as we perform heap operations \(insertions/deletions\) proportional to the number of unique words, where each operation takes O\(log k\)\.
 *   **Space Complexity:** O\(N\), for storing the hashmap and the heap potentially containing all unique words\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/top-k-frequent-words)

@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given two strings `a` and `b`, return _the minimum number of times you should repeat string_ `a` _so that string_ `b` _is a substring of it_\. If it is impossible for `b`​​​​​​ to be a substring of `a` after repeating it, return `-1`\.
 
@@ -38,11 +36,10 @@ Given two strings `a` and `b`, return _the minimum number of times you shoul
 *   **1 <= a\.length, b\.length <= 10****4**
 *   `a` and `b` consist of lowercase English letters\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/repeated-string-match)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force
+### 1\. Brute Force
 
 #### Intuition:
 
@@ -57,8 +54,6 @@ The problem requires us to determine the minimum number of times string `A` ha
 5.  If `B` is found, return the count of repetitions\. If after `|B|/|A| + 2` repetitions `B` is not found, return \-1\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -92,12 +87,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity**: O\(N \* M\), where `N` is the length of `A` and `M` is the length of `B`\. This is due to the substring search operation\.
 *   **Space Complexity**: O\(N \* M\), due to repeated string storage\.
 
-## 2\. Optimal String Concatenation
+### 2\. Optimal String Concatenation
 
 #### Intuition:
 
@@ -112,8 +107,6 @@ The brute force solution already works fairly efficiently for most reasonable in
 5.  Return \-1 if `B` is not a substring in both checks\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -135,7 +128,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity**: O\(N \+ M\), where `N` is the length of `A` and `M` is the length of `B`\. This comes from building the string and subsequent substring check\.
 *   **Space Complexity**: O\(N \+ M\), due to storage of the repeated string\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/repeated-string-match)

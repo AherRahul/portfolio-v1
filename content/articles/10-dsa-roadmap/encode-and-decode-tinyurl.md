@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 TinyURL is a URL shortening service where you enter a URL such as  and it returns a short URL such as \. Design a class to encode a URL and decode a tiny URL\.
 
@@ -42,11 +40,10 @@ string ans = obj\.decode\(tiny\); // returns the original url after decoding it\
 *   **1 <= url\.length <= 10****4**
 *   `url` is guranteed to be a valid URL\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/encode-and-decode-tinyurl)
 
-# Approaches
+## Approaches
 
-## 1\. HashMap with Simple Incremental ID
+### 1\. HashMap with Simple Incremental ID
 
 #### Intuition:
 
@@ -61,12 +58,12 @@ The basic idea is to use a simple Integer counter to assign a unique ID to each 
 
 #### Code:
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(1\) for both `encode` and `decode` methods\.
 *   **Space Complexity:** O\(N\), where N is the number of URLs encoded\. We store each URL once\.
 
-## 2\. HashMap with Random and Base62 Encoding
+### 2\. HashMap with Random and Base62 Encoding
 
 #### Intuition:
 
@@ -82,7 +79,9 @@ To improve collision handling and reduce the size of the keys, we use random str
 
 #### Code:
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(1\) for both `encode` and `decode` methods, on average\.
 *   **Space Complexity:** O\(N\), where N is the number of URLs encoded\. We store each URL once\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/encode-and-decode-tinyurl)

@@ -34,8 +34,6 @@ In this chapter, I’ll break down:
 
 ![Big O](https://payload.algomaster.io/api/media/file/bigO-light.png)
 
-
-
 ## What is Big O?
 
 So… what exactly is Big O Notation?
@@ -81,7 +79,6 @@ An algorithm is **O(1)** if it performs a fixed number of operations meaning the
 
 A classic example is **accessing an element in an array by index.**
 
-
 ```java
 int[] a = {10, 20, 30, 40}
 
@@ -103,7 +100,6 @@ An algorithm runs in **O(log n)** time when every step reduces the problem size 
 This means the amount of work grows **very slowly**, even when the input becomes massive.
 
 The most common example is **Binary Search**.
-
 
 ```java
 int binarySearch(int[] a, int target) {
@@ -153,7 +149,6 @@ If the input doubles, the number of operations also doubles.
 
 A simple example is **finding the maximum value in an array**:
 
-
 ```java
 int findMax(int[] array) {
     int max = array[0];
@@ -196,7 +191,6 @@ Algorithms with **O(n log n)** time complexity combine two behaviors:
 It’s often described as **logarithmic splitting with linear merging**.
 
 The classic example is **Merge Sort**:
-
 
 ```java
 class MergeSort {
@@ -248,7 +242,6 @@ Next, up quadratic time or O(**n²**). This is where things start to get ugly.
 In an O(n²) algorithm, the number of operations grows **proportionally** to the square of the input size. So if you have n elements, you perform roughly n × n operations.
 
 This typically happens when you have **nested loops**, where for **each element** you iterate over **all other elements**.
-
 
 ```java
 class NSquare {
@@ -331,7 +324,6 @@ Even at n = 15, the numbers are already in the trillions which makes it complete
 
 A classic example of O(n!) is **generating all permutations of a string**.
 
-
 ```java
 class Permutations {
     public static List<String> permute(String s) {
@@ -390,7 +382,6 @@ Now, lets look at popular space complexities you will come across:
 
 If you scan an array to find the maximum value, you only store **one variable** to track the current max.
 
-
 ```java
 int maxValue(int[] a) {
     int max = a[0];
@@ -411,7 +402,6 @@ So while the input size may grow, your extra space stays constant.
 
 Now suppose you collect all even numbers from the array into a new list.
 
-
 ```java
 List<Integer> collectEvens(int[] a) {
     List<Integer> evens = new ArrayList<>();
@@ -431,8 +421,10 @@ If half the numbers are even, that’s roughly `n/2` elements which still counts
 
 Storing a full matrix (like an adjacency matrix or DP table) of size `n × n` takes **O(n²)** space.
 
-
-<div class="mb-4 flex justify-start"><div class="block text-left" style="width: 50%;"><div class="inline-flex flex-col gap-2 items-center"><div class="inline-flex flex-col items-center gap-2"><div class="inline-block"><div class="flex gap-2 mb-2 ml-8"><div class="w-14 text-center text-xs text-muted-foreground font-mono">0</div><div class="w-14 text-center text-xs text-muted-foreground font-mono">1</div><div class="w-14 text-center text-xs text-muted-foreground font-mono">2</div><div class="w-14 text-center text-xs text-muted-foreground font-mono">3</div></div><div class="flex gap-2 mb-2"><div class="w-6 flex items-center justify-center text-xs text-muted-foreground font-mono">0</div><div class="relative group transition-all duration-200"><div class="w-14 h-14 flex items-center justify-center rounded-md border-2 font-mono text-base bg-[#00d084]/70 bg-red-600 hover:bg-red-500 border-black dark:border-[#00d084]/80 hover:border-black dark:hover:border-[#00d084] shadow-sm hover:shadow-md transition-all duration-200">0</div></div><div class="relative group transition-all duration-200"><div class="w-14 h-14 flex items-center justify-center rounded-md border-2 font-mono text-base bg-[#00d084]/70 bg-red-600 hover:bg-red-500 border-black dark:border-[#00d084]/80 hover:border-black dark:hover:border-[#00d084] shadow-sm hover:shadow-md transition-all duration-200">1</div></div><div class="relative group transition-all duration-200"><div class="w-14 h-14 flex items-center justify-center rounded-md border-2 font-mono text-base bg-[#00d084]/70 bg-red-600 hover:bg-red-500 border-black dark:border-[#00d084]/80 hover:border-black dark:hover:border-[#00d084] shadow-sm hover:shadow-md transition-all duration-200">0</div></div><div class="relative group transition-all duration-200"><div class="w-14 h-14 flex items-center justify-center rounded-md border-2 font-mono text-base bg-[#00d084]/70 bg-red-600 hover:bg-red-500 border-black dark:border-[#00d084]/80 hover:border-black dark:hover:border-[#00d084] shadow-sm hover:shadow-md transition-all duration-200">0</div></div></div><div class="flex gap-2 mb-2"><div class="w-6 flex items-center justify-center text-xs text-muted-foreground font-mono">1</div><div class="relative group transition-all duration-200"><div class="w-14 h-14 flex items-center justify-center rounded-md border-2 font-mono text-base bg-[#00d084]/70 bg-red-600 hover:bg-red-500 border-black dark:border-[#00d084]/80 hover:border-black dark:hover:border-[#00d084] shadow-sm hover:shadow-md transition-all duration-200">0</div></div><div class="relative group transition-all duration-200"><div class="w-14 h-14 flex items-center justify-center rounded-md border-2 font-mono text-base bg-[#00d084]/70 bg-red-600 hover:bg-red-500 border-black dark:border-[#00d084]/80 hover:border-black dark:hover:border-[#00d084] shadow-sm hover:shadow-md transition-all duration-200">0</div></div><div class="relative group transition-all duration-200"><div class="w-14 h-14 flex items-center justify-center rounded-md border-2 font-mono text-base bg-[#00d084]/70 bg-red-600 hover:bg-red-500 border-black dark:border-[#00d084]/80 hover:border-black dark:hover:border-[#00d084] shadow-sm hover:shadow-md transition-all duration-200">1</div></div><div class="relative group transition-all duration-200"><div class="w-14 h-14 flex items-center justify-center rounded-md border-2 font-mono text-base bg-[#00d084]/70 bg-red-600 hover:bg-red-500 border-black dark:border-[#00d084]/80 hover:border-black dark:hover:border-[#00d084] shadow-sm hover:shadow-md transition-all duration-200">0</div></div></div><div class="flex gap-2 mb-2"><div class="w-6 flex items-center justify-center text-xs text-muted-foreground font-mono">2</div><div class="relative group transition-all duration-200"><div class="w-14 h-14 flex items-center justify-center rounded-md border-2 font-mono text-base bg-[#00d084]/70 bg-red-600 hover:bg-red-500 border-black dark:border-[#00d084]/80 hover:border-black dark:hover:border-[#00d084] shadow-sm hover:shadow-md transition-all duration-200">0</div></div><div class="relative group transition-all duration-200"><div class="w-14 h-14 flex items-center justify-center rounded-md border-2 font-mono text-base bg-[#00d084]/70 bg-red-600 hover:bg-red-500 border-black dark:border-[#00d084]/80 hover:border-black dark:hover:border-[#00d084] shadow-sm hover:shadow-md transition-all duration-200">0</div></div><div class="relative group transition-all duration-200"><div class="w-14 h-14 flex items-center justify-center rounded-md border-2 font-mono text-base bg-[#00d084]/70 bg-red-600 hover:bg-red-500 border-black dark:border-[#00d084]/80 hover:border-black dark:hover:border-[#00d084] shadow-sm hover:shadow-md transition-all duration-200">0</div></div><div class="relative group transition-all duration-200"><div class="w-14 h-14 flex items-center justify-center rounded-md border-2 font-mono text-base bg-[#00d084]/70 bg-red-600 hover:bg-red-500 border-black dark:border-[#00d084]/80 hover:border-black dark:hover:border-[#00d084] shadow-sm hover:shadow-md transition-all duration-200">1</div></div></div><div class="flex gap-2 mb-2"><div class="w-6 flex items-center justify-center text-xs text-muted-foreground font-mono">3</div><div class="relative group transition-all duration-200"><div class="w-14 h-14 flex items-center justify-center rounded-md border-2 font-mono text-base bg-[#00d084]/70 bg-red-600 hover:bg-red-500 border-black dark:border-[#00d084]/80 hover:border-black dark:hover:border-[#00d084] shadow-sm hover:shadow-md transition-all duration-200">0</div></div><div class="relative group transition-all duration-200"><div class="w-14 h-14 flex items-center justify-center rounded-md border-2 font-mono text-base bg-[#00d084]/70 bg-red-600 hover:bg-red-500 border-black dark:border-[#00d084]/80 hover:border-black dark:hover:border-[#00d084] shadow-sm hover:shadow-md transition-all duration-200">1</div></div><div class="relative group transition-all duration-200"><div class="w-14 h-14 flex items-center justify-center rounded-md border-2 font-mono text-base bg-[#00d084]/70 bg-red-600 hover:bg-red-500 border-black dark:border-[#00d084]/80 hover:border-black dark:hover:border-[#00d084] shadow-sm hover:shadow-md transition-all duration-200">0</div></div><div class="relative group transition-all duration-200"><div class="w-14 h-14 flex items-center justify-center rounded-md border-2 font-mono text-base bg-[#00d084]/70 bg-red-600 hover:bg-red-500 border-black dark:border-[#00d084]/80 hover:border-black dark:hover:border-[#00d084] shadow-sm hover:shadow-md transition-all duration-200">0</div></div></div></div></div></div></div></div>
+    <span style="width:44px;text-align:center;font-size:10px;color:rgba(161,161,170,0.7);font-family:monospace;">0</span>
+    <span style="width:44px;text-align:center;font-size:10px;color:rgba(161,161,170,0.7);font-family:monospace;">1</span>
+    <span style="width:44px;text-align:center;font-size:10px;color:rgba(161,161,170,0.7);font-family:monospace;">2</span>
+    <span style="width:44px;text-align:center;font-size:10px;color:rgba(161,161,170,0.7);font-family:monospace;">3</span>
 
 ### 4) Space from Recursion — O(h), O(n), or worse
 
@@ -459,7 +451,6 @@ If your algorithm performs one block of work **after** another, you **add** thei
 
 Imagine your code has two separate, sequential loops:
 
-
 ```java
 // Block A: O(n)
 for (int i = 0; i < m; i++) {
@@ -479,7 +470,6 @@ The total runtime is the time for Block A _plus_ the time for Block B which come
 ### Rule 2: Multiply Complexities of Nested Operations
 
 If you algorithm has nested loop with the outer loop running n times and the inner loop running m times, the total complexity is O(n \* m).
-
 
 ```java
 // Block A: Outer loop runs n times -> O(n)

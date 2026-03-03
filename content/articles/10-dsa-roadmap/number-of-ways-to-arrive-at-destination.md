@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are in a city that consists of `n` intersections numbered from `0` to `n - 1` with **bi\-directional** roads between some intersections\. The inputs are generated such that you can reach any intersection from any other intersection and that there is at most one road between any two intersections\.
 
@@ -24,6 +22,61 @@ Return _the_ _**number of ways**_ _you can arrive at your destination in the_
 ##### **Example 1:**
 
 **Input:** n = 7, roads = \[\[0,6,7\],\[0,1,2\],\[1,2,3\],\[1,3,3\],\[6,3,3\],\[3,5,1\],\[6,5,1\],\[2,5,1\],\[0,4,5\],\[4,6,2\]\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">6</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">7</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">6</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">5</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">6</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">5</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">5</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">4</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">5</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">4</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">6</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+    </div>
+  </div>
+</div>
 
 **Output:** 4
 
@@ -43,6 +96,16 @@ The four ways to get there in 7 minutes are:
 
 **Input:** n = 2, roads = \[\[1,0,10\]\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">10</span></div>
+    </div>
+  </div>
+</div>
+
 **Output:** 1
 
 **Explanation:** There is only one way to go from intersection 0 to intersection 1, and it takes 10 minutes\.
@@ -58,11 +121,10 @@ The four ways to get there in 7 minutes are:
 *   There is at most one road connecting any two intersections\.
 *   You can reach any intersection from any other intersection\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/number-of-ways-to-arrive-at-destination)
 
-# Approaches
+## Approaches
 
-## 1\. Dijkstra's Algorithm with DFS
+### 1\. Dijkstra's Algorithm with DFS
 
 #### Intuition:
 
@@ -75,8 +137,6 @@ In this approach, we'll use the famous Dijkstra's Algorithm to find the shortest
 3.  Ensure to mod the result by \(10^9 \+ 7\)\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -138,12 +198,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity**: O\(E log V\), where E is the number of roads and V is the number of cities\.
 *   **Space Complexity**: O\(V \+ E\) due to the adjacency list and other data structures used\.
 
-## 2\. Dijkstra's Algorithm with Dynamic Programming
+### 2\. Dijkstra's Algorithm with Dynamic Programming
 
 #### Intuition:
 
@@ -157,8 +217,6 @@ In this approach, instead of using DFS to count paths after Dijkstra's, we integ
 4.  If another equal shortest path found, add the current node's path count to that node's path count\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {    
@@ -210,7 +268,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity**: O\(E log V\), where E is the number of roads and V is the number of cities\. The performance is similar to standard Dijkstra due to the priority queue\.
 *   **Space Complexity**: O\(V \+ E\), stemming from the adjacency list representation and extra counting array\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/number-of-ways-to-arrive-at-destination)

@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 On an `n x n` chessboard, a knight starts at the cell `(row, column)` and attempts to make exactly `k` moves\. The rows and columns are **0\-indexed**, so the top\-left cell is `(0, 0)`, and the bottom\-right cell is `(n - 1, n - 1)`\.
 
@@ -49,11 +47,10 @@ The total probability the knight stays on the board is 0\.0625\.
 *   `0 <= k <= 100`
 *   `0 <= row, column <= n - 1`
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/knight-probability-in-chessboard)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force Recursive Approach
+### 1\. Brute Force Recursive Approach
 
 In this approach, we use recursion to explore all possible moves of the knight and calculate the probability of staying within the boundaries of the chessboard\. The knight has 8 possible moves from any position, and we simulate every possible sequence of moves from the starting position for `k` steps\.
 
@@ -65,8 +62,6 @@ In this approach, we use recursion to explore all possible moves of the knight a
 *   Base case: If no more moves \(`k` becomes zero\), we've successfully completed a sequence\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -92,12 +87,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(8^K\) \- There are 8 possible moves and we perform a recursive call for each move, K times\.
 *   **Space Complexity:** O\(K\) \- Recursive call stack space\.
 
-## 2\. Memoization Approach
+### 2\. Memoization Approach
 
 We use memoization to optimize the recursive approach by storing the already computed probabilities for certain positions with given steps\. This prevents recalculating probabilities for the same state, significantly reducing the number of computations\.
 
@@ -107,8 +102,6 @@ We use memoization to optimize the recursive approach by storing the already com
 *   If the probability has been calculated for a specific state, reuse it instead of recalculating\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -137,12 +130,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N^2 \* K\) \- Each state `(i, j, k)` is computed once\.
 *   **Space Complexity:** O\(N^2 \* K\) \- 3D memoization array\.
 
-## 3\. Dynamic Programming Approach
+### 3\. Dynamic Programming Approach
 
 This approach uses a bottom\-up dynamic programming table where `dp[i][j][k]` represents the probability of the knight being at position `(i, j)` with `k` moves remaining\. We build the solution from the ground up\.
 
@@ -153,8 +146,6 @@ This approach uses a bottom\-up dynamic programming table where `dp[i][j][k]` 
 *   Sum up all probabilities when k=0\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -192,7 +183,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N^2 \* K\) \- Iterating over N^2 cells for each step K\.
 *   **Space Complexity:** O\(N^2 \* K\) \- 3D DP table\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/knight-probability-in-chessboard)

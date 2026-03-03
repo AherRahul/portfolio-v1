@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given a string `s`\. You can convert `s` to a palindrome by adding characters in front of it\.
 
@@ -36,11 +34,10 @@ Return _the shortest palindrome you can find by performing this transformation_
 *   **0 <= s\.length <= 5 \* 10****4**
 *   `s` consists of lowercase English letters only\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/shortest-palindrome)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force
+### 1\. Brute Force
 
 #### Intuition:
 
@@ -59,8 +56,6 @@ The problem asks us to create the shortest palindrome by adding characters to th
 5.  Continue this until a palindrome is formed\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -81,12 +76,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^2\)\. Each substring comparison takes O\(n\) time and there are n such attempts\.
 *   **Space Complexity:** O\(n\)\. For storing the reversed string and additional substring storage\.
 
-## 2\. KMP Algorithm
+### 2\. KMP Algorithm
 
 #### Intuition:
 
@@ -103,8 +98,6 @@ To reduce the time complexity, we can use the Knuth\-Morris\-Pratt algorithm \(K
 5.  The rest of the characters of `s` can be added in reverse at the beginning to form the shortest palindrome\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -136,7 +129,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\)\. The KMP algorithm runs in linear time relative to the length of the concatenated string\.
 *   **Space Complexity:** O\(n\)\. Space used for the KMP table and additional reversed string\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/shortest-palindrome)

@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given two integers `a` and `b`, return _the sum of the two integers without using the operators_ `+` _and_ `-`\.
 
@@ -33,11 +31,10 @@ Given two integers `a` and `b`, return _the sum of the two integers without 
 
 *   `-1000 <= a, b <= 1000`
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/sum-of-two-integers/)
 
-# Approaches
+## Approaches
 
-## 1\. Iterative Bit Manipulation
+### 1\. Iterative Bit Manipulation
 
 The problem states that we need to sum two integers without using the operators `+` or `-`\. This can be achieved through bit manipulation using the concepts of XOR and carry\. Here's the step\-by\-step breakdown:
 
@@ -47,8 +44,6 @@ The problem states that we need to sum two integers without using the operators�
 *   Repeat this process until there are no carries left to process\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -68,7 +63,7 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(1\), because the number of bits is fixed, the loop will iterate a finite number of times\.
 *   **Space Complexity:** O\(1\), as no additional space is used\.
@@ -85,13 +80,11 @@ Complexity Analysis
 
 Stop when `b == 0`\. Final `a = 14` → `5 + 9 = 14`\.
 
-## 2\. Recursive Bit Manipulation
+### 2\. Recursive Bit Manipulation
 
 This approach uses the same logic as the iterative approach but utilizes recursion instead\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -104,7 +97,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(1\) since the recursion depth is limited by the number of bits in an integer\.
 *   **Space Complexity:** O\(1\) if we consider just the computation\. However, there is a recursive call stack used which would typically be O\(n\) where n is the number of bits, but due to limits in integer size, it is effectively constant\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/sum-of-two-integers/)

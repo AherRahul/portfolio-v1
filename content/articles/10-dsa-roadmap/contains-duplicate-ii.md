@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given an integer array `nums` and an integer `k`, return `true` _if there are two_ _**distinct indices**_ `i` _and_ `j` _in the array such that_ `nums[i] == nums[j]` _and_ `abs(i - j) <= k`\. 
 
@@ -21,21 +19,14 @@ Given an integer array `nums` and an integer `k`, return `true` _if there a
 
 **Input:** nums = \[1,2,3,1\], k = 3
 
-0
-
-1
-
-1
-
-2
-
-2
-
-3
-
-3
-
-1
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 **Output:** true
 
@@ -43,21 +34,14 @@ Given an integer array `nums` and an integer `k`, return `true` _if there a
 
 **Input:** nums = \[1,0,1,1\], k = 1
 
-0
-
-1
-
-1
-
-0
-
-2
-
-1
-
-3
-
-1
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">1</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 **Output:** true
 
@@ -65,29 +49,16 @@ Given an integer array `nums` and an integer `k`, return `true` _if there a
 
 **Input:** nums = \[1,2,3,1,2,3\], k = 2
 
-0
-
-1
-
-1
-
-2
-
-2
-
-3
-
-3
-
-1
-
-4
-
-2
-
-5
-
-3
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">3</span></div>
+  </div>
+</div>
 
 **Output:** false 
 
@@ -97,19 +68,16 @@ Given an integer array `nums` and an integer `k`, return `true` _if there a
 *   **\-10****9** **<= nums\[i\] <= 10****9**
 *   **0 <= k <= 10****5**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/contains-duplicate-ii)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force
+### 1\. Brute Force
 
 #### Intuition:
 
 The simplest approach to solve this problem is to check every pair of elements in the array\. If two elements are the same and are within the given range `k` from each other, we return true\. Otherwise, we continue checking all possible pairs\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -130,20 +98,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** **O\(n \* k\)**: This approach involves checking all possible pairs in the array where `n` is the length of the array\.
 *   **Space Complexity:** **O\(1\)**: We are only using a constant amount of extra space\.
 
-## 2\. Sliding Window with HashSet
+### 2\. Sliding Window with HashSet
 
 #### Intuition:
 
 Instead of checking each pair, we can use a sliding window of size `k` and a HashSet to track the elements within that window\. As we slide the window through the array, we can keep checking if the current element already exists in the HashSet\. If it does, it means we found a duplicate within the given range\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -168,20 +134,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** **O\(n\)**: We iterate through the list once, each operation \(add, remove, contains\) of HashSet takes O\(1\) on average\.
 *   **Space Complexity:** **O\(min\(n, k\)\)**: The space used by the HashSet scales with the size of `k`, as it only keeps track of `k` elements at a time\.
 
-## 3\. Sliding Window with HashMap
+### 3\. Sliding Window with HashMap
 
 #### Intuition:
 
 A small optimization can be done over the HashSet approach by using a HashMap which stores the indices\. By keeping track of indices, we can avoid unnecessary otherwise possible duplicates removal\. This approach reduces operations to a bare minimum required for ensuring unique elements within the window\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -202,7 +166,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** **O\(n\)**: We traverse the array once, each operation with HashMap is O\(1\) on average\.
 *   **Space Complexity:** **O\(n\)**: In the worst case, all elements might be unique in the array\. Hence, the HashMap can store up to `n` unique elements and their last seen indices\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/contains-duplicate-ii)

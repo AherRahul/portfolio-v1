@@ -37,19 +37,13 @@ a
 
 :
 
-1
-
 b
 
 :
 
-2
-
 c
 
 :
-
-3
 
 Here’s how it works:
 

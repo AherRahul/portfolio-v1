@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Design a data structure that supports adding new words and finding if a string matches any previously added string\.
 
@@ -56,19 +54,16 @@ wordDictionary.search("b.."); // return True
 *   There will be at most `2` dots in `word` for `search` queries\.
 *   At most `10``4` calls will be made to `addWord` and `search`\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/design-add-and-search-words-data-structure)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force Approach
+### 1\. Brute Force Approach
 
 #### Intuition:
 
 We can store each added word in a list and when a search operation is called, we'll iterate through all the stored words to check if there's any match to the search word\. For search words having a wildcard character '\.', we need to check each character except the wildcard positions\. This approach is inefficient for large datasets due to the linear search which is coupled with string matching complexity\.
 
 #### Code:
-
-Java
 
 ```java
 class WordDictionary {
@@ -104,20 +99,18 @@ class WordDictionary {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity**: O\(n \* m\) for search where n is the number of words and m is the average length of words\.
 *   **Space Complexity**: O\(n\) to store the list of words\.
 
-## 2\. Trie Implementation
+### 2\. Trie Implementation
 
 #### Intuition:
 
 A more efficient approach is to use a Trie \(prefix tree\) to store the added words\. The trie allows us to efficiently search by traversing down the tree character by character, matching the structure of the search word\. For each wildcard '\.', we can traverse down all possible paths\. This significantly reduces the time complexity for search operations compared to the brute force method\.
 
 #### Code:
-
-Java
 
 ```java
 class WordDictionary {
@@ -174,7 +167,9 @@ class WordDictionary {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity**: O\(m\) for adding and typical search where m is the length of the word\.
 *   **Space Complexity**: O\(n \* m\) where n is the number of words and m is the average length of words to store the Trie\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/design-add-and-search-words-data-structure)

@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Write an algorithm to determine if a number `n` is happy\.
 
@@ -41,11 +39,10 @@ Return `true` _if_ `n` _is a happy number, and_ `false` _if not_\.
 
 *   **1 <= n <= 2****31** **\- 1**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/happy-number)
 
-# Approaches
+## Approaches
 
-## 1\. Cycle Detection using a Set
+### 1\. Cycle Detection using a Set
 
 The simplest approach is to detect cycles by using a set to track sums of squared digits that we've seen\. If we encounter a sum that we've seen before, we know we're in a cycle and the number is not happy\. Otherwise, if we reach the number 1, the number is happy\.
 
@@ -64,8 +61,6 @@ The simplest approach is to detect cycles by using a set to track sums of square
 5.  Add the sum to the set and repeat\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -92,12 +87,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(log n\)\. In the worst case, each number leads to a value with fewer digits\.
 *   **Space Complexity:** O\(log n\)\. We store each intermediate value in a set until we reach 1 or encounter a cycle\.
 
-## 2\. Floyd's Cycle Detection \(Tortoise and Hare\)
+### 2\. Floyd's Cycle Detection \(Tortoise and Hare\)
 
 A more space\-optimized solution is to utilize Floyd's Cycle Detection Algorithm, known for its tortoise and hare pointers, which operates in constant space\.
 
@@ -117,8 +112,6 @@ A more space\-optimized solution is to utilize Floyd's Cycle Detection Algorithm
 5.  Repeat these steps until a conclusion is reached\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -146,7 +139,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(log n\)\. Similar to the set\-based approach, but faster in practice due to constant space usage\.
 *   **Space Complexity:** O\(1\)\. Only uses a fixed amount of extra space for pointers and variables; no need for additional data structures\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/happy-number)

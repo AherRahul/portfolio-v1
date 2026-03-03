@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given a list of `accounts` where each element `accounts[i]` is a list of strings, where the first element `accounts[i][0]` is a name, and the rest of the elements are **emails** representing emails of the account\.
 
@@ -25,7 +23,49 @@ After merging the accounts, return the accounts in the following format: the fir
 
 **Input:** accounts = \[\["John","johnsmith@mail\.com","john\_newyork@mail\.com"\],\["John","johnsmith@mail\.com","john00@mail\.com"\],\["Mary","mary@mail\.com"\],\["John","johnnybravo@mail\.com"\]\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">John</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">johnsmith@mail.com</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">john_newyork@mail.com</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">John</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">johnsmith@mail.com</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">john00@mail.com</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">Mary</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">mary@mail.com</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">John</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">johnnybravo@mail.com</span></div>
+    </div>
+  </div>
+</div>
+
 **Output:** \[\["John","john00@mail\.com","john\_newyork@mail\.com","johnsmith@mail\.com"\],\["Mary","mary@mail\.com"\],\["John","johnnybravo@mail\.com"\]\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">John</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">john00@mail.com</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">john_newyork@mail.com</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">johnsmith@mail.com</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">Mary</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">mary@mail.com</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">John</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">johnnybravo@mail.com</span></div>
+    </div>
+  </div>
+</div>
 
 **Explanation:**
 
@@ -39,7 +79,77 @@ We could return these lists in any order, for example the answer \[\['Mary', 'ma
 
 **Input:** accounts = \[\["Gabe","Gabe0@m\.co","Gabe3@m\.co","Gabe1@m\.co"\],\["Kevin","Kevin3@m\.co","Kevin5@m\.co","Kevin0@m\.co"\],\["Ethan","Ethan5@m\.co","Ethan4@m\.co","Ethan0@m\.co"\],\["Hanzo","Hanzo3@m\.co","Hanzo1@m\.co","Hanzo0@m\.co"\],\["Fern","Fern5@m\.co","Fern1@m\.co","Fern0@m\.co"\]\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">Gabe</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">Gabe0@m.co</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">Gabe3@m.co</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">Gabe1@m.co</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">Kevin</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">Kevin3@m.co</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">Kevin5@m.co</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">Kevin0@m.co</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">Ethan</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">Ethan5@m.co</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">Ethan4@m.co</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">Ethan0@m.co</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">Hanzo</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">Hanzo3@m.co</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">Hanzo1@m.co</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">Hanzo0@m.co</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">Fern</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">Fern5@m.co</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">Fern1@m.co</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">Fern0@m.co</span></div>
+    </div>
+  </div>
+</div>
+
 **Output:** \[\["Ethan","Ethan0@m\.co","Ethan4@m\.co","Ethan5@m\.co"\],\["Gabe","Gabe0@m\.co","Gabe1@m\.co","Gabe3@m\.co"\],\["Hanzo","Hanzo0@m\.co","Hanzo1@m\.co","Hanzo3@m\.co"\],\["Kevin","Kevin0@m\.co","Kevin3@m\.co","Kevin5@m\.co"\],\["Fern","Fern0@m\.co","Fern1@m\.co","Fern5@m\.co"\]\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">Ethan</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">Ethan0@m.co</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">Ethan4@m.co</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">Ethan5@m.co</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">Gabe</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">Gabe0@m.co</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">Gabe1@m.co</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">Gabe3@m.co</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">Hanzo</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">Hanzo0@m.co</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">Hanzo1@m.co</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">Hanzo3@m.co</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">Kevin</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">Kevin0@m.co</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">Kevin3@m.co</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">Kevin5@m.co</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">Fern</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">Fern0@m.co</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">Fern1@m.co</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">Fern5@m.co</span></div>
+    </div>
+  </div>
+</div>
 
 ##### **Constraints:**
 
@@ -49,11 +159,10 @@ We could return these lists in any order, for example the answer \[\['Mary', 'ma
 *   `accounts[i][0]` consists of English letters\.
 *   `accounts[i][j] (for j > 0)` is a valid email\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/accounts-merge)
 
-# Approaches
+## Approaches
 
-## 1\. DFS and HashMap
+### 1\. DFS and HashMap
 
 #### **Intuition:**
 
@@ -64,8 +173,6 @@ The task is essentially about grouping connected components \(emails\) under the
 3.  For each account's first email, perform DFS to fetch all connected emails, sort them, and store under the corresponding owner\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {
@@ -114,12 +221,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N \* K \* log\(K\)\), where N is the number of accounts and K is the number of emails in an account\. Sorting takes K \* log\(K\)
 *   **Space Complexity:** O\(N \* K\), storing graph, email\-to\-name map\.
 
-## 2\. Union Find
+### 2\. Union Find
 
 #### **Intuition:**
 
@@ -131,8 +238,6 @@ Union\-Find \(Disjoint Set Union\) is a perfect fit for grouping connected compo
 4.  Append sorted grouped emails, prefixed by their owner's name, to the result list\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {
@@ -186,7 +291,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N \* K \* log\(K\)\), similar to the DFS approach with additional log factor for find operation\.
 *   **Space Complexity:** O\(N \* K\), storing parent and email mappings\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/accounts-merge)

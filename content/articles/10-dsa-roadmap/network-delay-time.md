@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given a network of `n` nodes, labeled from `1` to `n`\. You are also given `times`, a list of travel times as directed edges **times\[i\] = \(u****i****, v****i****, w****i****\)**, where **u****i** is the source node, **v****i** is the target node, and **w****i** is the time it takes for a signal to travel from source to target\.
 
@@ -23,17 +21,57 @@ We will send a signal from a given node `k`\. Return _the_ _**minimum**_ _ti
 
 **Input:** times = \[\[2,1,1\],\[2,3,1\],\[3,4,1\]\], n = 4, k = 2
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">4</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+  </div>
+</div>
+
 **Output:** 2
 
 ##### **Example 2:**
 
 **Input:** times = \[\[1,2,1\]\], n = 2, k = 1
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+  </div>
+</div>
+
 **Output:** 1
 
 ##### **Example 3:**
 
 **Input:** times = \[\[1,2,1\]\], n = 2, k = 2
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+  </div>
+</div>
 
 **Output:** \-1
 
@@ -47,11 +85,10 @@ We will send a signal from a given node `k`\. Return _the_ _**minimum**_ _ti
 *   **0 <= w****i** **<= 100**
 *   **All the pairs \(u****i****, v****i****\) are unique\. \(i\.e\., no multiple edges\.\)**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/network-delay-time)
 
-# Approaches
+## Approaches
 
-## 1\. Dijkstra's Algorithm
+### 1\. Dijkstra's Algorithm
 
 #### Intuition:
 
@@ -71,8 +108,6 @@ Dijkstra’s algorithm is a classic approach to find the shortest paths from a s
 6.  **Finding the Result**: The result is the maximum value from the distance table\. If there's any node that remains at infinity, it means it's unreachable from the source `K`\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -122,12 +157,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** `O(E log V)`, where `E` is the number of edges and `V` is the number of vertices, due to the heap operations\.
 *   **Space Complexity:** `O(V + E)`, for storing the graph and the distance table\.
 
-## 2\. Bellman\-Ford Algorithm
+### 2\. Bellman\-Ford Algorithm
 
 #### Intuition:
 
@@ -147,8 +182,6 @@ The Bellman\-Ford algorithm is another method to compute the shortest paths from
 6.  **Determine the Result**: Find the maximum time in the distance array\. If all nodes are reachable, return this maximum time; otherwise, return `-1`\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -180,7 +213,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** `O(V * E)`, as each of the `V` vertices requires `E` edge relaxations\.
 *   **Space Complexity:** `O(V)`, as we only maintain a simple distance array\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/network-delay-time)

@@ -81,8 +81,6 @@ Because a heap is a **complete binary tree** \(filled level by level, left to ri
 
 This mapping allows us to navigate the heap without storing extra pointers, which makes the implementation simpler and faster\.
 
-Java
-
 ```java
 class ArrayHeap {
    int[] heap;
@@ -132,8 +130,6 @@ This is the simplest and fastest operation\.
 *   In a max\-heap, it’s the max value and it’s always at the root of the three which corresponds to the first element in our heap array at`index 0`
 *   The time complexity is **O\(1\) since it’s a direct lookup**\.
 
-Java
-
 ```java
 class MaxHeap {
    // Our heap is stored as a dynamic array (List)
@@ -174,8 +170,6 @@ Here’s what it looks like in code:
 2.  If the element is **greater than** its parent, swap them\.
 3.  Update `i` to be the parent's index and continue the loop\.
 4.  If the element is **less than or equal to** its parent, the heap property is restored\. Stop the loop\.
-
-Java
 
 ```java
 public void insert(int val) {
@@ -224,8 +218,6 @@ Here’s how it looks in code:
 4.  If the heap is now empty \(we just removed the only element\), return the stored root\.
 5.  If not, place the \(previously last\) element at the root \(`heap.set(0, lastElement)`\)\.
 6.  Call `heapifyDown(0)` to sift the new root down to its correct position\.
-
-Java
 
 ```java
 public int extractMax() {
@@ -303,8 +295,6 @@ Here is how it works:
 3.  Iterate backwards from this index down to 0 \(`for (int i = ...; i >= 0; i--)`\)\.
 4.  In each iteration, call `heapifyDown(i)`\.
 5.  When the loop finishes, the entire array is a valid heap\.
-
-Java
 
 ```java
 public void buildHeap(int[] arr) {

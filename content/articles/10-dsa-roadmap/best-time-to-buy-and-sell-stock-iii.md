@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given an array `prices` where `prices[i]` is the price of a given stock on the `i``th` day\.
 
@@ -25,6 +23,19 @@ Find the maximum profit you can achieve\. You may complete **at most two transa
 
 **Input:** prices = \[3,3,5,0,0,3,1,4\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">3</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">4</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">7</span><span class="arr-val">4</span></div>
+  </div>
+</div>
+
 **Output:** 6
 
 **Explanation:** Buy on day 4 \(price = 0\) and sell on day 6 \(price = 3\), profit = 3\-0 = 3\.
@@ -34,6 +45,16 @@ Then buy on day 7 \(price = 1\) and sell on day 8 \(price = 4\), profit = 4\-1 =
 ##### **Example 2:**
 
 **Input:** prices = \[1,2,3,4,5\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">5</span></div>
+  </div>
+</div>
 
 **Output:** 4
 
@@ -45,6 +66,16 @@ Note that you cannot buy on day 1, buy on day 2 and sell them later, as you are 
 
 **Input:** prices = \[7,6,4,3,1\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">7</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">6</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">1</span></div>
+  </div>
+</div>
+
 **Output:** 0
 
 **Explanation:** In this case, no transaction is done, i\.e\. max profit = 0\.
@@ -54,11 +85,10 @@ Note that you cannot buy on day 1, buy on day 2 and sell them later, as you are 
 *   **1 <= prices\.length <= 10****5**
 *   **0 <= prices\[i\] <= 10****5**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force
+### 1\. Brute Force
 
 The brute force approach would involve checking every possible combination of two transactions \(buy\-sell pairs\) to find the maximum profit\. However, this approach is highly inefficient since it would require iterating over all possible pairs of transactions\.
 
@@ -85,8 +115,6 @@ The brute force approach would involve checking every possible combination of tw
 Each day, we determine the best action based on states defined above\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -117,20 +145,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\), iterating over prices array once\.
 *   **Space Complexity:** O\(N\), space used by dp array to store intermediate results\.
 
-## 3\. Optimized Dynamic Programming
+### 3\. Optimized Dynamic Programming
 
 #### Intuition:
 
 *   We can reduce the space complexity by using only two variables for each state since each state depends only on the previous day\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -154,7 +180,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\), single iteration through the prices array\.
 *   **Space Complexity:** O\(1\), space used is constant as we only store state for the previous day\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii)

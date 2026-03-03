@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 A linked list of length `n` is given such that each node contains an additional random pointer, which could point to any node in the list, or `null`\.
 
@@ -34,19 +32,129 @@ Your code will **only** be given the `head` of the original linked list\. 
 
 **Input:** head = \[\[7,null\],\[13,0\],\[11,4\],\[10,2\],\[1,0\]\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">7</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">null</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">13</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">11</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">4</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">10</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+    </div>
+  </div>
+</div>
+
 **Output:** \[\[7,null\],\[13,0\],\[11,4\],\[10,2\],\[1,0\]\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">7</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">null</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">13</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">0</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">11</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">4</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">10</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">2</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">0</span></div>
+    </div>
+  </div>
+</div>
 
 ##### **Example 2:**
 
 **Input:** head = \[\[1,1\],\[2,1\]\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+  </div>
+</div>
+
 **Output:** \[\[1,1\],\[2,1\]\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">1</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">1</span></div>
+    </div>
+  </div>
+</div>
 
 ##### **Example 3:**
 
 **Input:** head = \[\[3,null\],\[3,0\],\[3,null\]\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">null</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">null</span></div>
+    </div>
+  </div>
+</div>
+
 **Output:** \[\[3,null\],\[3,0\],\[3,null\]\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">null</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">0</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">null</span></div>
+    </div>
+  </div>
+</div>
 
 ##### **Constraints:**
 
@@ -54,11 +162,10 @@ Your code will **only** be given the `head` of the original linked list\. 
 *   **\-10****4** **<= Node\.val <= 10****4**
 *   `Node.random` is `null` or is pointing to some node in the linked list\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/copy-list-with-random-pointer)
 
-# Approaches
+## Approaches
 
-## 1\. HashMap
+### 1\. HashMap
 
 #### **Intuition:**
 
@@ -76,8 +183,6 @@ The algorithm can be summarized in two main passes over the linked list:
 *   Iterate over the original list again\. For each node, set the `next` and `random` pointers for the copied nodes using the HashMap\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -109,12 +214,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\), where N is the number of nodes in the linked list\. We iterate over the list twice\.
 *   **Space Complexity:** O\(N\), as we store N node mappings in the HashMap\.
 
-## 2\. Interleaved List
+### 2\. Interleaved List
 
 #### **Intuition:**
 
@@ -127,8 +232,6 @@ We can optimize the space used for storing node mappings by integrating the copi
 This approach removes the need for a HashMap to store node mappings, thereby reducing the space complexity\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -170,7 +273,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\), where N is the number of nodes in the linked list\. We iterate over the list twice\.
 *   **Space Complexity:** O\(1\), as we don't use any extra space apart from temporary nodes\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/copy-list-with-random-pointer)

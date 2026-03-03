@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You have a data structure of employee information, including the employee's unique ID, importance value, and direct subordinates' IDs\.
 
@@ -29,6 +27,26 @@ Given an integer `id` that represents an employee's ID, return _the_ _**tota
 
 **Input:** employees = \[\[1,5,\[2,3\]\],\[2,3,\[\]\],\[3,3,\[\]\]\], id = 1
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">5</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2,3</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val"></span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val"></span></div>
+    </div>
+  </div>
+</div>
+
 **Output:** 11
 
 **Explanation:** Employee 1 has an importance value of 5 and has two direct subordinates: employee 2 and employee 3\.
@@ -40,6 +58,21 @@ Thus, the total importance value of employee 1 is 5 \+ 3 \+ 3 = 11\.
 ##### **Example 2:**
 
 **Input:** employees = \[\[1,2,\[5\]\],\[5,\-3,\[\]\]\], id = 5
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">5</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">5</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">-3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val"></span></div>
+    </div>
+  </div>
+</div>
 
 **Output:** \-3
 
@@ -56,11 +89,10 @@ Thus, the total importance value of employee 5 is \-3\.
 *   One employee has at most one direct leader and may have several subordinates\.
 *   The IDs in `employees[i].subordinates` are valid IDs\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/employee-importance)
 
-# Approaches
+## Approaches
 
-## 1\. Depth\-First Search \(DFS\) Recursion
+### 1\. Depth\-First Search \(DFS\) Recursion
 
 #### **Intuition:**
 
@@ -75,12 +107,12 @@ The main idea is to recursively calculate the total importance by summing up the
 
 #### **Code:**
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** `O(N)`, where `N` is the number of employees\. We visit each employee once\.
 *   **Space Complexity:** `O(N)`, due to the recursion stack in the worst case and the space used by the hashmap\.
 
-## 2\. Breadth\-First Search \(BFS\)
+### 2\. Breadth\-First Search \(BFS\)
 
 #### **Intuition:**
 
@@ -95,7 +127,9 @@ Instead of using recursion, we can implement an iterative version using a queue,
 
 #### **Code:**
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** `O(N)`, where `N` is the number of employees\. We visit each employee once\.
 *   **Space Complexity:** `O(N)`, due to the space used by the hashmap and the queue\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/employee-importance)

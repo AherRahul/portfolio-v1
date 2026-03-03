@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given the `head` of a linked list, reverse the nodes of the list `k` at a time, and return _the modified list_\.
 
@@ -25,29 +23,29 @@ You may not alter the values in the list's nodes, only nodes themselves may be c
 
 **Input:** head = \[1,2,3,4,5\], k = 2
 
-1
-
-2
-
-3
-
-4
-
-5
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">5</span></div>
+  </div>
+</div>
 
 null
 
 **Output:** \[2,1,4,3,5\]
 
-2
-
-1
-
-4
-
-3
-
-5
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">5</span></div>
+  </div>
+</div>
 
 null
 
@@ -55,29 +53,29 @@ null
 
 **Input:** head = \[1,2,3,4,5\], k = 3
 
-1
-
-2
-
-3
-
-4
-
-5
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">5</span></div>
+  </div>
+</div>
 
 null
 
 **Output:** \[3,2,1,4,5\] 
 
-3
-
-2
-
-1
-
-4
-
-5
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">5</span></div>
+  </div>
+</div>
 
 null
 
@@ -89,11 +87,10 @@ null
 
 **Follow\-up:** Can you solve the problem in `O(1)` extra memory space?
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/reverse-nodes-in-k-group)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force
+### 1\. Brute Force
 
 #### **Intuition:**
 
@@ -105,8 +102,6 @@ The most straightforward approach to reverse nodes in k\-group involves using an
 4.  Continue this process for each k\-sized group in the list until you have traversed the entire list\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -144,12 +139,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), where n is the number of nodes in the list\.
 *   **Space Complexity:** O\(k\), for storing each group of nodes temporarily\.
 
-## 2\. Recursive
+### 2\. Recursive
 
 #### **Intuition:**
 
@@ -158,8 +153,6 @@ The recursive approach is an elegant way to solve the problem\. In each recursiv
 1.  Base case: If the number of nodes is less than k, directly return the head\.
 2.  Recursively reverse the k\-sized group, and then link it with the recursively processed next k\-sized group\.
 3.  Continue doing this for all the nodes in the list\.
-
-Java
 
 ```java
 class Solution {
@@ -189,12 +182,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), as each node is traversed once\.
 *   **Space Complexity:** O\(n/k\) due to the recursion stack\.
 
-## 3\. Iterative
+### 3\. Iterative
 
 #### **Intuition:**
 
@@ -205,8 +198,6 @@ An optimal solution with an iterative approach avoids using extra space apart fr
 3.  Utilize a dummy node and handle edge cases to ensure the list is correctly reconstructed after reversal\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -243,7 +234,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), where n is the length of the linked list since each node is processed at most twice\.
 *   **Space Complexity:** O\(1\), because the operation is done in place\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/reverse-nodes-in-k-group)

@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given an array of CPU `tasks`, each labeled with a letter from A to Z, and a number `n`\. Each CPU interval can be idle or allow the completion of one task\. Tasks can be completed in any order, but there's a constraint: there has to be a gap of **at least** `n` intervals between two tasks with the same label\.
 
@@ -22,6 +20,17 @@ Return the **minimum** number of CPU intervals required to complete all tasks\
 ##### **Example 1:**
 
 **Input:** tasks = \["A","A","A","B","B","B"\], n = 2
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">A</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">A</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">A</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">B</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">B</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">B</span></div>
+  </div>
+</div>
 
 **Output:** 8
 
@@ -33,6 +42,17 @@ After completing task A, you must wait two intervals before doing A again\. The 
 
 **Input:** tasks = \["A","C","A","B","D","B"\], n = 1
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">A</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">C</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">A</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">B</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">D</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">B</span></div>
+  </div>
+</div>
+
 **Output:** 6
 
 **Explanation:** A possible sequence is: A \-> B \-> C \-> D \-> A \-> B\.
@@ -42,6 +62,17 @@ With a cooling interval of 1, you can repeat a task after just one other task\.
 ##### **Example 3:**
 
 **Input:** tasks = \["A","A","A", "B","B","B"\], n = 3
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">A</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">A</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">A</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">B</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">B</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">B</span></div>
+  </div>
+</div>
 
 **Output:** 10
 
@@ -55,11 +86,10 @@ There are only two types of tasks, A and B, which need to be separated by 3 inte
 *   `tasks[i]` is an uppercase English letter\.
 *   `0 <= n <= 100`
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/task-scheduler)
 
-# Approaches
+## Approaches
 
-## 1\. Greedy Scheduling with Priority Queue
+### 1\. Greedy Scheduling with Priority Queue
 
 #### **Intuition:**
 
@@ -71,8 +101,6 @@ The problem can be visualized as filling slots in a schedule but ensuring that t
 4.  **Time Simulation:** Iterate over time units and use steps 2 and 3 above to decide what task, if any, to execute at each time step\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -117,12 +145,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N log k\), where N is the number of tasks and k is the number of unique tasks\.
 *   **Space Complexity:** O\(N\), as we are storing the frequencies and cooldown tasks\.
 
-## 2\. Greedy Scheduling with Frequency Calculations
+### 2\. Greedy Scheduling with Frequency Calculations
 
 #### **Intuition:**
 
@@ -134,8 +162,6 @@ The most optimal solution to this problem is to directly calculate the least int
 4.  **Total Time Calculation:** Determine the total required time by summing filled slots and idle time\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -170,7 +196,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\), where N is the number of tasks\.
 *   **Space Complexity:** O\(1\), only constant extra space is utilized \(e\.g\. for counting frequencies\)\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/task-scheduler)

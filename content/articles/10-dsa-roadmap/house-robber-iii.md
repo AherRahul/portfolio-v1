@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 The thief has found himself a new place for his thievery again\. There is only one entrance to this area, called `root`\.
 
@@ -25,6 +23,18 @@ Given the `root` of the binary tree, return _the maximum amount of money the 
 
 **Input:** root = \[3,2,3,null,3,null,1\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">3</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">5</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">1</span></div>
+  </div>
+</div>
+
 32331
 
 **Output:** 7
@@ -34,6 +44,18 @@ Given the `root` of the binary tree, return _the maximum amount of money the 
 ##### **Example 2:**
 
 **Input:** root = \[3,4,5,1,3,null,1\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">5</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 341351
 
@@ -46,11 +68,10 @@ Given the `root` of the binary tree, return _the maximum amount of money the 
 *   The number of nodes in the tree is in the range **\[1, 10****4****\]**\.
 *   **0 <= Node\.val <= 10****4**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/house-robber-iii)
 
-# Approaches
+## Approaches
 
-## 1\. Recursive DFS \(Depth\-First Search\)
+### 1\. Recursive DFS \(Depth\-First Search\)
 
 #### Intuition:
 
@@ -63,8 +84,6 @@ The basic idea is:
 *   If we do not rob this house, we can move to its children freely\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -93,12 +112,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(2^n\) \- For each node, two recursive calls are made, leading to an exponential number of calls\.
 *   **Space Complexity:** O\(n\) \- In the worst case, the depth of the recursion tree can go up to N, the number of nodes in the tree\.
 
-## 2\. DFS with Memoization
+### 2\. DFS with Memoization
 
 #### Intuition:
 
@@ -107,8 +126,6 @@ To optimize the above approach, we implement memoization\. The recursive approac
 We use a HashMap to store the result for each node so we don't compute the value of a node more than once\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -146,12 +163,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\) \- Each node is visited once, and results are stored and reused\.
 *   **Space Complexity:** O\(n\) \- The extra space needed for the memo map as well as the recursion stack\.
 
-## 3\. Optimized DFS with Return Values \(Most Optimal\)
+### 3\. Optimized DFS with Return Values \(Most Optimal\)
 
 #### Intuition:
 
@@ -163,8 +180,6 @@ Rather than relying solely on memoization, we can optimize further by using a pa
 This approach allows us to eliminate the use of an external hashmap by encompassing all information in a succinct recursive return\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -192,7 +207,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\) \- Each node is visited once, and each node provides instantaneous information for further computations\.
 *   **Space Complexity:** O\(h\) \- The depth of the recursion stack, where `h` is the height of the tree, due to recursion\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/house-robber-iii)

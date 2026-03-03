@@ -11,15 +11,24 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given an array of integers `heights` representing the histogram's bar height where the width of each bar is `1`, return _the area of the largest rectangle in the histogram_\.
 
 ##### **Example 1:**
 
 **Input:** heights = \[2,1,5,6,2,3\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">6</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">3</span></div>
+  </div>
+</div>
 
 **Output:** 10
 
@@ -31,6 +40,13 @@ The largest rectangle is shown in the red area, which has an area = 10 units\.
 
 **Input:** heights = \[2,4\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">4</span></div>
+  </div>
+</div>
+
 **Output:** 4
 
 ##### **Constraints:**
@@ -38,19 +54,16 @@ The largest rectangle is shown in the red area, which has an area = 10 units\.
 *   **1 <= heights\.length <= 10****5**
 *   **0 <= heights\[i\] <= 10****4**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/largest-rectangle-in-histogram)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force
+### 1\. Brute Force
 
 #### **Intuition:**
 
 The simplest way to solve this problem is by considering each bar as the smallest \(shortest\) bar in the rectangle and expanding outwards\. For each bar, we try to find the maximum possible rectangle by expanding to the left and right until we can no longer keep the height of that rectangle as the current bar\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -73,20 +86,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^2\) due to nested for loops
 *   **Space Complexity:** O\(1\) since no extra space is used apart from few variables\.
 
-## 2\. Better Brute Force with Pruning
+### 2\. Better Brute Force with Pruning
 
 #### **Intuition:**
 
 This builds on the idea of the simple brute force but introduces a pruning step by stopping earlier when the heights decrease and thus cannot extend the rectangle further in a beneficial way\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -108,20 +119,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^2\) due to nested for loops
 *   **Space Complexity:** O\(1\) since no extra space is used apart from few variables\.
 
-## 3\. Using Stack \(Optimal\)
+### 3\. Using Stack \(Optimal\)
 
 #### **Intuition:**
 
 The most optimal solution involves using a stack to store indices of the histogram's bars\. By utilizing a stack, we can ensure that we always process these histogram bars in an order where we have the necessary information to calculate the maximum rectangle as we proceed\. When a lower height is encountered, we process and calculate areas for all bars taller than the current one by treating them as the smallest bar of their respective rectangles\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -154,9 +163,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\) since iterating through the array once
 *   **Space Complexity:** O\(n\) due to stack\.
 
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/largest-rectangle-in-histogram)

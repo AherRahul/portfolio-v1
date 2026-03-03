@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given a reference of a node in a [**connected**](https://en.wikipedia.org/wiki/Connectivity_\(graph_theory\)#Connected_graph) undirected graph\.
 
@@ -35,7 +33,49 @@ The given node will always be the first node with `val = 1`\. You must return t
 
 **Input:** adjList = \[\[2,4\],\[1,3\],\[2,4\],\[1,3\]\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">4</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">4</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+    </div>
+  </div>
+</div>
+
 **Output:** \[\[2,4\],\[1,3\],\[2,4\],\[1,3\]\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">4</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">3</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">4</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">3</span></div>
+    </div>
+  </div>
+</div>
 
 **Explanation:** There are 4 nodes in the graph\.
 
@@ -51,7 +91,21 @@ The given node will always be the first node with `val = 1`\. You must return t
 
 **Input:** adjList = \[\[\]\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+    </div>
+  </div>
+</div>
+
 **Output:** \[\[\]\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+    </div>
+  </div>
+</div>
 
 **Explanation:** Note that the input contains one empty list\. The graph consists of only one node with val = 1 and it does not have any neighbors\.
 
@@ -71,11 +125,10 @@ The given node will always be the first node with `val = 1`\. You must return t
 *   There are no repeated edges and no self\-loops in the graph\.
 *   The Graph is connected and all nodes can be visited starting from the given node\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/clone-graph)
 
-# Approaches
+## Approaches
 
-## 1\. Depth\-First Search \(DFS\)
+### 1\. Depth\-First Search \(DFS\)
 
 #### Intuition:
 
@@ -90,8 +143,6 @@ The DFS approach involves recursively creating clone nodes and copying the conne
 5.  Return the cloned node\.
 
 #### Code:
-
-Java
 
 ```java
 // Definition for a Node.
@@ -139,12 +190,12 @@ public class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\), where N is the number of nodes\. Each node and edge is traversed once\.
 *   **Space Complexity:** O\(N\) due to the recursion stack and hashmap storage of the nodes\.
 
-## 2\. Breadth\-First Search \(BFS\)
+### 2\. Breadth\-First Search \(BFS\)
 
 #### Intuition:
 
@@ -163,8 +214,6 @@ This approach consists of a breadth\-first traversal using a queue\. It uses a h
 6.  Once traversal ends, return the clone of the original node\.
 
 #### Code:
-
-Java
 
 ```java
 class CloneGraph {
@@ -206,7 +255,9 @@ class CloneGraph {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\), where N is the number of nodes\. Each node and edge is traversed once\.
 *   **Space Complexity:** O\(N\) for the hashmap and queue\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/clone-graph)

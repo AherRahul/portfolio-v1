@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given a linked list, swap every two adjacent nodes and return its head\. You must solve the problem without modifying the values in the list's nodes \(i\.e\., only nodes themselves may be changed\.\) 
 
@@ -21,25 +19,27 @@ Given a linked list, swap every two adjacent nodes and return its head\. You mu
 
 Input:head=\[1,2,3,4\]
 
-1
-
-2
-
-3
-
-4
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">4</span></div>
+  </div>
+</div>
 
 null
 
 Output:\[2,1,4,3\]
 
-2
-
-1
-
-4
-
-3
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">3</span></div>
+  </div>
+</div>
 
 null
 
@@ -57,13 +57,21 @@ null
 
 Input:head=\[1\]
 
-1
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 null
 
 Output:\[1\]
 
-1
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 null
 
@@ -71,25 +79,23 @@ null
 
 Input:head=\[1,2,3\]
 
-0
-
-1
-
-1
-
-2
-
-2
-
-3
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+  </div>
+</div>
 
 Output:\[2,1,3\]
 
-2
-
-1
-
-3
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+  </div>
+</div>
 
 null
 
@@ -98,11 +104,10 @@ null
 *   The number of nodes in the list is in the range `[0, 100]`\.
 *   `0 <= Node.val <= 100`
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/swap-nodes-in-pairs)
 
-# Approaches
+## Approaches
 
-## 1\. Recursive Approach
+### 1\. Recursive Approach
 
 The recursive approach involves swapping nodes in pairs and continues until the end of the linked list is reached\. Here's the idea:
 
@@ -113,8 +118,6 @@ The recursive approach involves swapping nodes in pairs and continues until the 
 *   Continue swapping for the rest of the list using recursion\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -138,7 +141,7 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), since each pair of nodes is processed once and in constant time\.
 *   **Space Complexity:** O\(n\) due to recursion stack space used for each node\.
@@ -154,8 +157,6 @@ The iterative approach involves using a dummy node to facilitate the swapping pr
 *   Use a loop to continue swapping until the end of the list is reached\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -186,9 +187,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\) since we traverse each node of the list exactly once\.
 *   **Space Complexity:** O\(1\) as no additional space is used other than a few pointers\.
 
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/swap-nodes-in-pairs)

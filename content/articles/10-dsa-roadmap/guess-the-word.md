@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given an array of unique strings `words` where `words[i]` is six letters long\. One word of `words` was chosen as a secret word\.
 
@@ -35,6 +33,15 @@ The test cases are generated such that you can guess the secret word with a reas
 
 **Input:** secret = "acckzz", words = \["acckzz","ccbazz","eiowzz","abcczz"\], allowedGuesses = 10
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">acckzz</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">ccbazz</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">eiowzz</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">abcczz</span></div>
+  </div>
+</div>
+
 **Output:** You guessed the secret word correctly\.
 
 **Explanation:**
@@ -52,6 +59,13 @@ We made 5 calls to master.guess, and one of them was the secret, so we pass the 
 
 **Input:** secret = "hamada", words = \["hamada","khaled"\], allowedGuesses = 10
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">hamada</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">khaled</span></div>
+  </div>
+</div>
+
 **Output:** You guessed the secret word correctly\.
 
 **Explanation:** Since there are two words, you can guess both\. 
@@ -65,11 +79,10 @@ We made 5 calls to master.guess, and one of them was the secret, so we pass the 
 *   `secret` exists in `words`\.
 *   `10 <= allowedGuesses <= 30`
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/guess-the-word/)
 
-# Approaches
+## Approaches
 
-## 1\. Random Guess
+### 1\. Random Guess
 
 #### Intuition:
 
@@ -82,8 +95,6 @@ The simplest solution involves randomly guessing words from the word list\. This
 3.  Continue guessing until the correct word is guessed \(i\.e\., `guess` returns the word length\)\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -99,12 +110,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\), where N is the number of attempts \(in this method, 10 maximum\)\.
 *   **Space Complexity:** O\(1\), as no additional data structures are needed\.
 
-## 2\. Minimax Strategy
+### 2\. Minimax Strategy
 
 #### Intuition:
 
@@ -118,8 +129,6 @@ A more informed approach is to use minimax to reduce the candidate pool aggressi
 4.  Repeat until the correct word is guessed\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -167,12 +176,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N^2 \* L\), where N is the number of words and L is the length of each word\.
 *   **Space Complexity:** O\(N\), maintaining a filtered list of candidate words\.
 
-## 3\. Optimal Data Filtering
+### 3\. Optimal Data Filtering
 
 #### Intuition:
 
@@ -185,8 +194,6 @@ Incorporating chosen strategic guessing along with data filtering reduces unnece
 3.  Break the loop when guessed successfully\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -240,7 +247,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N^2 \* L\), due to double iteration over the word list\.
 *   **Space Complexity:** O\(N\), due to copied lists of candidate words\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/guess-the-word/)

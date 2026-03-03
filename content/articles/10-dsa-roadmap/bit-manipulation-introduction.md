@@ -143,8 +143,6 @@ Now let's look at the techniques that appear repeatedly in coding interviews\.
 
 To check if the k\-th bit \(0\-indexed from right\) is set to 1:
 
-Python
-
 ```python
 def is_bit_set(n, k):
    return (n & (1 << k)) != 0
@@ -167,8 +165,6 @@ Example: Is bit 2 set in 5 (0101)?
 
 To set the k\-th bit to 1:
 
-Python
-
 ```python
 def set_bit(n, k):
    return n | (1 << k)
@@ -186,8 +182,6 @@ Example: Set bit 1 in 5 (0101)
 ### 3\. Clear a Bit
 
 To clear \(unset\) the k\-th bit:
-
-Python
 
 ```python
 def clear_bit(n, k):
@@ -210,8 +204,6 @@ Example: Clear bit 2 in 5 (0101)
 
 To flip a bit \(0 to 1, or 1 to 0\):
 
-Python
-
 ```python
 def toggle_bit(n, k):
    return n ^ (1 << k)
@@ -222,8 +214,6 @@ def toggle_bit(n, k):
 ### 5\. Check if Power of 2
 
 A number is a power of 2 if it has exactly one bit set\.
-
-Python
 
 ```python
 def is_power_of_two(n):
@@ -250,8 +240,6 @@ n & n-1 = 0100 (Not power of 2)
 
 Count the number of 1s in the binary representation:
 
-Python
-
 ```python
 def count_set_bits(n):
    count = 0
@@ -269,8 +257,6 @@ def count_set_bits(n):
 
 Extract the rightmost bit that is set to 1:
 
-Python
-
 ```python
 def rightmost_set_bit(n):
    return n & (-n)
@@ -285,8 +271,6 @@ n & -n   = 00100 = 4
 ```
 
 ### 8\. Turn Off the Rightmost Set Bit
-
-Python
 
 ```python
 def clear_rightmost_set_bit(n):

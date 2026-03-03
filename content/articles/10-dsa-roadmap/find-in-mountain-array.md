@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You may recall that an array `arr` is a **mountain array** if and only if:
 
@@ -36,6 +34,18 @@ Submissions making more than `100` calls to `MountainArray.get` will be judg
 
 **Input:** mountainArr = \[1,2,3,4,5,3,1\], target = 3
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">1</span></div>
+  </div>
+</div>
+
 **Output:** 2
 
 **Explanation:** 3 exists in the array, at index=2 and index=5\. Return the minimum index, which is 2\.
@@ -43,6 +53,17 @@ Submissions making more than `100` calls to `MountainArray.get` will be judg
 ##### **Example 2:**
 
 **Input:** mountainArr = \[0,1,2,4,2,1\], target = 3
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">0</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 **Output:** \-1
 
@@ -54,11 +75,10 @@ Submissions making more than `100` calls to `MountainArray.get` will be judg
 *   **0 <= target <= 10****9**
 *   **0 <= mountainArr\.get\(index\) <= 10****9**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/find-in-mountain-array)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force Linear Search
+### 1\. Brute Force Linear Search
 
 #### Intuition:
 
@@ -73,8 +93,6 @@ In a mountain array, there exists a peak element after which elements start decr
 2.  If not found, iterate from the peak to the end\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -105,12 +123,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), as we may have to look at each element in the worst case twice\.
 *   **Space Complexity:** O\(1\) \- No additional space used apart from variables\.
 
-## 2\. Optimized Binary Search
+### 2\. Optimized Binary Search
 
 #### Intuition:
 
@@ -123,8 +141,6 @@ Utilizing the properties of the mountain array, we can apply binary search metho
 3.  If the target is not found, perform a binary search on the decreasing sequence from the peak to the end\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -179,7 +195,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(log n\), The binary search is applied three times \(once to find peak and twice to find target\)\.
 *   **Space Complexity:** O\(1\) \- No additional space used apart from variables\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/find-in-mountain-array)

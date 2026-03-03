@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 In this problem, a tree is an **undirected graph** that is connected and has no cycles\.
 
@@ -25,7 +23,31 @@ Return _an edge that can be removed so that the resulting graph is a tree of_ 
 
 **Input:** edges = \[\[1,2\],\[1,3\],\[2,3\]\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+    </div>
+  </div>
+</div>
+
 **Output:** \[2,3\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">3</span></div>
+  </div>
+</div>
 
 ##### **Example 2:**
 
@@ -41,11 +63,10 @@ Return _an edge that can be removed so that the resulting graph is a tree of_ 
 *   **There are no repeated edges\.**
 *   **The given graph is connected\.**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/redundant-connection)
 
-# Approaches
+## Approaches
 
-## 1\. Union\-Find \(Disjoint Set\)
+### 1\. Union\-Find \(Disjoint Set\)
 
 #### Intuition:
 
@@ -62,8 +83,6 @@ The steps are:
 5.  If they are, this edge is the redundant one\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -133,7 +152,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\), where N is the number of edges\. Each `find` and `union` operation runs in near constant time thanks to the path compression and union by rank heuristics\.
 *   **Space Complexity:** O\(N\), for storing parent and rank arrays in the DSU structure\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/redundant-connection)

@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given the heads of two sorted linked lists `list1` and `list2`\.
 
@@ -27,6 +25,17 @@ Return _the head of the merged linked list_\. 
 
 **Output:** \[1,1,2,3,4,4\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">5</span><span class="arr-val">4</span></div>
+  </div>
+</div>
+
 ##### **Example 2:**
 
 **Input:** list1 = \[\], list2 = \[\]
@@ -39,25 +48,28 @@ Return _the head of the merged linked list_\. 
 
 **Output:** \[0\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">0</span></div>
+  </div>
+</div>
+
 ##### **Constraints:**
 
 *   The number of nodes in both lists is in the range `[0, 50]`\.
 *   `-100 <= Node.val <= 100`
 *   Both `list1` and `list2` are sorted in **non\-decreasing** order\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/merge-two-sorted-lists)
 
-# Approaches
+## Approaches
 
-## 1\. Iterative Merge Approach
+### 1\. Iterative Merge Approach
 
 #### Intuition:
 
 The easiest way to merge two sorted lists is to use an iterative approach\. We can start by creating a dummy node that acts as a placeholder for the start of the merged list\. We then use a current pointer to iterate through both lists and append the smaller node to the current node until we reach the end of one of the lists\. Finally, we append any remaining nodes from the non\-empty list\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -92,22 +104,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n \+ m\) where n and m are the lengths of the input lists\.
 *   **Space Complexity:** O\(1\) since no additional space proportional to input size is used\.
 
-View Animation
-
-## 2\. Recursive Merge Approach
+### 2\. Recursive Merge Approach
 
 #### Intuition:
 
 Alternatively, we can use a recursive solution to merge the two lists\. The recursive approach involves merging the first nodes of each list, followed by the recursively merged result of the remainder of the lists\. This is achieved by continually selecting the smaller head node between the two lists until all nodes have been merged\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -132,7 +140,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n \+ m\) where n and m are the lengths of the input lists, as each node is only visited once\.
 *   **Space Complexity:** O\(n \+ m\) due to the recursion stack, which holds a frame for each recursive call\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/merge-two-sorted-lists)

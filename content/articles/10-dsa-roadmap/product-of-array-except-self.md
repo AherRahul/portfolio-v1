@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given an integer array `nums`, return _an array_ `answer` _such that_ `answer[i]` _is equal to the product of all the elements of_ `nums` _except_ `nums[i]`\.
 
@@ -25,85 +23,51 @@ You must write an algorithm that runs in `O(n)` time and without using the div
 
 Input:nums=\[1,2,3,4\]
 
-0
-
-1
-
-1
-
-2
-
-2
-
-3
-
-3
-
-4
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">4</span></div>
+  </div>
+</div>
 
 Output:\[24,12,8,6\]
 
-0
-
-24
-
-1
-
-12
-
-2
-
-8
-
-3
-
-6
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">24</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">12</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">8</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">6</span></div>
+  </div>
+</div>
 
 ##### **Example 2:**
 
 Input:nums=\[\-1,1,0,\-3,3\]
 
-0
-
-\-1
-
-1
-
-1
-
-2
-
-0
-
-3
-
-\-3
-
-4
-
-3
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">-1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">2</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">-3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">3</span></div>
+  </div>
+</div>
 
 Output:\[0,0,9,0,0\]
 
-0
-
-0
-
-1
-
-0
-
-2
-
-9
-
-3
-
-0
-
-4
-
-0
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">9</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">0</span></div>
+  </div>
+</div>
 
 **Constraints:**
 
@@ -113,11 +77,10 @@ Output:\[0,0,9,0,0\]
 
 **Follow up:** Can you solve the problem in `O(1)` extra space complexity? \(The output array **does not** count as extra space for space complexity analysis\.\)
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/product-of-array-except-self)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force
+### 1\. Brute Force
 
 #### Intuition:
 
@@ -130,8 +93,6 @@ The brute force approach is to calculate the product of all elements in the arra
 3.  Assign this product to the corresponding index in the output array\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -153,12 +114,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^2\) because for each element, we loop through the array again\.
 *   **Space Complexity:** O\(1\) except for the output array, which does not count as extra space by convention\.
 
-## 2\. Prefix and Suffix Products
+### 2\. Prefix and Suffix Products
 
 #### Intuition:
 
@@ -172,8 +133,6 @@ To improve efficiency, we can use two auxiliary arrays to store the product of a
 4.  For the result array, multiply the corresponding values of `prefix` and `suffix`\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -202,12 +161,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\) because we are traversing the input array three times\.
 *   **Space Complexity:** O\(n\) for the prefix and suffix arrays\.
 
-## 3\. Single Pass
+### 3\. Single Pass
 
 #### Intuition:
 
@@ -224,8 +183,6 @@ To optimize our space usage, we can eliminate the suffix array and calculate the
 3.  Update `right` in each iteration as you progress from right to left\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -251,199 +208,121 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\) because it involves two passes over the array\.
 *   **Space Complexity:** O\(1\) extra space apart from the output array\.
 
 #### Example Walkthrough:
 
-Input:nums=\[1,2,3,4\]
+**Input:** `nums = [1, 2, 3, 4]`
 
-0
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">4</span></div>
+  </div>
+  <p class="arr-caption">nums</p>
+</div>
 
-1
-
-1
-
-2
-
-2
-
-3
-
-3
-
-4
-
-**Pass 1:** Build left products \(stored in `output`\)
+**Pass 1:** Build left products (stored in `output`)
 
 `output[i] = output[i - 1] * nums[i - 1]`
 
-0
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">1</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">2</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">3</span><span class="arr-val">0</span></div>
+  </div>
+  <p class="arr-step-label">output[0] = 1</p>
+</div>
 
-1
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">2</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">3</span><span class="arr-val">0</span></div>
+  </div>
+  <p class="arr-step-label">output[1] = 1 * nums[0] = 1 * 1 = 1</p>
+</div>
 
-1
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">3</span><span class="arr-val">0</span></div>
+  </div>
+  <p class="arr-step-label">output[2] = 1 * nums[1] = 1 * 2 = 2</p>
+</div>
 
-0
-
-2
-
-0
-
-3
-
-0
-
-output\[0\] = 1
-
-0
-
-1
-
-1
-
-1
-
-2
-
-0
-
-3
-
-0
-
-output\[1\] = 1 \* nums\[0\] = 1 \* 1 = 1
-
-0
-
-1
-
-1
-
-1
-
-2
-
-2
-
-3
-
-0
-
-output\[2\] = 1 \* nums\[1\] = 1 \* 2 = 2
-
-0
-
-1
-
-1
-
-1
-
-2
-
-2
-
-3
-
-6
-
-output\[3\] = 2 \* nums\[2\] = 2 \* 3 = 6
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">6</span></div>
+  </div>
+  <p class="arr-step-label">output[3] = 2 * nums[2] = 2 * 3 = 6</p>
+</div>
 
 **Pass 2:** Sweep from right, multiply by running right product
 
 `output[i] *= right`, `right *= nums[i]`
 
-0
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">6</span></div>
+  </div>
+  <p class="arr-step-label">Initial: right = 1</p>
+</div>
 
-1
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">6</span></div>
+  </div>
+  <p class="arr-step-label">output[3] = 6 * 1 = 6, right = 1 * 4 = 4</p>
+</div>
 
-1
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">8</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">6</span></div>
+  </div>
+  <p class="arr-step-label">output[2] = 2 * 4 = 8, right = 4 * 3 = 12</p>
+</div>
 
-1
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">12</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">8</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">6</span></div>
+  </div>
+  <p class="arr-step-label">output[1] = 1 * 12 = 12, right = 12 * 2 = 24</p>
+</div>
 
-2
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">24</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">12</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">8</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">6</span></div>
+  </div>
+  <p class="arr-step-label">output[0] = 1 * 24 = 24, right = 24 * 1 = 24</p>
+</div>
 
-2
-
-3
-
-6
-
-right = 1
-
-0
-
-1
-
-1
-
-1
-
-2
-
-2
-
-3
-
-6
-
-output\[3\] = 6 \* 1 = 6, right = 4
-
-0
-
-1
-
-1
-
-1
-
-2
-
-8
-
-3
-
-6
-
-output\[2\] = 2 \* 4 = 8, right = 12
-
-0
-
-1
-
-1
-
-12
-
-2
-
-8
-
-3
-
-6
-
-output\[1\] = 1 \* 12 = 12, right = 24
-
-0
-
-24
-
-1
-
-12
-
-2
-
-8
-
-3
-
-6
-
-output\[0\] = 1 \* 24 = 24, right = 24
-
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/product-of-array-except-self)

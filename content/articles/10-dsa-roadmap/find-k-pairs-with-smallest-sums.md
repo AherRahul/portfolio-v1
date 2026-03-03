@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given two integer arrays `nums1` and `nums2` sorted in **non\-decreasing order** and an integer `k`\.
 
@@ -26,6 +24,23 @@ Return _the_ `k` _pairs_ **\(u****1****, v****1****\), \(u****2****, v****2*
 **Input:** nums1 = \[1,7,11\], nums2 = \[2,4,6\], k = 3
 
 **Output:** \[\[1,2\],\[1,4\],\[1,6\]\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">2</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">4</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">6</span></div>
+    </div>
+  </div>
+</div>
 
 **Explanation:** The first 3 pairs are returned from the sequence: \[1,2\],\[1,4\],\[1,6\],\[7,2\],\[7,4\],\[11,2\],\[7,6\],\[11,4\],\[11,6\]
 
@@ -43,11 +58,10 @@ Return _the_ `k` _pairs_ **\(u****1****, v****1****\), \(u****2****, v****2*
 *   **1 <= k <= 10****4**
 *   **k <= nums1\.length \* nums2\.length**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/find-k-pairs-with-smallest-sums)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force Approach
+### 1\. Brute Force Approach
 
 #### Intuition:
 
@@ -63,12 +77,12 @@ In the brute force approach, we aim to calculate the sum of every possible pair 
 
 #### Code:
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(m \* n \* log\(m \* n\)\), where m and n are the lengths of nums1 and nums2 respectively\. Sorting the pair sums is the most time\-consuming operation\.
 *   **Space Complexity:** O\(m \* n\), since we need to store all m \* n possible pairs\.
 
-## 2\. Heap Approach
+### 2\. Heap Approach
 
 #### Intuition:
 
@@ -83,12 +97,12 @@ We can improve our solution by using a max heap to maintain the k smallest pairs
 
 #### Code:
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(m \* n \* log\(k\)\), the log\(k\) comes from maintaining a heap of size k\.
 *   **Space Complexity:** O\(k\), since the heap only stores k pairs at any time\.
 
-## 3\. Optimized Heap Approach using Min\-Heap
+### 3\. Optimized Heap Approach using Min\-Heap
 
 #### Intuition:
 
@@ -103,7 +117,9 @@ Instead of using a max heap, we can use a min heap \(priority queue\) to efficie
 
 #### Code:
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(k \* log\(min\(m, n, k\)\)\), where you might need to retrieve up to k pairs, and each operation in the heap is logarithmic to its size\.
 *   **Space Complexity:** O\(min\(m, n, k\)\), due to the space needed for the priority queue storing potential pairs\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/find-k-pairs-with-smallest-sums)

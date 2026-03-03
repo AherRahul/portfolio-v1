@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given the `root` of a binary tree, return _the zigzag level order traversal of its nodes' values_\. \(i\.e\., from left to right, then right to left for the next level and alternate between\)\.
 
@@ -21,15 +19,57 @@ Given the `root` of a binary tree, return _the zigzag level order traversal o
 
 Input:root=\[3,9,20,null,null,15,7\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">9</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">20</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">3</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">4</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">15</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">7</span></div>
+  </div>
+</div>
+
 3920157
 
 **Output:** \[\[3\],\[20,9\],\[15,7\]\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">3</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">20</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">9</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">15</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">7</span></div>
+    </div>
+  </div>
+</div>
 
 ##### **Example 2:**
 
 **Input:** root = \[1\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+  </div>
+</div>
+
 **Output:** \[\[1\]\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">1</span></div>
+    </div>
+  </div>
+</div>
 
 ##### **Example 3:**
 
@@ -42,11 +82,10 @@ Input:root=\[3,9,20,null,null,15,7\]
 *   The number of nodes in the tree is in the range `[0, 2000]`\.
 *   `-100 <= Node.val <= 100`
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal)
 
-# Approaches
+## Approaches
 
-## 1\. BFS using Deque
+### 1\. BFS using Deque
 
 #### **Intuition:**
 
@@ -61,8 +100,6 @@ The zigzag level order traversal requires alternating the direction of each leve
 5.  Add the completed levels to the results and return once all levels are processed\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {
@@ -110,14 +147,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\), where N is the number of nodes in the tree, since we traverse each node once\.
 *   **Space Complexity:** O\(N\), needed for the `queue` which stores nodes at the current level\. The largest number of nodes at any level is O\(N/2\) in a balanced tree\.
 
-View Animation
-
-## 2\. BFS with Two Stacks
+### 2\. BFS with Two Stacks
 
 #### **Intuition:**
 
@@ -131,8 +166,6 @@ Using two stacks allows us to manage two levels of processing: one for the curre
 4.  When `currentLevel` is empty, swap stacks and repeat until all nodes are processed\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {
@@ -188,7 +221,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\), as every node is processed once from the stacks\.
 *   **Space Complexity:** O\(N\), for the space used by the stacks, which at most holds the nodes at one level\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal)

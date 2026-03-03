@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given an integer array `cost` where `cost[i]` is the cost of `i``th` step on a staircase\. Once you pay the cost, you can either climb one or two steps\.
 
@@ -24,6 +22,14 @@ Return _the minimum cost to reach the top of the floor_\.
 ##### **Example 1:**
 
 **Input:** cost = \[10,15,20\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">10</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">15</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">20</span></div>
+  </div>
+</div>
 
 **Output:** 15
 
@@ -36,6 +42,21 @@ The total cost is 15\.
 ##### **Example 2:**
 
 **Input:** cost = \[1,100,1,1,1,100,1,1,100,1\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">100</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">100</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">7</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">8</span><span class="arr-val">100</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">9</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 **Output:** 6
 
@@ -58,19 +79,16 @@ The total cost is 15\.
 *   `2 <= cost.length <= 1000`
 *   `0 <= cost[i] <= 999`
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/min-cost-climbing-stairs)
 
-# Approaches
+## Approaches
 
-## 1\. Recursion
+### 1\. Recursion
 
 #### Intuition:
 
 Start by identifying that you can reach step `i` from either step `i-1` or `i-2`\. This gives rise to a recursive relation where the cost to reach the `i-th` step is the cost of the step itself plus the minimum of the costs to reach the two preceding steps\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -91,20 +109,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(2^n\) \- The function calculates each step repeatedly\.
 *   **Space Complexity:** O\(n\) \- Due to stack space used in recursion\.
 
-## 2\. Top\-Down Dynamic Programming \(Memoization\)
+### 2\. Top\-Down Dynamic Programming \(Memoization\)
 
 #### Intuition:
 
 To optimize the recursive solution, we can store the results of subproblems \(i\.e\., costs for each step\) and reuse them instead of solving the same subproblems repeatedly\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -130,20 +146,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\) \- Each step's cost is computed only once\.
 *   **Space Complexity:** O\(n\) \- Due to place for memoization\.
 
-## 3\. Bottom\-Up Dynamic Programming
+### 3\. Bottom\-Up Dynamic Programming
 
 #### Intuition:
 
 Iteratively build up the solution from the base cases \(steps 0 and 1\) to the target steps, avoiding recursion overhead\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -166,22 +180,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\) \- We only iterate through the array once\.
 *   **Space Complexity:** O\(n\) \- To store minimal costs for each step\.
 
-View Animation
-
-## 4\. Optimized Bottom\-Up Approach
+### 4\. Optimized Bottom\-Up Approach
 
 #### Intuition:
 
 Instead of maintaining an array for dynamic programming, we only need to keep track of the last two costs since the cost to reach each step depends only on the two preceding steps\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -205,7 +215,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\) \- Only a single pass through the input is needed\.
 *   **Space Complexity:** O\(1\) \- Use only a fixed amount of extra space, independent of input size\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/min-cost-climbing-stairs)

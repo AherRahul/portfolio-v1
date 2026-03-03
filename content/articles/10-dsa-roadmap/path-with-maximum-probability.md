@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given an undirected weighted graph of `n` nodes \(0\-indexed\), represented by an edge list where `edges[i] = [a, b]` is an undirected edge connecting the nodes `a` and `b` with a probability of success of traversing that edge `succProb[i]`\.
 
@@ -54,11 +52,10 @@ If there is no path from `start` to `end`, **return 0**\. Your answer will 
 *   `0 <= succProb[i] <= 1`
 *   There is at most one edge between every two nodes\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/path-with-maximum-probability)
 
-# Approaches
+## Approaches
 
-## 1\. Breadth\-First Search \(BFS\)
+### 1\. Breadth\-First Search \(BFS\)
 
 In this approach, we will utilize a queue to explore all possible paths from the start node, keeping track of the maximum probability of reaching each node\. This is similar to BFS, but we focus on maximizing probability \(a multiplicative metric\) rather than minimizing distance or edges\.
 
@@ -67,8 +64,6 @@ In this approach, we will utilize a queue to explore all possible paths from the
 We start from the given starting node and try to explore its neighbors, iteratively updating the maximum probability to reach each neighbor node\. We continue this process until we either visit all nodes or exhaust all possibilities, aiming to find the path to the target node with the highest probability\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -113,12 +108,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(V \+ E\), where V is the number of vertices and E is the number of edges\. The algorithm explores all edges once\.
 *   **Space Complexity:** O\(V \+ E\), mainly for storing the graph and probability tracking\.
 
-## 2\. Dijkstra's Algorithm
+### 2\. Dijkstra's Algorithm
 
 Dijkstra's Algorithm can be adapted to find the path with maximum probability by using a priority queue \(max\-heap\) to ensure that we always expand the node with the highest accumulated probability\.
 
@@ -127,8 +122,6 @@ Dijkstra's Algorithm can be adapted to find the path with maximum probability by
 Similar to finding the shortest path, where we keep track of minimum distances, here we keep track of maximum probabilities\. We utilize a priority queue to explore nodes in the order of their maximum current path probabilities\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -181,7 +174,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(\(E \+ V\) log V\), using a priority queue gives a log\-factor overhead for each of the operations\.
 *   **Space Complexity:** O\(V \+ E\), primarily for the storage of the graph and data structures needed for Dijkstra's algorithm\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/path-with-maximum-probability)

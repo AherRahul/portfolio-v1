@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are part of a university admissions office and need to keep track of the `kth` highest test score from applicants in real\-time\. This helps to determine cut\-off marks for interviews and admissions dynamically as new applicants submit their scores\.
 
@@ -33,6 +31,17 @@ Implement the `KthLargest` class:
 \[\[3, \[4, 5, 8, 2\]\], \[3\], \[5\], \[10\], \[9\], \[4\]\]
 
 **Output:** \[null, 4, 5, 5, 8, 8\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">8</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">5</span><span class="arr-val">8</span></div>
+  </div>
+</div>
 
 **Explanation:**
 
@@ -55,6 +64,16 @@ kthLargest.add(4); // return 8
 
 **Output:** \[null, 7, 7, 7, 8\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">7</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">7</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">7</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">8</span></div>
+  </div>
+</div>
+
 **Explanation:**
 
 ```java
@@ -73,11 +92,10 @@ kthLargest.add(9); // return 8
 *   **\-10****4** **<= val <= 10****4**
 *   **At most 10****4** **calls will be made to add\.**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/kth-largest-element-in-a-stream)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force with Sorting
+### 1\. Brute Force with Sorting
 
 #### **Intuition:**
 
@@ -91,8 +109,6 @@ For each addition of a new element into the stream, we can sort the elements and
 4.  Retrieve the k\-th element from the sorted list\.
 
 #### **Code:**
-
-Java
 
 ```java
 class KthLargest {
@@ -117,12 +133,12 @@ class KthLargest {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** `O(n log n)` for sorting the list each time a new element is added \(where `n` is the number of elements in the list\)\.
 *   **Space Complexity:** `O(n)` for storing the elements in a list\.
 
-## 2\. Sorted List
+### 2\. Sorted List
 
 #### **Intuition:**
 
@@ -135,8 +151,6 @@ Maintain a sorted list at all times and ensure the list is sorted with each new 
 3.  After insertion, directly access the k\-th largest element\.
 
 #### **Code:**
-
-Java
 
 ```java
 class KthLargest {
@@ -164,12 +178,12 @@ class KthLargest {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** `O(k)` for maintaining a sorted list by binary search and insertion\.
 *   **Space Complexity:** `O(n)` for storing the stream of numbers\.
 
-## 3\. Min\-Heap \(Optimal\)
+### 3\. Min\-Heap \(Optimal\)
 
 #### **Intuition:**
 
@@ -184,8 +198,6 @@ Use a min\-heap of size `k` to efficiently manage the k\-th largest element\. 
 5.  The top element of the heap will be the k\-th largest element\.
 
 #### **Code:**
-
-Java
 
 ```java
 class KthLargest {
@@ -213,7 +225,9 @@ class KthLargest {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** `O(log k)` for each addition \(heap insertion and adjustment\)\.
 *   **Space Complexity:** `O(k)` for maintaining the heap of size `k`\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/kth-largest-element-in-a-stream)

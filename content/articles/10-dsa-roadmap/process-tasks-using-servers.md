@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given two **0\-indexed** integer arrays `servers` and `tasks` of lengths `n`​​​​​​ and `m`​​​​​​ respectively\. `servers[i]` is the **weight** of the **i****​​​​​​th**​​​​ server, and `tasks[j]` is the **time needed** to process the **j****​​​​​​th**​​​​ task **in seconds**\.
 
@@ -35,6 +33,17 @@ Return _the array_ `ans`​​​​\.
 
 **Output:** \[2,2,0,2,1,2\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">5</span><span class="arr-val">2</span></div>
+  </div>
+</div>
+
 **Explanation:** Events in chronological order go as follows:
 
 \- At second 0, task 0 is added and processed using server 2 until second 1\.
@@ -54,6 +63,18 @@ Return _the array_ `ans`​​​​\.
 **Input:** servers = \[5,1,4,3,2\], tasks = \[2,1,2,4,5,2,1\]
 
 **Output:** \[1,4,1,4,1,3,2\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">5</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">6</span><span class="arr-val">2</span></div>
+  </div>
+</div>
 
 **Explanation:** Events in chronological order go as follows:
 
@@ -78,11 +99,10 @@ Return _the array_ `ans`​​​​\.
 *   **1 <= n, m <= 2 \* 10****5**
 *   **1 <= servers\[i\], tasks\[j\] <= 2 \* 10****5**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/process-tasks-using-servers)
 
-# Approaches
+## Approaches
 
-## 1\. Brute\-force Simulation
+### 1\. Brute\-force Simulation
 
 #### Intuition:
 
@@ -99,8 +119,6 @@ In a brute\-force simulation approach, we can use an array to keep track of each
 4.  Summarize the task allocation to servers\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -147,12 +165,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n \* k\) where n is the number of tasks and k is the number of servers\.
 *   **Space Complexity:** O\(k\) for keeping track of the state of each server\.
 
-## 2\. Priority Queues for Efficient Assignment
+### 2\. Priority Queues for Efficient Assignment
 
 #### Intuition:
 
@@ -171,8 +189,6 @@ With these queues, tasks can be assigned more efficiently by popping from the pr
 4.  If no servers are free, update the next server that becomes available by waiting\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -218,7 +234,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** **O\(\(n \+ k\) \* log k\)**, as each task may involve operations in the priority queue\.
 *   **Space Complexity:** **O\(k\)**, for maintaining server state\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/process-tasks-using-servers)

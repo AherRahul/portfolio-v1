@@ -2,8 +2,8 @@
 title: "9 Software Architecture Patterns EVERY Developer Should Know"
 description: "Software architecture patterns form the backbone of modern application development."
 slidesUrl: "https://github.com/AherRahul/portfolio-v1/blob/main/content/articles/9-software-architecture-patterns.md"
-dateModified: "2026-12-12"
-datePublished: "2026-12-12"
+dateModified: "2025-12-12"
+datePublished: "2025-12-12"
 showOnArticles: true
 topics:
   - system-design

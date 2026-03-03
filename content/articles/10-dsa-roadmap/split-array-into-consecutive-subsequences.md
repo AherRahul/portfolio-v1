@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given an integer array `nums` that is **sorted in non\-decreasing order**\.
 
@@ -30,6 +28,17 @@ A **subsequence** of an array is a new array that is formed from the original 
 
 **Input:** nums = \[1,2,3,3,4,5\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">5</span></div>
+  </div>
+</div>
+
 **Output:** true
 
 **Explanation:** nums can be split into the following subsequences:
@@ -41,6 +50,19 @@ A **subsequence** of an array is a new array that is formed from the original 
 ##### **Example 2:**
 
 **Input:** nums = \[1,2,3,3,4,4,5,5\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">7</span><span class="arr-val">5</span></div>
+  </div>
+</div>
 
 **Output:** true
 
@@ -54,6 +76,17 @@ A **subsequence** of an array is a new array that is formed from the original 
 
 **Input:** nums = \[1,2,3,4,4,5\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">5</span></div>
+  </div>
+</div>
+
 **Output:** false
 
 **Explanation:** It is impossible to split nums into consecutive increasing subsequences of length 3 or more\.
@@ -64,11 +97,10 @@ A **subsequence** of an array is a new array that is formed from the original 
 *   **\-1000 <= nums\[i\] <= 1000**
 *   `nums` is sorted in **non\-decreasing** order\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/split-array-into-consecutive-subsequences)
 
-# Approaches
+## Approaches
 
-## 1\. Greedy with Frequency and Append Maps
+### 1\. Greedy with Frequency and Append Maps
 
 #### **Intuition:**
 
@@ -99,8 +131,6 @@ The basic greedy strategy is:
 5.  If we can iterate through without issue, return true\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -150,7 +180,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), where n is the number of elements in the input array\. Each element is processed a constant number of times\.
 *   **Space Complexity:** O\(n\), as we use extra space for the frequency and appendNeeded maps\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/split-array-into-consecutive-subsequences)

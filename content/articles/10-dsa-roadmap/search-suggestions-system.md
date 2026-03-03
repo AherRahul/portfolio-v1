@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given an array of strings `products` and a string `searchWord`\.
 
@@ -25,7 +23,44 @@ Return _a list of lists of the suggested products after each character of_ `se
 
 **Input:** products = \["mobile","mouse","moneypot","monitor","mousepad"\], searchWord = "mouse"
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">mobile</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">mouse</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">moneypot</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">monitor</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">mousepad</span></div>
+  </div>
+</div>
+
 **Output:** \[\["mobile","moneypot","monitor"\],\["mobile","moneypot","monitor"\],\["mouse","mousepad"\],\["mouse","mousepad"\],\["mouse","mousepad"\]\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">mobile</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">moneypot</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">monitor</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">mobile</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">moneypot</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">monitor</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">mouse</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">mousepad</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">mouse</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">mousepad</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">mouse</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">mousepad</span></div>
+    </div>
+  </div>
+</div>
 
 **Explanation:** products sorted lexicographically = \["mobile","moneypot","monitor","mouse","mousepad"\]\.
 
@@ -37,7 +72,36 @@ After typing mou, mous and mouse the system suggests \["mouse","mousepad"\]\.
 
 **Input:** products = \["havana"\], searchWord = "havana"
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">havana</span></div>
+  </div>
+</div>
+
 **Output:** \[\["havana"\],\["havana"\],\["havana"\],\["havana"\],\["havana"\],\["havana"\]\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">havana</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">havana</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">havana</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">havana</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">havana</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">havana</span></div>
+    </div>
+  </div>
+</div>
 
 **Explanation:** The only word "havana" will be always suggested while typing the search word\.
 
@@ -51,11 +115,10 @@ After typing mou, mous and mouse the system suggests \["mouse","mousepad"\]\.
 *   `1 <= searchWord.length <= 1000`
 *   `searchWord` consists of lowercase English letters\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/search-suggestions-system)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force with Sorting
+### 1\. Brute Force with Sorting
 
 #### **Intuition:**
 
@@ -73,8 +136,6 @@ The simplest solution to this problem is to sort the list of products first\. Fo
 4.  Append the list of suggestions for each prefix to the result\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -102,12 +163,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(m \* n \+ n log n\), where `n` is the number of products and `m` is the length of the searchWord\. Sorting costs O\(n log n\) and the nested loop costs O\(m \* n\)\.
 *   **Space Complexity:** O\(n\), for storing the sorted list and results\.
 
-## 2\. Prefix Trie with DFS
+### 2\. Prefix Trie with DFS
 
 #### **Intuition:**
 
@@ -122,8 +183,6 @@ We can use a Trie to represent all product names efficiently\. For each characte
 *   Perform a DFS from this node to collect up to 3 product suggestions\.
 
 #### **Code:**
-
-Java
 
 ```java
 class TrieNode {
@@ -181,12 +240,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(m \+ n log n \+ l \* m\), where `m` is the total number of characters in all products \(for Trie insertion\), `n log n` for sorting, and `l * m` is the sum of lengths of all prefixes multiplied by max suggestions \(constant time for each prefix\)
 *   **Space Complexity:** O\(m\), where `m` is the total number of characters stored in the Trie\.
 
-## 3\. Two Pointers with Binary Search
+### 3\. Two Pointers with Binary Search
 
 #### **Intuition:**
 
@@ -199,8 +258,6 @@ This approach utilizes binary search to find the starting point of the valid sug
 3.  Use two pointers to narrow down the range of possible suggestions for each new character typed\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {
@@ -236,7 +293,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(m \+ n log n\), where `m` is the length of the searchWord, and `n` is the number of products\. Sorting takes O\(n log n\), and the search using two pointers costs O\(m\) for narrowing the range for each prefix\.
 *   **Space Complexity:** O\(1\) \(apart from the space needed for output\), since we are not using extra space for structures other than the list for output\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/search-suggestions-system)

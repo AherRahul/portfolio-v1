@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 There is an integer array `nums` sorted in ascending order \(with **distinct** values\)\.
 
@@ -27,33 +25,17 @@ You must write an algorithm with `O(log n)` runtime complexity\.
 
 **Input:** nums = \[4,5,6,7,0,1,2\], target = 0
 
-0
-
-4
-
-1
-
-5
-
-2
-
-6
-
-3
-
-7
-
-4
-
-0
-
-5
-
-1
-
-6
-
-2
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">6</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">7</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">4</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">2</span></div>
+  </div>
+</div>
 
 **Output:** 4
 
@@ -61,39 +43,29 @@ You must write an algorithm with `O(log n)` runtime complexity\.
 
 **Input:** nums = \[4,5,6,7,0,1,2\], target = 3
 
-0
-
-4
-
-1
-
-5
-
-2
-
-6
-
-3
-
-7
-
-4
-
-0
-
-5
-
-1
-
-6
-
-2
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">6</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">7</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">4</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">2</span></div>
+  </div>
+</div>
 
 **Output:** \-1
 
 ##### **Example 3:**
 
 **Input:** nums = \[1\], target = 0
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 **Output:** \-1
 
@@ -105,11 +77,10 @@ You must write an algorithm with `O(log n)` runtime complexity\.
 *   `nums` is an ascending array that is possibly rotated\.
 *   **\-10****4** **<= target <= 10****4**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/search-in-rotated-sorted-array)
 
-# Approaches
+## Approaches
 
-## 1\. Linear Search
+### 1\. Linear Search
 
 #### Intuition:
 
@@ -117,12 +88,12 @@ The simplest approach to solve this problem is to iterate through the array and 
 
 #### Code:
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity**: O\(n\), where n is the number of elements in the array\. This is because each element is checked linearly\.
 *   **Space Complexity**: O\(1\), no additional space is used\.
 
-## 2\. Binary Search \- Find Pivot, then Search
+### 2\. Binary Search \- Find Pivot, then Search
 
 #### Intuition:
 
@@ -130,12 +101,12 @@ The array is rotated at some pivot, and this affects the normal binary search\. 
 
 #### Code:
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity**: O\(log n\), finding the pivot and searching in the sub\-array both take logarithmic time\.
 *   **Space Complexity**: O\(1\), no additional space is used\.
 
-## 3\. Optimized Binary Search
+### 3\. Optimized Binary Search
 
 #### Intuition:
 
@@ -143,9 +114,9 @@ Since the array is sorted and only rotated, a single pass binary search can be d
 
 #### Code:
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity**: O\(log n\), executing binary search directly\.
 *   **Space Complexity**: O\(1\), no additional space is used\.
 
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/search-in-rotated-sorted-array)

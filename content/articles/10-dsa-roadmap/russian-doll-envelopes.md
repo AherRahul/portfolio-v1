@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given a 2D array of integers `envelopes` where **envelopes\[i\] = \[w****i****, h****i****\]** represents the width and the height of an envelope\.
 
@@ -27,6 +25,27 @@ Return _the maximum number of envelopes you can Russian doll \(i\.e\., put one 
 
 **Input:** envelopes = \[\[5,4\],\[6,4\],\[6,7\],\[2,3\]\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">5</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">4</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">6</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">4</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">6</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">7</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+    </div>
+  </div>
+</div>
+
 **Output:** 3
 
 **Explanation:** The maximum number of envelopes you can Russian doll is `3` \(\[2,3\] => \[5,4\] => \[6,7\]\)\.
@@ -34,6 +53,23 @@ Return _the maximum number of envelopes you can Russian doll \(i\.e\., put one 
 ##### **Example 2:**
 
 **Input:** envelopes = \[\[1,1\],\[1,1\],\[1,1\]\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+  </div>
+</div>
 
 **Output:** 1
 
@@ -43,11 +79,10 @@ Return _the maximum number of envelopes you can Russian doll \(i\.e\., put one 
 *   **envelopes\[i\]\.length == 2**
 *   **1 <= w****i****, h****i** **<= 10****5**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/russian-doll-envelopes)
 
-# Approaches
+## Approaches
 
-## 1\. Dynamic Programming
+### 1\. Dynamic Programming
 
 #### Intuition:
 
@@ -62,12 +97,12 @@ Dynamic programming can be used by sorting the envelopes based on width, and the
 
 #### Code:
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^2\) due to the double iteration to find the LIS\.
 *   **Space Complexity:** O\(n\) for the `dp` array\.
 
-## 2\. Sort and Longest Increasing Subsequence \(LIS\)
+### 2\. Sort and Longest Increasing Subsequence \(LIS\)
 
 #### Intuition:
 
@@ -82,7 +117,9 @@ Use a more optimal approach with a binary search to find the correct position of
 
 #### Code:
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n log n\) for sorting and binary search operations\.
 *   **Space Complexity:** O\(n\) for storing the LIS\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/russian-doll-envelopes)

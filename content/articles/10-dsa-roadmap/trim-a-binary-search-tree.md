@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given the `root` of a binary search tree and the lowest and highest boundaries as `low` and `high`, trim the tree so that all its elements lies in `[low, high]`\. Trimming the tree should **not** change the relative structure of the elements that will remain in the tree \(i\.e\., any node's descendant should remain a descendant\)\. It can be proven that there is a **unique answer**\.
 
@@ -23,9 +21,25 @@ Return _the root of the trimmed binary search tree_\. Note that the root may ch
 
 **Input:** root = \[1,0,2\], low = 1, high = 2
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">1</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+  </div>
+</div>
+
 102
 
 Output:\[1,null,2\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+  </div>
+</div>
 
 12
 
@@ -33,9 +47,31 @@ Output:\[1,null,2\]
 
 **Input:** root = \[3,0,4,null,2,null,null,1\], low = 1, high = 3
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">1</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">3</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">5</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">6</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">7</span><span class="arr-val">1</span></div>
+  </div>
+</div>
+
 30214
 
 Output:\[3,2,null,1\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 321
 
@@ -47,11 +83,10 @@ Output:\[3,2,null,1\]
 *   `root` is guaranteed to be a valid binary search tree\.
 *   **0 <= low <= high <= 10****4**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/trim-a-binary-search-tree)
 
-# Approaches
+## Approaches
 
-## 1\. Recursive DFS
+### 1\. Recursive DFS
 
 #### **Intuition:**
 
@@ -64,8 +99,6 @@ The idea is to recursively traverse the tree and rebuild it by considering the c
 The base case for the recursion is when a `null` node is encountered\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -98,12 +131,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\) where N is the number of nodes in the tree\. Each node is visited once\.
 *   **Space Complexity:** O\(N\) for the recursion stack in the worst\-case scenario, which is a completely unbalanced tree\.
 
-## 2\. Iterative DFS with Stack
+### 2\. Iterative DFS with Stack
 
 #### **Intuition:**
 
@@ -114,8 +147,6 @@ This approach uses an iterative Depth\-First Search \(DFS\) strategy with a stac
 *   Continue while the stack is not empty\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -163,7 +194,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\) since we process each node once\.
 *   **Space Complexity:** O\(N\) due to the stack which in the worst case can grow as large as the number of nodes in the tree\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/trim-a-binary-search-tree)

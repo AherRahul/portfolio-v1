@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given an array of `points` where **points\[i\] = \[x****i****, y****i****\]** represents a point on the **X\-Y** plane and an integer `k`, return the `k` closest points to the origin `(0, 0)`\.
 
@@ -25,7 +23,29 @@ You may return the answer in **any order**\. The answer is **guaranteed** to 
 
 **Input:** points = \[\[1,3\],\[\-2,2\]\], k = 1
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">-2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+    </div>
+  </div>
+</div>
+
 **Output:** \[\[\-2,2\]\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">-2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">2</span></div>
+    </div>
+  </div>
+</div>
 
 **Explanation:**
 
@@ -41,7 +61,37 @@ We only want the closest k = 1 points from the origin, so the answer is just \[\
 
 **Input:** points = \[\[3,3\],\[5,\-1\],\[\-2,4\]\], k = 2
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">5</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">-1</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">-2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">4</span></div>
+    </div>
+  </div>
+</div>
+
 **Output:** \[\[3,3\],\[\-2,4\]\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">3</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">-2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">4</span></div>
+    </div>
+  </div>
+</div>
 
 **Explanation:** The answer \[\[\-2,4\],\[3,3\]\] would also be accepted\.
 
@@ -50,11 +100,10 @@ We only want the closest k = 1 points from the origin, so the answer is just \[\
 *   **1 <= k <= points\.length <= 10****4**
 *   **\-10****4** **<= x****i****, y****i** **<= 10****4**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/k-closest-points-to-origin)
 
-# Approaches
+## Approaches
 
-## 1\. Naive Approach: Sorting
+### 1\. Naive Approach: Sorting
 
 #### Intuition:
 
@@ -68,8 +117,6 @@ The most straightforward way to solve this problem is to calculate the distance 
 4.  Return the first `K` points from the sorted list\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -85,12 +132,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N log N\), where N is the number of points\. This is due to the sorting step\.
 *   **Space Complexity:** O\(1\), as we are sorting the array in place\.
 
-## 2\. Optimized Approach: Heap/Priority Queue
+### 2\. Optimized Approach: Heap/Priority Queue
 
 #### Intuition:
 
@@ -104,8 +151,6 @@ Instead of sorting the entire array, we can maintain a max heap of size `K` to
 4.  Convert the result from the heap to an array and return it\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -135,12 +180,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N log K\), where N is the number of points and K is the number of closest points required\. This is due to the priority queue operations\.
 *   **Space Complexity:** O\(K\), for storing the `K` closest points in the heap\.
 
-## 3\. Optimal Approach: Quickselect
+### 3\. Optimal Approach: Quickselect
 
 #### Intuition:
 
@@ -152,8 +197,6 @@ Quickselect is an optimization over quicksort that allows us to partition the ar
 2.  Recursively adjust the partitioning based on the position of K relative to the pivot's final index until the partition yielding the closest K points is achieved\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -208,7 +251,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\) on average, but O\(N^2\) in the worst case due to the recursive partitioning process\.
 *   **Space Complexity:** O\(1\), as it is an in\-place sorting algorithm\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/k-closest-points-to-origin)

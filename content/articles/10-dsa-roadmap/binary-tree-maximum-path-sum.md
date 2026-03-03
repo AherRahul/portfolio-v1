@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 A **path** in a binary tree is a sequence of nodes where each pair of adjacent nodes in the sequence has an edge connecting them\. A node can only appear in the sequence **at most once**\. Note that the path does not need to pass through the root\.
 
@@ -25,6 +23,14 @@ Given the `root` of a binary tree, return _the maximum_ _**path sum**_ _of 
 
 Input:root=\[1,2,3\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+  </div>
+</div>
+
 123
 
 **Output:** 6
@@ -34,6 +40,18 @@ Input:root=\[1,2,3\]
 ##### **Example 2:**
 
 Input:root=\[\-10,9,20,null,null,15,7\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">-10</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">9</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">20</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">3</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">4</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">15</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">7</span></div>
+  </div>
+</div>
 
 \-10920157
 
@@ -46,11 +64,10 @@ Input:root=\[\-10,9,20,null,null,15,7\]
 *   The number of nodes in the tree is in the range **\[1, 3 \* 10****4****\]**\.
 *   `-1000 <= Node.val <= 1000`
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/binary-tree-maximum-path-sum)
 
-# Approaches
+## Approaches
 
-## 1\. Recursive Brute Force
+### 1\. Recursive Brute Force
 
 #### Intuition:
 
@@ -70,8 +87,6 @@ The basic idea is to traverse each node of the binary tree and determine all pos
 *   Keep track of the global maximum path sum encountered during the traversal\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -100,12 +115,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity**: O\(N^2\) where N is the number of nodes because each node invocation leads to exploring its children in separate recursions\.
 *   **Space Complexity**: O\(H\) where H is the height of the tree, representing the depth of the recursion stack\.
 
-## 2\. Optimized Recursive with Global Maximum
+### 2\. Optimized Recursive with Global Maximum
 
 #### Intuition:
 
@@ -120,8 +135,6 @@ To optimize, we need to ensure that we only compute each subtree path sum once p
 *   This is done by taking the maximum of 0 and the gain from the left and right subtree, adding the current node's value\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -154,7 +167,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity**: O\(N\) since each node is processed exactly once\.
 *   **Space Complexity**: O\(H\) where H is the height of the tree for the recursion stack\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/binary-tree-maximum-path-sum)

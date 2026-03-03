@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given an integer array `nums` with no duplicates\. A **maximum binary tree** can be built recursively from `nums` using the following algorithm:
 
@@ -27,13 +25,56 @@ Return _the_ _**maximum binary tree**_ _built from_ `nums`\.
 
 **Input:** nums = \[3,2,1,6,0,5\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">6</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">4</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">5</span></div>
+  </div>
+</div>
+
 **Output:** \[6,3,5,null,2,0,null,null,1\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">6</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">5</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">6</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">7</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">8</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 ##### **Example 2:**
 
 **Input:** nums = \[3,2,1\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">1</span></div>
+  </div>
+</div>
+
 **Output:** \[3,null,2,null,1\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 ##### **Constraints:**
 
@@ -41,11 +82,10 @@ Return _the_ _**maximum binary tree**_ _built from_ `nums`\.
 *   `0 <= nums[i] <= 1000`
 *   All integers in `nums` are **unique**\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/maximum-binary-tree)
 
-# Approaches
+## Approaches
 
-## 1\. Recursive Divide and Conquer
+### 1\. Recursive Divide and Conquer
 
 #### Intuition:
 
@@ -64,8 +104,6 @@ The problem requires constructing a binary tree where the root is the maximum nu
 6.  **Link Subtrees**: Assign the resulting subtrees to the left and right of the current node\.
 
 #### Code:
-
-Java
 
 ```java
 /**
@@ -124,7 +162,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^2\) in the worst case where the array is sorted and each recursive call will scan through the array slice to find the max\. However, in average cases, this is closer to O\(n log n\)\.
 *   **Space Complexity:** O\(n\) to keep the recursion stack due to the depth of the recursion\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/maximum-binary-tree)

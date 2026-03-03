@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given the `root` of a binary tree, the value of a target node `target`, and an integer `k`, return _an array of the values of all nodes that have a distance_ `k` _from the target node\._
 
@@ -23,15 +21,45 @@ You can return the answer in **any order**\.
 
 **Input:** root = \[3,5,1,6,2,0,8,null,null,7,4\], target = 5, k = 2
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">6</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">5</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">8</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">7</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">8</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">9</span><span class="arr-val">7</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">10</span><span class="arr-val">4</span></div>
+  </div>
+</div>
+
 356274108
 
 **Output:** \[7,4,1\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">7</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 Explanation: The nodes that are a distance 2 from the target node \(with value 5\) have values 7, 4, and 1\.
 
 ##### **Example 2:**
 
 **Input:** root = \[1\], target = 1, k = 3
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 **Output:** \[\]
 
@@ -43,11 +71,10 @@ Explanation: The nodes that are a distance 2 from the target node \(with value 5
 *   `target` is the value of one of the nodes in the tree\.
 *   `0 <= k <= 1000`
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree)
 
-# Approaches
+## Approaches
 
-## 1\. Convert Tree to Undirected Graph
+### 1\. Convert Tree to Undirected Graph
 
 #### Intuition:
 
@@ -59,8 +86,6 @@ The problem can be simplified by viewing the binary tree as an undirected graph\
 2.  **BFS Traversal**: Perform a BFS starting from the target node, keeping track of visited nodes to avoid cycles\. Record nodes that are exactly K edges away\.
 
 #### Code:
-
-Java
 
 ```java
 class TreeNode {
@@ -121,12 +146,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity**: O\(N\) where N is the number of nodes\. Constructing the graph takes O\(N\) and performing BFS also takes O\(N\)\.
 *   **Space Complexity**: O\(N\) for storing the graph and visited nodes\.
 
-## 2\. DFS to Find Target Node and Explore Neighbors Using BFS
+### 2\. DFS to Find Target Node and Explore Neighbors Using BFS
 
 #### Intuition:
 
@@ -138,8 +163,6 @@ Instead of explicitly building a graph, we can use a combination of DFS and BFS 
 2.  **BFS Exploration**: Use BFS from the target to find nodes at distance K\. Treat any node along the path to the target as an "intermediary root" to account for upward paths\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -189,7 +212,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity**: O\(N\), where N is the number of nodes in the tree, since we potentially traverse the entire tree\.
 *   **Space Complexity**: O\(N\) due to recursive stack usage in DFS calls\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree)

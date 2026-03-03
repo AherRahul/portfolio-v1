@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 The **next greater element** of some element `x` in an array is the **first greater** element that is **to the right** of `x` in the same array\.
 
@@ -29,6 +27,14 @@ Return _an array_ `ans` _of length_ `nums1.length` _such that_ `ans[i]` _
 
 **Output:** \[\-1,3,\-1\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">-1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">-1</span></div>
+  </div>
+</div>
+
 **Explanation:** The next greater element for each value of nums1 is as follows:
 
 \- 4 is underlined in nums2 = \[1,3,4,2\]\. There is no next greater element, so the answer is \-1\.
@@ -42,6 +48,13 @@ Return _an array_ `ans` _of length_ `nums1.length` _such that_ `ans[i]` _
 **Input:** nums1 = \[2,4\], nums2 = \[1,2,3,4\]
 
 **Output:** \[3,\-1\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">-1</span></div>
+  </div>
+</div>
 
 **Explanation:** The next greater element for each value of nums1 is as follows:
 
@@ -58,11 +71,10 @@ Return _an array_ `ans` _of length_ `nums1.length` _such that_ `ans[i]` _
 
 **Follow up:** Could you find an `O(nums1.length + nums2.length)` solution?
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/next-greater-element-i)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force
+### 1\. Brute Force
 
 The brute force approach is straightforward: For each element in `nums1`, search for its next greater element in `nums2`\.
 
@@ -73,8 +85,6 @@ The brute force approach is straightforward: For each element in `nums1`, searc
 *   If a greater element is found, add it to the result, otherwise, append \-1 \(indicating no greater element found\)\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -101,12 +111,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n \* m\), where n is the length of `nums1` and m is the length of `nums2`\. For each element in `nums1`, we do a potentially full scan of `nums2`\.
 *   **Space Complexity:** O\(1\), apart from the space used to store the result\.
 
-## 2\. Using a Stack and HashMap
+### 2\. Using a Stack and HashMap
 
 This approach leverages a stack and hashmap to efficiently find the next greater element for all elements in `nums2` in a single pass\.
 
@@ -118,8 +128,6 @@ This approach leverages a stack and hashmap to efficiently find the next greater
 *   After processing, for each element in `nums1`, retrieve the next greater element directly from the hashmap\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution { 
@@ -147,9 +155,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n \+ m\), iterating nums2 once O\(m\), and checking each nums1 element in O\(1\) using the hashmap\.
 *   **Space Complexity:** O\(m\), for storing the hashmap and the stack\.
 
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/next-greater-element-i)

@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given two strings `s` and `t` of lengths `m` and `n` respectively, return _the_ _**minimum window**_ _**substring**_ _of_ `s` _such that every character in_ `t` _\(__**including duplicates**__\) is included in the window_\. If there is no such substring, return _the empty string_ `""`\.
 
@@ -48,11 +46,10 @@ The testcases will be generated such that the answer is **unique**\. 
 
 **Follow up:** Could you find an algorithm that runs in `O(m + n)` time?
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/minimum-window-substring)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force
+### 1\. Brute Force
 
 The most straightforward solution is to generate all possible substrings of `s`, and check if they contain all characters of `t`\. However, this will be highly inefficient due to the large number of potential substrings, especially for long input strings\.
 
@@ -63,8 +60,6 @@ The most straightforward solution is to generate all possible substrings of `s`
 3.  Track the minimum\-length substring that contains all characters of `t`\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -101,12 +96,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^3\) due to the checking of all substrings and counting of characters\.
 *   **Space Complexity:** O\(1\), no additional data structures are used aside from fixed\-size arrays for counting characters\.
 
-## 2\. Sliding Window using HashMap
+### 2\. Sliding Window using HashMap
 
 The sliding window technique optimizes the process of finding the minimum window by maintaining two pointers to represent a window and expanding or shrinking it as needed\.
 
@@ -118,8 +113,6 @@ The sliding window technique optimizes the process of finding the minimum window
 4.  Record the smallest window found\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -174,9 +167,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n \+ m\), where `n` is the length of `s`, and `m` is the length of `t`\. This is because each character is processed at most twice \(once when `right` traverses `s`, and once when `left` increments\)\.
 *   **Space Complexity:** O\(m \+ k\), where `m` is the size of the `tFreq` HashMap that stores character frequencies of `t`, and `k` is the maximum number of unique characters in `s`\.
 
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/minimum-window-substring)

@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given the `head` of a singly linked list and two integers `left` and `right` where `left <= right`, reverse the nodes of the list from position `left` to position `right`, and return _the reversed list_\. 
 
@@ -21,29 +19,29 @@ Given the `head` of a singly linked list and two integers `left` and `right
 
 **Input:** head = \[1,2,3,4,5\], left = 2, right = 4
 
-1
-
-2
-
-3
-
-4
-
-5
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">5</span></div>
+  </div>
+</div>
 
 null
 
 **Output:** \[1,4,3,2,5\]
 
-1
-
-4
-
-3
-
-2
-
-5
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">5</span></div>
+  </div>
+</div>
 
 null
 
@@ -51,7 +49,19 @@ null
 
 **Input:** head = \[5\], left = 1, right = 1
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">5</span></div>
+  </div>
+</div>
+
 **Output:** \[5\] 
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">5</span></div>
+  </div>
+</div>
 
 ##### **Constraints:**
 
@@ -62,11 +72,10 @@ null
 
 **Follow up:** Could you do it in one pass?
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/reverse-linked-list-ii)
 
-# Approaches
+## Approaches
 
-## 1\. Iterative Reversal with Extra Space
+### 1\. Iterative Reversal with Extra Space
 
 #### Intuition:
 
@@ -80,8 +89,6 @@ This approach leverages an extra data structure to reverse the segment of the li
 4.  Reconnect the nodes before, within, and after the reversed segment accordingly\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -119,12 +126,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), where n is the number of nodes in the list since we traverse the list a constant number of times\.
 *   **Space Complexity:** O\(n\), due to the stack used for storing nodes to be reversed\.
 
-## 2\. Iterative In\-Place Reversal
+### 2\. Iterative In\-Place Reversal
 
 #### Intuition:
 
@@ -137,8 +144,6 @@ Instead of using extra space, this approach manages all operations directly with
 3.  Reconnect the reversed section to the remainder of the list\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -171,7 +176,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), where n is the number of nodes in the list, as we make a linear pass through the list\.
 *   **Space Complexity:** O\(1\), no additional space is used; reversal is done in place\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/reverse-linked-list-ii)

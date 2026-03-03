@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given an integer `n`, return _an array_ `ans` _of length_ `n + 1` _such that for each_ `i` \(`0 <= i <= n`\)_,_ `ans[i]` _is the_ _**number of**_ `1`_**'s**_ _in the binary representation of_ `i`\.
 
@@ -22,6 +20,14 @@ Given an integer `n`, return _an array_ `ans` _of length_ `n + 1` _such th
 **Input:** n = 2
 
 **Output:** \[0,1,1\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 **Explanation:**
 
@@ -36,6 +42,17 @@ Given an integer `n`, return _an array_ `ans` _of length_ `n + 1` _such th
 **Input:** n = 5
 
 **Output:** \[0,1,1,2,1,2\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">5</span><span class="arr-val">2</span></div>
+  </div>
+</div>
 
 **Explanation:**
 
@@ -57,19 +74,16 @@ Given an integer `n`, return _an array_ `ans` _of length_ `n + 1` _such th
 *   It is very easy to come up with a solution with a runtime of `O(n log n)`\. Can you do it in linear time `O(n)` and possibly in a single pass?
 *   Can you do it without using any built\-in function \(i\.e\., like `__builtin_popcount` in C\+\+\)?
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/counting-bits)
 
-# Approaches
+## Approaches
 
-## 1\. Naive Approach
+### 1\. Naive Approach
 
 #### Intuition:
 
 The naive approach involves iterating over each number from 0 to n and calculating the number of 1's in its binary representation\. This can be achieved by repeatedly dividing the number by 2 and counting the remainder when divided by 2\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -91,12 +105,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n \* log\(n\)\) because for each number up to n, we are performing shifts proportional to log\(n\)\.
 *   **Space Complexity:** O\(n\) for the output array\.
 
-## 2\. DP with Last Significant Bit
+### 2\. DP with Last Significant Bit
 
 #### Intuition:
 
@@ -120,8 +134,6 @@ Instead of counting bits from scratch for every number, we reuse the results fro
 
 #### Code:
 
-Java
-
 ```java
 class Solution {
    public int[] countBits(int n) {
@@ -137,7 +149,7 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\) because we compute the number of bits for each number up to n exactly once\.
 *   **Space Complexity:** O\(n\) for the output array\.
@@ -155,7 +167,7 @@ Let’s compute `res[0..7]`
 *   `i = 6` → `res[6] = res[3] + 0 = 2`
 *   `i = 7` → `res[7] = res[3] + 1 = 3`
 
-## 3\. Powers of two
+### 3\. Powers of two
 
 #### Intuition:
 
@@ -186,8 +198,6 @@ res[x] = res[x - power_of_two] + 1
 
 #### Code:
 
-Java
-
 ```java
 class Solution {
    public int[] countBits(int n) {
@@ -207,7 +217,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\) because we are iterating over each element only once\.
 *   **Space Complexity:** O\(n\) for the output array\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/counting-bits)

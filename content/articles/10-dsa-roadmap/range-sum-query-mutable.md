@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given an integer array `nums`, handle multiple queries of the following types:
 
@@ -56,11 +54,10 @@ numArray.sumRange(0, 2); // return 1 + 2 + 5 = 8
 *   **0 <= left <= right < nums\.length**
 *   **At most 3 \* 10****4** **calls will be made to update and sumRange\.**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/range-sum-query-mutable)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force
+### 1\. Brute Force
 
 #### Intuition:
 
@@ -71,8 +68,6 @@ numArray.sumRange(0, 2); // return 1 + 2 + 5 = 8
 This approach sacrifices performance for simplicity, offering an easy\-to\-understand solution at the cost of increased time complexity for range queries\.
 
 #### Code:
-
-Java
 
 ```java
 class NumArray {
@@ -97,7 +92,7 @@ class NumArray {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:**
 
@@ -106,7 +101,7 @@ Complexity Analysis
 
 *   **Space Complexity:** O\(1\) beyond the input storage, as we do not use any additional data structures besides a simple array\.
 
-## 2\. Segment Tree
+### 2\. Segment Tree
 
 #### Intuition:
 
@@ -115,8 +110,6 @@ Complexity Analysis
 *   With Segment Trees, both `update` and `sumRange` operations can be conducted in O\(log n\) time, balancing between brute force direct access and high efficiency\.
 
 #### Code:
-
-Java
 
 ```java
 class NumArray {
@@ -187,7 +180,7 @@ class NumArray {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:**
 
@@ -196,7 +189,7 @@ Complexity Analysis
 
 *   **Space Complexity:** O\(n\), used by the segment tree structure\.
 
-## 3\. Binary Indexed Tree \(Fenwick Tree\)
+### 3\. Binary Indexed Tree \(Fenwick Tree\)
 
 #### Intuition:
 
@@ -204,8 +197,6 @@ Complexity Analysis
 *   Fenwick Trees provide a simpler, more compact structure that allows both updates and prefix sum retrievals in O\(log n\) time\.
 
 #### Code:
-
-Java
 
 ```java
 class NumArray {
@@ -253,7 +244,7 @@ class NumArray {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:**
 
@@ -261,3 +252,5 @@ Complexity Analysis
 *   `sumRange`: O\(log n\)
 
 *   **Space Complexity:** O\(n\), used by the Binary Indexed Tree structure\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/range-sum-query-mutable)

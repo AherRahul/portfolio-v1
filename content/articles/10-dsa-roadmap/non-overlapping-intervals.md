@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given an array of intervals `intervals` where **intervals\[i\] = \[start****i****, end****i****\]**, return _the minimum number of intervals you need to remove to make the rest of the intervals non\-overlapping_\.
 
@@ -23,6 +21,27 @@ Given an array of intervals `intervals` where **intervals\[i\] = \[start****i
 
 **Input:** intervals = \[\[1,2\],\[2,3\],\[3,4\],\[1,3\]\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">4</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+    </div>
+  </div>
+</div>
+
 **Output:** 1
 
 **Explanation:** \[1,3\] can be removed and the rest of the intervals are non\-overlapping\.
@@ -30,6 +49,23 @@ Given an array of intervals `intervals` where **intervals\[i\] = \[start****i
 ##### **Example 2:**
 
 **Input:** intervals = \[\[1,2\],\[1,2\],\[1,2\]\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+    </div>
+  </div>
+</div>
 
 **Output:** 2
 
@@ -39,6 +75,19 @@ Given an array of intervals `intervals` where **intervals\[i\] = \[start****i
 
 **Input:** intervals = \[\[1,2\],\[2,3\]\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+    </div>
+  </div>
+</div>
+
 **Output:** 0**Explanation:** You don't need to remove any of the intervals since they're already non\-overlapping\.
 
 ##### **Constraints:**
@@ -47,11 +96,10 @@ Given an array of intervals `intervals` where **intervals\[i\] = \[start****i
 *   **intervals\[i\]\.length == 2**
 *   **\-5 \* 10****4** **<= start****i** **< end****i** **<= 5 \* 10****4**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/non-overlapping-intervals)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force Approach
+### 1\. Brute Force Approach
 
 #### Intuition:
 
@@ -65,8 +113,6 @@ The initial approach involves checking each pair of intervals to determine if th
 4.  Remove the interval that ends later to increase the chance of allowing future intervals to fit without overlap\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -93,12 +139,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^2\), as we may compare each pair of intervals\.
 *   **Space Complexity:** O\(n\) due to sorting and temporary data structures\.
 
-## 2\. Optimized Greedy Approach
+### 2\. Optimized Greedy Approach
 
 #### Intuition:
 
@@ -112,8 +158,6 @@ An improved approach leverages a greedy algorithm\. By sorting intervals by thei
 4.  If overlapped, increment the removal counter; otherwise, update the end point to the current interval’s end time\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -141,7 +185,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n log n\), mainly due to the sorting step\.
 *   **Space Complexity:** O\(1\), as we are using only a constant amount of extra space\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/non-overlapping-intervals)

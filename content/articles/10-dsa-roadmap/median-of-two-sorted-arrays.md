@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given two sorted arrays `nums1` and `nums2` of size `m` and `n` respectively, return **the median** of the two sorted arrays\.
 
@@ -44,11 +42,10 @@ The overall run time complexity should be `O(log (m+n))`\.
 *   **1 <= m \+ n <= 2000**
 *   **\-10****6** **<= nums1\[i\], nums2\[i\] <= 10****6**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/median-of-two-sorted-arrays)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force Approach
+### 1\. Brute Force Approach
 
 #### Intuition:
 
@@ -65,8 +62,6 @@ The simplest approach to find the median of two sorted arrays is to merge them i
 *   If the size is even, the median is the average of the two middle elements\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -102,12 +97,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(m \+ n\), where m and n are the lengths of the two arrays\. This is because we iterate through both arrays once\.
 *   **Space Complexity:** O\(m \+ n\) due to the creation of the merged array\.
 
-## 2\. Optimized Binary Search Approach
+### 2\. Optimized Binary Search Approach
 
 #### Intuition:
 
@@ -126,8 +121,6 @@ A more efficient approach uses binary search\. Instead of merging the entire arr
 *   If it's odd, the median is the maximum element of the left part\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -170,7 +163,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(log\(min\(m, n\)\)\), where m and n are the lengths of two input arrays\. The binary search is applied on the smaller array\.
 *   **Space Complexity:** O\(1\), as no additional space is used other than variable storage\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/median-of-two-sorted-arrays)

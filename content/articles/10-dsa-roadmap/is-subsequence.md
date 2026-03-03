@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given two strings `s` and `t`, return `true` _if_ `s` _is a_ _**subsequence**_ _of_ `t`_, or_ `false` _otherwise_\.
 
@@ -39,9 +37,8 @@ A **subsequence** of a string is a new string that is formed from the original
 
 **Follow up:** Suppose there are lots of incoming `s`, say **s****1****, s****2****, \.\.\., s****k** where **k >= 10****9**, and you want to check one by one to see if `t` has its subsequence\. In this scenario, how would you change your code?
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/is-subsequence)
 
-# Understanding the Problem
+## Understanding the Problem
 
 Before diving into solutions, let's make sure we understand what a subsequence is and how it differs from a substring\.
 
@@ -69,9 +66,9 @@ Even though other characters appear between them, s is a valid subsequence.
 
 Another way to think about it: imagine you are reading through `t` from left to right, and you are trying to "check off" each character of `s` in order\. If you can check off all characters of `s` by the time you finish reading `t`, then `s` is a subsequence of `t`\.
 
-# Approaches
+## Approaches
 
-## 1\. Two Pointers \(Optimal for Single Query\)
+### 1\. Two Pointers \(Optimal for Single Query\)
 
 #### **Intuition**
 
@@ -92,8 +89,6 @@ As we scan through `t`, whenever we find a character that matches the current c
 
 #### **Code**
 
-Java
-
 ```java
 class Solution {
    public boolean isSubsequence(String s, String t) {
@@ -113,7 +108,7 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 **Time Complexity:** O\(n\) where n is the length of `t`
 
@@ -126,11 +121,9 @@ Complexity Analysis
 *   We only use two pointer variables
 *   No additional data structures needed
 
-View Animation
-
 This is the optimal solution for a single query\. But what happens when we have many queries?
 
-## 2\. Binary Search \(Optimized for Multiple Queries\)
+### 2\. Binary Search \(Optimized for Multiple Queries\)
 
 #### **Intuition**
 
@@ -175,8 +168,6 @@ For each character in `s`, we need to find the first occurrence in `t` that c
 *   If all characters are matched, return `true`
 
 #### Code
-
-Java
 
 ```java
 class Solution {
@@ -242,7 +233,7 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 **Preprocessing Time:** O\(n\) where n is the length of `t`
 
@@ -263,3 +254,5 @@ Complexity Analysis
 
 *   This is significantly better than O\(k \* n\) from the two\-pointer approach when k is large
 *   The crossover point depends on the lengths: binary search wins when k is large or m is small relative to n
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/is-subsequence)

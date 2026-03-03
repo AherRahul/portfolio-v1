@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given an `m x n` `matrix`, return _all elements of the_ `matrix` _in spiral order_\.
 
@@ -21,109 +19,68 @@ Given an `m x n` `matrix`, return _all elements of the_ `matrix` _in spiral
 
 Input:matrix=\[\[1,2,3\],\[4,5,6\],\[7,8,9\]\]
 
-0
-
-1
-
-2
-
-0
-
-1
-
-2
-
-3
-
-1
-
-4
-
-5
-
-6
-
-2
-
-7
-
-8
-
-9
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">4</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">5</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">6</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">7</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">8</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">9</span></div>
+    </div>
+  </div>
+</div>
 
 Output:\[1,2,3,6,9,8,7,4,5\]
 
-0
-
-1
-
-1
-
-2
-
-2
-
-3
-
-3
-
-6
-
-4
-
-9
-
-5
-
-8
-
-6
-
-7
-
-7
-
-4
-
-8
-
-5
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">6</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">9</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">5</span><span class="arr-val">8</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">6</span><span class="arr-val">7</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">7</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">8</span><span class="arr-val">5</span></div>
+  </div>
+</div>
 
 ##### **Example 2:**
 
 Input:matrix=\[\[1,2,3,4\],\[5,6,7,8\],\[9,10,11,12\]\]
 
-0
-
-1
-
-2
-
-3
-
-0
-
-1
-
-2
-
-3
-
-4
-
-1
-
-5
-
-6
-
-7
-
-8
-
-2
-
-9
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">4</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">5</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">6</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">7</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">8</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">9</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">10</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">11</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">12</span></div>
+    </div>
+  </div>
+</div>
 
 10
 
@@ -133,53 +90,22 @@ Input:matrix=\[\[1,2,3,4\],\[5,6,7,8\],\[9,10,11,12\]\]
 
 Output:\[1,2,3,4,8,12,11,10,9,5,6,7\]
 
-0
-
-1
-
-1
-
-2
-
-2
-
-3
-
-3
-
-4
-
-4
-
-8
-
-5
-
-12
-
-6
-
-11
-
-7
-
-10
-
-8
-
-9
-
-9
-
-5
-
-10
-
-6
-
-11
-
-7
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">8</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">5</span><span class="arr-val">12</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">6</span><span class="arr-val">11</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">7</span><span class="arr-val">10</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">8</span><span class="arr-val">9</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">9</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">10</span><span class="arr-val">6</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">11</span><span class="arr-val">7</span></div>
+  </div>
+</div>
 
 ##### **Constraints:**
 
@@ -188,11 +114,10 @@ Output:\[1,2,3,4,8,12,11,10,9,5,6,7\]
 *   **1 <= m, n <= 10**
 *   **\-100 <= matrix\[i\]\[j\] <= 100**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/spiral-matrix)
 
-# Approaches
+## Approaches
 
-## 1\. Simulation
+### 1\. Simulation
 
 #### **Intuition:**
 
@@ -216,8 +141,6 @@ By traversing these boundaries in the correct sequence, we can extract the eleme
 5.  Repeat until all boundaries meet or cross each other\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {
@@ -267,14 +190,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(m \* n\), where m is the number of rows and n is the number of columns\. Every element in the matrix is visited exactly once\.
 *   **Space Complexity:** O\(1\), excluding the space used by the output list\.
 
-View Animation
-
-## 2\. Optimized
+### 2\. Optimized
 
 #### **Intuition:**
 
@@ -288,8 +209,6 @@ A more structured version of the basic approach relies on cycling through four d
 4.  Adjust direction and mark cell as visited when hitting a boundary\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {
@@ -328,7 +247,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(m \* n\), since each cell of the matrix is visited exactly once\.
 *   **Space Complexity:** O\(m \* n\), due to the visited matrix tracking visited cells\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/spiral-matrix)

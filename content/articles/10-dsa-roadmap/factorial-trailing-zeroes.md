@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given an integer `n`, return _the number of trailing zeroes in_ `n!`\.
 
@@ -47,11 +45,10 @@ Note that `n! = n * (n - 1) * (n - 2) * ... * 3 * 2 * 1`\.
 
 **Follow up:** Could you write a solution that works in logarithmic time complexity?
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/factorial-trailing-zeroes)
 
-# Approaches
+## Approaches
 
-## 1\. Count Factors of 5
+### 1\. Count Factors of 5
 
 #### Intuition:
 
@@ -64,8 +61,6 @@ The basic idea is to count how many times 5 is a factor of numbers from 1 to `n
 3.  Return the count as the number of trailing zeroes\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -84,12 +79,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(log5\(n\)\) \- We are dividing `n` by powers of 5\.
 *   **Space Complexity:** O\(1\) \- Constant space is used\.
 
-## 2\. Optimized Approach: Mathematical Insight
+### 2\. Optimized Approach: Mathematical Insight
 
 #### Intuition:
 
@@ -102,8 +97,6 @@ The count of trailing zeroes is determined by the number of times 5 is a factor 
 3.  The sum will be our result\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -122,7 +115,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(log5\(n\)\) \- Each division step reduces `n` by a factor of 5\.
 *   **Space Complexity:** O\(1\) \- We are using constant space\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/factorial-trailing-zeroes)

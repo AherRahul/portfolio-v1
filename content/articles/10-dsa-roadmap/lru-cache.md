@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Design a data structure that follows the constraints of a [**Least Recently Used \(LRU\) cache**](https://en.wikipedia.org/wiki/Cache_replacement_policies#LRU)\.
 
@@ -59,11 +57,10 @@ lRUCache.get(4);    // return 4
 *   **0 <= value <= 10****5**
 *   **At most 2 \* 10****5** **calls will be made to get and put**\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/lru-cache)
 
-# Approaches
+## Approaches
 
-## 1\. Doubly Linked List with HashMap \(Basic\)
+### 1\. Doubly Linked List with HashMap \(Basic\)
 
 In this approach, we use a doubly linked list to maintain the order of use of the cache and a HashMap for quick access to elements\. The doubly linked list maintains a list of nodes, each representing a key\-value pair\. The head of the list is the most recently used, and the tail is the least used\.
 
@@ -75,8 +72,6 @@ In this approach, we use a doubly linked list to maintain the order of use of th
 *   Upon hitting capacity, remove the node at the tail \(least recently used\)\.
 
 #### Code:
-
-Java
 
 ```java
 class Node {
@@ -144,12 +139,12 @@ class LRUCache {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(1\) for both `get` and `put` operations due to the constant time for hash table and linked list operations\.
 *   **Space Complexity:** O\(capacity\) for storing the elements in the cache\.
 
-## 2\. Doubly Linked List with HashMap \(Optimized\)
+### 2\. Doubly Linked List with HashMap \(Optimized\)
 
 The second approach involves the same data structures but focuses on optimizing memory usage and cleaning up code for efficiency\.
 
@@ -159,8 +154,6 @@ The second approach involves the same data structures but focuses on optimizing 
 *   Ensure edge case handling for all corner scenarios in insert and removal of nodes\.
 
 #### Code:
-
-Java
 
 ```java
 class LRUOptimizedCache {
@@ -231,7 +224,9 @@ class LRUOptimizedCache {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(1\) for both `get` and `put` operations as we continue to have constant time hash table and linked list operations\.
 *   **Space Complexity:** O\(capacity\) for storing the elements and linked list pointers\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/lru-cache)

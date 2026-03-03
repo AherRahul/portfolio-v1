@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given the `head` of a linked list, remove the `n``th` node from the end of the list and return its head\. 
 
@@ -21,27 +19,28 @@ Given the `head` of a linked list, remove the `n``th` node from the end of t
 
 **Input:** head = \[1,2,3,4,5\], n = 2
 
-1
-
-2
-
-3
-
-4
-
-5
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">5</span></div>
+  </div>
+</div>
 
 null
 
 **Output:** \[1,2,3,5\]
 
-1
-
-2
-
-3
-
-5
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">5</span></div>
+  </div>
+</div>
 
 null
 
@@ -49,7 +48,11 @@ null
 
 **Input:** head = \[1\], n = 1
 
-1
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 null
 
@@ -61,15 +64,22 @@ null
 
 **Input:** head = \[1,2\], n = 1
 
-1
-
-2
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+  </div>
+</div>
 
 null
 
 **Output:** \[1\]
 
-1
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 null
 
@@ -82,11 +92,10 @@ null
 
 **Follow up:** Could you do this in one pass?
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/remove-nth-node-from-end-of-list)
 
-# Approaches
+## Approaches
 
-## 1\. Two Pass
+### 1\. Two Pass
 
 #### Intuition:
 
@@ -99,8 +108,6 @@ The basic idea behind this approach is to determine the length of the linked lis
 3.  Return the head of the modified list\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -133,12 +140,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(L\) since we perform two full traversals of the list, where L is the length of the list\.
 *   **Space Complexity:** O\(1\) since only a constant amount of extra space is used\.
 
-## 2\. One Pass using Two Pointers
+### 2\. One Pass using Two Pointers
 
 #### Intuition:
 
@@ -153,8 +160,6 @@ We can improve our solution by using two pointers with a gap of n nodes between 
 5.  Return the head of the modified list\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -187,9 +192,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(L\) since We make a single traversal of the list\.
 *   **Space Complexity:** O\(1\) since only a constant amount of extra space is used\.
 
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/remove-nth-node-from-end-of-list)

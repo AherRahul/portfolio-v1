@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given an integer array `nums` and an integer `k`, return _the_ `k``th` _largest element in the array_\.
 
@@ -25,11 +23,36 @@ Can you solve it without sorting?
 
 **Input:** nums = \[3,2,1,5,6,4\], k = 2
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">6</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">4</span></div>
+  </div>
+</div>
+
 **Output:** 5
 
 ##### **Example 2:**
 
 **Input:** nums = \[3,2,3,1,2,4,5,5,6\], k = 4
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">7</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">8</span><span class="arr-val">6</span></div>
+  </div>
+</div>
 
 **Output:** 4
 
@@ -38,11 +61,10 @@ Can you solve it without sorting?
 *   **1 <= k <= nums\.length <= 10****5**
 *   **\-10****4** **<= nums\[i\] <= 10****4**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/kth-largest-element-in-an-array)
 
-# Approaches
+## Approaches
 
-## 1\. Basic Approach: Sorting
+### 1\. Basic Approach: Sorting
 
 #### Intuition:
 
@@ -54,8 +76,6 @@ The simplest and most direct way to find the k\-th largest element is to sort th
 2.  Retrieve the k\-th element from the sorted array\.
 
 #### Code:
-
-Java
 
 ```java
 class KthLargestElement {
@@ -69,12 +89,12 @@ class KthLargestElement {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n log n\) due to the sorting step\.
 *   **Space Complexity:** O\(1\) if we sort in\-place; otherwise, O\(n\) if we use additional space to store a sorted copy\.
 
-## 2\. Min\-Heap Approach
+### 2\. Min\-Heap Approach
 
 #### Intuition:
 
@@ -91,8 +111,6 @@ Instead of sorting the entire array, we can use a min\-heap to maintain the k la
 4.  The top of the heap will be the k\-th largest element\.
 
 #### Code:
-
-Java
 
 ```java
 class KthLargestElement {
@@ -116,14 +134,12 @@ class KthLargestElement {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n log k\), where n is the number of elements, as each insertion into the heap takes O\(log k\)\.
 *   **Space Complexity:** O\(k\) for the heap storing k elements\.
 
-View Animation
-
-## 3\. Quickselect \(Optimal\)
+### 3\. Quickselect \(Optimal\)
 
 #### Intuition:
 
@@ -136,8 +152,6 @@ Quickselect is a selection algorithm to find the k\-th smallest element in an un
 3.  Otherwise, recurse on the subarray containing the k\-th largest element\.
 
 #### Code:
-
-Java
 
 ```java
 class KthLargestElement {
@@ -192,7 +206,9 @@ class KthLargestElement {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\) on average, O\(n^2\) in the worst case due to the pivot choice\.
 *   **Space Complexity:** O\(1\) since we perform in\-place partitioning\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/kth-largest-element-in-an-array)

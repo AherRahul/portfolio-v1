@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given an unsorted array of integers `nums`, return _the length of the longest consecutive elements sequence\._
 
@@ -23,33 +21,18 @@ You must write an algorithm that runs in `O(n)` time\. 
 
 Input:nums=\[100,4,200,1,3,2\]
 
-0
-
-100
-
-1
-
-4
-
-2
-
-200
-
-3
-
-1
-
-4
-
-3
-
-5
-
-2
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">100</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">200</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">2</span></div>
+  </div>
+</div>
 
 Output:4
-
-4
 
 **Explanation:** The longest consecutive elements sequence is `[1, 2, 3, 4]`\. Therefore its length is 4\.
 
@@ -57,80 +40,46 @@ Output:4
 
 Input:nums=\[0,3,7,2,5,8,4,6,1\]
 
-0
-
-0
-
-1
-
-3
-
-2
-
-7
-
-3
-
-2
-
-4
-
-5
-
-5
-
-8
-
-6
-
-4
-
-7
-
-6
-
-8
-
-1
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">0</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">7</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">8</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">7</span><span class="arr-val">6</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">8</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 Output:9
-
-9
 
 ##### **Example 3:**
 
 Input:nums=\[1,0,1,2\]
 
-0
-
-1
-
-1
-
-0
-
-2
-
-1
-
-3
-
-2
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">1</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">2</span></div>
+  </div>
+</div>
 
 Output:3
-
-3
 
 ##### **Constraints:**
 
 *   **0 <= nums\.length <= 10****5**
 *   **\-10****9** **<= nums\[i\] <= 10****9**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/longest-consecutive-sequence)
 
-# Approaches
+## Approaches
 
-## 1\. Sorting
+### 1\. Sorting
 
 #### **Intuition:**
 
@@ -146,8 +95,6 @@ The simplest way to find the longest consecutive sequence is to first sort the a
 5.  **Return the longest streak**\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -178,12 +125,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n log n\), where n is the length of the array due to sorting\.
 *   **Space Complexity:** O\(1\), apart from the input array storage\.
 
-## 2\. HashSet and Intelligent Search
+### 2\. HashSet and Intelligent Search
 
 #### **Intuition:**
 
@@ -198,8 +145,6 @@ We can leverage a `HashSet` to eliminate duplicates and achieve O\(n\) complex
 4.  **Track the maximum sequence length**\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -233,12 +178,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), where n is the length of the array due to one pass through the elements and constant time lookups\.
 *   **Space Complexity:** O\(n\), because of the space used by the HashSet\.
 
-## 3\. Union\-Find
+### 3\. Union\-Find
 
 #### **Intuition:**
 
@@ -249,8 +194,6 @@ We can use the union\-find data structure to connect numbers that are part of co
 3.  **Find the maximum component size**\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -310,7 +253,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** Approximately O\(n\), taking into account the inverse Ackermann function in the union\-find operations\.
 *   **Space Complexity:** O\(n\), for the storage in the parent and rank maps\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/longest-consecutive-sequence)

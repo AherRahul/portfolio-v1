@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given a signed 32\-bit integer `x`, return `x` _with its digits reversed_\. If reversing `x` causes the value to go outside the signed 32\-bit integer range **\[\-2****31****, 2****31** **\- 1\]**, then return `0`\.
 
@@ -41,17 +39,14 @@ Given a signed 32\-bit integer `x`, return `x` _with its digits reversed_\. I
 
 *   **\-2****31** **<= x <= 2****31** **\- 1**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/reverse-integer)
 
-# Approaches
+## Approaches
 
-## 1\. String Manipulation
+### 1\. String Manipulation
 
 This simple approach involves converting the integer to a string, reversing it and converting it back to an integer\. While naive, it's straightforward to implement and understand\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -79,18 +74,16 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity**: O\(n\), where n is the number of digits in the integer\. This results from reversing the string representation of the integer\.
 *   **Space Complexity**: O\(1\) ignoring the space used for input and output as this uses a constant amount of space for the StringBuilder operations\.
 
-## 2\. Mathematical Reverse
+### 2\. Mathematical Reverse
 
 Instead of using built\-in string manipulation, this approach repeatedly divides the input by 10 to extract digits and form the reversed integer\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -109,18 +102,16 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity**: O\(log\(x\)\), where x is the input integer\. We extract each digit one by one and combine it in reversed order\.
 *   **Space Complexity**: O\(1\), since we're using a fixed amount of extra space\.
 
-## 3\. Optimized Mathematical Reverse with Overflow Check
+### 3\. Optimized Mathematical Reverse with Overflow Check
 
 Handling overflow is crucial because the problem constraints specify that the reversed integer must fit within a 32\-bit signed integer range\. This can be efficiently achieved by checking possible overflow conditions before updating the result in each iteration\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -146,7 +137,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity**: O\(log\(x\)\), similar to the previous mathematical approach, handling each digit once\.
 *   **Space Complexity**: O\(1\), as we use a minimal, constant amount of additional space for variables\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/reverse-integer)

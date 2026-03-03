@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given the `root` of a binary tree, return all **duplicate subtrees**\.
 
@@ -25,36 +23,102 @@ Two trees are **duplicate** if they have the **same structure** with the **
 
 Input:root=\[1,2,3,4,null,2,4,null,null,4\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">4</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">7</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">8</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">9</span><span class="arr-val">4</span></div>
+  </div>
+</div>
+
 1243244
 
 **Output:** \[\[2,4\],\[4\]\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">4</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">4</span></div>
+    </div>
+  </div>
+</div>
 
 ##### **Example 2:**
 
 Input:root=\[2,1,1\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">1</span></div>
+  </div>
+</div>
+
 211
 
 **Output:** \[\[1\]\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">1</span></div>
+    </div>
+  </div>
+</div>
 
 ##### **Example 3:**
 
 Input:root=\[2,2,2,3,null,3,null\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">4</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">6</span><span class="arr-val">null</span></div>
+  </div>
+</div>
+
 22323
 
 **Output:** \[\[2,3\],\[3\]\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">3</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">3</span></div>
+    </div>
+  </div>
+</div>
 
 ##### **Constraints:**
 
 *   The number of the nodes in the tree will be in the range `[1, 5000]`
 *   `-200 <= Node.val <= 200`
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/find-duplicate-subtrees)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force
+### 1\. Brute Force
 
 #### **Intuition:**
 
@@ -74,7 +138,7 @@ This approach is inefficient because of the repeated subtree comparisons\.
 *   **Time Complexity:** `O(n^2*m)`, where `n` is the number of nodes and `m` is the average number of nodes in each subtree\.
 *   **Space Complexity:** `O(n*m)`, for storing subtrees and comparisons\.
 
-## 2\. Serialization with HashMap
+### 2\. Serialization with HashMap
 
 #### **Intuition:**
 
@@ -88,8 +152,6 @@ Instead of comparing subtrees directly, we can serialize each subtree into a str
 4.  Keep track of the first instance of such duplicates\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {
@@ -118,12 +180,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** `O(n)`, because we traverse each node once and serialization is `O(1)` for each node\.
 *   **Space Complexity:** `O(n)`, for storing serialized subtrees in the hashmap\.
 
-## 3\. Optimized Serialization with Unique ID
+### 3\. Optimized Serialization with Unique ID
 
 #### **Intuition:**
 
@@ -136,8 +198,6 @@ In the optimized approach, instead of using strings to serialize each subtree, w
 3.  If a subtree's unique ID occurs more than once, it indicates a duplicate subtree\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {
@@ -171,7 +231,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** `O(n)`, traversing each node once and using constant time operations for map manipulations\.
 *   **Space Complexity:** `O(n)`, since we maintain maps to record unique IDs for the subtrees\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/find-duplicate-subtrees)

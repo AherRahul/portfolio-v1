@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given an integer array `deck`\. There is a deck of cards where every card has a unique integer\. The integer on the **i****th** card is `deck[i]`\.
 
@@ -33,7 +31,31 @@ Return _an ordering of the deck that would reveal the cards in increasing order
 
 **Input:** deck = \[17,13,11,2,3,5,7\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">17</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">13</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">11</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">7</span></div>
+  </div>
+</div>
+
 **Output:** \[2,13,3,11,5,17,7\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">13</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">11</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">5</span><span class="arr-val">17</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">6</span><span class="arr-val">7</span></div>
+  </div>
+</div>
 
 **Explanation:**
 
@@ -59,7 +81,21 @@ We reveal 17\.Since all the cards revealed are in increasing order, the answer i
 
 **Input:** deck = \[1,1000\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">1000</span></div>
+  </div>
+</div>
+
 **Output:** \[1,1000\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">1000</span></div>
+  </div>
+</div>
 
 ##### **Constraints:**
 
@@ -67,11 +103,10 @@ We reveal 17\.Since all the cards revealed are in increasing order, the answer i
 *   **1 <= deck\[i\] <= 10****6**
 *   All the values of `deck` are **unique**\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/reveal-cards-in-increasing-order)
 
-# Approaches
+## Approaches
 
-## 1\. Simple Simulation
+### 1\. Simple Simulation
 
 #### **Intuition:**
 
@@ -86,8 +121,6 @@ The core idea is to simulate the process as described in the problem:
 *   This approach is straightforward but lacks efficiency due to manual simulation\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {
@@ -116,12 +149,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N log N\) due to sorting where N is the number of cards\.
 *   **Space Complexity:** O\(N\) for the auxiliary `index` list\.
 
-## 2\. Optimized Approach Using Queue
+### 2\. Optimized Approach Using Queue
 
 #### **Intuition:**
 
@@ -135,8 +168,6 @@ The improved approach builds upon the simple simulation by efficiently managing 
 *   Place each card in the correct position using indices from the queue in a single pass\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {
@@ -165,9 +196,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N log N\) for sorting, and O\(N\) for queue operations, resulting in overall O\(N log N\)\.
 *   **Space Complexity:** O\(N\) for maintaining the queue\.
 
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/reveal-cards-in-increasing-order)

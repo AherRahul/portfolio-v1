@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 There are `n` people standing in a queue, and they numbered from `0` to `n - 1` in **left to right** order\. You are given an array `heights` of **distinct** integers where `heights[i]` represents the height of the `i``th` person\.
 
@@ -25,7 +23,29 @@ Return _an array_ `answer` _of length_ `n` _where_ `answer[i]` _is the_ 
 
 **Input:** heights = \[10,6,8,5,11,9\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">10</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">6</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">8</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">11</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">9</span></div>
+  </div>
+</div>
+
 **Output:** \[3,1,2,1,1,0\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">5</span><span class="arr-val">0</span></div>
+  </div>
+</div>
 
 **Explanation:**
 
@@ -43,7 +63,27 @@ Person 4 can see person 5\.Person 5 can see no one since nobody is to the right 
 
 **Input:** heights = \[5,1,2,3,10\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">10</span></div>
+  </div>
+</div>
+
 **Output:** \[4,1,1,1,0\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">0</span></div>
+  </div>
+</div>
 
 ##### **Constraints:**
 
@@ -52,11 +92,10 @@ Person 4 can see person 5\.Person 5 can see no one since nobody is to the right 
 *   **1 <= heights\[i\] <= 10****5**
 *   All the values of `heights` are **unique**\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/number-of-visible-people-in-a-queue)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force
+### 1\. Brute Force
 
 #### Intuition:
 
@@ -71,8 +110,6 @@ The simplest way to solve this problem is to use a double loop\. For each person
 5.  Repeat for all people in the queue\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -99,12 +136,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^2\), where n is the number of people in the queue\. We use a double loop to check visibility\.
 *   **Space Complexity:** O\(1\) extra space, apart from the output array `result`\.
 
-## 2\. Monotonic Stack
+### 2\. Monotonic Stack
 
 #### Intuition:
 
@@ -124,8 +161,6 @@ To reduce the time complexity, we can use a stack to maintain a list of indices\
 5.  Repeat until the whole queue is processed\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -158,9 +193,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), where n is the number of people in the queue\. Each person is pushed and popped from the stack at most once\.
 *   **Space Complexity:** O\(n\), for the stack that keeps track of indices\.
 
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/number-of-visible-people-in-a-queue)

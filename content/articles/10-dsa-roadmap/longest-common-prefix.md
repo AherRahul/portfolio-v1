@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Write a function to find the longest common prefix string amongst an array of strings\.
 
@@ -23,43 +21,27 @@ If there is no common prefix, return an empty string `""`\.
 
 Input:strs=\["flower","flow","flight"\]
 
-0
-
-flower
-
-1
-
-flow
-
-2
-
-flight
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">flower</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">flow</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">flight</span></div>
+  </div>
+</div>
 
 Output:"fl"
-
-0
-
-f
-
-1
-
-l
 
 ##### **Example 2:**
 
 Input:strs=\["dog","racecar","car"\]
 
-0
-
-dog
-
-1
-
-racecar
-
-2
-
-car
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">dog</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">racecar</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">car</span></div>
+  </div>
+</div>
 
 Output:""
 
@@ -71,9 +53,8 @@ Output:""
 *   `0 <= strs[i].length <= 200`
 *   `strs[i]` consists of only lowercase English letters if it is non\-empty\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/longest-common-prefix)
 
-# Approaches
+## Approaches
 
 ## Approach 1: Horizontal Scanning
 
@@ -82,8 +63,6 @@ Output:""
 This approach involves taking the first string in the array and comparing it with each subsequent string\. For each comparison, the common prefix is updated\. By the end of this systematic pairwise comparison of strings, we derive the overall longest common prefix\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {
@@ -106,7 +85,7 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(S\), where S is the sum of all characters in the input strings\.
 *   **Space Complexity:** O\(1\), as we are only using a constant amount of extra space\.
@@ -118,8 +97,6 @@ Complexity Analysis
 This method works by checking each character position across all input strings, proceeding character by character\. This approach terminates when a mismatch is found or when one string is exhausted\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {
@@ -141,7 +118,7 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(S\), where S is the sum of all characters in all strings\.
 *   **Space Complexity:** O\(1\), as we are only using a constant amount of extra space\.
@@ -153,8 +130,6 @@ Complexity Analysis
 The divide and conquer approach breaks the problem into smaller sub\-problems\. It recursively divides the array into two halves until it reduces to the smallest size, then it combines the results by finding a common prefix between two halves\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {
@@ -186,7 +161,7 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(S\), where S is the sum of all characters in all strings\. In the worst case, we are dividing every string in two substrings\.
 *   **Space Complexity:** O\(m log n\), where m is the number of strings\. This complexity arises due to the recursive call stack\.
@@ -198,8 +173,6 @@ Complexity Analysis
 This approach uses binary search on the length of the common prefix\. It checks a middle value to see if all strings have a common prefix of that length\. If they do, the length is increased; otherwise, it is decreased, effectively narrowing down the range\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {
@@ -236,7 +209,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(S log m\), where m is the length of the smallest string and S is the sum of all characters in all strings since checking if a prefix is common is O\(S\)\.
 *   **Space Complexity:** O\(1\)\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/longest-common-prefix)

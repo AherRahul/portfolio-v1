@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given an integer `n`, return _the least number of perfect square numbers that sum to_ `n`\.
 
@@ -39,11 +37,10 @@ A **perfect square** is an integer that is the square of an integer; in other 
 
 *   **1 <= n <= 10****4**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/perfect-squares)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force using Recursion
+### 1\. Brute Force using Recursion
 
 #### **Intuition:**
 
@@ -56,8 +53,6 @@ The simplest way to solve the problem is by trying all combinations\. For a give
 3.  Return the minimum number of squares necessary\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -79,12 +74,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^\(n/2\)\), since each branch of recursion can branch further into `sqrt(n)` branches\.
 *   **Space Complexity:** O\(n\), due to the recursion call stack\.
 
-## 2\. Dynamic Programming
+### 2\. Dynamic Programming
 
 #### **Intuition:**
 
@@ -97,8 +92,6 @@ We can improve upon the recursive approach by storing results of subproblems \(m
 3.  For each `i`, `dp[i]` equals the min of `dp[i]` and `dp[i - j*j] + 1`\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {
@@ -118,12 +111,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n \* sqrt\(n\)\), as you go through each number and compute the squares up to `sqrt(n)`\.
 *   **Space Complexity:** O\(n\), additional space for the `dp` array\.
 
-## 3\. Mathematical Approach using Lagrange's Four Square Theorem
+### 3\. Mathematical Approach using Lagrange's Four Square Theorem
 
 #### **Intuition:**
 
@@ -135,8 +128,6 @@ Lagrange's Four Square Theorem states that any natural number is the sum of four
 2.  Applying a few checks based on the property of modulo 4 and perfect number subtraction\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {
@@ -162,7 +153,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(sqrt\(n\)\), due to verification of perfect squares\.
 *   **Space Complexity:** O\(1\), using only constant space\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/perfect-squares)

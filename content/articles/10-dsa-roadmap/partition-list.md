@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given the `head` of a linked list and a value `x`, partition it such that all nodes **less than** `x` come before nodes **greater than or equal** to `x`\.
 
@@ -23,33 +21,31 @@ You should **preserve** the original relative order of the nodes in each of th
 
 **Input:** head = \[1,4,3,2,5,2\], x = 3
 
-1
-
-4
-
-3
-
-2
-
-5
-
-2
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">2</span></div>
+  </div>
+</div>
 
 null
 
 **Output:** \[1,2,2,4,3,5\]
 
-1
-
-2
-
-2
-
-4
-
-3
-
-5
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">5</span><span class="arr-val">5</span></div>
+  </div>
+</div>
 
 null
 
@@ -57,17 +53,23 @@ null
 
 **Input:** head = \[2,1\], x = 2
 
-2
-
-1
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 null
 
 **Output:** \[1,2\]
 
-1
-
-2
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+  </div>
+</div>
 
 null
 
@@ -77,11 +79,10 @@ null
 *   `-100 <= Node.val <= 100`
 *   `-200 <= x <= 200`
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/partition-list)
 
-# Approaches
+## Approaches
 
-## 1\. Two\-Pass: Array\-based Partition
+### 1\. Two\-Pass: Array\-based Partition
 
 #### Intuition:
 
@@ -94,8 +95,6 @@ The idea is to first convert the linked list into an array, partition the array 
 3.  Traverse through these two lists and create a new linked list with the required order\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -130,12 +129,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), where n is the number of nodes in the linked list\. Each node is visited exactly once\.
 *   **Space Complexity:** O\(n\), because of the use of additional lists to store node values\.
 
-## 2\. Two\-Pointer: Single\-pass LinkedList
+### 2\. Two\-Pointer: Single\-pass LinkedList
 
 #### Intuition:
 
@@ -149,8 +148,6 @@ Using two pointers, we directly manipulate the linked list to partition without 
 4.  The new head is the start of the `less` list\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -184,9 +181,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), where n is the number of nodes in the linked list\. Each node is visited exactly once\.
 *   **Space Complexity:** O\(1\), no extra space except for pointers\.
 
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/partition-list)

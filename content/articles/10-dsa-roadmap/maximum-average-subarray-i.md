@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given an integer array `nums` consisting of `n` elements, and an integer `k`\.
 
@@ -23,29 +21,16 @@ Find a contiguous subarray whose **length is equal to** `k` that has the maxi
 
 **Input:** nums = \[1,12,\-5,\-6,50,3\], k = 4
 
-0
-
-1
-
-1
-
-12
-
-2
-
-\-5
-
-3
-
-\-6
-
-4
-
-50
-
-5
-
-3
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">12</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">-5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">-6</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">50</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">3</span></div>
+  </div>
+</div>
 
 **Output:** 12\.75000
 
@@ -55,6 +40,12 @@ Find a contiguous subarray whose **length is equal to** `k` that has the maxi
 
 **Input:** nums = \[5\], k = 1
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">5</span></div>
+  </div>
+</div>
+
 **Output:** 5\.00000
 
 ##### **Constraints:**
@@ -63,19 +54,16 @@ Find a contiguous subarray whose **length is equal to** `k` that has the maxi
 *   **1 <= k <= n <= 10****5**
 *   **\-10****4** **<= nums\[i\] <= 10****4**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/maximum-average-subarray-i)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force
+### 1\. Brute Force
 
 #### Intuition:
 
 The basic idea behind the brute force approach is to calculate the sum of every possible subarray of length `k` and then find the one with the maximum sum\. This approach involves iterating over all the subarrays of length `k`, which can be computationally expensive for larger arrays\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -102,20 +90,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n \* k\), where `n` is the length of `nums`\. We calculate the sum for each possible subarray starting from each index\.
 *   **Space Complexity:** O\(1\), only a fixed amount of extra space is used\.
 
-## 2\. Sliding Window
+### 2\. Sliding Window
 
 #### Intuition:
 
 The sliding window approach optimizes the calculation of the subarray sum by re\-using the sum of the previous subarray\. Rather than recalculating the sum from scratch for each subarray, we adjust the sum by subtracting the element that slides out of the window and adding the new element that comes into the window\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -144,9 +130,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), where `n` is the length of `nums`\. We traverse the array once\.
 *   **Space Complexity:** O\(1\), as we are using a constant amount of extra space\.
 
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/maximum-average-subarray-i)

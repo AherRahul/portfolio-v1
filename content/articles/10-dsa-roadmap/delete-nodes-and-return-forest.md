@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given the `root` of a binary tree, each node in the tree has a distinct value\.
 
@@ -27,11 +25,38 @@ Return the roots of the trees in the remaining forest\. You may return the resul
 
 **Output:** \[\[1,2,null,4\],\[6\],\[7\]\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">null</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">4</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">6</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">7</span></div>
+    </div>
+  </div>
+</div>
+
 ##### **Example 2:**
 
 **Input:** root = \[1,2,4,null,3\], to\_delete = \[3\]
 
 **Output:** \[\[1,2,4\]\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">4</span></div>
+    </div>
+  </div>
+</div>
 
 ##### **Constraints:**
 
@@ -40,11 +65,10 @@ Return the roots of the trees in the remaining forest\. You may return the resul
 *   `to_delete.length <= 1000`
 *   `to_delete` contains distinct values between `1` and `1000`\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/delete-nodes-and-return-forest)
 
-# Approaches
+## Approaches
 
-## 1\. Recursive DFS Approach
+### 1\. Recursive DFS Approach
 
 #### Intuition:
 
@@ -63,8 +87,6 @@ The problem requires us to return a forest of trees by deleting certain nodes fr
 *   If not, keep traversing, possibly marking this node to remain as part of an existing tree\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -100,12 +122,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), where \(n\) is the number of nodes in the tree\. Each node is processed once\.
 *   **Space Complexity:** O\(h \+ d\), where \(h\) is the height of the tree and \(d\) is the number of nodes to delete \(to store in HashSet\)\.
 
-## 2\. Optimized Recursive DFS with Set
+### 2\. Optimized Recursive DFS with Set
 
 #### Intuition:
 
@@ -114,8 +136,6 @@ This approach enhances the first solution by using a HashSet to store nodes that
 Same steps as above, but the check for deletion is turned into an \(O\(1\)\) operation by using a Set data structure\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -156,10 +176,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), as each node is visited only once\.
 *   **Space Complexity:** O\(h \+ d\)\.
 
 *   The O\(h\) is for the recursion stack \(maximum is the height of the binary tree\)\.
 *   The O\(d\) is for the set containing nodes to be deleted \(if using mutable data structures for large delete lists\)\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/delete-nodes-and-return-forest)

@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given a string `s`, rearrange the characters of `s` so that any two adjacent characters are not the same\.
 
@@ -36,11 +34,10 @@ Return _any possible rearrangement of_ `s` _or return_ `""` _if not possibl
 *   **1 <= s\.length <= 500**
 *   `s` consists of lowercase English letters\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/reorganize-string)
 
-# Approaches
+## Approaches
 
-## 1\. Greedy Approach with Counting
+### 1\. Greedy Approach with Counting
 
 #### Intuition:
 
@@ -64,8 +61,6 @@ The most basic approach to solve this problem is to count the frequency of each 
 *   Start with even positions for the maximum frequency character, then fill odd positions\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -117,12 +112,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), where n is the length of the string\.
 *   **Space Complexity:** O\(1\), because we are using constant extra space to store frequencies\.
 
-## 2\. Priority Queue
+### 2\. Priority Queue
 
 #### Intuition:
 
@@ -146,8 +141,6 @@ The optimal way to distribute characters without adjacency is to use a max heap 
 *   If at the end, a single character remains with positive count, return an empty string because it's not possible to reorganize\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -193,7 +186,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n log k\), where n is the size of the input string and k is the number of distinct characters\.
 *   **Space Complexity:** O\(k\), to store characters in the heap\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/reorganize-string)

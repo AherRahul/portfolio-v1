@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given the `root` of a binary tree, find the maximum value `v` for which there exist **different** nodes `a` and `b` where `v = |a.val - b.val|` and `a` is an ancestor of `b`\.
 
@@ -22,6 +20,23 @@ A node `a` is an ancestor of `b` if either: any child of `a` is equal to 
 **Example 1:**
 
 Input:root=\[8,3,10,1,6,null,14,null,null,4,7,13\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">8</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">10</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">6</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">5</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">14</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">7</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">8</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">9</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">10</span><span class="arr-val">7</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">11</span><span class="arr-val">13</span></div>
+  </div>
+</div>
 
 831647101413
 
@@ -42,6 +57,17 @@ Among all possible differences, the maximum value of 7 is obtained by |8 \- 1| =
 
 Input:root=\[1,null,2,null,0,3\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">1</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">3</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">4</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">3</span></div>
+  </div>
+</div>
+
 1203
 
 **Output:** 3
@@ -51,11 +77,10 @@ Input:root=\[1,null,2,null,0,3\]
 *   The number of nodes in the tree is in the range `[2, 5000]`\.
 *   **0 <= Node\.val <= 10****5**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/maximum-difference-between-node-and-ancestor)
 
-# Approaches
+## Approaches
 
-## 1\. Recursive DFS Approach
+### 1\. Recursive DFS Approach
 
 #### **Intuition:**
 
@@ -71,8 +96,6 @@ Let's start by using a Depth\-First Search \(DFS\) approach where for each node,
 4.  Traverse both left and right children, updating the path's maximum and minimum values accordingly\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {
@@ -101,7 +124,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\), where N is the number of nodes in the tree, as we visit each node once\.
 *   **Space Complexity:** O\(H\), where H is the height of the tree, representing the maximum depth of the recursive call stack\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/maximum-difference-between-node-and-ancestor)

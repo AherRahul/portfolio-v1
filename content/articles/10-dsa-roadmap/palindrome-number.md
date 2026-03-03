@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given an integer `x`, return `true` _if_ `x` _is a_ _**palindrome**__, and_ `false` _otherwise_\.
 
@@ -47,11 +45,10 @@ Given an integer `x`, return `true` _if_ `x` _is a_ _**palindrome**__, and
 
 **Follow up:** Could you solve it without converting the integer to a string?
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/palindrome-number)
 
-# Approaches
+## Approaches
 
-## 1\. Convert Number to String
+### 1\. Convert Number to String
 
 #### Intuition:
 
@@ -61,8 +58,6 @@ The simplest way to determine if a number is a palindrome is to convert it to a 
 2.  Compare the original string with its reverse\. If they are the same, then the number is a palindrome\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -87,12 +82,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity**: O\(n\), where n is the number of digits in the number because we compare each character\.
 *   **Space Complexity**: O\(n\), due to the storage used by the string representation of the number\.
 
-## 2\. Reversing Digits Approach
+### 2\. Reversing Digits Approach
 
 #### Intuition:
 
@@ -103,8 +98,6 @@ Instead of converting the integer to a string, we can reverse the digits of the 
 3.  Compare the reversed number with the original number\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -138,7 +131,7 @@ class Solution {
 *   **Time Complexity**: O\(n\), where n is the number of digits in the number\.
 *   **Space Complexity**: O\(1\), since we're only using a few integers for temporary storage\.
 
-## 3\. Reversing Half of the Number
+### 3\. Reversing Half of the Number
 
 #### Intuition:
 
@@ -148,8 +141,6 @@ We can improve upon the previous approach by only reversing half of the number a
 2.  Reverse the second half of the number and compare it with the first half\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -174,7 +165,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity**: O\(log n\), because we're processing roughly half of the number's digits\.
 *   **Space Complexity**: O\(1\), as we only use a few integer variables for temporary storage\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/palindrome-number)

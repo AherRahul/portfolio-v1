@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given two strings `s` and `p`, return an array of all the start indices of `p`'s anagrams in `s`\. You may return the answer in **any order**\. 
 
@@ -21,47 +19,14 @@ Given two strings `s` and `p`, return an array of all the start indices of `
 
 **Input:** s = "cbaebabacd", p = "abc"
 
-0
-
-c
-
-1
-
-b
-
-2
-
-a
-
-3
-
-e
-
-4
-
-b
-
-5
-
-a
-
-6
-
-b
-
-7
-
-a
-
-8
-
-c
-
-9
-
-d
-
 **Output:** \[0,6\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">6</span></div>
+  </div>
+</div>
 
 **Explanation:**
 
@@ -73,23 +38,15 @@ The substring with start index = 6 is "bac", which is an anagram of "abc"\.
 
 **Input:** s = "abab", p = "ab"
 
-0
-
-a
-
-1
-
-b
-
-2
-
-a
-
-3
-
-b
-
 **Output:** \[0,1,2\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+  </div>
+</div>
 
 **Explanation:**
 
@@ -102,11 +59,10 @@ The substring with start index = 1 is "ba", which is an anagram of "ab"\.The sub
 *   **1 <= s\.length, p\.length <= 3 \* 10****4**
 *   `s` and `p` consist of lowercase English letters\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/find-all-anagrams-in-a-string)
 
-# Approaches
+## Approaches
 
-## 1\. Sliding Window with Two Hash Maps
+### 1\. Sliding Window with Two Hash Maps
 
 ### Intuition:
 
@@ -120,8 +76,6 @@ The idea is to maintain two frequency maps:
 By sliding the window across `s`, we compare the frequency of characters in the current window to those in `p`\. If they match, then the start index of this window is an anagram's starting point\.
 
 ### Code:
-
-Java
 
 ```java
 class Solution {
@@ -167,12 +121,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n \+ m\), where n is the length of `s` and m is the length of `p`\. We have to scan both strings completely\.
 *   **Space Complexity:** O\(1\), as the size of the frequency map is constrained by the number of distinct characters \(which is fixed at 26 for lowercase English letters\)\.
 
-## 2\. Sliding Window with Single Array
+### 2\. Sliding Window with Single Array
 
 ### Intuition:
 
@@ -181,8 +135,6 @@ By utilizing a fixed\-size frequency count array instead of hash maps, we can re
 The idea remains the same as above: maintain a sliding window of length `p` across the string `s`, but instead of using two hash maps, use two arrays to track the frequencies\. This not only brings clarity but also slightly optimizes access and modification times since operations on arrays are generally faster than on hash maps\.
 
 ### Code:
-
-Java
 
 ```java
 class Solution {
@@ -224,9 +176,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n \+ m\), as we are still looping through both strings in their entirety\.
 *   **Space Complexity:** O\(1\), due to the constant size of the frequency count arrays \(26 elements each\)\.
 
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/find-all-anagrams-in-a-string)

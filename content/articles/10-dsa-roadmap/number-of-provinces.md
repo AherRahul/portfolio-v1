@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 There are `n` cities\. Some of them are connected, while some are not\. If city `a` is connected directly with city `b`, and city `b` is connected directly with city `c`, then city `a` is connected indirectly with city `c`\.
 
@@ -27,11 +25,51 @@ Return _the total number of_ _**provinces**_\.
 
 **Input:** isConnected = \[\[1,1,0\],\[1,1,0\],\[0,0,1\]\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+  </div>
+</div>
+
 **Output:** 2
 
 ##### **Example 2:**
 
 **Input:** isConnected = \[\[1,0,0\],\[0,1,0\],\[0,0,1\]\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+  </div>
+</div>
 
 **Output:** 3
 
@@ -44,19 +82,16 @@ Return _the total number of_ _**provinces**_\.
 *   `isConnected[i][i] == 1`
 *   `isConnected[i][j] == isConnected[j][i]`
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/number-of-provinces)
 
-# Approaches
+## Approaches
 
-## 1\. Depth\-First Search \(DFS\)
+### 1\. Depth\-First Search \(DFS\)
 
 #### Intuition:
 
 The problem can be conceptualized as finding connected components in an undirected graph\. Each city is a node, and a direct road between two cities is an edge\. Using Depth\-First Search, we can explore all nodes \(i\.e\., cities\) connected to a starting node, marking them as visited\. Each new unvisited node indicates the start of a new province\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -87,20 +122,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^2\): We visit each cell in the matrix isConnected exactly once\.
 *   **Space Complexity:** O\(n\): The space for the visited array and the call stack in the worst case \(when the graph is a single connected component\)\.
 
-## 2\. Breadth\-First Search \(BFS\)
+### 2\. Breadth\-First Search \(BFS\)
 
 #### Intuition:
 
 Similar to the DFS approach, we aim to find connected components\. However, BFS uses a queue to explore all nodes extensively level by level\. Whenever we find a new city that hasn't been visited, we add it to the queue and mark it as part of the same province\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -132,20 +165,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^2\) \- Every city and every possible connection \(road\) is considered\.
 *   **Space Complexity:** O\(n\) \- The space for the visited array and the queue\.
 
-## 3\. Union\-Find
+### 3\. Union\-Find
 
 #### Intuition:
 
 Union\-Find efficiently tracks and merges disjoint sets, or connected components, which suits this problem perfectly\. Initially, each city is its own province\. As we process direct roads between cities, we union their sets\. The number of unique roots in the Union\-Find structure at the end will give us the number of provinces\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -199,7 +230,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^2\): Iterate through the upper triangle of the matrix\.
 *   **Space Complexity:** O\(n\): Additional space used by the Union\-Find structure\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/number-of-provinces)

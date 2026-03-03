@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Serialization is the process of converting a data structure or object into a sequence of bits so that it can be stored in a file or memory buffer, or transmitted across a network connection link to be reconstructed later in the same or another computer environment\.
 
@@ -25,9 +23,33 @@ Design an algorithm to serialize and deserialize a binary tree\. There is no res
 
 **Input:** root = \[1,2,3,null,null,4,5\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">3</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">4</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">5</span></div>
+  </div>
+</div>
+
 12345
 
 **Output:** \[1,2,3,null,null,4,5\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">5</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">6</span><span class="arr-val">5</span></div>
+  </div>
+</div>
 
 ##### **Example 2:**
 
@@ -40,11 +62,10 @@ Design an algorithm to serialize and deserialize a binary tree\. There is no res
 *   The number of nodes in the tree is in the range **\[0, 10****4****\]**\.
 *   `-1000 <= Node.val <= 1000`
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/serialize-and-deserialize-binary-tree)
 
-# Approaches
+## Approaches
 
-## 1\. BFS with Queue
+### 1\. BFS with Queue
 
 #### Intuition:
 
@@ -69,8 +90,6 @@ This approach uses a queue to perform a level\-order traversal \(BFS\) to serial
 *   Otherwise, create a new node, link it as a child, and add it to the queue\.
 
 #### Code:
-
-Java
 
 ```java
 class Codec {
@@ -125,12 +144,12 @@ class Codec {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\), where N is the number of nodes in the tree, as each node is processed once during serialization and deserialization\.
 *   **Space Complexity:** O\(N\), due to the storage of nodes in the queue and the string building process for serialization\.
 
-## 2\. DFS with Preorder Traversal
+### 2\. DFS with Preorder Traversal
 
 #### Intuition:
 
@@ -151,8 +170,6 @@ In this approach, the idea is to use a depth\-first search \(DFS\) technique wit
 *   Create a tree node using the current value and recursively handle its left and right subtrees\.
 
 #### Code:
-
-Java
 
 ```java
 class Codec {
@@ -193,7 +210,9 @@ class Codec {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\), where N is the number of nodes in the tree\. Each node is visited once\.
 *   **Space Complexity:** O\(N\), due to the recursion stack in the worst case \(when the tree is skewed\) and the storage for serialization strings\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/serialize-and-deserialize-binary-tree)

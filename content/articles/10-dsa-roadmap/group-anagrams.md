@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given an array of strings `strs`, group the anagrams together\. You can return the answer in **any order**\. 
 
@@ -21,7 +19,35 @@ Given an array of strings `strs`, group the anagrams together\. You can retur
 
 **Input:** strs = \["eat","tea","tan","ate","nat","bat"\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">eat</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">tea</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">tan</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">ate</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">nat</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">bat</span></div>
+  </div>
+</div>
+
 **Output:** \[\["bat"\],\["nat","tan"\],\["ate","eat","tea"\]\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">bat</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">nat</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">tan</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">ate</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">eat</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">tea</span></div>
+    </div>
+  </div>
+</div>
 
 **Explanation:**
 
@@ -33,13 +59,41 @@ Given an array of strings `strs`, group the anagrams together\. You can retur
 
 **Input:** strs = \[""\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val"></span></div>
+  </div>
+</div>
+
 **Output:** \[\[""\]\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val"></span></div>
+    </div>
+  </div>
+</div>
 
 ##### **Example 3:**
 
 **Input:** strs = \["a"\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">a</span></div>
+  </div>
+</div>
+
 **Output:** \[\["a"\]\] 
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">a</span></div>
+    </div>
+  </div>
+</div>
 
 ##### **Constraints:**
 
@@ -47,11 +101,10 @@ Given an array of strings `strs`, group the anagrams together\. You can retur
 *   **0 <= strs\[i\]\.length <= 100**
 *   `strs[i]` consists of lowercase English letters\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/group-anagrams)
 
-# Approaches
+## Approaches
 
-## 1\. Sorting Each Word
+### 1\. Sorting Each Word
 
 #### **Intuition:**
 
@@ -62,8 +115,6 @@ The first idea is to use the property that if two strings are anagrams of each o
 3.  Finally, return all the values of the hashmap that represent grouped anagrams\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {
@@ -94,12 +145,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(NK log K\) where N is the number of strings and K is the maximum length of a string\. Sorting each string takes O\(K log K\)\.
 *   **Space Complexity:** O\(NK\), the space for storing the groups of anagrams\.
 
-## 2\. Counting Characters
+### 2\. Counting Characters
 
 #### **Intuition:**
 
@@ -110,8 +161,6 @@ Instead of sorting, we can use the frequency of characters as a key\. If two str
 3.  Group strings with the same frequency distribution together\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {
@@ -149,7 +198,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N \* K\), as constructing the unique string key per word from its character count takes O\(K\)\.
 *   **Space Complexity:** O\(N \*K\), storing the groups of anagrams based on their character frequency in the hashmap\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/group-anagrams)

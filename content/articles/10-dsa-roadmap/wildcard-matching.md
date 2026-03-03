@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given an input string \(`s`\) and a pattern \(`p`\), implement wildcard pattern matching with support for `'?'` and `'*'` where:
 
@@ -52,19 +50,16 @@ The matching should cover the **entire** input string \(not partial\)\.
 *   `s` contains only lowercase English letters\.
 *   `p` contains only lowercase English letters, `'?'` or `'*'`\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/wildcard-matching)
 
-# Approaches
+## Approaches
 
-## 1\. Recursive Backtracking
+### 1\. Recursive Backtracking
 
 #### Intuition:
 
 The problem of wildcard matching can be thought of in a recursive manner by breaking down the problem into simpler sub\-problems\. If the current characters match \(considering `?` matches any single character\), we can recursively match the rest of the string\. If we encounter a `*`, we have the choice to ignore it or assume it matches one or more characters\. This approach, however, is non\-optimal due to potential overlapping sub\-problems but provides a good base for understanding\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -94,20 +89,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(2^\(m\+n\)\), where m and n are lengths of the string and pattern respectively\. The recursion can branch exponentially in the worst case\.
 *   **Space Complexity:** O\(m\+n\), due to the recursion stack\.
 
-## 2\. Memoization
+### 2\. Memoization
 
 #### Intuition:
 
 Memoization optimizes the recursive approach by storing results of previously solved sub\-problems, so they are not recomputed\. This reduces the time complexity significantly by caching intermediate results\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -144,20 +137,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(m\*n\), as each sub\-problem is solved once\.
 *   **Space Complexity:** O\(m\*n\) for storage used in memoization\.
 
-## 3\. Dynamic Programming
+### 3\. Dynamic Programming
 
 #### Intuition:
 
 The dynamic programming solution uses a 2D table where `dp[i][j]` stores whether the first `i` characters of the string match the first `j` characters of the pattern\. Use iteration to fill out the DP table based on matching rules and previously computed values\. This ensures optimal substructure and overlapping sub\-problems are effectively handled\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -190,7 +181,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(m\*n\), with m and n representing the lengths of the input string and pattern\.
 *   **Space Complexity:** O\(m\*n\), due to the DP table storage\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/wildcard-matching)

@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given an integer array `nums` of **unique** elements, return _all possible_ _subsets_ _\(the power set\)_\.
 
@@ -23,13 +21,70 @@ The solution set **must not** contain duplicate subsets\. Return the solution 
 
 **Input:** nums = \[1,2,3\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+  </div>
+</div>
+
 **Output:** \[\[\],\[1\],\[2\],\[1,2\],\[3\],\[1,3\],\[2,3\],\[1,2,3\]\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">1</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">2</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">2</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">3</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">3</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">3</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">3</span></div>
+    </div>
+  </div>
+</div>
 
 ##### **Example 2:**
 
 **Input:** nums = \[0\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">0</span><span class="arr-val">0</span></div>
+  </div>
+</div>
+
 **Output:** \[\[\],\[0\]\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">0</span></div>
+    </div>
+  </div>
+</div>
 
 ##### **Constraints:**
 
@@ -37,11 +92,10 @@ The solution set **must not** contain duplicate subsets\. Return the solution 
 *   `-10 <= nums[i] <= 10`
 *   All the numbers of `nums` are **unique**\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/subsets)
 
-# Approaches
+## Approaches
 
-## 1\. Backtracking Approach
+### 1\. Backtracking Approach
 
 The backtracking technique is one of the simplest and intuitive ways to solve this problem\. The main idea is to generate all possible subsets incrementally\. Here's the detailed procedure:
 
@@ -51,8 +105,6 @@ The backtracking technique is one of the simplest and intuitive ways to solve th
 4.  Start with an empty subset \[\] and traverse all possible options\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -79,12 +131,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(2^n\) \- where `n` is the number of elements in nums\. Each element can either be included or not included, leading to 2^n possible subsets\.
 *   **Space Complexity:** O\(n\) \- space used by the recursion stack\.
 
-## 2\. Iterative Approach
+### 2\. Iterative Approach
 
 The iterative approach builds the subsets directly using the concepts of combinatorial logic, by iteratively adding each element to existing subsets\. Here's the thought process:
 
@@ -93,8 +145,6 @@ The iterative approach builds the subsets directly using the concepts of combina
 3.  Merge the newly formed subsets into the result\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -119,12 +169,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n \* 2^n\) \- We iterate through n elements, and for each element, we potentially double the number of subsets, resulting in a final complexity of n times 2^n subsets\.
 *   **Space Complexity:** O\(n \* 2^n\) \- Storage for all the subsets\.
 
-## 3\. Bit Manipulation Approach
+### 3\. Bit Manipulation Approach
 
 This approach uses the concept that each subset can be represented as a binary string of length n, where 1 indicates inclusion and 0 indicates exclusion\.
 
@@ -133,8 +183,6 @@ This approach uses the concept that each subset can be represented as a binary s
 3.  Convert the numbers into binary form, and include elements in the subset based on digit '1' positioning\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -160,7 +208,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n \* 2^n\) \- We generate 2^n subsets, and creating each subset takes O\(n\) time\.
 *   **Space Complexity:** O\(n \* 2^n\) \- Storage needed for all the subsets\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/subsets)

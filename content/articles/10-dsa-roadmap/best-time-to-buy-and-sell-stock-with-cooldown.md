@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given an array `prices` where `prices[i]` is the price of a given stock on the `i``th` day\.
 
@@ -27,6 +25,16 @@ Find the maximum profit you can achieve\. You may complete as many transactions 
 
 **Input:** prices = \[1,2,3,0,2\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">3</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">2</span></div>
+  </div>
+</div>
+
 **Output:** 3
 
 **Explanation:** transactions = \[buy, sell, cooldown, buy, sell\]
@@ -35,16 +43,21 @@ Find the maximum profit you can achieve\. You may complete as many transactions 
 
 **Input:** prices = \[1\]**Output:** 0
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+  </div>
+</div>
+
 **Constraints:**
 
 *   `1 <= prices.length <= 5000`
 *   `0 <= prices[i] <= 1000`
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown)
 
-# Approaches
+## Approaches
 
-## 1\. Recursive Brute Force
+### 1\. Recursive Brute Force
 
 #### Intuition:
 
@@ -58,8 +71,6 @@ Find the maximum profit you can achieve\. You may complete as many transactions 
 *   We solve this using recursion by exploring each decision for each day and computing the maximum profit\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -87,12 +98,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(2^n\), where n is the number of days\. We branch into two recursive calls for each day\.
 *   **Space Complexity:** O\(n\), the stack space used for recursion\.
 
-## 2\. Memoization
+### 2\. Memoization
 
 #### Intuition:
 
@@ -100,8 +111,6 @@ Complexity Analysis
 *   We can store the results of subproblems in a 2D array to avoid recalculating them, turning our approach into a dynamic programming solution\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -132,12 +141,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), because each subproblem is solved at most once\.
 *   **Space Complexity:** O\(n\), for the memo array\.
 
-## 3\. Dynamic Programming
+### 3\. Dynamic Programming
 
 #### Intuition:
 
@@ -145,8 +154,6 @@ Complexity Analysis
 *   We define two arrays: `sell[i]` which is the maximum profit we can have up to day `i` \(inclusive\) and must sell on `i`, and `buy[i]` for transactions where max profit up to `i` and must buy on `i`\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -171,12 +178,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), because we iterate over the prices once\.
 *   **Space Complexity:** O\(n\), due to the `buy` and `sell` arrays\.
 
-## 4\. Space Optimized Dynamic Programming
+### 4\. Space Optimized Dynamic Programming
 
 #### Intuition:
 
@@ -184,8 +191,6 @@ Complexity Analysis
 *   Therefore, instead of maintaining arrays for `buy` and `sell`, we maintain only variables for the last two and current states\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -211,7 +216,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), since we iterate through the prices once\.
 *   **Space Complexity:** O\(1\), as we are using a fixed number of variables instead of arrays\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown)

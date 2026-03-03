@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given two strings s and t, return _the number of distinct_ _**subsequences**_ _of_ s _which equals_ t\.
 
@@ -60,19 +58,16 @@ babg**bag**
 *   `1 <= s.length, t.length <= 1000`
 *   `s` and `t` consist of English letters\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/distinct-subsequences)
 
-# Approaches
+## Approaches
 
-## 1\. Recursive Solution
+### 1\. Recursive Solution
 
 #### Intuition:
 
 The basic idea is to recursively try to match each character of the string `t` with the characters in `s`\. At each step, we have two choices: either take the character from `s` to match with the current character of `t` or skip the character from `s`\. The base cases are defined when `t` becomes empty \(which means we found a subsequence\) or when `s` becomes empty without fully matching `t`\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -98,20 +93,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(2^m\), where `m` is the length of `s`\. The recursive tree can potentially explore all subsets of `s`\.
 *   **Space Complexity:** O\(n\), where `n` is the depth of the recursion stack, effectively the length of `s`\.
 
-## 2\. Memoization
+### 2\. Memoization
 
 #### Intuition:
 
 The recursive solution contains overlapping subproblems\. By storing the results of already computed states \(i, j\), we can avoid redundant calculations\. This transforms the recursion into a top\-down dynamic programming approach using a 2D array for memoization\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -138,20 +131,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(m \* n\), where `m` is the length of `s` and `n` is the length of `t` because each subproblem `(i, j)` is computed once\.
 *   **Space Complexity:** O\(m \* n\) for the memoization table plus O\(n\) for the recursion stack\.
 
-## 3\. Tabulation
+### 3\. Tabulation
 
 #### Intuition:
 
 Using a bottom\-up approach, we can fill up a 2D table where `dp[i][j]` indicates the number of distinct subsequences of `t[0...j-1]` in `s[0...i-1]`\. We initialize the first row and first column based on the base conditions and progressively fill the DP table\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -180,20 +171,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(m \* n\), where `m` is the length of `s` and `n` is the length of `t`\.
 *   **Space Complexity:** O\(m \* n\) for the table\.
 
-## 4\. Optimized Tabulation
+### 4\. Optimized Tabulation
 
 #### Intuition:
 
 Since at every step we only use the current and previous rows, we can optimize space by maintaining only two rows at a time\. Swapping rows reduces space complexity from `O(m*n)` to `O(n)`\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -225,7 +214,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(m \* n\), where `m` is the length of `s` and `n` is the length of `t`\.
 *   **Space Complexity:** O\(n\) for storing two rows\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/distinct-subsequences)

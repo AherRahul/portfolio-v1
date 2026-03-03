@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given an input string `s`, reverse the order of the **words**\.
 
@@ -53,9 +51,8 @@ Return _a string of the words in reverse order concatenated by a single space\.
 
 **Follow\-up:** If the string data type is mutable in your language, can you solve it **in\-place** with `O(1)` extra space?
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/reverse-words-in-a-string/)
 
-# Understanding the Problem
+## Understanding the Problem
 
 Before diving into solutions, let's make sure we understand exactly what we are dealing with\. The problem has several nuances that will affect our implementation\.
 
@@ -77,9 +74,9 @@ Let's think about the structure of the problem\. We can decompose it into steps:
 
 Different approaches handle these steps in different ways\. Some use language built\-ins, others manipulate characters directly, and some use auxiliary data structures like stacks\.
 
-# Approaches
+## Approaches
 
-## 1\. Using Built\-in Split and Reverse
+### 1\. Using Built\-in Split and Reverse
 
 #### **Intuition**
 
@@ -97,8 +94,6 @@ This approach is the most practical for production code\. It's readable, concise
 The beauty of this approach is that it handles all the edge cases, multiple spaces, leading spaces, trailing spaces, automatically through the split operation\.
 
 #### Code
-
-Java
 
 ```java
 class Solution {
@@ -120,12 +115,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\), where N is the length of the input string, due to splitting and joining operations\.
 *   **Space Complexity:** O\(N\), used by split\.
 
-## 2\. Two Pointers with Deque
+### 2\. Two Pointers with Deque
 
 #### **Intuition:**
 
@@ -136,8 +131,6 @@ Using a two\-pointer approach along with a deque \(double\-ended queue\) can hel
 1.  Traverse the string from end to start using two pointers to find words\.
 2.  Use a deque to efficiently manage the words that should appear first in the result\.
 3.  Append words to the front of the deque and join them at the end\.
-
-Java
 
 ```java
 class Solution {
@@ -173,12 +166,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\), where N is the length of the input string, as we traverse each character once\.
 *   **Space Complexity:** O\(N\), used by the deque\.
 
-## 3\. Two Pointers: In\-place Replacement
+### 3\. Two Pointers: In\-place Replacement
 
 #### **Intuition:**
 
@@ -191,8 +184,6 @@ This method reverses the entire string first, then reverses each word in place\.
 3.  Clean up any extra spaces resulting from the reversal process\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -251,7 +242,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\), where N is the length of the string, due to multiple in\-place passes\.
 *   **Space Complexity:** O\(1\), as modifications are performed in\-place without extra space allocations outside of the input array\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/reverse-words-in-a-string/)

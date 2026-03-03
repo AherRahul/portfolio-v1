@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given two integer arrays `nums1` and `nums2`, sorted in **non\-decreasing order**, and two integers `m` and `n`, representing the number of elements in `nums1` and `nums2` respectively\.
 
@@ -21,53 +19,74 @@ You are given two integer arrays `nums1` and `nums2`, sorted in **non\-decre
 
 The final sorted array should not be returned by the function, but instead be _stored inside the array_ `nums1`\. To accommodate this, `nums1` has a length of `m + n`, where the first `m` elements denote the elements that should be merged, and the last `n` elements are set to `0` and should be ignored\. `nums2` has a length of `n`\. 
 
-##### **Example 1:**
+#### Example 1:
 
-**Input:** nums1 = \[1,2,3,0,0,0\], m = 3, nums2 = \[2,5,6\], n = 3
+**Input: nums1 = \[1, 2, 3, 0, 0, 0\], m = 3 &nbsp;&nbsp;nums2 = \[2, 5, 6\], n = 3**
 
-**Output:** \[1,2,2,3,5,6\]
+  <p class="arr-caption">nums1 &nbsp;(m = 3, extra capacity = 3)</p>
 
-**Explanation:** The arrays we are merging are \[1,2,3\] and \[2,5,6\]\.
+  <p class="arr-caption">nums2 &nbsp;(n = 3)</p>
 
-The result of the merge is \[1,2,2,3,5,6\] with the underlined elements coming from nums1\.
+**Output: \[1, 2, 2, 3, 5, 6\]**
 
-##### **Example 2:**
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">5</span><span class="arr-val">6</span></div>
+  </div>
+</div>
 
-**Input:** nums1 = \[1\], m = 1, nums2 = \[\], n = 0
+  <p class="arr-caption">nums1 after merge</p>
 
-**Output:** \[1\]
+#### Example 2:
 
-**Explanation:** The arrays we are merging are \[1\] and \[\]\.
+**Input: nums1 = \[1\], m = 1, nums2 = \[\], n = 0**
 
-The result of the merge is \[1\]\.
+  <p class="arr-caption">nums1</p>
 
-##### **Example 3:**
+**Output: \[1\]** — nothing to merge\.
 
-**Input:** nums1 = \[0\], m = 0, nums2 = \[1\], n = 1
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
-**Output:** \[1\]
+#### Example 3:
 
-**Explanation:** The arrays we are merging are \[\] and \[1\]\.
+**Input: nums1 = \[0\], m = 0, nums2 = \[1\], n = 1**
 
-The result of the merge is \[1\]\.
+  <p class="arr-caption">nums1 &nbsp;(m = 0, placeholder only)</p>
 
-Note that because m = 0, there are no elements in nums1\. The 0 is only there to ensure the merge result can fit in nums1\. 
+  <p class="arr-caption">nums2</p>
 
-##### **Constraints:**
+**Output: \[1\]**
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+  </div>
+</div>
+
+  <p class="arr-caption">nums1 after merge</p>
+
+#### Constraints:
 
 *   **nums1\.length == m \+ n**
 *   **nums2\.length == n**
 *   **0 <= m, n <= 200**
 *   **1 <= m \+ n <= 200**
-*   **\-10****9** **<= nums1\[i\], nums2\[j\] <= 10****9** 
+*   **\-10^9 <= nums1\[i\], nums2\[j\] <= 10^9**
 
-**Follow up:** Can you come up with an algorithm that runs in `O(m + n)` time?
+**Follow up:** Can you come up with an algorithm that runs in `O(m + n)` time?
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/merge-sorted-array)
+## Approaches
 
-# Approaches
-
-## 1\. Merge Then Sort
+### 1\. Merge Then Sort
 
 #### Intuition:
 
@@ -79,8 +98,6 @@ The simplest approach to solve the problem is to first merge the elements of `n
 2.  Sort the array `nums1`\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -95,12 +112,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
-*   **Time Complexity:** O\(\(m\+n\)log\(m\+n\)\), due to sorting\.
-*   **Space Complexity:** O\(1\), as we are modifying nums1 in place\.
+*   **Time Complexity:** O\(\(m\+n\)log\(m\+n\)\), due to sorting\.
+*   **Space Complexity:** O\(1\), as we are modifying nums1 in place\.
 
-## 2\. Two\-Pointer
+### 2\. Two-Pointer
 
 #### Intuition:
 
@@ -108,14 +125,12 @@ Both arrays `nums1` and `nums2` are sorted, thus we can use a two\-pointer t
 
 #### Steps:
 
-1.  Initialize three pointers: `p1` for `nums1`, `p2` for `nums2`, and `p` for the new array\.
-2.  Compare elements pointed by `p1` and `p2`, and place the smaller one in the new array\.
-3.  If any elements are left in `nums1` or `nums2`, append them to the end of the new array\.
-4.  Copy the new array back into `nums1`\.
+1.  Initialize three pointers: `p1` for `nums1`, `p2` for `nums2`, and `p` for the new array\.
+2.  Compare elements at `p1` and `p2`, placing the smaller one in `sorted`\.
+3.  Append any remaining elements\.
+4.  Copy `sorted` back into `nums1`\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -124,7 +139,7 @@ class Solution {
        int[] sorted = new int[m + n];
        // Pointers for nums1, nums2, and sorted array
        int p1 = 0, p2 = 0, p = 0;
-       
+
        // Compare and merge
        while (p1 < m && p2 < n) {
            if (nums1[p1] <= nums2[p2]) {
@@ -133,7 +148,7 @@ class Solution {
                sorted[p++] = nums2[p2++];
            }
        }
-       
+
        // Append remaining elements
        while (p1 < m) {
            sorted[p++] = nums1[p1++];
@@ -148,34 +163,85 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
-*   **Time Complexity:** O\(m \+ n\), as we iterate through both arrays once\.
-*   **Space Complexity:** O\(m \+ n\), due to the use of an additional array\.
+*   **Time Complexity:** O\(m \+ n\), as we iterate through both arrays once\.
+*   **Space Complexity:** O\(m \+ n\), due to the extra array\.
 
-## 3\. In\-place Two\-Pointer
+### 3\. In-place Two-Pointer \(Optimal\)
 
 #### Intuition:
 
-Since the space in `nums1` after `m` is unused, leverage this space to place the merged results directly\. We'll move backwards from the end of the arrays to avoid overwriting any values\.
+Since `nums1` has extra capacity after index `m`, we can fill it **backwards**: start from the end and write the largest element there\. This avoids overwriting values we still need\.
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-ptr" data-label="p1">↓</span><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">3</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">4</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-ptr" data-label="p">↓</span><span class="arr-idx">5</span><span class="arr-val">0</span></div>
+  </div>
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-ptr" data-label="p2">↓</span><span class="arr-idx">2</span><span class="arr-val">6</span></div>
+  </div>
+  <p class="arr-step-label">Initial — p1 at m-1, p2 at n-1, p at end</p>
+</div>
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-ptr" data-label="p1">↓</span><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">3</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--ptr"><span class="arr-ptr" data-label="p">↓</span><span class="arr-idx">4</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">5</span><span class="arr-val">6</span></div>
+  </div>
+  <p class="arr-step-label">Step 1 — 6 > 3, place 6 at p=5</p>
+</div>
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">5</span><span class="arr-val">6</span></div>
+  </div>
+  <p class="arr-step-label">Step 2 — 5 > 3, place 5 at p=4. Result: [_, _, 3, _, 5, 6]</p>
+</div>
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">5</span><span class="arr-val">6</span></div>
+  </div>
+  <p class="arr-step-label">Done — [1, 2, 2, 3, 5, 6]</p>
+</div>
+
 
 #### Steps:
 
-1.  Use two pointers `p1` and `p2` starting from the end of the initialized parts of `nums1` and `nums2` respectively, and another pointer `p` from the very end of `nums1`\.
-2.  Compare the current elements of `nums1` and `nums2` and place the larger one at the `p` position\.
-3.  Decrement the respective pointers\.
-4.  If any elements are left in `nums2`, copy them to `nums1` \(no need to handle the remaining `nums1`, they are already in place\)\.
+1.  Use `p1 = m - 1`, `p2 = n - 1`, `p = m + n - 1`\.
+2.  Compare `nums1[p1]` and `nums2[p2]`; place the larger at `nums1[p]`, then decrement that pointer and `p`\.
+3.  If any remain in `nums2`, copy them \(`nums1` elements are already in place\)\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
    public void merge(int[] nums1, int m, int[] nums2, int n) {
        // Pointers for nums1, nums2 and the end of merged array
        int p1 = m - 1, p2 = n - 1, p = m + n - 1;
-       
+
        // Merge arrays starting from the end
        while (p1 >= 0 && p2 >= 0) {
            if (nums1[p1] > nums2[p2]) {
@@ -187,7 +253,7 @@ class Solution {
            }
            p--;
        }
-       
+
        // If there are any remaining elements in nums2, move them to nums1
        while (p2 >= 0) {
            nums1[p--] = nums2[p2--];
@@ -196,9 +262,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
-*   **Time Complexity:** O\(m \+ n\), as we process each element exactly once\.
-*   **Space Complexity:** O\(1\), since we are merging in\-place without extra space\.
+*   **Time Complexity:** O\(m \+ n\), as we process each element exactly once\.
+*   **Space Complexity:** O\(1\), since we are merging in-place without extra space\.
 
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/merge-sorted-array)

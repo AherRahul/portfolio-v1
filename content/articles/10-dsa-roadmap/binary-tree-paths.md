@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given the `root` of a binary tree, return _all root\-to\-leaf paths in_ _**any order**_\.
 
@@ -23,26 +21,54 @@ A **leaf** is a node with no children\.
 
 Input:root=\[1,2,3,null,5\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">3</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">5</span></div>
+  </div>
+</div>
+
 1253
 
 **Output:** \["1\->2\->5","1\->3"\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">1->2->5</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">1->3</span></div>
+  </div>
+</div>
 
 ##### **Example 2:**
 
 **Input:** root = \[1\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+  </div>
+</div>
+
 **Output:** \["1"\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 ##### **Constraints:**
 
 *   The number of nodes in the tree is in the range `[1, 100]`\.
 *   `-100 <= Node.val <= 100`
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/binary-tree-paths)
 
-# Approaches
+## Approaches
 
-## 1\. Recursive DFS Approach
+### 1\. Recursive DFS Approach
 
 The recursive DFS approach is straightforward and follows the natural structure of a binary tree\. The idea is to start from the root node and explore each path from the root to the leaf nodes\. Whenever a leaf node is reached, the path from the root to this leaf node is a completed path and can be stored\.
 
@@ -53,8 +79,6 @@ The recursive DFS approach is straightforward and follows the natural structure 
 *   Recursively explore both left and right subtrees while updating the current path until all paths are explored\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -81,12 +105,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\), where N is the number of nodes in the binary tree, since we visit each node once\.
 *   **Space Complexity:** O\(H\), where H is the height of the binary tree due to recursive call stack\.
 
-## 2\. Iterative DFS Approach
+### 2\. Iterative DFS Approach
 
 In this approach, we simulate the behavior of a recursive DFS using an explicit stack\. This is useful when recursion depth might be a concern\.
 
@@ -97,8 +121,6 @@ In this approach, we simulate the behavior of a recursive DFS using an explicit 
 *   When a node is a leaf, record its path\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -142,12 +164,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\), where N is the number of nodes in the binary tree\.
 *   **Space Complexity:** O\(N\), due to the usage of the stack that may store up to N nodes in the worst case\.
 
-## 3\. BFS Approach Using a Queue
+### 3\. BFS Approach Using a Queue
 
 This approach employs breadth\-first traversal using a queue to explore the tree level by level\. It applies a similar logic as DFS but tracks paths in parallel for nodes on the same level\.
 
@@ -158,8 +180,6 @@ This approach employs breadth\-first traversal using a queue to explore the tree
 *   Whenever a leaf node is encountered, cache its path\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -203,7 +223,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\), where N is the number of nodes in the binary tree\.
 *   **Space Complexity:** O\(N\), due to the queue which needs to store nodes and their paths\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/binary-tree-paths)

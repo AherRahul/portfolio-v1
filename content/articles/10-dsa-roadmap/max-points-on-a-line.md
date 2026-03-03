@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given an array of `points` where **points\[i\] = \[x****i****, y****i****\]** represents a point on the **X\-Y** plane, return _the maximum number of points that lie on the same straight line_\.
 
@@ -21,11 +19,57 @@ Given an array of `points` where **points\[i\] = \[x****i****, y****i****\]**
 
 **Input:** points = \[\[1,1\],\[2,2\],\[3,3\]\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+    </div>
+  </div>
+</div>
+
 **Output:** 3
 
 ##### **Example 2:**
 
 **Input:** points = \[\[1,1\],\[3,2\],\[5,3\],\[4,1\],\[2,3\],\[1,4\]\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">5</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">4</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">4</span></div>
+    </div>
+  </div>
+</div>
 
 **Output:** 4
 
@@ -36,11 +80,10 @@ Given an array of `points` where **points\[i\] = \[x****i****, y****i****\]**
 *   **\-10****4** **<= x****i****, y****i** **<= 10****4**
 *   **All the points are unique\.**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/max-points-on-a-line)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force Approach
+### 1\. Brute Force Approach
 
 #### Intuition:
 
@@ -54,8 +97,6 @@ This approach considers all combinations of pairs to determine every possible li
 4.  Keep track of the maximum count\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -86,12 +127,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N^3\), where N is the number of points\. This is due to the triply nested loops\.
 *   **Space Complexity:** O\(1\), no extra space is used\.
 
-## 2\. Optimized Approach Using HashMap
+### 2\. Optimized Approach Using HashMap
 
 #### Intuition:
 
@@ -106,8 +147,6 @@ Instead of evaluating every pair by brute force, leverage the properties of the 
 5.  Keep track of the maximum count across all base points\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -159,7 +198,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N^2\), because we iterate through each point and calculate the slope against every other point\.
 *   **Space Complexity:** O\(N\), because we use a HashMap to store slopes information for each base point\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/max-points-on-a-line)

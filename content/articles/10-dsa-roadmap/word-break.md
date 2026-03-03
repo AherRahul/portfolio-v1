@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given a string `s` and a dictionary of strings `wordDict`, return `true` if `s` can be segmented into a space\-separated sequence of one or more dictionary words\.
 
@@ -23,6 +21,13 @@ Given a string `s` and a dictionary of strings `wordDict`, return `true` if
 
 **Input:** s = "leetcode", wordDict = \["leet","code"\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">leet</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">code</span></div>
+  </div>
+</div>
+
 **Output:** true
 
 **Explanation:** Return true because "leetcode" can be segmented as "leet code"\.
@@ -30,6 +35,13 @@ Given a string `s` and a dictionary of strings `wordDict`, return `true` if
 ##### **Example 2:**
 
 **Input:** s = "applepenapple", wordDict = \["apple","pen"\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">apple</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">pen</span></div>
+  </div>
+</div>
 
 **Output:** true
 
@@ -41,6 +53,16 @@ Note that you are allowed to reuse a dictionary word\.
 
 **Input:** s = "catsandog", wordDict = \["cats","dog","sand","and","cat"\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">cats</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">dog</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">sand</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">and</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">cat</span></div>
+  </div>
+</div>
+
 **Output:** false
 
 ##### **Constraints:**
@@ -51,11 +73,10 @@ Note that you are allowed to reuse a dictionary word\.
 *   `s` and `wordDict[i]` consist of only lowercase English letters\.
 *   All the strings of `wordDict` are **unique**\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/word-break)
 
-# Approaches
+## Approaches
 
-## 1\. Recursion
+### 1\. Recursion
 
 #### Intuition:
 
@@ -64,8 +85,6 @@ In this approach, we will use recursion to break down the problem\. The idea is 
 This method may have overlapping subproblems, which makes it inefficient for larger inputs\.
 
 #### Code:
-
-Java
 
 ```java
 class WordBreak {
@@ -94,20 +113,18 @@ class WordBreak {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(2^n\) where n is the length of the string `s` due to the exponential growth in possible substrings\.
 *   **Space Complexity:** O\(n\) for the recursion stack \(depth of the recursion tree\)\.
 
-## 2\. Recursion with Memoization
+### 2\. Recursion with Memoization
 
 #### Intuition:
 
 To optimize the previous recursive solution, we store the result of already processed substrings in a memoization table to avoid recomputation\. This approach utilizes dynamic programming concepts to store results of subproblems, thus reducing redundant calculations\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -142,20 +159,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^2\) for each substring and position due to memoization\.
 *   **Space Complexity:** O\(n\) for the memoization table\.
 
-## 3\. Dynamic Programming
+### 3\. Dynamic Programming
 
 #### Intuition:
 
 We can further improve the solution by using dynamic programming\. The idea is to use a boolean dp array where `dp[i]` represents whether the substring `s[0...i]` can be segmented using the dictionary\. For each position, we check all possible partitions, updating the dp array based on previously computed results\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -180,7 +195,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^3\) because of the two nested loops and substring check, but efficiently optimized by using a set\.
 *   **Space Complexity:** O\(n\) for the dp array\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/word-break)

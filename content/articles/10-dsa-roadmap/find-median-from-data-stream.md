@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 The **median** is the middle value in an ordered integer list\. If the size of the list is even, there is no middle value, and the median is the mean of the two middle values\.
 
@@ -60,11 +58,10 @@ medianFinder.findMedian(); // return 2.0
 *   If all integer numbers from the stream are in the range `[0, 100]`, how would you optimize your solution?
 *   If `99%` of all integer numbers from the stream are in the range `[0, 100]`, how would you optimize your solution?
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/find-median-from-data-stream)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force Approach
+### 1\. Brute Force Approach
 
 #### Intuition:
 
@@ -77,8 +74,6 @@ In the brute force approach, every time we add a new number to our data structur
 3.  `findMedian()`: Access the middle element or the average of two middle elements to get the median\.
 
 #### Code:
-
-Java
 
 ```java
 class MedianFinder {
@@ -108,12 +103,12 @@ class MedianFinder {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), where n is the length of the array\.
 *   **Space Complexity:** O\(n\), due to the use of additional array\.
 
-## 2\. Two Heaps Approach
+### 2\. Two Heaps Approach
 
 #### Intuition:
 
@@ -144,8 +139,6 @@ The median can be quickly found by:
 *   If max heap has one more element, the median is its top\.
 
 #### Code:
-
-Java
 
 ```java
 class MedianFinder {
@@ -190,7 +183,9 @@ class MedianFinder {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** Adding a number: O\(log n\) due to the insertion operation in heaps\. Finding median: O\(1\)\.
 *   **Space Complexity:** O\(n\) to store the numbers in the heaps\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/find-median-from-data-stream)

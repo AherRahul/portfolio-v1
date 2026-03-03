@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given an array of non\-overlapping intervals `intervals` where **intervals\[i\] = \[start****i****, end****i****\]** represent the start and the end of the **i****th** interval and `intervals` is sorted in ascending order by **start****i**\. You are also given an interval `newInterval = [start, end]` that represents the start and end of another interval\.
 
@@ -29,11 +27,41 @@ Return `intervals` _after the insertion_\.
 
 **Output:** \[\[1,5\],\[6,9\]\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">5</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">6</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">9</span></div>
+    </div>
+  </div>
+</div>
+
 ##### **Example 2:**
 
 **Input:** intervals = \[\[1,2\],\[3,5\],\[6,7\],\[8,10\],\[12,16\]\], newInterval = \[4,8\]
 
 **Output:** \[\[1,2\],\[3,10\],\[12,16\]\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">2</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">10</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">12</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">16</span></div>
+    </div>
+  </div>
+</div>
 
 **Explanation:** Because the new interval \[4,8\] overlaps with \[3,5\],\[6,7\],\[8,10\]\.
 
@@ -46,11 +74,10 @@ Return `intervals` _after the insertion_\.
 *   **newInterval\.length == 2**
 *   **0 <= start <= end <= 10****5**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/insert-interval)
 
-# Approaches
+## Approaches
 
-## 1\. Basic Linear Scan Insertion
+### 1\. Basic Linear Scan Insertion
 
 #### Intuition:
 
@@ -58,12 +85,12 @@ The idea is to go through the intervals and find where the `newInterval` shoul
 
 #### Code:
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\) \- We make a single pass over the intervals\.
 *   **Space Complexity:** O\(n\) \- We store the result in a new list which, in the worst case, could be as large as the input\.
 
-## 2\. Optimal Merge Based Insertion
+### 2\. Optimal Merge Based Insertion
 
 #### Intuition:
 
@@ -71,7 +98,9 @@ While the first solution is efficient, this slightly optimized version ensures t
 
 #### Code:
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\) \- Similar to the first approach, as each interval is visited once\.
 *   **Space Complexity:** O\(n\) \- Storing the resulting intervals in a list\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/insert-interval)

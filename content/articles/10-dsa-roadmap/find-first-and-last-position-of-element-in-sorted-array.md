@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given an array of integers `nums` sorted in non\-decreasing order, find the starting and ending position of a given `target` value\.
 
@@ -25,67 +23,62 @@ You must write an algorithm with `O(log n)` runtime complexity\.
 
 **Input:** nums = \[5,7,7,8,8,10\], target = 8
 
-0
-
-5
-
-1
-
-7
-
-2
-
-7
-
-3
-
-8
-
-4
-
-8
-
-5
-
-10
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">7</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">7</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">8</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">8</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">10</span></div>
+  </div>
+</div>
 
 **Output:** \[3,4\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">4</span></div>
+  </div>
+</div>
 
 ##### **Example 2:**
 
 **Input:** nums = \[5,7,7,8,8,10\], target = 6
 
-0
-
-5
-
-1
-
-7
-
-2
-
-7
-
-3
-
-8
-
-4
-
-8
-
-5
-
-10
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">7</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">7</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">8</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">8</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">10</span></div>
+  </div>
+</div>
 
 **Output:** \[\-1,\-1\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">-1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">-1</span></div>
+  </div>
+</div>
 
 ##### **Example 3:**
 
 **Input:** nums = \[\], target = 0
 
 **Output:** \[\-1,\-1\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">-1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">-1</span></div>
+  </div>
+</div>
 
 ##### **Constraints:**
 
@@ -94,19 +87,16 @@ You must write an algorithm with `O(log n)` runtime complexity\.
 *   `nums` is a non\-decreasing array\.
 *   **\-10****9** **<= target <= 10****9**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array)
 
-# Approaches
+## Approaches
 
-## 1\. Linear Scan
+### 1\. Linear Scan
 
 #### Intuition:
 
 The simplest way to find the first and last positions of a target element in a sorted array is to perform a linear scan\. We traverse the array from the beginning to end and record the positions when the target element matches\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -129,20 +119,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\) \- Because we scan through the entire array once\.
 *   **Space Complexity:** O\(1\) \- Only a constant amount of extra space is used\.
 
-## 2\. Binary Search Twice
+### 2\. Binary Search Twice
 
 #### Intuition:
 
 To improve efficiency, consider using binary search\. By performing two separate binary searches, we can find the first occurrence and the last occurrence of the target element\. The key is to tailor the binary search condition to continue searching for the first or last position once a target element is found\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -182,20 +170,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(log n\) \- Binary search takes logarithmic time\.
 *   **Space Complexity:** O\(1\) \- Only a constant amount of extra space is used\.
 
-## 3\. Optimized Binary Search
+### 3\. Optimized Binary Search
 
 #### Intuition:
 
 We can further optimize by combining the searches for the first and last occurrence into a single binary search\. We check for both conditions in a single run, further reducing complexity in terms of constant factors\. This method uses binary search with a twist by utilizing stricter compared conditions\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -231,7 +217,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(log n\) if elements are scattered, but potentially O\(n\) if all elements are the same and span both sections\.
 *   **Space Complexity:** O\(1\) \- Only a constant amount of extra space is used\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array)

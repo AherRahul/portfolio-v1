@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are climbing a staircase\. It takes `n` steps to reach the top\.
 
@@ -47,11 +45,9 @@ Each time you can either climb `1` or `2` steps\. In how many distinct ways 
 
 *   `1 <= n <= 45`
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/climbing-stairs)
+## Approaches
 
-# Approaches
-
-## 1\. Recursive Solution
+### 1\. Recursive Solution
 
 The climbing stairs problem can be solved using a recursive approach\. The core idea is to think of climbing stairs as making a series of steps\. At each step, you have two choices: take one step or take two steps\.
 
@@ -66,8 +62,6 @@ The climbing stairs problem can be solved using a recursive approach\. The core 
 *   If you surpass step `n`, there are 0 ways\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -88,12 +82,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(2^n\), because each step splits into two possibilities \(recursive calls\)\.
 *   **Space Complexity:** O\(n\), due to the recursion stack depth\.
 
-## 2\. Dynamic Programming \(Top\-Down Memoization\)
+### 2\. Dynamic Programming \(Top\-Down Memoization\)
 
 This approach uses memoization to store results of subproblems, reducing repeated calculations\.
 
@@ -104,8 +98,6 @@ This approach uses memoization to store results of subproblems, reducing repeate
 *   Fill in the memoization table on the fly, storing each result for quick access\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -129,12 +121,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), each step calculation is done once and stored\.
 *   **Space Complexity:** O\(n\), due to the memoization array\.
 
-## 3\. Dynamic Programming \(Bottom\-Up\)
+### 3\. Dynamic Programming \(Bottom\-Up\)
 
 This approach involves using an iterative dynamic programming approach, filling from the bottom up without recursion\.
 
@@ -145,8 +137,6 @@ This approach involves using an iterative dynamic programming approach, filling 
 *   Iteratively fill the array using the relation `dp[i] = dp[i-1] + dp[i-2]`\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -167,14 +157,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), each step is calculated once in a loop\.
 *   **Space Complexity:** O\(n\), stored in the dp array\.
 
-View Animation
-
-## 4\. Optimized Dynamic Programming \(Space\-Optimization\)
+### 4\. Optimized Dynamic Programming \(Space\-Optimization\)
 
 By observing that the DP approach only uses the last two numbers, we can optimize space usage\.
 
@@ -184,8 +172,6 @@ By observing that the DP approach only uses the last two numbers, we can optimiz
 *   This reduces space complexity substantially\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -207,7 +193,7 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), each step is calculated once in a loop\.
 *   **Space Complexity:** O\(1\), using constant space for last two computed states\.

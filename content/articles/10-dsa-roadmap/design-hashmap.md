@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Design a HashMap without using any built\-in hash table libraries\.
 
@@ -53,19 +51,16 @@ myHashMap.get(2);    // return -1 (i.e., not found), The map is now [[1,1]]
 *   **0 <= key, value <= 10****6**
 *   At most **10****4** calls will be made to `put`, `get`, and `remove`\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/design-hashmap/)
 
-# Approaches
+## Approaches
 
-## 1\. Array of List Nodes
+### 1\. Array of List Nodes
 
 #### Intuition:
 
 The simplest way to implement a hashmap is to use an array where each index holds a linked list of key\-value pairs\. This method handles collisions by chaining entries together in the form of a linked list\. When adding a new entry, we first compute its hash code which gives us the index to put the key\-value pair into, and we toggle through the linked list to either update the value or insert a new node\.
 
 #### Code:
-
-Java
 
 ```java
 class MyHashMap {
@@ -133,15 +128,13 @@ class MyHashMap {
 *   **Time Complexity:** `O(N/B)`, where `N` is the number of all possible keys and `B` is the number of buckets\.
 *   **Space Complexity:** `O(M + N)`, where `M` is the given element size and `N` is the bucket size which is 10000 here\.
 
-## 2\. Double Hashing
+### 2\. Double Hashing
 
 #### Intuition:
 
 By using a secondary hashing technique, we can better address the issue of collision\. This involves using an open addressing scheme where slots are utilized in alternative locations if collisions occur\. Double hashing uses two hash functions to compute bucket locations\.
 
 #### Code:
-
-Java
 
 ```java
 class MyHashMap {
@@ -172,15 +165,13 @@ class MyHashMap {
 *   **Time Complexity:** `O(1)` for put, get, and delete operations\.
 *   **Space Complexity:** `O(U)` where U is the universe of keys\. In this approach, space can be large if the range of key values is vast\.
 
-## 3\. Binary Search Tree in Buckets
+### 3\. Binary Search Tree in Buckets
 
 #### Intuition:
 
 Instead of using linked lists for collisions, we can use a Binary Search Tree \(BST\)\. This gives faster operations in a scenario with worst\-case time complexity, and makes the performance more stable by reducing the potential of long chains experienced with a basic linked list structure\. This approach provides `O(log N)` operations where `N` is the number of keys stored in the bucket\.
 
 #### Code:
-
-Java
 
 ```java
 class MyHashMap {
@@ -219,3 +210,5 @@ class MyHashMap {
 
 *   **Time Complexity:** `O(log N)` where `N` is the number of elements in a bucket\.
 *   **Space Complexity:** `O(N)` where `N` is the total number of elements\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/design-hashmap/)

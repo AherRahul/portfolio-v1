@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given an integer array `coins` representing coins of different denominations and an integer `amount` representing a total amount of money\.
 
@@ -26,6 +24,14 @@ The answer is **guaranteed** to fit into a signed **32\-bit** integer\.
 ##### **Example 1:**
 
 **Input:** amount = 5, coins = \[1,2,5\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">5</span></div>
+  </div>
+</div>
 
 **Output:** 4
 
@@ -43,6 +49,12 @@ The answer is **guaranteed** to fit into a signed **32\-bit** integer\.
 
 **Input:** amount = 3, coins = \[2\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">2</span></div>
+  </div>
+</div>
+
 **Output:** 0
 
 **Explanation:** the amount of 3 cannot be made up just with coins of 2\.
@@ -50,6 +62,12 @@ The answer is **guaranteed** to fit into a signed **32\-bit** integer\.
 ##### **Example 3:**
 
 **Input:** amount = 10, coins = \[10\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">10</span></div>
+  </div>
+</div>
 
 **Output:** 1
 
@@ -60,9 +78,8 @@ The answer is **guaranteed** to fit into a signed **32\-bit** integer\.
 *   All the values of `coins` are **unique**\.
 *   `0 <= amount <= 5000`
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/coin-change-ii)
 
-# Approaches
+## Approaches
 
 ## Approach 1: Recursion
 
@@ -71,8 +88,6 @@ The answer is **guaranteed** to fit into a signed **32\-bit** integer\.
 Use recursion to explore all possible ways to make up the amount using combinations of the coins\. The idea is to traverse each coin and either take it \(reduce the amount\) or skip it and move to the next coin\. This basic approach generates all combinations but is not efficient due to repeated computations\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -98,20 +113,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(2^n\), where n is the number of coins\. This is because each coin can be taken or not, leading to a binary decision at each step\.
 *   **Space Complexity:** O\(n\), due to the recursion stack\.
 
-## 2\. Dynamic Programming \- 2D Array
+### 2\. Dynamic Programming \- 2D Array
 
 #### Intuition:
 
 To avoid the repetition in the recursive approach, use a 2D DP table\. Here, `dp[i][j]` represents the number of ways to get the amount `j` using first `i` coin types\. The table is filled in a bottom\-up manner\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -139,20 +152,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n \* amount\), where n is the number of coins\.
 *   **Space Complexity:** O\(n \* amount\), for storing the entire DP table\.
 
-## 3\. Dynamic Programming \- 1D Array
+### 3\. Dynamic Programming \- 1D Array
 
 #### Intuition:
 
 Further optimize the space usage by using a 1D DP array\. Instead of maintaining a 2D array, keep track of number of ways to achieve different sums using a single 1D DP array\. Here, `dp[j]` represents the number of ways to get the amount `j`\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -175,9 +186,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n \* amount\), where n is the number of coins\.
 *   **Space Complexity:** O\(amount\), optimal space usage with a 1D array\.
 
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/coin-change-ii)

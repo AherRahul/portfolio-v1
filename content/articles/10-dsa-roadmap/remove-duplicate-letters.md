@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given a string `s`, remove duplicate letters so that every letter appears once and only once\. You must make sure your result is **the smallest in lexicographical order** among all possible results\. 
 
@@ -21,24 +19,65 @@ Given a string `s`, remove duplicate letters so that every letter appears once 
 
 **Input:** s = "bcabc"
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">b</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">c</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">a</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">b</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">c</span></div>
+  </div>
+</div>
+
 **Output:** "abc"
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">a</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">b</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">c</span></div>
+  </div>
+</div>
+
 
 ##### **Example 2:**
 
 **Input:** s = "cbacdcbc"
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">c</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">b</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">a</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">c</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">d</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">c</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">b</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">7</span><span class="arr-val">c</span></div>
+  </div>
+</div>
+
 **Output:** "acdb"
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">a</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">c</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">d</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">b</span></div>
+  </div>
+</div>
+
 
 ##### **Constraints:**
 
 *   **1 <= s\.length <= 10****4**
 *   `s` consists of lowercase English letters\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/remove-duplicate-letters)
 
-# Approaches
+## Approaches
 
-## 1\. Greedy approach with Stack and HashMap
+### 1\. Greedy approach with Stack and HashMap
 
 #### **Intuition:**
 
@@ -58,8 +97,6 @@ The task is to remove duplicate letters and return the lexicographically smalles
 6.  Convert the stack into the resulting string\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -95,12 +132,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), where n is the length of the string, as we are iterating through the string and each character is pushed and popped from the stack at most once\.
 *   **Space Complexity:** O\(1\), since the size of the alphabet is fixed\. The stack will at most contain 26 characters\.
 
-## 2\. Optimized Greedy with Char Array as Stack
+### 2\. Optimized Greedy with Char Array as Stack
 
 #### **Intuition:**
 
@@ -112,8 +149,6 @@ Instead of using a stack data structure, we can use a character array to simulat
 2.  Use a `char[]` array to act as a stack, managing a pointer to simulate stack\-like push/pop operations\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -144,9 +179,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), similar to the previous approach\.
 *   **Space Complexity:** O\(1\), as we utilize constant additional space in line with the alphabet's size\.
 
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/remove-duplicate-letters)

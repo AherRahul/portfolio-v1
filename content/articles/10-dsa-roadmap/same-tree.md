@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given the roots of two binary trees `p` and `q`, write a function to check if they are the same or not\.
 
@@ -42,11 +40,10 @@ Two binary trees are considered the same if they are structurally identical, and
 *   The number of nodes in both trees is in the range `[0, 100]`\.
 *   **\-10****4** **<= Node\.val <= 10****4**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/same-tree)
 
-# Approaches
+## Approaches
 
-## 1\. Recursive Depth\-First Search \(DFS\)
+### 1\. Recursive Depth\-First Search \(DFS\)
 
 #### **Intuition:**
 
@@ -65,12 +62,12 @@ The basic idea is to recursively compare the two trees' nodes\. If both trees' n
 
 #### Code:
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\), where N is the total number of nodes in both trees\. Each node is visited once\.
 *   **Space Complexity:** O\(H\), where H is the height of the tree\. This is due to the recursion stack space\. In the best case \(balanced tree\), H = log N, and in the worst case \(skewed tree\), H = N\.
 
-## 2\. Iterative Breadth\-First Search \(BFS\)
+### 2\. Iterative Breadth\-First Search \(BFS\)
 
 #### **Intuition:**
 
@@ -87,7 +84,9 @@ Instead of doing it recursively, we can use an iterative method to traverse both
 
 #### Code:
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\), where N is the total number of nodes in both trees\. We traverse each node once\.
 *   **Space Complexity:** O\(N\), where N is the maximum number of nodes at any level in the queue\. In the worst case \(full binary tree\), there can be up to N/2 nodes at the last level\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/same-tree)

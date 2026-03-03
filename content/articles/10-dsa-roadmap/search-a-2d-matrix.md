@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given an `m x n` integer matrix `matrix` with the following two properties:
 
@@ -28,13 +26,28 @@ You must write a solution in `O(log(m * n))` time complexity\.
 
 **Input:** matrix = \[\[1,3,5,7\],\[10,11,16,20\],\[23,30,34,60\]\], target = 3
 
-1
-
-3
-
-5
-
-7
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">5</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">7</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">10</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">11</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">16</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">20</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">23</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">30</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">34</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">60</span></div>
+    </div>
+  </div>
+</div>
 
 10
 
@@ -58,13 +71,28 @@ You must write a solution in `O(log(m * n))` time complexity\.
 
 **Input:** matrix = \[\[1,3,5,7\],\[10,11,16,20\],\[23,30,34,60\]\], target = 13
 
-1
-
-3
-
-5
-
-7
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">5</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">7</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">10</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">11</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">16</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">20</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">23</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">30</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">34</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">60</span></div>
+    </div>
+  </div>
+</div>
 
 10
 
@@ -91,11 +119,10 @@ You must write a solution in `O(log(m * n))` time complexity\.
 *   1 <= m, n <= 100
 *   \-104 <= matrix\[i\]\[j\], target <= 104
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/search-a-2d-matrix)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force: Linear Search
+### 1\. Brute Force: Linear Search
 
 #### Intuition:
 
@@ -103,12 +130,12 @@ The simplest way to search for a target in a 2D matrix is to iterate through eac
 
 #### Code:
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(m \* n\), where m is the number of rows and n is the number of columns in the matrix\.
 *   **Space Complexity:** O\(1\), as we are not using any extra space besides a few variables\.
 
-## 2\. Binary Search on 2D Matrix
+### 2\. Binary Search on 2D Matrix
 
 #### Intuition:
 
@@ -116,12 +143,12 @@ Given that the rows of the matrix are sorted in non\-decreasing order and each f
 
 #### Code:
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(m \* log\(n\)\), since we do a binary search \(logarithmic time complexity\) across each of the m rows\.
 *   **Space Complexity:** O\(1\), as no additional space is used besides vars\.
 
-## 3\. Treat 2D Matrix as 1D Array
+### 3\. Treat 2D Matrix as 1D Array
 
 #### Intuition:
 
@@ -129,9 +156,9 @@ By treating the 2D matrix as a sorted 1D array, we can perform a single binary s
 
 #### Code:
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(log\(m \* n\)\), which simplifies to O\(log\(mn\)\) due to the single binary search on the entire matrix\.
 *   **Space Complexity:** O\(1\), as the solution uses only a fixed amount of extra space\.
 
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/search-a-2d-matrix)

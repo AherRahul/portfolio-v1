@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given an `n x n` binary matrix `grid`\. You are allowed to change **at most one** `0` to be `1`\.
 
@@ -25,6 +23,19 @@ An **island** is a 4\-directionally connected group of `1`s\.
 
 **Input:** grid = \[\[1,0\],\[0,1\]\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+  </div>
+</div>
+
 **Output:** 3
 
 **Explanation:** Change one 0 to 1 and connect two 1s, then we get an island with area = 3\.
@@ -33,6 +44,19 @@ An **island** is a 4\-directionally connected group of `1`s\.
 
 **Input:** grid = \[\[1,1\],\[1,0\]\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+    </div>
+  </div>
+</div>
+
 **Output:** 4
 
 **Explanation:** Change the 0 to 1 and make the island bigger, only one island with area = 4\.
@@ -40,6 +64,19 @@ An **island** is a 4\-directionally connected group of `1`s\.
 ##### **Example 3:**
 
 **Input:** grid = \[\[1,1\],\[1,1\]\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+  </div>
+</div>
 
 **Output:** 4
 
@@ -52,11 +89,10 @@ An **island** is a 4\-directionally connected group of `1`s\.
 *   `1 <= n <= 500`
 *   `grid[i][j]` is either `0` or `1`\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/making-a-large-island)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force Approach
+### 1\. Brute Force Approach
 
 #### Intuition:
 
@@ -70,8 +106,6 @@ In this initial approach, the goal is to change each `0` in the grid to `1` 
 4.  Return the maximum island size found\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -113,12 +147,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^4\), where n is the size of the grid\. For each `0` in the grid, a complete DFS traversal happens\.
 *   **Space Complexity:** O\(n^2\), due to the visited matrix\.
 
-## 2\. Optimized Approach with Connected Components
+### 2\. Optimized Approach with Connected Components
 
 #### Intuition:
 
@@ -132,8 +166,6 @@ To optimize, pre\-calculate the sizes of all connected components \(islands\) an
 4.  The maximum size achieved by flipping a `0` is stored as the result\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -196,7 +228,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^2\), where n is the size of the grid\. Each cell is part of a recursive DFS once\.
 *   **Space Complexity:** O\(n^2\), due to storage in the size map and for visited routes\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/making-a-large-island)

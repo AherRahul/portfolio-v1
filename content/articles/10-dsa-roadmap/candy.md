@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 There are `n` children standing in a line\. Each child is assigned a rating value given in the integer array `ratings`\.
 
@@ -28,6 +26,14 @@ Return _the minimum number of candies you need to have to distribute the candie
 
 **Input:** ratings = \[1,0,2\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">1</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+  </div>
+</div>
+
 **Output:** 5
 
 **Explanation:** You can allocate to the first, second and third child with 2, 1, 2 candies respectively\.
@@ -35,6 +41,14 @@ Return _the minimum number of candies you need to have to distribute the candie
 ##### **Example 2:**
 
 **Input:** ratings = \[1,2,2\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+  </div>
+</div>
 
 **Output:** 4
 
@@ -48,19 +62,16 @@ The third child gets 1 candy because it satisfies the above two conditions\.
 *   **1 <= n <= 2 \* 10****4**
 *   **0 <= ratings\[i\] <= 2 \* 10****4**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/candy)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force
+### 1\. Brute Force
 
 #### Intuition:
 
 The problem can be approached with a brute\-force method where we repeatedly iterate over the array to ensure all conditions are satisfied: each child gets at least one candy, and children with a higher rating than their neighbors get more candy than their neighbors\. This involves iteratively adjusting the candy values until we reach a stable state\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -104,12 +115,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^2\) in the worst case due to the repeated iteration over the array\.
 *   **Space Complexity:** O\(n\) for the `candies` array\.
 
-## 2\. Two\-pass Linear Greedy
+### 2\. Two\-pass Linear Greedy
 
 #### Intuition:
 
@@ -119,8 +130,6 @@ This approach improves upon the brute force by using a two\-pass linear greedy s
 2.  Make a second pass from right to left, doing similar adjustments but also ensuring not to disturb what was established in the first pass\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -159,7 +168,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), where n is the number of children, because each array is traversed twice\.
 *   **Space Complexity:** O\(n\) for the `candies` array\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/candy)

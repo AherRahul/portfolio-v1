@@ -11,139 +11,81 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given an integer array `nums`, rotate the array to the right by `k` steps, where `k` is non\-negative\.
 
-##### **Example 1:**
+#### Example 1:
 
-**Input:** nums = \[1,2,3,4,5,6,7\], k = 3
+**Input: nums = \[1, 2, 3, 4, 5, 6, 7\], k = 3**
 
-0
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">6</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">7</span></div>
+  </div>
+</div>
 
-1
+**Output: \[5, 6, 7, 1, 2, 3, 4\]** &nbsp;(last k=3 elements wrap to front)
 
-1
-
-2
-
-2
-
-3
-
-3
-
-4
-
-4
-
-5
-
-5
-
-6
-
-6
-
-7
-
-**Output:** \[5,6,7,1,2,3,4\]
-
-0
-
-5
-
-1
-
-6
-
-2
-
-7
-
-3
-
-1
-
-4
-
-2
-
-5
-
-3
-
-6
-
-4
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">6</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">7</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">5</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">6</span><span class="arr-val">4</span></div>
+  </div>
+</div>
 
 **Explanation:**
 
-*   rotate 1 steps to the right: \[7,1,2,3,4,5,6\]
-*   rotate 2 steps to the right: \[6,7,1,2,3,4,5\]
-*   rotate 3 steps to the right: \[5,6,7,1,2,3,4\]
+*   rotate 1: \[7, 1, 2, 3, 4, 5, 6\]
+*   rotate 2: \[6, 7, 1, 2, 3, 4, 5\]
+*   rotate 3: \[5, 6, 7, 1, 2, 3, 4\] ✓
 
-##### **Example 2:**
+#### Example 2:
 
-**Input:** nums = \[\-1,\-100,3,99\], k = 2
+**Input: nums = \[-1, -100, 3, 99\], k = 2**
 
-0
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">-1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">-100</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">99</span></div>
+  </div>
+</div>
 
-\-1
+**Output: \[3, 99, -1, -100\]**
 
-1
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">99</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">-1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">-100</span></div>
+  </div>
+</div>
 
-\-100
+#### Constraints:
 
-2
+*   **1 <= nums\.length <= 10^5**
+*   **\-2^31 <= nums\[i\] <= 2^31 \- 1**
+*   **0 <= k <= 10^5**
 
-3
+**Follow up:** Try at least **three** different ways\. Can you do it in-place with O\(1\) extra space?
 
-3
+## Approaches
 
-99
-
-**Output:** \[3,99,\-1,\-100\]
-
-0
-
-3
-
-1
-
-99
-
-2
-
-\-1
-
-3
-
-\-100
-
-**Explanation:**
-
-*   rotate 1 steps to the right: \[99,\-1,\-100,3\]
-*   rotate 2 steps to the right: \[3,99,\-1,\-100\]
-
-##### **Constraints:**
-
-*   **1 <= nums\.length <= 10****5**
-*   **\-2****31** **<= nums\[i\] <= 2****31** **\- 1**
-*   **0 <= k <= 10****5**
-
-##### **Follow up:**
-
-*   Try to come up with as many solutions as you can\. There are at least **three** different ways to solve this problem\.
-*   Could you do it in\-place with `O(1)` extra space?
-
-#### [Solve it on LeetCode](https://leetcode.com/problems/rotate-array)
-
-# Approaches
-
-## 1\. Brute Force
+### 1\. Brute Force
 
 #### Intuition:
 
@@ -160,8 +102,6 @@ Do this **k** times:
 *   Put the saved element at the front\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -183,12 +123,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n \* k\) \- Performing `k` rotations, each requiring O\(n\) time\.
 *   **Space Complexity:** O\(1\) \- No additional space used apart from input array\.
 
-## 2\. Extra Array
+### 2\. Extra Array
 
 #### Intuition:
 
@@ -201,8 +141,6 @@ By using an additional array, you can directly place each element in its rotated
 3.  Copy the result back into the original array\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -224,38 +162,88 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\) \- Each element is processed a constant number of times\.
 *   **Space Complexity:** O\(n\) \- Additional array to hold rotated order\.
 
-## 3\. Reverse the Array
+### 3\. Reverse the Array \(Optimal\)
 
 #### Intuition:
 
-The optimal solution utilizes array reversing\. The underlying idea is that rotating an array is equivalent to reversing parts of the array\.
+Rotating right by `k` is equivalent to three reverse operations:
 
-#### Steps:
+1.  Reverse the **whole** array\.
+2.  Reverse the **first k** elements\.
+3.  Reverse the **remaining n-k** elements\.
 
-1.  Reverse the whole array\.
-2.  Reverse the first `k` elements\.
-3.  Reverse the remaining `n-k` elements\.
+#### Walkthrough: \[1, 2, 3, 4, 5, 6, 7\], k = 3
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">6</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">7</span></div>
+  </div>
+  <p class="arr-step-label">Original</p>
+</div>
+
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">7</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">6</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">1</span></div>
+  </div>
+  <p class="arr-step-label">Step 1 — Reverse whole array</p>
+</div>
+
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">6</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">7</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">1</span></div>
+  </div>
+  <p class="arr-step-label">Step 2 — Reverse first k=3 elements</p>
+</div>
+
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">6</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">7</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">5</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">6</span><span class="arr-val">4</span></div>
+  </div>
+  <p class="arr-step-label">Step 3 — Reverse remaining n-k=4 elements → Done</p>
+</div>
+
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
    public void rotate(int[] nums, int k) {
        int n = nums.length;
-       k = k % n; // Handle cases where k >= n
-       
-       // Step 1: Reverse the whole array
+       k = k % n;
        reverse(nums, 0, n - 1);
-       // Step 2: Reverse the first k elements
        reverse(nums, 0, k - 1);
-       // Step 3: Reverse the remaining elements
        reverse(nums, k, n - 1);
    }
 
@@ -271,131 +259,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
-*   **Time Complexity:** O\(n\) \- Each reverse operation is O\(n\), and we perform a constant number of them\.
-*   **Space Complexity:** O\(1\) \- Reversal done in\-place without extra space\.
+*   **Time Complexity:** O\(n\) — three reverse passes, each O\(n\)\.
+*   **Space Complexity:** O\(1\) — in-place, no extra space\.
 
-#### Example Walkthrough:
-
-**Input:** nums = \[1,2,3,4,5,6,7\], k = 3
-
-0
-
-1
-
-1
-
-2
-
-2
-
-3
-
-3
-
-4
-
-4
-
-5
-
-5
-
-6
-
-6
-
-7
-
-**Step 1:** Reverse the whole array\.
-
-0
-
-7
-
-1
-
-6
-
-2
-
-5
-
-3
-
-4
-
-4
-
-3
-
-5
-
-2
-
-6
-
-1
-
-**Step 2:** Reverse the first 3 elements\.
-
-0
-
-5
-
-1
-
-6
-
-2
-
-7
-
-3
-
-4
-
-4
-
-3
-
-5
-
-2
-
-6
-
-1
-
-**Step 3:** Reverse the remaining 4 \(7 \- 3\) elements\.
-
-0
-
-5
-
-1
-
-6
-
-2
-
-7
-
-3
-
-1
-
-4
-
-2
-
-5
-
-3
-
-6
-
-4
-
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/rotate-array)

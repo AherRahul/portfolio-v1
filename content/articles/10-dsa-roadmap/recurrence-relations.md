@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png)
-
 
 # Recurrence Relations
 
@@ -160,8 +158,6 @@ Substitute the inductive hypothesis:
 T(n)≤2c⋅2n​log2n​+nT(n)≤cn(logn−1)+nT(n)\=cnlogn−cn+nT(n)\=cnlogn−n(c−1)
 
 For `c > 1`, this inequality holds true. Hence, T(n) = O(n log n)
-
-
 
 ### Recursion Tree Method
 

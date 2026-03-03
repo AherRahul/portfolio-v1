@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given an array of integers `nums`, there is a sliding window of size `k` which is moving from the very left of the array to the very right\. You can only see the `k` numbers in the window\. Each time the sliding window moves right by one position\.
 
@@ -23,7 +21,31 @@ Return _the max sliding window_\.
 
 **Input:** nums = \[1,3,\-1,\-3,5,3,6,7\], k = 3
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">-1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">-3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">6</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">7</span><span class="arr-val">7</span></div>
+  </div>
+</div>
+
 **Output:** \[3,3,5,5,6,7\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">6</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">5</span><span class="arr-val">7</span></div>
+  </div>
+</div>
 
 **Explanation:**
 
@@ -47,7 +69,19 @@ Window position Max
 
 **Input:** nums = \[1\], k = 1
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+  </div>
+</div>
+
 **Output:** \[1\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 ##### **Constraints:**
 
@@ -55,19 +89,16 @@ Window position Max
 *   **\-10****4** **<= nums\[i\] <= 10****4**
 *   **1 <= k <= nums\.length**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/sliding-window-maximum)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force
+### 1\. Brute Force
 
 #### **Intuition:**
 
 The simplest way to solve the sliding window maximum problem is to compute the maximum of each window separately\. For each position in the array, consider all the elements in the sliding window starting from that position, and find the maximum element\. This method checks each sliding window one by one and finds the maximum element\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -88,20 +119,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N \* K\): N is the number of elements in the array, and K is the size of the window\. For each of the N\-K\+1 windows, finding the maximum requires O\(K\) time\.
 *   **Space Complexity:** O\(N\-K\+1\): We only need an array to store the results\.
 
-## 2\. Deque \(Double\-Ended Queue\) Approach
+### 2\. Deque \(Double\-Ended Queue\) Approach
 
 #### **Intuition:**
 
 Using a deque, we maintain the indexes of the array\. The key is to maintain the elements of the deque in a monotonically decreasing order of their values\. This means the max value for the window is at the front of the deque\. We ensure that elements outside the current window or smaller elements than the current are removed\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -138,22 +167,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\) \- Each element is added and removed from the deque at most once\.
 *   **Space Complexity:** O\(K\) \- Deque holds at most K elements\.
 
-View Animation
-
-## 3\. Max\-Heap Approach
+### 3\. Max\-Heap Approach
 
 #### **Intuition:**
 
 This approach uses a max heap to store the elements of the current window\. The largest element in the window is always at the top of the heap\. We remove elements from the heap that are out of the window's current range\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -183,7 +208,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N log K\) \- For each of the N elements, we insert and/or delete from the heap which has a log K time complexity\.
 *   **Space Complexity:** O\(K\) \- Max heap can hold up to K elements\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/sliding-window-maximum)

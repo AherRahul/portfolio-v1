@@ -43,30 +43,6 @@ Lets understand this pattern with an example: **Find the top k largest elements 
 
 Suppose you have an array:
 
-0
-
-7
-
-1
-
-10
-
-2
-
-4
-
-3
-
-3
-
-4
-
-20
-
-5
-
-15
-
 You need to find the **top 3 largest elements**\. The answer would be: `[10, 15, 20]`\.
 
 There are multiple approaches to solve this problem:
@@ -74,8 +50,6 @@ There are multiple approaches to solve this problem:
 ### Sorting
 
 The simplest approach is to sort the array in **descending order** and take the first K elements\.
-
-Java
 
 ```java
 public void List<Integer> topKSorting(int[] arr, int k) {
@@ -124,8 +98,6 @@ Here’s how it works:
 1.  Popping an element from a heap of size `n` takes **O\(log n\)** time\.
 2.  Since we’re popping K elements, this step takes **O\(K log n\)** time\.
 
-Java
-
 ```java
 public void List<Integer> topKMaxHeap(int[] arr, int k) {
    PriorityQueue<Integer> maxHeap = new PriorityQueue<>((a, b) -> b - a);
@@ -159,8 +131,6 @@ Here’s how it works:
 
 *   After processing all elements, the heap will contain the k largest elements\.
 
-Java
-
 ```java
 public void List<Integer> topKMinHeap(int[] arr, int k) {
    PriorityQueue<Integer> minHeap = new PriorityQueue<>();
@@ -191,30 +161,6 @@ Let’s break down the time and space complexity of this approach:
 The **space complexity** is **O\(K\)** because we’re only storing K elements in the heap\.
 
 Let’s walk through the min heap approach with the example array and find the top 3 largest elements\.
-
-0
-
-7
-
-1
-
-10
-
-2
-
-4
-
-3
-
-3
-
-4
-
-20
-
-5
-
-15
 
 **1\. Initialize the min heap with the first 3 elements: \[7, 10, 4\]\.**
 

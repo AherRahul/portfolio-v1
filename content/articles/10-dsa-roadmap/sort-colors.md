@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given an array `nums` with `n` objects colored red, white, or blue, sort them [**in\-place**](https://en.wikipedia.org/wiki/In-place_algorithm) so that objects of the same color are adjacent, with the colors in the order red, white, and blue\.
 
@@ -21,103 +19,69 @@ We will use the integers `0`, `1`, and `2` to represent the color red, white
 
 You must solve this problem without using the library's sort function\.
 
-##### **Example 1:**
+#### Example 1:
 
-Input:nums=\[2,0,2,1,1,0\]
+**Input: nums = \[2, 0, 2, 1, 1, 0\]**
 
-0
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">1</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">5</span><span class="arr-val">0</span></div>
+  </div>
+</div>
 
-2
+**Output: \[0, 0, 1, 1, 2, 2\]**
 
-1
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">5</span><span class="arr-val">2</span></div>
+  </div>
+</div>
 
-0
+  <p class="arr-caption">🔴 red = 0 (zinc) &nbsp; ⬜ white = 1 (red) &nbsp; 🔵 blue = 2 (blue)</p>
 
-2
+#### Example 2:
 
-2
+**Input: nums = \[2, 0, 1\]**
 
-3
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">1</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
-1
+**Output: \[0, 1, 2\]**
 
-4
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+  </div>
+</div>
 
-1
-
-5
-
-0
-
-Output:\[0,0,1,1,2,2\]
-
-0
-
-0
-
-1
-
-0
-
-2
-
-1
-
-3
-
-1
-
-4
-
-2
-
-5
-
-2
-
-##### **Example 2:**
-
-Input:nums=\[2,0,1\]
-
-0
-
-2
-
-1
-
-0
-
-2
-
-1
-
-Output:\[0,1,2\]
-
-0
-
-0
-
-1
-
-1
-
-2
-
-2
-
-##### **Constraints:**
+#### Constraints:
 
 *   `n == nums.length`
 *   `1 <= n <= 300`
-*   `nums[i]` is either `0`, `1`, or `2`\.
+*   `nums[i]` is either `0`, `1`, or `2`\.
 
-**Follow up:** Could you come up with a one\-pass algorithm using only constant extra space?
+**Follow up:** Could you come up with a one-pass algorithm using only constant extra space?
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/sort-colors)
+## Approaches
 
-# Approaches
-
-## 1\. Counting Sort
+### 1\. Counting Sort
 
 #### Intuition:
 
@@ -125,12 +89,10 @@ The problem can be solved by first counting the number of occurrences of each co
 
 #### Steps:
 
-1.  Count the number of `0s`, `1s`, and `2s` in the array\.
-2.  Overwrite the array with the correct number of `0s`, followed by `1s`, and then `2s`\.
+1.  Count the number of `0s`, `1s`, and `2s` in the array\.
+2.  Overwrite the array with the correct number of each color\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -152,33 +114,79 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), where n is the number of elements in the array\. We iterate over the array twice \(once to count and once to overwrite\), so it's linear\.
 *   **Space Complexity:** O\(1\), since we are only using a fixed amount of extra space \(three counters and an index\)\.
 
-## 2\. One\-pass Dutch National Flag Problem \(Three Pointers\)
+### 2\. One-pass Dutch National Flag \(Three Pointers\)
 
 #### Intuition:
 
-This approach utilizes the famous Dutch National Flag algorithm which sorts the array using one pass and constant space by maintaining three pointers: `low`, `mid`, and `high`\.
+The classic **Dutch National Flag** algorithm by Dijkstra\. Maintain three pointers:
 
-*   `low` maintains the boundary of zeros\.
-*   `mid` iterates over the array\.
-*   `high` maintains the boundary of twos\.
+*   `low` — boundary between 0s and 1s
+*   `mid` — current element being processed
+*   `high` — boundary between 1s and 2s
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-ptr" data-label="L,M">↓</span><span class="arr-idx">0</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-ptr" data-label="H">↓</span><span class="arr-idx">5</span><span class="arr-val">0</span></div>
+  </div>
+  <p class="arr-step-label">Initial state — low=0, mid=0, high=5</p>
+</div>
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-ptr" data-label="L,M">↓</span><span class="arr-idx">0</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--ptr"><span class="arr-ptr" data-label="H">↓</span><span class="arr-idx">4</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">2</span></div>
+  </div>
+  <p class="arr-step-label">Step 1 — nums[mid]=2 → swap with high, high--. mid stays.</p>
+</div>
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--ptr"><span class="arr-ptr" data-label="L,M">↓</span><span class="arr-idx">1</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--ptr"><span class="arr-ptr" data-label="H">↓</span><span class="arr-idx">4</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">2</span></div>
+  </div>
+  <p class="arr-step-label">Step 2 — nums[mid]=0 → swap with low. low++, mid++.</p>
+</div>
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">5</span><span class="arr-val">2</span></div>
+  </div>
+  <p class="arr-step-label">Done — [0, 0, 1, 1, 2, 2]</p>
+</div>
+
 
 #### Steps:
 
-1.  Initialize three pointers: `low` at the start, `mid` at the start, and `high` at the end of the array\.
-2.  While `mid` is less than or equal to `high`:
-
-*   If the element at `mid` is `0`, swap it with the element at `low`\. Increment both `low` and `mid`\.
-*   If the element at `mid` is `1`, just increment `mid`\.
-*   If the element at `mid` is `2`, swap it with the element at `high`\. Decrement `high` \(do not increment `mid` because the swapped element from `high` may need further processing\)\.
+1.  Initialize `low = 0`, `mid = 0`, `high = n - 1`\.
+2.  While `mid <= high`:
+    *   `nums[mid] == 0` → swap with `nums[low]`, increment both `low` and `mid`\.
+    *   `nums[mid] == 1` → increment `mid` only\.
+    *   `nums[mid] == 2` → swap with `nums[high]`, decrement `high` \(don't increment `mid`\)\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -208,9 +216,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), where n is the number of elements in the array\. We perform a single linear scan of the array\.
 *   **Space Complexity:** O\(1\), as we are using only constant extra space for the pointers\.
 
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/sort-colors)

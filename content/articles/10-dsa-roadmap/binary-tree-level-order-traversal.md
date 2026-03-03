@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given the `root` of a binary tree, return _the level order traversal of its nodes' values_\. \(i\.e\., from left to right, level by level\)\.
 
@@ -21,17 +19,57 @@ Given the `root` of a binary tree, return _the level order traversal of its n
 
 Input:root=\[3,9,20,null,null,15,7\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">9</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">20</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">3</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">4</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">15</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">7</span></div>
+  </div>
+</div>
+
 3920157
 
 **Output:** \[\[3\],\[9,20\],\[15,7\]\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">3</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">9</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">20</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">15</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">7</span></div>
+    </div>
+  </div>
+</div>
 
 ##### **Example 2:**
 
 Input:root=\[1\]
 
-1
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 **Output:** \[\[1\]\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">1</span></div>
+    </div>
+  </div>
+</div>
 
 ##### **Example 3:**
 
@@ -44,11 +82,10 @@ Input:root=\[1\]
 *   The number of nodes in the tree is in the range `[0, 2000]`\.
 *   `-1000 <= Node.val <= 1000`
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/binary-tree-level-order-traversal)
 
-# Approaches
+## Approaches
 
-## 1\. Iterative using Queue \(Breadth\-First Search\)
+### 1\. Iterative using Queue \(Breadth\-First Search\)
 
 #### Intuition:
 
@@ -68,8 +105,6 @@ The most intuitive way to achieve level order traversal is by using a queue \(FI
 5.  Finally, return the `result` list which contains nodes level by level\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -110,14 +145,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\) \- Each node is processed exactly once\.
 *   **Space Complexity:** O\(N\) \- Holds up to N/2 nodes in the queue for the most balanced tree, which simplifies to O\(N\)\.
 
-View Animation
-
-## 2\. Recursive using Depth\-First Search
+### 2\. Recursive using Depth\-First Search
 
 #### Intuition:
 
@@ -137,8 +170,6 @@ An alternative is to use recursion to perform a depth\-first search, keeping tra
 4.  Return the `result` list containing the nodes level by level\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -169,7 +200,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\) \- Each node is visited once\.
 *   **Space Complexity:** O\(N\) \- Potentially O\(H\) for the recursion stack, where H is the height of the tree\. However, the result list also uses space proportional to N in the worst case\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/binary-tree-level-order-traversal)

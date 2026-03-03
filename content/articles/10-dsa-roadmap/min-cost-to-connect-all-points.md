@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given an array `points` representing integer coordinates of some points on a 2D\-plane, where **points\[i\] = \[x****i****, y****i****\]**\.
 
@@ -25,6 +23,31 @@ Return _the minimum cost to make all points connected\._ All points are connec
 
 **Input:** points = \[\[0,0\],\[2,2\],\[3,10\],\[5,2\],\[7,0\]\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">10</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">5</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">7</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+    </div>
+  </div>
+</div>
+
 **Output:** 20
 
 **Explanation:** We can connect the points as shown above to get the minimum cost of 20\.Notice that there is a unique path between every pair of points\.
@@ -32,6 +55,23 @@ Return _the minimum cost to make all points connected\._ All points are connec
 ##### **Example 2:**
 
 **Input:** points = \[\[3,12\],\[\-2,5\],\[\-4,1\]\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">12</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">-2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">5</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">-4</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+  </div>
+</div>
 
 **Output:** 18
 
@@ -41,11 +81,10 @@ Return _the minimum cost to make all points connected\._ All points are connec
 *   **\-10****6** **<= x****i****, y****i** **<= 10****6**
 *   All pairs **\(x****i****, y****i****\)** are distinct\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/min-cost-to-connect-all-points)
 
-# Approaches
+## Approaches
 
-## 1\. Kruskal's Algorithm with Union\-Find
+### 1\. Kruskal's Algorithm with Union\-Find
 
 #### Intuition:
 
@@ -54,8 +93,6 @@ The problem can be translated into finding a Minimum Spanning Tree \(MST\) of a 
 Kruskal’s Algorithm is a common approach to solve the MST problem\. It sorts all the edges in increasing order of their weights and adds them one by one to the MST if they don’t form a cycle\. To check cycles efficiently, we use a Union\-Find data structure\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -131,20 +168,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(E log E \+ E α\(V\)\), where E is the number of edges and V is the number of vertices\. Sorting the edges takes O\(E log E\), and the union\-find operations take O\(E α\(V\)\)\.
 *   **Space Complexity:** O\(E \+ V\), storing edges and union\-find structures\.
 
-## 2\. Prim's Algorithm using Priority Queue
+### 2\. Prim's Algorithm using Priority Queue
 
 #### Intuition:
 
 Prim's Algorithm grows an MST from a single starting point by adding the cheapest edge to the set of connected points\. We can implement this efficiently using a priority queue to always extend MST with the lowest weight edge available\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -187,7 +222,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(V^2 log V\), where V is the number of vertices\. Each vertex can potentially have an edge to all other vertices and each operation in priority queue is log V\.
 *   **Space Complexity:** O\(V\), storing minimum distances and mark arrays\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/min-cost-to-connect-all-points)

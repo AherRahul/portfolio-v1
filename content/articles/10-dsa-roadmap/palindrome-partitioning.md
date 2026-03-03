@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given a string `s`, partition `s` such that every substring of the partition is a **palindrome**\. Return _all possible palindrome partitioning of_ `s`\.
 
@@ -23,22 +21,43 @@ Given a string `s`, partition `s` such that every substring of the partitio
 
 **Output:** \[\["a","a","b"\],\["aa","b"\]\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">a</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">a</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">b</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">aa</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">b</span></div>
+    </div>
+  </div>
+</div>
+
 ##### **Example 2:**
 
 **Input:** s = "a"
 
 **Output:** \[\["a"\]\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">a</span></div>
+    </div>
+  </div>
+</div>
+
 ##### **Constraints:**
 
 *   `1 <= s.length <= 16`
 *   `s` contains only lowercase English letters\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/palindrome-partitioning)
 
-# Approaches
+## Approaches
 
-## 1\. Backtracking
+### 1\. Backtracking
 
 #### Intuition:
 
@@ -49,8 +68,6 @@ The core idea is to use backtracking to generate all possible partitioning of th
 3.  If a partitioning of the entire string is found, add it to the result list\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -92,12 +109,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n \* 2^n\), where n is the length of the string\. This complexity is due to the fact that each character might either start its own substring or extend a previous one, leading to exponential possibilities\.
 *   **Space Complexity:** O\(n\), where n is the depth of the recursion\. The space is used by the recursive call stack\.
 
-## 2\. Dynamic Programming \+ Backtracking
+### 2\. Dynamic Programming \+ Backtracking
 
 #### Intuition:
 
@@ -107,8 +124,6 @@ We can optimize the palindrome checking part by using dynamic programming \(DP\)
 2.  Use this DP table in the backtracking process to quickly check if a substring is a palindrome\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -148,7 +163,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^2 \* 2^n\), where n is the length of the string\. The DP precomputation is O\(n^2\), and the backtracking process remains exponential\.
 *   **Space Complexity:** O\(n^2\) for the DP table plus O\(n\) for the recursion stack\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/palindrome-partitioning)

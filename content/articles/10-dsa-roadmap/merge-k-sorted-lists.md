@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given an array of `k` linked\-lists `lists`, each linked\-list is sorted in ascending order\.
 
@@ -23,7 +21,39 @@ _Merge all the linked\-lists into one sorted linked\-list and return it\._
 
 **Input:** lists = \[\[1,4,5\],\[1,3,4\],\[2,6\]\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">4</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">5</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">4</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">6</span></div>
+    </div>
+  </div>
+</div>
+
 **Output:** \[1,1,2,3,4,4,5,6\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">5</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">6</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">7</span><span class="arr-val">6</span></div>
+  </div>
+</div>
 
 **Explanation:** The linked\-lists are:\[ 1\->4\->5, 1\->3\->4, 2\->6\]
 
@@ -41,6 +71,13 @@ merging them into one sorted linked list:
 
 **Input:** lists = \[\[\]\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+    </div>
+  </div>
+</div>
+
 **Output:** \[\]
 
 ##### **Constraints:**
@@ -52,11 +89,10 @@ merging them into one sorted linked list:
 *   **lists\[i\] is sorted in ascending order\.**
 *   **The sum of lists\[i\]\.length will not exceed 10****4**\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/merge-k-sorted-lists)
 
-# Approaches
+## Approaches
 
-## 1\. Naive Approach: Brute Force Merging
+### 1\. Naive Approach: Brute Force Merging
 
 #### Intuition:
 
@@ -69,8 +105,6 @@ The simplest strategy is to flatten the k linked lists into a single list, sort 
 3.  Use the sorted values to construct a new linked list\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -101,12 +135,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N log N\), where N is the total number of nodes across all k lists\. We gather all values, and then sort them\.
 *   **Space Complexity:** O\(N\), to store all node values\.
 
-## 2\. Heap Approach: Using a Min\-Heap
+### 2\. Heap Approach: Using a Min\-Heap
 
 #### Intuition:
 
@@ -118,8 +152,6 @@ Utilize a min\-heap to efficiently retrieve the smallest current head from k lis
 2.  Continuously extract the smallest element from the heap, add it to the output list, and insert its next element back into the heap\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -152,12 +184,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N log k\), where N is the total number of nodes and k is the number of linked lists\. Each node insertion/extraction in the heap takes log k time\.
 *   **Space Complexity:** O\(k\), for storing k nodes in the heap\.
 
-## 3\. Optimized Approach: Divide and Conquer
+### 3\. Optimized Approach: Divide and Conquer
 
 #### Intuition:
 
@@ -169,8 +201,6 @@ Use the divide\-and\-conquer technique\. Merge lists in pairs and repeat the pro
 2.  Repeat the pairing and merging until only one list remains\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -215,7 +245,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N log k\), as each merge operation deals with N nodes in log k depth of recursive calls\.
 *   **Space Complexity:** O\(log k\), due to the recursion stack\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/merge-k-sorted-lists)

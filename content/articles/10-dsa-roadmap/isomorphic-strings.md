@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given two strings `s` and `t`, _determine if they are isomorphic_\.
 
@@ -56,11 +54,10 @@ The strings `s` and `t` can not be made identical as `'o'` needs to be map
 *   **t\.length == s\.length**
 *   `s` and `t` consist of any valid ascii character\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/isomorphic-strings)
 
-# Approaches
+## Approaches
 
-## 1\. Hash Maps
+### 1\. Hash Maps
 
 #### Intuition:
 
@@ -70,8 +67,6 @@ To better understand the character relationships, we'll use two hash maps\. This
 *   For each character, ensure the mapping is unique and consistent in both directions\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -105,12 +100,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), where n is the length of the string\. We iterate through each character once\.
 *   **Space Complexity:** O\(1\), specifically O\(26\) if considering distinct lowercase letters\. In practice, the space used by hash maps is relative to the character set\.
 
-## 2\. Frequency Array
+### 2\. Frequency Array
 
 #### Intuition:
 
@@ -120,8 +115,6 @@ Since `s` and `t` are ascii characters, we can use frequency arrays of size 256 
 *   Check if there is a consistent mapping from characters of `s` to `t` and `t` to `s`\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -148,7 +141,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), where n is the length of the string\. We iterate over the string once\.
 *   **Space Complexity:** O\(1\)\. The space used by the arrays is constant due to the fixed size \(256\)\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/isomorphic-strings)

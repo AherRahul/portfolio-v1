@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given two strings `text1` and `text2`, return _the length of their longest_ _**common subsequence**__\._ If there is no **common subsequence**, return `0`\.
 
@@ -52,11 +50,10 @@ A **common subsequence** of two strings is a subsequence that is common to bot
 *   `1 <= text1.length, text2.length <= 1000`
 *   `text1` and `text2` consist of only lowercase English characters\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/longest-common-subsequence)
 
-# Approaches
+## Approaches
 
-## 1\. Recursion
+### 1\. Recursion
 
 #### **Intuition:**
 
@@ -71,8 +68,6 @@ The simplest way to solve this problem is to use recursion\. For each character 
 The maximum of these choices will give us the length of the longest common subsequence\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {
@@ -97,20 +92,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(2^\{min\(m, n\)\}\)\) due to exponential number of subproblems where \(m\) and \(n\) are the lengths of the two strings\.
 *   **Space Complexity:** O\(m \+ n\) considering the call stack space\.
 
-## 2\. Recursion with Memoization \(Top\-Down DP\)
+### 2\. Recursion with Memoization \(Top\-Down DP\)
 
 #### **Intuition:**
 
 Recursion leads to overlapping subproblems\. By storing and reusing already computed results, we can reduce unnecessary computations\. We use a 2D array \(memoization table\) to store the lengths of the longest common subsequence for substrings seen so far\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {
@@ -142,12 +135,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(m \* n\)
 *   **Space Complexity:** O\(m \* n\), due to memoization table\.
 
-## 3\. Dynamic Programming \(Bottom\-Up DP\)
+### 3\. Dynamic Programming \(Bottom\-Up DP\)
 
 #### **Intuition:**
 
@@ -160,8 +153,6 @@ Instead of solving the problem recursively, use an iterative approach by filling
 *   Otherwise, `dp[i][j] = Math.max(dp[i-1][j], dp[i][j-1])`\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {
@@ -185,9 +176,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(m \* n\)
 *   **Space Complexity:** O\(m \* n\)  though it can be improved to O\(min\(m, n\)\) by using a 1D array if desired\.
 
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/longest-common-subsequence)

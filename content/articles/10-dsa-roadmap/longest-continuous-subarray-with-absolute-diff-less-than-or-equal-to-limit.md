@@ -12,15 +12,22 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given an array of integers `nums` and an integer `limit`, return the size of the longest **non\-empty** subarray such that the absolute difference between any two elements of this subarray is less than or equal to `limit`_\._
 
 ##### **Example 1:**
 
 **Input:** nums = \[8,2,4,7\], limit = 4
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">8</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">7</span></div>
+  </div>
+</div>
 
 **Output:** 2
 
@@ -50,6 +57,17 @@ Given an array of integers `nums` and an integer `limit`, return the size of 
 
 **Input:** nums = \[10,1,2,4,7,2\], limit = 5
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">10</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">7</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">2</span></div>
+  </div>
+</div>
+
 **Output:** 4
 
 **Explanation:** The subarray \[2,4,7,2\] is the longest since the maximum absolute diff is |2\-7| = 5 <= 5\.
@@ -57,6 +75,19 @@ Given an array of integers `nums` and an integer `limit`, return the size of 
 ##### **Example 3:**
 
 **Input:** nums = \[4,2,2,2,4,4,2,2\], limit = 0
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">7</span><span class="arr-val">2</span></div>
+  </div>
+</div>
 
 **Output:** 3
 
@@ -66,11 +97,10 @@ Given an array of integers `nums` and an integer `limit`, return the size of 
 *   **1 <= nums\[i\] <= 10****9**
 *   **0 <= limit <= 10****9**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force
+### 1\. Brute Force
 
 #### Intuition:
 
@@ -84,8 +114,6 @@ The simplest way to solve this problem is by checking every possible subarray an
 4.  Keep track of the length of the longest valid subarray found\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -115,12 +143,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N^2\) \- All possible subarrays are considered, each requiring potentially a scan from start to end\.
 *   **Space Complexity:** O\(1\) \- Only a few integer variables utilized for computation\.
 
-## 2\. Optimized Sliding Window with Two Deques
+### 2\. Optimized Sliding Window with Two Deques
 
 #### Intuition:
 
@@ -137,8 +165,6 @@ The brute force solution is inefficient due to redundant checks for the max and 
 7.  Return the result\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -178,7 +204,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\) \- Each element is added and removed from the deque at most once\.
 *   **Space Complexity:** O\(N\) \- Space for the two deques holding indices\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit)

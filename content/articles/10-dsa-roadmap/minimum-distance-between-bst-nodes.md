@@ -11,15 +11,23 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given the `root` of a Binary Search Tree \(BST\), return _the minimum difference between the values of any two different nodes in the tree_\.
 
 ##### **Example 1:**
 
 Input:root=\[4,2,6,1,3\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">6</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">3</span></div>
+  </div>
+</div>
 
 42136
 
@@ -28,6 +36,18 @@ Input:root=\[4,2,6,1,3\]
 ##### **Example 2:**
 
 Input:root=\[1,0,48,null,null,12,49\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">1</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">48</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">3</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">4</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">12</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">49</span></div>
+  </div>
+</div>
 
 10481249
 
@@ -38,11 +58,10 @@ Input:root=\[1,0,48,null,null,12,49\]
 *   The number of nodes in the tree is in the range `[2, 100]`\.
 *   **0 <= Node\.val <= 10****5**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/minimum-distance-between-bst-nodes)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force with Inorder Traversal
+### 1\. Brute Force with Inorder Traversal
 
 #### Intuition:
 
@@ -57,12 +76,12 @@ The brute force approach is to perform an inorder traversal of the BST to obtain
 
 #### Code:
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\) where N is the number of nodes in the tree\. We visit each node exactly once\.
 *   **Space Complexity:** O\(N\) for the auxiliary space used to store the values of nodes\.
 
-## 2\. Optimized Inorder Traversal
+### 2\. Optimized Inorder Traversal
 
 #### Intuition:
 
@@ -76,12 +95,12 @@ We can optimize the space usage by calculating the minimum difference on\-the\-f
 
 #### Code:
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\) where N is the number of nodes\. Still, we visit each node exactly once\.
 *   **Space Complexity:** O\(H\) where H is the height of the tree\. This accounts for the recursion stack during the depth\-first traversal which, in the worst case, is the height of the tree\.
 
-## 3\. Iterative Inorder Traversal
+### 3\. Iterative Inorder Traversal
 
 #### **Intuition:**
 
@@ -94,9 +113,9 @@ Instead of storing all node values, we can compute the minimum difference on the
 *   For each visited node, compute the difference between its value and the previous value\.
 *   Update the minimum difference whenever a smaller gap is found\.
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\) where N is the number of nodes\. We visit each node exactly once\.
 *   **Space Complexity:** O\(H\) where H is the height of the tree\.
 
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/minimum-distance-between-bst-nodes)

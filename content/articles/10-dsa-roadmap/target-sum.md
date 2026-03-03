@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given an integer array `nums` and an integer `target`\.
 
@@ -26,6 +24,16 @@ Return the number of different **expressions** that you can build, which evalu
 ##### **Example 1:**
 
 **Input:** nums = \[1,1,1,1,1\], target = 3
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 **Output:** 5
 
@@ -45,6 +53,12 @@ Return the number of different **expressions** that you can build, which evalu
 
 **Input:** nums = \[1\], target = 1
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+  </div>
+</div>
+
 **Output:** 1
 
 ##### **Constraints:**
@@ -54,11 +68,10 @@ Return the number of different **expressions** that you can build, which evalu
 *   `0 <= sum(nums[i]) <= 1000`
 *   `-1000 <= target <= 1000`
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/target-sum)
 
-# Approaches
+## Approaches
 
-## 1\. Recursive Backtracking
+### 1\. Recursive Backtracking
 
 The first approach uses recursion to explore all possible ways to add or subtract numbers from the array to achieve the target sum\.
 
@@ -72,8 +85,6 @@ For each number in the array, you have two choices:
 By recursively exploring both these choices, you can determine if the target sum can be achieved\. This will involve exploring all `2^n` combinations, where `n` is the length of the array\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -96,12 +107,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** `O(2^n)`, where `n` is the number of elements in the array\. This is because we are exploring both add and subtract options for each number\.
 *   **Space Complexity:** `O(n)`, due to the recursive stack space\.
 
-## 2\. Memoization \(Top\-Down DP\)
+### 2\. Memoization \(Top\-Down DP\)
 
 The recursive approach has a lot of overlapping subproblems, hence we can use memoization to store and reuse the results of these subproblems\.
 
@@ -110,8 +121,6 @@ The recursive approach has a lot of overlapping subproblems, hence we can use me
 By using a hashmap to save previously computed results, we can avoid redundant calculations\. The key is to store the index and the current sum as a tuple \(or concatenated string\) to uniquely identify each state\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -139,12 +148,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** `O(n * s)`, where `n` is the length of the array and `s` is the sum of the array\. The memoization reduces the number of recursive calls\.
 *   **Space Complexity:** `O(n * s)`, for the memoization hashmap plus stack space\.
 
-## 3\. Dynamic Programming \(Bottom\-Up DP\)
+### 3\. Dynamic Programming \(Bottom\-Up DP\)
 
 We can further optimize by using a bottom\-up approach to construct a dp array\. This transforms the problem of target sum into a subset sum problem using transformation and leads to more efficient computation\.
 
@@ -155,8 +164,6 @@ Consider the equation `sum(P) - sum(N) = target`, where `P` is the positive s
 This requires `target + sum(nums)` to be even and non\-negative\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -190,7 +197,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** `O(n * s)`, where `n` is the length of nums and `s` is the target sum transformed as above\.
 *   **Space Complexity:** `O(s)`, where `s` is the target sum\. We use an array proportional to the target sum\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/target-sum)

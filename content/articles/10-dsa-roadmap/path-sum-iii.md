@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given the `root` of a binary tree and an integer `targetSum`, return _the number of paths where the sum of the values along the path equals_ `targetSum`\.
 
@@ -23,6 +21,22 @@ The path does not need to start or end at the root or a leaf, but it must go dow
 
 **Input:** root = \[10,5,\-3,3,2,null,11,3,\-2,null,1\], targetSum = 8
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">10</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">-3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">5</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">11</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">7</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">8</span><span class="arr-val">-2</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">9</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">10</span><span class="arr-val">1</span></div>
+  </div>
+</div>
+
 10533\-221\-311
 
 **Output:** 3
@@ -30,6 +44,24 @@ The path does not need to start or end at the root or a leaf, but it must go dow
 ##### **Example 2:**
 
 **Input:** root = \[5,4,8,11,null,13,4,7,2,null,null,5,1\], targetSum = 22
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">8</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">11</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">4</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">13</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">7</span><span class="arr-val">7</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">8</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">9</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">10</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">11</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">12</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 541172813451
 
@@ -41,11 +73,10 @@ The path does not need to start or end at the root or a leaf, but it must go dow
 *   **\-10****9** **<= Node\.val <= 10****9**
 *   **\-1000 <= targetSum <= 1000**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/path-sum-iii)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force Approach
+### 1\. Brute Force Approach
 
 #### Intuition:
 
@@ -58,8 +89,6 @@ The brute force approach involves iterating over each node and trying to find al
 3.  Use another function to iterate over each node and treat it as a starting point\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -96,12 +125,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^2\) where \(n\) is the number of nodes in the tree\. In the worst case, each node is visited \(n\) times\.
 *   **Space Complexity:** O\(n\) for the recursion stack in the worst case if the tree is completely unbalanced\.
 
-## 2\. Prefix Sum Approach
+### 2\. Prefix Sum Approach
 
 #### Intuition:
 
@@ -115,8 +144,6 @@ This optimized approach uses a hashmap to store the prefix sum frequencies encou
 4.  Update the prefix sum count in the hashmap while going deeper into the recursion and undo changes when backtracking\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -151,7 +178,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\) since each node is visited once\.
 *   **Space Complexity:** O\(n\) for the hashmap storing the prefix sums and for the recursion stack in the worst case\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/path-sum-iii)

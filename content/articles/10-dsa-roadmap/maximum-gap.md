@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given an integer array `nums`, return _the maximum difference between two successive elements in its sorted form_\. If the array contains less than two elements, return `0`\.
 
@@ -23,6 +21,15 @@ You must write an algorithm that runs in linear time and uses linear extra space
 
 **Input:** nums = \[3,6,9,1\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">6</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">9</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">1</span></div>
+  </div>
+</div>
+
 **Output:** 3
 
 **Explanation:** The sorted form of the array is \[1,3,6,9\], either \(3,6\) or \(6,9\) has the maximum difference 3\.
@@ -30,6 +37,12 @@ You must write an algorithm that runs in linear time and uses linear extra space
 ##### **Example 2:**
 
 **Input:** nums = \[10\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">10</span></div>
+  </div>
+</div>
 
 **Output:** 0
 
@@ -40,11 +53,10 @@ You must write an algorithm that runs in linear time and uses linear extra space
 *   **1 <= nums\.length <= 10****5**
 *   **0 <= nums\[i\] <= 10****9**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/maximum-gap)
 
-# Approaches
+## Approaches
 
-## 1\. Simple Sort and Compare
+### 1\. Simple Sort and Compare
 
 #### Intuition:
 
@@ -58,8 +70,6 @@ The simplest way to solve this problem is to sort the array and then find the ma
 4.  Update `maxGap` if a larger difference is found\.
 
 #### Code:
-
-Java
 
 ```java
 class MaximumGap {
@@ -85,12 +95,12 @@ class MaximumGap {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N log N\) due to sorting the array\.
 *   **Space Complexity:** O\(1\) if the sort is done in place\.
 
-## 2\. Bucket Sort
+### 2\. Bucket Sort
 
 #### Intuition:
 
@@ -105,8 +115,6 @@ To achieve a better time complexity, we can use a bucket sort method\. The core 
 5.  Finally, iterate through the buckets to calculate the maximum gap between the maximum value of the current non\-empty bucket and the minimum value of the next non\-empty bucket\.
 
 #### Code:
-
-Java
 
 ```java
 class MaximumGap {
@@ -156,7 +164,9 @@ class MaximumGap {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\) for both average and worst case due to the linear pass to fill buckets and the linear pass to find the maximum gap\.
 *   **Space Complexity:** O\(N\) due to the space used for the buckets\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/maximum-gap)

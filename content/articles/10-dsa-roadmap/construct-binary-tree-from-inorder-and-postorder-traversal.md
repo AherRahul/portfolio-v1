@@ -12,9 +12,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given two integer arrays `inorder` and `postorder` where `inorder` is the inorder traversal of a binary tree and `postorder` is the postorder traversal of the same tree, construct and return _the binary tree_\.
 
@@ -24,6 +22,18 @@ Given two integer arrays `inorder` and `postorder` where `inorder` is the 
 
 Output:\[3,9,20,null,null,15,7\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">9</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">20</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">5</span><span class="arr-val">15</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">6</span><span class="arr-val">7</span></div>
+  </div>
+</div>
+
 3920157
 
 ##### **Example 2:**
@@ -31,6 +41,12 @@ Output:\[3,9,20,null,null,15,7\]
 **Input:** inorder = \[\-1\], postorder = \[\-1\]
 
 **Output:** \[\-1\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">-1</span></div>
+  </div>
+</div>
 
 ##### **Constraints:**
 
@@ -42,11 +58,10 @@ Output:\[3,9,20,null,null,15,7\]
 *   `inorder` is **guaranteed** to be the inorder traversal of the tree\.
 *   `postorder` is **guaranteed** to be the postorder traversal of the tree\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal)
 
-# Approaches
+## Approaches
 
-## 1\. Recursive Solution
+### 1\. Recursive Solution
 
 #### **Intuition:**
 
@@ -59,8 +74,6 @@ In a binary tree, the postorder traversal visits the left subtree, the right sub
 3.  Recursively build the left and right subtrees using the same logic\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -98,12 +111,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^2\) – We might end up searching through the inorder list for the root multiple times\.
 *   **Space Complexity:** O\(n\) – for the recursion stack\.
 
-## 2\. Optimized Recursive Solution Using HashMap
+### 2\. Optimized Recursive Solution Using HashMap
 
 #### **Intuition:**
 
@@ -115,8 +128,6 @@ To improve the efficiency of finding the root index in the inorder traversal, we
 2.  We find the root element position from the map directly, reducing time complexity\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -156,7 +167,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\) – Improved by using a map to get indices in constant time\.
 *   **Space Complexity:** O\(n\) – for the hashmap and recursion stack\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal)

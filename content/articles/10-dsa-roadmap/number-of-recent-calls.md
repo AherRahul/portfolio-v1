@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You have a `RecentCounter` class which counts the number of recent requests within a certain time frame\.
 
@@ -52,11 +50,10 @@ recentCounter.ping(3002);  // requests = [1, 100, 3001, 3002], range is [2,3002]
 *   Each test case will call `ping` with **strictly increasing** values of `t`\.
 *   At most **10****4** calls will be made to `ping`\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/number-of-recent-calls)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force with List
+### 1\. Brute Force with List
 
 #### **Intuition**:
 
@@ -69,8 +66,6 @@ The problem requires us to count the number of calls within a sliding window of 
 3.  Iterate over the list and count how many timestamps fall within this window\.
 
 #### Code:
-
-Java
 
 ```java
 class RecentCounter {
@@ -97,12 +92,12 @@ class RecentCounter {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** Every call takes `O(n)` where `n` is the number of timestamps stored\. This is because we may need to iterate over the list to count\.
 *   **Space Complexity:** `O(n)` since we need to store all the timestamps\.
 
-## 2\. Optimized with Queue
+### 2\. Optimized with Queue
 
 #### **Intuition**:
 
@@ -116,8 +111,6 @@ Instead of iterating over all past calls, we can use a queue to efficiently add 
 4.  The size of the queue at any time will give the count of timestamps in the required range\.
 
 #### Code:
-
-Java
 
 ```java
 class RecentCounter {
@@ -141,7 +134,9 @@ class RecentCounter {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** Each `ping` operation is `O(1)` on average since we are performing operations that affect only the current and the oldest timestamps\.
 *   **Space Complexity:** `O(n)` where `n` is the number of timestamps in the last 3000 milliseconds\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/number-of-recent-calls)

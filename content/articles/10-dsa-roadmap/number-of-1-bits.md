@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given a positive integer `n`, write a function that returns the number of set bits in its binary representation \(also known as the [Hamming weight](http://en.wikipedia.org/wiki/Hamming_weight)\)\. 
 
@@ -47,11 +45,10 @@ Given a positive integer `n`, write a function that returns the number of set 
 
 **Follow up:** If this function is called many times, how would you optimize it?
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/number-of-1-bits/)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force
+### 1\. Brute Force
 
 #### Intuition:
 
@@ -66,8 +63,6 @@ Counting the number of 1 bits in an integer can be approached by iterating throu
 5.  Return the counter as the result\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -88,12 +83,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(32\) = O\(1\): Since the integer is a fixed 32\-bit value\.
 *   **Space Complexity:** O\(1\): Only constant space is used\.
 
-## 2\. Bit Manipulation
+### 2\. Bit Manipulation
 
 #### Intuition:
 
@@ -146,8 +141,6 @@ Loop ends because n = 0. Total 1-bits: 3
 
 #### Code:
 
-Java
-
 ```java
 class Solution {
    // Function to count the number of 1 bits in an integer
@@ -165,7 +158,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(k\): k is the number of 1\-bits in the integer\. In the worst case, k can be up to 32 for a 32\-bit integer\.
 *   **Space Complexity:** O\(1\): Only constant space is used\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/number-of-1-bits/)

@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given an integer `n`, return _all the structurally unique_ _**BST'**__s \(binary search trees\), which has exactly_ `n` _nodes of unique values from_ `1` _to_ `n`\. Return the answer in **any order**\.
 
@@ -23,21 +21,64 @@ Given an integer `n`, return _all the structurally unique_ _**BST'**__s \(bin
 
 **Output:** \[\[1,null,2,null,3\],\[1,null,3,2\],\[2,1,3\],\[3,1,null,null,2\],\[3,2,null,1\]\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">null</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">null</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">3</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">null</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">2</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">3</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">null</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">null</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">2</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">null</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">1</span></div>
+    </div>
+  </div>
+</div>
+
 ##### **Example 2:**
 
 **Input:** n = 1
 
 **Output:** \[\[1\]\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">1</span></div>
+    </div>
+  </div>
+</div>
+
 ##### **Constraints:**
 
 *   `1 <= n <= 8`
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/unique-binary-search-trees-ii)
 
-# Approaches
+## Approaches
 
-## 1\. Recursive Approach
+### 1\. Recursive Approach
 
 #### Intuition:
 
@@ -51,8 +92,6 @@ The problem can be divided as follows:
 *   Recursively generate all unique BSTs for these left and right subtrees, and combine them to form the required trees\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -91,20 +130,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(4^n / sqrt\{n\}\) \- There can be an exponential number of trees\.
 *   **Space Complexity:** O\(4^n / sqrt\{n\}\) \- For the storage of trees\.
 
-## 2\. Dynamic Programming Approach
+### 2\. Dynamic Programming Approach
 
 #### Intuition:
 
 Instead of recalculating solutions for the same subproblems multiple times, we can use a dynamic programming strategy to store results of previously solved problems in a memoization form\. This helps reduce redundant computations but is more complex to set up and typically provides similar time complexity benefits for this specific problem\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -143,7 +180,9 @@ class Solution {
 
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(4^n / sqrt\{n\}\) \- Results are stored for repeated subproblems\.
 *   **Space Complexity:** O\(n ^ 2\) \- Due to the memoization matrix\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/unique-binary-search-trees-ii)

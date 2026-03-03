@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given a sorted array of distinct integers and a target value, return the index if the target is found\. If not, return the index where it would be if it were inserted in order\.
 
@@ -23,25 +21,14 @@ You must write an algorithm with `O(log n)` runtime complexity\.
 
 **Input:** nums = \[1,3,5,6\], target = 5
 
-0
-
-1
-
-1
-
-3
-
-2
-
-5
-
-3
-
-5
-
-4
-
-6
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">6</span></div>
+  </div>
+</div>
 
 **Output:** 2
 
@@ -49,25 +36,14 @@ You must write an algorithm with `O(log n)` runtime complexity\.
 
 **Input:** nums = \[1,3,5,6\], target = 2
 
-0
-
-1
-
-1
-
-2
-
-2
-
-3
-
-3
-
-5
-
-4
-
-6
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">6</span></div>
+  </div>
+</div>
 
 **Output:** 1
 
@@ -75,25 +51,14 @@ You must write an algorithm with `O(log n)` runtime complexity\.
 
 **Input:** nums = \[1,3,5,6\], target = 7
 
-0
-
-1
-
-1
-
-3
-
-2
-
-5
-
-3
-
-6
-
-4
-
-7
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">6</span></div>
+  </div>
+</div>
 
 **Output:** 4
 
@@ -104,11 +69,10 @@ You must write an algorithm with `O(log n)` runtime complexity\.
 *   `nums` contains **distinct** values sorted in **ascending** order\.
 *   **\-10****4** **<= target <= 10****4**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/search-insert-position)
 
-# Approaches
+## Approaches
 
-## 1\. Linear Search
+### 1\. Linear Search
 
 #### Intuition:
 
@@ -122,8 +86,6 @@ A straightforward approach to solve this problem is to go through the array and 
 4.  If the loop completes without finding a position, it means the target is larger than all elements, so return the length of the array as the insertion point\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -144,12 +106,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity**: O\(n\), where n is the number of elements in the array\. This is because we may have to check each element in the worst case\.
 *   **Space Complexity**: O\(1\), as there is no extra space required for this approach\.
 
-## 2\. Binary Search
+### 2\. Binary Search
 
 #### Intuition:
 
@@ -168,8 +130,6 @@ Since the array is sorted, we can use binary search to find the position for the
 4.  If we didn't find the target, `left` will be the position where the target should be inserted\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -196,9 +156,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity**: O\(log n\), where n is the number of elements in the array\. Binary search reduces the problem size by half each iteration, leading to a logarithmic time complexity\.
 *   **Space Complexity**: O\(1\), as binary search uses a constant amount of extra space\.
 
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/search-insert-position)

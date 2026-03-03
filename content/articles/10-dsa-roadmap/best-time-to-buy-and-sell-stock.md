@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Question
 
 You are given an array `prices` where `prices[i]` is the price of a given stock on the **i****th** day\.
 
@@ -21,88 +19,57 @@ You want to maximize your profit by choosing a **single day** to buy one stock
 
 Return _the maximum profit you can achieve from this transaction_\. If you cannot achieve any profit, return `0`\.
 
-##### **Example 1:**
+#### Example 1:
 
-Input:prices=\[7,1,5,3,6,4\]
+**Input: prices = \[7, 1, 5, 3, 6, 4\]**
 
-0
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">7</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">6</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">4</span></div>
+  </div>
+</div>
 
-7
+  <p class="arr-caption">Buy at index 1 (price=1) → Sell at index 4 (price=6)</p>
 
-1
+**Output: 5** &nbsp;&nbsp;— profit = 6 − 1 = 5
 
-1
+#### Example 2:
 
-2
+**Input: prices = \[7, 6, 4, 3, 1\]**
 
-5
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">7</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">6</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
-3
+  <p class="arr-caption">Prices only decrease — no profitable trade possible</p>
 
-3
+**Output: 0** &nbsp;&nbsp;— always decreasing, cannot make profit\.
 
-4
+#### Constraints:
 
-6
+*   **1 <= prices\.length <= 10^5**
+*   **0 <= prices\[i\] <= 10^4**
 
-5
+## Approaches
 
-4
+### 1\. Brute Force
 
-Output:5
+#### Intuition:
 
-5
+Try all possible pairs of \(buy day, sell day\) where sell day > buy day\. Compute profit for each and track the max\. O\(n²\) — works for small inputs\.
 
-**Explanation:** Buy on day 2 \(price = 1\) and sell on day 5 \(price = 6\), profit = 6 \- 1 = 5\.
-
-Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell\.
-
-##### **Example 2:**
-
-Input:prices=\[7,6,4,3,1\]
-
-0
-
-7
-
-1
-
-6
-
-2
-
-4
-
-3
-
-3
-
-4
-
-1
-
-Output:0
-
-0
-
-**Explanation:** In this case, no transactions are done and the max profit = 0\.
-
-##### **Constraints:**
-
-*   **1 <= prices\.length <= 10****5**
-*   **0 <= prices\[i\] <= 10****4**
-
-#### [Solve it on LeetCode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock)
-
-# Approaches
-
-## 1\. Brute Force
-
-#### **Intuition:**
-
-Using a brute force approach, we can try all possible combinations of buying and selling days and compute the profit for each combination\. The maximum of these profits will be our answer\.
-
-#### **Steps:**
+#### Steps:
 
 1.  Iterate through the list of prices with two nested loops\.
 2.  The outer loop will represent the buying day\.
@@ -111,8 +78,6 @@ Using a brute force approach, we can try all possible combinations of buying and
 5.  Maintain a variable to keep track of the maximum profit observed\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -137,31 +102,27 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^2\) due to the two nested loops\.
 *   **Space Complexity:** O\(1\) as no extra space is used\.
 
-## 2\. One Pass Approach
+### 2\. One Pass Approach
 
 #### **Intuition:**
 
 Instead of trying all possible pairs of buy and sell days, we can iterate through the list of prices once while keeping track of the minimum price encountered so far\. At each step, we calculate what the profit would be if we sold at the current price, and update the maximum profit correspondingly\.
 
-#### **Approach:**
+#### Intuition:
 
-Scan prices left to right while maintaining:
+Scan left to right while tracking:
 
 *   **minPrice**: the lowest price seen so far \(best day to have bought before or on today\)\.
 *   **maxProfit**: the best profit achievable if we must **sell on or after** that minPrice day and **on or before** today\.
 
-At each day’s price `p`:
-
-1.  Update `minPrice = min(minPrice, p)`\. This locks in the cheapest buy seen so far\.
-2.  Compute potential profit if we sell **today**: `p - minPrice`\.
-3.  Update `maxProfit = max(maxProfit, p - minPrice)`\.
-
-Return `maxProfit` after the scan\.
+At each price `p`:
+1.  Update `minPrice = min(minPrice, p)`\.
+2.  Update `maxProfit = max(maxProfit, p - minPrice)`\.
 
 #### Why this works?
 
@@ -170,8 +131,6 @@ Return `maxProfit` after the scan\.
 *   The global optimum is the maximum over all these per\-day profits, which we maintain as `maxProfit`\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -197,39 +156,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
-*   **Time Complexity:** O\(n\) due to single loop\.
-*   **Space Complexity:** O\(1\) as no extra space is used\.
+*   **Time Complexity:** O\(n\) — single pass\.
+*   **Space Complexity:** O\(1\) — no extra space\.
 
-#### Example Walkthrough:
-
-0
-
-7
-
-1
-
-1
-
-2
-
-5
-
-3
-
-3
-
-4
-
-6
-
-5
-
-4
-
-minPrice = MAX, maxProfit = 0
-
-Step 1 / 7
-
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock)

@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 There are `n` workers\. You are given two integer arrays `quality` and `wage` where `quality[i]` is the quality of the `i``th` worker and `wage[i]` is the minimum wage expectation for the `i``th` worker\.
 
@@ -44,11 +42,10 @@ Given the integer `k`, return _the least amount of money needed to form a paid
 *   **1 <= k <= n <= 10****4**
 *   **1 <= quality\[i\], wage\[i\] <= 10****4**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/minimum-cost-to-hire-k-workers)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force Approach
+### 1\. Brute Force Approach
 
 #### Intuition:
 
@@ -61,8 +58,6 @@ The problem of hiring K workers at the minimum cost can be broken down into find
 3.  This method is computationally expensive because it examines a large number of combinations, but serves as a direct application of understanding the constraint problem\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -110,12 +105,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^2 log n\) due to sorting and brute force combinations\.
 *   **Space Complexity:** O\(n\) for storing the ratio\-quality pairs\.
 
-## 2\. Heap Based Approach
+### 2\. Heap Based Approach
 
 #### Intuition:
 
@@ -128,8 +123,6 @@ To hire K workers while minimizing the cost, consider the smallest ratio of wage
 3.  For each worker, if the heap size exceeds K, remove the largest quality element, then calculate the minimal possible cost using fixed ratio across these K workers\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -176,7 +169,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n log n\) due to sort and heap operations\.
 *   **Space Complexity:** O\(K\) for managing K elements in the max\-heap\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/minimum-cost-to-hire-k-workers)

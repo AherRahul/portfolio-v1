@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 There is a directed graph of `n` nodes with each node labeled from `0` to `n - 1`\. The graph is represented by a **0\-indexed** 2D integer array `graph` where `graph[i]` is an integer array of nodes adjacent to node `i`, meaning there is an edge from node `i` to each node in `graph[i]`\.
 
@@ -25,7 +23,42 @@ Return _an array containing all the_ _**safe nodes**_ _of the graph_\. The an
 
 **Input:** graph = \[\[1,2\],\[2,3\],\[5\],\[0\],\[5\],\[\],\[\]\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">5</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">5</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+    </div>
+    <div class="arr-viz-grid-row">
+    </div>
+  </div>
+</div>
+
 **Output:** \[2,4,5,6\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">6</span></div>
+  </div>
+</div>
 
 **Explanation:** The given graph is shown above\.
 
@@ -37,7 +70,38 @@ Every path starting at nodes 2, 4, 5, and 6 all lead to either node 5 or 6\.
 
 **Input:** graph = \[\[1,2,3,4\],\[1,2\],\[3,4\],\[0,4\],\[\]\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">4</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">4</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">4</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+    </div>
+  </div>
+</div>
+
 **Output:** \[4\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">4</span></div>
+  </div>
+</div>
 
 **Explanation:** Only node 4 is a terminal node, and every path starting at node 4 leads to node 4\.
 
@@ -51,11 +115,10 @@ Every path starting at nodes 2, 4, 5, and 6 all lead to either node 5 or 6\.
 *   The graph may contain self\-loops\.
 *   The number of edges in the graph will be in the range `[1, 4 * 10``4``]`\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/find-eventual-safe-states)
 
-# Approaches
+## Approaches
 
-## 1\. DFS with Cycle Detection
+### 1\. DFS with Cycle Detection
 
 #### Intuition:
 
@@ -68,8 +131,6 @@ The idea here is to perform a DFS on each node and track if it can lead to a cyc
 On visiting a node, if we encounter another node that is in the `visiting` state, it means there's a cycle\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -109,12 +170,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(V \+ E\) \- We visit each node and each edge exactly once\.
 *   **Space Complexity:** O\(V\) \- The space is used mainly for the state array, call stack in DFS recursion, and the answer list\.
 
-## 2\. Reverse Graph and Topological Sort
+### 2\. Reverse Graph and Topological Sort
 
 #### Intuition:
 
@@ -123,8 +184,6 @@ The second approach involves inverting the edges of the graph\. A node is safe i
 Use a queue to perform a Kahn's algorithm variant of topological sort\. Begin by enqueueing nodes with outdegree 0 \(become indegree 0 in reversed graph\) and iteratively remove them, updating neighbors' indegree count\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -167,7 +226,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(V \+ E\) \- Each node and edge is processed once during the reverse graph creation and queue processing\.
 *   **Space Complexity:** O\(V \+ E\) \- Storage for the reverse graph and the queue\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/find-eventual-safe-states)

@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given an integer `n`, count _the total number of digit_ `1` _appearing in all non\-negative integers less than or equal to_ `n`\.
 
@@ -33,11 +31,10 @@ Given an integer `n`, count _the total number of digit_ `1` _appearing in al
 
 *   `0 <= n <= 10``9`
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/number-of-digit-one)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force
+### 1\. Brute Force
 
 This basic solution involves iterating through each number from 1 to `n` and counting the number of times the digit `1` appears\. Though simple, this approach lacks efficiency\.
 
@@ -46,8 +43,6 @@ This basic solution involves iterating through each number from 1 to `n` and c
 For each number, convert it to a string and count the occurrences of '1'\. Sum the counts across all numbers\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -72,12 +67,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n \* log\_\{10\}\(n\)\)\) — We check each number and its digits\.
 *   **Space Complexity:** O\(1\) — Constant space is used\.
 
-## 2\. Mathematical Solution
+### 2\. Mathematical Solution
 
 While the brute\-force solution checks each number individually, an optimal approach models a mathematical pattern based on the position of each digit\.
 
@@ -88,8 +83,6 @@ Consider how many 1s appear at each digit through the entire sequence from `0`�
 For each digit in the number, split the number into three parts: higher, current, and lower part\. Compute possible occurrences of 1 considering each position as the current digit\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -117,7 +110,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity**: O\(log\_\{10\}\(n\)\) — The number of iterations is based on the number of digits in `n`\.
 *   **Space Complexity**: O\(1\) — Only a few variables are used\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/number-of-digit-one)

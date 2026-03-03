@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given an `m x n` `grid` where each cell can have one of three values:
 
@@ -29,35 +27,25 @@ Return _the minimum number of minutes that must elapse until no cell has a fres
 
 **Input:** grid = \[\[2,1,1\],\[1,1,0\],\[0,1,1\]\]
 
-0
-
-1
-
-2
-
-0
-
-2
-
-1
-
-1
-
-1
-
-1
-
-1
-
-0
-
-2
-
-0
-
-1
-
-1
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+  </div>
+</div>
 
 **Output:** 4
 
@@ -65,35 +53,25 @@ Return _the minimum number of minutes that must elapse until no cell has a fres
 
 **Input:** grid = \[\[2,1,1\],\[0,1,1\],\[1,0,1\]\]
 
-0
-
-1
-
-2
-
-0
-
-2
-
-1
-
-1
-
-1
-
-0
-
-1
-
-1
-
-2
-
-1
-
-0
-
-1
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+  </div>
+</div>
 
 **Output:** \-1
 
@@ -103,15 +81,14 @@ Return _the minimum number of minutes that must elapse until no cell has a fres
 
 **Input:** grid = \[\[0,2\]\]
 
-0
-
-1
-
-0
-
-0
-
-2
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+    </div>
+  </div>
+</div>
 
 **Output:** 0
 
@@ -124,11 +101,10 @@ Return _the minimum number of minutes that must elapse until no cell has a fres
 *   `1 <= m, n <= 10`
 *   `grid[i][j]` is `0`, `1`, or `2`\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/rotting-oranges)
 
-# Approaches
+## Approaches
 
-## 1\. BFS \(Breadth\-First Search\) Simulation
+### 1\. BFS \(Breadth\-First Search\) Simulation
 
 #### Intuition:
 
@@ -159,8 +135,6 @@ The problem is essentially about finding the shortest time it takes for all fres
 *   All oranges being rotten initially would also require `0` minutes\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -212,7 +186,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(m \* n\), where m is the number of rows and n is the number of columns\. Each cell in the grid is processed at most once\.
 *   **Space Complexity:** O\(n\), due to the use of additional array\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/rotting-oranges)

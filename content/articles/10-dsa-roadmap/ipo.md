@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Suppose LeetCode will start its **IPO** soon\. In order to sell a good price of its shares to Venture Capital, LeetCode would like to work on some projects to increase its capital before the **IPO**\. Since it has limited resources, it can only finish at most `k` distinct projects before the **IPO**\. Help LeetCode design the best way to maximize its total capital after finishing at most `k` distinct projects\.
 
@@ -57,11 +55,10 @@ Therefore, output the final maximized capital, which is 0 \+ 1 \+ 3 = 4\.
 *   **0 <= profits\[i\] <= 10****4**
 *   **0 <= capital\[i\] <= 10****9**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/ipo)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force Approach
+### 1\. Brute Force Approach
 
 #### **Intuition:**
 
@@ -75,8 +72,6 @@ The brute force method involves examining all possible combinations of projects 
 4.  Update the capital with the profit obtained and repeat the process for `k` selections\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {
@@ -103,12 +98,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(k \* n\), where \(n\) is the number of projects and \(k\) is the number of possible selections\.
 *   **Space Complexity:** O\(1\)\. Only a few extra variables are used\.
 
-## 2\. Greedy Approach using Max Heap
+### 2\. Greedy Approach using Max Heap
 
 #### **Intuition:**
 
@@ -126,8 +121,6 @@ To optimize the profit selection, we use a max heap to always extract the projec
 *   Extract project with the maximum profit, and update the capital with the profit obtained\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {
@@ -176,9 +169,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n \* log n \+ k \* log n\)\. Sorting the projects takes O\(n \* log n\), and managing the max heap for up to \(k\) operations takes O\(k \*log n\)\.
 *   **Space Complexity:** O\(n\) due to storing projects and the space used by the heap\.
 
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/ipo)

@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 There are `n` people in a line queuing to buy tickets, where the `0``th` person is at the **front** of the line and the `(n - 1)``th` person is at the **back** of the line\.
 
@@ -26,6 +24,14 @@ Return the **time taken** for the person **initially** at position **k** \
 ##### **Example 1:**
 
 **Input:** tickets = \[2,3,2\], k = 2
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+  </div>
+</div>
 
 **Output:** 6
 
@@ -43,6 +49,15 @@ Return the **time taken** for the person **initially** at position **k** \
 
 **Input:** tickets = \[5,1,1,1\], k = 0
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">1</span></div>
+  </div>
+</div>
+
 **Output:** 8
 
 **Explanation:**
@@ -59,11 +74,10 @@ Return the **time taken** for the person **initially** at position **k** \
 *   `1 <= tickets[i] <= 100`
 *   `0 <= k < n`
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/time-needed-to-buy-tickets)
 
-# Approaches
+## Approaches
 
-## 1\. Simulation with a Queue
+### 1\. Simulation with a Queue
 
 #### Intuition:
 
@@ -78,8 +92,6 @@ Return the **time taken** for the person **initially** at position **k** \
 4.  Track the total time and stop when the target person has finished buying tickets\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -119,12 +131,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n \* m\), where `n` is the number of people and `m` is the maximum number of tickets\. Each person can be considered once per ticket they need\.
 *   **Space Complexity:** O\(n\), because of the queue storing all people\.
 
-## 2\. Optimized Simulation without Queue
+### 2\. Optimized Simulation without Queue
 
 #### Intuition:
 
@@ -141,8 +153,6 @@ Complexity Analysis
 3.  Sum these time increments and return\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -162,7 +172,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), where `n` is the number of people, as we are simply iterating through the list once\.
 *   **Space Complexity:** O\(1\), since we are not using any additional data structures\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/time-needed-to-buy-tickets)

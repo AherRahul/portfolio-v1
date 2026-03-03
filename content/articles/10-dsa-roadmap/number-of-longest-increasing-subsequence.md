@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given an integer array `nums`, return _the number of longest increasing subsequences\._
 
@@ -23,6 +21,16 @@ Given an integer array `nums`, return _the number of longest increasing subseq
 
 **Input:** nums = \[1,3,5,4,7\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">7</span></div>
+  </div>
+</div>
+
 **Output:** 2
 
 **Explanation:** The two longest increasing subsequences are \[1, 3, 4, 7\] and \[1, 3, 5, 7\]\.
@@ -30,6 +38,16 @@ Given an integer array `nums`, return _the number of longest increasing subseq
 ##### **Example 2:**
 
 **Input:** nums = \[2,2,2,2,2\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">2</span></div>
+  </div>
+</div>
 
 **Output:** 5
 
@@ -41,11 +59,10 @@ Given an integer array `nums`, return _the number of longest increasing subseq
 *   **\-10****6** **<= nums\[i\] <= 10****6**
 *   The answer is guaranteed to fit inside a 32\-bit integer\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/number-of-longest-increasing-subsequence)
 
-# Approaches
+## Approaches
 
-## 1\. Dynamic Programming with Two Arrays
+### 1\. Dynamic Programming with Two Arrays
 
 #### **Intuition:**
 
@@ -72,8 +89,6 @@ The problem is to find the number of longest increasing subsequences in the give
 8.  Sum up all values in `counts` where corresponding `lengths` are equal to the maximum value found in step 5\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {
@@ -121,7 +136,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^2\), where n is the length of the input array\. This complexity arises due to the nested loops iterating over the array\.
 *   **Space Complexity:** O\(n\), as we are using two additional arrays `lengths` and `counts` to store information regarding the longest subsequences\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/number-of-longest-increasing-subsequence)

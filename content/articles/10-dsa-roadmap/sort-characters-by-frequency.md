@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given a string `s`, sort it in **decreasing order** based on the **frequency** of the characters\. The **frequency** of a character is the number of times it appears in the string\.
 
@@ -54,11 +52,10 @@ Note that 'A' and 'a' are treated as two different characters\.
 *   **1 <= s\.length <= 5 \* 10****5**
 *   `s` consists of uppercase and lowercase English letters and digits\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/sort-characters-by-frequency)
 
-# Approaches
+## Approaches
 
-## 1\. Brute\-force sorting
+### 1\. Brute\-force sorting
 
 #### Intuition:
 
@@ -72,8 +69,6 @@ The simplest way to solve the problem is to count the frequency of each characte
 4.  Build the resulting string based on sorted order\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -104,12 +99,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n log n\) \- due to sorting the characters\.
 *   **Space Complexity:** O\(n\) \- for storing the frequency map and the result\.
 
-## 2\. Bucket Sort
+### 2\. Bucket Sort
 
 #### Intuition:
 
@@ -123,8 +118,6 @@ To improve on the sorting time, we can use bucket sort which exploits the fact t
 4.  Traverse the buckets in reverse order to create the output string by frequency\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -163,12 +156,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\) \- counting the frequency and creating string, assuming bounded frequency\.
 *   **Space Complexity:** O\(n\) \- for storing the buckets and resulting string\.
 
-## 3\. Using Priority Queue \(Optimal\)
+### 3\. Using Priority Queue \(Optimal\)
 
 #### Intuition:
 
@@ -181,8 +174,6 @@ We can also use a max\-heap to always extract the most frequent element\. This p
 3.  Extract characters from the priority queue and append to the result string\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -212,7 +203,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n log k\) \- where n is the number of characters and k is the unique characters \(k ≤ n\)\.
 *   **Space Complexity:** O\(n\) \- for the max\-heap and the result string\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/sort-characters-by-frequency)

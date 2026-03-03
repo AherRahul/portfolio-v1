@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given an array `points` containing the coordinates of points on a 2D plane, sorted by the x\-values, where **points\[i\] = \[x****i****, y****i****\]** such that **x****i** **< x****j** for all `1 <= i < j <= points.length`\. You are also given an integer `k`\.
 
@@ -25,6 +23,27 @@ It is guaranteed that there exists at least one pair of points that satisfy the 
 
 **Input:** points = \[\[1,3\],\[2,0\],\[5,10\],\[6,\-10\]\], k = 1
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">5</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">10</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">6</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">-10</span></div>
+    </div>
+  </div>
+</div>
+
 **Output:** 4
 
 **Explanation:** The first two points satisfy the condition |xi \- xj| <= 1 and if we calculate the equation we get 3 \+ 0 \+ |1 \- 2| = 4\. Third and fourth points also satisfy the condition and give a value of 10 \+ \-10 \+ |5 \- 6| = 1\.
@@ -34,6 +53,23 @@ No other pairs satisfy the condition, so we return the max of 4 and 1\.
 ##### **Example 2:**
 
 **Input:** points = \[\[0,0\],\[3,0\],\[9,2\]\], k = 3
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">9</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+    </div>
+  </div>
+</div>
 
 **Output:** 3
 
@@ -48,11 +84,10 @@ No other pairs satisfy the condition, so we return the max of 4 and 1\.
 *   **x****i** **< x****j** **for all 1 <= i < j <= points\.length**
 *   **x****i** **form a strictly increasing sequence\.**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/max-value-of-equation)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force Approach
+### 1\. Brute Force Approach
 
 The brute force approach involves iterating through each pair of points and calculating the possible equation values directly\. This results in a time\-consuming solution, but it's a good starting point to understand the problem\.
 
@@ -64,8 +99,6 @@ The brute force approach involves iterating through each pair of points and calc
 4.  Track the maximum equation value found\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -89,12 +122,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^2\), where n is the number of points, as we are checking every pair\.
 *   **Space Complexity:** O\(1\), no extra space is used apart from variables\.
 
-## 2\. Optimized Approach using Priority Queue
+### 2\. Optimized Approach using Priority Queue
 
 To improve on the brute force approach, we can use a priority queue to help us find pairs that maximize the expression efficiently\.
 
@@ -106,8 +139,6 @@ To improve on the brute force approach, we can use a priority queue to help us f
 4.  Update the priority queue with the current point\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -137,12 +168,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n log n\), because each point is inserted and removed from the heap\.
 *   **Space Complexity:** O\(n\), due to the space needed for the heap\.
 
-## 3\. Optimal Approach using Deque
+### 3\. Optimal Approach using Deque
 
 To achieve even better time efficiency, we can use a deque data structure that allows insertion and deletions at both ends efficiently\.
 
@@ -154,8 +185,6 @@ To achieve even better time efficiency, we can use a deque data structure that a
 4.  Maintain the deque such that it stores only necessary indices for upcoming iterations\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -191,9 +220,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), since each element is inserted and removed from the deque at most once\.
 *   **Space Complexity:** O\(n\), space required for the deque\.
 
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/max-value-of-equation)

@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given strings `s1`, `s2`, and `s3`, find whether `s3` is formed by an **interleaving** of `s1` and `s2`\.
 
@@ -62,11 +60,10 @@ Since s3 can be obtained by interleaving s1 and s2, we return true\.
 
 **Follow up:** Could you solve it using only `O(s2.length)` additional memory space?
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/interleaving-string)
 
-# Approaches
+## Approaches
 
-## 1\. Recursive Approach
+### 1\. Recursive Approach
 
 #### Intuition:
 
@@ -81,8 +78,6 @@ The recursive approach attempts to build the interleaved string one character at
 5.  If either of the recursive calls return true, then `s1` and `s2` can interleave `s3`\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -109,12 +104,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(2^\(m\+n\)\), where m and n are the lengths of `s1` and `s2` respectively\. The recursive tree depth is `m + n`\.
 *   **Space Complexity:** O\(m\+n\), which is the maximal depth of recursive calls\.
 
-## 2\. Memoization \(Top\-Down DP\) Approach
+### 2\. Memoization \(Top\-Down DP\) Approach
 
 #### Intuition:
 
@@ -126,8 +121,6 @@ The recursive solution recalculates solutions for overlapping subproblems, leadi
 2.  Follow the same logic as the recursive approach, but store results in `memo` before making recursive calls, and check `memo` before calculating new results\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -159,12 +152,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(m \* n\), since each state `(i, j)` is computed only once\.
 *   **Space Complexity:** O\(m \* n\) for memoization storage\.
 
-## 3\. Iterative Dynamic Programming Approach
+### 3\. Iterative Dynamic Programming Approach
 
 #### Intuition:
 
@@ -178,8 +171,6 @@ Transforming the recursive approach into an iterative form using a 2D boolean ar
 4.  Return `dp[m][n]`\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -204,7 +195,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(m \* n\), where m is the length of `s1` and n is the length of `s2`\.
 *   **Space Complexity:** O\(m \* n\) for the DP table\. However, this can also be optimized to O\(n\) by using a rolling array technique\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/interleaving-string)

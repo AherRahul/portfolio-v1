@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given an integer array nums and an integer k, return `true` _if_ `nums` _has a_ _**good subarray**_ _or_ `false` _otherwise_\.
 
@@ -31,6 +29,16 @@ A **good subarray** is a subarray where:
 
 **Input:** nums = \[23,2,4,6,7\], k = 6
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">23</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">6</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">7</span></div>
+  </div>
+</div>
+
 **Output:** true
 
 **Explanation:** \[2, 4\] is a continuous subarray of size 2 whose elements sum up to 6\.
@@ -38,6 +46,16 @@ A **good subarray** is a subarray where:
 ##### **Example 2:**
 
 **Input:** nums = \[23,2,6,4,7\], k = 6
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">23</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">6</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">7</span></div>
+  </div>
+</div>
 
 **Output:** true
 
@@ -49,6 +67,16 @@ A **good subarray** is a subarray where:
 
 **Input:** nums = \[23,2,6,4,7\], k = 13
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">23</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">6</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">7</span></div>
+  </div>
+</div>
+
 **Output:** false
 
 ##### **Constraints:**
@@ -58,19 +86,16 @@ A **good subarray** is a subarray where:
 *   **0 <= sum\(nums\[i\]\) <= 2****31** **\- 1**
 *   **1 <= k <= 2****31** **\- 1**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/continuous-subarray-sum)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force
+### 1\. Brute Force
 
 #### **Intuition**:
 
 The brute force approach involves considering all subarrays and calculating their sum to see if it's a multiple of `k`\. We can iterate over each start index, then from that start index, iterate through possible end indices, maintaining the sum of the subarray and checking it against `k`\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -93,20 +118,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^2\) due to the nested loops checking all subarrays\.
 *   **Space Complexity:** O\(1\) as only a few integer variables are used\.
 
-## 2\. Prefix Sum with Modulo HashMap
+### 2\. Prefix Sum with Modulo HashMap
 
 #### **Intuition**:
 
 Instead of checking every subarray, use a hashmap to store the remainder of the prefix sum when divided by `k`\. If the same remainder appears again \(and the subarray length between these points is greater than 1\), it indicates a subarray sum which is a multiple of `k`\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -139,9 +162,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\) as we only traversed the array once\.
 *   **Space Complexity:** O\(min\(n, k\)\) due to the map storing at most `k` different mod values\. In scenarios where many duplicates exist, the space can potentially approach `n`\.
 
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/continuous-subarray-sum)

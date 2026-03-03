@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given a string `s` which represents an expression, _evaluate this expression and return its value_\. 
 
@@ -49,11 +47,10 @@ You may assume that the given expression is always valid\. All intermediate resu
 *   All the integers in the expression are non\-negative integers in the range **\[0, 2****31** **\- 1\]**\.
 *   The answer is **guaranteed** to fit in a **32\-bit integer**\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/basic-calculator-ii)
 
-# Approaches
+## Approaches
 
-## 1\. Two Stacks
+### 1\. Two Stacks
 
 #### Intuition:
 
@@ -72,8 +69,6 @@ The problem requires us to evaluate a string containing a mathematical expressio
 5.  Return the result\.
 
 #### Code:
-
-Java
 
 ```java
 class BasicCalculatorII {
@@ -119,12 +114,12 @@ class BasicCalculatorII {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), where n is the length of the string\.
 *   **Space Complexity:** O\(n\), due to the space used by the stacks\.
 
-## 2\. One Stack
+### 2\. One Stack
 
 #### Intuition:
 
@@ -138,8 +133,6 @@ By recognizing the fact that `*` and `/` operations are executed immediately
 4.  Sum up the stack to get the final result\.
 
 #### Code:
-
-Java
 
 ```java
 class BasicCalculatorII {
@@ -179,14 +172,12 @@ class BasicCalculatorII {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), where n is the length of the string\.
 *   **Space Complexity:** O\(n\), due to the space used by the stack\.
 
-View Animation
-
-## 3\. In\-Place Calculation Using Single Pass and Single Stack
+### 3\. In\-Place Calculation Using Single Pass and Single Stack
 
 #### Intuition:
 
@@ -200,8 +191,6 @@ We can make this more efficient by minimizing stack use to only necessary interm
 4.  Perform addition and subtraction on accumulated results from the stack at the end\.
 
 #### Code:
-
-Java
 
 ```java
 class BasicCalculatorII {
@@ -239,7 +228,9 @@ class BasicCalculatorII {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), where n is the length of the string\.
 *   **Space Complexity:** O\(1\), due to constant space use\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/basic-calculator-ii)

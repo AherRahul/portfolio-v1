@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Koko loves to eat bananas\. There are `n` piles of bananas, the `i``th` pile has `piles[i]` bananas\. The guards have gone and will come back in `h` hours\.
 
@@ -27,17 +25,46 @@ Return _the minimum integer_ `k` _such that she can eat all the bananas withi
 
 **Input:** piles = \[3,6,7,11\], h = 8
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">6</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">7</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">11</span></div>
+  </div>
+</div>
+
 **Output:** 4
 
 ##### **Example 2:**
 
 **Input:** piles = \[30,11,23,4,20\], h = 5
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">30</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">11</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">23</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">20</span></div>
+  </div>
+</div>
+
 **Output:** 30
 
 ##### **Example 3:**
 
 **Input:** piles = \[30,11,23,4,20\], h = 6
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">30</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">11</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">23</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">20</span></div>
+  </div>
+</div>
 
 **Output:** 23
 
@@ -47,19 +74,16 @@ Return _the minimum integer_ `k` _such that she can eat all the bananas withi
 *   **piles\.length <= h <= 10****9**
 *   **1 <= piles\[i\] <= 10****9**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/koko-eating-bananas)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force Solution
+### 1\. Brute Force Solution
 
 #### Intuition:
 
 In this approach, we try every possible eating speed `k` starting from 1 until we find a speed that allows Koko to eat all the bananas within `h` hours\. For each speed, we simulate the eating process and check if Koko can finish all bananas within `h` hours\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -89,20 +113,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** We may have to try all speeds from 1 to the maximum pile size, leading to `O(max(piles) * n)`, where `n` is the number of piles\.
 *   **Space Complexity:** `O(1)`, no additional space other than input and local variables\.
 
-## 2\. Binary Search Solution
+### 2\. Binary Search Solution
 
 #### Intuition:
 
 Using binary search, we efficiently narrow down the range of Koko's possible eating speeds\. Instead of checking each speed one by one, we continuously adjust our search range based on whether the current mid speed allows Koko to eat all bananas in `h` hours\. The goal is to find the minimal speed `k` that works\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -139,7 +161,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** `O(n log(max(piles)))`, where `log(max(piles))` is for the binary search and `n` for each check of `canEatAllBananas`\.
 *   **Space Complexity:** `O(1)`, using only a constant amount of extra space\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/koko-eating-bananas)

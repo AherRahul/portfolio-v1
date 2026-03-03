@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 A car travels from a starting position to a destination which is `target` miles east of the starting position\.
 
@@ -37,6 +35,15 @@ Note that if the car reaches a gas station with `0` fuel left, the car can sti
 
 **Input:** target = 100, startFuel = 1, stations = \[\[10,100\]\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">10</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">100</span></div>
+    </div>
+  </div>
+</div>
+
 **Output:** \-1
 
 **Explanation:** We can not reach the target \(or even the first gas station\)\.
@@ -44,6 +51,27 @@ Note that if the car reaches a gas station with `0` fuel left, the car can sti
 ##### **Example 3:**
 
 **Input:** target = 100, startFuel = 10, stations = \[\[10,60\],\[20,30\],\[30,30\],\[60,40\]\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">10</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">60</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">20</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">30</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">30</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">30</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">60</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">40</span></div>
+    </div>
+  </div>
+</div>
 
 **Output:** 2
 
@@ -60,11 +88,10 @@ Then, we drive from position 10 to position 60 \(expending 50 liters of fuel\), 
 *   **1 <= position****i** **< position****i\+1** **< target**
 *   **1 <= fuel****i** **< 10****9**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/minimum-number-of-refueling-stops)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force Recursive Approach
+### 1\. Brute Force Recursive Approach
 
 #### **Intuition:**
 
@@ -73,8 +100,6 @@ The brute\-force approach involves trying all possible combinations of using the
 While a possible solution, this approach is highly inefficient and not feasible for large input sizes due to its exponential time complexity\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {    
@@ -111,20 +136,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** Exponential due to exploring all combinations: O\(2^N\), where \(N\) is the number of stations\.
 *   **Space Complexity:** Depth of recursion: O\(N\)\.
 
-## 2\. Dynamic Programming Approach
+### 2\. Dynamic Programming Approach
 
 #### **Intuition:**
 
 We can reduce the time complexity by using dynamic programming\. Create an array `dp` where `dp[i]` is the maximum distance we can reach with `i` refueling stops\. Our goal is to find the smallest `i` such that `dp[i] >= target`\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {
@@ -153,20 +176,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N^2\), iterating over stations and stops\.
 *   **Space Complexity:** O\(N\) for the dp array\.
 
-## 3\. Greedy Approach with Max\-Heap
+### 3\. Greedy Approach with Max\-Heap
 
 #### **Intuition:**
 
 The most optimal solution involves using a max\-heap to prioritize the largest fuel available at each decision point\. This approach picks the station with the most fuel capacity reachable based on the current fuel status at each step\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {
@@ -194,7 +215,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N log N\)\), primarily due to heap operations\.
 *   **Space Complexity:** O\(N\) for the heap structure\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/minimum-number-of-refueling-stops)

@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given the `root` of a binary tree\. We install cameras on the tree nodes where each camera at a node can monitor its parent, itself, and its immediate children\.
 
@@ -22,6 +20,16 @@ Return _the minimum number of cameras needed to monitor all nodes of the tree_\
 ##### **Example 1:**
 
 **Input:** root = \[0,0,null,0,0\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">0</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">1</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">2</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">3</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">4</span><span class="arr-val">0</span></div>
+  </div>
+</div>
 
 0000
 
@@ -32,6 +40,20 @@ Return _the minimum number of cameras needed to monitor all nodes of the tree_\
 ##### **Example 2:**
 
 **Input:** root = \[0,0,null,0,null,0,null,null,0\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">0</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">1</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">2</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">3</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">4</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">5</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">6</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">7</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">8</span><span class="arr-val">0</span></div>
+  </div>
+</div>
 
 00000
 
@@ -44,11 +66,10 @@ Return _the minimum number of cameras needed to monitor all nodes of the tree_\
 *   The number of nodes in the tree is in the range `[1, 1000]`\.
 *   `Node.val == 0`
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/binary-tree-cameras/description/)
 
-# Approaches
+## Approaches
 
-## 1\. Recursive DFS Approach
+### 1\. Recursive DFS Approach
 
 #### Intuition:
 
@@ -67,8 +88,6 @@ The base idea is:
 *   Each node decides whether it needs a camera based on whether its children are covered or need a camera\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -108,7 +127,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity**: O\(N\), where N is the number of nodes in the tree\. Each node is visited once\.
 *   **Space Complexity**: O\(H\), where H is the height of the tree due to the recursion stack\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/binary-tree-cameras/description/)

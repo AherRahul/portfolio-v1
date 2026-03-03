@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given an `m x n` binary matrix `mat`, return _the distance of the nearest_ `0` _for each cell_\.
 
@@ -23,133 +21,93 @@ The distance between two cells sharing a common edge is `1`\.
 
 Input:mat=\[\[0,0,0\],\[0,1,0\],\[0,0,0\]\]
 
-0
-
-1
-
-2
-
-0
-
-0
-
-0
-
-0
-
-1
-
-0
-
-1
-
-0
-
-2
-
-0
-
-0
-
-0
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+    </div>
+  </div>
+</div>
 
 Output:\[\[0,0,0\],\[0,1,0\],\[0,0,0\]\]
 
-0
-
-1
-
-2
-
-0
-
-0
-
-0
-
-0
-
-1
-
-0
-
-1
-
-0
-
-2
-
-0
-
-0
-
-0
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">0</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">0</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">0</span></div>
+    </div>
+  </div>
+</div>
 
 ##### **Example 2:**
 
 Input:mat=\[\[0,0,0\],\[0,1,0\],\[1,1,1\]\]
 
-0
-
-1
-
-2
-
-0
-
-0
-
-0
-
-0
-
-1
-
-0
-
-1
-
-0
-
-2
-
-1
-
-1
-
-1
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+  </div>
+</div>
 
 Output:\[\[0,0,0\],\[0,1,0\],\[1,2,1\]\]
 
-0
-
-1
-
-2
-
-0
-
-0
-
-0
-
-0
-
-1
-
-0
-
-1
-
-0
-
-2
-
-1
-
-2
-
-1
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">0</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">0</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">1</span></div>
+    </div>
+  </div>
+</div>
 
 ##### **Constraints:**
 
@@ -160,11 +118,10 @@ Output:\[\[0,0,0\],\[0,1,0\],\[1,2,1\]\]
 *   `mat[i][j]` is either `0` or `1`\.
 *   There is at least one `0` in `mat`\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/01-matrix)
 
-# Approaches
+## Approaches
 
-## 1\. Breadth\-First Search \(BFS\) from Zeros
+### 1\. Breadth\-First Search \(BFS\) from Zeros
 
 #### **Intuition:**
 
@@ -183,12 +140,12 @@ Output:\[\[0,0,0\],\[0,1,0\],\[1,2,1\]\]
 
 #### Code:
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(m \* n\), where `m` and `n` are the matrix dimensions\. Each cell is processed at most once\.
 *   **Space Complexity:** O\(m \* n\), needed for the distance matrix and the BFS queue\.
 
-## 2\. Dynamic Programming Approach
+### 2\. Dynamic Programming Approach
 
 #### **Intuition:**
 
@@ -204,7 +161,9 @@ Complexity Analysis
 
 #### Code:
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(m \* n\), the matrix is traversed twice\.
 *   **Space Complexity:** O\(1\), only a fixed amount of extra space used, modifying the input\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/01-matrix)

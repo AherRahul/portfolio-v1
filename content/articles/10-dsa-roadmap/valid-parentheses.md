@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given a string `s` containing just the characters `'('`, `')'`, `'{'`, `'}'`, `'['` and `']'`, determine if the input string is valid\.
 
@@ -58,11 +56,10 @@ An input string is valid if:
 *   **1 <= s\.length <= 10****4**
 *   `s` consists of parentheses only `'()[]{}'`\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/valid-parentheses)
 
-# Approaches
+## Approaches
 
-## 1\. Using Stack
+### 1\. Using Stack
 
 #### Intuition:
 
@@ -81,8 +78,6 @@ The problem of validating parentheses can be efficiently solved using a stack da
 6.  After processing all characters, if the stack is empty, it means all opening brackets had matching closing brackets, so the string is valid\. Otherwise, return false\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -114,9 +109,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), where n is the length of the string\. We traverse the string once, and each operation on the stack \(push/pop\) is O\(1\)\.
 *   **Space Complexity:** O\(n\) in the worst case, when all characters are opening brackets and are pushed onto the stack\.
 
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/valid-parentheses)

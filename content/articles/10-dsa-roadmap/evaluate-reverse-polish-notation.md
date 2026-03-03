@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given an array of strings `tokens` that represents an arithmetic expression in a [Reverse Polish Notation](http://en.wikipedia.org/wiki/Reverse_Polish_notation)\.
 
@@ -32,6 +30,16 @@ Evaluate the expression\. Return _an integer that represents the value of the e
 
 **Input:** tokens = \["2","1","\+","3","\*"\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">+</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">*</span></div>
+  </div>
+</div>
+
 **Output:** 9
 
 **Explanation:** \(\(2 \+ 1\) \* 3\) = 9
@@ -40,6 +48,16 @@ Evaluate the expression\. Return _an integer that represents the value of the e
 
 **Input:** tokens = \["4","13","5","/","\+"\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">13</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">/</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">+</span></div>
+  </div>
+</div>
+
 **Output:** 6
 
 **Explanation:** \(4 \+ \(13 / 5\)\) = 6
@@ -47,6 +65,24 @@ Evaluate the expression\. Return _an integer that represents the value of the e
 ##### **Example 3:**
 
 **Input:** tokens = \["10","6","9","3","\+","\-11","\*","/","\*","17","\+","5","\+"\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">10</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">6</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">9</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">+</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">-11</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">*</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">7</span><span class="arr-val">/</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">8</span><span class="arr-val">*</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">9</span><span class="arr-val">17</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">10</span><span class="arr-val">+</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">11</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">12</span><span class="arr-val">+</span></div>
+  </div>
+</div>
 
 **Output:** 22
 
@@ -57,11 +93,10 @@ Evaluate the expression\. Return _an integer that represents the value of the e
 *   **1 <= tokens\.length <= 10****4**
 *   `tokens[i]` is either an operator: `"+"`, `"-"`, `"*"`, or `"/"`, or an integer in the range `[-200, 200]`\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/evaluate-reverse-polish-notation)
 
-# Approaches
+## Approaches
 
-## 1\. Stack\-based Evaluation
+### 1\. Stack\-based Evaluation
 
 #### **Intuition:**
 
@@ -86,9 +121,9 @@ By the end of the process, the stack should contain just one element \- the resu
 
 #### **Code:**
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), where n is the number of tokens\. Each token is processed once\.
 *   **Space Complexity:** O\(n\), in the worst case, if all tokens are numbers, the stack size could be n\.
 
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/evaluate-reverse-polish-notation)

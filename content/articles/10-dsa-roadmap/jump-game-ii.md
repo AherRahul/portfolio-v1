@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given a **0\-indexed** array of integers `nums` of length `n`\. You are initially positioned at index 0\.
 
@@ -28,6 +26,16 @@ Return _the minimum number of jumps to reach index_ `n - 1`\. The test cases a
 
 **Input:** nums = \[2,3,1,1,4\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">4</span></div>
+  </div>
+</div>
+
 **Output:** 2
 
 **Explanation:** The minimum number of jumps to reach the last index is 2\. Jump 1 step from index 0 to 1, then 3 steps to the last index\.
@@ -35,6 +43,16 @@ Return _the minimum number of jumps to reach index_ `n - 1`\. The test cases a
 ##### **Example 2:**
 
 **Input:** nums = \[2,3,0,1,4\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">2</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">4</span></div>
+  </div>
+</div>
 
 **Output:** 2
 
@@ -44,11 +62,10 @@ Return _the minimum number of jumps to reach index_ `n - 1`\. The test cases a
 *   `0 <= nums[i] <= 1000`
 *   It's guaranteed that you can reach `nums[n - 1]`\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/jump-game-ii)
 
-# Approaches
+## Approaches
 
-## 1\. Greedy Approach
+### 1\. Greedy Approach
 
 #### **Intuition:**
 
@@ -66,8 +83,6 @@ The first solution is a simple greedy approach\. The idea is to make the best mo
 *   Whenever we move beyond `curEnd`, it means we need to make a jump, so update `jumps` and `curEnd`\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -94,12 +109,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), since we are making a single pass through the array\.
 *   **Space Complexity:** O\(1\), as no extra space is used\.
 
-## 2\. Optimized Greedy Approach
+### 2\. Optimized Greedy Approach
 
 #### **Intuition:**
 
@@ -110,8 +125,6 @@ In the optimized version of the greedy approach, we maintain only necessary vari
 *   Similar to the first approach but is less explicitly managed with retained focus on optimal point reachability only\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {
@@ -141,9 +154,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), iterating through the array once as before\.
 *   **Space Complexity:** O\(1\), no extra space apart from variables\.
 
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/jump-game-ii)

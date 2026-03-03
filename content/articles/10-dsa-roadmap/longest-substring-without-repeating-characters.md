@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given a string `s`, find the length of the **longest** **substring** without duplicate characters\. 
 
@@ -21,41 +19,7 @@ Given a string `s`, find the length of the **longest** **substring** without
 
 Input:s=abcabcbb
 
-0
-
-a
-
-1
-
-b
-
-2
-
-c
-
-3
-
-a
-
-4
-
-b
-
-5
-
-c
-
-6
-
-b
-
-7
-
-b
-
 Output:3
-
-3
 
 **Explanation:** The answer is "abc", with the length of 3\.
 
@@ -63,29 +27,7 @@ Output:3
 
 Input:s=bbbbb
 
-0
-
-b
-
-1
-
-b
-
-2
-
-b
-
-3
-
-b
-
-4
-
-b
-
 Output:1
-
-1
 
 **Explanation:** The answer is "b", with the length of 1\.
 
@@ -93,33 +35,7 @@ Output:1
 
 Output:s=pwwkew
 
-0
-
-p
-
-1
-
-w
-
-2
-
-w
-
-3
-
-k
-
-4
-
-e
-
-5
-
-w
-
 Output:3
-
-3
 
 **Explanation:** The answer is "wke", with the length of 3\.
 
@@ -130,19 +46,16 @@ Notice that the answer must be a substring, "pwke" is a subsequence and not a su
 *   **0 <= s\.length <= 5 \* 10****4**
 *   `s` consists of English letters, digits, symbols and spaces\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/longest-substring-without-repeating-characters)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force
+### 1\. Brute Force
 
 #### Intuition:
 
 The most straightforward way to solve this problem is by checking each possible substring to see if it contains all unique characters\. We can iterate over all possible starting points and ending points for substrings and check for uniqueness\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -177,20 +90,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^3\)\. There are two nested loops and checking whether a substring contains all unique characters is O\(n\)\.
 *   **Space Complexity:** O\(min\(n, m\)\), where n is the length of the string and m is the character set size \(limited to 26 for this problem\)\.
 
-## 2\. Sliding Window using HashSet
+### 2\. Sliding Window using HashSet
 
 #### Intuition:
 
 To reduce the complexity, we can use a sliding window technique\. Instead of checking every substring, we can maintain a window and move it to the right while ensuring all characters within the window are unique\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -216,20 +127,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(2n\) = O\(n\)\. In the worst case, each character will be visited twice\.
 *   **Space Complexity:** O\(min\(n, m\)\)\. The set is used to store the unique characters in the window\.
 
-## 3\. Sliding Window using HashMap
+### 3\. Sliding Window using HashMap
 
 #### Intuition:
 
 Further optimization can be done by optimizing the move of the start pointer\. We can use a hash map to track the last seen index of each character, which allows skipping over sections of the string already known to contain non\-unique characters\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -253,7 +162,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\)\. Each character in the string is processed at most once\.
 *   **Space Complexity:** O\(min\(n, m\)\)\. HashMap space is used to store last indices of characters\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/longest-substring-without-repeating-characters)

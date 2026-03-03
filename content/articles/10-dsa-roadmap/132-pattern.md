@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given an array of `n` integers `nums`, a **132 pattern** is a subsequence of three integers `nums[i]`, `nums[j]` and `nums[k]` such that `i < j < k` and `nums[i] < nums[k] < nums[j]`\.
 
@@ -23,6 +21,15 @@ Return `true` _if there is a_ _**132 pattern**_ _in_ `nums`_, otherwise, re
 
 **Input:** nums = \[1,2,3,4\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">4</span></div>
+  </div>
+</div>
+
 **Output:** false
 
 **Explanation:** There is no 132 pattern in the sequence\.
@@ -30,6 +37,15 @@ Return `true` _if there is a_ _**132 pattern**_ _in_ `nums`_, otherwise, re
 ##### **Example 2:**
 
 **Input:** nums = \[3,1,4,2\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">2</span></div>
+  </div>
+</div>
 
 **Output:** true
 
@@ -39,6 +55,15 @@ Return `true` _if there is a_ _**132 pattern**_ _in_ `nums`_, otherwise, re
 
 **Input:** nums = \[\-1,3,2,0\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">-1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">3</span><span class="arr-val">0</span></div>
+  </div>
+</div>
+
 **Output:** true**Explanation:** There are three 132 patterns in the sequence: \[\-1, 3, 2\], \[\-1, 3, 0\] and \[\-1, 2, 0\]\.
 
 ##### **Constraints:**
@@ -47,11 +72,10 @@ Return `true` _if there is a_ _**132 pattern**_ _in_ `nums`_, otherwise, re
 *   **1 <= n <= 2 \* 10****5**
 *   **\-10****9** **<= nums\[i\] <= 10****9**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/132-pattern)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force
+### 1\. Brute Force
 
 #### Intuition:
 
@@ -67,12 +91,12 @@ The brute force approach involves checking every possible triplet to see if it f
 
 #### Code:
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^3\), where `n` is the length of the array, due to the three nested loops\.
 *   **Space Complexity:** O\(1\), no extra space used\.
 
-## 2\. Using Stacks
+### 2\. Using Stacks
 
 #### Intuition:
 
@@ -91,9 +115,9 @@ To optimize, we can use a stack to maintain candidates for the second largest nu
 
 #### Code:
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), since each element is pushed and popped from the stack at most once\.
 *   **Space Complexity:** O\(n\), for the stack used to store potential `nums[j]` candidates\.
 
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/132-pattern)

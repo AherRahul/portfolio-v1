@@ -11,8 +11,6 @@ showOnArticles: false
 published: true
 ---
 
-Question
-
 Given a string `s`, find _the longest palindromic_ _**subsequence**__'s length in_ `s`\.
 
 A **subsequence** is a sequence that can be derived from another sequence by deleting some or no elements without changing the order of the remaining elements\.
@@ -38,19 +36,16 @@ A **subsequence** is a sequence that can be derived from another sequence by d
 *   `1 <= s.length <= 1000`
 *   `s` consists only of lowercase English letters\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/longest-palindromic-subsequence)
 
-# Approaches
+## Approaches
 
-## 1\. Recursive Approach
+### 1\. Recursive Approach
 
 #### Intuition:
 
 The naive recursive solution involves exploring all possible subsequences of the string to determine the longest palindromic subsequence\. The basic idea is to use two pointers, one starting from the beginning of the string and one from the end\. If the characters at these positions match, then include them in the palindrome and move both pointers inward\. If they don't match, recursively solve for both possibilities by moving either pointer inward to find the longest subsequence\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -77,20 +72,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(2^n\) due to exponential growth with each recursive call\.
 *   **Space Complexity:** O\(n\) for the recursion stack depth\.
 
-## 2\. Memoization Approach
+### 2\. Memoization Approach
 
 #### Intuition:
 
 To improve upon the recursive approach and avoid recalculating results for the same subproblems, memoization can be used\. This involves caching results of previously computed states defined by their start and end indices\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -124,20 +117,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^2\) due to caching results for all subproblems\.
 *   **Space Complexity:** O\(n^2\) for the memoization table\.
 
-## 3\. Dynamic Programming Approach
+### 3\. Dynamic Programming Approach
 
 #### Intuition:
 
 The most efficient way uses a bottom\-up dynamic programming approach\. We define a table `dp` where `dp[i][j]` represents the length of the longest palindromic subsequence between indices `i` and `j`\. If the characters match, extend the subsequence by two; otherwise, choose the longest subsequence between \[i\+1, j\] and \[i, j\-1\]\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -170,7 +161,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^2\) for filling the entire dp table\.
 *   **Space Complexity:** O\(n^2\) for the dp table storage\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/longest-palindromic-subsequence)

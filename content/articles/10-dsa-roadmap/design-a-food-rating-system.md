@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Design a food rating system that can do the following:
 
@@ -76,11 +74,10 @@ foodRatings.highestRated("japanese"); // return "ramen"
 *   `cuisine` will be a type of cuisine of **at least one** food item in the system across all calls to `highestRated`\.
 *   At most `2 * 10``4` calls **in total** will be made to `changeRating` and `highestRated`\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/design-a-food-rating-system)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force
+### 1\. Brute Force
 
 #### Intuition:
 
@@ -93,8 +90,6 @@ In this approach, we maintain lists to track the food, cuisine, and ratings\. Ev
 3.  For finding the highest\-rated food in a cuisine, iterate through the full list to find the food item with the highest rating for that cuisine\.
 
 #### Code:
-
-Java
 
 ```java
 class Food {
@@ -143,7 +138,7 @@ class FoodRatings {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:**
 
@@ -152,7 +147,7 @@ Complexity Analysis
 
 *   **Space Complexity:** O\(n\) for storing the food items\.
 
-## 2\. HashMap with Sorting
+### 2\. HashMap with Sorting
 
 #### Intuition:
 
@@ -164,8 +159,6 @@ Using HashMaps to store foods and their details allows for faster access and upd
 2.  Store cuisines in a HashMap with a list of foods to facilitate easy sorting for rating retrieval\.
 
 #### Code:
-
-Java
 
 ```java
 class FoodRatings {
@@ -200,7 +193,7 @@ class FoodRatings {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:**
 
@@ -209,7 +202,7 @@ Complexity Analysis
 
 *   **Space Complexity:** O\(n \+ m\) where n is the number of foods and m the number of cuisines\.
 
-## 3\. TreeMap with HashMap
+### 3\. TreeMap with HashMap
 
 #### Intuition:
 
@@ -222,8 +215,6 @@ Leverage the TreeMap that keeps entries sorted based on keys, which can be used 
 3.  Directly fetch the first entry of the TreeMap for highest\-rated food retrieval\.
 
 #### Code:
-
-Java
 
 ```java
 class FoodRatings {
@@ -267,7 +258,7 @@ class FoodRatings {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:**
 
@@ -275,3 +266,5 @@ Complexity Analysis
 *   `highestRated`: O\(1\), quick access to the highest rating using TreeMap\.
 
 *   **Space Complexity:** O\(n \+ k\) where n is the number of foods and k is the space for maintaining TreeMap entries per cuisine\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/design-a-food-rating-system)

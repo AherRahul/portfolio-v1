@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 There is a safe protected by a password\. The password is a sequence of `n` digits where each digit can be in the range `[0, k - 1]`\.
 
@@ -60,11 +58,10 @@ Return _any string of_ _**minimum length**_ _that will unlock the safe_ _**a
 *   **1 <= k <= 10**
 *   **1 <= k****n** **<= 4096**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/cracking-the-safe)
 
-# Approaches
+## Approaches
 
-## 1\. Eulerian Circuit \(Hierholzer’s Algorithm\)
+### 1\. Eulerian Circuit \(Hierholzer’s Algorithm\)
 
 #### Intuition:
 
@@ -85,8 +82,6 @@ Here's the step\-by\-step intuition for this approach:
 *   Connect all cycles to form the Eulerian circuit\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -118,12 +113,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(k^n\)\. This is because each node can be extended by `k` possibilities and there are approximately `k^(n-1)` nodes to explore\.
 *   **Space Complexity:** O\(k^n\)\. To store the visited nodes \(each of which is a password\)\.
 
-## 2\. Recursive Backtracking \(Brute Force\)
+### 2\. Recursive Backtracking \(Brute Force\)
 
 #### Intuition:
 
@@ -140,8 +135,6 @@ In this approach, we attempt every possible combination while ensuring that the 
 *   Start forming cycles from smaller sequences while checking if they form a valid sequence\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -182,7 +175,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(k^n \+ n\*k^n\), due to the high cost of exploring each path and verifying possible configurations\.
 *   **Space Complexity:** O\(n\*k^n\), for storing the paths and visited nodes\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/cracking-the-safe)

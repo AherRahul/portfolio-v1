@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given the `root` of a binary tree, invert the tree, and return _its root_\.
 
@@ -21,9 +19,33 @@ Given the `root` of a binary tree, invert the tree, and return _its root_\.
 
 Input:root=\[4,2,7,1,3,6,9\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">7</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">6</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">9</span></div>
+  </div>
+</div>
+
 4213769
 
 Output:\[4,7,2,9,6,3,1\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">7</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">9</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">6</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">5</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">6</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 4796231
 
@@ -31,9 +53,25 @@ Output:\[4,7,2,9,6,3,1\]
 
 Input:root=\[2,1,3\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+  </div>
+</div>
+
 213
 
 Output:\[2,3,1\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 231
 
@@ -48,19 +86,16 @@ Output:\[2,3,1\]
 *   The number of nodes in the tree is in the range `[0, 100]`\.
 *   `-100 <= Node.val <= 100`
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/invert-binary-tree)
 
-# Approaches
+## Approaches
 
-## 1\. Recursive Approach
+### 1\. Recursive Approach
 
 #### **Intuition**:
 
 The recursive approach is elegant and leverages the natural recursive structure of trees\. The idea is to swap the left and right children of a node recursively\. For each node, invert the left subtree and the right subtree\. This results in a mirrored version of the original tree\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -84,20 +119,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\) \- We visit each node exactly once\.
 *   **Space Complexity:** O\(h\) \- The recursion stack space is proportional to the height of the tree `h`\.
 
-## 2\. Iterative Approach Using BFS
+### 2\. Iterative Approach Using BFS
 
 #### **Intuition**:
 
 We can also solve this problem iteratively using a breadth\-first search \(BFS\) approach\. The idea is to use a queue to perform a level\-order traversal of the tree\. At each node, swap the left and right children\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -132,20 +165,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\) \- Each node is visited once\.
 *   **Space Complexity:** O\(n\) \- In the worst case, the queue will hold all the nodes in a level of the tree\.
 
-## 3\. Iterative Approach Using DFS with Stack
+### 3\. Iterative Approach Using DFS with Stack
 
 #### **Intuition**:
 
 Another iterative method is using depth\-first search \(DFS\) with a stack\. Similar to BFS, traverse the tree and swap left and right children for each node encountered\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -180,9 +211,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\) \- Every node is pushed and popped from the stack once\.
 *   **Space Complexity:** O\(n\) \- In the worst case, the stack will hold all nodes in a path from root to a leaf\.
 
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/invert-binary-tree)

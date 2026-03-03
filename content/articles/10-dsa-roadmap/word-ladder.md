@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 A **transformation sequence** from word `beginWord` to word `endWord` using a dictionary `wordList` is a sequence of words **beginWord \-> s****1** **\-> s****2** **\-> \.\.\. \-> s****k** such that:
 
@@ -27,6 +25,17 @@ Given two words, `beginWord` and `endWord`, and a dictionary `wordList`, ret
 
 **Input:** beginWord = "hit", endWord = "cog", wordList = \["hot","dot","dog","lot","log","cog"\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">hot</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">dot</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">dog</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">lot</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">log</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">cog</span></div>
+  </div>
+</div>
+
 **Output:** 5
 
 **Explanation:** One shortest transformation sequence is "hit" \-> "hot" \-> "dot" \-> "dog" \-> cog", which is 5 words long\.
@@ -34,6 +43,16 @@ Given two words, `beginWord` and `endWord`, and a dictionary `wordList`, ret
 ##### **Example 2:**
 
 **Input:** beginWord = "hit", endWord = "cog", wordList = \["hot","dot","dog","lot","log"\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">hot</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">dot</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">dog</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">lot</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">log</span></div>
+  </div>
+</div>
 
 **Output:** 0
 
@@ -49,11 +68,10 @@ Given two words, `beginWord` and `endWord`, and a dictionary `wordList`, ret
 *   `beginWord != endWord`
 *   All the words in `wordList` are **unique**\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/word-ladder)
 
-# Approaches
+## Approaches
 
-## 1\. Breadth\-First Search \(BFS\)
+### 1\. Breadth\-First Search \(BFS\)
 
 #### Intuition:
 
@@ -62,8 +80,6 @@ The Word Ladder problem can be thought of as a graph traversal problem where eac
 Breadth\-First Search \(BFS\) is a perfect fit for this type of problem because it explores all nodes at the present "depth" level before moving on to nodes at the next depth level, thereby ensuring that we find the shortest path\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -113,20 +129,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N \* M \* 26\) where N is the number of words in the word list and M is the length of each word\. For every word, in the worst case, we change each character \(M\) to every other character in the alphabet \(26 possibilities\)\.
 *   **Space Complexity:** O\(N \* M\) for the wordSet and queue data structures\.
 
-## 2\. Bidirectional BFS
+### 2\. Bidirectional BFS
 
 #### Intuition:
 
 Bidirectional BFS is an optimization of the traditional BFS technique\. Instead of searching from one end to the other, we simultaneously search from both the `beginWord` and the `endWord` towards each other\. The search halts when the two searches meet\. This significantly reduces the search space and can greatly increase efficiency, especially as the length of transformation increases\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -184,7 +198,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N \* M \* 26\) similar to BFS\. However, in practice, the performance can be significantly better since we are working on possibly halved problem size\.
 *   **Space Complexity:** O\(N \* M\) for the word sets and additional data structures\. However, it tends to require less space on average compared to the unidirectional BFS\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/word-ladder)

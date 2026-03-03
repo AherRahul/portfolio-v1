@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given an `m x n` integer matrix `grid` where each cell is either `0` \(empty\) or `1` \(obstacle\)\. You can move up, down, left, or right from and to an empty cell in **one step**\.
 
@@ -23,51 +21,35 @@ Return _the minimum number of_ _**steps**_ _to walk from the upper left corne
 
 **Input:** grid = \[\[0,0,0\],\[1,1,0\],\[0,0,0\],\[0,1,1\],\[0,0,0\]\], k = 1
 
-0
-
-1
-
-2
-
-0
-
-0
-
-0
-
-0
-
-1
-
-1
-
-1
-
-0
-
-2
-
-0
-
-0
-
-0
-
-3
-
-0
-
-1
-
-1
-
-4
-
-0
-
-0
-
-0
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+    </div>
+  </div>
+</div>
 
 **Output:** 6
 
@@ -81,35 +63,25 @@ The shortest path with one obstacle elimination at position \(3,2\) is 6\. Such 
 
 **Input:** grid = \[\[0,1,1\],\[1,1,1\],\[1,0,0\]\], k = 1
 
-0
-
-1
-
-2
-
-0
-
-0
-
-1
-
-1
-
-1
-
-1
-
-1
-
-1
-
-2
-
-1
-
-0
-
-0
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+    </div>
+  </div>
+</div>
 
 **Output:** \-1
 
@@ -124,11 +96,10 @@ The shortest path with one obstacle elimination at position \(3,2\) is 6\. Such 
 *   `grid[i][j]` is either `0` **or** `1`\.
 *   `grid[0][0] == grid[m - 1][n - 1] == 0`
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/shortest-path-in-a-grid-with-obstacles-elimination)
 
-# Approaches
+## Approaches
 
-## 1\. BFS with State Tracking
+### 1\. BFS with State Tracking
 
 #### Intuition:
 
@@ -142,8 +113,6 @@ In this solution:
 *   We use a 3D boolean array to track visited states, ensuring that we do not process the same state multiple times unnecessarily\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -202,20 +171,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N \* M \* K\)\), where \(N\) is the number of rows, \(M\) is the number of columns, and \(K\) is the limit on obstacle eliminations\.
 *   **Space Complexity:** O\(n\), due to the use of additional array\.
 
-## 2\. Optimized BFS using A\* Heuristic
+### 2\. Optimized BFS using A\* Heuristic
 
 #### Intuition:
 
 This approach enhances the BFS by adding an A\* heuristic to prioritize the exploration of paths that seem promising, based on a heuristic function that estimates the cost to reach the destination\. The heuristic used can be the Manhattan distance to the bottom\-right corner\. By incorporating the A\* heuristic, we guide the BFS to expand nodes that are likely part of the shortest path, potentially reducing the number of states we explore\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -269,7 +236,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** Typically better than plain BFS, potentially O\(N \* M \* K\) in worst\-case but often reduced by choosing promising nodes earlier\.
 *   **Space Complexity:** O\(N \* M \* K\) similar to BFS due to state storage\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/shortest-path-in-a-grid-with-obstacles-elimination)

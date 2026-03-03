@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Suppose an array of length `n` sorted in ascending order is **rotated** between `1` and `n` times\. For example, the array `nums = [0,1,2,4,5,6,7]` might become:
 
@@ -30,25 +28,15 @@ You must write an algorithm that runs in `O(log n) time`\.
 
 **Input:** nums = \[3,4,5,1,2\]
 
-0
-
-3
-
-1
-
-4
-
-2
-
-5
-
-3
-
-1
-
-4
-
-2
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">2</span></div>
+  </div>
+</div>
 
 **Output:** 1
 
@@ -58,33 +46,17 @@ You must write an algorithm that runs in `O(log n) time`\.
 
 **Input:** nums = \[4,5,6,7,0,1,2\]
 
-0
-
-4
-
-1
-
-5
-
-2
-
-6
-
-3
-
-7
-
-4
-
-0
-
-5
-
-1
-
-6
-
-2
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">6</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">7</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">4</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">2</span></div>
+  </div>
+</div>
 
 **Output:** 0
 
@@ -94,21 +66,14 @@ You must write an algorithm that runs in `O(log n) time`\.
 
 **Input:** nums = \[11,13,15,17\]
 
-0
-
-11
-
-1
-
-13
-
-2
-
-15
-
-3
-
-17
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">11</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">13</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">15</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">17</span></div>
+  </div>
+</div>
 
 **Output:** 11
 
@@ -122,11 +87,10 @@ You must write an algorithm that runs in `O(log n) time`\.
 *   All the integers of `nums` are **unique**\.
 *   `nums` is sorted and rotated between `1` and `n` times\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array)
 
-# Approaches
+## Approaches
 
-## 1\. Linear Search
+### 1\. Linear Search
 
 #### Intuition:
 
@@ -141,12 +105,12 @@ When thinking about finding the minimum value in a rotated sorted array, a brute
 
 #### Code:
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), where n is the number of elements in the array\. In the worst case, we need to scan each element once\.
 *   **Space Complexity:** O\(1\)\. We use only a constant amount of additional space\.
 
-## 2\. Binary Search
+### 2\. Binary Search
 
 #### Intuition:
 
@@ -163,9 +127,9 @@ The rotated sorted array still retains some properties of a sorted array\. In a 
 
 #### Code:
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(log n\), where n is the number of elements in the array\. Binary search reduces the search space by half each time\.
 *   **Space Complexity:** O\(1\)\. Similarly, only a constant amount of space is used\.
 
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array)

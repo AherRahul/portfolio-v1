@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 There is an undirected connected tree with `n` nodes labeled from `0` to `n - 1` and `n - 1` edges\.
 
@@ -25,7 +23,43 @@ Return an array `answer` of length `n` where `answer[i]` is the sum of the
 
 **Input:** n = 6, edges = \[\[0,1\],\[0,2\],\[2,3\],\[2,4\],\[2,5\]\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">4</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">5</span></div>
+    </div>
+  </div>
+</div>
+
 **Output:** \[8,12,6,10,10,10\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">8</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">12</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">6</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">10</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">10</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">5</span><span class="arr-val">10</span></div>
+  </div>
+</div>
 
 **Explanation:** The tree is shown above\.
 
@@ -37,11 +71,33 @@ We can see that dist\(0,1\) \+ dist\(0,2\) \+ dist\(0,3\) \+ dist\(0,4\) \+ dist
 
 **Output:** \[0\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">0</span></div>
+  </div>
+</div>
+
 ##### **Example 3:**
 
 **Input:** n = 2, edges = \[\[1,0\]\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+    </div>
+  </div>
+</div>
+
 **Output:** \[1,1\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 ##### **Constraints:**
 
@@ -52,11 +108,10 @@ We can see that dist\(0,1\) \+ dist\(0,2\) \+ dist\(0,3\) \+ dist\(0,4\) \+ dist
 *   **a****i** **\!= b****i**
 *   The given input represents a valid tree\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/sum-of-distances-in-tree)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force using DFS
+### 1\. Brute Force using DFS
 
 #### **Intuition:**
 
@@ -71,8 +126,6 @@ The brute force approach calculates the distance for each node by performing a D
 This approach is clear but inefficient due to repeated calculations, making it not suitable for larger trees\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -120,12 +173,12 @@ class Solution {
 
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N^2\) due to DFS from each node\.
 *   **Space Complexity:** O\(N\) for storing graph as adjacency list and visited array\.
 
-## 2\. Optimized DFS with DP and Precomputation
+### 2\. Optimized DFS with DP and Precomputation
 
 #### **Intuition:**
 
@@ -143,8 +196,6 @@ To optimize, we use dynamic programming and precompute sub\-tree information to 
 *   For each node transitioning from parent, calculate its sum based on the child's distance by subtracting its distance contributed and adding distances from non\-subtree nodes\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {
@@ -197,7 +248,9 @@ class Solution {
 
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\), as each edge and node is traversed a constant number of times\.
 *   **Space Complexity:** O\(N\) for graph storage and arrays to store results and counts\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/sum-of-distances-in-tree)

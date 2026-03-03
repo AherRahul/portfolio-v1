@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given a `triangle` array, return _the minimum path sum from top to bottom_\.
 
@@ -22,6 +20,29 @@ For each step, you may move to an adjacent number of the row below\. More formal
 ##### **Example 1:**
 
 **Input:** triangle = \[\[2\],\[3,4\],\[6,5,7\],\[4,1,8,3\]\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">4</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">6</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">5</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">7</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">4</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">8</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+    </div>
+  </div>
+</div>
 
 **Output:** 11
 
@@ -32,6 +53,14 @@ The minimum path sum from top to bottom is 2 \+ 3 \+ 5 \+ 1 = 11 \(underlined ab
 **Example 2:**
 
 **Input:** triangle = \[\[\-10\]\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">-10</span></div>
+    </div>
+  </div>
+</div>
 
 **Output:** \-10
 
@@ -44,19 +73,16 @@ The minimum path sum from top to bottom is 2 \+ 3 \+ 5 \+ 1 = 11 \(underlined ab
 
 **Follow up:** Could you do this using only `O(n)` extra space, where `n` is the total number of rows in the triangle?
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/triangle)
 
-# Approaches
+## Approaches
 
-## 1\. Recursive Brute Force
+### 1\. Recursive Brute Force
 
 #### **Intuition**:
 
 Start from the top of the triangle, at each step, move to one of the two adjacent numbers on the row below\. Sum the paths and return the minimum path sum recursively\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -80,20 +106,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(2^n\) \- each element can lead to two possibilities\.
 *   **Space Complexity:** O\(n\) \- recursion depth\.
 
-## 2\. Memoization
+### 2\. Memoization
 
 #### **Intuition**:
 
 To avoid recalculating the same values, we store the results of subproblems in a memoization table\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -128,20 +152,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^2\) \- all cells are computed once\.
 *   **Space Complexity:** O\(n^2\) \- memoization table storage\.
 
-## 3\. Bottom\-Up Dynamic Programming
+### 3\. Bottom\-Up Dynamic Programming
 
 #### **Intuition**:
 
 Start filling the DP table from the bottom of the triangle towards the top, by considering the potential next moves in the row below\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -167,20 +189,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^2\) \- each cell is computed once\.
 *   **Space Complexity:** O\(n^2\) \- DP table storage\.
 
-## 4\. Space Optimized Dynamic Programming
+### 4\. Space Optimized Dynamic Programming
 
 #### **Intuition**:
 
 Instead of keeping a full DP table, keep a single array representing the current row computations, reducing space usage\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -206,7 +226,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^2\) \- each cell is computed once\.
 *   **Space Complexity:** O\(n\) \- reused single array storage\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/triangle)

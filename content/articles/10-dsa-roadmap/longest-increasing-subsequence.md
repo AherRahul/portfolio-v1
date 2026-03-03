@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given an integer array `nums`, return _the length of the longest_ _**strictly increasing subsequence**_\.
 
@@ -21,17 +19,20 @@ Given an integer array `nums`, return _the length of the longest_ _**strictly
 
 **Input:** nums = \[10,9,2,5,3,7,101,18\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">10</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">9</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">7</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">101</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">7</span><span class="arr-val">18</span></div>
+  </div>
+</div>
+
 10
-
-9
-
-2
-
-5
-
-3
-
-7
 
 101
 
@@ -45,17 +46,16 @@ Given an integer array `nums`, return _the length of the longest_ _**strictly
 
 **Input:** nums = \[0,1,0,3,2,3\]
 
-0
-
-1
-
-0
-
-3
-
-2
-
-3
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">0</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">2</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">3</span></div>
+  </div>
+</div>
 
 **Output:** 4
 
@@ -63,19 +63,17 @@ Given an integer array `nums`, return _the length of the longest_ _**strictly
 
 **Input:** nums = \[7,7,7,7,7,7,7\]
 
-7
-
-7
-
-7
-
-7
-
-7
-
-7
-
-7
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">7</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">7</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">7</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">7</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">7</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">7</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">7</span></div>
+  </div>
+</div>
 
 **Output:** 1
 
@@ -86,9 +84,8 @@ Given an integer array `nums`, return _the length of the longest_ _**strictly
 
 **Follow up:** Can you come up with an algorithm that runs in `O(n log(n))` time complexity?
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/longest-increasing-subsequence)
 
-# Approaches
+## Approaches
 
 ### 1\. Dynamic Programming
 
@@ -107,8 +104,6 @@ The idea is to use a dynamic programming table to keep track of the length of th
 4.  The answer is the maximum value in the `dp` array\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {
@@ -136,7 +131,7 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^2\), where n is the length of the array\. We examine each pair of indices once\.
 *   **Space Complexity:** O\(n\), used for the dp array\.
@@ -158,8 +153,6 @@ Instead of maintaining an array to find the longest increasing subsequence with 
 4.  The length of `tails` will be the length of the longest increasing subsequence\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {
@@ -190,7 +183,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n log n\), due to binary searching within tails for each of the n elements\.
 *   **Space Complexity:** O\(n\), used for the tails array\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/longest-increasing-subsequence)

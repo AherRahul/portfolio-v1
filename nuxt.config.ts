@@ -66,6 +66,10 @@ export default defineNuxtConfig({
     }
   },
 
+  css: [
+    '~/assets/css/arr-viz.css',
+  ],
+
   plugins: [
     { src: '~/plugins/rds.ts', mode: 'client' }
   ],

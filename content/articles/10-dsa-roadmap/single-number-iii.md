@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given an integer array `nums`, in which exactly two elements appear only once and all the other elements appear exactly twice\. Find the two elements that appear only once\. You can return the answer in **any order**\.
 
@@ -23,39 +21,25 @@ You must write an algorithm that runs in linear runtime complexity and uses on
 
 Input:nums=\[1,2,1,3,2,5\]
 
-0
-
-1
-
-1
-
-2
-
-2
-
-1
-
-3
-
-3
-
-4
-
-2
-
-5
-
-5
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">5</span></div>
+  </div>
+</div>
 
 Output:\[3,5\]
 
-0
-
-3
-
-1
-
-5
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">5</span></div>
+  </div>
+</div>
 
 **Explanation:** \[5, 3\] is also a valid answer\.
 
@@ -63,45 +47,41 @@ Output:\[3,5\]
 
 Input:nums=\[\-1,0\]
 
-0
-
-\-1
-
-1
-
-0
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">-1</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">1</span><span class="arr-val">0</span></div>
+  </div>
+</div>
 
 Output:\[\-1,0\]
 
-0
-
-\-1
-
-1
-
-0
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">-1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">0</span></div>
+  </div>
+</div>
 
 ##### **Example 3:**
 
 Input:nums=\[0,1\]
 
-0
-
-0
-
-1
-
-1
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">0</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 Output:\[1,0\]
 
-0
-
-1
-
-1
-
-0
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">0</span></div>
+  </div>
+</div>
 
 ##### **Constraints:**
 
@@ -109,19 +89,16 @@ Output:\[1,0\]
 *   **\-2****31** **<= nums\[i\] <= 2****31** **\- 1**
 *   Each integer in `nums` will appear twice, only two integers will appear once\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/single-number-iii/)
 
-# Approaches
+## Approaches
 
-## 1\. HashMap
+### 1\. HashMap
 
 #### Intuition:
 
 The simplest approach to solve this problem is to use a HashMap to count the occurrences of each number in the array\. We then find the two numbers that appear exactly once by iterating through the map\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -155,12 +132,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\): We iterate through the array and then through the map\.
 *   **Space Complexity:** O\(n\): We use additional space for the HashMap\.
 
-## 2\. Bit Manipulation
+### 2\. Bit Manipulation
 
 #### Intuition:
 
@@ -174,8 +151,6 @@ A more optimal solution uses bit manipulation\. First, XOR all numbers to find t
 *   We can use this bit to separate numbers into two groups and find the two unique numbers by XORing within these groups\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -204,7 +179,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\): We make a single pass to XOR all elements and another pass to separate them into groups and find results\.
 *   **Space Complexity:** O\(1\): We use a constant amount of extra space beyond the input and output\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/single-number-iii/)

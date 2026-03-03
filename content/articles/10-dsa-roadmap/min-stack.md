@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Design a stack that supports push, pop, top, and retrieving the minimum element in constant time\.
 
@@ -58,19 +56,16 @@ minStack.getMin(); // return -2
 *   Methods `pop`, `top` and `getMin` operations will always be called on **non\-empty** stacks\.
 *   At most `3 * 10``4` calls will be made to `push`, `pop`, `top`, and `getMin`\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/min-stack)
 
-# Approaches
+## Approaches
 
-## 1\. Using Two Stacks
+### 1\. Using Two Stacks
 
 #### Intuition:
 
 The idea here is to use two stacks\. One stack will be used as a regular stack to store all the numbers, whereas the second stack \(let's call it the minStack\) will be used to keep track of the minimum value at each stage\. Whenever we push an element, we'll also push the new minimum onto the minStack\. When we pop an element, we'll also pop from the minStack to ensure both stacks stay synchronized\.
 
 #### Code:
-
-Java
 
 ```java
 class MinStack {
@@ -112,20 +107,18 @@ class MinStack {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(1\) for each operation \(`push`, `pop`, `top`, and `getMin`\)\.
 *   **Space Complexity:** O\(n\) where n is the number of elements in the stack, since we are using two stacks\.
 
-## 2\. Using Single Stack with Pair Value
+### 2\. Using Single Stack with Pair Value
 
 #### Intuition:
 
 Rather than using two separate stacks, we can optimize space by using a single stack, where each element in the stack is a pair consisting of the actual value and the minimum value up to that point\.
 
 #### Code:
-
-Java
 
 ```java
 class MinStack {
@@ -161,20 +154,18 @@ class MinStack {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(1\) for each operation\.
 *   **Space Complexity:** O\(n\), but now we use only a single stack\.
 
-## 3\. Single Stack with Min Tracking
+### 3\. Single Stack with Min Tracking
 
 #### Intuition:
 
 Another approach is to keep track of the minimum value in a variable\. We push new values onto the stack, and if a new value is the new minimum, we first push the previous minimum onto the stack and then push the new value\. The main advantage of this approach is that we use a single stack and minimum variables to efficiently track the minimum value\.
 
 #### Code:
-
-Java
 
 ```java
 class MinStack {
@@ -216,7 +207,9 @@ class MinStack {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(1\) for each operation\.
 *   **Space Complexity:** O\(n\), but more efficient stack utilization by storing the minimum only when necessary\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/min-stack)

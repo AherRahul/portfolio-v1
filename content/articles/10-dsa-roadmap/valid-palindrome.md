@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 A phrase is a **palindrome** if, after converting all uppercase letters into lowercase letters and removing all non\-alphanumeric characters, it reads the same forward and backward\. Alphanumeric characters include letters and numbers\.
 
@@ -48,11 +46,10 @@ Given a string `s`, return `true` _if it is a_ _**palindrome**__, or_ `fals
 *   **1 <= s\.length <= 2 \* 10****5**
 *   **s consists only of printable ASCII characters\.**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/valid-palindrome)
 
-# Approaches
+## Approaches
 
-## 1\. Two\-pointer: Clean String
+### 1\. Two\-pointer: Clean String
 
 #### Intuition:
 
@@ -66,8 +63,6 @@ The problem requires us to determine if a given string is a palindrome, consider
 4.  If you reach the center with all characters matching, the string is a palindrome\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution
@@ -99,12 +94,12 @@ class Solution
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), where n is the length of the input string\. We traverse each character twice in the worst case \(once for cleaning and once for palindrome checking\)\.
 *   **Space Complexity:** O\(n\) for the cleaned buffer\.
 
-## 2\. Two\-pointers: O\(1\) space
+### 2\. Two\-pointers: O\(1\) space
 
 #### Intuition:
 
@@ -123,8 +118,6 @@ The previous solution effectively checks the palindrome by cleaning up the strin
 4.  If the entire string is processed without mismatches, it is a palindrome\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -160,9 +153,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), where n is the length of the input string\. We traverse each character at most twice\.
 *   **Space Complexity:** O\(1\), no additional space is used beyond integer indices\.
 
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/valid-palindrome)

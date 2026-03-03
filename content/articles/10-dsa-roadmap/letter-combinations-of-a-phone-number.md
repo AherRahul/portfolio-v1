@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given a string containing digits from `2-9` inclusive, return all possible letter combinations that the number could represent\. Return the answer in **any order**\.
 
@@ -24,6 +22,20 @@ A mapping of digits to letters \(just like on the telephone buttons\) is given b
 **Input:** digits = "23"
 
 **Output:** \["ad","ae","af","bd","be","bf","cd","ce","cf"\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">ad</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">ae</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">af</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">bd</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">be</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">5</span><span class="arr-val">bf</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">6</span><span class="arr-val">cd</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">7</span><span class="arr-val">ce</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">8</span><span class="arr-val">cf</span></div>
+  </div>
+</div>
 
 ##### **Example 2:**
 
@@ -37,16 +49,23 @@ A mapping of digits to letters \(just like on the telephone buttons\) is given b
 
 **Output:** \["a","b","c"\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">a</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">b</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">c</span></div>
+  </div>
+</div>
+
 ##### **Constraints:**
 
 *   `0 <= digits.length <= 4`
 *   `digits[i]` is a digit in the range `['2', '9']`\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/letter-combinations-of-a-phone-number)
 
-# Approaches
+## Approaches
 
-## 1\. Backtracking Approach
+### 1\. Backtracking Approach
 
 #### Intuition:
 
@@ -62,8 +81,6 @@ When using backtracking:
 This method is efficient as it avoids constructing unnecessary paths once a valid one is found\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -115,7 +132,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(3^n × 4^m\), where n is the number of digits mapping to 3 letters \(like '2', '3', '4', etc\.\) and m is the number of digits mapping to 4 letters \(like '7' or '9'\)\. This complexity arises because we generate all possible combinations\.
 *   **Space Complexity:** O\(3^n × 4^m\), since the space required is mainly due to the storage of results in the list\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/letter-combinations-of-a-phone-number)

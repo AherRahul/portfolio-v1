@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given an integer array `cookies`, where `cookies[i]` denotes the number of cookies in the `i``th` bag\. You are also given an integer `k` that denotes the number of children to distribute **all** the bags of cookies to\. All the cookies in the same bag must go to the same child and cannot be split up\.
 
@@ -24,6 +22,16 @@ Return _the_ _**minimum**_ _unfairness of all distributions_\.
 ##### **Example 1:**
 
 **Input:** cookies = \[8,15,10,20,8\], k = 2
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">8</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">15</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">10</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">20</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">8</span></div>
+  </div>
+</div>
 
 **Output:** 31
 
@@ -38,6 +46,19 @@ The unfairness of the distribution is max\(31,30\) = 31\. It can be shown that t
 **Example 2:**
 
 **Input:** cookies = \[6,1,3,2,2,4,1,2\], k = 3
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">6</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">7</span><span class="arr-val">2</span></div>
+  </div>
+</div>
 
 **Output:** 7
 
@@ -57,11 +78,10 @@ The unfairness of the distribution is max\(7,7,7\) = 7\. It can be shown that th
 *   1 <= cookies\[i\] <= 105
 *   2 <= k <= cookies\.length
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/fair-distribution-of-cookies)
 
-# Approaches
+## Approaches
 
-## 1\. Backtracking \(Brute Force\)
+### 1\. Backtracking \(Brute Force\)
 
 #### Intuition:
 
@@ -75,8 +95,6 @@ The problem involves assigning cookies to children in such a way that the most "
 4.  Due to the factorial time complexity of trying every distribution, this approach will be inefficient for larger inputs but demonstrates a straightforward solution\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -110,12 +128,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** **O\(k^n\) \-** For each cookie, there are k children to whom it can be assigned\.
 *   **Space Complexity:** O\(k\) \- To store the cookie count for each child\.
 
-## 2\. Backtracking with Early Pruning
+### 2\. Backtracking with Early Pruning
 
 #### Intuition:
 
@@ -129,8 +147,6 @@ We can enhance the previous backtracking approach by pruning paths early when th
 4.  This limits unnecessary computation and reduces search space\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -168,7 +184,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** **O\(k^n\)** in the worst case, but with pruning, often much faster\.
 *   **Space Complexity:** **O\(k\)**: For storing cookies counts per child\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/fair-distribution-of-cookies)

@@ -11,15 +11,25 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given the `root` of a binary tree, _check whether it is a mirror of itself_ \(i\.e\., symmetric around its center\)\.
 
 ##### **Example 1:**
 
 Input:root=\[1,2,2,3,4,4,3\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">3</span></div>
+  </div>
+</div>
 
 1234243
 
@@ -28,6 +38,18 @@ Input:root=\[1,2,2,3,4,4,3\]
 ##### **Example 2:**
 
 Input:root=\[1,2,2,null,3,null,3\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">3</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">5</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">3</span></div>
+  </div>
+</div>
 
 12323
 
@@ -40,11 +62,10 @@ Input:root=\[1,2,2,null,3,null,3\]
 
 **Follow up:** Could you solve it both recursively and iteratively?
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/symmetric-tree)
 
-# Approaches
+## Approaches
 
-## 1\. Recursive Approach
+### 1\. Recursive Approach
 
 The symmetric tree problem can be solved by recursively checking if the left subtree is a mirror of the right subtree\. More formally, two trees are a mirror of each other if:
 
@@ -65,8 +86,6 @@ The symmetric tree problem can be solved by recursively checking if the left sub
 4.  Recursively check the left and right children\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -90,12 +109,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), where n is the number of nodes in the tree, as each node is visited once\.
 *   **Space Complexity:** O\(h\), where h is the height of the tree, due to the recursion stack\.
 
-## 2\. Iterative Approach using Queue
+### 2\. Iterative Approach using Queue
 
 Another way to solve the symmetric tree problem is by using an iterative approach with a queue\. The idea is similar to the recursive approach, but we employ a queue to imitate the function call stack\.
 
@@ -116,8 +135,6 @@ Another way to solve the symmetric tree problem is by using an iterative approac
 7.  Enqueue the children of the nodes in the order to maintain the symmetry\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -149,7 +166,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), as every node is processed once\.
 *   **Space Complexity:** O\(n\), where n is the number of nodes in the queue at any level \(widest point of the tree\)\. For a perfectly balanced tree, this would be approximately h/2 nodes, or n/2/3 in the worst case\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/symmetric-tree)

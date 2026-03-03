@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 There are some spherical balloons taped onto a flat wall that represents the XY\-plane\. The balloons are represented as a 2D integer array `points` where **points\[i\] = \[x****start****, x****end****\]** denotes a balloon whose **horizontal diameter** stretches between **x****start** and **x****end**\. You do not know the exact y\-coordinates of the balloons\.
 
@@ -24,6 +22,27 @@ Given the array `points`, return _the_ _**minimum**_ _number of arrows that 
 ##### **Example 1:**
 
 **Input:** points = \[\[10,16\],\[2,8\],\[1,6\],\[7,12\]\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">10</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">16</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">8</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">6</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">7</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">12</span></div>
+    </div>
+  </div>
+</div>
 
 **Output:** 2
 
@@ -37,6 +56,27 @@ Given the array `points`, return _the_ _**minimum**_ _number of arrows that 
 
 **Input:** points = \[\[1,2\],\[3,4\],\[5,6\],\[7,8\]\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">4</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">5</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">6</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">7</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">8</span></div>
+    </div>
+  </div>
+</div>
+
 **Output:** 4
 
 **Explanation:** One arrow needs to be shot for each balloon for a total of 4 arrows\.
@@ -44,6 +84,27 @@ Given the array `points`, return _the_ _**minimum**_ _number of arrows that 
 ##### **Example 3:**
 
 **Input:** points = \[\[1,2\],\[2,3\],\[3,4\],\[4,5\]\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">4</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">4</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">5</span></div>
+    </div>
+  </div>
+</div>
 
 **Output:** 2
 
@@ -59,11 +120,10 @@ Given the array `points`, return _the_ _**minimum**_ _number of arrows that 
 *   **points\[i\]\.length == 2**
 *   **\-2****31** **<= x****start** **< x****end** **<= 2****31** **\- 1**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons)
 
-# Approaches
+## Approaches
 
-## 1\. Sorting and Greedy Approach
+### 1\. Sorting and Greedy Approach
 
 #### Intuition:
 
@@ -85,8 +145,6 @@ A greedy approach is useful here:
 *   Update the current arrow position to this new end\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -113,9 +171,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n log n\), where n is the number of balloons\. This comes mainly from sorting the intervals\.
 *   **Space Complexity:** O\(1\), aside from input storage since we are sorting in place\.
 
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons)

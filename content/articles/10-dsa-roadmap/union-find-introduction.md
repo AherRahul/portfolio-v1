@@ -66,8 +66,6 @@ The simplest way to represent Union\-Find is with an **array called** `**parent*
 *   The **find** operation walks up the parent chain until it reaches the root\. That root represents the set that the element belongs to\.
 *   The **union** operation find the roots of each element\. If they’re different, it means they’re in different sets, so we merge them by pointing one root to the other\.
 
-Java
-
 ```java
 class UnionFind {
    int[] parent;
@@ -83,8 +81,6 @@ class UnionFind {
 
 **Step 2: Find Operation**
 
-Java
-
 ```java
 public int find(int x) {
    while (x != parent[x]) {
@@ -95,8 +91,6 @@ public int find(int x) {
 ```
 
 **Step 3: Union Operation**
-
-Java
 
 ```java
 public void union(int x, int y) {
@@ -141,8 +135,6 @@ Path compression flattens the structure of the tree whenever we call **find**\.
 *   With path compression, we make every visited node point **directly to the root**\.
 *   This way, future queries become much faster\.
 
-Java
-
 ```java
 public int find(int x) {
    if (x != parent[x]) {
@@ -164,8 +156,6 @@ This optimization helps keep the tree shallow when merging sets\.
 *   When uniting two roots, attach the **shorter tree under the taller one**\.
 *   If both have the same rank, choose one as root and increase its rank\.
 *   By always attaching the smaller tree to the larger one, the tree height stays very small\.
-
-Java
 
 ```java
 class UnionFind {

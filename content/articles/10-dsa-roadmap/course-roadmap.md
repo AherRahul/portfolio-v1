@@ -32,7 +32,6 @@ published: true
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png)
 
-
 # Introduction to DSA & Problem Solving – The Foundation of Efficient Programming
 
 Imagine you're the **chief architect of a massive city** tasked with designing the most efficient transportation system possible:
@@ -46,9 +45,6 @@ Imagine you're the **chief architect of a massive city** tasked with designing t
 - **Scalability Planning** - Your system must handle growth: what works for 10,000 people might collapse with 10 million. You need designs that scale gracefully and perform well under increasing demand.
 
 - **Problem-Solving Methodology** - You don't just build randomly—you analyze traffic patterns, study similar cities, break complex problems into manageable components, and systematically test and optimize your solutions.
-
-
-<br />
 
 **Data Structures and Algorithms work exactly like this urban planning challenge.** They're the fundamental building blocks that determine whether your software runs efficiently or crashes under load:
 

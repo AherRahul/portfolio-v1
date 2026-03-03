@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given a directed acyclic graph \(**DAG**\) of `n` nodes labeled from `0` to `n - 1`, find all possible paths from node `0` to node `n - 1` and return them in **any order**\.
 
@@ -23,7 +21,39 @@ The graph is given as follows: `graph[i]` is a list of all nodes you can visit
 
 **Input:** graph = \[\[1,2\],\[3\],\[3\],\[\]\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+    </div>
+  </div>
+</div>
+
 **Output:** \[\[0,1,3\],\[0,2,3\]\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">3</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">3</span></div>
+    </div>
+  </div>
+</div>
 
 **Explanation:** There are two paths: 0 \-> 1 \-> 3 and 0 \-> 2 \-> 3\.
 
@@ -31,7 +61,62 @@ The graph is given as follows: `graph[i]` is a list of all nodes you can visit
 
 **Input:** graph = \[\[4,3,1\],\[3,2,4\],\[3\],\[4\],\[\]\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">4</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">4</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">4</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+    </div>
+  </div>
+</div>
+
 **Output:** \[\[0,4\],\[0,3,4\],\[0,1,3,4\],\[0,1,2,3,4\],\[0,1,4\]\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">4</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">4</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">4</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">4</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">4</span></div>
+    </div>
+  </div>
+</div>
 
 #### **Constraints:**
 
@@ -42,11 +127,10 @@ The graph is given as follows: `graph[i]` is a list of all nodes you can visit
 *   All the elements of `graph[i]` are **unique**\.
 *   The input graph is **guaranteed** to be a **DAG**\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/all-paths-from-source-to-target)
 
-# Approaches
+## Approaches
 
-## 1\. DFS Backtracking
+### 1\. DFS Backtracking
 
 #### **Intuition:**
 
@@ -61,8 +145,6 @@ The problem is essentially asking for all paths from node `0` to node `n-1` 
 5.  Return all paths found once DFS exploration is complete\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -90,12 +172,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(2^n \* n\), because in the worst case, there can be `2^n` paths, and each path can be of length `n`\.
 *   **Space Complexity:** O\(n\), the space used by the recursion stack\.
 
-## 2\. BFS Using a Queue
+### 2\. BFS Using a Queue
 
 #### **Intuition:**
 
@@ -110,8 +192,6 @@ You can also solve this problem using BFS\. The goal of BFS is to explore all ne
 5.  Continue until all paths are explored\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -139,7 +219,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(2^n \* n\), similar to DFS, as you are exploring every possible path\.
 *   **Space Complexity:** O\(2^n \* n\), for storing all paths in the queue\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/all-paths-from-source-to-target)

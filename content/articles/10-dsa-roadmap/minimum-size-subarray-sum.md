@@ -11,15 +11,24 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given an array of positive integers `nums` and a positive integer `target`, return _the_ _**minimal length**_ _of a subarray whose sum is greater than or equal to_ `target`\. If there is no such subarray, return `0` instead\.
 
 ##### **Example 1:**
 
 **Input:** target = 7, nums = \[2,3,1,2,4,3\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">3</span></div>
+  </div>
+</div>
 
 **Output:** 2
 
@@ -29,11 +38,32 @@ Given an array of positive integers `nums` and a positive integer `target`, r
 
 **Input:** target = 4, nums = \[1,4,4\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">4</span></div>
+  </div>
+</div>
+
 **Output:** 1
 
 ##### **Example 3:**
 
 **Input:** target = 11, nums = \[1,1,1,1,1,1,1,1\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">7</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 **Output:** 0
 
@@ -45,19 +75,16 @@ Given an array of positive integers `nums` and a positive integer `target`, r
 
 **Follow up:** If you have figured out the `O(n)` solution, try coding another solution of which the time complexity is `O(n log(n))`\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/minimum-size-subarray-sum)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force
+### 1\. Brute Force
 
 #### **Intuition:**
 
 The simplest way to solve this problem is to consider each possible subarray of the given array\. For each subarray, calculate the sum and check if it is greater than or equal to the given target sum `s`\. The length of such subarray should be noted, and at the end, we need the minimum of such lengths\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {
@@ -82,20 +109,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^2\), where \(n\) is the number of elements in the array\. This is because for each starting index, we iterate over the remaining elements\.
 *   **Space Complexity:** O\(n\), due to the use of additional array\.
 
-## 2\. Sliding Window
+### 2\. Sliding Window
 
 #### **Intuition:**
 
 A more optimal solution involves using a sliding window technique\. The main idea is to maintain a window that contains a sum greater than or equal to `s`\. We expand the window by moving the end pointer and keep shrinking it from the start as long as the desired sum condition is satisfied\. This helps in reducing the subarray size while maintaining the sum constraint\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {
@@ -116,9 +141,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), where \(n\) is the number of elements in the array\. Each element is added and removed from the sum at most once, resulting in linear time complexity\.
 *   **Space Complexity:** O\(1\), since we only use a constant amount of additional space\.
 
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/minimum-size-subarray-sum)

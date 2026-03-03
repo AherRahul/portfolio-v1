@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You have intercepted a secret message encoded as a string of numbers\. The message is **decoded** via the following mapping:
 
@@ -66,11 +64,10 @@ The test cases are generated so that the answer fits in a **32\-bit** integer\
 *   `1 <= s.length <= 100`
 *   `s` contains only digits and may contain leading zero\(s\)\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/decode-ways)
 
-# Approaches
+## Approaches
 
-## 1\. Recursive Approach
+### 1\. Recursive Approach
 
 The recursive approach attempts to solve the problem by considering each character individually and tries to decode either one or two characters at a time\. This explores all possible combinations leading to a solution\.
 
@@ -82,8 +79,6 @@ The recursive approach attempts to solve the problem by considering each charact
 *   For each character, recursively calculate the number of ways to decode the subsequent string\.
 
 #### Code:
-
-Java
 
 ```java
 class DecodeWaysRecursive {
@@ -113,12 +108,12 @@ class DecodeWaysRecursive {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(2^N\), where \(N\) is the length of the string due to the branching at each step\.
 *   **Space Complexity:** O\(N\) due to the recursion stack\.
 
-## 2\. Memoization Approach
+### 2\. Memoization Approach
 
 The memoization approach is an optimization over the recursive approach where we store the results of subproblems to avoid redundant calculations\.
 
@@ -128,8 +123,6 @@ The memoization approach is an optimization over the recursive approach where we
 *   Similar recursive structure, but check the memoized results before computing\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -162,12 +155,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\), due to storing results and avoiding recomputation\.
 *   **Space Complexity:** O\(N\), both for the recursion stack and memoization map\.
 
-## 3\. Dynamic Programming Approach
+### 3\. Dynamic Programming Approach
 
 The DP approach builds from the bottom up, filling an array where each position represents the number of ways to decode up to that point\.
 
@@ -178,8 +171,6 @@ The DP approach builds from the bottom up, filling an array where each position 
 *   Iterate through the string, filling `dp` based on allowable single and double character decodings\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -208,7 +199,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\), iterating through the string once\.
 *   **Space Complexity:** O\(N\), for the `dp` array\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/decode-ways)

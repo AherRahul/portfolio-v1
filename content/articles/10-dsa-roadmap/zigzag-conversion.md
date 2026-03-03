@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 The string `"PAYPALISHIRING"` is written in a zigzag pattern on a given number of rows like this:
 
@@ -58,11 +56,10 @@ P     I
 *   `s` consists of English letters \(lower\-case and upper\-case\), `','` and `'.'`\.
 *   `1 <= numRows <= 1000`
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/zigzag-conversion/)
 
-# Approaches
+## Approaches
 
-## 1\. Zigzag Pattern Simulation
+### 1\. Zigzag Pattern Simulation
 
 #### **Intuition:**
 
@@ -75,8 +72,6 @@ The problem asks to reorder the given string in a specified zigzag pattern acros
 *   Once the pattern is built, we can concatenate all the rows to get the final string\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {
@@ -117,7 +112,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\) where \(n\) is the length of the input string\. Each character is processed once\.
 *   **Space Complexity:** O\(n\) to store the strings\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/zigzag-conversion/)

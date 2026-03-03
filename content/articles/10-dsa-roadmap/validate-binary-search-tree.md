@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given the `root` of a binary tree, _determine if it is a valid binary search tree \(BST\)_\.
 
@@ -27,6 +25,14 @@ A **valid BST** is defined as follows:
 
 Input:root=\[2,1,3\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+  </div>
+</div>
+
 213
 
 **Output:** true
@@ -34,6 +40,18 @@ Input:root=\[2,1,3\]
 ##### **Example 2:**
 
 Input:root=\[5,1,4,null,null,3,6\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">3</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">4</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">6</span></div>
+  </div>
+</div>
 
 51436
 
@@ -46,11 +64,10 @@ Input:root=\[5,1,4,null,null,3,6\]
 *   The number of nodes in the tree is in the range **\[1, 10****4****\]\.**
 *   **\-2****31** **<= Node\.val <= 2****31** **\- 1**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/validate-binary-search-tree)
 
-# Approaches
+## Approaches
 
-## 1\. Inorder Traversal Recursively
+### 1\. Inorder Traversal Recursively
 
 #### Intuition:
 
@@ -63,8 +80,6 @@ A Binary Search Tree \(BST\) has the property that for each node, all the nodes 
 3.  Keep track of the last seen value during the traversal to ensure that each current node's value is greater\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -96,12 +111,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\) where N is the number of nodes in the BST because each node is visited exactly once\.
 *   **Space Complexity:** O\(N\) for the recursion stack\.
 
-## 2\. Inorder Traversal Iteratively
+### 2\. Inorder Traversal Iteratively
 
 #### Intuition:
 
@@ -115,8 +130,6 @@ We can simulate the recursive inorder traversal using a stack to achieve an iter
 4.  Store the last visited node value to validate the sorted order\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -148,12 +161,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\) due to visiting each node once\.
 *   **Space Complexity:** O\(N\) due to stack usage\.
 
-## 3\. Recursive Valid Range
+### 3\. Recursive Valid Range
 
 #### Intuition:
 
@@ -166,8 +179,6 @@ Instead of relying on inorder traversal, directly utilize the properties of a BS
 3.  Recursively check the left subtree with an updated max value and the right subtree with an updated min value\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -191,7 +202,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\), as each node is checked once\.
 *   **Space Complexity:** O\(N\) in the worst case due to the recursion stack using space\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/validate-binary-search-tree)

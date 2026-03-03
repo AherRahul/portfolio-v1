@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given an unsorted integer array `nums`\. Return the _smallest positive integer_ that is _not present_ in `nums`\.
 
@@ -23,21 +21,15 @@ You must implement an algorithm that runs in `O(n)` time and uses `O(1)` aux
 
 Input:nums=\[1,2,0\]
 
-0
-
-1
-
-1
-
-2
-
-2
-
-0
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">2</span><span class="arr-val">0</span></div>
+  </div>
+</div>
 
 Output:3
-
-3
 
 **Explanation:** The numbers in the range \[1,2\] are all in the array\.
 
@@ -45,25 +37,16 @@ Output:3
 
 Input:nums=\[3,4,\-1,1\]
 
-0
-
-3
-
-1
-
-4
-
-2
-
-\-1
-
-3
-
-1
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">-1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 Output:2
-
-2
 
 **Explanation:** 1 is in the array but 2 is missing\.
 
@@ -71,29 +54,17 @@ Output:2
 
 Input:nums=\[7,8,9,11,12\]
 
-0
-
-7
-
-1
-
-8
-
-2
-
-9
-
-3
-
-11
-
-4
-
-12
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">7</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">8</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">9</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">11</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">12</span></div>
+  </div>
+</div>
 
 Output:1
-
-1
 
 **Explanation:** The smallest positive integer 1 is missing\.
 
@@ -102,11 +73,10 @@ Output:1
 *   **1 <= nums\.length <= 10****5**
 *   **\-2****31** **<= nums\[i\] <= 2****31** **\- 1**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/first-missing-positive)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force Approach
+### 1\. Brute Force Approach
 
 #### Intuition:
 
@@ -122,8 +92,6 @@ Output:1
 4.  If an integer is not found, it is the first missing positive number\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -147,12 +115,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^2\) \- We iterate through the array for each number starting from 1\.
 *   **Space Complexity:** No additional space used\.
 
-## 2\. HashSet Approach
+### 2\. HashSet Approach
 
 #### Intuition:
 
@@ -166,8 +134,6 @@ Complexity Analysis
 3.  If any integer is not found in the HashSet, that's the first missing positive number\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -188,12 +154,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\) \- Linear time to populate the set and checking numbers
 *   **Space Complexity:** O\(n\) \- Space used for storing array elements in the HashSet\.
 
-## 3\. Cyclic Sort Approach
+### 3\. Cyclic Sort Approach
 
 #### Intuition:
 
@@ -207,8 +173,6 @@ Complexity Analysis
 3.  Return `index + 1` as the result\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -236,7 +200,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\) \- Each number is visited at most twice\.
 *   **Space Complexity:** O\(1\) \- In\-place sorting without additional space\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/first-missing-positive)

@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given the `root` of a binary tree, return _the length of the_ _**diameter**_ _of the tree_\.
 
@@ -25,6 +23,16 @@ The **length** of a path between two nodes is represented by the number of edg
 
 Input:root=\[1,2,3,4,5\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">5</span></div>
+  </div>
+</div>
+
 12453
 
 **Output:** 3
@@ -35,6 +43,13 @@ Input:root=\[1,2,3,4,5\]
 
 Input:root=\[1,2\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+  </div>
+</div>
+
 12
 
 **Output:** 1
@@ -44,11 +59,10 @@ Input:root=\[1,2\]
 *   The number of nodes in the tree is in the range **\[1, 10****4****\]**\.
 *   `-100 <= Node.val <= 100`
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/diameter-of-binary-tree)
 
-# Approaches
+## Approaches
 
-## 1\. Recursive Approach
+### 1\. Recursive Approach
 
 The naive idea here is to consider each node of the binary tree, calculate the maximum path length traversing through it, and then take the largest of these lengths\. The maximum path of a node is calculated as the sum of the heights of its left and right subtrees\.
 
@@ -59,8 +73,6 @@ The naive idea here is to consider each node of the binary tree, calculate the m
 3.  **Brute Force Calculation**: For each node, calculate the diameter \(left height \+ right height\), and update the maximum diameter found so far\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -83,12 +95,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N^2\), since for every node, we calculate the height of the tree, a O\(N\) operation\.
 *   **Space Complexity:** O\(N\), space required for recursion stack in the worst case \(skewed tree\)\.
 
-## 2\. Optimized Recursive Approach
+### 2\. Optimized Recursive Approach
 
 To optimize the naive approach, we can calculate the height of the tree while computing the diameter at the same time\. This prevents re\-calculation of the height, reducing redundant operations\.
 
@@ -98,8 +110,6 @@ To optimize the naive approach, we can calculate the height of the tree while co
 2.  **Passing the Max Diameter**: Use a global or wrapper object to store the maximum diameter found during the traversal\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -128,9 +138,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\), since we only pass through each node once\.
 *   **Space Complexity:** O\(N\), due to recursion call stack \(worst case for skewed tree\)\.
 
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/diameter-of-binary-tree)

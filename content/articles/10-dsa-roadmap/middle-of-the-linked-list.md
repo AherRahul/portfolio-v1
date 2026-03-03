@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given the `head` of a singly linked list, return _the middle node of the linked list_\.
 
@@ -23,25 +21,27 @@ If there are two middle nodes, return **the second middle** node\. 
 
 Input:head=\[1,2,3,4,5\]
 
-1
-
-2
-
-3
-
-4
-
-5
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">5</span></div>
+  </div>
+</div>
 
 null
 
 Output:\[3,4,5\]
 
-3
-
-4
-
-5
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">5</span></div>
+  </div>
+</div>
 
 null
 
@@ -51,27 +51,28 @@ null
 
 Input:head=\[1,2,3,4,5,6\]
 
-1
-
-2
-
-3
-
-4
-
-5
-
-6
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">6</span></div>
+  </div>
+</div>
 
 null
 
 Output:\[4,5,6\]
 
-4
-
-5
-
-6
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">6</span></div>
+  </div>
+</div>
 
 null
 
@@ -82,11 +83,10 @@ null
 *   The number of nodes in the list is in the range `[1, 100]`\.
 *   `1 <= Node.val <= 100`
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/middle-of-the-linked-list)
 
-# Approaches
+## Approaches
 
-## 1\. Counting the Number of Nodes
+### 1\. Counting the Number of Nodes
 
 #### Intuition:
 
@@ -100,8 +100,6 @@ To find the middle of a linked list, one straightforward approach is to count th
 4.  Return the middle node\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -129,12 +127,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), where n is the number of nodes in the list\. We traverse the list twice\.
 *   **Space Complexity:** O\(1\)\. We use a constant amount of space\.
 
-## 2\. Two Pointers Technique
+### 2\. Two Pointers Technique
 
 #### Intuition:
 
@@ -154,47 +152,17 @@ The two\-pointer technique is often very efficient for linked list problems\. We
 
 slow
 
-1
-
 fast
-
-2
-
-3
-
-4
-
-5
 
 null
 
-1
-
 slow
-
-2
-
-3
 
 fast
 
-4
-
-5
-
 null
 
-1
-
-2
-
 slow
-
-3
-
-4
-
-5
 
 fast
 
@@ -206,49 +174,23 @@ Result: Middle = 3 \(slow pointer\)
 
 slow
 
-1
-
 fast
-
-2
-
-3
-
-4
 
 null
 
-1
-
 slow
-
-2
-
-3
 
 fast
 
-4
-
 null
 
-1
-
-2
-
 slow
-
-3
-
-4
 
 null
 
 Result: Middle = 3 \(slow pointer\)
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -268,9 +210,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), where n is the number of nodes in the list\. Each pointer traverses at most n elements\.
 *   **Space Complexity:** O\(1\)\. We use only a fixed amount of space regardless of the input size\.
 
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/middle-of-the-linked-list)

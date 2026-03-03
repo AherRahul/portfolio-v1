@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are implementing a program to use as your calendar\. We can add a new event if adding the event will not cause a **triple booking**\.
 
@@ -53,19 +51,16 @@ myCalendarTwo.book(25, 55); // return True, The event can be booked, as the time
 *   **0 <= start < end <= 10****9**
 *   At most `1000` calls will be made to `book`\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/my-calendar-ii)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force with Double Booking Check
+### 1\. Brute Force with Double Booking Check
 
 #### Intuition:
 
 The brute force approach involves checking if a new event can be added without causing a double booking\. This requires maintaining two lists: one for all booked events and another for overlaps of these events\. Every new event is checked against these lists, ensuring it doesn't add a triple booking\.
 
 #### Code:
-
-Java
 
 ```java
 class MyCalendarTwo {
@@ -99,20 +94,18 @@ class MyCalendarTwo {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^2\), where \(n\) is the number of calls to the `book` method, because each booking may need to check against every other booking for overlap\.
 *   **Space Complexity:** O\(n\), to store all bookings and potential overlaps\.
 
-## 2\. Using ArrayList Overlap and Bookings
+### 2\. Using ArrayList Overlap and Bookings
 
 #### Intuition:
 
 An optimization over the previous approach\. Instead of blindly checking and updating as in brute force, we focus on preventing any triple bookings by carefully maintaining only necessary overlaps\.
 
 #### Code:
-
-Java
 
 ```java
 class MyCalendarTwo {
@@ -146,20 +139,18 @@ class MyCalendarTwo {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^2\), similar to the brute force approach\.
 *   **Space Complexity:** O\(n\), to maintain lists of bookings and overlaps\.
 
-## 3\. TreeMap for Optimized Time Complexity
+### 3\. TreeMap for Optimized Time Complexity
 
 #### Intuition:
 
 Using a TreeMap allows us to efficiently track the number of active bookings at any point in time\. By incrementing at the start of a booking and decrementing at the end, we can determine double bookings through a sweep\-line algorithm\.
 
 #### Code:
-
-Java
 
 ```java
 class MyCalendarTwo {
@@ -189,7 +180,9 @@ class MyCalendarTwo {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n log n\), due to TreeMap operations per booking\.
 *   **Space Complexity:** O\(n\), holding start and end times in the map\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/my-calendar-ii)

@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given an integer `n`, return the count of all numbers with unique digits, `x`, where **0 <= x < 10****n**\.
 
@@ -35,11 +33,10 @@ Given an integer `n`, return the count of all numbers with unique digits, `x`,
 
 *   `0 <= n <= 8`
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/count-numbers-with-unique-digits)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force Approach
+### 1\. Brute Force Approach
 
 In a brute force approach, we can generate all numbers with up to `n` digits and count those with unique digits\. However, this method will be computationally expensive due to the vast number of possibilities, making it less suitable for larger values of `n`\.
 
@@ -50,8 +47,6 @@ In a brute force approach, we can generate all numbers with up to `n` digits a
 3.  Count those numbers\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -80,12 +75,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(10^n \* d\) where `d` is the number of digits, as we have to check each number up to `10^n`\.
 *   **Space Complexity:** O\(1\), aside from the input and a boolean array used for verifying digit uniqueness\.
 
-## 2\. Mathematical Combinatorics Approach
+### 2\. Mathematical Combinatorics Approach
 
 Instead of generating each number, we can use combinatorial counting to determine how many numbers have unique digits\.
 
@@ -100,8 +95,6 @@ Instead of generating each number, we can use combinatorial counting to determin
 *   Use combinatorial multiplication to compute the count of numbers with unique digits\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -123,7 +116,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), as each digit added requires constant time calculations\.
 *   **Space Complexity:** O\(1\), as we are not using any additional space that grows with `n`\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/count-numbers-with-unique-digits)

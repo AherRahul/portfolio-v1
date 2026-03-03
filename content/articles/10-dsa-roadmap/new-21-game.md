@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Alice plays the following game, loosely based on the card game **"21"**\.
 
@@ -50,11 +48,10 @@ Answers within `10``-5` of the actual answer are considered accepted\.
 *   `0 <= k <= n <= 10``4`
 *   `1 <= maxPts <= 10``4`
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/new-21-game)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force Approach
+### 1\. Brute Force Approach
 
 In this initial approach, we simulate every possible game outcome up to the maximum point\. The idea is to use recursion to try every possible draw of cards and compute the probability of reaching the target score\.
 
@@ -65,8 +62,6 @@ In this initial approach, we simulate every possible game outcome up to the maxi
 *   This recursion depth can get very large and become inefficient for larger values of `N` and `K`\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -92,12 +87,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(\(K \+ maxPts\)^maxPts\)
 *   **Space Complexity:** O\(K \+ maxPts\)
 
-## 2\. Dynamic Programming Approach
+### 2\. Dynamic Programming Approach
 
 To improve efficiency, we switch to a Dynamic Programming technique, utilizing a DP array to store probabilities\.
 
@@ -108,8 +103,6 @@ To improve efficiency, we switch to a Dynamic Programming technique, utilizing a
 *   For scores greater than `K`, if the score is within the range `[K, N]`, then it contributes to the total probability outcome\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -136,12 +129,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\)
 *   **Space Complexity:** O\(N\)
 
-## 3\. Optimized DP Approach
+### 3\. Optimized DP Approach
 
 The optimized DP approach reduces space usage by using a sliding window over the DP array, effectively reducing it from O\(N\) to O\(maxPts\)\.
 
@@ -151,8 +144,6 @@ The optimized DP approach reduces space usage by using a sliding window over the
 *   This rolling window approach ensures that we only maintain necessary elements from the DP array within the range `[i-maxPts, i]`\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -180,7 +171,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(K \+ maxPts\)
 *   **Space Complexity:** O\(maxPts\)
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/new-21-game)

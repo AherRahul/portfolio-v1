@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given a doubly linked list, which contains nodes that have a next pointer, a previous pointer, and an additional **child pointer**\. This child pointer may or may not point to a separate doubly linked list, also containing these special nodes\. These child lists may have one or more children of their own, and so on, to produce a **multilevel data structure** as shown in the example below\.
 
@@ -25,7 +23,46 @@ Return _the_ `head` _of the flattened list\. The nodes in the list must have_
 
 **Input:** head = \[1,2,3,4,5,6,null,null,null,7,8,9,10,null,null,11,12\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">6</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">6</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">7</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">8</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">9</span><span class="arr-val">7</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">10</span><span class="arr-val">8</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">11</span><span class="arr-val">9</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">12</span><span class="arr-val">10</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">13</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">14</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">15</span><span class="arr-val">11</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">16</span><span class="arr-val">12</span></div>
+  </div>
+</div>
+
 **Output:** \[1,2,3,7,8,11,12,9,10,4,5,6\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">7</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">8</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">5</span><span class="arr-val">11</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">6</span><span class="arr-val">12</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">7</span><span class="arr-val">9</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">8</span><span class="arr-val">10</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">9</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">10</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">11</span><span class="arr-val">6</span></div>
+  </div>
+</div>
 
 **Explanation:** The multilevel linked list in the input is shown\.
 
@@ -41,7 +78,24 @@ Return _the_ `head` _of the flattened list\. The nodes in the list must have_
 
 **Input:** head = \[1,2,null,3\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">2</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">3</span></div>
+  </div>
+</div>
+
 **Output:** \[1,3,2\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+  </div>
+</div>
 
 **Explanation:** The multilevel linked list in the input is shown\.
 
@@ -66,11 +120,10 @@ Return _the_ `head` _of the flattened list\. The nodes in the list must have_
 *   The number of Nodes will not exceed `1000`\.
 *   **1 <= Node\.val <= 10****5**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/flatten-a-multilevel-doubly-linked-list)
 
-# Approaches
+## Approaches
 
-## 1\. Recursive Depth\-First Search \(DFS\)
+### 1\. Recursive Depth\-First Search \(DFS\)
 
 #### Intuition:
 
@@ -91,8 +144,6 @@ The recursive approach involves:
 5.  Move the pointer to the next node and repeat the process\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -133,12 +184,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\), where N is the total number of nodes because each node is visited once\.
 *   **Space Complexity:** O\(N\) in the worst case due to the recursive function call stack\.
 
-## 2\. Iterative Using Stack
+### 2\. Iterative Using Stack
 
 #### Intuition:
 
@@ -156,8 +207,6 @@ An iterative approach can be implemented using a stack to simulate the recursive
 4.  After processing the child, continue with the node from the stack if available\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -193,7 +242,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\), where N is the total number of nodes processed\.
 *   **Space Complexity:** O\(N\) due to the maximum size of the stack in the worst scenario\. Each node is pushed onto the stack once when its child is processed\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/flatten-a-multilevel-doubly-linked-list)

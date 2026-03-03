@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given a string `s`, which contains stars `*`\.
 
@@ -59,11 +57,10 @@ There are no more stars, so we return "lecoe"\.
 *   `s` consists of lowercase English letters and stars `*`\.
 *   The operation above can be performed on `s`\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/removing-stars-from-a-string)
 
-# Approaches
+## Approaches
 
-## 1\. Using a Stack
+### 1\. Using a Stack
 
 We can solve this problem using a stack to handle the character additions and star removals efficiently\.
 
@@ -86,8 +83,6 @@ We can solve this problem using a stack to handle the character additions and st
 4.  Convert the stack to a string and return it\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -117,12 +112,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\) \- We iterate through the string once, where n is the number of characters in the string\.
 *   **Space Complexity:** O\(n\) \- In the worst case, all characters \(except stars\) are stored in the stack\.
 
-## 2\. In\-place Modification
+### 2\. In\-place Modification
 
 We can enhance the efficiency by using a similar logic to sweep through the array, using in\-place modifications to reduce the auxiliary space\.
 
@@ -145,8 +140,6 @@ We can enhance the efficiency by using a similar logic to sweep through the arra
 5.  Construct the resultant string using the valid portion of the character array up to `index`\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -172,9 +165,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\) \- We make a single pass over the string\.
 *   **Space Complexity:** O\(1\) \- No additional space is required beyond a few variables\.
 
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/removing-stars-from-a-string)

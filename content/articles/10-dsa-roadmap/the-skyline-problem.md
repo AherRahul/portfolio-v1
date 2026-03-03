@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 A city's **skyline** is the outer contour of the silhouette formed by all the buildings in that city when viewed from a distance\. Given the locations and heights of all the buildings, return _the_ _**skyline**_ _formed by these buildings collectively_\.
 
@@ -33,7 +31,70 @@ The **skyline** should be represented as a list of "key points" **sorted by t
 
 **Input:** buildings = \[\[2,9,10\],\[3,7,15\],\[5,12,12\],\[15,20,10\],\[19,24,8\]\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">9</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">10</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">7</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">15</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">5</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">12</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">12</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">15</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">20</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">10</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">19</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">24</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">8</span></div>
+    </div>
+  </div>
+</div>
+
 **Output:** \[\[2,10\],\[3,15\],\[7,12\],\[12,0\],\[15,10\],\[20,8\],\[24,0\]\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">10</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">15</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">7</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">12</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">12</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">0</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">15</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">10</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">20</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">8</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">24</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">0</span></div>
+    </div>
+  </div>
+</div>
 
 **Explanation:**
 
@@ -45,7 +106,35 @@ Figure B shows the skyline formed by those buildings\. The red points in figure 
 
 **Input:** buildings = \[\[0,2,3\],\[2,5,3\]\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">5</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+    </div>
+  </div>
+</div>
+
 **Output:** \[\[0,3\],\[5,0\]\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">3</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">5</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">0</span></div>
+    </div>
+  </div>
+</div>
 
 ##### **Constraints:**
 
@@ -54,11 +143,10 @@ Figure B shows the skyline formed by those buildings\. The red points in figure 
 *   **1 <= height****i** **<= 2****31** **\- 1**
 *   **buildings is sorted by left****i** **in non\-decreasing order\.**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/the-skyline-problem)
 
-# Approaches
+## Approaches
 
-## 1\. Sorted Edges \+ Priority Queue
+### 1\. Sorted Edges \+ Priority Queue
 
 #### Intuition:
 
@@ -82,8 +170,6 @@ The Skyline problem is essentially about managing the heights of buildings as yo
 7.  **Return the list of key points** as the skyline\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -134,7 +220,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity**: O\(n log n\), where n is the number of critical points\. Sorting the events takes O\(n log n\), and each insertion and deletion from the heap takes O\(log n\)\.
 *   **Space Complexity**: O\(n\), as we store up to n events and heights in the heap and list\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/the-skyline-problem)

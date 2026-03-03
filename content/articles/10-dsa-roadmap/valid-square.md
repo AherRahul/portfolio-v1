@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given the coordinates of four points in 2D space `p1`, `p2`, `p3` and `p4`, return `true` _if the four points construct a square_\.
 
@@ -44,11 +42,10 @@ A **valid square** has four equal sides with positive length and four equal an
 *   **p1\.length == p2\.length == p3\.length == p4\.length == 2**
 *   **\-10****4** **<= x****i****, y****i** **<= 10****4**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/valid-square)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force
+### 1\. Brute Force
 
 #### Intuition:
 
@@ -62,8 +59,6 @@ For four points to form a square:
 To solve this brute force, we calculate the distance between each pair of given points and then check the distribution of these distances\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -92,12 +87,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(1\)\. Simple calculations with a constant amount of data \(fixed number of operations for distance calculation\)\.
 *   **Space Complexity:** O\(1\)\. A constant number of data structures used\.
 
-## 2\. Sorting and Comparison
+### 2\. Sorting and Comparison
 
 #### Intuition:
 
@@ -108,8 +103,6 @@ We can simplify the check by sorting the points and then analyzing the ordered s
 We can calculate squared distances from a fixed reference, then check fixed positions' conditions of distances\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -141,7 +134,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(1\), primarily due to the fixed nature of point sorting and distance parsing, despite operationally implementing a constant array flow\.
 *   **Space Complexity:** O\(1\), since limited data\-consuming structures are wielded\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/valid-square)

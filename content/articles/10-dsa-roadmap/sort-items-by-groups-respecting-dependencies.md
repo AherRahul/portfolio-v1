@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 There are `n` items each belonging to zero or one of `m` groups where `group[i]` is the group that the `i`\-th item belongs to and it's equal to `-1` if the `i`\-th item belongs to no group\. The items and the groups are zero indexed\. A group can have no item belonging to it\.
 
@@ -29,6 +27,19 @@ Return any solution if there is more than one solution and return an **empty li
 **Input:** n = 8, m = 2, group = \[\-1,\-1,1,0,0,1,0,\-1\], beforeItems = \[\[\],\[6\],\[5\],\[6\],\[3,6\],\[\],\[\],\[\]\]
 
 **Output:** \[6,3,4,1,5,2,0,7\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">6</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">5</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">6</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">7</span><span class="arr-val">7</span></div>
+  </div>
+</div>
 
 ##### **Example 2:**
 
@@ -48,11 +59,10 @@ Return any solution if there is more than one solution and return an **empty li
 *   **i \!= beforeItems\[i\]\[j\]**
 *   **beforeItems\[i\] does not contain duplicates elements\.**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/sort-items-by-groups-respecting-dependencies)
 
-# Approaches
+## Approaches
 
-## 1\. Basic Topological Sort with Two Separate Graphs
+### 1\. Basic Topological Sort with Two Separate Graphs
 
 #### Intuition:
 
@@ -70,8 +80,6 @@ The plan is to:
 3.  Perform topological sort on the groups themselves\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -172,12 +180,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** Building the graphs takes O\(n \+ m\), where n is the number of items and m is the number of relations\. Topological sort for each graph takes O\(n \+ m\) as well\. Overall complexity is O\(n \+ m\)\.
 *   **Space Complexity:** Storing the graphs requires O\(n \+ m\) space\.
 
-## 2\. Advanced Topological Sort with Single Graph
+### 2\. Advanced Topological Sort with Single Graph
 
 #### Intuition:
 
@@ -190,8 +198,6 @@ To optimize further, we combine the management of items and groups into a single
 3.  Perform a single topological sort to create a valid order of groups and items interspersed\.
 
 #### Code:
-
-Java
 
 ```java
 class AdvancedSolution {
@@ -253,7 +259,9 @@ class AdvancedSolution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n \+ m\) due to the graph setup and traversal\.
 *   **Space Complexity:** O\(n \+ m\) for storing the graph\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/sort-items-by-groups-respecting-dependencies)

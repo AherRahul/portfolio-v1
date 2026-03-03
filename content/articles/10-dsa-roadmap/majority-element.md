@@ -11,81 +11,53 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given an array `nums` of size `n`, return _the majority element_\.
 
 The majority element is the element that appears more than `⌊n / 2⌋` times\. You may assume that the majority element always exists in the array\.
 
-##### **Example 1:**
+#### Example 1:
 
-Input:nums=\[3,2,3\]
+**Input: nums = \[3, 2, 3\]**
 
-0
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+  </div>
+</div>
 
-3
+**Output: 3** &nbsp;(appears 2 out of 3 times \> ⌊3/2⌋ = 1)
 
-1
+#### Example 2:
 
-2
+**Input: nums = \[2, 2, 1, 1, 1, 2, 2\]**
 
-2
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">2</span></div>
+  </div>
+</div>
 
-3
+**Output: 2** &nbsp;(appears 4 out of 7 times \> ⌊7/2⌋ = 3)
 
-Output:3
-
-3
-
-##### **Example 2:**
-
-Input:nums=\[2,2,1,1,1,2,2\]
-
-0
-
-2
-
-1
-
-2
-
-2
-
-1
-
-3
-
-1
-
-4
-
-1
-
-5
-
-2
-
-6
-
-2
-
-Output:2
-
-2
-
-##### **Constraints:**
+#### Constraints:
 
 *   **n == nums\.length**
-*   **1 <= n <= 5 \* 10****4**
-*   **\-10****9** **<= nums\[i\] <= 10****9**
+*   **1 <= n <= 5 \* 10^4**
+*   **\-10^9 <= nums\[i\] <= 10^9**
 
-**Follow\-up:** Could you solve the problem in linear time and in `O(1)` space?
+**Follow-up:** Could you solve the problem in linear time and in `O(1)` space?
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/majority-element/)
-
-# Understanding the Problem
+## Understanding the Problem
 
 Before diving into solutions, let us make sure we understand what a "majority element" really means\.
 
@@ -97,19 +69,17 @@ The problem guarantees that a majority element always exists\. In a real intervi
 
 Another key observation: since the majority element appears more than half the time, if you pair up each occurrence of the majority element with a non\-majority element, you would still have majority elements left over\. This insight becomes crucial when we discuss the Boyer\-Moore algorithm\.
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force
+### 1\. Brute Force
 
-#### Intuition:
+##### Intuition:
 
 The brute\-force method checks each element in the array and counts how many times it appears\. If any element occurs more than `n/2` times \(where `n` is the length of the array\), that element is the majority element\.
 
 This approach is simple to understand but inefficient because it performs a full scan for every element\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -133,12 +103,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^2\) because for each element, we are iterating through the list to count occurrences\.
 *   **Space Complexity:** O\(1\) because no extra space is used aside from variables\.
 
-## 2\. HashMap
+### 2\. HashMap
 
 #### Intuition:
 
@@ -147,8 +117,6 @@ We can optimize the brute force approach by using a HashMap to store the frequen
 Traverse the array, and increment the counter for each element encountered\. The element with a frequency greater than `n/2` will be the majority element\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -167,22 +135,49 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\) because we iterate over the array once\.
 *   **Space Complexity:** O\(n\) because we might store all elements in the map in the worst case\.
 
-## 3\. Sorting
+### 3\. Sorting
 
 #### Intuition:
 
-If we sort the array, all identical elements naturally group together\. Since the majority element appears more than `n/2` times, it must occupy the entire middle region of the sorted array\.
+If we sort the array, the majority element must occupy the full middle region\. The element at index `n/2` is always the answer\.
 
-That means the element at index `n/2` will always be the majority element\.
+**Input:**
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">2</span></div>
+  </div>
+</div>
+
+**After sorting:**
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">2</span></div>
+  </div>
+</div>
+
+
+`nums[3] = 2` → **majority element is 2** ✓
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -193,80 +188,16 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n log n\) due to sorting\.
-*   **Space Complexity:** O\(1\) when using in\-place sorting \(ignoring input space\)\.
+*   **Space Complexity:** O\(1\)\.
 
-#### Example Walkthrough:
-
-**Input:**
-
-0
-
-2
-
-1
-
-2
-
-2
-
-1
-
-3
-
-1
-
-4
-
-1
-
-5
-
-2
-
-6
-
-2
-
-**After sorting:**
-
-0
-
-1
-
-1
-
-1
-
-2
-
-1
-
-3
-
-2
-
-middle
-
-4
-
-2
-
-5
-
-2
-
-6
-
-2
-
-## 4\. Boyer\-Moore Voting Algorithm
+### 4\. Boyer-Moore Voting Algorithm
 
 #### Intuition:
 
-The Boyer\-Moore Voting Algorithm efficiently finds the majority element in linear time\.
+The Boyer-Moore Voting Algorithm is the optimal solution: O\(n\) time, O\(1\) space\.
 
 It maintains:
 
@@ -275,27 +206,67 @@ It maintains:
 
 As you scan:
 
-*   If `count == 0`, adopt the current number as the new `candidate`\.
-*   If the current number equals `candidate`, increment `count`; otherwise, decrement it\.
+*   If `count == 0`, adopt the current element as the new `candidate`\.
+*   If current == `candidate`, increment `count`; otherwise decrement it\.
 
-If a true majority exists, this process guarantees the final `candidate` is that majority\.
+**Why it works:** Think *cancellation*\. Every non-candidate element cancels one candidate occurrence\. Since the majority element appears more than half the time, it cannot be fully cancelled — it always survives\.
 
-#### Why does it work?
+#### Walkthrough: \[2, 2, 1, 1, 1, 2, 2\]
 
-Think **cancellation**\. Pair up elements as we scan:
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-ptr" data-label="num">↓</span><span class="arr-idx">0</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">2</span></div>
+  </div>
+  <p class="arr-step-label">Step 1 — num=2, count=0 → adopt 2 as candidate. count=1</p>
+</div>
 
-*   Each time we see a value **different** from the current `candidate`, we “cancel” one occurrence of the candidate with that different value by doing `count--`\.
-*   Each time we see the **same** value as the candidate, we increase `count`, effectively “uncanceling” or reinforcing the candidate\.
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-ptr" data-label="num">↓</span><span class="arr-idx">3</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">2</span></div>
+  </div>
+  <p class="arr-step-label">Steps 2-4 — 2 matches → count=2; 1 mismatch → count=1; 1 mismatch → count=0</p>
+</div>
 
-If there truly is a majority element `M` \(appears more than ⌊n/2⌋ times\), then:
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">2</span></div>
+  </div>
+  <p class="arr-step-label">Step 5 — count=0, adopt 1 as candidate. count=1</p>
+</div>
 
-*   Across the entire array, every non\-`M` element can be paired with at most one `M` for cancellation\.
-*   Since `M` occurs **strictly more** than all others combined, you cannot cancel all of the `M`s\. There will be a **surplus** of `M`s left unpaired\.
-*   That surplus ensures the **final** surviving candidate is `M`\.
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-ptr" data-label="num">↓</span><span class="arr-idx">6</span><span class="arr-val">2</span></div>
+  </div>
+  <p class="arr-step-label">Steps 6-7 — 2 mismatches → count=0; → re-adopt 2, count=1. Final candidate = 2 ✓</p>
+</div>
+
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -314,43 +285,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
-*   **Time Complexity:** O\(n\) since it passes through the array once\.
-*   **Space Complexity:** O\(1\) since only a few additional variables are used\.
+*   **Time Complexity:** O\(n\) — single pass\.
+*   **Space Complexity:** O\(1\) — only a few variables used\.
 
-#### Example Walkthrough:
-
-0
-
-2
-
-1
-
-2
-
-2
-
-1
-
-3
-
-1
-
-4
-
-1
-
-5
-
-2
-
-6
-
-2
-
-candidate = 2, count = 0
-
-Step 1 / 8
-
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/majority-element/)

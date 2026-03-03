@@ -25,42 +25,6 @@ But the challenge arises when the array contains negative numbers, making it tri
 
 For example, in the array:
 
-0
-
-\-2
-
-1
-
-1
-
-2
-
-\-3
-
-3
-
-4
-
-4
-
-\-1
-
-5
-
-2
-
-6
-
-1
-
-7
-
-\-5
-
-8
-
-4
-
 the subarray with the maximum sum is `**[4, -1, 2, 1]**`, with a total sum of `6`\.
 
 #### **Brute Force Approach**
@@ -91,8 +55,6 @@ Let’s walk through the **four possible scenarios** for each element:
 *   **If the subarray sum is negative and the current element is also Negative**: Start a new subarray to avoid reducing the sum even further\.
 
 Here’s how Kadane’s Algorithm looks in code:
-
-Java
 
 ```java
 public int maxSubArray(int[] nums) {

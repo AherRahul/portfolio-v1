@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given a string `text`, you want to use the characters of `text` to form as many instances of the word **"balloon"** as possible\.
 
@@ -23,149 +21,17 @@ You can use each character in `text` **at most once**\. Return the maximum num
 
 **Input:** text = "nlaebolko"
 
-0
-
-n
-
-1
-
-l
-
-2
-
-a
-
-3
-
-e
-
-4
-
-b
-
-5
-
-o
-
-6
-
-l
-
-7
-
-k
-
-8
-
-o
-
 **Output:** 1
 
 ##### **Example 2:**
 
 **Input:** text = "loonbalxballpoon"
 
-0
-
-l
-
-1
-
-o
-
-2
-
-o
-
-3
-
-n
-
-4
-
-b
-
-5
-
-a
-
-6
-
-l
-
-7
-
-x
-
-8
-
-b
-
-9
-
-a
-
-10
-
-l
-
-11
-
-l
-
-12
-
-p
-
-13
-
-o
-
-14
-
-o
-
-15
-
-n
-
 **Output:** 2
 
 ##### **Example 3:**
 
 **Input:** text = "leetcode"
-
-0
-
-l
-
-1
-
-e
-
-2
-
-e
-
-3
-
-t
-
-4
-
-c
-
-5
-
-o
-
-6
-
-d
-
-7
-
-e
 
 **Output:** 0
 
@@ -174,11 +40,10 @@ e
 *   **1 <= text\.length <= 10****4**
 *   `text` consists of lower case English letters only\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/maximum-number-of-balloons/)
 
-# Approaches
+## Approaches
 
-## 1\. Frequency Count with Maps
+### 1\. Frequency Count with Maps
 
 #### **Intuition:**
 
@@ -193,8 +58,6 @@ e
 3.  The count of possible "balloons" that can be formed is determined by the minimum ratio of available to needed instances of these characters\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {
@@ -227,12 +90,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), where n is the length of the input string; we traverse the string to build the frequency map\.
 *   **Space Complexity:** O\(1\), since the frequency map only contains a fixed number of characters \(at most the size of the alphabet\)\.
 
-## 2\. Optimized Frequency Count with Arrays
+### 2\. Optimized Frequency Count with Arrays
 
 #### **Intuition:**
 
@@ -253,8 +116,6 @@ Once we know how many times each required character appears in the input string,
 5.  The answer is the minimum among these available counts\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {
@@ -280,7 +141,7 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), where n is the length of the input string; similar to approach 1 but simplified\.
 *   **Space Complexity:** O\(1\), as we use a fixed\-size array independent of the input size\.
@@ -308,3 +169,5 @@ n: needs 1 → available 2
 ```
 
 The limiting character is `'a'`, so the maximum balloons = **1**\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/maximum-number-of-balloons/)

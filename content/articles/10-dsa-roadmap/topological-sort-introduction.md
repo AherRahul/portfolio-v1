@@ -93,8 +93,6 @@ Here’s how it works:
 *   After exploring all children of a node, we push it into the stack\.
 *   In the end, we pop everything from the stack to get the topological order\.
 
-Java
-
 ```java
 import java.util.*;
 
@@ -194,8 +192,6 @@ This ensures each node is only processed after all its prerequisites have been h
 At the end, if the result contains **fewer than V nodes**, the graph isn’t a DAG \(there’s a cycle\), so **no topological order exists**\.
 
 Here’s how to implement it in code:
-
-Java
 
 ```java
 class TopologicalSortBFS {

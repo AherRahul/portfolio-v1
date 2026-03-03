@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are a hiker preparing for an upcoming hike\. You are given `heights`, a 2D array of size `rows x columns`, where `heights[row][col]` represents the height of cell `(row, col)`\. You are situated in the top\-left cell, `(0, 0)`, and you hope to travel to the bottom\-right cell, `(rows-1, columns-1)` \(i\.e\., **0\-indexed**\)\. You can move **up**, **down**, **left**, or **right**, and you wish to find a route that requires the minimum **effort**\.
 
@@ -25,6 +23,26 @@ Return _the minimum_ _**effort**_ _required to travel from the top\-left cell
 
 **Input:** heights = \[\[1,2,2\],\[3,8,2\],\[5,3,5\]\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">8</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">5</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">5</span></div>
+    </div>
+  </div>
+</div>
+
 **Output:** 2
 
 **Explanation:** The route of \[1,3,5,3,5\] has a maximum absolute difference of 2 in consecutive cells\.
@@ -35,6 +53,26 @@ This is better than the route of \[1,2,2,2,5\], where the maximum absolute diffe
 
 **Input:** heights = \[\[1,2,3\],\[3,8,4\],\[5,3,5\]\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">8</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">4</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">5</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">5</span></div>
+    </div>
+  </div>
+</div>
+
 **Output:** 1
 
 **Explanation:** The route of \[1,2,3,4,5\] has a maximum absolute difference of 1 in consecutive cells, which is better than route \[1,3,5,3,5\]\.
@@ -42,6 +80,46 @@ This is better than the route of \[1,2,2,2,5\], where the maximum absolute diffe
 ##### **Example 3:**
 
 **Input:** heights = \[\[1,2,1,1,1\],\[1,2,1,2,1\],\[1,2,1,2,1\],\[1,2,1,2,1\],\[1,1,1,2,1\]\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+  </div>
+</div>
 
 **Output:** 0
 
@@ -54,11 +132,10 @@ This is better than the route of \[1,2,2,2,5\], where the maximum absolute diffe
 *   `1 <= rows, columns <= 100`
 *   `1 <= heights[i][j] <= 10``6`
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/path-with-minimum-effort)
 
-# Approaches
+## Approaches
 
-## 1\. DFS with Backtracking
+### 1\. DFS with Backtracking
 
 The simplest solution is to use Depth\-First Search \(DFS\) to explore all possible paths\. For each path, we calculate the maximum effort and keep track of the minimum effort path found\. The algorithm explores all paths and can thus guarantee that it finds the minimum effort path\.
 
@@ -69,8 +146,6 @@ The simplest solution is to use Depth\-First Search \(DFS\) to explore all possi
 *   Use backtracking to ensure all possible paths are explored\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -116,12 +191,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** **O\(\(M\*N\)\!\)**: In the worst case, each cell tries all paths\.
 *   **Space Complexity:** **O\(M \* N\)**: Space for visited matrix\.
 
-## 2\. Binary Search with BFS
+### 2\. Binary Search with BFS
 
 We can optimize the approach by using binary search along with a BFS for path verification\. The key idea is that the minimum effort path must lie within a specific range, and this range can be narrowed down using binary search\.
 
@@ -131,8 +206,6 @@ We can optimize the approach by using binary search along with a BFS for path ve
 *   For each mid effort, use BFS to check if there exists a valid path from start to end\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -188,12 +261,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** **O\(log\(max\_height\) \* M \* N\)**: Binary search combined with BFS check over the matrix\.
 *   **Space Complexity:** **O\(M \* N\)**: Space for visited matrix and queue\.
 
-## 3\. Dijkstra's Algorithm with Min\-Heap
+### 3\. Dijkstra's Algorithm with Min\-Heap
 
 The most efficient approach is to use a modified version of Dijkstra's algorithm to keep track of the minimum effort distance via a priority queue \(min\-heap\)\.
 
@@ -203,8 +276,6 @@ The most efficient approach is to use a modified version of Dijkstra's algorithm
 *   Always expand the node with the smallest effort difference until reaching the bottom\-right cell\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -247,7 +318,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** **O\(M \* N \* log\(M \* N\)\)**: Each cell is processed via the priority queue which maintains its order logarithmically\.
 *   **Space Complexity:** **O\(M \* N\)**: To keep track of efforts to reach each cell\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/path-with-minimum-effort)

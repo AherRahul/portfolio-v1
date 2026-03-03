@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given an integer array `heights` representing the heights of buildings, some `bricks`, and some `ladders`\.
 
@@ -29,6 +27,18 @@ _Return the furthest building index \(0\-indexed\) you can reach if you use the 
 ##### **Example 1:**
 
 **Input:** heights = \[4,2,7,6,9,14,12\], bricks = 5, ladders = 1
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">7</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">6</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">9</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">14</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">12</span></div>
+  </div>
+</div>
 
 **Output:** 4
 
@@ -48,11 +58,34 @@ It is impossible to go beyond building 4 because you do not have any more bricks
 
 **Input:** heights = \[4,12,2,7,3,18,20,3,19\], bricks = 10, ladders = 2
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">12</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">7</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">18</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">20</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">7</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">8</span><span class="arr-val">19</span></div>
+  </div>
+</div>
+
 **Output:** 7
 
 ##### **Example 3:**
 
 **Input:** heights = \[14,3,19,3\], bricks = 17, ladders = 0
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">14</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">19</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">3</span></div>
+  </div>
+</div>
 
 **Output:** 3
 
@@ -63,19 +96,16 @@ It is impossible to go beyond building 4 because you do not have any more bricks
 *   **0 <= bricks <= 10****9**
 *   **0 <= ladders <= heights\.length**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/furthest-building-you-can-reach)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force with Linear Search
+### 1\. Brute Force with Linear Search
 
 #### Intuition:
 
 The simplest approach to solve the problem is to iterate through each building and determine whether the jump to the next building can be achieved using available bricks and ladders\. We attempt to use bricks first and only resort to ladders when bricks are insufficient\. This approach ensures we use available resources optimally, although it may not be the most efficient for larger inputs\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -104,12 +134,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), where n is the number of buildings\. We inspect each pair of buildings once\.
 *   **Space Complexity:** O\(1\), as we use constant extra space\.
 
-## 2\. Priority Queue
+### 2\. Priority Queue
 
 #### Intuition:
 
@@ -120,8 +150,6 @@ The Brute Force Method involves using resources optimally one at a time, but an 
 3.  If the swap exhausts the ladders, return the index\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -151,9 +179,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n log k\), where n is the number of buildings and k is the number of ladders, due to heap operations \(insertion and deletion\)\.
 *   **Space Complexity:** O\(k\), where k is the number of ladders, corresponding to the maximum size of the heap\.
 
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/furthest-building-you-can-reach)

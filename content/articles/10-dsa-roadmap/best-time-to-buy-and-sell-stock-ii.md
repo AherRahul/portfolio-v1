@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given an integer array `prices` where `prices[i]` is the price of a given stock on the **i****th** day\.
 
@@ -25,33 +23,18 @@ Find and return _the_ _**maximum**_ _profit you can achieve_\.
 
 Input:prices=\[7,1,5,3,6,4\]
 
-0
-
-7
-
-1
-
-1
-
-2
-
-5
-
-3
-
-3
-
-4
-
-6
-
-5
-
-4
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">7</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">6</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">4</span></div>
+  </div>
+</div>
 
 Output:7
-
-7
 
 **Explanation:**
 
@@ -63,31 +46,19 @@ Output:7
 
 Input:prices=\[1,2,3,4,5\]
 
-0
-
-1
-
-1
-
-2
-
-2
-
-3
-
-3
-
-4
-
-4
-
-5
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">5</span></div>
+  </div>
+</div>
 
 **Output:** 4
 
 Output:4
-
-4
 
 **Explanation:** Buy on day 1 \(price = 1\) and sell on day 5 \(price = 5\), profit = 5\-1 = 4\. Total profit is 4\.
 
@@ -95,29 +66,17 @@ Output:4
 
 Input:prices=\[7,6,4,3,1\]
 
-0
-
-7
-
-1
-
-6
-
-2
-
-4
-
-3
-
-3
-
-4
-
-1
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">7</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">6</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 Output:0
-
-0
 
 **Explanation:** There is no way to make a positive profit, so we never buy the stock to achieve the maximum profit of 0\.
 
@@ -126,11 +85,10 @@ Output:0
 *   **1 <= prices\.length <= 3 \* 10****4**
 *   **0 <= prices\[i\] <= 10****4**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/description/)
 
-# Approaches
+## Approaches
 
-## 1\. Greedy Approach
+### 1\. Greedy Approach
 
 #### Intuition:
 
@@ -139,8 +97,6 @@ The problem is essentially about finding opportunities to make as much profit as
 In a simplified manner, the problem reduces to accumulating all positive differences between consecutive days\. By always projecting into the future and accumulating possible gains daily, we capitalize on every rising curve of the stock price graph\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -161,44 +117,16 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\) since iterating through the prices array once\.
 *   **Space Complexity:** O\(1\) since uses constant space\.
 
 #### Example Walkthrough:
 
-0
-
-7
-
-1
-
-1
-
-2
-
-5
-
-3
-
-3
-
-4
-
-6
-
-5
-
-4
-
 maxProfit = 0
 
-Step 1 / 5
-
-View Animation
-
-## 2\. Peak Valley Approach
+### 2\. Peak Valley Approach
 
 Another way to look at this problem is to find every consecutive pair of peaks and valleys\. A peak\-to\-valley traversal adds the difference from each peak to its preceding valley to determine the overall profit through multiple transactions\.
 
@@ -207,8 +135,6 @@ Another way to look at this problem is to find every consecutive pair of peaks a
 This approach mimics the real\-world scenario of buying stock at valleys \(local minimums\) and selling it at peaks \(local maximums\)\. This enables capturing every increasing sequence even if the overall curve spans over several days\.
 
 #### Code:
-
-Java
 
 ```java
 public class Solution {
@@ -241,7 +167,9 @@ public class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\) since iterating through the prices array once\.
 *   **Space Complexity:** O\(1\) since uses constant space\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/description/)

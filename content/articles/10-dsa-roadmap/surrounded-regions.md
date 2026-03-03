@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given an `m x n` matrix `board` containing **letters** `'X'` and `'O'`, **capture regions** that are **surrounded**:
 
@@ -27,15 +25,34 @@ To capture a **surrounded region**, replace all `'O'`s with `'X'`s **in\-pla
 
 **Input:** board = \[\["X","X","X","X"\],\["X","O","O","X"\],\["X","X","O","X"\],\["X","O","X","X"\]\]
 
-0
-
-1
-
-2
-
-3
-
-0
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">X</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">X</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">X</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">X</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">X</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">O</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">O</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">X</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">X</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">X</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">O</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">X</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">X</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">O</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">X</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">X</span></div>
+    </div>
+  </div>
+</div>
 
 X
 
@@ -44,8 +61,6 @@ X
 X
 
 X
-
-1
 
 X
 
@@ -55,8 +70,6 @@ O
 
 X
 
-2
-
 X
 
 X
@@ -64,8 +77,6 @@ X
 O
 
 X
-
-3
 
 X
 
@@ -77,15 +88,13 @@ X
 
 **Output:**
 
-0
+X
 
-1
+X
 
-2
+X
 
-3
-
-0
+X
 
 X
 
@@ -95,8 +104,6 @@ X
 
 X
 
-1
-
 X
 
 X
@@ -104,18 +111,6 @@ X
 X
 
 X
-
-2
-
-X
-
-X
-
-X
-
-X
-
-3
 
 X
 
@@ -133,7 +128,23 @@ In the above diagram, the bottom region is not captured because it is on the edg
 
 **Input:** board = \[\["X"\]\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">X</span></div>
+    </div>
+  </div>
+</div>
+
 **Output:** \[\["X"\]\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">X</span></div>
+    </div>
+  </div>
+</div>
 
 ##### **Constraints:**
 
@@ -142,11 +153,10 @@ In the above diagram, the bottom region is not captured because it is on the edg
 *   `1 <= m, n <= 200`
 *   `board[i][j]` is `'X'` or `'O'`\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/surrounded-regions)
 
-# Approaches
+## Approaches
 
-## 1\. Simple DFS Approach
+### 1\. Simple DFS Approach
 
 #### **Intuition**:
 
@@ -162,8 +172,6 @@ The problem can be approached using DFS to explore connected regions\. The idea 
 *   Change remaining 'O's to 'X'\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -209,12 +217,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(m \* n\), where m is the number of rows and n is the number of columns, as we might need to visit every cell\.
 *   **Space Complexity:** O\(m \* n\) due to the recursion stack\.
 
-## 2\. Optimized BFS Approach
+### 2\. Optimized BFS Approach
 
 #### **Intuition**:
 
@@ -227,8 +235,6 @@ Instead of using DFS to solve the problem, we can use BFS\. Using BFS helps to a
 3.  At the end, convert '\#' back to 'O' and rest 'O' to 'X'\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -276,12 +282,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(m \* n\), where m is the number of rows and n is the number of columns\.
 *   **Space Complexity:** O\(min\(m, n\)\), which is the queue operational space for BFS\.
 
-## 3\. Union\-Find \(Disjoint Set Union\) Approach
+### 3\. Union\-Find \(Disjoint Set Union\) Approach
 
 #### **Intuition**:
 
@@ -295,8 +301,6 @@ Union\-Find can be applied to efficiently manage connections\. We can think of e
 4.  Finally, iterate over the board and change any 'O' not connected to the dummy node to 'X'\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -360,7 +364,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(m \* n \* α\(m \* n\)\), where α is the Inverse Ackermann function, which is practically constant\.
 *   **Space Complexity:** O\(m \* n\) for the parent array\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/surrounded-regions)

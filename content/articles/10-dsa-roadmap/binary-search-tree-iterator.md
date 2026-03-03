@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Implement the `BSTIterator` class that represents an iterator over the [**in\-order traversal**](https://en.wikipedia.org/wiki/Tree_traversal#In-order_\(LNR\)) of a binary search tree \(BST\):
 
@@ -62,11 +60,10 @@ bSTIterator.hasNext(); // return False
 
 *   Could you implement `next()` and `hasNext()` to run in average `O(1)` time and use `O(h)` memory, where `h` is the height of the tree?
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/binary-search-tree-iterator)
 
-# Approaches
+## Approaches
 
-## 1\. Basic Approach: In\-Order Traversal with List
+### 1\. Basic Approach: In\-Order Traversal with List
 
 #### **Intuition:**
 
@@ -81,8 +78,6 @@ The basic intuition is to leverage the property of a BST where an in\-order trav
 5.  `hasNext()` checks if the current index is less than the list size\.
 
 #### Code:
-
-Java
 
 ```java
 class BSTIterator {
@@ -121,7 +116,7 @@ class BSTIterator {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** 
 
@@ -131,7 +126,7 @@ Complexity Analysis
 
 *   **Space Complexity:** O\(N\), required for storing the in\-order traversal\.
 
-## 2\. Optimal Approach: Controlled Recursion
+### 2\. Optimal Approach: Controlled Recursion
 
 #### **Intuition:**
 
@@ -146,8 +141,6 @@ The goal is to simulate the in\-order traversal using controlled stack\-based re
 5.  If this node has a right child, push all its left descendants onto the stack\.
 
 #### Code:
-
-Java
 
 ```java
 class BSTIterator {
@@ -187,7 +180,7 @@ class BSTIterator {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** 
 
@@ -196,3 +189,5 @@ Complexity Analysis
 *   `hasNext()`: O\(1\)\.
 
 *   **Space Complexity:** O\(H\), where H is the height of the tree, for the stack\. This is optimal for very skewed trees\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/binary-search-tree-iterator)

@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given a **circular integer array** `nums` of length `n`, return _the maximum possible sum of a non\-empty_ _**subarray**_ _of_ `nums`\.
 
@@ -25,25 +23,16 @@ A **subarray** may only include each element of the fixed buffer `nums` at m
 
 Input:nums=\[1,\-2,3,\-2\]
 
-0
-
-1
-
-1
-
-\-2
-
-2
-
-3
-
-3
-
-\-2
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">-2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">-2</span></div>
+  </div>
+</div>
 
 Output:3
-
-3
 
 **Explanation:** Subarray \[3\] has maximum sum 3\.
 
@@ -51,17 +40,13 @@ Output:3
 
 Input:nums=\[5,\-3,5\]
 
-0
-
-5
-
-1
-
-\-3
-
-2
-
-5
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">-3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">5</span></div>
+  </div>
+</div>
 
 Output:10
 
@@ -73,17 +58,13 @@ Output:10
 
 Input:nums=\[\-3,\-2,\-3\]
 
-0
-
-\-3
-
-1
-
-\-2
-
-2
-
-\-3
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">-3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">-2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">-3</span></div>
+  </div>
+</div>
 
 Output:\-2
 
@@ -97,11 +78,10 @@ Output:\-2
 *   **1 <= n <= 3 \* 10****4**
 *   **\-3 \* 10****4** **<= nums\[i\] <= 3 \* 10****4**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/maximum-sum-circular-subarray)
 
-# Approaches
+## Approaches
 
-## 1\. Kadane's Algorithm
+### 1\. Kadane's Algorithm
 
 #### Intuition:
 
@@ -114,8 +94,6 @@ The basic approach to solve the Maximum Subarray Sum problem can be achieved by 
 3.  Handle the edge case where all numbers are negative: in this case, the maximum subarray is just a single \(least negative\) number, so we should not consider wrapping\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -148,7 +126,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\), where N is the number of elements in the array, due to single pass traversal\.
 *   **Space Complexity:** O\(1\), as no extra space is utilized\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/maximum-sum-circular-subarray)

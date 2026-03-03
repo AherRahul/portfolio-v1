@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given an integer array `nums`, return _the number of_ _**reverse pairs**_ _in the array_\.
 
@@ -26,6 +24,16 @@ A **reverse pair** is a pair `(i, j)` where:
 
 **Input:** nums = \[1,3,2,3,1\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">1</span></div>
+  </div>
+</div>
+
 **Output:** 2
 
 **Explanation:** The reverse pairs are:
@@ -37,6 +45,16 @@ A **reverse pair** is a pair `(i, j)` where:
 ##### **Example 2:**
 
 **Input:** nums = \[2,4,3,5,1\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 **Output:** 3
 
@@ -53,11 +71,10 @@ A **reverse pair** is a pair `(i, j)` where:
 *   **1 <= nums\.length <= 5 \* 10****4**
 *   **\-2****31** **<= nums\[i\] <= 2****31** **\- 1**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/reverse-pairs)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force
+### 1\. Brute Force
 
 #### Intuition:
 
@@ -70,8 +87,6 @@ The problem asks us to count the number of important reverse pairs `(i, j)` su
 3.  Count all such pairs\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -93,12 +108,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n²\), where `n` is the number of elements in `nums`\. We check each pair `(i, j)` once\.
 *   **Space Complexity:** O\(1\), as we are utilizing only a constant amount of extra space\.
 
-## 2\. Merge Sort with Modification
+### 2\. Merge Sort with Modification
 
 #### Intuition:
 
@@ -111,8 +126,6 @@ The brute\-force solution is inefficient for large inputs\. By using a modified 
 3.  Count and merge both parts of the array while maintaining the order\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -172,7 +185,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n log n\), where `n` is the number of elements in `nums`\. This includes splitting the array \(`log n` levels\) and merging subarrays \(`O(n)` per level\)\.
 *   **Space Complexity:** O\(n\), due to the temporary arrays used during merge steps\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/reverse-pairs)

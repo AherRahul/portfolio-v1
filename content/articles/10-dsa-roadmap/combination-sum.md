@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given an array of **distinct** integers `candidates` and a target integer `target`, return _a list of all_ _**unique combinations**_ _of_ `candidates` _where the chosen numbers sum to_ `target`_\._ You may return the combinations in **any order**\.
 
@@ -25,7 +23,29 @@ The test cases are generated such that the number of unique combinations that su
 
 **Input:** candidates = \[2,3,6,7\], target = 7
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">6</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">7</span></div>
+  </div>
+</div>
+
 **Output:** \[\[2,2,3\],\[7\]\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">3</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">7</span></div>
+    </div>
+  </div>
+</div>
 
 **Explanation:**
 
@@ -37,11 +57,45 @@ The test cases are generated such that the number of unique combinations that su
 
 **Input:** candidates = \[2,3,5\], target = 8
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">5</span></div>
+  </div>
+</div>
+
 **Output:** \[\[2,2,2,2\],\[2,3,3\],\[3,5\]\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">2</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">3</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">5</span></div>
+    </div>
+  </div>
+</div>
 
 ##### **Example 3:**
 
 **Input:** candidates = \[2\], target = 1
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">2</span></div>
+  </div>
+</div>
 
 **Output:** \[\]
 
@@ -52,11 +106,10 @@ The test cases are generated such that the number of unique combinations that su
 *   All elements of `candidates` are **distinct**\.
 *   `1 <= target <= 40`
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/combination-sum)
 
-# Approaches
+## Approaches
 
-## 1\. Backtracking
+### 1\. Backtracking
 
 #### Intuition:
 
@@ -74,8 +127,6 @@ The problem requires us to find all unique combinations of numbers that sum up t
 4.  We avoid duplicates by ensuring each combination is built in non\-decreasing order\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -108,12 +159,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N^\{T/M\+1\}\)\), where \(N\) is the number of candidates, \(T\) is the target value, and \(M\) is the minimal value among the candidates\.
 *   **Space Complexity:** O\(T/M\) for the call stack during the depth of recursion\.
 
-## 2\. Backtracking with Pruning
+### 2\. Backtracking with Pruning
 
 #### Intuition:
 
@@ -126,8 +177,6 @@ In the previous approach, we performed unnecessary recursive calls even when the
 3.  This slight change saves processing time and makes the solution more efficient\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -156,7 +205,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** The time complexity remains \(O\(N^\{T/M\+1\}\)\), but pruning helps in practical scenarios\.
 *   **Space Complexity:** O\(T/M\), still for the recursion stack\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/combination-sum)

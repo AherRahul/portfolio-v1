@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are a professional robber planning to rob houses along a street\. Each house has a certain amount of money stashed\. All houses at this place are **arranged in a circle\.** That means the first house is the neighbor of the last one\. Meanwhile, adjacent houses have a security system connected, and **it will automatically contact the police if two adjacent houses were broken into on the same night**\.
 
@@ -23,6 +21,14 @@ Given an integer array `nums` representing the amount of money of each house, 
 
 **Input:** nums = \[2,3,2\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+  </div>
+</div>
+
 **Output:** 3
 
 **Explanation:** You cannot rob house 1 \(money = 2\) and then rob house 3 \(money = 2\), because they are adjacent houses\.
@@ -30,6 +36,15 @@ Given an integer array `nums` representing the amount of money of each house, 
 ##### **Example 2:**
 
 **Input:** nums = \[1,2,3,1\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 **Output:** 4
 
@@ -41,6 +56,14 @@ Total amount you can rob = 1 \+ 3 = 4\.
 
 **Input:** nums = \[1,2,3\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+  </div>
+</div>
+
 **Output:** 3
 
 ##### **Constraints:**
@@ -48,11 +71,10 @@ Total amount you can rob = 1 \+ 3 = 4\.
 *   `1 <= nums.length <= 100`
 *   `0 <= nums[i] <= 1000`
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/house-robber-ii)
 
-# Approaches
+## Approaches
 
-## 1\. Recursive Solution with Memoization
+### 1\. Recursive Solution with Memoization
 
 #### Intuition:
 
@@ -64,8 +86,6 @@ In this problem, houses are arranged in a circle\. This means the first house is
 Use a helper function to recursively calculate the maximum money that can be robbed, while using memoization to avoid redundant calculations\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -93,20 +113,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), where n is the length of the array because each house is calculated once\.
 *   **Space Complexity:** O\(n\), due to the space used for the memoization array\.
 
-## 2\. Dynamic Programming with Optimized Space
+### 2\. Dynamic Programming with Optimized Space
 
 #### Intuition:
 
 This approach uses the same two subproblems as the previous method\. However, we optimize the space complexity by storing only the last two results \(as we only need these to calculate the current house's decision\)\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -129,9 +147,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), linear traversal of array\.
 *   **Space Complexity:** O\(1\), space usage is constant due to only using fixed variables for calculations\.
 
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/house-robber-ii)

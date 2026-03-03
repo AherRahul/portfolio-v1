@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given two integers `left` and `right` that represent the range `[left, right]`, return _the bitwise AND of all numbers in this range, inclusive_\. 
 
@@ -39,11 +37,10 @@ Given two integers `left` and `right` that represent the range `[left, righ
 
 *   **0 <= left <= right <= 2****31** **\- 1**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/bitwise-and-of-numbers-range)
 
-# Approaches
+## Approaches
 
-## 1\. Bitwise AND
+### 1\. Bitwise AND
 
 #### Intuition:
 
@@ -59,8 +56,6 @@ The simplest method is to calculate the bitwise AND for every number in the rang
 This approach iterates over the range and progressively accumulates the AND result\. However, this method can be quite inefficient for large ranges\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -80,12 +75,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n \- m\), where n and m are the given range bounds\. This can be very large if the range is big\.
 *   **Space Complexity:** O\(1\) as we are using a constant amount of extra space\.
 
-## 2\. Bit Manipulation \- Common Prefix
+### 2\. Bit Manipulation \- Common Prefix
 
 #### Intuition:
 
@@ -101,8 +96,6 @@ In any range of numbers where the upper and lower bounds differ, certain trailin
 This approach efficiently finds the common range prefix, highlighting where numbers differ\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -120,7 +113,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(log n\), where n is the upper bound of the range\. We are finding the point of divergence in bits\.
 *   **Space Complexity:** O\(1\) as we use a constant amount of extra space\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/bitwise-and-of-numbers-range)

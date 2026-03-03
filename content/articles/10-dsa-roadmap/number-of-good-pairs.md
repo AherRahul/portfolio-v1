@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given an array of integers `nums`, return _the number of_ _**good pairs**_\.
 
@@ -23,33 +21,18 @@ A pair `(i, j)` is called _good_ if `nums[i] == nums[j]` and `i` < `j`\
 
 Input:nums=\[1,2,3,1,1,3\]
 
-0
-
-1
-
-1
-
-2
-
-2
-
-3
-
-3
-
-1
-
-4
-
-1
-
-5
-
-3
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">3</span></div>
+  </div>
+</div>
 
 Output:4
-
-4
 
 **Explanation:** There are 4 good pairs \(0,3\), \(0,4\), \(3,4\), \(2,5\)\.
 
@@ -57,25 +40,16 @@ Output:4
 
 Input:nums=\[1,1,1,1\]
 
-0
-
-1
-
-1
-
-1
-
-2
-
-1
-
-3
-
-1
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 Output:6
-
-6
 
 **Explanation:** Each pair in the array are _good_\.
 
@@ -83,32 +57,25 @@ Output:6
 
 Input:nums=\[1,2,3\]
 
-0
-
-1
-
-1
-
-2
-
-2
-
-3
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+  </div>
+</div>
 
 Output:0
-
-0
 
 ##### **Constraints:**
 
 *   **1 <= nums\.length <= 100**
 *   **1 <= nums\[i\] <= 100**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/number-of-good-pairs)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force
+### 1\. Brute Force
 
 #### **Intuition:**
 
@@ -122,8 +89,6 @@ The simplest approach is to check every possible pair `(i, j)` where `0 <= i 
 4.  Return the `count` after both loops have finished\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -144,12 +109,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^2\) due to nested for loops\.
 *   **Space Complexity:** O\(1\)\.
 
-## 2\. HashMap
+### 2\. HashMap
 
 #### **Intuition:**
 
@@ -178,8 +143,6 @@ So when we encounter a number again, we simply add its current frequency to the 
 
 #### Code:
 
-Java
-
 ```java
 class Solution {
    public int numIdenticalPairs(int[] nums) {
@@ -204,7 +167,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\) since iterating through the array only once\.
 *   **Space Complexity:** O\(n\) since using hashmap\. In the worse case, it may end up storing all the array elements\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/number-of-good-pairs)

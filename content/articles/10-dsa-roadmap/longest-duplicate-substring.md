@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given a string `s`, consider all _duplicated substrings_: \(contiguous\) substrings of s that occur 2 or more times\. The occurrences may overlap\.
 
@@ -36,11 +34,10 @@ Return **any** duplicated substring that has the longest possible length\. I
 *   **2 <= s\.length <= 3 \* 10****4**
 *   `s` consists of lowercase English letters\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/longest-duplicate-substring)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force Approach
+### 1\. Brute Force Approach
 
 #### Intuition:
 
@@ -49,8 +46,6 @@ The brute force approach is to generate all possible substrings and check if mor
 The general idea is to consider substrings of all possible lengths, starting from the longest\. If we find a duplicate substring of a certain length, we record that as our longest duplicate substring\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -79,12 +74,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity**: O\(n^3\), where n is the length of the string\. For each potential substring length, a substring comparison which in worst case can take O\(n^2\) time\.
 *   **Space Complexity**: O\(n^2\), for storing all possible substrings\.
 
-## 2\. Optimized Approach using Binary Search and Rolling Hash
+### 2\. Optimized Approach using Binary Search and Rolling Hash
 
 #### Intuition:
 
@@ -96,8 +91,6 @@ The optimized approach uses binary search combined with a rolling hash technique
 This method narrows down to the longest possible duplicate substring by leveraging the logarithmic exploration of the binary search and the efficiency of rolling hash\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -158,7 +151,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity**: O\(n log n\), where n is the length of the string\. Binary search contributes a `log n` factor, and each call to check for duplicates using rolling hash is O\(n\)\.
 *   **Space Complexity**: O\(n\), for storing hash values and their start positions in the hashmap\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/longest-duplicate-substring)

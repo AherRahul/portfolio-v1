@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 A peak element is an element that is strictly greater than its neighbors\.
 
@@ -27,23 +25,23 @@ You must write an algorithm that runs in `O(log n)` time\.
 
 **Input:** nums = \[1,2,3,1\]
 
-0
-
-1
-
-1
-
-2
-
-2
-
-3
-
-3
-
-1
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 **Output:** 2
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">idx</span><span class="arr-val">2</span></div>
+  </div>
+</div>
+
 
 **Explanation:** 3 is a peak element and your function should return the index number 2\.
 
@@ -51,35 +49,26 @@ You must write an algorithm that runs in `O(log n)` time\.
 
 **Input:** nums = \[1,2,1,3,5,6,4\]
 
-0
-
-1
-
-1
-
-2
-
-2
-
-1
-
-3
-
-3
-
-4
-
-5
-
-5
-
-6
-
-6
-
-4
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">6</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">4</span></div>
+  </div>
+</div>
 
 **Output:** 5
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">idx</span><span class="arr-val">5</span></div>
+  </div>
+</div>
+
 
 **Explanation:** Your function can return either index number 1 where the peak element is 2, or index number 5 where the peak element is 6\.
 
@@ -89,11 +78,10 @@ You must write an algorithm that runs in `O(log n)` time\.
 *   **\-2****31** **<= nums\[i\] <= 2****31** **\- 1**
 *   `nums[i] != nums[i + 1]` for all valid `i`\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/find-peak-element)
 
-# Approaches
+## Approaches
 
-## 1\. Linear Scan
+### 1\. Linear Scan
 
 #### **Intuition:**
 
@@ -106,8 +94,6 @@ The simplest approach to find a peak element is to iterate through the array and
 *   Return the index of the first peak element found\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -124,12 +110,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), where n is the number of elements in the array\.
 *   **Space Complexity:** O\(1\), since we only use a constant amount of additional space\.
 
-## 2\. Binary Search
+### 2\. Binary Search
 
 #### **Intuition:**
 
@@ -143,8 +129,6 @@ To achieve a more efficient solution, use a modified binary search\. Since we kn
 *   Narrow the search to the half where the peak is more probable\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -167,9 +151,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(log n\), due to the binary search approach\.
 *   **Space Complexity:** O\(1\), since we only use a constant amount of additional space\.
 
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/find-peak-element)

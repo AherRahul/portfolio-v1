@@ -1,0 +1,258 @@
+/* ===================================================================
+   Array Visualization Styles - shared across all DSA articles
+   Brand: dark background, red accent, monospace font
+   =================================================================== */
+
+/* Wrapper */
+.arr-viz-wrapper {
+    margin: 1rem 0 1.5rem;
+}
+
+/* Card container (e.g. Two-Pointer / Sliding-Window steps) */
+.arr-viz-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+}
+
+/* Row */
+.arr-viz-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: flex-end;
+}
+
+/* Extra bottom padding for rows that have pointer labels below them */
+.arr-pb {
+    padding-bottom: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Base cell */
+.arr-cell {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    animation: arr-fadein 0.3s ease both;
+}
+
+@keyframes arr-fadein {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Index label above cell */
+.arr-idx {
+    font-size: 10px;
+    font-family: 'Courier New', monospace;
+    color: rgba(161, 161, 170, 0.7);
+    line-height: 1;
+    margin-bottom: 2px;
+}
+
+/* Cell value box */
+.arr-val {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 52px;
+    min-height: 40px;
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: 1.5px solid;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+/* Cell colour variants */
+
+/* --filled  : default brand red (normal/active element) */
+.arr-cell--filled .arr-val {
+    background: rgba(220, 38, 38, 0.15);
+    border-color: rgba(220, 38, 38, 0.5);
+    color: #fca5a5;
+}
+
+.arr-cell--filled:hover .arr-val {
+    background: rgba(220, 38, 38, 0.25);
+    border-color: rgba(220, 38, 38, 0.8);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.2);
+}
+
+/* --zero    : zinc/grey (zero value - visually muted) */
+.arr-cell--zero .arr-val {
+    background: rgba(63, 63, 70, 0.5);
+    border-color: rgba(113, 113, 122, 0.4);
+    color: rgba(161, 161, 170, 0.7);
+}
+
+.arr-cell--zero:hover .arr-val {
+    background: rgba(63, 63, 70, 0.75);
+    border-color: rgba(113, 113, 122, 0.65);
+    transform: translateY(-2px);
+}
+
+/* --green   : output/result */
+.arr-cell--green .arr-val {
+    background: rgba(22, 163, 74, 0.15);
+    border-color: rgba(22, 163, 74, 0.5);
+    color: #86efac;
+}
+
+.arr-cell--green:hover .arr-val {
+    background: rgba(22, 163, 74, 0.25);
+    border-color: rgba(22, 163, 74, 0.8);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(22, 163, 74, 0.2);
+}
+
+/* --pointer : highlighted (pointer / active index - yellow-gold) */
+.arr-cell--pointer .arr-val {
+    background: rgba(234, 179, 8, 0.18);
+    border-color: rgba(234, 179, 8, 0.6);
+    color: #fde68a;
+    box-shadow: 0 0 12px rgba(234, 179, 8, 0.15);
+}
+
+.arr-cell--pointer:hover .arr-val {
+    background: rgba(234, 179, 8, 0.28);
+    border-color: rgba(234, 179, 8, 0.9);
+    transform: translateY(-2px);
+}
+
+/* --window  : sliding-window range (blue) */
+.arr-cell--window .arr-val {
+    background: rgba(59, 130, 246, 0.18);
+    border-color: rgba(59, 130, 246, 0.55);
+    color: #93c5fd;
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.12);
+}
+
+.arr-cell--window:hover .arr-val {
+    background: rgba(59, 130, 246, 0.28);
+    border-color: rgba(59, 130, 246, 0.85);
+    transform: translateY(-2px);
+}
+
+/* --yellow  : secondary array / prefix-sum input (amber) */
+.arr-cell--yellow .arr-val {
+    background: rgba(234, 179, 8, 0.13);
+    border-color: rgba(234, 179, 8, 0.45);
+    color: #fde68a;
+}
+
+.arr-cell--yellow:hover .arr-val {
+    background: rgba(234, 179, 8, 0.23);
+    border-color: rgba(234, 179, 8, 0.75);
+    transform: translateY(-2px);
+}
+
+/* --empty   : unallocated capacity slot (dashed border) */
+.arr-cell--empty .arr-val {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.12);
+    border-style: dashed;
+    color: rgba(161, 161, 170, 0.4);
+}
+
+/* Pointer arrow labels (left / right / i / j / etc.) */
+.arr-ptr {
+    position: absolute;
+    top: calc(100% + 0px);
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 10px;
+    font-weight: 700;
+    white-space: nowrap;
+    letter-spacing: 0.04em;
+}
+
+.arr-ptr::before {
+    content: '\25B2';
+    display: block;
+    text-align: center;
+    font-size: 8px;
+    margin-bottom: -15px;
+}
+
+.arr-ptr--left {
+    color: #fde68a;
+}
+
+.arr-ptr--right {
+    color: #fde68a;
+}
+
+.arr-ptr--i {
+    color: #86efac;
+}
+
+.arr-ptr--j {
+    color: #93c5fd;
+}
+
+.arr-ptr--write {
+    color: #86efac;
+}
+
+.arr-ptr--read {
+    color: #fca5a5;
+}
+
+/* Step label (e.g. "Step 1 - Initial state") */
+.arr-step-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(161, 161, 170, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin: 0.75rem 0 0.5rem !important;
+}
+
+/* Caption (size / capacity / array name) */
+.arr-caption {
+    margin: 8px 0 0 !important;
+    font-size: 11px;
+    color: rgba(161, 161, 170, 0.55);
+    text-align: left;
+    font-style: italic;
+}
+
+/* 2D Grid / Matrix visualization */
+.arr-viz-grid {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 4px;
+    margin: 1rem 0 1.5rem;
+}
+
+.arr-viz-grid-row {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+/* Cell variant for inside a grid */
+.arr-cell--grid .arr-val {
+    min-width: 36px;
+    min-height: 36px;
+    font-size: 12px;
+    border-radius: 6px;
+    padding: 4px 6px;
+}

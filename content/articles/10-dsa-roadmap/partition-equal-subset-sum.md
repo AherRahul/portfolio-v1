@@ -11,15 +11,22 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given an integer array `nums`, return `true` _if you can partition the array into two subsets such that the sum of the elements in both subsets is equal or_ `false` _otherwise_\.
 
 ##### **Example 1:**
 
 **Input:** nums = \[1,5,11,5\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">11</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">5</span></div>
+  </div>
+</div>
 
 **Output:** true
 
@@ -28,6 +35,15 @@ Given an integer array `nums`, return `true` _if you can partition the array 
 ##### **Example 2:**
 
 **Input:** nums = \[1,2,3,5\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">5</span></div>
+  </div>
+</div>
 
 **Output:** false
 
@@ -38,19 +54,16 @@ Given an integer array `nums`, return `true` _if you can partition the array 
 *   `1 <= nums.length <= 200`
 *   `1 <= nums[i] <= 100`
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/partition-equal-subset-sum)
 
-# Approaches
+## Approaches
 
-## 1\. Recursive Approach
+### 1\. Recursive Approach
 
 #### Intuition:
 
 The problem can be seen as a variation of the 0/1 knapsack problem\. The most basic approach is to use recursion to try every possible subset and check if there is a subset with a sum that is equal to half of the total sum of the array\. We are using a recursive function that tries to include or exclude each number\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -85,20 +98,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(2^n\) \- where `n` is the number of elements in the input array\. This is due to the fact we have two choices \(include/exclude\) for each number\.
 *   **Space Complexity:** O\(n\) \- due to the recursion stack used in recursive calls\.
 
-## 2\. Memoization Approach
+### 2\. Memoization Approach
 
 #### Intuition:
 
 The recursive approach has an exponential time complexity because it recalculates results for the same subproblems multiple times\. We can optimize it by storing intermediate results in a memoization table\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -131,20 +142,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n \* s\) \- `s` is half of the total sum\.
 *   **Space Complexity:** O\(n \* s\) \- for the memoization table, and O\(n\) for the recursion stack\.
 
-## 3\. Dynamic Programming Approach
+### 3\. Dynamic Programming Approach
 
 #### Intuition:
 
 We can solve the problem iteratively using dynamic programming with a boolean array\. We aim to determine if we can form the subset with sum `totalSum/2`, by iteratively updating our possibilities in a boolean array\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -168,7 +177,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n \* s\) \- where `n` is number of elements in the array and `s` is half the total sum of all elements\.
 *   **Space Complexity:** O\(s\) \- this is space used by the `dp` array\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/partition-equal-subset-sum)

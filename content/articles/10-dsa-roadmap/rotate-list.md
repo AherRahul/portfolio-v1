@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given the `head` of a linked list, rotate the list to the right by `k` places\.
 
@@ -21,29 +19,29 @@ Given the `head` of a linked list, rotate the list to the right by `k` plac
 
 **Input:** head = \[1,2,3,4,5\], k = 2
 
-1
-
-2
-
-3
-
-4
-
-5
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">5</span></div>
+  </div>
+</div>
 
 null
 
 **Output:** \[4,5,1,2,3\]
 
-4
-
-5
-
-1
-
-2
-
-3
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">3</span></div>
+  </div>
+</div>
 
 null
 
@@ -51,21 +49,25 @@ null
 
 **Input:** head = \[0,1,2\], k = 4
 
-0
-
-1
-
-2
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">0</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+  </div>
+</div>
 
 null
 
 **Output:** \[2,0,1\]
 
-2
-
-0
-
-1
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 null
 
@@ -75,11 +77,10 @@ null
 *   **\-100 <= Node\.val <= 100**
 *   **0 <= k <= 2 \* 10****9**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/rotate-list)
 
-# Approaches
+## Approaches
 
-## 1\. Convert to Array
+### 1\. Convert to Array
 
 #### Intuition:
 
@@ -92,8 +93,6 @@ The basic idea in this approach is to first convert the linked list to an array\
 3.  Convert the array back to a linked list\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -127,12 +126,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\), where N is the number of nodes in the list\. Conversion to and from the array takes linear time\.
 *   **Space Complexity:** O\(N\), for storing the nodes in an ArrayList\.
 
-## 2\. Iterative In\-Place Rotation
+### 2\. Iterative In\-Place Rotation
 
 #### Intuition:
 
@@ -146,8 +145,6 @@ Without converting to an array, we can perform the rotations directly on the lin
 4.  Find the new tail and break the circle to form the new list\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -180,9 +177,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\), where N is the number of nodes in the list\.
 *   **Space Complexity:** O\(1\), no extra space except for pointers\.
 
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/rotate-list)

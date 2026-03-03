@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given an integer array `nums`, return _an integer array_ `counts` _where_ `counts[i]` _is the number of smaller elements to the right of_ `nums[i]`\.
 
@@ -21,7 +19,25 @@ Given an integer array `nums`, return _an integer array_ `counts` _where_ `
 
 **Input:** nums = \[5,2,6,1\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">6</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">1</span></div>
+  </div>
+</div>
+
 **Output:** \[2,1,1,0\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">0</span></div>
+  </div>
+</div>
 
 **Explanation:**
 
@@ -37,32 +53,55 @@ To the right of 1 there is **0** smaller element\.
 
 **Input:** nums = \[\-1\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">-1</span></div>
+  </div>
+</div>
+
 **Output:** \[0\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">0</span></div>
+  </div>
+</div>
 
 ##### **Example 3:**
 
 **Input:** nums = \[\-1,\-1\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">-1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">-1</span></div>
+  </div>
+</div>
+
 **Output:** \[0,0\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">0</span></div>
+  </div>
+</div>
 
 ##### **Constraints:**
 
 *   **1 <= nums\.length <= 10****5**
 *   **\-10****4** **<= nums\[i\] <= 10****4**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/count-of-smaller-numbers-after-self)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force
+### 1\. Brute Force
 
 #### Intuition:
 
 The simplest approach is to check each element and count how many numbers after it are smaller\. This involves iterating over each element and then iterating over subsequent elements to count the smaller numbers\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -88,20 +127,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^2\), where n is the number of elements in the array\.
 *   **Space Complexity:** O\(1\), since we are using only a fixed amount of extra space\.
 
-## 2\. Binary Search Tree \(BST\)
+### 2\. Binary Search Tree \(BST\)
 
 #### Intuition:
 
 By using a BST, where each node contains the number of times it and all its left descendants have been inserted, we can efficiently insert each number in reverse order and count how many smaller elements have already been inserted\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -142,20 +179,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n log n\), assuming the BST is balanced\.
 *   **Space Complexity:** O\(n\), due to the space needed for the BST\.
 
-## 3\. Fenwick Tree \(or Binary Indexed Tree\)
+### 3\. Fenwick Tree \(or Binary Indexed Tree\)
 
 #### Intuition:
 
 Fenwick Tree is useful for maintaining prefix sums efficiently\. We can translate the problem into finding the frequency of numbers, querying this frequency with a Fenwick Tree while iterating the array backwards\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -194,20 +229,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n log n\), due to the operations on the Fenwick Tree\.
 *   **Space Complexity:** O\(n\), for the Fenwick Tree\.
 
-## 4\. Merge Sort
+### 4\. Merge Sort
 
 #### Intuition:
 
 This is a modification of merge sort\. What we can do is keep track of how many elements are moved after an item in the merge process\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -272,7 +305,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n log n\), due to the sorting process\.
 *   **Space Complexity:** O\(n\), due to the helper arrays used in merge sort\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/count-of-smaller-numbers-after-self)

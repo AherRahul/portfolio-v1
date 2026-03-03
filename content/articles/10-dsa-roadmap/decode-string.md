@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given an encoded string, return its decoded string\.
 
@@ -48,11 +46,10 @@ The test cases are generated so that the length of the output will never exceed�
 *   `s` is guaranteed to be **a valid** input\.
 *   All the integers in `s` are in the range `[1, 300]`\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/decode-string)
 
-# Approaches
+## Approaches
 
-## 1\. Recursive Approach
+### 1\. Recursive Approach
 
 #### **Intuition:**
 
@@ -71,8 +68,6 @@ In this approach, we use recursion to decode the string\. The idea is to iterate
 4.  This approach is accomplished by a helper method that performs the recursion and returns the decoded substring\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {
@@ -118,12 +113,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), where n is the length of the string\. Each character is processed once\.
 *   **Space Complexity:** O\(n\), used for the recursion stack and output string\.
 
-## 2\. Iterative Approach using Stacks
+### 2\. Iterative Approach using Stacks
 
 #### **Intuition:**
 
@@ -141,8 +136,6 @@ Instead of using recursion, you can use stacks to simulate the process\. Use two
 3.  Concatenate results as needed upon encountering '\]' and continue until end\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {
@@ -199,7 +192,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), where n is the length of the string\. Each character is processed once\.
 *   **Space Complexity:** O\(n\), for the stacks and output string\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/decode-string)

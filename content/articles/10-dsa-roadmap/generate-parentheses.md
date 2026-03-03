@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given `n` pairs of parentheses, write a function to _generate all combinations of well\-formed parentheses_\.
 
@@ -23,21 +21,36 @@ Given `n` pairs of parentheses, write a function to _generate all combination
 
 **Output:** \["\(\(\(\)\)\)","\(\(\)\(\)\)","\(\(\)\)\(\)","\(\)\(\(\)\)","\(\)\(\)\(\)"\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">((()))</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">(()())</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">(())()</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">()(())</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">()()()</span></div>
+  </div>
+</div>
+
 ##### **Example 2:**
 
 **Input:** n = 1
 
 **Output:** \["\(\)"\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">()</span></div>
+  </div>
+</div>
+
 ##### **Constraints:**
 
 *   `1 <= n <= 8`
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/generate-parentheses)
 
-# Approaches
+## Approaches
 
-## 1\. Recursive Approach
+### 1\. Recursive Approach
 
 #### **Intuition:**
 
@@ -56,8 +69,6 @@ This approach uses a helper function to form parentheses while adhering to these
 4.  If the number of close parentheses is less than the number of open parentheses, append '\)' to the current string and recursively call the helper function\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -87,12 +98,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(4^n / √n\) \- This complexity is derived from the nth Catalan number, which is asymptotically equivalent to 4^n / √n\.
 *   **Space Complexity:** O\(n\) \- The recursive stack has at most n stacks due to the maximum depth of recursion for valid combinations\.
 
-## 2\. Backtracking Approach
+### 2\. Backtracking Approach
 
 #### **Intuition:**
 
@@ -106,8 +117,6 @@ Backtracking is a smart way of pruning unnecessary paths early\. This approach i
 4.  Whenever the conditions are violated, undo the previous step and attempt the next candidate\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -141,7 +150,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** Same as the recursive approach O\(4^n / √n\)
 *   **Space Complexity:** O\(n\) space due to recursion stack\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/generate-parentheses)

@@ -11,49 +11,68 @@ showOnArticles: false
 published: true
 ---
 
-> #### Question: Given an integer array `nums`, move all `0`'s to the end of it while maintaining the relative order of the non\-zero elements\.
+> #### Question: Given an integer array `nums`, move all `0`'s to the end of it while maintaining the relative order of the non\-zero elements\.
 > 
-> **Note** that you must do this in\-place without making a copy of the array\.
-
-
-
+> **Note** that you must do this in\-place without making a copy of the array\.
 
 #### Example 1:
 
 **Input: nums = \[ 0, 1, 0, 3, 12 \]**
 
-<div class="p-6 pt-1 pb-1 text-left"><div class="inline-flex flex-col gap-2 items-center"><div class="inline-flex flex-col items-center gap-2"><div class="flex flex-wrap gap-2"><div class="relative group transition-all duration-200"><div class="text-xs text-muted-foreground mb-1 text-center font-mono">0</div><div class="relative"><div class="px-4 py-2 rounded-sm border-2 font-mono text-base min-w-[60px] min-h-[36px] flex items-center justify-center text-center bg-[#00bfff]/70 bg-red-600 hover:bg-red-500 border-black dark:border-[#00bfff]/80 hover:border-black dark:hover:border-[#00bfff] shadow-sm hover:shadow-md transition-all duration-200">0</div></div></div><div class="relative group transition-all duration-200"><div class="text-xs text-muted-foreground mb-1 text-center font-mono">1</div><div class="relative"><div class="px-4 py-2 rounded-sm border-2 font-mono text-base min-w-[60px] min-h-[36px] flex items-center justify-center text-center bg-[#00bfff]/70 bg-red-600 hover:bg-red-500 border-black dark:border-[#00bfff]/80 hover:border-black dark:hover:border-[#00bfff] shadow-sm hover:shadow-md transition-all duration-200">1</div></div></div><div class="relative group transition-all duration-200"><div class="text-xs text-muted-foreground mb-1 text-center font-mono">2</div><div class="relative"><div class="px-4 py-2 rounded-sm border-2 font-mono text-base min-w-[60px] min-h-[36px] flex items-center justify-center text-center bg-[#00bfff]/70 bg-red-600 hover:bg-red-500 border-black dark:border-[#00bfff]/80 hover:border-black dark:hover:border-[#00bfff] shadow-sm hover:shadow-md transition-all duration-200">0</div></div></div><div class="relative group transition-all duration-200"><div class="text-xs text-muted-foreground mb-1 text-center font-mono">3</div><div class="relative"><div class="px-4 py-2 rounded-sm border-2 font-mono text-base min-w-[60px] min-h-[36px] flex items-center justify-center text-center bg-[#00bfff]/70 bg-red-600 hover:bg-red-500 border-black dark:border-[#00bfff]/80 hover:border-black dark:hover:border-[#00bfff] shadow-sm hover:shadow-md transition-all duration-200">3</div></div></div><div class="relative group transition-all duration-200"><div class="text-xs text-muted-foreground mb-1 text-center font-mono">4</div><div class="relative"><div class="px-4 py-2 rounded-sm border-2 font-mono text-base min-w-[60px] min-h-[36px] flex items-center justify-center text-center bg-[#00bfff]/70 bg-red-600 hover:bg-red-500 border-black dark:border-[#00bfff]/80 hover:border-black dark:hover:border-[#00bfff] shadow-sm hover:shadow-md transition-all duration-200">12</div></div></div></div></div></div></div>
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">0</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">2</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">12</span></div>
+  </div>
+</div>
 
 **Output: \[1, 3, 12, 0, 0 \]**
 
-<div class="p-6 pt-1 pb-1 text-left"><div class="inline-flex flex-col gap-2 items-center"><div class="inline-flex flex-col items-center gap-2"><div class="flex flex-wrap gap-2"><div class="relative group transition-all duration-200"><div class="text-xs text-muted-foreground mb-1 text-center font-mono">0</div><div class="relative"><div class="px-4 py-2 rounded-sm border-2 font-mono text-base min-w-[60px] min-h-[36px] flex items-center justify-center text-center bg-[#00d084]/70 bg-green-600 hover:bg-green-500 border-black dark:border-[#00d084]/80 hover:border-black dark:hover:border-[#00d084] shadow-sm hover:shadow-md transition-all duration-200">1</div></div></div><div class="relative group transition-all duration-200"><div class="text-xs text-muted-foreground mb-1 text-center font-mono">1</div><div class="relative"><div class="px-4 py-2 rounded-sm border-2 font-mono text-base min-w-[60px] min-h-[36px] flex items-center justify-center text-center bg-[#00d084]/70 bg-green-600 hover:bg-green-500 border-black dark:border-[#00d084]/80 hover:border-black dark:hover:border-[#00d084] shadow-sm hover:shadow-md transition-all duration-200">3</div></div></div><div class="relative group transition-all duration-200"><div class="text-xs text-muted-foreground mb-1 text-center font-mono">2</div><div class="relative"><div class="px-4 py-2 rounded-sm border-2 font-mono text-base min-w-[60px] min-h-[36px] flex items-center justify-center text-center bg-[#00d084]/70 bg-green-600 hover:bg-green-500 border-black dark:border-[#00d084]/80 hover:border-black dark:hover:border-[#00d084] shadow-sm hover:shadow-md transition-all duration-200">12</div></div></div><div class="relative group transition-all duration-200"><div class="text-xs text-muted-foreground mb-1 text-center font-mono">3</div><div class="relative"><div class="px-4 py-2 rounded-sm border-2 font-mono text-base min-w-[60px] min-h-[36px] flex items-center justify-center text-center bg-[#00d084]/70 bg-green-600 hover:bg-green-500 border-black dark:border-[#00d084]/80 hover:border-black dark:hover:border-[#00d084] shadow-sm hover:shadow-md transition-all duration-200">0</div></div></div><div class="relative group transition-all duration-200"><div class="text-xs text-muted-foreground mb-1 text-center font-mono">4</div><div class="relative"><div class="px-4 py-2 rounded-sm border-2 font-mono text-base min-w-[60px] min-h-[36px] flex items-center justify-center text-center bg-[#00d084]/70 bg-green-600 hover:bg-green-500 border-black dark:border-[#00d084]/80 hover:border-black dark:hover:border-[#00d084] shadow-sm hover:shadow-md transition-all duration-200">0</div></div></div></div></div></div></div>
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">12</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">0</span></div>
+  </div>
+</div>
 
 #### Example 2:
 
 **Input:nums=\[0\]**    
 
-<div class="p-6 pt-1 pb-1 text-left"><div class="inline-flex flex-col gap-2 items-center"><div class="inline-flex flex-col items-center gap-2"><div class="flex flex-wrap gap-2"><div class="relative group transition-all duration-200"><div class="text-xs text-muted-foreground mb-1 text-center font-mono">0</div><div class="relative"><div class="px-4 py-2 rounded-sm border-2 font-mono text-base min-w-[60px] min-h-[36px] flex items-center justify-center text-center bg-[#00bfff]/70 bg-red-600 hover:bg-red-500 border-black border-black dark:border-[#00bfff]/80 hover:border-black dark:hover:border-[#00bfff] shadow-sm hover:shadow-md transition-all duration-200">0</div></div></div></div></div></div></div>
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">0</span><span class="arr-val">0</span></div>
+  </div>
+</div>
 
 **Output: \[0\]**
 
-<div class="p-6 pt-1 pb-1 text-left"><div class="inline-flex flex-col gap-2 items-center"><div class="inline-flex flex-col items-center gap-2"><div class="flex flex-wrap gap-2"><div class="relative group transition-all duration-200"><div class="text-xs text-muted-foreground mb-1 text-center font-mono">0</div><div class="relative"><div class="px-4 py-2 rounded-sm border-2 font-mono text-base min-w-[60px] min-h-[36px] flex items-center justify-center text-center bg-[#00d084]/70 bg-green-600 hover:bg-green-500 border-black dark:border-[#00d084]/80 hover:border-black dark:hover:border-[#00d084] shadow-sm hover:shadow-md transition-all duration-200">0</div></div></div></div></div></div></div>
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">0</span></div>
+  </div>
+</div>
 
 #### Constraints:
 
 *   **1 <= nums\.length <= 10^4**
 *   **\-2^31 <= nums\[i\] <= 2^31 \- 1**
 
-**Follow up:** Could you minimize the total number of operations done?
-
-
+**Follow up:** Could you minimize the total number of operations done?
 
 ## Understanding the Problem
 
 At first glance, this problem seems trivial: just find the zeros and move them to the end\. But there are several constraints that make it interesting:
 
-1.  **In\-place requirement:** We cannot create a new array and copy elements over\. We must modify the original array\.
-2.  **Maintain relative order:** The non\-zero elements must appear in the same order they originally had\. We cannot just swap zeros with non\-zeros from the end, as that would disrupt the order\.
-3.  **Minimize operations \(follow\-up\):** The optimal solution should avoid unnecessary writes to the array\.
+1.  **In\-place requirement:** We cannot create a new array and copy elements over\. We must modify the original array\.
+2.  **Maintain relative order:** The non\-zero elements must appear in the same order they originally had\. We cannot just swap zeros with non\-zeros from the end, as that would disrupt the order\.
+3.  **Minimize operations \(follow\-up\):** The optimal solution should avoid unnecessary writes to the array\.
 
 Let's visualize what we need to achieve:
 
@@ -63,7 +82,7 @@ Before: [0, 1, 0, 3, 12]
 After:  [1, 3, 12, 0, 0]
 ```
 
-The non\-zero elements `[1, 3, 12]` maintain their relative order\. The zeros have been pushed to the end\.
+The non\-zero elements `[1, 3, 12]` maintain their relative order\. The zeros have been pushed to the end\.
 
 A key observation is that we need to "shift" all non\-zero elements to the front of the array\. Once all non\-zeros are in their correct positions at the front, whatever remains at the back will naturally be zeros\.
 
@@ -112,52 +131,89 @@ class Solution {
 
 #### Complexity Analysis
 
-*   **Time Complexity:** O\(n\), where n is the length of the array\.
-*   **Space Complexity:** O\(n\), due to the use of additional array\.
+*   **Time Complexity:** O\(n\), where n is the length of the array\.
+*   **Space Complexity:** O\(n\), due to the use of additional array\.
 
 #### **Example Walkthrough:**
 
 **Input:**
 
-<div class="mb-4 flex justify-start"><div class="block text-left" style="width: 100%;"><div class="inline-flex flex-col gap-2 items-center"><div class="inline-flex flex-col items-center gap-2"><div class="flex flex-wrap gap-2"><div class="relative group transition-all duration-200"><div class="text-xs text-muted-foreground mb-1 text-center font-mono">0</div><div class="relative"><div class="px-4 py-2 rounded-lg border-2 font-mono text-base min-w-[60px] min-h-[36px] flex items-center justify-center text-center bg-[#00bfff]/70 bg-red-600 hover:bg-red-500  border-black dark:border-[#00bfff]/80 hover:border-black dark:hover:border-[#00bfff] shadow-sm hover:shadow-md transition-all duration-200">0</div></div></div><div class="relative group transition-all duration-200"><div class="text-xs text-muted-foreground mb-1 text-center font-mono">1</div><div class="relative"><div class="px-4 py-2 rounded-lg border-2 font-mono text-base min-w-[60px] min-h-[36px] flex items-center justify-center text-center bg-[#00bfff]/70 bg-red-600 hover:bg-red-500  border-black dark:border-[#00bfff]/80 hover:border-black dark:hover:border-[#00bfff] shadow-sm hover:shadow-md transition-all duration-200">1</div></div></div><div class="relative group transition-all duration-200"><div class="text-xs text-muted-foreground mb-1 text-center font-mono">2</div><div class="relative"><div class="px-4 py-2 rounded-lg border-2 font-mono text-base min-w-[60px] min-h-[36px] flex items-center justify-center text-center bg-[#00bfff]/70 bg-red-600 hover:bg-red-500  border-black dark:border-[#00bfff]/80 hover:border-black dark:hover:border-[#00bfff] shadow-sm hover:shadow-md transition-all duration-200">0</div></div></div><div class="relative group transition-all duration-200"><div class="text-xs text-muted-foreground mb-1 text-center font-mono">3</div><div class="relative"><div class="px-4 py-2 rounded-lg border-2 font-mono text-base min-w-[60px] min-h-[36px] flex items-center justify-center text-center bg-[#00bfff]/70 bg-red-600 hover:bg-red-500  border-black dark:border-[#00bfff]/80 hover:border-black dark:hover:border-[#00bfff] shadow-sm hover:shadow-md transition-all duration-200">3</div></div></div><div class="relative group transition-all duration-200"><div class="text-xs text-muted-foreground mb-1 text-center font-mono">4</div><div class="relative"><div class="px-4 py-2 rounded-lg border-2 font-mono text-base min-w-[60px] min-h-[36px] flex items-center justify-center text-center bg-[#00bfff]/70 bg-red-600 hover:bg-red-500  border-black dark:border-[#00bfff]/80 hover:border-black dark:hover:border-[#00bfff] shadow-sm hover:shadow-md transition-all duration-200">12</div></div></div></div></div><div class="text-sm font-semibold text-muted-foreground text-center">nums</div></div></div></div>
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">0</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">2</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">12</span></div>
+  </div>
+  <p class="arr-caption">nums</p>
+</div>
+
 
 After the first pass \(collect non\-zeroes into `result`\):
 
-<div class="mb-4 flex justify-start"><div class="block text-left" style="width: 100%;"><div class="inline-flex flex-col gap-2 items-center"><div class="inline-flex flex-col items-center gap-2"><div class="flex flex-wrap gap-2"><div class="relative group transition-all duration-200"><div class="text-xs text-muted-foreground mb-1 text-center font-mono">0</div><div class="relative"><div class="px-4 py-2 rounded-lg border-2 font-mono text-base min-w-[60px] min-h-[36px] flex items-center justify-center text-center bg-[#00d084]/70 bg-green-600 hover:bg-green-500 border-black dark:border-[#00d084]/80 hover:border-black dark:hover:border-[#00d084] shadow-sm hover:shadow-md transition-all duration-200">1</div></div></div><div class="relative group transition-all duration-200"><div class="text-xs text-muted-foreground mb-1 text-center font-mono">1</div><div class="relative"><div class="px-4 py-2 rounded-lg border-2 font-mono text-base min-w-[60px] min-h-[36px] flex items-center justify-center text-center bg-[#00d084]/70 bg-green-600 hover:bg-green-500 border-black dark:border-[#00d084]/80 hover:border-black dark:hover:border-[#00d084] shadow-sm hover:shadow-md transition-all duration-200">3</div></div></div><div class="relative group transition-all duration-200"><div class="text-xs text-muted-foreground mb-1 text-center font-mono">2</div><div class="relative"><div class="px-4 py-2 rounded-lg border-2 font-mono text-base min-w-[60px] min-h-[36px] flex items-center justify-center text-center bg-[#00d084]/70 bg-green-600 hover:bg-green-500 border-black dark:border-[#00d084]/80 hover:border-black dark:hover:border-[#00d084] shadow-sm hover:shadow-md transition-all duration-200">12</div></div></div><div class="relative group transition-all duration-200"><div class="text-xs text-muted-foreground mb-1 text-center font-mono">3</div><div class="relative"><div class="px-4 py-2 rounded-lg border-2 font-mono text-base min-w-[60px] min-h-[36px] flex items-center justify-center text-center bg-[#00d084]/70 bg-green-600 hover:bg-green-500 border-black dark:border-[#00d084]/80 hover:border-black dark:hover:border-[#00d084] shadow-sm hover:shadow-md transition-all duration-200">0</div></div></div><div class="relative group transition-all duration-200"><div class="text-xs text-muted-foreground mb-1 text-center font-mono">4</div><div class="relative"><div class="px-4 py-2 rounded-lg border-2 font-mono text-base min-w-[60px] min-h-[36px] flex items-center justify-center text-center bg-[#00d084]/70 bg-green-600 hover:bg-green-500 border-black dark:border-[#00d084]/80 hover:border-black dark:hover:border-[#00d084] shadow-sm hover:shadow-md transition-all duration-200">0</div></div></div></div></div><div class="text-sm font-semibold text-muted-foreground text-center">result</div></div></div></div>
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">12</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">0</span></div>
+  </div>
+  <p class="arr-caption">result</p>
+</div>
 
-The second pass fills the remaining positions with zero \(they may already be zero, but that’s fine\):
 
-<div class="block text-left" style="width: 100%;"><div class="inline-flex flex-col gap-2 items-center"><div class="inline-flex flex-col items-center gap-2"><div class="flex flex-wrap gap-2"><div class="relative group transition-all duration-200"><div class="text-xs text-muted-foreground mb-1 text-center font-mono">0</div><div class="relative"><div class="px-4 py-2 rounded-lg border-2 font-mono text-base min-w-[60px] min-h-[36px] flex items-center justify-center text-center bg-[#00d084]/70 bg-green-600 hover:bg-green-500 border-black dark:border-[#00d084]/80 hover:border-black dark:hover:border-[#00d084] shadow-sm hover:shadow-md transition-all duration-200">1</div></div></div><div class="relative group transition-all duration-200"><div class="text-xs text-muted-foreground mb-1 text-center font-mono">1</div><div class="relative"><div class="px-4 py-2 rounded-lg border-2 font-mono text-base min-w-[60px] min-h-[36px] flex items-center justify-center text-center bg-[#00d084]/70 bg-green-600 hover:bg-green-500 border-black dark:border-[#00d084]/80 hover:border-black dark:hover:border-[#00d084] shadow-sm hover:shadow-md transition-all duration-200">3</div></div></div><div class="relative group transition-all duration-200"><div class="text-xs text-muted-foreground mb-1 text-center font-mono">2</div><div class="relative"><div class="px-4 py-2 rounded-lg border-2 font-mono text-base min-w-[60px] min-h-[36px] flex items-center justify-center text-center bg-[#00d084]/70 bg-green-600 hover:bg-green-500 border-black dark:border-[#00d084]/80 hover:border-black dark:hover:border-[#00d084] shadow-sm hover:shadow-md transition-all duration-200">12</div></div></div><div class="relative group transition-all duration-200"><div class="text-xs text-muted-foreground mb-1 text-center font-mono">3</div><div class="relative"><div class="px-4 py-2 rounded-lg border-2 font-mono text-base min-w-[60px] min-h-[36px] flex items-center justify-center text-center bg-[#00d084]/70 bg-green-600 hover:bg-green-500 border-black dark:border-[#00d084]/80 hover:border-black dark:hover:border-[#00d084] shadow-sm hover:shadow-md transition-all duration-200">0</div></div></div><div class="relative group transition-all duration-200"><div class="text-xs text-muted-foreground mb-1 text-center font-mono">4</div><div class="relative"><div class="px-4 py-2 rounded-lg border-2 font-mono text-base min-w-[60px] min-h-[36px] flex items-center justify-center text-center bg-[#00d084]/70 bg-green-600 hover:bg-green-500 border-black dark:border-[#00d084]/80 hover:border-black dark:hover:border-[#00d084] shadow-sm hover:shadow-md transition-all duration-200">0</div></div></div></div></div><div class="text-sm font-semibold text-muted-foreground text-center">result</div></div></div> 
+The second pass fills the remaining positions with zero \(they may already be zero, but that's fine\):
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">12</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">0</span></div>
+  </div>
+  <p class="arr-caption">result</p>
+</div>
+
 
 Finally, we copy `result` back into `nums`:
 
-<div class="mb-4 flex justify-start"><div class="block text-left" style="width: 100%;"><div class="inline-flex flex-col gap-2 items-center"><div class="inline-flex flex-col items-center gap-2"><div class="flex flex-wrap gap-2"><div class="relative group transition-all duration-200"><div class="text-xs text-muted-foreground mb-1 text-center font-mono">0</div><div class="relative"><div class="px-4 py-2 rounded-lg border-2 font-mono text-base min-w-[60px] min-h-[36px] flex items-center justify-center text-center bg-[#00bfff]/70 bg-red-600 hover:bg-red-500  border-black dark:border-[#00bfff]/80 hover:border-black dark:hover:border-[#00bfff] shadow-sm hover:shadow-md transition-all duration-200">1</div></div></div><div class="relative group transition-all duration-200"><div class="text-xs text-muted-foreground mb-1 text-center font-mono">1</div><div class="relative"><div class="px-4 py-2 rounded-lg border-2 font-mono text-base min-w-[60px] min-h-[36px] flex items-center justify-center text-center bg-[#00bfff]/70 bg-red-600 hover:bg-red-500  border-black dark:border-[#00bfff]/80 hover:border-black dark:hover:border-[#00bfff] shadow-sm hover:shadow-md transition-all duration-200">3</div></div></div><div class="relative group transition-all duration-200"><div class="text-xs text-muted-foreground mb-1 text-center font-mono">2</div><div class="relative"><div class="px-4 py-2 rounded-lg border-2 font-mono text-base min-w-[60px] min-h-[36px] flex items-center justify-center text-center bg-[#00bfff]/70 bg-red-600 hover:bg-red-500  border-black dark:border-[#00bfff]/80 hover:border-black dark:hover:border-[#00bfff] shadow-sm hover:shadow-md transition-all duration-200">12</div></div></div><div class="relative group transition-all duration-200"><div class="text-xs text-muted-foreground mb-1 text-center font-mono">3</div><div class="relative"><div class="px-4 py-2 rounded-lg border-2 font-mono text-base min-w-[60px] min-h-[36px] flex items-center justify-center text-center bg-[#00bfff]/70 bg-red-600 hover:bg-red-500  border-black dark:border-[#00bfff]/80 hover:border-black dark:hover:border-[#00bfff] shadow-sm hover:shadow-md transition-all duration-200">0</div></div></div><div class="relative group transition-all duration-200"><div class="text-xs text-muted-foreground mb-1 text-center font-mono">4</div><div class="relative"><div class="px-4 py-2 rounded-lg border-2 font-mono text-base min-w-[60px] min-h-[36px] flex items-center justify-center text-center bg-[#00bfff]/70 bg-red-600 hover:bg-red-500  border-black dark:border-[#00bfff]/80 hover:border-black dark:hover:border-[#00bfff] shadow-sm hover:shadow-md transition-all duration-200">0</div></div></div></div></div><div class="text-sm font-semibold text-muted-foreground text-center">nums</div></div></div></div>
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">12</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">0</span></div>
+  </div>
+  <p class="arr-caption">nums</p>
+</div>
+
 
 This approach works correctly but uses extra space\. Let's improve it\.
 
-
-<br/>
-
-## 2\. Two\-Pass In\-Place Solution
+### 2\. Two\-Pass In\-Place Solution
 
 #### Intuition
 
 We can achieve an in\-place solution by breaking the problem into two phases:
 
-1.  **First pass:** Move all non\-zero elements to the front, keeping track of where to place the next non\-zero element\.
-2.  **Second pass:** Fill all remaining positions with zeros\.
+1.  **First pass:** Move all non\-zero elements to the front, keeping track of where to place the next non\-zero element\.
+2.  **Second pass:** Fill all remaining positions with zeros\.
 
 Think of it like compacting a file system: first, move all the "used" blocks to the front, then mark the rest as "free" \(zeros\)\.
 
 #### Algorithm
 
-1.  Initialize a pointer `writePos` at 0 to track where the next non\-zero element should go
+1.  Initialize a pointer `writePos` at 0 to track where the next non\-zero element should go
 2.  Iterate through the array:
 
-*   When we find a non\-zero element, place it at `writePos` and increment `writePos`
+*   When we find a non\-zero element, place it at `writePos` and increment `writePos`
 
-4.  After the first pass, `writePos` tells us where the zeros should start
-5.  Fill all positions from `writePos` to the end with zeros
+4.  After the first pass, `writePos` tells us where the zeros should start
+5.  Fill all positions from `writePos` to the end with zeros
 
 #### Code:
 
@@ -183,27 +239,54 @@ class Solution {
 
 #### Complexity Analysis
 
-*   **Time Complexity:** O\(n\), where n is the length of the array\.
-*   **Space Complexity:** O\(1\), since we are modifying the array in place without using additional storage\.
+*   **Time Complexity:** O\(n\), where n is the length of the array\.
+*   **Space Complexity:** O\(1\), since we are modifying the array in place without using additional storage\.
 
 #### Example Walkthrough:
 
 **Input:**
 
-<div class="block text-left" style="width: 100%;"><div class="inline-flex flex-col gap-2 items-center"><div class="inline-flex flex-col items-center gap-2"><div class="flex flex-wrap gap-2"><div class="relative group transition-all duration-200"><div class="text-xs text-muted-foreground mb-1 text-center font-mono">0</div><div class="relative"><div class="px-4 py-2 rounded-lg border-2 font-mono text-base min-w-[60px] min-h-[36px] flex items-center justify-center text-center bg-[#00bfff]/70 bg-red-600 hover:bg-red-500  border-black dark:border-[#00bfff]/80 hover:border-black dark:hover:border-[#00bfff] shadow-sm hover:shadow-md transition-all duration-200">0</div></div></div><div class="relative group transition-all duration-200"><div class="text-xs text-muted-foreground mb-1 text-center font-mono">1</div><div class="relative"><div class="px-4 py-2 rounded-lg border-2 font-mono text-base min-w-[60px] min-h-[36px] flex items-center justify-center text-center bg-[#00bfff]/70 bg-red-600 hover:bg-red-500  border-black dark:border-[#00bfff]/80 hover:border-black dark:hover:border-[#00bfff] shadow-sm hover:shadow-md transition-all duration-200">1</div></div></div><div class="relative group transition-all duration-200"><div class="text-xs text-muted-foreground mb-1 text-center font-mono">2</div><div class="relative"><div class="px-4 py-2 rounded-lg border-2 font-mono text-base min-w-[60px] min-h-[36px] flex items-center justify-center text-center bg-[#00bfff]/70 bg-red-600 hover:bg-red-500  border-black dark:border-[#00bfff]/80 hover:border-black dark:hover:border-[#00bfff] shadow-sm hover:shadow-md transition-all duration-200">0</div></div></div><div class="relative group transition-all duration-200"><div class="text-xs text-muted-foreground mb-1 text-center font-mono">3</div><div class="relative"><div class="px-4 py-2 rounded-lg border-2 font-mono text-base min-w-[60px] min-h-[36px] flex items-center justify-center text-center bg-[#00bfff]/70 bg-red-600 hover:bg-red-500  border-black dark:border-[#00bfff]/80 hover:border-black dark:hover:border-[#00bfff] shadow-sm hover:shadow-md transition-all duration-200">3</div></div></div><div class="relative group transition-all duration-200"><div class="text-xs text-muted-foreground mb-1 text-center font-mono">4</div><div class="relative"><div class="px-4 py-2 rounded-lg border-2 font-mono text-base min-w-[60px] min-h-[36px] flex items-center justify-center text-center bg-[#00bfff]/70 bg-red-600 hover:bg-red-500  border-black dark:border-[#00bfff]/80 hover:border-black dark:hover:border-[#00bfff] shadow-sm hover:shadow-md transition-all duration-200">12</div></div></div></div></div><div class="text-sm font-semibold text-muted-foreground text-center">nums</div></div></div>
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">0</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">2</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">12</span></div>
+  </div>
+  <p class="arr-caption">nums</p>
+</div>
+
 
 **After first pass:**
 
-<div class="block text-left" style="width: 100%;"><div class="inline-flex flex-col gap-2 items-center"><div class="inline-flex flex-col items-center gap-2"><div class="flex flex-wrap gap-2"><div class="relative group transition-all duration-200"><div class="text-xs text-muted-foreground mb-1 text-center font-mono">0</div><div class="relative"><div class="px-4 py-2 rounded-lg border-2 font-mono text-base min-w-[60px] min-h-[36px] flex items-center justify-center text-center bg-[#00d084]/70 bg-green-600 hover:bg-green-500 border-black dark:border-[#00d084]/80 hover:border-black dark:hover:border-[#00d084] shadow-sm hover:shadow-md transition-all duration-200">1</div></div></div><div class="relative group transition-all duration-200"><div class="text-xs text-muted-foreground mb-1 text-center font-mono">1</div><div class="relative"><div class="px-4 py-2 rounded-lg border-2 font-mono text-base min-w-[60px] min-h-[36px] flex items-center justify-center text-center bg-[#00d084]/70 bg-green-600 hover:bg-green-500 border-black dark:border-[#00d084]/80 hover:border-black dark:hover:border-[#00d084] shadow-sm hover:shadow-md transition-all duration-200">3</div></div></div><div class="relative group transition-all duration-200"><div class="text-xs text-muted-foreground mb-1 text-center font-mono">2</div><div class="relative"><div class="px-4 py-2 rounded-lg border-2 font-mono text-base min-w-[60px] min-h-[36px] flex items-center justify-center text-center bg-[#00d084]/70 bg-green-600 hover:bg-green-500 border-black dark:border-[#00d084]/80 hover:border-black dark:hover:border-[#00d084] shadow-sm hover:shadow-md transition-all duration-200">12</div></div></div><div class="relative group transition-all duration-200"><div class="text-xs text-muted-foreground mb-1 text-center font-mono">3</div><div class="relative"><div class="px-4 py-2 rounded-lg border-2 font-mono text-base min-w-[60px] min-h-[36px] flex items-center justify-center text-center bg-[#00d084]/70 bg-green-600 hover:bg-green-500 border-black dark:border-[#00d084]/80 hover:border-black dark:hover:border-[#00d084] shadow-sm hover:shadow-md transition-all duration-200">3</div></div></div><div class="relative group transition-all duration-200"><div class="text-xs text-muted-foreground mb-1 text-center font-mono">4</div><div class="relative"><div class="px-4 py-2 rounded-lg border-2 font-mono text-base min-w-[60px] min-h-[36px] flex items-center justify-center text-center bg-[#00d084]/70 bg-green-600 hover:bg-green-500 border-black dark:border-[#00d084]/80 hover:border-black dark:hover:border-[#00d084] shadow-sm hover:shadow-md transition-all duration-200">12</div></div></div></div></div><div class="text-sm font-semibold text-muted-foreground text-center">nums</div></div></div>
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">12</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">12</span></div>
+  </div>
+  <p class="arr-caption">nums</p>
+</div>
+
 
 **After second pass:**
 
-<div class="block text-left" style="width: 100%;"><div class="inline-flex flex-col gap-2 items-center"><div class="inline-flex flex-col items-center gap-2"><div class="flex flex-wrap gap-2"><div class="relative group transition-all duration-200"><div class="text-xs text-muted-foreground mb-1 text-center font-mono">0</div><div class="relative"><div class="px-4 py-2 rounded-lg border-2 font-mono text-base min-w-[60px] min-h-[36px] flex items-center justify-center text-center bg-[#00d084]/70 bg-green-600 hover:bg-green-500 border-black dark:border-[#00d084]/80 hover:border-black dark:hover:border-[#00d084] shadow-sm hover:shadow-md transition-all duration-200">1</div></div></div><div class="relative group transition-all duration-200"><div class="text-xs text-muted-foreground mb-1 text-center font-mono">1</div><div class="relative"><div class="px-4 py-2 rounded-lg border-2 font-mono text-base min-w-[60px] min-h-[36px] flex items-center justify-center text-center bg-[#00d084]/70 bg-green-600 hover:bg-green-500 border-black dark:border-[#00d084]/80 hover:border-black dark:hover:border-[#00d084] shadow-sm hover:shadow-md transition-all duration-200">3</div></div></div><div class="relative group transition-all duration-200"><div class="text-xs text-muted-foreground mb-1 text-center font-mono">2</div><div class="relative"><div class="px-4 py-2 rounded-lg border-2 font-mono text-base min-w-[60px] min-h-[36px] flex items-center justify-center text-center bg-[#00d084]/70 bg-green-600 hover:bg-green-500 border-black dark:border-[#00d084]/80 hover:border-black dark:hover:border-[#00d084] shadow-sm hover:shadow-md transition-all duration-200">12</div></div></div><div class="relative group transition-all duration-200"><div class="text-xs text-muted-foreground mb-1 text-center font-mono">3</div><div class="relative"><div class="px-4 py-2 rounded-lg border-2 font-mono text-base min-w-[60px] min-h-[36px] flex items-center justify-center text-center bg-[#00d084]/70 bg-green-600 hover:bg-green-500 border-black dark:border-[#00d084]/80 hover:border-black dark:hover:border-[#00d084] shadow-sm hover:shadow-md transition-all duration-200">0</div></div></div><div class="relative group transition-all duration-200"><div class="text-xs text-muted-foreground mb-1 text-center font-mono">4</div><div class="relative"><div class="px-4 py-2 rounded-lg border-2 font-mono text-base min-w-[60px] min-h-[36px] flex items-center justify-center text-center bg-[#00d084]/70 bg-green-600 hover:bg-green-500 border-black dark:border-[#00d084]/80 hover:border-black dark:hover:border-[#00d084] shadow-sm hover:shadow-md transition-all duration-200">0</div></div></div></div></div><div class="text-sm font-semibold text-muted-foreground text-center">nums</div></div></div>
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">12</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">0</span></div>
+  </div>
+  <p class="arr-caption">nums</p>
+</div>
 
 
-<br/>
-
-## 3\. Optimal Two\-Pointer with Swapping
+### 3\. Optimal Two\-Pointer with Swapping
 
 #### Intuition
 
@@ -238,8 +321,7 @@ class Solution {
 
 #### Complexity Analysis
 
-*   **Time Complexity:** O\(n\), as the array is traversed once\.
-*   **Space Complexity:** O\(1\), no additional data structures are used\.
-
+*   **Time Complexity:** O\(n\), as the array is traversed once\.
+*   **Space Complexity:** O\(1\), no additional data structures are used\.
 
 ### [Solve it on LeetCode](https://leetcode.com/problems/move-zeroes/)

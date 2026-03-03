@@ -11,15 +11,23 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given the `root` of a binary search tree, and an integer `k`, return _the_ `k``th` _smallest value \(__**1\-indexed**__\) of all the values of the nodes in the tree_\.
 
 ##### **Example 1:**
 
 **Input:** root = \[3,1,4,null,2\], k = 1
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">3</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">2</span></div>
+  </div>
+</div>
 
 3124
 
@@ -28,6 +36,19 @@ Given the `root` of a binary search tree, and an integer `k`, return _the_ 
 ##### **Example 2:**
 
 **Input:** root = \[5,3,6,2,4,null,null,1\], k = 3
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">6</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">5</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">6</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">7</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 532146
 
@@ -41,19 +62,16 @@ Given the `root` of a binary search tree, and an integer `k`, return _the_ 
 
 **Follow up:** If the BST is modified often \(i\.e\., we can do insert and delete operations\) and you need to find the kth smallest frequently, how would you optimize?
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/kth-smallest-element-in-a-bst)
 
-# Approaches
+## Approaches
 
-## 1\. Inorder Traversal with List
+### 1\. Inorder Traversal with List
 
 #### Intuition:
 
 A Binary Search Tree \(BST\) has the property that an inorder traversal \(left\-root\-right\) of the tree gives the nodes in non\-decreasing order\. By performing an inorder traversal and storing the elements in a list, we can easily access the kth smallest element by retrieving the element at index `k-1` from the list\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -75,20 +93,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\), where N is the number of nodes in the tree\. We visit each node exactly once\.
 *   **Space Complexity:** O\(N\) for the list used to store inorder traversal\.
 
-## 2\. Inorder Traversal with Counter
+### 2\. Inorder Traversal with Counter
 
 #### Intuition:
 
 By maintaining a counter while doing the inorder traversal, we can stop the traversal as soon as the kth element is found\. This avoids storing all elements, thereby saving space\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -117,20 +133,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\), where N is the number of nodes in the tree\. In the worst case, we visit each node once\.
 *   **Space Complexity:** O\(H\), where H is the height of the tree\. This accounts for the recursive stack space\.
 
-## 3\. Iterative Inorder Traversal
+### 3\. Iterative Inorder Traversal
 
 #### Intuition:
 
 We can simulate the recursive inorder traversal using an explicit stack\. This allows us to handle trees iteratively, which can be more space efficient in specific scenarios\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -159,9 +173,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\), where N is the number of nodes in the tree\. We simulate the inorder traversal iteratively\.
 *   **Space Complexity:** O\(H\), where H is the height of the tree, due to the stack used in the iterative approach\.
 
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/kth-smallest-element-in-a-bst)

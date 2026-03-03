@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given an array `routes` representing bus routes where `routes[i]` is a bus route that the `i``th` bus repeats forever\.
 
@@ -27,6 +25,21 @@ Return _the least number of buses you must take to travel from_ `source` _to_
 
 **Input:** routes = \[\[1,2,7\],\[3,6,7\]\], source = 1, target = 6
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">7</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">6</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">7</span></div>
+    </div>
+  </div>
+</div>
+
 **Output:** 2
 
 **Explanation:** The best strategy is take the first bus to the bus stop 7, then take the second bus to the bus stop 6\.
@@ -34,6 +47,32 @@ Return _the least number of buses you must take to travel from_ `source` _to_
 ##### **Example 2:**
 
 **Input:** routes = \[\[7,12\],\[4,5,15\],\[6\],\[15,19\],\[9,12,13\]\], source = 15, target = 12**Output:** \-1
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">7</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">12</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">4</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">5</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">15</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">6</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">15</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">19</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">9</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">12</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">13</span></div>
+    </div>
+  </div>
+</div>
 
 ##### **Constraints:**
 
@@ -44,11 +83,10 @@ Return _the least number of buses you must take to travel from_ `source` _to_
 *   **0 <= routes\[i\]\[j\] < 10****6**
 *   **0 <= source, target < 10****6**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/bus-routes)
 
-# Approaches
+## Approaches
 
-## 1\. Breadth\-First Search \(BFS\)
+### 1\. Breadth\-First Search \(BFS\)
 
 #### Intuition:
 
@@ -60,8 +98,6 @@ This problem can be visualized as finding the shortest path in an unweighted gra
 4.  **Destination Condition**: Stop when any route containing the `target` is reached in the BFS traversal\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -118,7 +154,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N \+ S\) where N is the total number of bus routes and S is the total number of bus stops\. Each stop to route association is examined once\.
 *   **Space Complexity:** O\(N \+ S\)\. We store mappings for each stop to their corresponding routes and a visited list for routes\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/bus-routes)

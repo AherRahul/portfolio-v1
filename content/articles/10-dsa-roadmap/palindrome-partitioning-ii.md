@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given a string `s`, partition `s` such that every substring of the partition is a palindrome\.
 
@@ -44,11 +42,10 @@ Return _the_ _**minimum**_ _cuts needed for a palindrome partitioning of_ `s
 *   `1 <= s.length <= 2000`
 *   `s` consists of lowercase English letters only\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/palindrome-partitioning-ii)
 
-# Approaches
+## Approaches
 
-## 1\. Dynamic Programming with Palindrome Check
+### 1\. Dynamic Programming with Palindrome Check
 
 #### Intuition:
 
@@ -65,8 +62,6 @@ The main idea is to use dynamic programming to keep track of the minimum cuts ne
 *   For each position `i`, calculate the minimum cuts by checking if any substring `s[j...i]` is a palindrome and update `cut[i]` accordingly\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -92,12 +87,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** `O(n^2)`, where `n` is the length of the string\. We are filling up an `n x n` matrix\.
 *   **Space Complexity:** `O(n^2)` for the palindrome matrix\.
 
-## 2\. Optimized Dynamic Programming
+### 2\. Optimized Dynamic Programming
 
 #### Intuition:
 
@@ -109,8 +104,6 @@ We can optimize the solution by reducing unnecessary recalculations and using a 
 *   Use two loops to handle both even and odd length center expansions for palindrome checking\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -144,7 +137,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** `O(n^2)`, still iterating potential palindrome centers and expanding\.
 *   **Space Complexity:** `O(n)`, no extra 2D array\. Only using the `cut` array for space\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/palindrome-partitioning-ii)

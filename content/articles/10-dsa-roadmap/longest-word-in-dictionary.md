@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given an array of strings `words` representing an English Dictionary, return _the longest word in_ `words` _that can be built one character at a time by other words in_ `words`\.
 
@@ -25,6 +23,16 @@ Note that the word should be built from left to right with each additional chara
 
 **Input:** words = \["w","wo","wor","worl","world"\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">w</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">wo</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">wor</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">worl</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">world</span></div>
+  </div>
+</div>
+
 **Output:** "world"
 
 **Explanation:** The word "world" can be built one character at a time by "w", "wo", "wor", and "worl"\.
@@ -32,6 +40,18 @@ Note that the word should be built from left to right with each additional chara
 ##### **Example 2:**
 
 **Input:** words = \["a","banana","app","appl","ap","apply","apple"\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">a</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">banana</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">app</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">appl</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">ap</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">apply</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">apple</span></div>
+  </div>
+</div>
 
 **Output:** "apple"
 
@@ -43,11 +63,10 @@ Note that the word should be built from left to right with each additional chara
 *   `1 <= words[i].length <= 30`
 *   `words[i]` consists of lowercase English letters\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/longest-word-in-dictionary)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force Approach
+### 1\. Brute Force Approach
 
 #### Intuition:
 
@@ -61,8 +80,6 @@ The brute force approach involves iterating through each word and checking if al
 *   In cases where two valid words have the same length, choose the lexicographical smaller one\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -96,12 +113,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N \* M\), where N is the number of words and M is the maximum length of a word \(as we need to check each prefix\)\.
 *   **Space Complexity:** O\(N \* M\), to store all the words in the HashSet\.
 
-## 2\. Trie\-based Approach
+### 2\. Trie\-based Approach
 
 #### Intuition:
 
@@ -114,8 +131,6 @@ A Trie is an efficient data structure to store and retrieve words, especially us
 *   Continue traversal only if the current path represents a complete word until that node\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -169,7 +184,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N \* M\), where N is the number of words and M is the maximum length of the words\. Each insertion and search operation in the Trie is proportional to the length of the word\.
 *   **Space Complexity:** O\(26 \* N \* M\), for storing N words each having a maximum length M in the Trie\. The 26 factor is for the 26 letters of the English alphabet\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/longest-word-in-dictionary)

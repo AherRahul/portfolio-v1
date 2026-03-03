@@ -135,8 +135,6 @@ Instead of an array, each node is an object that contains:
 *   A reference to the left child
 *   and A reference to the right child
 
-Java
-
 ```java
 class TreeNode {
    int val;

@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given a `m x n` `grid` filled with non\-negative numbers, find a path from top left to bottom right, which minimizes the sum of all numbers along its path\.
 
@@ -23,35 +21,25 @@ Given a `m x n` `grid` filled with non\-negative numbers, find a path from to
 
 Input:grid=\[\[1,3,1\],\[1,5,1\],\[4,2,1\]\]
 
-0
-
-1
-
-2
-
-0
-
-1
-
-3
-
-1
-
-1
-
-1
-
-5
-
-1
-
-2
-
-4
-
-2
-
-1
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">5</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">4</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+  </div>
+</div>
 
 **Output:** 7
 
@@ -61,27 +49,20 @@ Input:grid=\[\[1,3,1\],\[1,5,1\],\[4,2,1\]\]
 
 Input:grid=\[\[1,2,3\],\[4,5,6\]\]
 
-0
-
-1
-
-2
-
-0
-
-1
-
-2
-
-3
-
-1
-
-4
-
-5
-
-6
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">4</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">5</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">6</span></div>
+    </div>
+  </div>
+</div>
 
 **Output:** 12
 
@@ -92,19 +73,16 @@ Input:grid=\[\[1,2,3\],\[4,5,6\]\]
 *   `1 <= m, n <= 200`
 *   `0 <= grid[i][j] <= 200`
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/minimum-path-sum)
 
-# Approaches
+## Approaches
 
-## 1\. Recursive Approach
+### 1\. Recursive Approach
 
 #### Intuition:
 
 The recursive approach is the most straightforward way to tackle this problem\. Imagine that you need to move from the top\-left to the bottom\-right of the grid\. At each cell `(i, j)`, you have the choice to move either right to `(i, j+1)` or down to `(i+1, j)`\. The recursive solution explores both these paths and keeps track of the minimum sum encountered\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -137,20 +115,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(2^\(m\+n\)\) where m is the number of rows and n is the number of columns\. This is because at each cell, you have two choices, so it's exponential\.
 *   **Space Complexity:** O\(m\+n\) for the recursion stack\.
 
-## 2\. Dynamic Programming Approach \(Bottom\-Up\)
+### 2\. Dynamic Programming Approach \(Bottom\-Up\)
 
 #### Intuition:
 
 This approach builds on the recursive solution but uses dynamic programming to avoid repeated calculations\. The idea is to work backwards from the destination \(bottom\-right\) cell and fill in a table with the minimum path sum to reach the bottom\-right from any given cell\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -185,20 +161,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(2^\(m\+n\)\) where m is the number of rows and n is the number of columns\. This is because at each cell, you have two choices, so it's exponential\.
 *   **Space Complexity:** O\(m\+n\) for the recursion stack\.
 
-## 3\. Dynamic Programming Approach \(In\-Place\)
+### 3\. Dynamic Programming Approach \(In\-Place\)
 
 #### Intuition:
 
 We observe that to compute the value at any cell `(i, j)`, we only need the values of the cell directly to the right `(i, j+1)` and the cell directly below `(i+1, j)` in the `dp` table\. This allows us to actually use the input grid itself as our `dp` table to save space\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -232,9 +206,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(m\*n\) as we iterate over each cell exactly once\.
 *   **Space Complexity:** O\(1\) since we use the input grid itself to store minimum path sums\.
 
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/minimum-path-sum)

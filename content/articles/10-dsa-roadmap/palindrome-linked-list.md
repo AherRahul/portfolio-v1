@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given the `head` of a singly linked list, return `true` _if it is a palindrome or_ `false` _otherwise_\. 
 
@@ -21,13 +19,14 @@ Given the `head` of a singly linked list, return `true` _if it is a palindr
 
 Input:head=\[1,2,2,1\]
 
-1
-
-2
-
-2
-
-1
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 null
 
@@ -39,9 +38,12 @@ true
 
 Input:head=\[1,2\]
 
-1
-
-2
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+  </div>
+</div>
 
 null
 
@@ -56,11 +58,10 @@ false
 
 **Follow up:** Could you do it in `O(n)` time and `O(1)` space?
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/palindrome-linked-list)
 
-# Approaches
+## Approaches
 
-## 1\. Convert to Array and use Two\-Pointer Technique
+### 1\. Convert to Array and use Two\-Pointer Technique
 
 #### **Intuition:**
 
@@ -73,8 +74,6 @@ The easiest way to determine if a linked list is a palindrome is to convert the 
 3.  Compare values at both pointers, move inward, and if all are equal, the list is a palindrome\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -106,12 +105,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), where n is the number of nodes in the linked list\.
 *   **Space Complexity:** O\(n\), for storing the values in a list\.
 
-## 2\. Reverse Second Half in\-place
+### 2\. Reverse Second Half in\-place
 
 #### **Intuition:**
 
@@ -125,8 +124,6 @@ A more optimized approach is to reverse the second half of the linked list and t
 4.  Restore the original list \(optional\)\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -183,7 +180,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), where n is the number of nodes in the linked list\.
 *   **Space Complexity:** O\(1\), as we're changing the pointers in\-place\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/palindrome-linked-list)

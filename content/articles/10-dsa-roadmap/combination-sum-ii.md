@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given a collection of candidate numbers \(`candidates`\) and a target number \(`target`\), find all unique combinations in `candidates` where the candidate numbers sum to `target`\.
 
@@ -25,13 +23,71 @@ Each number in `candidates` may only be used **once** in the combination\.
 
 **Input:** candidates = \[10,1,2,7,6,1,5\], target = 8
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">10</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">7</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">6</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">5</span></div>
+  </div>
+</div>
+
 **Output:** \[\[1,1,6\],\[1,2,5\],\[1,7\],\[2,6\]\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">6</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">5</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">7</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">6</span></div>
+    </div>
+  </div>
+</div>
 
 ##### **Example 2:**
 
 **Input:** candidates = \[2,5,2,1,2\], target = 5
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">2</span></div>
+  </div>
+</div>
+
 **Output:** \[\[1,2,2\],\[5\]\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">2</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">5</span></div>
+    </div>
+  </div>
+</div>
 
 ##### **Constraints:**
 
@@ -39,11 +95,10 @@ Each number in `candidates` may only be used **once** in the combination\.
 *   `1 <= candidates[i] <= 50`
 *   `1 <= target <= 30`
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/combination-sum-ii)
 
-# Approaches
+## Approaches
 
-## 1\. Backtracking with Sorting and Skip Duplicates
+### 1\. Backtracking with Sorting and Skip Duplicates
 
 #### Intuition:
 
@@ -62,8 +117,6 @@ The problem is to find all unique combinations of numbers that add up to a given
 *   Backtrack by removing the last added element from the current combination\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -98,12 +151,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(2^n\), where n is the number of candidates\. In the worst case, to explore all subsets\.
 *   **Space Complexity:** O\(target\), for the recursion stack\.
 
-## 2\. Backtracking Optimized with Early Exit
+### 2\. Backtracking Optimized with Early Exit
 
 #### Intuition:
 
@@ -115,8 +168,6 @@ This approach is similar to Approach 1 but adds a further optimization to stop e
 *   The critical change is in the loop where we stop iterating over candidates as soon as we find one greater than the remaining target\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -147,7 +198,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(2^n\), primarily dictated by the number of subsets explored\.
 *   **Space Complexity:** O\(target\) due to the recursion stack\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/combination-sum-ii)

@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are a professional robber planning to rob houses along a street\. Each house has a certain amount of money stashed, the only constraint stopping you from robbing each of them is that adjacent houses have security systems connected and **it will automatically contact the police if two adjacent houses were broken into on the same night**\.
 
@@ -22,6 +20,15 @@ Given an integer array `nums` representing the amount of money of each house, 
 ##### **Example 1:**
 
 **Input:** nums = \[1,2,3,1\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 **Output:** 4
 
@@ -32,6 +39,16 @@ Total amount you can rob = 1 \+ 3 = 4\.
 ##### **Example 2:**
 
 **Input:** nums = \[2,7,9,3,1\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">7</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">9</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 **Output:** 12
 
@@ -44,11 +61,10 @@ Total amount you can rob = 2 \+ 9 \+ 1 = 12\.
 *   `1 <= nums.length <= 100`
 *   `0 <= nums[i] <= 400`
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/house-robber)
 
-# Approaches
+## Approaches
 
-## 1\. Recursive Approach
+### 1\. Recursive Approach
 
 The problem of robbing houses can be thought of as making a choice at each house: either you rob it or you skip it\. The base problem is that you cannot rob two consecutive houses\.
 
@@ -60,8 +76,6 @@ We can define a recursive function `robFrom(int i)` which returns the maximum 
 This will be a naive solution with exponential time complexity, but it establishes the foundation of the problem\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -86,18 +100,16 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(2^n\) — In the worst case, where `n` is the number of houses\.
 *   **Space Complexity:** O\(n\) — The depth of the recursion tree can go up to `n`\.
 
-## 2\. Memoization \(Top\-Down DP\)
+### 2\. Memoization \(Top\-Down DP\)
 
 To optimize the recursive approach, we can use memoization to store the results of the subproblems that we've already solved, preventing re\-calculation and reducing the time complexity from exponential to linear\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -127,18 +139,16 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\) — Each house is visited at most once\.
 *   **Space Complexity:** O\(n\) — Due to recursion and memo array\.
 
-## 3\. Bottom\-Up Dynamic Programming
+### 3\. Bottom\-Up Dynamic Programming
 
 We can reformulate the problem iteratively using a bottom\-up dynamic programming approach\. We'll systematically determine the best choice at each house leading up to the final decision\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -161,20 +171,16 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\) — Only one pass through the list is needed\.
 *   **Space Complexity:** O\(n\) — For the DP array\.
 
-View Animation
-
-## 4\. Optimized Space Dynamic Programming
+### 4\. Optimized Space Dynamic Programming
 
 We can further optimize the space complexity by realizing that at any point, we only need the last two states to make our decision\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -196,7 +202,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\) — Once through the list\.
 *   **Space Complexity:** O\(1\) — Constant space usage\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/house-robber)

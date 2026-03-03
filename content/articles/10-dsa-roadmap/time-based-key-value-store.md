@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Design a time\-based key\-value data structure that can store multiple values for the same key at different time stamps and retrieve the key's value at a certain timestamp\.
 
@@ -56,11 +54,10 @@ timeMap.get("foo", 5);         // return "bar2"
 *   All the timestamps `timestamp` of `set` are strictly increasing\.
 *   At most **2 \* 10****5** calls will be made to `set` and `get`\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/time-based-key-value-store)
 
-# Approaches
+## Approaches
 
-## 1\. Using HashMap with Linear Search \(Basic\)
+### 1\. Using HashMap with Linear Search \(Basic\)
 
 #### Intuition:
 
@@ -73,8 +70,6 @@ The simplest approach to solve this problem is to use a `HashMap` where the ke
 3.  For the `get` operation, we'll iterate through the list associated with the given key and check for the largest timestamp that is less than or equal to the given timestamp\.
 
 #### Code:
-
-Java
 
 ```java
 class TimeMap {
@@ -120,7 +115,7 @@ class TimeMap {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:**
 
@@ -129,7 +124,7 @@ Complexity Analysis
 
 *   **Space Complexity:** O\(n\) to store all timestamp\-value pairs\.
 
-## 2\. Using HashMap with Binary Search \(Optimal\)
+### 2\. Using HashMap with Binary Search \(Optimal\)
 
 #### Intuition:
 
@@ -142,8 +137,6 @@ An optimized approach improves the `get` operation by using binary search\. Gi
 3.  For the `get` operation, use binary search on the list of pairs for the given key instead of linear search\.
 
 #### Code:
-
-Java
 
 ```java
 class TimeMap {
@@ -193,7 +186,7 @@ class TimeMap {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:**
 
@@ -201,3 +194,5 @@ Complexity Analysis
 *   `get`: O\(log n\), where n is the number of timestamp\-value pairs for the key due to binary search\.
 
 *   **Space Complexity:** O\(n\) to store all timestamp\-value pairs\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/time-based-key-value-store)

@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given an `m x n` integer array `grid`\. There is a robot initially located at the **top\-left corner** \(i\.e\., `grid[0][0]`\)\. The robot tries to move to the **bottom\-right corner** \(i\.e\., `grid[m - 1][n - 1]`\)\. The robot can only move either down or right at any point in time\.
 
@@ -27,35 +25,25 @@ The testcases are generated so that the answer will be less than or equal to `2
 
 **Input:** obstacleGrid = \[\[0,0,0\],\[0,1,0\],\[0,0,0\]\]
 
-0
-
-1
-
-2
-
-0
-
-0
-
-0
-
-0
-
-1
-
-0
-
-1
-
-0
-
-2
-
-0
-
-0
-
-0
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+    </div>
+  </div>
+</div>
 
 **Output:** 2
 
@@ -71,6 +59,19 @@ There are two ways to reach the bottom\-right corner:
 
 **Input:** obstacleGrid = \[\[0,1\],\[0,0\]\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+    </div>
+  </div>
+</div>
+
 **Output:** 1
 
 ##### **Constraints:**
@@ -80,19 +81,16 @@ There are two ways to reach the bottom\-right corner:
 *   `1 <= m, n <= 100`
 *   `obstacleGrid[i][j]` is `0` or `1`\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/unique-paths-ii)
 
-# Approaches
+## Approaches
 
-## 1\. Recursive Backtracking
+### 1\. Recursive Backtracking
 
 #### **Intuition**:
 
 The recursive backtracking approach is a brute force method where we explore every possible path from the starting point to the destination, taking into account obstacles\. This involves trying to move right and down at each step recursively\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -117,20 +115,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(2^\(m\+n\)\) — Each point can either move right or down, resulting in exponential time\.
 *   **Space Complexity:** O\(m\+n\) — Recursive stack space\.
 
-## 2\. Memoization
+### 2\. Memoization
 
 #### **Intuition**:
 
 Memoization will be used to store results of already computed paths for each grid cell to avoid redundant calculations\. This is an optimization to the recursive approach\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -160,20 +156,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(m\*n\) — Each cell is computed once\.
 *   **Space Complexity:** O\(m\*n\) \+ O\(m\+n\) — Space for memo array and recursion stack\.
 
-## 3\. Dynamic Programming
+### 3\. Dynamic Programming
 
 #### **Intuition**:
 
 Using a table to systematically compute the number of unique paths to each cell, considering obstacles\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -209,20 +203,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(m\*n\) — We iterate through each cell once\.
 *   **Space Complexity:** O\(m\*n\) — Space for the dp array\.
 
-## 4\. Dynamic Programming with Space Optimization
+### 4\. Dynamic Programming with Space Optimization
 
 #### **Intuition**:
 
 By leveraging the fact that we only need the previous row and previous column to calculate the current cell's paths, we can optimize the space to O\(n\) using a single array\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -249,7 +241,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(m\*n\) — We iterate through each cell once\.
 *   **Space Complexity:** O\(n\) — Space for the 1\-D dp array\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/unique-paths-ii)

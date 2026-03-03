@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given an `m x n` integer matrix `matrix`, if an element is `0`, set its entire row and column to `0`'s\.
 
@@ -23,149 +21,99 @@ You must do it [in place](https://en.wikipedia.org/wiki/In-place_algorithm)\. 
 
 Input:matrix=\[\[1,1,1\],\[1,0,1\],\[1,1,1\]\]
 
-0
-
-1
-
-2
-
-0
-
-1
-
-1
-
-1
-
-1
-
-1
-
-0
-
-1
-
-2
-
-1
-
-1
-
-1
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+  </div>
+</div>
 
 Output:\[\[1,0,1\],\[0,0,0\],\[1,0,1\]\]
 
-0
-
-1
-
-2
-
-0
-
-1
-
-0
-
-1
-
-1
-
-0
-
-0
-
-0
-
-2
-
-1
-
-0
-
-1
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">1</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">0</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">1</span></div>
+    </div>
+  </div>
+</div>
 
 ##### **Example 2:**
 
 Input:matrix=\[\[0,1,2,0\],\[3,4,5,2\],\[1,3,1,5\]\]
 
-0
-
-1
-
-2
-
-3
-
-0
-
-0
-
-1
-
-2
-
-0
-
-1
-
-3
-
-4
-
-5
-
-2
-
-2
-
-1
-
-3
-
-1
-
-5
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">4</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">5</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">5</span></div>
+    </div>
+  </div>
+</div>
 
 Output:\[\[0,0,0,0\],\[0,4,5,0\],\[0,3,1,0\]\]
 
-0
-
-1
-
-2
-
-3
-
-0
-
-0
-
-0
-
-0
-
-0
-
-1
-
-0
-
-4
-
-5
-
-0
-
-2
-
-0
-
-3
-
-1
-
-0
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">0</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">4</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">5</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">0</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">0</span></div>
+    </div>
+  </div>
+</div>
 
 #### **Constraints:**
 
@@ -180,11 +128,10 @@ Output:\[\[0,0,0,0\],\[0,4,5,0\],\[0,3,1,0\]\]
 *   A simple improvement uses `O(m + n)` space, but still not the best solution\.
 *   Could you devise a constant space solution?
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/set-matrix-zeroes)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force
+### 1\. Brute Force
 
 #### **Intuition:**
 
@@ -197,8 +144,6 @@ The brute force method involves identifying which rows and columns should be set
 3.  Finally, copy the values from the new matrix to the original matrix\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {
@@ -240,12 +185,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(m \* n\), where m is the number of rows and n is the number of columns\.
 *   **Space Complexity:** O\(m \* n\), due to the additional matrix copy\.
 
-## 2\. Using Additional Arrays
+### 2\. Using Additional Arrays
 
 #### **Intuition:**
 
@@ -258,8 +203,6 @@ Instead of using a complete matrix to keep track of which rows and columns need 
 3.  Iterate again through the matrix, using `zeroRows` and `zeroCols` to set the appropriate rows and columns to zero\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {
@@ -291,12 +234,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(m \* n\), where m is the number of rows and n is the number of columns\.
 *   **Space Complexity:** O\(m \+ n\) for the row and column arrays\.
 
-## 3\. In\-Place
+### 3\. In\-Place
 
 #### **Intuition:**
 
@@ -310,8 +253,6 @@ To achieve O\(1\) additional space complexity, we can use the input matrix itsel
 4.  Finally, handle zeroing of the first row and column based on the stored state in step 1\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {
@@ -372,7 +313,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(m \* n\), where m is the number of rows and n is the number of columns\.
 *   **Space Complexity:** O\(1\), utilizing the matrix itself for storage\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/set-matrix-zeroes)

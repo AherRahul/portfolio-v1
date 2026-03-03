@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given a **0\-indexed** array of positive integers `w` where `w[i]` describes the **weight** of the `i``th` index\.
 
@@ -85,11 +83,10 @@ All of the following outputs can be considered correct:
 *   **1 <= w\[i\] <= 10****5**
 *   `pickIndex` will be called at most `10``4` times\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/random-pick-with-weight)
 
-# Approaches
+## Approaches
 
-## 1\. Prefix Sum \+ Binary Search Approach
+### 1\. Prefix Sum \+ Binary Search Approach
 
 #### **Intuition:**
 
@@ -100,8 +97,6 @@ The main goal is to pick an index `i` with a probability proportional to `w[i
 3.  Use binary search to find the index where the target falls in the prefix sum array\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {
@@ -141,12 +136,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** Preprocessing: O\(N\), where N is the length of the weights array to compute prefix sums\. Pick Index: O\(log N\) due to binary search\.
 *   **Space Complexity:** O\(N\) for storing the prefix sum array\.
 
-## 2\. Binary Search Tree Approach \(Optimal\)
+### 2\. Binary Search Tree Approach \(Optimal\)
 
 #### **Intuition:**
 
@@ -156,8 +151,6 @@ This approach uses a dynamic data structure like a balanced binary search tree \
 2.  For each `pickIndex` call, randomly determine a target and find the smallest key in the map greater or equal to the target\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {
@@ -185,7 +178,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** Preprocessing: O\(N log N\) due to insertions into the tree map\. Pick Index: O\(log N\) since searching through the `TreeMap` is logarithmic on average\.
 *   **Space Complexity:** O\(N\) due to storing the cumulative sums in the `TreeMap`\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/random-pick-with-weight)

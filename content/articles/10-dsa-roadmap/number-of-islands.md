@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given an `m x n` 2D binary grid `grid` which represents a map of `'1'`s \(land\) and `'0'`s \(water\), return _the number of islands_\.
 
@@ -23,127 +21,11 @@ An **island** is surrounded by water and is formed by connecting adjacent land
 
 **Input:** grid
 
-0
-
-1
-
-2
-
-3
-
-4
-
-0
-
-1
-
-1
-
-1
-
-1
-
-0
-
-1
-
-1
-
-1
-
-0
-
-1
-
-0
-
-2
-
-1
-
-1
-
-0
-
-0
-
-0
-
-3
-
-0
-
-0
-
-0
-
-0
-
-0
-
 **Output:** 1
 
 ##### **Example 2:**
 
 **Input:** grid
-
-0
-
-1
-
-2
-
-3
-
-4
-
-0
-
-1
-
-1
-
-0
-
-0
-
-0
-
-1
-
-1
-
-1
-
-0
-
-0
-
-0
-
-2
-
-0
-
-0
-
-1
-
-0
-
-0
-
-3
-
-0
-
-0
-
-0
-
-1
-
-1
 
 **Output:** 3
 
@@ -154,11 +36,10 @@ An **island** is surrounded by water and is formed by connecting adjacent land
 *   `1 <= m, n <= 300`
 *   `grid[i][j]` is `'0'` or `'1'`\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/number-of-islands)
 
-# Approaches
+## Approaches
 
-## 1\. DFS Approach
+### 1\. DFS Approach
 
 #### Intuition:
 
@@ -171,8 +52,6 @@ The problem can be effectively solved by considering the grid as a graph\. Here 
 *   Each DFS initiation indicates a new island\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -222,12 +101,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(M \* N\) where M is the number of rows and N is the number of columns\.
 *   **Space Complexity:** O\(M \* N\) in worst case for the recursion stack\.
 
-## 2\. BFS Approach
+### 2\. BFS Approach
 
 #### Intuition:
 
@@ -240,8 +119,6 @@ Similar to DFS, the Breadth First Search \(BFS\) approach is another way to trav
 *   Mark all visited lands to ensure no double counting\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -284,12 +161,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(M \* N\) where M is the number of rows and N is the number of columns\.
 *   **Space Complexity:** O\(min\(M, N\)\) for the BFS queue\.
 
-## 3\. Union\-Find Approach
+### 3\. Union\-Find Approach
 
 #### Intuition:
 
@@ -302,8 +179,6 @@ This approach uses the Union\-Find \(Disjoint Set Union\) data structure which i
 *   The final number of unique parent sets represents the number of islands\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -390,7 +265,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(M \* N \* alpha\(M \* N\)\) where **alpha** is the Inverse Ackermann function, which is nearly constant for all practical purposes\.
 *   **Space Complexity:** O\(M \* N\) due to the parent and rank arrays\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/number-of-islands)

@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given the `root` of a binary tree, return _the_ _**maximum width**_ _of the given tree_\.
 
@@ -27,6 +25,18 @@ It is **guaranteed** that the answer will in the range of a **32\-bit** sign
 
 Input:root=\[1,3,2,5,3,null,9\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">5</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">9</span></div>
+  </div>
+</div>
+
 135329
 
 **Output:** 4
@@ -37,6 +47,21 @@ Input:root=\[1,3,2,5,3,null,9\]
 
 Input:root=\[1,3,2,5,null,null,9,6,null,7\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">4</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">5</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">9</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">7</span><span class="arr-val">6</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">8</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">9</span><span class="arr-val">7</span></div>
+  </div>
+</div>
+
 1356297
 
 **Output:** 7
@@ -46,6 +71,15 @@ Input:root=\[1,3,2,5,null,null,9,6,null,7\]
 ##### **Example 3:**
 
 Input:root=\[1,3,2,5\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">5</span></div>
+  </div>
+</div>
 
 1352
 
@@ -58,11 +92,10 @@ Input:root=\[1,3,2,5\]
 *   The number of nodes in the tree is in the range `[1, 3000]`\.
 *   `-100 <= Node.val <= 100`
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/maximum-width-of-binary-tree)
 
-# Approaches
+## Approaches
 
-## 1\. BFS with Index Tracking
+### 1\. BFS with Index Tracking
 
 #### Intuition:
 
@@ -79,8 +112,6 @@ To determine the maximum width of the binary tree, one intuitive method is to pe
 4.  Continue until all levels have been processed\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -120,7 +151,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\), where N is the number of nodes since each node is processed exactly once\.
 *   **Space Complexity:** O\(N\), due to the queue storing at most the maximum number of nodes in a given level\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/maximum-width-of-binary-tree)

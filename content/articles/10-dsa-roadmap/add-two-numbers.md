@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given two **non\-empty** linked lists representing two non\-negative integers\. The digits are stored in **reverse order**, and each of their nodes contains a single digit\. Add the two numbers and return the sum as a linked list\.
 
@@ -25,6 +23,14 @@ You may assume the two numbers do not contain any leading zero, except the numbe
 
 **Output:** \[7,0,8\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">7</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">8</span></div>
+  </div>
+</div>
+
 **Explanation:** 342 \+ 465 = 807\.
 
 ##### **Example 2:**
@@ -33,11 +39,30 @@ You may assume the two numbers do not contain any leading zero, except the numbe
 
 **Output:** \[0\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">0</span></div>
+  </div>
+</div>
+
 ##### **Example 3:**
 
 **Input:** l1 = \[9,9,9,9,9,9,9\], l2 = \[9,9,9,9\]
 
 **Output:** \[8,9,9,9,0,0,0,1\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">8</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">9</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">9</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">9</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">5</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">6</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">7</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 ##### **Constraints:**
 
@@ -45,11 +70,10 @@ You may assume the two numbers do not contain any leading zero, except the numbe
 *   `0 <= Node.val <= 9`
 *   It is guaranteed that the list represents a number that does not have leading zeros\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/add-two-numbers)
 
-# Approaches
+## Approaches
 
-## 1\. Iterative Approach
+### 1\. Iterative Approach
 
 The naive approach involves iterating through both linked lists simultaneously, adding the digits, and managing the carry\.
 
@@ -74,8 +98,6 @@ The naive approach involves iterating through both linked lists simultaneously, 
 6.  Return `dummyHead.next`\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -110,9 +132,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(max\(m, n\)\), where `m` and `n` are the lengths of the two lists\. We iterate through both lists once\.
 *   **Space Complexity:** O\(max\(m, n\)\)\. The result can be at most max\(m, n\) \+ 1 in length to accommodate any carry\.
 
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/add-two-numbers)

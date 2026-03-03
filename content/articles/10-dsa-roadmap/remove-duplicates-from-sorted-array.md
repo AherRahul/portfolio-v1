@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given an integer array `nums` sorted in **non\-decreasing order**, remove the duplicates [**in\-place**](https://en.wikipedia.org/wiki/In-place_algorithm) such that each unique element appears only **once**\. The **relative order** of the elements should be kept the **same**\. Then return _the number of unique elements in_ `nums`\.
 
@@ -25,7 +23,6 @@ Consider the number of unique elements of `nums` to be `k`, to get accepted, 
 **Custom Judge:**
 
 ```java
-The judge will test your solution with the following code:
 int[] nums = [...]; // Input array
 int[] expectedNums = [...]; // The expected answer with correct length
 int k = removeDuplicates(nums); // Calls your implementation
@@ -33,148 +30,71 @@ assert k == expectedNums.length;
 for (int i = 0; i < k; i++) {
     assert nums[i] == expectedNums[i];
 }
-If all assertions pass, then your solution will be accepted.
 ```
 
-##### **Example 1:**
+#### Example 1:
 
-Input:nums=\[1,1,2\]
+**Input: nums = \[1, 1, 2\]**
 
-0
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+  </div>
+</div>
 
-1
+**Output: \[1, 2, \_\], k = 2**
 
-1
+**Explanation:** Return k = 2\. The first two elements are 1 and 2\. The rest doesn't matter\.
 
-1
+#### Example 2:
 
-2
+**Input: nums = \[0, 0, 1, 1, 1, 2, 2, 3, 3\]**
 
-2
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">0</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">1</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">7</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">8</span><span class="arr-val">3</span></div>
+  </div>
+</div>
 
-Output:\[1,2,\]
+**Output: \[0, 1, 2, 3, \_, \_, \_, \_, \_\], k = 4**
 
-0
+**Explanation:** Return k = 4\. The first four elements are 0, 1, 2, 3\. The rest doesn't matter\.
 
-1
+#### Constraints:
 
-1
-
-2
-
-2
-
-\-
-
-**Explanation:** Your function should return k = 2, with the first two elements of nums being 1 and 2 respectively\.It does not matter what you leave beyond the returned k \(hence they are underscores\)\.
-
-##### **Example 2:**
-
-Input:nums=\[0,0,1,1,1,2,2,3,3\]
-
-0
-
-0
-
-1
-
-0
-
-2
-
-1
-
-3
-
-1
-
-4
-
-1
-
-5
-
-2
-
-6
-
-2
-
-7
-
-3
-
-8
-
-3
-
-Output:\[0,1,2,3,,,,,\]
-
-0
-
-0
-
-1
-
-1
-
-2
-
-2
-
-3
-
-3
-
-4
-
-\-
-
-5
-
-\-
-
-6
-
-\-
-
-7
-
-\-
-
-8
-
-\-
-
-**Explanation:** Your function should return k = 4, with the first four elements of nums being 0, 1, 2, and 3 respectively\. It does not matter what you leave beyond the returned k\.
-
-##### **Constraints:**
-
-*   **1 <= nums\.length <= 3 \* 10****4**
+*   **1 <= nums\.length <= 3 \* 10^4**
 *   **\-100 <= nums\[i\] <= 100**
-*   `nums` is sorted in **non\-decreasing** order\.
+*   `nums` is sorted in **non-decreasing** order\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/remove-duplicates-from-sorted-array)
+## Understanding the Problem
 
-# Understanding the Problem
+At first glance, removing duplicates seems trivial\. Just iterate through the array and keep track of unique elements, right? The catch is the **in-place** requirement\. We cannot create a new array to store the results\. We must modify the original array and tell the caller how many unique elements exist\.
 
-At first glance, removing duplicates seems trivial\. Just iterate through the array and keep track of unique elements, right? The catch is the **in\-place** requirement\. We cannot create a new array to store the results\. We must modify the original array and tell the caller how many unique elements exist\.
-
-The problem gives us a crucial clue that many overlook: the array is **sorted**\. This means all duplicates are grouped together\. In `[1, 1, 2, 2, 2, 3]`, all the 1s are adjacent, all the 2s are adjacent, and so on\. We never have to worry about finding a duplicate "later" in the array that we missed earlier\.
+The problem gives us a crucial clue that many overlook: the array is **sorted**\. This means all duplicates are grouped together\. In `[1, 1, 2, 2, 2, 3]`, all the 1s are adjacent, all the 2s are adjacent, and so on\. We never have to worry about finding a duplicate "later" in the array that we missed earlier\.
 
 This sorted property completely changes how we approach the problem\. Instead of using a hash set to track seen elements \(which would require extra space\), we can simply compare adjacent elements\. If two adjacent elements are the same, one of them is a duplicate\.
 
-The expected return value is `k`, the count of unique elements\. But we also need to physically place those unique elements in the first `k` positions of the array\. The elements beyond position `k-1` can be anything since the caller will ignore them\.
+The expected return value is `k`, the count of unique elements\. But we also need to physically place those unique elements in the first `k` positions of the array\. The elements beyond position `k-1` can be anything since the caller will ignore them\.
 
-# Approaches
+## Approaches
 
-## 1\. Two Pointers Approach
+### 1\. Two Pointers Approach
 
 #### Intuition:
 
 In a sorted array, duplicates always appear next to each other\.
 
-This makes it easy to remove duplicates using a **two\-pointer technique**:
+This makes it easy to remove duplicates using a **two-pointer technique**:
 
 *   **writePos** – points to the position where the next unique element should be placed
 *   **readPos** – scans the array to find the next unique element
@@ -183,21 +103,60 @@ Whenever we discover a new unique value, we move it to `nums[writePos]` and adva
 
 All unique elements end up at the front of the array\. Anything beyond `writePos` is irrelevant\.
 
+#### Example Walkthrough:
+
+**Input: \[1, 1, 2\]**
+
+
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-ptr" data-label="W">↓</span><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-ptr" data-label="R">↓</span><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+  </div>
+  <p class="arr-step-label pt-6">Initial — writePos = 0, readPos = 1</p>
+</div>
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-ptr" data-label="W">↓</span><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-ptr" data-label="R">↓</span><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+  </div>
+  <p class="arr-step-label pt-6">Step 1 — nums[read]=1 == nums[write]=1 → duplicate, skip</p>
+</div>
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-ptr" data-label="W">↓</span><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-ptr" data-label="R">↓</span><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+  </div>
+  <p class="arr-step-label pt-6">Step 2 — nums[read]=2 ≠ nums[write]=1 → unique! write++ then place</p>
+</div>
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+  </div>
+  <p class="arr-step-label pt-6">Done — return writePos + 1 = 2</p>
+</div>
+
+
 #### Steps:
 
 1.  If the array is empty, return `0` since no elements exist\.
 2.  Initialize `writePos = 0`, marking where the next unique element should be placed\.
 3.  Use `readPos` to scan from the second element onward\.
 4.  If `nums[readPos]` is different from `nums[writePos]`, we found a new unique element\.
-
-*   Increment `writePos`\.
-*   Copy `nums[readPos]` to `nums[writePos]`\.
-
+    *   Increment `writePos`\.
+    *   Copy `nums[readPos]` to `nums[writePos]`\.
 5.  Return `writePos + 1`, the count of unique elements\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -223,9 +182,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
-*   **Time Complexity:** O\(n\), where n is the number of elements in the array\. We traverse the array with a single pass using the two pointers\.
-*   **Space Complexity:** O\(1\), as we are using extra space only for the pointers and directly modifying the input array\.
+*   **Time Complexity:** O\(n\), where n is the number of elements in the array\. We traverse the array with a single pass using the two pointers\.
+*   **Space Complexity:** O\(1\), as we are using extra space only for the pointers and directly modifying the input array\.
 
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/remove-duplicates-from-sorted-array)

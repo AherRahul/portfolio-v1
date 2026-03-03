@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Design a simplified version of Twitter where users can post tweets, follow/unfollow another user, and is able to see the `10` most recent tweets in the user's news feed\.
 
@@ -58,11 +56,10 @@ twitter.getNewsFeed(1);  // User 1's news feed should return a list with 1 tweet
 *   At most `3 * 10``4` calls will be made to `postTweet`, `getNewsFeed`, `follow`, and `unfollow`\.
 *   A user cannot follow himself\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/design-twitter)
 
-# Approaches
+## Approaches
 
-## 1\. Naive Approach
+### 1\. Naive Approach
 
 #### Intuition:
 
@@ -75,8 +72,6 @@ This naive approach involves maintaining three main data structures:
 Using these data structures, we can retrieve the latest tweets for any user by filtering the global tweet list according to the follow relationships\.
 
 #### Code:
-
-Java
 
 ```java
 class Twitter {
@@ -133,7 +128,7 @@ class Twitter {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:**
 
@@ -143,15 +138,13 @@ Complexity Analysis
 
 *   **Space Complexity:** O\(u \+ t\) where u is the number of users and t is the number of tweets\.
 
-## 2\. Optimized Approach using Min\-Heap
+### 2\. Optimized Approach using Min\-Heap
 
 #### Intuition:
 
 To improve the retrieval of the latest tweets for a user, we utilize a Min\-Heap to efficiently manage the fetching of the top 10 most recent tweets\. We maintain similar data structures for storing tweets and follow relationships, but enhance the retrieval by using the current timestamp to prioritize recent tweets\.
 
 #### Code:
-
-Java
 
 ```java
 class Twitter {
@@ -205,7 +198,7 @@ class Twitter {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:**
 
@@ -214,3 +207,5 @@ Complexity Analysis
 *   Follow and unfollow: O\(1\)\.
 
 *   **Space Complexity:** O\(u \+ t\) where u is the number of users and t is the number of tweets\. The additional overhead is due to the priority queue holding at most 10 elements\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/design-twitter)

@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are implementing a program to use as your calendar\. We can add a new event if adding the event will not cause a **double booking**\.
 
@@ -52,19 +50,16 @@ myCalendar.book(20, 30); // return True, The event can be booked, as the first e
 *   **0 <= start < end <= 10****9**
 *   At most `1000` calls will be made to `book`\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/my-calendar-i)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force Approach
+### 1\. Brute Force Approach
 
 #### Intuition:
 
 The brute force approach involves storing every booked interval and iterating through the list whenever a new booking request comes in\. This approach checks for conflicts by iterating through each previously booked interval and ensuring no overlap\.
 
 #### Code:
-
-Java
 
 ```java
 class MyCalendar {
@@ -91,20 +86,18 @@ class MyCalendar {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), where n is the number of bookings so far\. In the worst case, for each new booking, we are checking against all previously stored intervals\.
 *   **Space Complexity:** O\(n\) due to storing all booked intervals\.
 
-## 2\. Optimized Using TreeMap
+### 2\. Optimized Using TreeMap
 
 #### Intuition:
 
 To reduce the time complexity for checking overlaps, we can use a TreeMap\. The TreeMap data structure maintains the sorted order of starts, which allows faster lookups\. We can utilize its floor and ceiling functions to efficiently check for overlaps with neighboring intervals\.
 
 #### Code:
-
-Java
 
 ```java
 class MyCalendar {
@@ -134,7 +127,9 @@ class MyCalendar {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(log n\) due to the TreeMap operations \(floor, ceiling, and put\)\.
 *   **Space Complexity:** O\(n\) for storing the intervals in the TreeMap\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/my-calendar-i)

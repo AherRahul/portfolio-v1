@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given a **0\-indexed** integer array `nums` and an integer `k`\.
 
@@ -27,6 +25,17 @@ Return _the_ _**maximum score**_ _you can get_\. 
 
 **Input:** nums = \[1,\-1,\-2,4,\-7,3\], k = 2
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">-1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">-2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">-7</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">3</span></div>
+  </div>
+</div>
+
 **Output:** 7
 
 **Explanation:** You can choose your jumps forming the subsequence \[1,\-1,4,3\] \(underlined above\)\. The sum is 7\.
@@ -34,6 +43,17 @@ Return _the_ _**maximum score**_ _you can get_\. 
 ##### **Example 2:**
 
 **Input:** nums = \[10,\-5,\-2,4,0,3\], k = 3
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">10</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">-5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">-2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">4</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">3</span></div>
+  </div>
+</div>
 
 **Output:** 17
 
@@ -43,6 +63,19 @@ Return _the_ _**maximum score**_ _you can get_\. 
 
 **Input:** nums = \[1,\-5,\-20,4,\-1,3,\-6,\-3\], k = 2
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">-5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">-20</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">-1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">-6</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">7</span><span class="arr-val">-3</span></div>
+  </div>
+</div>
+
 **Output:** 0
 
 ##### **Constraints:**
@@ -50,19 +83,16 @@ Return _the_ _**maximum score**_ _you can get_\. 
 *   **1 <= nums\.length, k <= 10****5**
 *   **\-10****4** **<= nums\[i\] <= 10****4**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/jump-game-vi)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force
+### 1\. Brute Force
 
 #### Intuition:
 
 In the brute force approach, the idea is to explore every possible path by jumping up to `k` steps forward and choose the path that yields the maximum score\. This involves recursively jumping from the current position all the way to the `n-1` index and calculating the score for each path\.
 
 #### Code:
-
-Java
 
 ```java
 class JumpGameVI {
@@ -87,20 +117,18 @@ class JumpGameVI {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(k^n\), as each step can branch into up to `k` further recursive calls\.
 *   **Space Complexity:** O\(n\), due to the recursion stack that can go as deep as `n`\.
 
-## 2\. Dynamic Programming with Deque
+### 2\. Dynamic Programming with Deque
 
 #### Intuition:
 
 To achieve better performance, we utilize a deque to maintain a sliding window of size `k` over the array and store indices\. The front of the deque will always represent the maximum possible score we can get at that point\. This allows calculating the maximum score at each step in constant time\.
 
 #### Code:
-
-Java
 
 ```java
 class JumpGameVI {
@@ -136,22 +164,18 @@ class JumpGameVI {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), each element is processed at most twice\.
 *   **Space Complexity:** O\(n\), due to the storage of the dp array and deque\.
 
-View Animation
-
-## 3\. Dynamic Programming with Priority Queue
+### 3\. Dynamic Programming with Priority Queue
 
 #### Intuition:
 
 This approach uses a priority queue to maintain the maximum scores at each index similar to the deque strategy\. The priority queue will always allow us to peek the current maximum score in logarithmic time\.
 
 #### Code:
-
-Java
 
 ```java
 class JumpGameVI {
@@ -178,7 +202,9 @@ class JumpGameVI {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n log k\), due to the insert and remove operations on the priority queue\.
 *   **Space Complexity:** O\(n\), as we store scores and their respective indices\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/jump-game-vi)

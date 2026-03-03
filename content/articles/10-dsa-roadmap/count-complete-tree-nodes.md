@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given the `root` of a **complete** binary tree, return the number of the nodes in the tree\.
 
@@ -24,6 +22,17 @@ Design an algorithm that runs in less than `O(n)` time complexity\.
 ##### **Example 1:**
 
 Input:root=\[1,2,3,4,5,6\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">6</span></div>
+  </div>
+</div>
 
 124536
 
@@ -39,6 +48,12 @@ Input:root=\[1,2,3,4,5,6\]
 
 **Input:** root = \[1\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+  </div>
+</div>
+
 **Output:** 1
 
 ##### **Constraints:**
@@ -47,11 +62,10 @@ Input:root=\[1,2,3,4,5,6\]
 *   **0 <= Node\.val <= 5 \* 10****4**
 *   The tree is guaranteed to be **complete**\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/count-complete-tree-nodes)
 
-# Approaches
+## Approaches
 
-## 1\. Simple Tree Traversal
+### 1\. Simple Tree Traversal
 
 #### **Intuition:**
 
@@ -65,8 +79,6 @@ The most straightforward method to count all the nodes in a tree is to traverse 
 
 #### Code:
 
-Java
-
 ```java
 class Solution {
    public int countNodes(TreeNode root) {
@@ -79,12 +91,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), where n is the number of nodes in the tree\. We visit each node exactly once\.
 *   **Space Complexity:** O\(h\), where h is the height of the tree\. This is due to the recursion stack\.
 
-## 2\. Binary Search and Depth Calculation
+### 2\. Binary Search and Depth Calculation
 
 #### **Intuition:** 
 
@@ -101,8 +113,6 @@ Given the properties of a complete tree, we can use a more efficient method leve
 5.  Calculate the total number of nodes using full levels and the nodes you've confirmed in the last level\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -157,7 +167,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(log^2\(n\)\), where n is the number of nodes\. We perform a log\(n\) depth computation and an additional log\(n\) binary search for each depth level\.
 *   **Space Complexity:** O\(1\), as it uses constant extra space\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/count-complete-tree-nodes)

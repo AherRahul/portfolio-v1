@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You have `k` lists of sorted integers in **non\-decreasing order**\. Find the **smallest** range that includes at least one number from each of the `k` lists\.
 
@@ -23,7 +21,38 @@ We define the range `[a, b]` is smaller than range `[c, d]` if `b - a < d -
 
 **Input:** nums = \[\[4,10,15,24,26\],\[0,9,12,20\],\[5,18,22,30\]\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">4</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">10</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">15</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">24</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">26</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">9</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">12</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">20</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">5</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">18</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">22</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">30</span></div>
+    </div>
+  </div>
+</div>
+
 **Output:** \[20,24\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">20</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">24</span></div>
+  </div>
+</div>
 
 **Explanation:**
 
@@ -37,7 +66,34 @@ List 3: \[5, 18, 22, 30\], 22 is in range \[20,24\]\.
 
 **Input:** nums = \[\[1,2,3\],\[1,2,3\],\[1,2,3\]\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+    </div>
+  </div>
+</div>
+
 **Output:** \[1,1\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 ##### **Constraints:**
 
@@ -47,11 +103,10 @@ List 3: \[5, 18, 22, 30\], 22 is in range \[20,24\]\.
 *   **\-10****5** **<= nums\[i\]\[j\] <= 10****5**
 *   **nums\[i\] is sorted in non\-decreasing order\.**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/smallest-range-covering-elements-from-k-lists)
 
-# Approaches
+## Approaches
 
-## 1\. Priority Queue \(Heap\) Approach
+### 1\. Priority Queue \(Heap\) Approach
 
 #### Intuition:
 
@@ -63,8 +118,6 @@ The problem requires finding the smallest range that includes at least one numbe
 4.  Update and check the range every time the heap is updated\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -107,12 +160,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** **O\(N log K\)**, where N is the total number of elements across all lists and K is the number of lists\. The heap operations \(insert, delete\) are log K, performed N times\.
 *   **Space Complexity:** **O\(K\)**, where K is the number of lists\. This is due to storing one element from each list in the heap\.
 
-## 2\. Two Pointers with Sorted List
+### 2\. Two Pointers with Sorted List
 
 #### Intuition:
 
@@ -123,8 +176,6 @@ By flattening all lists into a single sorted list while keeping track of their o
 3.  Attempt to shrink the range by moving the left pointer once coverage is ensured\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -184,7 +235,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** **O\(N log N\)**, where N is the total number of elements across all lists due to the sorting process\.
 *   **Space Complexity:** **O\(N\)**, because we store all elements with their list indices and frequency map\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/smallest-range-covering-elements-from-k-lists)

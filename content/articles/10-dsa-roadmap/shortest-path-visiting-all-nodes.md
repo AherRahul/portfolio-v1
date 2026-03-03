@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You have an undirected, connected graph of `n` nodes labeled from `0` to `n - 1`\. You are given an array `graph` where `graph[i]` is a list of all the nodes connected with node `i` by an edge\.
 
@@ -23,6 +21,25 @@ Return _the length of the shortest path that visits every node_\. You may start
 
 **Input:** graph = \[\[1,2,3\],\[0\],\[0\],\[0\]\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+    </div>
+  </div>
+</div>
+
 **Output:** 4
 
 **Explanation:** One possible path is \[1,0,2,0,3\]
@@ -31,7 +48,42 @@ Return _the length of the shortest path that visits every node_\. You may start
 
 **Input:** graph = \[\[1\],\[0,2,4\],\[1,3,4\],\[2\],\[1,2\]\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">4</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">4</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+    </div>
+  </div>
+</div>
+
 **Output:** 4**Explanation:** One possible path is \[0,1,4,2,3\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">3</span></div>
+  </div>
+</div>
 
 ##### **Constraints:**
 
@@ -42,11 +94,10 @@ Return _the length of the shortest path that visits every node_\. You may start
 *   If `graph[a]` contains `b`, then `graph[b]` contains `a`\.
 *   The input graph is always connected\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/shortest-path-visiting-all-nodes)
 
-# Approaches
+## Approaches
 
-## 1\. BFS Traversal
+### 1\. BFS Traversal
 
 #### Intuition:
 
@@ -61,8 +112,6 @@ The problem can be translated into finding the shortest path covering all nodes 
 5.  Use a set to keep track of visited states to prevent revisiting the same state, optimizing duplication handling\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -109,12 +158,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(2^n \* n^2\)\) \- There are \(2^n\) possible states for each node, and up to \(n^2\) transitions between nodes\.
 *   **Space Complexity:** O\(2^n \* n\)\) \- Space for the `visited` state\-array, helping to keep track of node states\.
 
-## 2\. Dynamic Programming with Bitmasking
+### 2\. Dynamic Programming with Bitmasking
 
 #### Intuition:
 
@@ -128,8 +177,6 @@ This approach uses dynamic programming \(DP\) in combination with bitmasking to 
 4.  The final answer is the minimum value of `dp[(1 << n) - 1][i]` for all `i`, as it represents visiting all nodes \(mask `111...1`\)\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -168,7 +215,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(2^n \* n^2\)\) \- Each state `(mask, i)` is updated through \(n^2\) possibilities\.
 *   **Space Complexity:** O\(2^n \* n\)\) \- Space used by the DP table\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/shortest-path-visiting-all-nodes)

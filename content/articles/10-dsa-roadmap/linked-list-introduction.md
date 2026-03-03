@@ -32,16 +32,6 @@ A **linked list** is a linear data structure made up of **nodes**\.
 
 Each node contains two parts:
 
-1
-
-3
-
-5
-
-7
-
-9
-
 null
 
 1.  A **value \- the actual data you want to store**
@@ -53,55 +43,25 @@ Unlike arrays, where all elements are stored together in a single, continuous bl
 
 **Arrays \(Contiguous Memory Allocation\)**
 
-0
-
-1
-
 1000
-
-1
-
-3
 
 1004
 
-2
-
-5
-
 1008
 
-3
-
-7
-
 1012
-
-4
-
-9
 
 1016
 
 **Linked List \(Dynamic Memory Allocation\)**
 
-1
-
 1000
-
-3
 
 2016
 
-5
-
 3236
 
-7
-
 1604
-
-9
 
 4412
 
@@ -131,8 +91,6 @@ Let’s break them down one by one\.
 
 In a **singly linked list**, each node contains a value and a pointer to the **next node** and that’s it\.
 
-Java
-
 ```java
 class ListNode {
    int val;
@@ -160,8 +118,6 @@ Each node has **two pointers**:
 
 *   One pointing to the **next** node
 *   One pointing to the **previous** node
-
-Java
 
 ```java
 class DoublyListNode {
@@ -191,8 +147,6 @@ A **circular linked list** is a variation where the **last node points back to t
 
 This forms a **loop**\. You can start at any node and keep going until you're back where you started\.
 
-Java
-
 ```java
 class CircularListNode {
    int val;
@@ -215,8 +169,6 @@ Now that we know what linked lists are and the different types, let’s go over 
 
 Traversal means moving through the list, visiting each node one by one\. You **start at the head** and move one node at a time\.
 
-Java
-
 ```java
 ListNode current = head;
 while (current != null) {
@@ -233,8 +185,6 @@ If you want to find whether a value exists in a linked list, you must:
 
 *   Start at the head
 *   Check each node one by one until you find the value or reach the end
-
-Java
 
 ```java
 ListNode current = head;
@@ -261,8 +211,6 @@ All you need to do is:
 *   Create a new node
 *   Point its `next` to the current head
 *   Update the head to the new node
-
-Java
 
 ```java
 newNode.next = head;

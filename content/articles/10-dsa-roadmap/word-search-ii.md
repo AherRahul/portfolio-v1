@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given an `m x n` `board` of characters and a list of strings `words`, return _all words on the board_\.
 
@@ -24,6 +22,13 @@ Each word must be constructed from letters of sequentially adjacent cells, where
 **Input:** board = \[\["o","a","a","n"\],\["e","t","a","e"\],\["i","h","k","r"\],\["i","f","l","v"\]\], words = \["oath","pea","eat","rain"\]
 
 **Output:** \["eat","oath"\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">eat</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">oath</span></div>
+  </div>
+</div>
 
 ##### **Example 2:**
 
@@ -42,19 +47,16 @@ Each word must be constructed from letters of sequentially adjacent cells, where
 *   `words[i]` consists of lowercase English letters\.
 *   All the strings of `words` are unique\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/word-search-ii)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force Approach
+### 1\. Brute Force Approach
 
 #### **Intuition:**
 
 In the brute force approach, we iterate over each word and place it character by character on the board, starting from every potential starting point\. This involves a depth\-first search \(DFS\) from each cell for each word and checking all four possible directions\. This naive method helps understand the base working but lacks efficiency\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {
@@ -99,20 +101,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N \* M \* 4^L\)\), where \(N \* M\) is the size of the board, and \(L\) is the length of the longest word\.
 *   **Space Complexity:** O\(L\), recursion depth for backtracking\.
 
-## 2\. Backtracking with Trie
+### 2\. Backtracking with Trie
 
 #### **Intuition:**
 
 To optimize, we use a Trie data structure for efficient prefix checking\. Trie allows us to minimize unnecessary DFS calls by terminating branches early if a prefix leads to no valid word\. For each starting point on the board, we search using the trie to construct words, reducing redundant operations considerably compared to checking each word independently\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {
@@ -166,7 +166,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N \* M \* 4^L\), but often faster in practice due to trie pruning\.
 *   **Space Complexity:** O\(N \* M \+ W \* L\), where \(W\) is the number of words and \(L\) is the average word length \(Trie size\)\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/word-search-ii)

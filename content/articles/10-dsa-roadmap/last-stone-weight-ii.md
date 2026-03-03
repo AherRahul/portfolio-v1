@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given an array of integers `stones` where `stones[i]` is the weight of the **i****th** stone\.
 
@@ -29,6 +27,17 @@ Return _the smallest possible weight of the left stone_\. If there are no stone
 ##### **Example 1:**
 
 **Input:** stones = \[2,7,4,1,8,1\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">7</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">8</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 **Output:** 1
 
@@ -46,6 +55,16 @@ we can combine 1 and 1 to get 0, so the array converts to \[1\], then that's the
 
 **Input:** stones = \[31,26,33,21,40\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">31</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">26</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">33</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">21</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">40</span></div>
+  </div>
+</div>
+
 **Output:** 5
 
 **Constraints:**
@@ -53,11 +72,10 @@ we can combine 1 and 1 to get 0, so the array converts to \[1\], then that's the
 *   `1 <= stones.length <= 30`
 *   `1 <= stones[i] <= 100`
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/last-stone-weight-ii)
 
-# Approaches
+## Approaches
 
-## 1\. Recursion
+### 1\. Recursion
 
 #### Intuition:
 
@@ -71,8 +89,6 @@ The problem can be reduced to a classic "Partition problem" where we need to spl
 4.  For each stone, make an include/exclude decision and recursively compute the answer\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -99,12 +115,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(2^n\) where `n` is the number of stones\. The recursive function potentially explores all subsets of stones\.
 *   **Space Complexity:** O\(n\) due to the recursion stack space\.
 
-## 2\. Dynamic Programming
+### 2\. Dynamic Programming
 
 #### Intuition:
 
@@ -119,8 +135,6 @@ To improve upon our recursive method, we can utilize a dynamic programming appro
 5.  Look for the largest `j` such that `dp[j]` is `true`\. The result will be `totalSum - 2*j`\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -151,7 +165,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n \* \{sum / 2\}\), where `n` is the number of stones and `sum` is the total sum of stones\.
 *   **Space Complexity:** O\(\{sum / 2\}\)\) due to the DP array\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/last-stone-weight-ii)

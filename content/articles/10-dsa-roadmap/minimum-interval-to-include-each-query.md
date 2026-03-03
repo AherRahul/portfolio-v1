@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given a 2D integer array `intervals`, where **intervals\[i\] = \[left****i****, right****i****\]** describes the **i****th** interval starting at **left****i** and ending at `right``i` **\(inclusive\)**\. The **size** of an interval is defined as the number of integers it contains, or more formally **right****i** **\- left****i** **\+ 1**\.
 
@@ -26,6 +24,15 @@ Return _an array containing the answers to the queries_\.
 **Input:** intervals = \[\[1,4\],\[2,4\],\[3,6\],\[4,4\]\], queries = \[2,3,4,5\]
 
 **Output:** \[3,3,1,4\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">4</span></div>
+  </div>
+</div>
 
 **Explanation:** The queries are processed as follows:
 
@@ -42,6 +49,15 @@ Return _an array containing the answers to the queries_\.
 **Input:** intervals = \[\[2,3\],\[2,5\],\[1,8\],\[20,25\]\], queries = \[2,19,5,22\]
 
 **Output:** \[2,\-1,4,6\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">-1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">6</span></div>
+  </div>
+</div>
 
 **Explanation:** The queries are processed as follows:
 
@@ -61,11 +77,10 @@ Return _an array containing the answers to the queries_\.
 *   **1 <= left****i** **<= right****i** **<= 10****7**
 *   **1 <= queries\[j\] <= 10****7**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/minimum-interval-to-include-each-query)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force
+### 1\. Brute Force
 
 #### Intuition:
 
@@ -80,12 +95,12 @@ In the brute force approach, we will iterate over each query and for each query,
 
 #### Code:
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n \* m\), where n is the number of queries and m is the number of intervals\.
 *   **Space Complexity:** O\(1\), as we are using a fixed amount of space regardless of input size\.
 
-## 2\. Sorting and Two Pointers with Priority Queue
+### 2\. Sorting and Two Pointers with Priority Queue
 
 #### Intuition:
 
@@ -109,3 +124,5 @@ The brute force solution is not efficient enough for larger inputs\. To optimize
 
 *   **Time Complexity:** \(O\(m \+ n\) log m\), where n is the number of queries and m is the number of intervals\. This includes sorting intervals, queries and operations related to priority queue\.
 *   **Space Complexity:** O\(m\), for storing intervals that are currently being considered in the priority queue\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/minimum-interval-to-include-each-query)

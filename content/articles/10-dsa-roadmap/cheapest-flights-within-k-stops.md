@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 There are `n` cities connected by some number of flights\. You are given an array `flights` where **flights\[i\] = \[from****i****, to****i****, price****i****\]** indicates that there is a flight from city **from****i** to city **to****i** with cost **price****i**\.
 
@@ -22,6 +20,36 @@ You are also given three integers `src`, `dst`, and `k`, return _**the cheap
 ##### **Example 1:**
 
 **Input:** n = 4, flights = \[\[0,1,100\],\[1,2,100\],\[2,0,100\],\[1,3,600\],\[2,3,200\]\], src = 0, dst = 3, k = 1
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">100</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">100</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">100</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">600</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">200</span></div>
+    </div>
+  </div>
+</div>
 
 **Output:** 700
 
@@ -37,6 +65,26 @@ Note that the path through cities \[0,1,2,3\] is cheaper but is invalid because 
 
 **Input:** n = 3, flights = \[\[0,1,100\],\[1,2,100\],\[0,2,500\]\], src = 0, dst = 2, k = 1
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">100</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">100</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">500</span></div>
+    </div>
+  </div>
+</div>
+
 **Output:** 200
 
 **Explanation:**
@@ -48,6 +96,26 @@ The optimal path with at most 1 stop from city 0 to 2 is marked in red and has c
 ##### **Example 3:**
 
 **Input:** n = 3, flights = \[\[0,1,100\],\[1,2,100\],\[0,2,500\]\], src = 0, dst = 2, k = 0
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">100</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">100</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">500</span></div>
+    </div>
+  </div>
+</div>
 
 **Output:** 500
 
@@ -69,11 +137,10 @@ The optimal path with no stops from city 0 to 2 is marked in red and has cost 50
 *   **0 <= src, dst, k < n**
 *   **src \!= dst**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/cheapest-flights-within-k-stops)
 
-# Approaches
+## Approaches
 
-## 1\. Modified Depth\-First Search with Pruning
+### 1\. Modified Depth\-First Search with Pruning
 
 #### Intuition:
 
@@ -86,8 +153,6 @@ This approach involves using a modified DFS algorithm to explore all possible ro
 5.  Update the result whenever a valid path with a cost lower than the current known minimum is found\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -121,12 +186,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(K \* E\)\) where E is the number of flights, as for every node we are exploring up to K\+1 times\.
 *   **Space Complexity:** O\(V \+ E\) where V is the number of vertices\. Storage for the graph and call stack for recursion\.
 
-## 2\. Bellman\-Ford Algorithm \(Dynamic Programming\)
+### 2\. Bellman\-Ford Algorithm \(Dynamic Programming\)
 
 #### Intuition:
 
@@ -137,8 +202,6 @@ Bellman\-Ford is a classic dynamic programming algorithm that can be adapted to 
 3.  Update costs for flights up to `K+1` times to ensure the number of stops doesn't exceed `K`\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -165,12 +228,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(K \* E\) where E is the number of flights, iterating through flights for `K+1` times\.
 *   **Space Complexity:** O\(K \* V\) for storing DP table\.
 
-## 3\. Dijkstra's Algorithm
+### 3\. Dijkstra's Algorithm
 
 #### Intuition:
 
@@ -182,8 +245,6 @@ A priority queue \(min\-heap\) can help us always extend the least costly curren
 4.  Use an array to store the minimum cost to reach each city within a certain number of stops\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -225,7 +286,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(E log V\)\) where E is the number of flights\. The log factor comes from the priority queue\.
 *   **Space Complexity:** O\(V \* E\) due to adjacency list and priority queue\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/cheapest-flights-within-k-stops)

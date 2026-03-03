@@ -27,12 +27,6 @@ A **Monotonic Stack** is a stack that keeps its elements in a specific order —
 
 In a **Monotonic Increasing Stack**, each new element you push is **larger** than the ones already in the stack\.
 
-2
-
-5
-
-8
-
 10
 
 Top
@@ -40,14 +34,6 @@ Top
 *   For example, if you have the numbers `2, 5, 8` in the stack, the next number you add must be **greater than 8**\.
 
 In a **Monotonic Decreasing Stack**, each new element you push is **smaller** than the ones in the stack\.
-
-9
-
-6
-
-4
-
-1
 
 Top
 
@@ -67,30 +53,6 @@ The "next greater element" is simply the first number to the right that’s larg
 
 Let’s consider the array:
 
-0
-
-2
-
-1
-
-1
-
-2
-
-5
-
-3
-
-6
-
-4
-
-2
-
-5
-
-3
-
 We want to find the next greater element for each number:
 
 *   For `2` and `1`, the next greater element is `5`\.
@@ -100,8 +62,6 @@ We want to find the next greater element for each number:
 *   For `3`, there’s no next greater element because it’s the last number\.
 
 A brute force solution would involve a **nested loop** comparing each element with elements to its right until you find a greater element\.
-
-Java
 
 ```java
 class Solution {
@@ -139,8 +99,6 @@ Here's how it works:
 
 *   If the current number is greater than the number at the top of the stack, we **pop** from the stack and update the result for that index\.
 *   We continue this process, then push the index of the current number onto the stack\.
-
-Java
 
 ```java
 class Solution {

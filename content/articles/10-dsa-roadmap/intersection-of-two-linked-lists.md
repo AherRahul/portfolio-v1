@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given the heads of two singly linked\-lists `headA` and `headB`, return _the node at which the two lists intersect_\. If the two linked lists have no intersection at all, return `null`\.
 
@@ -72,19 +70,16 @@ The judge will then create the linked structure based on these inputs and pass t
 
 **Follow up:** Could you write a solution that runs in `O(m + n)` time and use only `O(1)` memory?
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/intersection-of-two-linked-lists)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force
+### 1\. Brute Force
 
 #### Intuition:
 
 The simplest method to determine if the linked lists intersect is to compare each node in one list with every node in the other list\. If there is a node that matches, then that node is the intersection node\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -108,20 +103,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(m \* n\) where m and n are the lengths of the two linked lists\.
 *   **Space Complexity:** O\(1\) as we are not using any extra space except two pointers\.
 
-## 2\. HashSet
+### 2\. HashSet
 
 #### Intuition:
 
 We can use a hash set to store all the nodes of one of the linked lists, then traverse the second linked list to see if any node is already in the set\. If a node is found in the set, that node is the intersection node\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -149,20 +142,18 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(m \+ n\) where m and n are the lengths of the two linked lists\.
 *   **Space Complexity:** O\(n\) where n is the length of the longer linked list since all its nodes are stored in a set\.
 
-## 3\. Two Pointers
+### 3\. Two Pointers
 
 #### Intuition:
 
 The most optimal approach uses two pointers\. Initially, set two pointers to the heads of the two linked lists\. Traverse through the linked lists, and when a pointer reaches the end of a linked list, redirect it to the head of the other linked list\. If the lists intersect, the two pointers will eventually converge at the intersection node after \(m \+ n\) \- c steps, where c is the length of the shared tail\. If they don't intersect, both pointers will eventually become null, and the loop will end\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -187,7 +178,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(m \+ n\) where m and n are the lengths of the two linked lists\.
 *   **Space Complexity:** O\(1\) as no extra space is used, just pointers are moved\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/intersection-of-two-linked-lists)

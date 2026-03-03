@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You have a lock in front of you with 4 circular wheels\. Each wheel has 10 slots: `'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'`\. The wheels can rotate freely and wrap around: for example we can turn `'9'` to be `'0'`, or `'0'` to be `'9'`\. Each move consists of turning one wheel one slot\.
 
@@ -27,6 +25,16 @@ Given a `target` representing the value of the wheels that will unlock the loc
 
 **Input:** deadends = \["0201","0101","0102","1212","2002"\], target = "0202"
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">0201</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">0101</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">0102</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">1212</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">2002</span></div>
+  </div>
+</div>
+
 **Output:** 6
 
 **Explanation:**
@@ -39,6 +47,12 @@ Note that a sequence like "0000" \-> "0001" \-> "0002" \-> "0102" \-> "0202" wou
 
 **Input:** deadends = \["8888"\], target = "0009"
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">8888</span></div>
+  </div>
+</div>
+
 **Output:** 1
 
 **Explanation:** We can turn the last wheel in reverse to move from "0000" \-> "0009"\.
@@ -46,6 +60,19 @@ Note that a sequence like "0000" \-> "0001" \-> "0002" \-> "0102" \-> "0202" wou
 ##### **Example 3:**
 
 **Input:** deadends = \["8887","8889","8878","8898","8788","8988","7888","9888"\], target = "8888"
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">8887</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">8889</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">8878</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">8898</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">8788</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">8988</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">7888</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">7</span><span class="arr-val">9888</span></div>
+  </div>
+</div>
 
 **Output:** \-1
 
@@ -59,11 +86,10 @@ Note that a sequence like "0000" \-> "0001" \-> "0002" \-> "0102" \-> "0202" wou
 *   target **will not be** in the list `deadends`\.
 *   `target` and `deadends[i]` consist of digits only\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/open-the-lock)
 
-# Approaches
+## Approaches
 
-## 1\. Breadth\-First Search \(BFS\) Approach
+### 1\. Breadth\-First Search \(BFS\) Approach
 
 #### Intuition:
 
@@ -80,8 +106,6 @@ We initialize a queue starting with the initial lock position \("0000"\) and att
 5.  Count the number of steps taken to reach the target configuration\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -145,12 +169,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n \* 10^4\)\), where \(n\) is the length of string \(fixed as 4\)\. This accounts for generating all possible states\.
 *   **Space Complexity:** O\(10^4\)\) for the queue and visited set\.
 
-## 2\. Bi\-Directional Breadth\-First Search \(Bi\-BFS\) Approach
+### 2\. Bi\-Directional Breadth\-First Search \(Bi\-BFS\) Approach
 
 #### Intuition:
 
@@ -163,8 +187,6 @@ A more efficient way to solve this problem is using bidirectional BFS\. Instead 
 3.  If the two fronts meet, we have found the shortest path\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -241,7 +263,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(b^\{d/2\}\), where \(b\) is the branching factor and \(d\) is the depth of the tree\. The bidirectional approach cuts the required state exploration significantly\.
 *   **Space Complexity:** O\(b^\{d/2\}\) for maintaining the two fronts in the bidirectional search\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/open-the-lock)

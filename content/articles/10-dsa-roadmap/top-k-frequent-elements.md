@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given an integer array `nums` and an integer `k`, return _the_ `k` _most frequent elements_\. You may return the answer in **any order**\.
 
@@ -21,19 +19,71 @@ Given an integer array `nums` and an integer `k`, return _the_ `k` _most f
 
 **Input:** nums = \[1,1,1,2,2,3\], k = 2
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">3</span></div>
+  </div>
+</div>
+
 **Output:** \[1,2\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+  </div>
+</div>
 
 ##### **Example 2:**
 
 **Input:** nums = \[1\], k = 1
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+  </div>
+</div>
+
 **Output:** \[1\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 ##### **Example 3:**
 
 **Input:** nums = \[1,2,1,2,1,2,3,1,3,2\], k = 2
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">7</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">8</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">9</span><span class="arr-val">2</span></div>
+  </div>
+</div>
+
 **Output:** \[1,2\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+  </div>
+</div>
 
 ##### **Constraints:**
 
@@ -44,11 +94,10 @@ Given an integer array `nums` and an integer `k`, return _the_ `k` _most f
 
 **Follow up:** Your algorithm's time complexity must be better than `O(n log n)`, where n is the array's size\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/top-k-frequent-elements)
 
-# Approaches
+## Approaches
 
-## 1\. Sorting
+### 1\. Sorting
 
 #### Intuition:
 
@@ -61,8 +110,6 @@ The most straightforward way to find the top `k` frequent elements is to count
 3.  Extract the first `k` elements from the sorted list\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -87,12 +134,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N log N\) due to sorting operation, where N is the number of elements in `nums`\.
 *   **Space Complexity:** O\(N\) for storing the frequency map\.
 
-## 2\. Priority Queue
+### 2\. Priority Queue
 
 #### Intuition:
 
@@ -105,8 +152,6 @@ Instead of sorting all elements, we can use a Min\-Heap \(Priority Queue\) to ke
 3.  Iterate through the map and push each entry into the Min\-Heap, evicting the smallest when the heap exceeds size `k`\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -138,12 +183,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N log k\) due to the heap operations, where N is the number of elements in `nums`\.
 *   **Space Complexity:** O\(N\) for the frequency map and O\(k\) for the heap\.
 
-## 3\. Bucket Sort
+### 3\. Bucket Sort
 
 #### Intuition:
 
@@ -156,8 +201,6 @@ We can utilize a bucket sort technique since the maximum frequency of any elemen
 3.  Iterate from the end of the bucket array to pick the top `k` frequent elements\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -198,7 +241,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\), where N is the number of elements in `nums`\. This is because we are only doing constant\-time operations per element\.
 *   **Space Complexity:** O\(N\) for storing the frequency map and bucket list\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/top-k-frequent-elements)

@@ -13,7 +13,6 @@ published: true
 
 ![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png)
 
-
 # Best, Worst, and Average Complexity
 
 When we analyze algorithms, we don’t just care about how fast they run, we care about **how their performance changes with different kinds of input**.
@@ -60,7 +59,6 @@ Let’s start with something simple.
 
 You have an array of `n` elements, and you need to find a given key.
 
-
 ```java
 int linearSearch(int[] arr, int key) {
     for (int i = 0; i < arr.length; i++) {
@@ -90,7 +88,6 @@ Best = O(1), Average = O(n), Worst = O(n)
 ### Example 2 — Binary Search
 
 Now let’s look at a smarter search algorithm that divides the array each time.
-
 
 ```java
 int binarySearch(int[] arr, int key) {
@@ -127,7 +124,6 @@ log₂8 = 3 steps → O(log n)
 So, Best = O(1), Average = O(logn), Worst = O(logn)
 
 ### Example 3 — Bubble Sort
-
 
 ```java
 void bubbleSort(int[] arr) {

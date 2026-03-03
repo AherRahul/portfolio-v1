@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given the `root` of a binary tree, return _the preorder traversal of its nodes' values_\.
 
@@ -21,17 +19,65 @@ Given the `root` of a binary tree, return _the preorder traversal of its node
 
 Input:root=\[1,null,2,3\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">1</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">3</span></div>
+  </div>
+</div>
+
 123
 
 **Output:** \[1,2,3\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+  </div>
+</div>
 
 ##### **Example 2:**
 
 Input:root=\[1,2,3,4,5,null,8,null,null,6,7,9\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">5</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">8</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">7</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">8</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">9</span><span class="arr-val">6</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">10</span><span class="arr-val">7</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">11</span><span class="arr-val">9</span></div>
+  </div>
+</div>
+
 124567389
 
 **Output:** \[1,2,4,5,6,7,3,8,9\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">6</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">5</span><span class="arr-val">7</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">6</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">7</span><span class="arr-val">8</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">8</span><span class="arr-val">9</span></div>
+  </div>
+</div>
 
 ##### **Example 3:**
 
@@ -43,7 +89,19 @@ Input:root=\[1,2,3,4,5,null,8,null,null,6,7,9\]
 
 **Input:** root = \[1\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+  </div>
+</div>
+
 **Output:** \[1\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 ##### **Constraints:**
 
@@ -52,11 +110,10 @@ Input:root=\[1,2,3,4,5,null,8,null,null,6,7,9\]
 
 **Follow up:** Recursive solution is trivial, could you do it iteratively?
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/binary-tree-preorder-traversal)
 
-# Approaches
+## Approaches
 
-## 1\. Recursive Approach
+### 1\. Recursive Approach
 
 #### Intuition:
 
@@ -69,8 +126,6 @@ The recursive approach is the most straightforward way to perform a preorder tra
 *   Recursively traverse the right subtree\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -94,12 +149,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), where n is the number of nodes in the binary tree, as we visit each node once\.
 *   **Space Complexity:** O\(n\) in the worst case due to the recursion stack, and O\(log n\) for a balanced tree\.
 
-## 2\. Iterative Approach using Stack
+### 2\. Iterative Approach using Stack
 
 #### Intuition:
 
@@ -112,8 +167,6 @@ An iterative approach using a stack is a common way to avoid recursion and contr
 *   This ensures that nodes are processed in preorder sequence\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -144,14 +197,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), since each node is processed \(visited and added to the result list\) once\.
 *   **Space Complexity:** O\(n\), in the worst case, due to the stack holding all nodes \(in the case of a skewed tree\)\. In the best case of a balanced tree, it's O\(log n\)\.
 
-View Animation
-
-## 3\. Morris Traversal \(Most Optimal\)
+### 3\. Morris Traversal \(Most Optimal\)
 
 #### Intuition:
 
@@ -168,8 +219,6 @@ Morris Traversal modifies the tree structure temporarily to allow traversal of t
 *   If the rightmost node's right child is the current node \(thread already exists\), set it back to null \(restoring tree structure\), add the current node's value to result, and move to its right child\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -210,7 +259,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), as each edge and node is visited at most twice \(the second time goes without child links\)\.
 *   **Space Complexity:** O\(1\), as no additional data structures or recursion stacks are used beyond the result list\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/binary-tree-preorder-traversal)

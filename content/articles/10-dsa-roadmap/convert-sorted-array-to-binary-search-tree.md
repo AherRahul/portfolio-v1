@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given an integer array `nums` where the elements are sorted in **ascending order**, convert _it to a_ _**height\-balanced**_ _binary search tree_\.
 
@@ -21,27 +19,28 @@ Given an integer array `nums` where the elements are sorted in **ascending or
 
 Input:nums=\[\-10,\-3,0,5,9\]
 
-0
-
-\-10
-
-1
-
-\-3
-
-2
-
-0
-
-3
-
-5
-
-4
-
-9
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">-10</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">-3</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">2</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">9</span></div>
+  </div>
+</div>
 
 Output:\[0,\-3,9,\-10,null,5\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">-3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">9</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">-10</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">5</span><span class="arr-val">5</span></div>
+  </div>
+</div>
 
 0\-3\-1095
 
@@ -53,15 +52,21 @@ Output:\[0,\-3,9,\-10,null,5\]
 
 Input:nums=\[1,3\]
 
-0
-
-1
-
-1
-
-3
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">3</span></div>
+  </div>
+</div>
 
 Output:\[3,1\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 31
 
@@ -73,11 +78,10 @@ Output:\[3,1\]
 *   **\-10****4** **<= nums\[i\] <= 10****4**
 *   `nums` is sorted in a **strictly increasing** order\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree)
 
-# Approaches
+## Approaches
 
-## 1\. Divide and Conquer
+### 1\. Divide and Conquer
 
 #### Intuition:
 
@@ -89,8 +93,6 @@ The problem requires us to convert a sorted array into a height\-balanced binary
 4.  Recursively build the left and right subtrees using the left and right halves of the array, respectively\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -116,12 +118,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity**: O\(n\), where n is the number of elements in the array\. Each element is processed exactly once to construct the tree\.
 *   **Space Complexity**: O\(log n\), which is the space complexity due to the recursion stack in the worst case of a balanced binary tree \(height is log n\)\.
 
-## 2\. Recursive approach using Divide and Conquer
+### 2\. Recursive approach using Divide and Conquer
 
 #### Intuition:
 
@@ -133,8 +135,6 @@ While the recursive approach is intuitive, using an iterative approach can help 
 4.  Push the bounds of the left and right subarrays along with references to the current TreeNode onto the stack\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -181,7 +181,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity**: O\(n\), as we process each element of the array exactly once\.
 *   **Space Complexity**: O\(n\), because the space used by the stack could be proportional to the number of elements in the worst case\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree)

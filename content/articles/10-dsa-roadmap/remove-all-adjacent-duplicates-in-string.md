@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given a string `s` consisting of lowercase English letters\. A **duplicate removal** consists of choosing two **adjacent** and **equal** letters and removing them\.
 
@@ -42,11 +40,10 @@ For example, in "abbaca" we could remove "bb" since the letters are adjacent and
 *   **1 <= s\.length <= 10****5**
 *   `s` consists of lowercase English letters\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string)
 
-# Approaches
+## Approaches
 
-## 1\. Using a Stack
+### 1\. Using a Stack
 
 #### **Intuition:**
 
@@ -64,8 +61,6 @@ The problem requires removal of adjacent duplicates in the given string `s`\. T
 5.  Finally, construct the resulting string from the characters left in the stack\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {
@@ -91,9 +86,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), where n is the length of the string `s`\. Each character is pushed and popped from the stack at most once\.
 *   **Space Complexity:** O\(n\) in the worst case where there are no adjacent duplicates, and the stack contains all characters of the string\.
 
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string)

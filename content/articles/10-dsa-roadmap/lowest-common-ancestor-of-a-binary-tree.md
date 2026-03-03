@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given a binary tree, find the lowest common ancestor \(LCA\) of two given nodes in the tree\.
 
@@ -23,6 +21,22 @@ According to the [definition of LCA on Wikipedia](https://en.wikipedia.org/wiki
 
 **Input:** root = \[3,5,1,6,2,0,8,null,null,7,4\], p = 5, q = 1
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">6</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">5</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">8</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">7</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">8</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">9</span><span class="arr-val">7</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">10</span><span class="arr-val">4</span></div>
+  </div>
+</div>
+
 356274108
 
 **Output:** 3
@@ -31,6 +45,22 @@ According to the [definition of LCA on Wikipedia](https://en.wikipedia.org/wiki
 
 **Input:** root = \[3,5,1,6,2,0,8,null,null,7,4\], p = 5, q = 4
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">6</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">5</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">8</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">7</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">8</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">9</span><span class="arr-val">7</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">10</span><span class="arr-val">4</span></div>
+  </div>
+</div>
+
 356274108
 
 **Output:** 5
@@ -38,6 +68,13 @@ According to the [definition of LCA on Wikipedia](https://en.wikipedia.org/wiki
 ##### **Example 3:**
 
 **Input:** root = \[1,2\], p = 1, q = 2
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+  </div>
+</div>
 
 **Output:** 1
 
@@ -49,11 +86,10 @@ According to the [definition of LCA on Wikipedia](https://en.wikipedia.org/wiki
 *   `p != q`
 *   `p` and `q` will exist in the tree\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree)
 
-# Approaches
+## Approaches
 
-## 1\. Recursive Traversal with Multiple Returns
+### 1\. Recursive Traversal with Multiple Returns
 
 #### Intuition:
 
@@ -65,8 +101,6 @@ This approach involves recursively traversing the binary tree from the root node
 4.  If only one of the subtree calls returns a non\-null value, this means both nodes are located in that subtree, and we return that value upward\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -98,12 +132,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\), where N is the number of nodes in the binary tree\. Each node is visited once\.
 *   **Space Complexity:** O\(N\) \- In the worst case, the space due to recursion stack will be N for a skewed tree\.
 
-## 2\. Iterative using Parent Pointers
+### 2\. Iterative using Parent Pointers
 
 #### Intuition:
 
@@ -115,8 +149,6 @@ In this approach, we utilize a parent pointer for all nodes starting from the ro
 4.  Track back from node `q` and find the first common ancestor in the set\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -166,12 +198,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\), where N is the number of nodes in the binary tree\. We traverse each node once to populate the parent pointers\.
 *   **Space Complexity:** O\(N\) \- The space required for the hashmap and visited set in the worst case\.
 
-## 3\. Optimized Recursive Traversal
+### 3\. Optimized Recursive Traversal
 
 #### Intuition:
 
@@ -184,8 +216,6 @@ This approach is a refined version of the first recursive approach\. It involves
 5.  Otherwise, return the non\-null value from left or right\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -212,9 +242,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\), where N is the number of nodes in the binary tree\. Each node is visited once\.
 *   **Space Complexity:** O\(N\) \- In the worst case, the space due to recursion stack will be N for a skewed tree\.
 
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree)

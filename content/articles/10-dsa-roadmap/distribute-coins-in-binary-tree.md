@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given the `root` of a binary tree with `n` nodes where each `node` in the tree has `node.val` coins\. There are `n` coins in total throughout the whole tree\.
 
@@ -25,6 +23,14 @@ Return _the_ _**minimum**_ _number of moves required to make every node have_
 
 **Input:** root = \[3,0,0\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">1</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">2</span><span class="arr-val">0</span></div>
+  </div>
+</div>
+
 **Output:** 2
 
 **Explanation:** From the root of the tree, we move one coin to its left child, and one coin to its right child\.
@@ -32,6 +38,14 @@ Return _the_ _**minimum**_ _number of moves required to make every node have_
 ##### **Example 2:**
 
 **Input:** root = \[0,3,0\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">0</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">2</span><span class="arr-val">0</span></div>
+  </div>
+</div>
 
 **Output:** 3
 
@@ -44,11 +58,10 @@ Return _the_ _**minimum**_ _number of moves required to make every node have_
 *   `0 <= Node.val <= n`
 *   The sum of all `Node.val` is `n`\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/distribute-coins-in-binary-tree)
 
-# Approaches
+## Approaches
 
-## 1\. Depth First Search
+### 1\. Depth First Search
 
 #### **Intuition:**
 
@@ -62,8 +75,6 @@ You'll need to use Depth First Search \(DFS\) to explore this tree, using the pr
 Here's how you can implement this:
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -94,9 +105,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\), where N is the number of nodes in the tree\. The DFS touches each node exactly once\.
 *   **Space Complexity:** O\(H\), where H is the height of the tree\. The space is used by the recursion stack\. In the worst case \(unbalanced tree\), H could be as large as N\. In the best case \(balanced tree\), H is log\(N\)\.
 
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/distribute-coins-in-binary-tree)

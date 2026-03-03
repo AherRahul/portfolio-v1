@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 The **median** is the middle value in an ordered integer list\. If the size of the list is even, there is no middle value\. So the median is the mean of the two middle values\.
 
@@ -28,7 +26,31 @@ Return _the median array for each window in the original array_\. Answers withi
 
 **Input:** nums = \[1,3,\-1,\-3,5,3,6,7\], k = 3
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">-1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">-3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">6</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">7</span><span class="arr-val">7</span></div>
+  </div>
+</div>
+
 **Output:** \[1\.00000,\-1\.00000,\-1\.00000,3\.00000,5\.00000,6\.00000\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">-1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">-1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">5</span><span class="arr-val">6</span></div>
+  </div>
+</div>
 
 **Explanation:**
 
@@ -52,18 +74,43 @@ Window position Median
 
 **Input:** nums = \[1,2,3,4,2,3,1,4,2\], k = 3
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">7</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">8</span><span class="arr-val">2</span></div>
+  </div>
+</div>
+
 **Output:** \[2\.00000,3\.00000,3\.00000,3\.00000,2\.00000,3\.00000,2\.00000\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">5</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">6</span><span class="arr-val">2</span></div>
+  </div>
+</div>
 
 ##### **Constraints:**
 
 *   **1 <= k <= nums\.length <= 10****5**
 *   **\-2****31** **<= nums\[i\] <= 2****31** **\- 1**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/sliding-window-median)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force Using Sorting
+### 1\. Brute Force Using Sorting
 
 #### Intuition:
 
@@ -81,8 +128,6 @@ The brute force approach involves recalculating the median every time the slidin
 5.  Store the median in the result\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -106,12 +151,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** Sorting each window takes O\(k logk\), and there are \(n\-k\+1\) windows\. Total time complexity is O\(\(n\-k\+1\) \* k \* logk\)\.
 *   **Space Complexity:** O\(k\), as we store the subarray for sorting\.
 
-## 2\. Maintaining Two Heaps \(Optimal\)
+### 2\. Maintaining Two Heaps \(Optimal\)
 
 #### Intuition:
 
@@ -133,8 +178,6 @@ By always maintaining balance between the two heaps, the median can be derived e
 4.  Calculate the median using the top elements of the heaps\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -185,7 +228,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** Each operation of insertion/removal/balance takes O\(log k\)\. For each window, there are approximately constant number of operations\. Overall time complexity is O\(n log k\)\.
 *   **Space Complexity:** O\(k\), space used by both heaps together\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/sliding-window-median)

@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Implement a SnapshotArray that supports the following interface:
 
@@ -26,9 +24,29 @@ Implement a SnapshotArray that supports the following interface:
 
 **Input:** \["SnapshotArray","set","snap","set","get"\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">SnapshotArray</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">set</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">snap</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">set</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">get</span></div>
+  </div>
+</div>
+
 \[\[3\],\[0,5\],\[\],\[0,6\],\[0,0\]\]
 
 **Output:** \[null,null,0,null,5\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">5</span></div>
+  </div>
+</div>
 
 **Explanation:**
 
@@ -48,19 +66,16 @@ snapshotArr.get(0,0);  // Get the value of array[0] with snap_id = 0, return 5
 *   **0 <= snap\_id < \(the total number of times we call snap\(\)\)**
 *   **At most 5 \* 10****4** **calls will be made to set, snap, and get**\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/snapshot-array)
 
-# Approaches
+## Approaches
 
-## 1\. Naive Approach
+### 1\. Naive Approach
 
 #### Intuition:
 
 The naive approach involves storing the entire array for each snapshot\. Although this method is simple to implement, it is not efficient as it uses a lot of memory space if the array or the number of snapshots is large\.
 
 #### Code:
-
-Java
 
 ```java
 class SnapshotArray {
@@ -91,7 +106,7 @@ class SnapshotArray {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:**
 
@@ -101,15 +116,13 @@ Complexity Analysis
 
 *   **Space Complexity:** O\(n\), due to the use of additional array\.
 
-## 2\. Efficient Approach with Binary Search
+### 2\. Efficient Approach with Binary Search
 
 #### Intuition:
 
 Instead of storing the entire array for each snapshot, we only store the changes made for each snapshot\. This can be efficiently handled using a list of TreeMaps where the keys are indices of the array, and the values are another TreeMap that maps the snapshot id to the values that were set during that snapshot\.
 
 #### Code:
-
-Java
 
 ```java
 class SnapshotArray {
@@ -143,7 +156,7 @@ class SnapshotArray {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:**
 
@@ -152,3 +165,5 @@ Complexity Analysis
 *   `get`: O\(log S\), due to the binary search operation `floorEntry()` in TreeMap\.
 
 *   **Space Complexity:** O\(n \+ q\), where n is the length of the array and q is the number of set operations until last snap\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/snapshot-array)

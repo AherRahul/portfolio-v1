@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 There are `n` gas stations along a circular route, where the amount of gas at the `i``th` station is `gas[i]`\.
 
@@ -70,19 +68,16 @@ Therefore, you can't travel around the circuit once no matter where you start\.
 *   **0 <= gas\[i\], cost\[i\] <= 10****4**
 *   The input is generated such that the answer is unique\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/gas-station)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force
+### 1\. Brute Force
 
 #### Intuition:
 
 The Gas Station problem requires us to find a starting gas station, if it exists, from which we can complete a circular route\. The brute force solution involves trying every gas station as a starting point and checking if a circular journey can be completed\. This involves calculating the remaining gas from each station, updating the current gas as you proceed, and checking if you can reach back to the starting station\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -123,12 +118,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^2\) because for each starting gas station, we potentially traverse the entire circuit\.
 *   **Space Complexity:** O\(1\), no additional space is used apart from variables\.
 
-## 2\. Improved Efficient Solution
+### 2\. Improved Efficient Solution
 
 #### Intuition:
 
@@ -140,8 +135,6 @@ The improved solution takes advantage of certain observations:
 We traverse through each station once, keeping track of the total surplus and current surplus\. Whenever the current surplus becomes negative, we reset the potential start point to the next station\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -167,7 +160,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\) because we make a single pass through the gas stations and costs\.
 *   **Space Complexity:** O\(1\), no additional space is used other than basic variables\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/gas-station)

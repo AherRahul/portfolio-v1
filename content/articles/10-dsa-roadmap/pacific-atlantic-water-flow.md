@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 There is an `m x n` rectangular island that borders both the **Pacific Ocean** and **Atlantic Ocean**\. The **Pacific Ocean** touches the island's left and top edges, and the **Atlantic Ocean** touches the island's right and bottom edges\.
 
@@ -27,77 +25,80 @@ Return _a_ _**2D list**_ _of grid coordinates_ `result` _where_ `result[i]
 
 **Input:** heights = \[\[1,2,2,3,5\],\[3,2,3,4,4\],\[2,4,5,3,1\],\[6,7,1,4,5\],\[5,1,1,2,4\]\]
 
-0
-
-1
-
-2
-
-3
-
-4
-
-0
-
-1
-
-2
-
-2
-
-3
-
-5
-
-1
-
-3
-
-2
-
-3
-
-4
-
-4
-
-2
-
-2
-
-4
-
-5
-
-3
-
-1
-
-3
-
-6
-
-7
-
-1
-
-4
-
-5
-
-4
-
-5
-
-1
-
-1
-
-2
-
-4
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">5</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">4</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">4</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">4</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">5</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">6</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">7</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">4</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">5</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">5</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">4</span></div>
+    </div>
+  </div>
+</div>
 
 **Output:** \[\[0,4\],\[1,3\],\[1,4\],\[2,2\],\[3,0\],\[3,1\],\[4,0\]\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">4</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">3</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">4</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">2</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">0</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">1</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">4</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">0</span></div>
+    </div>
+  </div>
+</div>
 
 **Explanation:** The following cells can flow to the Pacific and Atlantic oceans, as shown below:
 
@@ -116,7 +117,24 @@ Note that there are other possible paths for these cells to flow to the Pacific 
 
 **Input:** heights = \[\[1\]\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+  </div>
+</div>
+
 **Output:** \[\[0,0\]\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">0</span></div>
+    </div>
+  </div>
+</div>
 
 **Explanation:** The water can flow from the only cell to the Pacific and Atlantic oceans\.
 
@@ -127,11 +145,10 @@ Note that there are other possible paths for these cells to flow to the Pacific 
 *   **1 <= m, n <= 200**
 *   **0 <= heights\[r\]\[c\] <= 10****5**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/pacific-atlantic-water-flow)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force Approach
+### 1\. Brute Force Approach
 
 The brute force approach involves considering each cell, checking if water can flow to both the Pacific and Atlantic oceans\. We typically simulate water flow from each ocean and ensure they meet at every cell\.
 
@@ -151,8 +168,6 @@ However, this approach is inefficient in time complexity and not practical for l
 3.  Store the result and return all cells that satisfy the condition\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -183,12 +198,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(MN\)^2\) due to checking each cell and simulating the BFS/DFS for all cells\.
 *   **Space Complexity:** O\(MN\) for the visited matrix used in each BFS/DFS\.
 
-## 2\. DFS Approach
+### 2\. DFS Approach
 
 Instead of simulating water flow from every cell, simulate it from the oceans onto the grid and determine where flows intersect\.
 
@@ -206,8 +221,6 @@ Instead of simulating water flow from every cell, simulate it from the oceans on
 4.  Collect all cells that are reachable by both sets of DFS calls\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -259,12 +272,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(MN\), since each cell is processed twice \(once for each ocean\)\.
 *   **Space Complexity:** O\(MN\) for the space used by the two ocean\-reachability matrices\.
 
-## 3\. BFS Approach
+### 3\. BFS Approach
 
 We can use a BFS strategy instead of DFS by initializing queues with the coastal cells and expanding outwards\.
 
@@ -282,8 +295,6 @@ We can use a BFS strategy instead of DFS by initializing queues with the coastal
 4.  Collect meeting points of both BFS traversals\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -345,7 +356,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(MN\), as every cell is being processed twice using BFS\.
 *   **Space Complexity:** O\(MN\) due to the storage requirements for the reachability matrices and queues\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/pacific-atlantic-water-flow)

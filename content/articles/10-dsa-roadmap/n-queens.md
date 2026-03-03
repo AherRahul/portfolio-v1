@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 The **n\-queens** puzzle is the problem of placing `n` queens on an `n x n` chessboard such that no two queens attack each other\.
 
@@ -27,6 +25,23 @@ Each solution contains a distinct board configuration of the n\-queens' placemen
 
 **Output:** \[\["\.Q\.\.","\.\.\.Q","Q\.\.\.","\.\.Q\."\],\["\.\.Q\.","Q\.\.\.","\.\.\.Q","\.Q\.\."\]\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">.Q..</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">...Q</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">Q...</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">..Q.</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">..Q.</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">Q...</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">...Q</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">.Q..</span></div>
+    </div>
+  </div>
+</div>
+
 **Explanation:** There exist two distinct solutions to the 4\-queens puzzle as shown above
 
 ##### **Example 2:**
@@ -35,15 +50,22 @@ Each solution contains a distinct board configuration of the n\-queens' placemen
 
 **Output:** \[\["Q"\]\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">Q</span></div>
+    </div>
+  </div>
+</div>
+
 ##### **Constraints:**
 
 *   `1 <= n <= 9`
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/n-queens)
 
-# Approaches
+## Approaches
 
-## 1\. Backtracking Approach
+### 1\. Backtracking Approach
 
 The N\-Queens problem is a classic problem that can be solved using a backtracking approach\. The main idea is to place queens one by one in different rows, starting from the first row\. When placing a queen in a particular row, we must ensure that it does not attack any other previously placed queens\. For this, we can use three sets to track the columns and two diagonals \(positive and negative diagonals\)\.
 
@@ -56,8 +78,6 @@ The N\-Queens problem is a classic problem that can be solved using a backtracki
 *   Backtrack: If placing a queen in a certain position doesn't lead to a solution, remove the queen \(backtrack\) and try the next position\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -119,12 +139,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\!\) \- In the worst\-case scenario, every queen has N possible options to place\.
 *   **Space Complexity:** O\(N\) \- Used for storing the sets and board state\.
 
-## 2\. Optimized Backtracking with Bitmasking
+### 2\. Optimized Backtracking with Bitmasking
 
 For an even more optimized approach, we can use bitmasking to manage the columns and diagonals\. This reduces the overhead of using sets and improves lookup times to constant\.
 
@@ -134,8 +154,6 @@ For an even more optimized approach, we can use bitmasking to manage the columns
 *   The idea is similar to the above approach but uses bit manipulation for checking and setting the states of columns and diagonals\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -182,7 +200,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\!\) \- Similar to the traditional approach due to the nature of backtracking\.
 *   **Space Complexity:** O\(N\) \- Used for storing the board state only as sets are replaced by integers\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/n-queens)

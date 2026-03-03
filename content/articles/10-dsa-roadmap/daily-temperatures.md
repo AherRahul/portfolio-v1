@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given an array of integers `temperatures` represents the daily temperatures, return _an array_ `answer` _such that_ `answer[i]` _is the number of days you have to wait after the_ `i``th` _day to get a warmer temperature_\. If there is no future day for which this is possible, keep `answer[i] == 0` instead\. 
 
@@ -21,30 +19,89 @@ Given an array of integers `temperatures` represents the daily temperatures, r
 
 **Input:** temperatures = \[73,74,75,71,69,72,76,73\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">73</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">74</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">75</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">71</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">69</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">72</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">76</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">7</span><span class="arr-val">73</span></div>
+  </div>
+</div>
+
 **Output:** \[1,1,4,2,1,1,0,0\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">5</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">6</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">7</span><span class="arr-val">0</span></div>
+  </div>
+</div>
 
 ##### **Example 2:**
 
 **Input:** temperatures = \[30,40,50,60\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">30</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">40</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">50</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">60</span></div>
+  </div>
+</div>
+
 **Output:** \[1,1,1,0\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">0</span></div>
+  </div>
+</div>
 
 ##### **Example 3:**
 
 **Input:** temperatures = \[30,60,90\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">30</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">60</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">90</span></div>
+  </div>
+</div>
+
 **Output:** \[1,1,0\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">0</span></div>
+  </div>
+</div>
 
 ##### **Constraints:**
 
 *   **1 <= temperatures\.length <= 10****5**
 *   **30 <= temperatures\[i\] <= 100**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/daily-temperatures)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force
+### 1\. Brute Force
 
 #### **Intuition**:
 
@@ -57,8 +114,6 @@ We can start with a straightforward approach by simply checking each temperature
 3.  If we find such a day, we calculate how many days ahead it is and store that in our result list\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -82,12 +137,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^2\) due to nested for loops\.
 *   **Space Complexity:** O\(1\), aside from the output array\.
 
-## 2\. Using a Stack
+### 2\. Using a Stack
 
 #### **Intuition**:
 
@@ -102,8 +157,6 @@ By utilizing a stack, we can reduce the repeated comparisons to gain an optimal 
 5.  This way, each temperature is processed once, ensuring efficiency\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -127,9 +180,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), each element is pushed and popped at most once\.
 *   **Space Complexity:** O\(n\), due to the stack storing up to n indices\.
 
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/daily-temperatures)

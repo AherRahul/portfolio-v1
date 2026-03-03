@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given a string `s` and an integer `k`\. You can choose any character of the string and change it to any other uppercase English character\. You can perform this operation at most `k` times\.
 
@@ -45,11 +43,10 @@ There may exists other ways to achieve this answer too\. 
 *   `s` consists of only uppercase English letters\.
 *   **0 <= k <= s\.length**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/longest-repeating-character-replacement)
 
-# Approaches
+## Approaches
 
-## 1\. Sliding Window
+### 1\. Sliding Window
 
 #### **Intuition:**
 
@@ -68,8 +65,6 @@ We use a HashMap to keep track of the character frequency in the current window\
 5.  Continue until the right pointer reaches the end of the string\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -97,7 +92,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\) \- where N is the length of the string\. We potentially examine each character once as we adjust our window\.
 *   **Space Complexity:** O\(1\) \- Our frequency map is constant size\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/longest-repeating-character-replacement)

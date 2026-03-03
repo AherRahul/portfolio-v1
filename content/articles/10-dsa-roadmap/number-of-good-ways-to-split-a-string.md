@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given a string `s`\.
 
@@ -50,11 +48,10 @@ Return _the number of_ _**good splits**_ _you can make in_ `_s_`\. 
 *   **1 <= s\.length <= 10****5**
 *   `s` consists of only lowercase English letters\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/number-of-good-ways-to-split-a-string)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force
+### 1\. Brute Force
 
 #### Intuition:
 
@@ -68,8 +65,6 @@ The brute force approach involves using a nested loop to try every possible spli
 4.  If the number of unique characters in both parts is equal, increment the good split counter\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -108,12 +103,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^2\) \- For each split point, counting unique characters can take up to O\(n\) time\.
 *   **Space Complexity:** O\(1\) \- The space used by the boolean array is constant in size\.
 
-## 2\. Optimized Approach using Frequency Maps
+### 2\. Optimized Approach using Frequency Maps
 
 #### Intuition:
 
@@ -128,8 +123,6 @@ To improve efficiency, we can use two frequency maps to track character counts o
 5.  Whenever these two counters are equal, it is a good split\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -180,7 +173,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\) \- We traverse the string a constant number of times\.
 *   **Space Complexity:** O\(1\) \- Frequency arrays use constant extra space\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/number-of-good-ways-to-split-a-string)

@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given the `root` of a binary tree, flatten the tree into a "linked list":
 
@@ -24,9 +22,37 @@ Given the `root` of a binary tree, flatten the tree into a "linked list":
 
 Input:root=\[1,2,5,3,4,null,6\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">5</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">6</span></div>
+  </div>
+</div>
+
 123456
 
 Output:\[1,null,2,null,3,null,4,null,5,null,6\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">5</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">6</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">7</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">8</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">9</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">10</span><span class="arr-val">6</span></div>
+  </div>
+</div>
 
 123456
 
@@ -40,7 +66,19 @@ Output:\[1,null,2,null,3,null,4,null,5,null,6\]
 
 **Input:** root = \[0\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">0</span><span class="arr-val">0</span></div>
+  </div>
+</div>
+
 **Output:** \[0\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">0</span></div>
+  </div>
+</div>
 
 ##### **Constraints:**
 
@@ -49,11 +87,10 @@ Output:\[1,null,2,null,3,null,4,null,5,null,6\]
 
 **Follow up:** Can you flatten the tree in\-place \(with `O(1)` extra space\)?
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/flatten-binary-tree-to-linked-list)
 
-# Approaches
+## Approaches
 
-## 1\. Preorder Traversal and Reconnection
+### 1\. Preorder Traversal and Reconnection
 
 #### Intuition:
 
@@ -66,8 +103,6 @@ The basic idea is to perform a preorder traversal of the tree and store the node
 3.  Iterate through the list and adjust the left and right pointers to flatten the tree\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -93,12 +128,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity**: O\(N\), where N is the number of nodes\. Each node is visited once\.
 *   **Space Complexity**: O\(N\), since we store all nodes in a list\.
 
-## 2\. Iterative with Stack
+### 2\. Iterative with Stack
 
 #### Intuition:
 
@@ -112,8 +147,6 @@ This approach uses a stack to simulate the recursion stack used in preorder trav
 4.  Adjust the left and right pointers as you traverse each node\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -143,12 +176,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity**: O\(N\), each node is visited once\.
 *   **Space Complexity**: O\(N\), in the worst case, the stack can have all the nodes of a skewed tree\.
 
-## 3\. Morris Traversal
+### 3\. Morris Traversal
 
 #### Intuition:
 
@@ -162,8 +195,6 @@ Morris traversal modifies the tree structure during the traversal and is based o
 4.  Continue to the right of the current node\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -186,9 +217,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity**: O\(N\), every node is visited at most twice\.
 *   **Space Complexity**: O\(1\), no additional data structures are used\.
 
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/flatten-binary-tree-to-linked-list)

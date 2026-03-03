@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given an `n x n` 2D `matrix` representing an image, rotate the image by **90** degrees \(clockwise\)\.
 
@@ -23,111 +21,86 @@ You have to rotate the image [**in\-place**](https://en.wikipedia.org/wiki/In-p
 
 Input:matrix=\[\[1,2,3\],\[4,5,6\],\[7,8,9\]\]
 
-0
-
-1
-
-2
-
-0
-
-1
-
-2
-
-3
-
-1
-
-4
-
-5
-
-6
-
-2
-
-7
-
-8
-
-9
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">4</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">5</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">6</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">7</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">8</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">9</span></div>
+    </div>
+  </div>
+</div>
 
 Output:\[\[7,4,1\],\[8,5,2\],\[9,6,3\]\]
 
-0
-
-1
-
-2
-
-0
-
-7
-
-4
-
-1
-
-1
-
-8
-
-5
-
-2
-
-2
-
-9
-
-6
-
-3
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">7</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">4</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">1</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">8</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">5</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">2</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">9</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">6</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">3</span></div>
+    </div>
+  </div>
+</div>
 
 ##### **Example 2:**
 
 Input:matrix=\[\[5,1,9,11\],\[2,4,8,10\],\[13,3,6,7\],\[15,14,12,16\]\]
 
-0
-
-1
-
-2
-
-3
-
-0
-
-5
-
-1
-
-9
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">5</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">9</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">11</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">4</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">8</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">10</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">13</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">6</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">7</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">15</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">14</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">12</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">16</span></div>
+    </div>
+  </div>
+</div>
 
 11
 
-1
-
-2
-
-4
-
-8
-
 10
 
-2
-
 13
-
-3
-
-6
-
-7
-
-3
 
 15
 
@@ -141,49 +114,44 @@ Input:matrix=\[\[5,1,9,11\],\[2,4,8,10\],\[13,3,6,7\],\[15,14,12,16\]\]
 
 Output:\[\[15,13,2,5\],\[14,3,4,1\],\[12,6,8,9\],\[16,7,10,11\]\]
 
-0
-
-1
-
-2
-
-3
-
-0
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">15</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">13</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">5</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">14</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">4</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">1</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">12</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">6</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">8</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">9</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">16</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">7</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">10</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--green"><span class="arr-val">11</span></div>
+    </div>
+  </div>
+</div>
 
 15
 
 13
 
-2
-
-5
-
-1
-
 14
-
-3
-
-4
-
-1
-
-2
 
 12
 
-6
-
-8
-
-9
-
-3
-
 16
-
-7
 
 10
 
@@ -195,11 +163,10 @@ Output:\[\[15,13,2,5\],\[14,3,4,1\],\[12,6,8,9\],\[16,7,10,11\]\]
 *   **1 <= n <= 20**
 *   **\-1000 <= matrix\[i\]\[j\] <= 1000**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/rotate-image)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force with Extra Space
+### 1\. Brute Force with Extra Space
 
 #### **Intuition:**
 
@@ -212,8 +179,6 @@ To rotate a matrix clockwise by 90 degrees, we can utilize an auxiliary matrix\.
 3.  Copy the rotated matrix back to the original matrix\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {
@@ -239,12 +204,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^2\), where `n` is the number of rows \(or columns\) in the matrix\.
 *   **Space Complexity:** O\(n^2\) for the auxiliary matrix\.
 
-## 2\. In\-Place Transpose and Reverse
+### 2\. In\-Place Transpose and Reverse
 
 #### **Intuition:**
 
@@ -256,8 +221,6 @@ A more efficient solution is to perform the transformation in place by first tra
 2.  **Reverse Each Row:** For each row in the transposed matrix, reverse the elements of the row\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {
@@ -291,7 +254,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^2\), where `n` is the number of rows \(or columns\) in the matrix\.
 *   **Space Complexity:** O\(1\), since we are doing the operations in place without using extra space\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/rotate-image)

@@ -23,20 +23,6 @@ Using this approach, you can reduce the time complexity of many array and string
 
 Array: \[1, 2, 3, 4, 5, 6, 7\]
 
-1
-
-2
-
-3
-
-4
-
-5
-
-6
-
-7
-
 left
 
 right
@@ -53,27 +39,7 @@ Let's first understand **what a pointer is**\.
 
 A **pointer** is simply a variable that represents an **index or position** within a data structure, such as an array or linked list\.
 
-0
-
-1
-
-1
-
-2
-
 pointer
-
-2
-
-3
-
-3
-
-4
-
-4
-
-5
 
 The pointers can represent:
 
@@ -94,27 +60,7 @@ Let’s explore the three most common strategies\.
 
 The most common variant\. One pointer starts at the beginning, the other at the end, and they move towards each other\.
 
-0
-
-1
-
 start
-
-1
-
-2
-
-2
-
-3
-
-3
-
-4
-
-4
-
-5
 
 end
 
@@ -123,8 +69,6 @@ The pointers adjust their positions based on comparisons, until a certain condit
 This strategy is ideal for problems where we need to compare elements from opposite ends of an array or string\.
 
 ### Template
-
-Java
 
 ```java
 public void oppositeDirectionTemplate(int[] nums) {
@@ -172,29 +116,9 @@ To check if a string is a palindrome, we:
 
 In this approach, both pointers start at **the same end** \(usually the beginning\) and move **in the same direction** at different speeds or for different purposes\.
 
-0
-
-1
-
 first
 
-1
-
-2
-
 second
-
-2
-
-3
-
-3
-
-4
-
-4
-
-5
 
 These pointers generally serve **two different but** complementary **roles**:
 
@@ -202,8 +126,6 @@ These pointers generally serve **two different but** complementary **roles**:
 *   and the left pointer is used to **track progress or maintain constraints**\.
 
 ### Template
-
-Java
 
 ```java
 public int sameDirectionTemplate(int[] nums) {
@@ -242,8 +164,6 @@ After this, we start traversing with the second pointer to find additional infor
 This technique is particularly useful when we need to **process elements in stages** or maintain a **fixed distance** between two pointers\.
 
 ### Template
-
-Java
 
 ```java
 public void triggerBasedTemplate(int[] nums) {

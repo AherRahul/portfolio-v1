@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Reverse bits of a given 32 bits signed integer\.
 
@@ -48,11 +46,10 @@ Reverse bits of a given 32 bits signed integer\.
 
 **Follow up:** If this function is called many times, how would you optimize it?
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/reverse-bits/)
 
-# Approaches
+## Approaches
 
-## 1\. Simple Bit Manipulation
+### 1\. Simple Bit Manipulation
 
 #### Intuition:
 
@@ -69,12 +66,12 @@ The problem of reversing bits can be solved by taking each bit from the rightmos
 
 #### Code:
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(32\) = O\(1\), since we perform a constant amount of work \(32 iterations\)\.
 *   **Space Complexity:** O\(1\), since we use a constant amount of space\.
 
-## 2\. Efficient Bit Manipulation
+### 2\. Efficient Bit Manipulation
 
 #### Intuition:
 
@@ -108,7 +105,9 @@ Let’s imagine the 32\-bit number as:
 
 #### Code:
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity**: O\(1\), since we're performing a fixed number of operations\.
 *   **Space Complexity**: O\(1\), as only a constant amount of space is required\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/reverse-bits/)

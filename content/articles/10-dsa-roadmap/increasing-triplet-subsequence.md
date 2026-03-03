@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given an integer array `nums`, return `true` _if there exists a triple of indices_ `(i, j, k)` _such that_ `i < j < k` _and_ `nums[i] < nums[j] < nums[k]`\. If no such indices exists, return `false`\. 
 
@@ -21,25 +19,15 @@ Given an integer array `nums`, return `true` _if there exists a triple of ind
 
 Input:nums=\[1,2,3,4,5\]
 
-0
-
-1
-
-1
-
-2
-
-2
-
-3
-
-3
-
-4
-
-4
-
-5
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">5</span></div>
+  </div>
+</div>
 
 Output:true
 
@@ -51,25 +39,15 @@ true
 
 Input:nums=\[5,4,3,2,1\]
 
-0
-
-5
-
-1
-
-4
-
-2
-
-3
-
-3
-
-2
-
-4
-
-1
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 Output:false
 
@@ -81,29 +59,16 @@ false
 
 Input:nums=\[2,1,5,0,4,6\]
 
-0
-
-2
-
-1
-
-1
-
-2
-
-5
-
-3
-
-0
-
-4
-
-4
-
-5
-
-6
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">3</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">6</span></div>
+  </div>
+</div>
 
 Output:true
 
@@ -118,11 +83,10 @@ true
 
 **Follow up:** Could you implement a solution that runs in `O(n)` time complexity and `O(1)` space complexity?
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/increasing-triplet-subsequence)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force Approach
+### 1\. Brute Force Approach
 
 #### Intuition:
 
@@ -132,12 +96,12 @@ This is a naive solution but helps to understand the underlying concept\.
 
 #### Code:
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^3\), due to the three nested loops over the array\.
 *   **Space Complexity:** O\(1\), since we are not using any additional data structures\.
 
-## 2\. Linear Scan using Two Variables
+### 2\. Linear Scan using Two Variables
 
 #### Intuition:
 
@@ -162,39 +126,13 @@ The moment this happens, we can immediately return `true`\.
 
 #### Code:
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\), where n is the number of elements in the array\. We only require one pass through the array\.
 *   **Space Complexity:** O\(1\), since we are using only a constant amount of additional space\.
 
 #### Example Walkthrough:
 
-0
-
-2
-
-1
-
-1
-
-2
-
-5
-
-3
-
-0
-
-4
-
-4
-
-5
-
-6
-
 first = ∞, second = ∞
 
-Step 1 / 7
-
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/increasing-triplet-subsequence)

@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given an `n x n` integer matrix `grid` where each value `grid[i][j]` represents the elevation at that point `(i, j)`\.
 
@@ -26,6 +24,19 @@ Return _the minimum time until you can reach the bottom right square_ `(n - 1,
 ##### **Example 1:**
 
 **Input:** grid = \[\[0,2\],\[1,3\]\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+    </div>
+  </div>
+</div>
 
 **Output:** 3
 
@@ -43,6 +54,46 @@ When the depth of water is 3, we can swim anywhere inside the grid\.
 
 **Input:** grid = \[\[0,1,2,3,4\],\[24,23,22,21,5\],\[12,13,14,15,16\],\[11,17,18,19,20\],\[10,9,8,7,6\]\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">4</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">24</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">23</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">22</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">21</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">5</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">12</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">13</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">14</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">15</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">16</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">11</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">17</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">18</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">19</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">20</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">10</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">9</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">8</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">7</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">6</span></div>
+    </div>
+  </div>
+</div>
+
 **Output:** 16
 
 **Explanation:** The final route is shown\. We need to wait until time 16 so that \(0, 0\) and \(4, 4\) are connected\.
@@ -55,11 +106,10 @@ When the depth of water is 3, we can swim anywhere inside the grid\.
 *   `0 <= grid[i][j] < n``2`
 *   Each value `grid[i][j]` is **unique**\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/swim-in-rising-water)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force
+### 1\. Brute Force
 
 #### Intuition:
 
@@ -72,8 +122,6 @@ The first approach is a brute force method, where we simulate the water level in
 3.  The first water level at which a path exists is the minimum time required to swim from the top left to the bottom right of the grid\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -109,12 +157,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N^4\), where N is the edge length of the grid\. This is because we check each water level separately and perform a graph search on an N x N grid\.
 *   **Space Complexity:** O\(N^2\) for the visited matrix and the queue used in BFS\.
 
-## 2\. Binary Search with BFS/DFS
+### 2\. Binary Search with BFS/DFS
 
 #### Intuition:
 
@@ -127,8 +175,6 @@ This approach improves upon the brute force method by applying binary search on 
 3.  Adjust the binary search range based on whether a path was successful or blocked\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -170,12 +216,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N^2 \* log\(MaxVal\)\), where MaxVal is the maximum value \(N \* N \- 1\)\.
 *   **Space Complexity:** O\(N^2\) for visited structures\.
 
-## 3\. Dijkstra's Algorithm
+### 3\. Dijkstra's Algorithm
 
 #### Intuition:
 
@@ -189,8 +235,6 @@ The optimal approach for this problem is to use a priority queue \(min\-heap\) t
 4.  Track the maximum water level on the current path, and if you reach the target cell \(bottom\-right\), return that value as the result\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -226,7 +270,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N^2 \* log\(N\)\), where N is the number of cells\. The priority queue operations are logarithmic\.
 *   **Space Complexity:** O\(N^2\) for visited structures and the priority queue storage\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/swim-in-rising-water)

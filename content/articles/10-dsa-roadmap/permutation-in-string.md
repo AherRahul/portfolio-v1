@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given two strings `s1` and `s2`, return `true` if `s2` contains a permutation of `s1`, or `false` otherwise\.
 
@@ -38,11 +36,10 @@ In other words, return `true` if one of `s1`'s permutations is the substring 
 *   **1 <= s1\.length, s2\.length <= 10****4**
 *   `s1` and `s2` consist of lowercase English letters\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/permutation-in-string)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force
+### 1\. Brute Force
 
 #### **Intuition**:
 
@@ -52,8 +49,6 @@ The brute\-force approach involves checking all permutations of `s1` and seein
 2.  Check each permutation to see if it exists as a substring in `s2`\.
 
 #### **Code**:
-
-Java
 
 ```java
 class Solution {
@@ -79,12 +74,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\! \* m\) where `n` is the length of `s1` and `m` is the length of `s2`\.
 *   **Space Complexity:** O\(n\), due to recursion stack and storing permutations\.
 
-## 2\. Sorting Each Substring
+### 2\. Sorting Each Substring
 
 #### **Intuition**:
 
@@ -94,8 +89,6 @@ Since a permutation of `s1` should have the same characters with the same freq
 2.  For each possible substring of `s2` with the length of `s1`, sort it and compare with sorted `s1`\.
 
 #### **Code**:
-
-Java
 
 ```java
 public class Solution {
@@ -116,12 +109,12 @@ public class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(m \* n log n\), where `m` is the size of `s2` and `n` is the size of `s1`\.
 *   **Space Complexity:** O\(n\), space needed to store the sorted version of `s1` and each substring\.
 
-## 3\. Sliding Window
+### 3\. Sliding Window
 
 #### **Intuition**:
 
@@ -132,8 +125,6 @@ The optimized approach uses a sliding window technique with two arrays \(or maps
 3.  If the counts match, return true\.
 
 #### **Code**:
-
-Java
 
 ```java
 class Solution {
@@ -167,9 +158,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(m\), where `m` is the length of `s2`\.
 *   **Space Complexity:** O\(1\), constant space for the count arrays\.
 
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/permutation-in-string)

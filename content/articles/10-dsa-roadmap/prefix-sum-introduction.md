@@ -37,47 +37,7 @@ In other words, `prefix[i]` stores the sum of all elements from index 0 to ind
 
 If the input array is:
 
-0
-
-2
-
-1
-
-4
-
-2
-
-6
-
-3
-
-8
-
-4
-
-10
-
 The prefix sum array will look like this:
-
-0
-
-2
-
-1
-
-6
-
-2
-
-12
-
-3
-
-20
-
-4
-
-30
 
 # The Key Insight: Range Sums in O\(1\)
 
@@ -167,8 +127,6 @@ Every prefix sum solution follows a similar structure\. Let us establish a templ
 
 ### Building the Prefix Sum Array
 
-Java
-
 ```java
 public int[] buildPrefixSum(int[] nums) {
    int n = nums.length;
@@ -185,8 +143,6 @@ public int[] buildPrefixSum(int[] nums) {
 
 ### Querying a Range Sum
 
-Java
-
 ```java
 public int rangeSum(int[] prefix, int left, int right) {
    if (left == 0) {
@@ -199,8 +155,6 @@ public int rangeSum(int[] prefix, int left, int right) {
 ### Alternative: Using prefix\[0\] = 0 Convention
 
 Many implementations use a prefix array of size n \+ 1, where prefix\[0\] = 0\. This eliminates the edge case for left = 0:
-
-Java
 
 ```java
 public int[] buildPrefixSum(int[] nums) {
@@ -275,8 +229,6 @@ We will explore these in detail in the following chapters\.
 
 Prefix sums extend naturally to 2D grids\. For a matrix, we precompute sums of all rectangles from \(0,0\) to \(i,j\)\.
 
-Java
-
 ```java
 public int[][] build2DPrefixSum(int[][] matrix) {
    int m = matrix.length, n = matrix[0].length;
@@ -296,8 +248,6 @@ public int[][] build2DPrefixSum(int[][] matrix) {
 ```
 
 To find the sum of any rectangle from \(r1, c1\) to \(r2, c2\):
-
-Java
 
 ```java
 public int regionSum(int[][] prefix, int r1, int c1, int r2, int c2) {

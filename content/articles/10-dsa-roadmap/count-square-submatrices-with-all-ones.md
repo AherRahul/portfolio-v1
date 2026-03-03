@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given a `m * n` matrix of ones and zeros, return how many **square** submatrices have all ones\.
 
@@ -23,43 +21,28 @@ Given a `m * n` matrix of ones and zeros, return how many **square** submatr
 
 Input:matrix=\[\[0,1,1,1\], \[1,1,1,1\], \[0,1,1,1\]\]
 
-0
-
-1
-
-2
-
-3
-
-0
-
-0
-
-1
-
-1
-
-1
-
-1
-
-1
-
-1
-
-1
-
-1
-
-2
-
-0
-
-1
-
-1
-
-1
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+  </div>
+</div>
 
 **Output:** 15
 
@@ -79,35 +62,25 @@ Total number of squares = 10 \+ 4 \+ 1 = **15**\.
 
 Input:matrix=\[\[1,0,1\], \[1,1,0\], \[1,1,0\]\]
 
-0
-
-1
-
-2
-
-0
-
-1
-
-0
-
-1
-
-1
-
-1
-
-1
-
-0
-
-2
-
-1
-
-1
-
-0
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+    </div>
+  </div>
+</div>
 
 **Output:** 7
 
@@ -125,11 +98,10 @@ Total number of squares = 6 \+ 1 = **7**\.
 *   `1 <= arr[0].length <= 300`
 *   `0 <= arr[i][j] <= 1`
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/count-square-submatrices-with-all-ones)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force Solution
+### 1\. Brute Force Solution
 
 #### **Intuition:**
 
@@ -142,8 +114,6 @@ The basic idea is to count all possible square submatrices in the matrix that ha
 This approach checks every possible square matrix, and hence can be quite inefficient for larger matrices\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {
@@ -185,12 +155,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(m \* n \* min\(m, n\)^2\), where m and n are the dimensions of the matrix\. We check each submatrix for validity up to the possible maximum size\.
 *   **Space Complexity:** O\(1\), since we are using no extra space apart from variables\.
 
-## 2\. Dynamic Programming
+### 2\. Dynamic Programming
 
 #### **Intuition:**
 
@@ -201,8 +171,6 @@ The dynamic programming approach incrementally builds a solution using previous 
 *   Sum up all the entries in the DP table to get the total count of squares\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {
@@ -231,7 +199,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(m \* n\), where m and n are the dimensions of the matrix\. Each cell is processed once\.
 *   **Space Complexity:** O\(1\), since we are using no extra space apart from variables\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/count-square-submatrices-with-all-ones)

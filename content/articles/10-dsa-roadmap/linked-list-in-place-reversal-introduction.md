@@ -27,25 +27,9 @@ The core operation involves three pointers working together:
 
 After Reversal
 
-4
-
-3
-
-2
-
-1
-
 null
 
 Before Reversal
-
-1
-
-2
-
-3
-
-4
 
 null
 
@@ -159,8 +143,6 @@ Most in\-place reversal problems use one of two fundamental approaches\. Let us 
 
 This is the workhorse of linked list reversal\. Three pointers work in coordination to reverse the list in a single pass\.
 
-Java
-
 ```java
 public ListNode reverseList(ListNode head) {
    ListNode prev = null;
@@ -189,8 +171,6 @@ The order of these operations is critical\. Changing the order will break the al
 ### Template 2: Recursive Reversal
 
 The recursive approach is elegant but uses O\(n\) stack space\. It works by recursing to the end of the list, then rewiring pointers on the way back\.
-
-Java
 
 ```java
 public ListNode reverseListRecursive(ListNode head) {

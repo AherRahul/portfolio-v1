@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given an `n x n` `matrix` where each of the rows and columns is sorted in ascending order, return _the_ **k****th** _smallest element in the matrix_\.
 
@@ -25,6 +23,26 @@ You must find a solution with a memory complexity better than **O\(n****2****\)
 
 **Input:** matrix = \[\[1,5,9\],\[10,11,13\],\[12,13,15\]\], k = 8
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">5</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">9</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">10</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">11</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">13</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">12</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">13</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">15</span></div>
+    </div>
+  </div>
+</div>
+
 **Output:** 13
 
 **Explanation:** The elements in the matrix are \[1,5,9,10,11,12,13,**13**,15\], and the 8th smallest number is 13
@@ -32,6 +50,14 @@ You must find a solution with a memory complexity better than **O\(n****2****\)
 ##### **Example 2:**
 
 **Input:** matrix = \[\[\-5\]\], k = 1
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">-5</span></div>
+    </div>
+  </div>
+</div>
 
 **Output:** \-5
 
@@ -48,11 +74,10 @@ You must find a solution with a memory complexity better than **O\(n****2****\)
 *   Could you solve the problem with a constant memory \(i\.e\., `O(1)` memory complexity\)?
 *   Could you solve the problem in `O(n)` time complexity? The solution may be too advanced for an interview but you may find reading [this paper](http://www.cse.yorku.ca/~andy/pubs/X+Y.pdf) fun\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force with Sorting
+### 1\. Brute Force with Sorting
 
 #### Intuition:
 
@@ -66,8 +91,6 @@ The simplest approach to solve this problem is by extracting all the elements fr
 4.  Return the element at the kth index in the sorted list\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -92,12 +115,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity**: O\(n^2 \* log n\) for sorting the list that contains all matrix elements\.
 *   **Space Complexity**: O\(n^2\) for storing all elements from the matrix\.
 
-## 2\. Min\-Heap
+### 2\. Min\-Heap
 
 #### Intuition:
 
@@ -113,8 +136,6 @@ We maintain the heap for at most the size of the matrix's row by column, extract
 4.  The kth extracted element is our answer\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -150,12 +171,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity**: O\(klog n\) because each insertion and extraction from the heap takes O\(log n\) and we perform the extraction k times\.
 *   **Space Complexity**: O\(n\) because we store up to n elements in the heap\.
 
-## 3\. Binary Search
+### 3\. Binary Search
 
 #### Intuition:
 
@@ -173,8 +194,6 @@ The row and column sorted property of the matrix allows us to use binary search\
 4.  Once the search is complete, `left` contains the kth smallest element\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -216,7 +235,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity**: O\(n \* log \(max \- min\)\) where log\(max \- min\) relates to binary search range, and n to count elements\.
 *   **Space Complexity**: O\(1\) as we're not using extra space beyond variables\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix)

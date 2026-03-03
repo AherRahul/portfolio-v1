@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given an `n x n` `grid` representing a field of cherries, each cell is one of three possible integers\.
 
@@ -32,35 +30,27 @@ Return _the maximum number of cherries you can collect by following the rules b
 
 Input:grid=\[\[0,1,\-1\],\[1,0,\-1\],\[1,1,1\]\]
 
-0
-
-1
-
-2
-
-0
-
-0
-
-1
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">-1</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--zero"><span class="arr-val">0</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">-1</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+  </div>
+</div>
 
 \-1
-
-1
-
-1
-
-0
-
-\-1
-
-2
-
-1
-
-1
-
-1
 
 **Output:** 5
 
@@ -76,35 +66,29 @@ The total number of cherries picked up is 5, and this is the maximum possible\.
 
 Input:grid=\[\[1,1,\-1\],\[1,\-1,1\],\[\-1,1,1\]\]
 
-0
-
-1
-
-2
-
-0
-
-1
-
-1
-
-\-1
-
-1
-
-1
-
-\-1
-
-1
-
-2
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">-1</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">-1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">-1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+  </div>
+</div>
 
 \-1
 
-1
-
-1
+\-1
 
 **Output:** 0
 
@@ -117,11 +101,10 @@ Input:grid=\[\[1,1,\-1\],\[1,\-1,1\],\[\-1,1,1\]\]
 *   `grid[0][0] != -1`
 *   `grid[n - 1][n - 1] != -1`
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/cherry-pickup)
 
-# Approaches
+## Approaches
 
-## 1\. Recursive Approach
+### 1\. Recursive Approach
 
 The idea is to use a recursive approach, trying to solve the problem by walking from the top\-left to the bottom\-right and then back again\. Since there are two distinct paths \(forward and backward\), the problem can be visualized like two people moving simultaneously across the grid\.
 
@@ -139,8 +122,6 @@ The idea is to use a recursive approach, trying to solve the problem by walking 
 4.  Otherwise, try all possible moves for both persons, and accumulate the maximum cherries possible\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -181,12 +162,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^3\), where n is the size of the grid\. This is because the recursive function is called for every possible \(r1, c1, r2\), which together represent the state\.
 *   **Space Complexity:** O\(n^3\), for the memoization cache to save subproblem results\.
 
-## 2\. Dynamic Programming Approach
+### 2\. Dynamic Programming Approach
 
 The recursive method will be inefficient for larger grids due to redundant calculations\. Dynamic Programming \(DP\) allows us to break down the problem into smaller overlapping subproblems, caching results and reusing them\.
 
@@ -196,8 +177,6 @@ The recursive method will be inefficient for larger grids due to redundant calcu
 *   The base case is reaching `(n-1, n-1)` where if both arrive together at this point, they can pick the cherries there only once\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -247,12 +226,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^3\) due to the nested loops on the size of the grid\.
 *   **Space Complexity:** O\(n^3\) due to the storage of the DP state table\.
 
-## 3\. Dynamic Programming with State Compression
+### 3\. Dynamic Programming with State Compression
 
 In this enhanced variation, we reduce the space complexity further by understanding that only the immediate previous row states are needed to compute the current row state in a 2D traversal\.
 
@@ -261,8 +240,6 @@ In this enhanced variation, we reduce the space complexity further by understand
 Use only a 2D DP array, reducing space complexity but altering our method to fit inline with computed states\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -298,7 +275,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^3\), as it goes through the elements considering possible paths\.
 *   **Space Complexity:** O\(n^2\), as it only considers states of two dimensions in a compressed fashion\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/cherry-pickup)

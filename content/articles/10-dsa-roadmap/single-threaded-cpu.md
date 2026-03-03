@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You are given `n`​​​​​​ tasks labeled from `0` to `n - 1` represented by a 2D integer array `tasks`, where **tasks\[i\] = \[enqueueTime****i****, processingTime****i****\]** means that the **i****​​​​​​th**​​​​ task will be available to process at **enqueueTime****i** and will take **processingTime****i** to finish processing\.
 
@@ -30,7 +28,37 @@ Return _the order in which the CPU will process the tasks\._
 
 **Input:** tasks = \[\[1,2\],\[2,4\],\[3,2\],\[4,1\]\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">4</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">3</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">4</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">1</span></div>
+    </div>
+  </div>
+</div>
+
 **Output:** \[0,2,3,1\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 **Explanation:** The events go as follows:
 
@@ -56,7 +84,42 @@ Return _the order in which the CPU will process the tasks\._
 
 **Input:** tasks = \[\[7,10\],\[7,12\],\[7,5\],\[7,4\],\[7,2\]\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-grid">
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">7</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">10</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">7</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">12</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">7</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">5</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">7</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">4</span></div>
+    </div>
+    <div class="arr-viz-grid-row">
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">7</span></div>
+      <div class="arr-cell arr-cell--grid arr-cell--filled"><span class="arr-val">2</span></div>
+    </div>
+  </div>
+</div>
+
 **Output:** \[4,3,2,0,1\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 **Explanation:** The events go as follows:
 
@@ -80,11 +143,10 @@ Return _the order in which the CPU will process the tasks\._
 *   `1` **<= n <= 10****5**
 *   **1 <= enqueueTime****i****, processingTime****i** **<= 10****9**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/single-threaded-cpu)
 
-# Approaches
+## Approaches
 
-## 1\. Basic Sorting and Iteration
+### 1\. Basic Sorting and Iteration
 
 #### Intuition:
 
@@ -98,8 +160,6 @@ The basic idea is to represent tasks with their indices so they can be sorted ef
 4.  Use a list to track the order of processed tasks\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -145,12 +205,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** Sorting the tasks costs O\(N log N\), where N is the number of tasks\. The iteration over tasks is O\(N\)\.
 *   **Space Complexity:** O\(N\) is used to store the tasks and the processing order\.
 
-## 2\. Optimized Priority Queue
+### 2\. Optimized Priority Queue
 
 #### Intuition:
 
@@ -165,8 +225,6 @@ Rather than iterating over tasks and moving time sequentially, leveraging a prio
 5.  As before, track the order of processed tasks\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -210,7 +268,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** The main operations are sorting and priority queue operations, both handle N tasks, leading to O\(N log N\) complexity\.
 *   **Space Complexity:** O\(N\) for storing tasks and queues\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/single-threaded-cpu)

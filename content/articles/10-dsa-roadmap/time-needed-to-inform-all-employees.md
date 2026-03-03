@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 A company has `n` employees with a unique ID for each employee from `0` to `n - 1`\. The head of the company is the one with `headID`\.
 
@@ -53,11 +51,10 @@ Return _the number of minutes_ needed to inform all the employees about the ur
 *   `informTime[i] == 0` if employee `i` has no subordinates\.
 *   It is **guaranteed** that all the employees can be informed\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/time-needed-to-inform-all-employees)
 
-# Approaches
+## Approaches
 
-## 1\. BFS
+### 1\. BFS
 
 #### **Intuition:**
 
@@ -72,8 +69,6 @@ In a BFS approach, we use a queue to traverse each level of the organization, pr
 3.  At each employee, traverse their subordinates, adding the time taken to fetch the information and update the maximum time needed\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -110,12 +105,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\), where N is the number of employees since each employee is visited once\.
 *   **Space Complexity:** O\(N\) for storing the subordinates list and the queue\.
 
-## 2\. DFS
+### 2\. DFS
 
 #### **Intuition:**
 
@@ -128,8 +123,6 @@ Similar to BFS, DFS also helps us traverse the structure of employees, but inste
 3.  At each recursive call, add the inform time particular to an employee and update the maximum time\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -164,12 +157,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\), since each employee is visited once\.
 *   **Space Complexity:** O\(N\), which is the recursion stack depth in the worst case\.
 
-## 3\. DFS with Memoization
+### 3\. DFS with Memoization
 
 #### **Intuition:**
 
@@ -181,8 +174,6 @@ This approach recognizes that a problem needs to calculate the time involved rec
 2.  Benefits arise when subtrees are visited multiple times through different paths\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -219,7 +210,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N\), as we compute each subtree's time once\.
 *   **Space Complexity:** O\(N\), owing to recursion space and additional space for the memo array\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/time-needed-to-inform-all-employees)

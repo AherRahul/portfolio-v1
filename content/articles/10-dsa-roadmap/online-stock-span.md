@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Design an algorithm that collects daily price quotes for some stock and returns **the span** of that stock's price for the current day\.
 
@@ -56,11 +54,10 @@ stockSpanner.next(75);  // return 4, because the last 4 prices (including today'
 *   **1 <= price <= 10****5**
 *   At most `10``4` calls will be made to `next`\.
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/online-stock-span)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force
+### 1\. Brute Force
 
 #### Intuition:
 
@@ -76,8 +73,6 @@ The brute force approach involves keeping track of all the stock prices encounte
 4.  Return the span once a higher price is found or the list is exhausted\.
 
 #### Code:
-
-Java
 
 ```java
 class StockSpanner {
@@ -103,12 +98,12 @@ class StockSpanner {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^2\) in the worst case for `n` calls to the `next` method because we might need to traverse all previous prices for each call\.
 *   **Space Complexity:** O\(n\) for storing all the prices\.
 
-## 2\. Using Stack
+### 2\. Using Stack
 
 #### Intuition:
 
@@ -125,8 +120,6 @@ To optimize the previous approach, we can utilize a stack to maintain a history 
 4.  Push the current price and its calculated span onto the stack\.
 
 #### Code:
-
-Java
 
 ```java
 class StockSpanner {
@@ -151,7 +144,9 @@ class StockSpanner {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(1\) on average for each call to `next`, because each element is pushed and popped from the stack at most once\.
 *   **Space Complexity:** O\(n\) for storing elements in the stack where `n` is the number of prices recorded\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/online-stock-span)

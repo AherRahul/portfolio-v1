@@ -11,15 +11,23 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given the `root` of a Binary Search Tree \(BST\), return _the minimum absolute difference between the values of any two different nodes in the tree_\.
 
 ##### **Example 1:**
 
 Input:root=\[4,2,6,1,3\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">6</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">3</span></div>
+  </div>
+</div>
 
 42136
 
@@ -28,6 +36,18 @@ Input:root=\[4,2,6,1,3\]
 ##### **Example 2:**
 
 Input:root=\[1,0,48,null,null,12,49\]
+
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">1</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">48</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">3</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">4</span><span class="arr-val">null</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">12</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">49</span></div>
+  </div>
+</div>
 
 10481249
 
@@ -38,11 +58,10 @@ Input:root=\[1,0,48,null,null,12,49\]
 *   The number of nodes in the tree is in the range **\[2, 10****4****\]**\.
 *   **0 <= Node\.val <= 10****5**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/minimum-absolute-difference-in-bst)
 
-# Approaches
+## Approaches
 
-## 1\. Inorder Traversal with ArrayList
+### 1\. Inorder Traversal with ArrayList
 
 #### **Intuition:**
 
@@ -55,8 +74,6 @@ The Binary Search Tree \(BST\) property ensures that an inorder traversal of the
 3.  Compute the minimum difference between adjacent elements in the list\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -95,12 +112,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   Time Complexity: O\(N\), where N is the number of nodes in the BST\. We visit each node once\.
 *   Space Complexity: O\(N\), due to the storage of the inorder traversal\.
 
-## 2\. Inorder Traversal with Constant Space
+### 2\. Inorder Traversal with Constant Space
 
 #### **Intuition:**
 
@@ -113,8 +130,6 @@ Instead of storing the entire list of values, we can maintain a running track of
 3.  Update the minimum difference during traversal without using additional space for storage\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -149,7 +164,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   Time Complexity: O\(N\), where N is the number of nodes in the BST\. Each node is visited once\.
 *   Space Complexity: O\(H\), where H is the height of the tree, due to the recursion stack\. This space is not used for data storage, but for function calls in the call stack\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/minimum-absolute-difference-in-bst)

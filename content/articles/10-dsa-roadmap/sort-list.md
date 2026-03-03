@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given the `head` of a linked list, return _the list after sorting it in_ _**ascending order**_\.
 
@@ -21,25 +19,27 @@ Given the `head` of a linked list, return _the list after sorting it in_ _**
 
 Input:head=\[4,2,1,3\]
 
-4
-
-2
-
-1
-
-3
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">3</span></div>
+  </div>
+</div>
 
 null
 
 Output:\[1,2,3,4\]
 
-1
-
-2
-
-3
-
-4
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">4</span></div>
+  </div>
+</div>
 
 null
 
@@ -47,29 +47,33 @@ null
 
 Input:head=\[\-1,5,3,4,0\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">-1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">4</span><span class="arr-val">0</span></div>
+  </div>
+</div>
+
 \-1
-
-5
-
-3
-
-4
-
-0
 
 null
 
 Output:\[\-1,0,3,4,5\]
 
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">0</span><span class="arr-val">-1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">5</span></div>
+  </div>
+</div>
+
 \-1
-
-0
-
-3
-
-4
-
-5
 
 null
 
@@ -90,11 +94,10 @@ null
 
 **Follow up:** Can you sort the linked list in `O(n logn)` time and `O(1)` memory \(i\.e\. constant space\)?
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/sort-list)
 
-# Approaches
+## Approaches
 
-## 1\. Merge Sort \(Top\-Down\)
+### 1\. Merge Sort \(Top\-Down\)
 
 #### **Intuition:**
 
@@ -105,8 +108,6 @@ Merge Sort is an efficient and systematic way of sorting linked lists because it
 *   **Combine**: Merge the two sorted halves\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {
@@ -155,7 +156,7 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n log n\), where n is the number of nodes in the linked list\. Each split divides the list into two halves, and merging takes linear time\.
 *   **Space Complexity:** O\(log n\) due to the recursive stack space\.
@@ -170,8 +171,6 @@ The bottom\-up merge sort iteratively merges sublists of increasing size\. This 
 *   Start from small chunks, keep combining until the entire list is sorted\.
 
 #### **Code:**
-
-Java
 
 ```java
 class Solution {
@@ -243,7 +242,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n log n\), similar to the top\-down approach\. Each pass through the list doubling the size effectively achieves the merge\.
 *   **Space Complexity:** O\(1\), this is an in\-place sorting algorithm with no additional space use aside from a few pointers\.
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/sort-list)

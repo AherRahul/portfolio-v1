@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 You have two soups, **A** and **B**, each starting with `n` mL\. On every turn, one of the following four serving operations is chosen _at random_, each with probability `0.25` **independent** of all previous turns:
 
@@ -70,11 +68,10 @@ So the total probability of A becoming empty first plus half the probability tha
 
 *   0 <= n <= 109
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/soup-servings)
 
-# Approaches
+## Approaches
 
-## 1\. Recursive Approach with Memoization
+### 1\. Recursive Approach with Memoization
 
 #### Intuition:
 
@@ -88,8 +85,6 @@ This problem involves serving units of soup A and soup B\. The operations have a
 *   Use memoization to store the results of `serve(A, B)` to prevent recalculating\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -122,12 +117,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** `O(N^2)` \- Each state \(A,B\) is computed at most once\.
 *   **Space Complexity:** `O(N^2)` \- Due to memoization storage\.
 
-## 2\. Dynamic Programming
+### 2\. Dynamic Programming
 
 #### Intuition:
 
@@ -140,8 +135,6 @@ To improve upon the recursive approach, we can instead use dynamic programming\.
 *   Start from base cases and build up to \(N, N\)\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -175,12 +168,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(N^2\)
 *   **Space Complexity:** O\(N^2\)
 
-## 3\. Optimized Mathematical Approach
+### 3\. Optimized Mathematical Approach
 
 #### Intuition:
 
@@ -192,8 +185,6 @@ When `N` becomes very large, the probability approaches 1 due to constraints o
 *   For smaller N, use the DP solution as described\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -227,7 +218,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** `O(1)` for large N, else `O(N^2)`
 *   **Space Complexity:** `O(1)` for large N, else `O(N^2)`
+
+#### [Solve it on LeetCode](https://leetcode.com/problems/soup-servings)

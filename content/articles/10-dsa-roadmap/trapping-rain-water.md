@@ -11,9 +11,7 @@ showOnArticles: false
 published: true
 ---
 
-# Problem Description
-
-Question
+## Problem Description
 
 Given `n` non\-negative integers representing an elevation map where the width of each bar is `1`, compute how much water it can trap after raining\.
 
@@ -21,89 +19,48 @@ Given `n` non\-negative integers representing an elevation map where the width
 
 Input:height=\[0,1,0,2,1,0,1,3,2,1,2,1\]
 
-0
-
-0
-
-1
-
-1
-
-2
-
-0
-
-3
-
-2
-
-4
-
-1
-
-5
-
-0
-
-6
-
-1
-
-7
-
-3
-
-8
-
-2
-
-9
-
-1
-
-10
-
-2
-
-11
-
-1
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">0</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">2</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">5</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">7</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">8</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">9</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">10</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">11</span><span class="arr-val">1</span></div>
+  </div>
+</div>
 
 Output:6
-
-6
 
 ##### **Example 2:**
 
 Input:height=\[4,2,0,3,2,5\]
 
-0
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">4</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--zero"><span class="arr-idx">2</span><span class="arr-val">0</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">5</span></div>
+  </div>
+</div>
 
-4
+**Output: 9**
 
-1
+<div class="arr-viz-wrapper">
+  <div class="arr-viz-row">
+    <div class="arr-cell arr-cell--green"><span class="arr-val">9</span></div>
+  </div>
+</div>
 
-2
-
-2
-
-0
-
-3
-
-3
-
-4
-
-2
-
-5
-
-5
-
-Input:9
-
-9
 
 ##### **Constraints:**
 
@@ -111,11 +68,10 @@ Input:9
 *   **1 <= n <= 2 \* 10****4**
 *   **0 <= height\[i\] <= 10****5**
 
-#### [Solve it on LeetCode](https://leetcode.com/problems/trapping-rain-water)
 
-# Approaches
+## Approaches
 
-## 1\. Brute Force
+### 1\. Brute Force
 
 The brute force approach involves iterating over each element in the height array and for each element, calculating the maximum water that can be trapped above it by determining the highest bars to its left and right\. This is done in three loops: one for the current index, and two for finding the left and right max bars\.
 
@@ -126,8 +82,6 @@ The brute force approach involves iterating over each element in the height arra
 *   Sum this for each bar\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -155,12 +109,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n^2\) because of the nested loops for calculating left and right max heights for each element\.
 *   **Space Complexity:** O\(1\) since we are using constant extra space\.
 
-## 2\. Dynamic Programming
+### 2\. Dynamic Programming
 
 The dynamic programming approach involves precomputing the maximum height to the left and right of each element using separate arrays\. This eliminates the need for nested loops, as in the brute force approach\.
 
@@ -172,8 +126,6 @@ The dynamic programming approach involves precomputing the maximum height to the
 *   Calculate the trapped water for each element as before, but use precomputed arrays\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -207,12 +159,12 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\) because we are making three separate passes over the array\.
 *   **Space Complexity:** O\(n\) due to the additional `leftMax` and `rightMax` arrays used\.
 
-## 3\. Two Pointers
+### 3\. Two Pointers
 
 The two\-pointers technique improves upon the dynamic programming solution by using two pointers that traverse the height array from both ends\. It uses variables to store current left and right max heights, allowing us to calculate the trapped water more efficiently without additional space\.
 
@@ -223,8 +175,6 @@ The two\-pointers technique improves upon the dynamic programming solution by us
 *   Move the pointers towards each other, updating trapped water based on which of `leftMax` and `rightMax` is smaller\.
 
 #### Code:
-
-Java
 
 ```java
 class Solution {
@@ -262,9 +212,9 @@ class Solution {
 }
 ```
 
-Complexity Analysis
+#### Complexity Analysis
 
 *   **Time Complexity:** O\(n\) as we traverse the height array only once with the two pointers\.
 *   **Space Complexity:** O\(1\) because we use only constant extra space\.
 
-View Animation
+#### [Solve it on LeetCode](https://leetcode.com/problems/trapping-rain-water)
