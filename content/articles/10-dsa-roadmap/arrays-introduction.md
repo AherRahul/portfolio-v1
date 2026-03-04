@@ -210,47 +210,47 @@ This pattern works especially well for **sorted arrays** or problems where you c
 You place one pointer at the start and another at the end, then move them inward based on certain logic\.
 
 <div class="arr-viz-wrapper">
-  <div class="arr-viz-row">
-    <div class="arr-cell arr-cell--filled"><span class="arr-ptr" data-label="L">↓</span><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+  <div class="arr-viz-row pb-8">
+    <div class="arr-cell arr-cell--filled"><span class="arr-ptr" data-label="L">Left</span><span class="arr-idx">0</span><span class="arr-val">1</span></div>
     <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">3</span></div>
     <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">5</span></div>
     <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">7</span></div>
-    <div class="arr-cell arr-cell--filled"><span class="arr-ptr" data-label="R">↓</span><span class="arr-idx">4</span><span class="arr-val">9</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-ptr" data-label="R">Right</span><span class="arr-idx">4</span><span class="arr-val">9</span></div>
   </div>
   <p class="arr-step-label">Step 1 — Initial state</p>
 </div>
 
 
 <div class="arr-viz-wrapper">
-  <div class="arr-viz-row">
+  <div class="arr-viz-row pb-8">
     <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
-    <div class="arr-cell arr-cell--filled"><span class="arr-ptr" data-label="L">↓</span><span class="arr-idx">1</span><span class="arr-val">3</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-ptr" data-label="L">Left</span><span class="arr-idx">1</span><span class="arr-val">3</span></div>
     <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">5</span></div>
     <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">7</span></div>
-    <div class="arr-cell arr-cell--filled"><span class="arr-ptr" data-label="R">↓</span><span class="arr-idx">4</span><span class="arr-val">9</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-ptr" data-label="R">Right</span><span class="arr-idx">4</span><span class="arr-val">9</span></div>
   </div>
   <p class="arr-step-label">Step 2 — Move left pointer</p>
 </div>
 
 
 <div class="arr-viz-wrapper">
-  <div class="arr-viz-row">
+  <div class="arr-viz-row pb-8">
     <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
     <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">3</span></div>
-    <div class="arr-cell arr-cell--filled"><span class="arr-ptr" data-label="L">↓</span><span class="arr-idx">2</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-ptr" data-label="L">Left</span><span class="arr-idx">2</span><span class="arr-val">5</span></div>
     <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">7</span></div>
-    <div class="arr-cell arr-cell--filled"><span class="arr-ptr" data-label="R">↓</span><span class="arr-idx">4</span><span class="arr-val">9</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-ptr" data-label="R">Right</span><span class="arr-idx">4</span><span class="arr-val">9</span></div>
   </div>
   <p class="arr-step-label">Step 3 — Move left pointer again</p>
 </div>
 
 
 <div class="arr-viz-wrapper">
-  <div class="arr-viz-row">
+  <div class="arr-viz-row pb-8">
     <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
     <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">3</span></div>
-    <div class="arr-cell arr-cell--filled"><span class="arr-ptr" data-label="L">↓</span><span class="arr-idx">2</span><span class="arr-val">5</span></div>
-    <div class="arr-cell arr-cell--filled"><span class="arr-ptr" data-label="R">↓</span><span class="arr-idx">3</span><span class="arr-val">7</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-ptr" data-label="L">Left</span><span class="arr-idx">2</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-ptr" data-label="R">Right</span><span class="arr-idx">3</span><span class="arr-val">7</span></div>
     <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">9</span></div>
   </div>
   <p class="arr-step-label">Step 4 — Move right pointer</p>
@@ -258,10 +258,10 @@ You place one pointer at the start and another at the end, then move them inward
 
 
 <div class="arr-viz-wrapper">
-  <div class="arr-viz-row">
+  <div class="arr-viz-row pb-8">
     <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
     <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">3</span></div>
-    <div class="arr-cell arr-cell--filled"><span class="arr-ptr" data-label="L&R">↓</span><span class="arr-idx">2</span><span class="arr-val">5</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-ptr" data-label="L&R">Left & Right</span><span class="arr-idx">2</span><span class="arr-val">5</span></div>
     <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">7</span></div>
     <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">9</span></div>
   </div>

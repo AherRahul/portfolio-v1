@@ -30,8 +30,6 @@ resources:
 published: true
 ---
 
-![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png)
-
 # Introduction to DSA & Problem Solving – The Foundation of Efficient Programming
 
 Imagine you're the **chief architect of a massive city** tasked with designing the most efficient transportation system possible:

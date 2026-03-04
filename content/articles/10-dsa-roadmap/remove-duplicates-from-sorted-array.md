@@ -111,8 +111,8 @@ All unique elements end up at the front of the array\. Anything beyond `writePos
 
 <div class="arr-viz-wrapper">
   <div class="arr-viz-row">
-    <div class="arr-cell arr-cell--filled"><span class="arr-ptr" data-label="W">↓</span><span class="arr-idx">0</span><span class="arr-val">1</span></div>
-    <div class="arr-cell arr-cell--filled"><span class="arr-ptr" data-label="R">↓</span><span class="arr-idx">1</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-ptr" data-label="W">Right</span><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-ptr" data-label="R">Left</span><span class="arr-idx">1</span><span class="arr-val">1</span></div>
     <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">2</span></div>
   </div>
   <p class="arr-step-label pt-6">Initial — writePos = 0, readPos = 1</p>
@@ -120,9 +120,9 @@ All unique elements end up at the front of the array\. Anything beyond `writePos
 
 <div class="arr-viz-wrapper">
   <div class="arr-viz-row">
-    <div class="arr-cell arr-cell--filled"><span class="arr-ptr" data-label="W">↓</span><span class="arr-idx">0</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-ptr" data-label="W">Right</span><span class="arr-idx">0</span><span class="arr-val">1</span></div>
     <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
-    <div class="arr-cell arr-cell--filled"><span class="arr-ptr" data-label="R">↓</span><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-ptr" data-label="R">Left</span><span class="arr-idx">2</span><span class="arr-val">2</span></div>
   </div>
   <p class="arr-step-label pt-6">Step 1 — nums[read]=1 == nums[write]=1 → duplicate, skip</p>
 </div>
@@ -130,8 +130,8 @@ All unique elements end up at the front of the array\. Anything beyond `writePos
 <div class="arr-viz-wrapper">
   <div class="arr-viz-row">
     <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
-    <div class="arr-cell arr-cell--green"><span class="arr-ptr" data-label="W">↓</span><span class="arr-idx">1</span><span class="arr-val">2</span></div>
-    <div class="arr-cell arr-cell--filled"><span class="arr-ptr" data-label="R">↓</span><span class="arr-idx">2</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-ptr" data-label="W">Right</span><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--filled"><span class="arr-ptr" data-label="R">Left</span><span class="arr-idx">2</span><span class="arr-val">2</span></div>
   </div>
   <p class="arr-step-label pt-6">Step 2 — nums[read]=2 ≠ nums[write]=1 → unique! write++ then place</p>
 </div>

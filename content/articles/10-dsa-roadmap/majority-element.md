@@ -24,7 +24,7 @@ The majority element is the element that appears more than `⌊n / 2⌋` times
 <div class="arr-viz-wrapper">
   <div class="arr-viz-row">
     <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">3</span></div>
-    <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
     <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">3</span></div>
   </div>
 </div>
@@ -39,9 +39,9 @@ The majority element is the element that appears more than `⌊n / 2⌋` times
   <div class="arr-viz-row">
     <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">2</span></div>
     <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
-    <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">1</span></div>
-    <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">1</span></div>
-    <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">2</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">1</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-idx">4</span><span class="arr-val">1</span></div>
     <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">2</span></div>
     <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">2</span></div>
   </div>
@@ -163,11 +163,11 @@ If we sort the array, the majority element must occupy the full middle region\. 
 **After sorting:**
 
 <div class="arr-viz-wrapper">
-  <div class="arr-viz-row">
+  <div class="arr-viz-row pb-8">
     <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">1</span></div>
     <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">1</span></div>
     <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">1</span></div>
-    <div class="arr-cell arr-cell--green"><span class="arr-idx">3</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-ptr" data-label="Middle">Middle</span><span class="arr-idx">3</span><span class="arr-val">2</span></div>
     <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">2</span></div>
     <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">2</span></div>
     <div class="arr-cell arr-cell--filled"><span class="arr-idx">6</span><span class="arr-val">2</span></div>
@@ -253,14 +253,14 @@ As you scan:
 </div>
 
 <div class="arr-viz-wrapper">
-  <div class="arr-viz-row">
+  <div class="arr-viz-row pb-8">
     <div class="arr-cell arr-cell--filled"><span class="arr-idx">0</span><span class="arr-val">2</span></div>
     <div class="arr-cell arr-cell--filled"><span class="arr-idx">1</span><span class="arr-val">2</span></div>
     <div class="arr-cell arr-cell--filled"><span class="arr-idx">2</span><span class="arr-val">1</span></div>
     <div class="arr-cell arr-cell--filled"><span class="arr-idx">3</span><span class="arr-val">1</span></div>
     <div class="arr-cell arr-cell--filled"><span class="arr-idx">4</span><span class="arr-val">1</span></div>
     <div class="arr-cell arr-cell--filled"><span class="arr-idx">5</span><span class="arr-val">2</span></div>
-    <div class="arr-cell arr-cell--green"><span class="arr-ptr" data-label="num">↓</span><span class="arr-idx">6</span><span class="arr-val">2</span></div>
+    <div class="arr-cell arr-cell--green"><span class="arr-ptr" data-label="num">num</span><span class="arr-idx">6</span><span class="arr-val">2</span></div>
   </div>
   <p class="arr-step-label">Steps 6-7 — 2 mismatches → count=0; → re-adopt 2, count=1. Final candidate = 2 ✓</p>
 </div>

@@ -11,8 +11,6 @@ showOnArticles: false
 published: true
 ---
 
-![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png)
-
 # Amortized Analysis
 
 So far, we've analyzed algorithms using **Worst\-Case Analysis**\. We look at a single operation and ask, "What is the absolute most work this one operation could ever do?"

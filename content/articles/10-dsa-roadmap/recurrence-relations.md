@@ -11,8 +11,6 @@ showOnArticles: false
 published: true
 ---
 
-![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png)
-
 # Recurrence Relations
 
 When you first start analyzing recursive algorithms, one question always pops up: **“How do I calculate how long this algorithm takes?”**

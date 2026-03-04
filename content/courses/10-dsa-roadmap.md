@@ -6256,8 +6256,6 @@ content:
 ---
 
 
-![image.png](https://res.cloudinary.com/duojkrgue/image/upload/v1758777256/Portfolio/dsa/Data_Structure_and_algorithms_xibaur.png)
-
 ## Course Overview
 The **Data Structures & Algorithms Mastery** course is a comprehensive journey designed to transform you from a **programming beginner to an algorithmic problem-solving expert**. You'll not only learn how to implement data structures and algorithms but also **understand when and why to use them**, enabling you to write efficient, scalable, and optimized code.
 
