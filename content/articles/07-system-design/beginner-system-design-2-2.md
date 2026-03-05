@@ -12,7 +12,6 @@ featured: false
 
 # Top 30 System Design Concepts
 
-Watch Video Explanation
 
 System design can feel overwhelming at first. There are hundreds of concepts, dozens of technologies, and seemingly infinite ways to architect a system. It’s natural to wonder where to even begin.
 

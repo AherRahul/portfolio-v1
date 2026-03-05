@@ -27,32 +27,6 @@ content:
         is_on_youtube: false
         _path: beginner-system-design-1-1
         published: true
-      - id: 2
-        topic_name: "Course Roadmap"
-        sub_topic: "System Design Fundamentals"
-        publish_date: 2026-03-05
-        description: "Course Roadmap - Comprehensive guide for System Design Fundamentals."
-        topics:
-          - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
-        duration: "10:00 mins read"
-        auther_name: Rahul Aher
-        is_on_youtube: false
-        _path: beginner-system-design-1-2
-        published: true
-      - id: 3
-        topic_name: "Join the Community"
-        sub_topic: "System Design Fundamentals"
-        publish_date: 2026-03-05
-        description: "Join the Community - Comprehensive guide for System Design Fundamentals."
-        topics:
-          - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
-        duration: "10:00 mins read"
-        auther_name: Rahul Aher
-        is_on_youtube: false
-        _path: beginner-system-design-1-3
-        published: true
     published: true
   - module_id: 2
     module_name: "What is System Design?"
@@ -65,7 +39,7 @@ content:
         topic_name: "What is System Design?"
         sub_topic: "System Design Fundamentals"
         publish_date: 2026-03-05
-        description: "What is System Design? - Comprehensive guide for System Design Fundamentals."
+        description: "Explore the fundamentals of system design, its key components, and essential questions to build scalable, reliable, and efficient software systems."
         topics:
           - system-design
         photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
