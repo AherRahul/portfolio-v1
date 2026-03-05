@@ -11,8 +11,6 @@ featured: false
 ---
 
 
-![image.png](https://github.blog/wp-content/uploads/2024/05/GitHub-for-beginners.png?w=1024)
-
 
 # The Evolution of Git: Revolutionizing Version Control and Collaboration
 

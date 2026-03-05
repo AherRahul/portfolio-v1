@@ -1,0 +1,37 @@
+---
+title: "Design Reddit"
+description: "Design Reddit - System Design Interviews Module 10"
+datePublished: 2026-03-05
+dateModified: 2026-03-05
+topics:
+  - system-design
+courseName: 12-system-design-interviews
+showOnArticles: false
+featured: false
+---
+
+# Design Reddit
+
+What is Reddit?
+
+Reddit is a social news aggregation and discussion platform where users submit content (posts) to topic-based communities called "subreddits." Other users then vote and comment on these submissions, with the most popular content rising to the top.
+
+Loading simulation...
+
+The platform combines elements of a forum, social network, and content aggregator. Each subreddit functions as an independent community with its own rules, moderators, and culture. Users can subscribe to subreddits that interest them, creating a personalized home feed of content from across the platform.
+
+**Other Popular Examples:** Hacker News, Stack Overflow (Q&A variant), Quora
+
+This problem is an excellent system design interview question because it tests your ability to design voting systems, ranking algorithms, nested comment trees, and personalized feed generation at scale.
+
+In this chapter, we will explore the **high-level design of a Reddit-like platform**.
+
+Let's start by clarifying the requirements:
+
+### Premium Content
+
+Subscribe to unlock full access to this content and more premium articles.
+
+[Subscribe Now](/premium)
+
+Launching soon

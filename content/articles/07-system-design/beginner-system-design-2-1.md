@@ -1,225 +1,168 @@
 ---
-title: What is System Design
-description: Systems Design is the process of defining the architecture,
-  components, modules, interfaces, and data for a system to satisfy specified
-  requirements. It involves translating user requirements into a detailed
-  blueprint that guides the implementation phase. The goal is to create a
-  well-organized and efficient structure that meets the intended purpose while
-  considering factors like scalability, maintainability, and performance.
-slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
-dateModified: 2026-01-29
-datePublished: 2026-05-22
-showOnArticles: false
-courseName: 07-system-design
+title: "What is System Design?"
+description: "What is System Design? - System Design Module 2"
+datePublished: 2026-03-05
+dateModified: 2026-03-05
 topics:
   - system-design
-  - aws
-  - lld
-videoUrl: https://www.youtube.com/embed/K9EFon58_UI?si=95in2rvIl1h6pDxU
+courseName: 07-system-design
+showOnArticles: false
+featured: false
 ---
 
-## What is System Design?
+# What is System Design?
 
-System Design is a critical aspect of software engineering that involves defining the architecture, components, modules, interfaces, and data flow of a system to meet specific requirements. It translates user requirements into a blueprint that guides developers and ensures scalability, maintainability, and performance. Whether you’re designing a simple application or a large-scale distributed system, system design lays the foundation for creating robust, efficient, and reliable software.
+When you scroll through **Instagram**, stream your favorite show on **Netflix**, or shop on **Amazon**, you probably don’t pause to think about what’s happening behind the scenes.
 
-In this blog post, we will dive into the core concepts of system design, its importance, the process, and best practices to help you design systems that meet the intended goals effectively.
+But with every tap, click, or refresh, a **complex network of interconnected components** work seamlessly to deliver a smooth experience.
 
+Behind this seamless experience lies the art and science of **System Design**.
 
-## Table of Contents
-1. [Why is System Design Important?](#why-is-system-design-important)
-2. [Key Components of System Design](#key-components-of-system-design)
-3. [Types of System Design](#types-of-system-design)
-4. [The System Design Process](#the-system-design-process)
-5. [Principles of Good System Design](#principles-of-good-system-design)
-6. [Common Challenges in System Design](#common-challenges-in-system-design)
-7. [Case Study: Designing a Scalable URL Shortener](#case-study-designing-a-scalable-url-shortener)
-8. [Conclusion](#conclusion)
+# 1\. What Is System Design?
 
+At its core, **System Design** is the process of defining how different parts of a software system interact to meet both **functional** (what it should do) and **non-functional** (how well it should do it) requirements.
 
-## Why is System Design Important?
+It’s not about writing code, at least not yet. It’s about making **high-level architectural decisions** that balance scalability, reliability, performance, and cost.
 
-System design is the backbone of software development. It ensures that the final product is:
-- **Scalable**: Able to handle increased loads and data volume without compromising performance.
-- **Maintainable**: Easy to modify and extend as requirements evolve.
-- **Reliable**: Ensures uptime, fault tolerance, and resilience under failure conditions.
-- **Efficient**: Optimized for resource usage such as memory, CPU, and storage.
+### A Real-World Analogy: Designing a Skyscraper
 
-A well-designed system saves development time, reduces technical debt, and enhances user satisfaction. It enables teams to build software that not only meets current needs but is also future-proof.
+Imagine you’re an architect designing a skyscraper.
 
+You don’t start by laying bricks. You start by asking questions:
 
-## Key Components of System Design
+*   How many floors will it have?
+*   How many people should it support?
+*   What kind of soil is it built on?
+*   What level of earthquake resistance is needed?
 
-System design involves multiple components working together. Here are the key elements:
+Once the requirements are clear, you create **blueprints** showing how everything fits together: the foundation, the structural supports, the plumbing, the electrical layout, and the elevator shafts.
 
-### 1. **Architecture**
-Defines the overall structure of the system. Common architectures include:
-- **Monolithic Architecture**: A single codebase for the entire application.
-- **Microservices Architecture**: Divides the system into small, independent services.
-- **Serverless Architecture**: Leverages cloud services to run functions without managing servers.
+You also consider how different systems **interact**, such as how plumbing might affect electrical layouts. You plan for **future expansion** (scalability) and think about how the building will handle unexpected issues (fault tolerance).
 
-### 2. **Data Storage**
-Data storage is critical for system design. You can choose between:
-- **Relational Databases (RDBMS)**: Such as MySQL, PostgreSQL, or Oracle. These are ideal for structured data and complex queries.
-- **NoSQL Databases**: Such as MongoDB, Cassandra, or Redis. These are optimized for unstructured or semi-structured data and scalability.
+In the software world, this translates to:
 
-### 3. **API and Interfaces**
-Defines how components communicate. Common API designs include:
-- **REST**: Based on HTTP methods like GET, POST, PUT, and DELETE.
-- **GraphQL**: Allows clients to request specific data.
-- **gRPC**: Efficient for communication in distributed systems.
+*   **Architecture:** The overall structure of the system. Should the system be built as a monolith, a set of microservices, or an event-driven system?
+*   **Components/Modules:** Databases, servers, load balancers, caches, message queues, and APIs.
+*   **Interfaces:** How these components communicate with each other (e.g., REST APIs, gRPC).
+*   **Data:** How data is stored, managed, accessed, and kept consistent.
 
-### 4. **Networking**
-Networking includes components like:
-- **Load Balancers**: Distribute traffic across servers to ensure availability.
-- **CDNs**: Reduce latency by serving content closer to users.
-- **Firewalls**: Secure the system from external threats.
+# 2\. 10 Big Questions of System Design
 
-### 5. **Scalability and Caching**
-To handle high traffic:
-- Use **horizontal scaling** (adding more servers) or **vertical scaling** (adding resources to existing servers).
-- Implement caching with tools like Redis or Memcached to reduce database load.
+On a high level, system design revolves around answering these 10 big questions:
 
-### 6. **Monitoring and Logging**
-Tools like Prometheus, Grafana, and ELK Stack help monitor system performance and identify issues.
+1.  **Scalability:** How will the system handle a large number of users or requests simultaneously?
+2.  **Latency and Performance:** How can we reduce response time and ensure low-latency performance under load?
+3.  **Communication:** How do different components of the system interact with each other?
+4.  **Data Management:** How should we store, retrieve, and manage data efficiently?
+5.  **Fault Tolerance and Reliability:** What happens if a part of the system crashes or becomes unreachable?
+6.  **Security:** How do we protect the system against threats such as unauthorized access, data breaches, or denial-of-service attacks?
+7.  **Maintainability and Extensibility:** How easy is it to maintain, monitor, debug, and evolve the system over time?
+8.  **Cost Efficiency:** How can we balance performance with infrastructure cost?
+9.  **Observability and Monitoring:** How do we monitor system health and diagnose issues in production?
+10.  **Compliance and Privacy:** Are we complying with relevant laws and regulations (e.g., GDPR, HIPAA)?
 
+# 3\. Key Components of a System
 
-## Types of System Design
+A typical software system can be broken down into several key components:
 
-System design can be broadly classified into two categories:
+*   **Client/Frontend:** The part of the system that users interact with directly (e.g., web browsers, mobile apps). It is responsible for displaying information, collecting user input, and communicating with the backend.
+*   **Server/Backend:** The backend handles the core functionality of the system. It processes incoming requests, executes business logic, interacts with databases or services, and sends responses back to the client.
+*   **Database/Storage:** This component is responsible for storing and managing data. It can take various forms, including relational databases (SQL), non-relational stores (NoSQL), in-memory caches, or distributed object storage systems, depending on the needs of the application.
+*   **Networking Layer:** This includes components like load balancers, APIs, and communication protocols that ensure reliable and efficient interaction between different parts of the system.
+*   **Third-party Services:** These are external APIs or platforms that extend the system’s capabilities. Common examples include payment processors, email or SMS notification services, authentication providers, analytics tools, and cloud-based AI services.
 
-### 1. **High-Level Design (HLD)**
-Focuses on the overall architecture and major components. It addresses:
-- The choice of architecture (e.g., monolithic or microservices).
-- Database selection and schema design.
-- Key API and external integrations.
+# 4\. The Process of System Design
 
-### 2. **Low-Level Design (LLD)**
-Deals with the detailed design of components, modules, and classes. It includes:
-- Data structures and algorithms.
-- Specific database queries.
-- Implementation details of API and interfaces.
+Designing a system is not a one-size-fits-all approach. It’s a step-by-step process that starts with understanding the requirements and ends with a detailed blueprint.
 
-Both HLD and LLD are essential for building a comprehensive system.
+Here are the key steps:
 
+### Step 1: **Requirements Gathering**
 
-## The System Design Process
+Every design starts with a conversation. Before drawing diagrams or choosing technologies, focus on understanding what the system needs to do.
 
-Designing a system requires a structured approach. Here’s a step-by-step guide:
+Ask questions like:
 
-### 1. **Understand Requirements**
-Begin by gathering and analyzing the requirements:
-- **Functional Requirements**: What should the system do? Example: “Allow users to upload photos.”
-- **Non-Functional Requirements**: How should the system perform? Example: “Handle 1 million users with low latency.”
+*   What are the **functional requirements** (core features and workflows)?
+*   What are the **non-functional requirements** (scalability, availability, latency, consistency)?
+*   Who are the users, and how many are expected initially and at scale?
+*   What’s the expected **data volume** and **traffic pattern**?
+*   Are there any **constraints** (e.g., specific technologies, budgets, or compliance rules)
 
-### 2. **Define Key Components**
-Break the system into smaller, manageable components. For instance:
-- **Frontend**: The user interface.
-- **Backend**: Business logic and API.
-- **Database**: Storage and retrieval of data.
+### Step 2: **Back-of-the-Envelope Estimation**
 
-### 3. **Choose the Right Tools**
-Select technologies and tools based on your needs:
-- For high scalability, consider NoSQL databases.
-- For rapid development, frameworks like Django or Spring Boot can be helpful.
+Next, estimate the **scale** of your system. Approximate numbers give you a sense of what you’re designing for.
 
-### 4. **Design the Architecture**
-Create a high-level architecture diagram that shows:
-- Components and their interactions.
-- Data flow between components.
-- Third-party services (e.g., payment gateways, cloud services).
+Estimate:
 
-### 5. **Optimize for Scalability and Performance**
-Incorporate techniques like:
-- **Sharding**: Splitting data across multiple databases.
-- **Replication**: Creating copies of data for redundancy.
-- **Asynchronous Processing**: Using message queues like Kafka or RabbitMQ.
+*   Data size (storage requirements)
+*   Queries per second (QPS) or requests per second (RPS)
+*   Bandwidth needs
+*   Number of servers or instances required
 
-### 6. **Plan for Monitoring and Maintenance**
-Ensure the system can be monitored and debugged with tools like:
-- **New Relic** for application performance monitoring.
-- **Splunk** for log management.
+These rough calculations help guide architectural decisions and ensure your design is grounded in realistic expectations.
 
-### 7. **Iterate and Refine**
-System design is rarely perfect in the first iteration. Continuously test, gather feedback, and improve the design.
+### Step 3: **High-Level Design (HLD)**
 
+Now that you understand what you’re building and how big it needs to be, start visualizing the system’s **core components** and how they interact.
 
-## Principles of Good System Design
+Define:
 
-Here are some key principles to follow:
+*   The main modules and services
+*   Data flow between them
+*   External dependencies (e.g., third-party APIs, external databases)
 
-### 1. **Scalability**
-Design the system to handle growth in users, data, and traffic.
+At this stage, you’re sketching the **architecture blueprint,** a bird’s-eye view of the system.
 
-### 2. **Reliability**
-Ensure the system can recover from failures with techniques like backups, replication, and failover mechanisms.
+### Step 4: **Data Model / API Design**
 
-### 3. **Maintainability**
-Write clean, modular, and well-documented code to make the system easy to maintain.
+Once the architecture is clear, move closer to the data and interfaces.
 
-### 4. **Performance Optimization**
-Optimize the system for speed and efficiency, minimizing latency and resource usage.
+*   Choose the right **database type(s)** — relational, NoSQL, time-series, etc.
+*   Define **schemas, tables, and relationships** to support your use cases.
+*   Design **APIs** for interaction between services (e.g., `POST /tweet`, `GET /timeline`).
 
-### 5. **Security**
-Protect the system from vulnerabilities with encryption, authentication, and firewalls.
+### Step 5: **Detailed Design / Deep Dive**
 
+Zoom into each component and define:
 
-## Common Challenges in System Design
+*   Internal logic, caching, and concurrency handling
+*   Scaling strategies (horizontal vs vertical scaling)
+*   Replication, partitioning, and fault tolerance
 
-Designing systems is not without challenges. Some common issues include:
+This is also where you address **non-functional requirements (NFRs)** like availability, reliability, and latency.
 
-### 1. **Handling High Traffic**
-Scaling systems to handle millions of users requires efficient load balancing and caching strategies.
+In other words, you go from _what_ the system does to _how_ it does it.
 
-### 2. **Data Consistency**
-Maintaining consistency in distributed systems can be complex. Techniques like the **CAP Theorem** help balance consistency, availability, and partition tolerance.
+### Step 6: **Identify Bottlenecks and Trade-offs**
 
-### 3. **Latency**
-Reducing latency involves optimizing database queries, using CDNs, and minimizing network hops.
+No system is perfect. Every choice has trade-offs.
 
-### 4. **Cost Management**
-Building and running a large-scale system can be expensive. Cost-efficient solutions like serverless architectures can help.
+Ask yourself:
 
+*   Where could the system break under high load?
+*   What are the **single points of failure**?
+*   Can caching or replication help reduce pressure?
+*   Is it okay to choose **eventual consistency** for higher availability?
 
-## Case Study: Designing a Scalable URL Shortener
+A strong design doesn’t eliminate trade-offs, it makes them **explicit** and **justifiable**.
 
-Let’s apply the system design principles to build a URL shortener like **Bitly**.
+### **Step 7: Review, Explain, and Iterate**
 
-### 1. **Requirements**
-- Functional: Shorten URLs, redirect to original URLs, track usage.
-- Non-Functional: Handle 1 billion requests per month, low latency, high availability.
+Finally, step back and evaluate. Explain your design decisions clearly—why you made certain choices and how they meet the requirements.
 
-### 2. **High-Level Design**
-- **Frontend**: A web interface for users to enter URLs.
-- **Backend**: API to create and retrieve short URLs.
-- **Database**: Store mappings of short and original URLs.
+Be open to feedback, iterate on weak spots, and refine your design.
 
-### 3. **Database Design**
-Use a key-value store like DynamoDB or Redis:
-- Key: Short URL.
-- Value: Original URL.
+You don’t need to get everything perfect on the first try. What matters is your ability to **adapt, refine, and evolve** the design as you uncover new insights or constraints.
 
-### 4. **Scalability**
-- Use a **load balancer** to distribute traffic.
-- Implement caching to reduce database load.
-- Use **partitioning** for storing data.
+# 5\. Conclusion
 
-### 5. **Monitoring**
-Set up alerts for high latency or failure rates using tools like CloudWatch.
+System design is one of the most important skills for building software that’s **reliable, scalable, and maintainable**.
 
-By following this process, you can design a system that meets both functional and non-functional requirements.
+Whether you’re designing a small web app or a massive distributed platform, understanding system design principles helps you make **better architectural decisions**, choose the right technologies, and optimize performance with confidence.
 
+The first step in mastering system design is to understand its **core concepts and building blocks**.
 
-## Conclusion
+In the next chapter, we will explore the **Top 30 System Design Concepts** that you will most commonly come across while designing large scale systems or preparing for system design interviews.
 
-System design is a cornerstone of software engineering. It transforms abstract requirements into a concrete, scalable, and maintainable structure. By understanding the principles, process, and challenges of system design, you can build software that performs efficiently, scales gracefully, and satisfies user needs.
-
-Whether you’re preparing for interviews, building new systems, or improving existing ones, mastering system design is an invaluable skill. Start by practicing with common problems, such as designing a chat application or a social media feed, and iteratively refine your approach.
-
-Happy designing!
-
-
-
-Thank you so much for reading. If you found it valuable, consider subscribing for more such content every week. If you have any questions or suggestions, please email me your comments or feel free to improve it.
-
-
-- [YouTube Resource (Cloud world)](https://www.youtube.com/embed/K9EFon58_UI?si=95in2rvIl1h6pDxU)
+Launching soon

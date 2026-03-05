@@ -1,225 +1,789 @@
 ---
-title: What is System Design
-description: Systems Design is the process of defining the architecture,
-  components, modules, interfaces, and data for a system to satisfy specified
-  requirements. It involves translating user requirements into a detailed
-  blueprint that guides the implementation phase. The goal is to create a
-  well-organized and efficient structure that meets the intended purpose while
-  considering factors like scalability, maintainability, and performance.
-slidesUrl: https://github.com/AherRahul/portfolio-v1/blob/main/content/articles
-dateModified: 2026-01-29
-datePublished: 2026-05-22
-showOnArticles: false
-courseName: 07-system-design
+title: "Course Roadmap"
+description: "Course Roadmap - System Design Module 1"
+datePublished: 2026-03-05
+dateModified: 2026-03-05
 topics:
   - system-design
-  - aws
-  - lld
-videoUrl: https://www.youtube.com/embed/K9EFon58_UI?si=95in2rvIl1h6pDxU
+courseName: 07-system-design
+showOnArticles: false
+featured: false
 ---
 
-## What is System Design?
+# Course Roadmap
 
-System Design is a critical aspect of software engineering that involves defining the architecture, components, modules, interfaces, and data flow of a system to meet specific requirements. It translates user requirements into a blueprint that guides developers and ensures scalability, maintainability, and performance. Whether you’re designing a simple application or a large-scale distributed system, system design lays the foundation for creating robust, efficient, and reliable software.
+This course is designed to be easy to follow, with the most important topics covered first. The early chapters focus on beginner to intermediate concepts, and the later sections gradually move into advanced topics.
 
-In this blog post, we will dive into the core concepts of system design, its importance, the process, and best practices to help you design systems that meet the intended goals effectively.
+20 sections169 chapters
 
+Collapse All
 
-## Table of Contents
-1. [Why is System Design Important?](#why-is-system-design-important)
-2. [Key Components of System Design](#key-components-of-system-design)
-3. [Types of System Design](#types-of-system-design)
-4. [The System Design Process](#the-system-design-process)
-5. [Principles of Good System Design](#principles-of-good-system-design)
-6. [Common Challenges in System Design](#common-challenges-in-system-design)
-7. [Case Study: Designing a Scalable URL Shortener](#case-study-designing-a-scalable-url-shortener)
-8. [Conclusion](#conclusion)
+Access:
 
+Difficulty:
 
-## Why is System Design Important?
+Level:
 
-System design is the backbone of software development. It ensures that the final product is:
-- **Scalable**: Able to handle increased loads and data volume without compromising performance.
-- **Maintainable**: Easy to modify and extend as requirements evolve.
-- **Reliable**: Ensures uptime, fault tolerance, and resilience under failure conditions.
-- **Efficient**: Optimized for resource usage such as memory, CPU, and storage.
+#
 
-A well-designed system saves development time, reduces technical debt, and enhances user satisfaction. It enables teams to build software that not only meets current needs but is also future-proof.
+Section / Chapter
 
+Difficulty
 
-## Key Components of System Design
+1
 
-System design involves multiple components working together. Here are the key elements:
+Welcome
 
-### 1. **Architecture**
-Defines the overall structure of the system. Common architectures include:
-- **Monolithic Architecture**: A single codebase for the entire application.
-- **Microservices Architecture**: Divides the system into small, independent services.
-- **Serverless Architecture**: Leverages cloud services to run functions without managing servers.
+[Course Introduction](/learn/system-design/course-introduction)
 
-### 2. **Data Storage**
-Data storage is critical for system design. You can choose between:
-- **Relational Databases (RDBMS)**: Such as MySQL, PostgreSQL, or Oracle. These are ideal for structured data and complex queries.
-- **NoSQL Databases**: Such as MongoDB, Cassandra, or Redis. These are optimized for unstructured or semi-structured data and scalability.
+[Course Roadmap](/learn/system-design/course-roadmap)
 
-### 3. **API and Interfaces**
-Defines how components communicate. Common API designs include:
-- **REST**: Based on HTTP methods like GET, POST, PUT, and DELETE.
-- **GraphQL**: Allows clients to request specific data.
-- **gRPC**: Efficient for communication in distributed systems.
+[Join the Community](/learn/system-design/join-community)
 
-### 4. **Networking**
-Networking includes components like:
-- **Load Balancers**: Distribute traffic across servers to ensure availability.
-- **CDNs**: Reduce latency by serving content closer to users.
-- **Firewalls**: Secure the system from external threats.
+2
 
-### 5. **Scalability and Caching**
-To handle high traffic:
-- Use **horizontal scaling** (adding more servers) or **vertical scaling** (adding resources to existing servers).
-- Implement caching with tools like Redis or Memcached to reduce database load.
+Introduction to System Design
 
-### 6. **Monitoring and Logging**
-Tools like Prometheus, Grafana, and ELK Stack help monitor system performance and identify issues.
+[What is System Design?Beginner](/learn/system-design/what-is-system-design)
 
+Beginner
 
-## Types of System Design
+[Top 30 System Design ConceptsBeginner](/learn/system-design/top-30-system-design-concepts)
 
-System design can be broadly classified into two categories:
+Beginner
 
-### 1. **High-Level Design (HLD)**
-Focuses on the overall architecture and major components. It addresses:
-- The choice of architecture (e.g., monolithic or microservices).
-- Database selection and schema design.
-- Key API and external integrations.
+3
 
-### 2. **Low-Level Design (LLD)**
-Deals with the detailed design of components, modules, and classes. It includes:
-- Data structures and algorithms.
-- Specific database queries.
-- Implementation details of API and interfaces.
+Core Concepts
 
-Both HLD and LLD are essential for building a comprehensive system.
+[ScalabilityBeginner](/learn/system-design/scalability)
 
+Beginner
 
-## The System Design Process
+[AvailabilityBeginner](/learn/system-design/availability)
 
-Designing a system requires a structured approach. Here’s a step-by-step guide:
+Beginner
 
-### 1. **Understand Requirements**
-Begin by gathering and analyzing the requirements:
-- **Functional Requirements**: What should the system do? Example: “Allow users to upload photos.”
-- **Non-Functional Requirements**: How should the system perform? Example: “Handle 1 million users with low latency.”
+[ReliabilityBeginner](/learn/system-design/reliability)
 
-### 2. **Define Key Components**
-Break the system into smaller, manageable components. For instance:
-- **Frontend**: The user interface.
-- **Backend**: Business logic and API.
-- **Database**: Storage and retrieval of data.
+Beginner
 
-### 3. **Choose the Right Tools**
-Select technologies and tools based on your needs:
-- For high scalability, consider NoSQL databases.
-- For rapid development, frameworks like Django or Spring Boot can be helpful.
+[Single Point of Failure (SPOF)Beginner](/learn/system-design/single-point-of-failure-spof)
 
-### 4. **Design the Architecture**
-Create a high-level architecture diagram that shows:
-- Components and their interactions.
-- Data flow between components.
-- Third-party services (e.g., payment gateways, cloud services).
+Beginner
 
-### 5. **Optimize for Scalability and Performance**
-Incorporate techniques like:
-- **Sharding**: Splitting data across multiple databases.
-- **Replication**: Creating copies of data for redundancy.
-- **Asynchronous Processing**: Using message queues like Kafka or RabbitMQ.
+[Latency vs Throughput vs BandwidthBeginner](/learn/system-design/latency-vs-throughput)
 
-### 6. **Plan for Monitoring and Maintenance**
-Ensure the system can be monitored and debugged with tools like:
-- **New Relic** for application performance monitoring.
-- **Splunk** for log management.
+Beginner
 
-### 7. **Iterate and Refine**
-System design is rarely perfect in the first iteration. Continuously test, gather feedback, and improve the design.
+[Consistent HashingIntermediate](/learn/system-design/consistent-hashing)
 
+Intermediate
 
-## Principles of Good System Design
+[CAP TheoremIntermediate](/learn/system-design/cap-theorem)
 
-Here are some key principles to follow:
+Intermediate
 
-### 1. **Scalability**
-Design the system to handle growth in users, data, and traffic.
+[Consistency ModelsIntermediate](/learn/system-design/consistency-models)
 
-### 2. **Reliability**
-Ensure the system can recover from failures with techniques like backups, replication, and failover mechanisms.
+Intermediate
 
-### 3. **Maintainability**
-Write clean, modular, and well-documented code to make the system easy to maintain.
+[Quiz](/learn/system-design/core-concepts-quiz)
 
-### 4. **Performance Optimization**
-Optimize the system for speed and efficiency, minimizing latency and resource usage.
+4
 
-### 5. **Security**
-Protect the system from vulnerabilities with encryption, authentication, and firewalls.
+Networking
 
+[OSI ModelBeginner](/learn/system-design/osi)
 
-## Common Challenges in System Design
+Beginner
 
-Designing systems is not without challenges. Some common issues include:
+[IP AddressBeginner](/learn/system-design/ip-address)
 
-### 1. **Handling High Traffic**
-Scaling systems to handle millions of users requires efficient load balancing and caching strategies.
+Beginner
 
-### 2. **Data Consistency**
-Maintaining consistency in distributed systems can be complex. Techniques like the **CAP Theorem** help balance consistency, availability, and partition tolerance.
+[TCP vs UDPBeginner](/learn/system-design/tcp-vs-udp)
 
-### 3. **Latency**
-Reducing latency involves optimizing database queries, using CDNs, and minimizing network hops.
+Beginner
 
-### 4. **Cost Management**
-Building and running a large-scale system can be expensive. Cost-efficient solutions like serverless architectures can help.
+[HTTP/HTTPSBeginner](/learn/system-design/http-https)
 
+Beginner
 
-## Case Study: Designing a Scalable URL Shortener
+[Domain Name System (DNS)Beginner](/learn/system-design/domain-name-system-dns)
 
-Let’s apply the system design principles to build a URL shortener like **Bitly**.
+Beginner
 
-### 1. **Requirements**
-- Functional: Shorten URLs, redirect to original URLs, track usage.
-- Non-Functional: Handle 1 billion requests per month, low latency, high availability.
+[ChecksumsBeginner](/learn/system-design/checksums)
 
-### 2. **High-Level Design**
-- **Frontend**: A web interface for users to enter URLs.
-- **Backend**: API to create and retrieve short URLs.
-- **Database**: Store mappings of short and original URLs.
+Beginner
 
-### 3. **Database Design**
-Use a key-value store like DynamoDB or Redis:
-- Key: Short URL.
-- Value: Original URL.
+[Proxy vs Reverse ProxyIntermediate](/learn/system-design/proxy-vs-reverse-proxy)
 
-### 4. **Scalability**
-- Use a **load balancer** to distribute traffic.
-- Implement caching to reduce database load.
-- Use **partitioning** for storing data.
+Intermediate
 
-### 5. **Monitoring**
-Set up alerts for high latency or failure rates using tools like CloudWatch.
+[Quiz](/learn/system-design/networking-quiz)
 
-By following this process, you can design a system that meets both functional and non-functional requirements.
+5
 
+Load Balancing
 
-## Conclusion
+[What are Load Balancers?Beginner](/learn/system-design/load-balancers)
 
-System design is a cornerstone of software engineering. It transforms abstract requirements into a concrete, scalable, and maintainable structure. By understanding the principles, process, and challenges of system design, you can build software that performs efficiently, scales gracefully, and satisfies user needs.
+Beginner
 
-Whether you’re preparing for interviews, building new systems, or improving existing ones, mastering system design is an invaluable skill. Start by practicing with common problems, such as designing a chat application or a social media feed, and iteratively refine your approach.
+[Load Balancing AlgorithmsIntermediate](/learn/system-design/load-balancing-algorithms)
 
-Happy designing!
+Intermediate
 
+[DNS Load BalancingIntermediate](/learn/system-design/dns-load-balancing)
 
+Intermediate
 
-Thank you so much for reading. If you found it valuable, consider subscribing for more such content every week. If you have any questions or suggestions, please email me your comments or feel free to improve it.
+[Anycast RoutingAdvanced](/learn/system-design/anycast-routing)
 
+Advanced
 
-- [YouTube Resource (Cloud world)](https://www.youtube.com/embed/K9EFon58_UI?si=95in2rvIl1h6pDxU)
+6
+
+API Fundamentals
+
+API Design
+
+[What is an API?Beginner](/learn/system-design/what-is-an-api)
+
+Beginner
+
+[IdempotencyIntermediate](/learn/system-design/idempotency)
+
+Intermediate
+
+[Data FormatsBeginner](/learn/system-design/data-formats)
+
+Beginner
+
+[API Architectural StylesIntermediate](/learn/system-design/api-architectural-styles)
+
+Intermediate
+
+[REST API DesignIntermediate](/learn/system-design/rest-api-design)
+
+Intermediate
+
+[GraphQL Deep DiveIntermediate](/learn/system-design/graphql)
+
+Intermediate
+
+[gRPC Deep DiveIntermediate](/learn/system-design/grpc)
+
+Intermediate
+
+[Quiz](/learn/system-design/api-fundamentals-quiz)
+
+API Infrastructure
+
+[API GatewaysIntermediate](/learn/system-design/api-gateways)
+
+Intermediate
+
+[Rate LimitingIntermediate](/learn/system-design/rate-limiting)
+
+Intermediate
+
+API Security
+
+[Authentication vs AuthorizationBeginner](/learn/system-design/authentication-authorization)
+
+Beginner
+
+[Session vs Token Based AuthIntermediate](/learn/system-design/session-vs-token-auth)
+
+Intermediate
+
+[JWTIntermediate](/learn/system-design/jwt)
+
+Intermediate
+
+[OAuth / OAuth2Intermediate](/learn/system-design/oauth-oauth2)
+
+Intermediate
+
+[Single Sign-On (SSO)Intermediate](/learn/system-design/sso)
+
+Intermediate
+
+7
+
+Communication Patterns
+
+Real-Time Communication
+
+[Long PollingIntermediate](/learn/system-design/long-polling)
+
+Intermediate
+
+[WebSocketsIntermediate](/learn/system-design/websockets)
+
+Intermediate
+
+[Server-Sent Events (SSE)Intermediate](/learn/system-design/server-sent-events)
+
+Intermediate
+
+[WebhooksIntermediate](/learn/system-design/webhooks)
+
+Intermediate
+
+[WebRTCAdvanced](/learn/system-design/webrtc)
+
+Advanced
+
+Asynchronous Communication
+
+[Sync vs Async CommunicationBeginner](/learn/system-design/sync-vs-async-communication)
+
+Beginner
+
+[Message QueuesIntermediate](/learn/system-design/message-queues)
+
+Intermediate
+
+[Pub/SubIntermediate](/learn/system-design/pub-sub)
+
+Intermediate
+
+[Change Data Capture (CDC)Advanced](/learn/system-design/change-data-capture-cdc)
+
+Advanced
+
+[Delivery SemanticsAdvanced](/learn/system-design/delivery-semantics)
+
+Advanced
+
+[Dead Letter QueuesIntermediate](/learn/system-design/dead-letter-queues)
+
+Intermediate
+
+8
+
+Caching
+
+Caching Fundamentals
+
+[What is Caching?Beginner](/learn/system-design/what-is-caching)
+
+Beginner
+
+[Cache-Aside PatternIntermediate](/learn/system-design/cache-aside-pattern)
+
+Intermediate
+
+[Read-Through vs Write-ThroughIntermediate](/learn/system-design/read-through-vs-write-through-cache)
+
+Intermediate
+
+[Write-Behind CacheIntermediate](/learn/system-design/write-behind-cache)
+
+Intermediate
+
+[Caching Strategies SummaryIntermediate](/learn/system-design/caching-strategies)
+
+Intermediate
+
+[Cache Eviction PoliciesIntermediate](/learn/system-design/cache-eviction-policies)
+
+Intermediate
+
+Distributed Caching
+
+[Content Delivery Network (CDN)Beginner](/learn/system-design/content-delivery-network-cdn)
+
+Beginner
+
+[Distributed Cache ArchitectureIntermediate](/learn/system-design/distributed-caching)
+
+Intermediate
+
+[Cache InvalidationAdvanced](/learn/system-design/cache-invalidation)
+
+Advanced
+
+[Cache StampedeAdvanced](/learn/system-design/cache-stampede)
+
+Advanced
+
+[Cache WarmingAdvanced](/learn/system-design/cache-warming)
+
+Advanced
+
+[Quiz](/learn/system-design/caching-quiz)
+
+9
+
+Databases
+
+Database Fundamentals
+
+[Database TypesBeginner](/learn/system-design/database-types)
+
+Beginner
+
+[SQL vs NoSQLBeginner](/learn/system-design/sql-vs-nosql)
+
+Beginner
+
+[ACID TransactionsIntermediate](/learn/system-design/acid-transactions)
+
+Intermediate
+
+Database Types - Deep Dive
+
+[Relational DatabasesBeginner](/learn/system-design/relational-databases)
+
+Beginner
+
+[Document DatabasesBeginner](/learn/system-design/document-databases)
+
+Beginner
+
+[Key-Value StoresBeginner](/learn/system-design/key-value-stores)
+
+Beginner
+
+[Wide Column DatabasesIntermediate](/learn/system-design/wide-column-databases)
+
+Intermediate
+
+[Graph DatabasesIntermediate](/learn/system-design/graph-databases)
+
+Intermediate
+
+[Time Series DatabasesIntermediate](/learn/system-design/time-series-databases)
+
+Intermediate
+
+[Full-Text Search EnginesIntermediate](/learn/system-design/full-text-search-engines)
+
+Intermediate
+
+[Vector DatabasesAdvanced](/learn/system-design/vector-databases)
+
+Advanced
+
+Database Internals
+
+[Bloom FiltersIntermediate](/learn/system-design/bloom-filters)
+
+Intermediate
+
+[B-Trees and B+ TreesAdvanced](/learn/system-design/b-trees)
+
+Advanced
+
+[LSM TreesAdvanced](/learn/system-design/lsm-trees)
+
+Advanced
+
+[How Databases Guarantee DurabilityAdvanced](/learn/system-design/how-databases-guarantee-durability)
+
+Advanced
+
+[Quiz](/learn/system-design/databases-and-storage-quiz)
+
+10
+
+Database Scaling Techniques
+
+Database Scaling - Reads
+
+[IndexingBeginner](/learn/system-design/indexing)
+
+Beginner
+
+[Query OptimizationIntermediate](/learn/system-design/query-optimization)
+
+Intermediate
+
+[Read ReplicasIntermediate](/learn/system-design/read-replicas)
+
+Intermediate
+
+[DenormalizationIntermediate](/learn/system-design/denormalization)
+
+Intermediate
+
+[Materialized ViewsIntermediate](/learn/system-design/materialized-views)
+
+Intermediate
+
+[Connection PoolingIntermediate](/learn/system-design/connection-pooling)
+
+Intermediate
+
+Database Scaling - Writes
+
+[Vertical PartitioningBeginner](/learn/system-design/vertical-partitioning)
+
+Beginner
+
+[ShardingIntermediate](/learn/system-design/sharding)
+
+Intermediate
+
+[Sharding vs PartitioningIntermediate](/learn/system-design/sharding-vs-partitioning)
+
+Intermediate
+
+[Data CompressionIntermediate](/learn/system-design/data-compression)
+
+Intermediate
+
+[Quiz](/learn/system-design/db-scaling-techniques-quiz)
+
+11
+
+Storage Systems
+
+[Block vs File vs Object StorageIntermediate](/learn/system-design/block-vs-file-vs-object-storage)
+
+Intermediate
+
+[Object StorageIntermediate](/learn/system-design/object-storage)
+
+Intermediate
+
+[Distributed File SystemsAdvanced](/learn/system-design/distributed-file-systems)
+
+Advanced
+
+[Erasure CodingAdvanced](/learn/system-design/erasure-coding)
+
+Advanced
+
+12
+
+Tradeoffs
+
+[Vertical vs Horizontal ScalingBeginner](/learn/system-design/vertical-vs-horizontal-scaling)
+
+Beginner
+
+[Concurrency vs ParallelismBeginner](/learn/system-design/concurrency-vs-parallelism)
+
+Beginner
+
+[Push vs Pull ArchitectureBeginner](/learn/system-design/push-vs-pull-architecture)
+
+Beginner
+
+[Stateful vs Stateless ArchitectureIntermediate](/learn/system-design/stateful-vs-stateless-architecture)
+
+Intermediate
+
+[Long Polling vs WebSocketsIntermediate](/learn/system-design/long-polling-vs-websockets)
+
+Intermediate
+
+[Strong vs Eventual ConsistencyIntermediate](/learn/system-design/strong-vs-eventual-consistency)
+
+Intermediate
+
+[Quiz](/learn/system-design/tradeoffs-quiz)
+
+13
+
+Distributed System Fundamentals
+
+[Challenges of DistributionIntermediate](/learn/system-design/challenges-of-distribution)
+
+Intermediate
+
+[Network PartitionsIntermediate](/learn/system-design/network-partitions)
+
+Intermediate
+
+[Split Brain ProblemIntermediate](/learn/system-design/split-brain-problem)
+
+Intermediate
+
+[HeartbeatsIntermediate](/learn/system-design/heartbeats)
+
+Intermediate
+
+[Handling Failures in Distributed SystemsAdvanced](/learn/system-design/handling-failures-in-distributed-systems)
+
+Advanced
+
+Time & Ordering
+
+[Clock Synchronization ProblemAdvanced](/learn/system-design/clock-synchronization)
+
+Advanced
+
+[Logical ClocksAdvanced](/learn/system-design/logical-clocks)
+
+Advanced
+
+[Lamport TimestampsAdvanced](/learn/system-design/lamport-timestamps)
+
+Advanced
+
+[Vector ClocksAdvanced](/learn/system-design/vector-clocks)
+
+Advanced
+
+Coordination & Consensus
+
+[Consensus AlgorithmsAdvanced](/learn/system-design/consensus-algorithms)
+
+Advanced
+
+[Paxos AlgorithmAdvanced](/learn/system-design/paxos-algorithm)
+
+Advanced
+
+[Raft AlgorithmAdvanced](/learn/system-design/raft-algorithm)
+
+Advanced
+
+[Leader ElectionAdvanced](/learn/system-design/leader-election)
+
+Advanced
+
+[Gossip ProtocolAdvanced](/learn/system-design/gossip-protocol)
+
+Advanced
+
+14
+
+Distributed Transactions
+
+[The Problem with Distributed TransactionsAdvanced](/learn/system-design/distributed-transactions-problems)
+
+Advanced
+
+[Two-Phase Commit (2PC)Advanced](/learn/system-design/two-phase-commit-protocol)
+
+Advanced
+
+[Three-Phase Commit (3PC)Advanced](/learn/system-design/three-phase-commit-3pc)
+
+Advanced
+
+[SAGA PatternAdvanced](/learn/system-design/saga-pattern)
+
+Advanced
+
+[Outbox PatternAdvanced](/learn/system-design/outbox-pattern)
+
+Advanced
+
+15
+
+Data Structures for Scale
+
+[GeohashIntermediate](/learn/system-design/geohash)
+
+Intermediate
+
+[Quad TreesAdvanced](/learn/system-design/quad-tree)
+
+Advanced
+
+[R-TreesAdvanced](/learn/system-design/r-trees)
+
+Advanced
+
+[Skip ListsAdvanced](/learn/system-design/skip-lists)
+
+Advanced
+
+[Merkle TreesAdvanced](/learn/system-design/merkle-trees)
+
+Advanced
+
+[HyperLogLogAdvanced](/learn/system-design/hyperloglog)
+
+Advanced
+
+[Count-Min SketchAdvanced](/learn/system-design/count-min-sketch)
+
+Advanced
+
+16
+
+Architectural Patterns
+
+[Client-Server ArchitectureBeginner](/learn/system-design/client-server-architecture)
+
+Beginner
+
+[Monolithic ArchitectureBeginner](/learn/system-design/monolithic-architecture)
+
+Beginner
+
+[Microservices ArchitectureIntermediate](/learn/system-design/microservices-architecture)
+
+Intermediate
+
+[Serverless ArchitectureIntermediate](/learn/system-design/serverless-architecture)
+
+Intermediate
+
+[Event-Driven ArchitectureIntermediate](/learn/system-design/event-driven-architecture)
+
+Intermediate
+
+[CQRSAdvanced](/learn/system-design/cqrs)
+
+Advanced
+
+[Event SourcingAdvanced](/learn/system-design/event-sourcing)
+
+Advanced
+
+[Peer-to-Peer (P2P)Advanced](/learn/system-design/peer-to-peer-p2p-architecture)
+
+Advanced
+
+[Quiz](/learn/system-design/architectural-patterns-quiz)
+
+17
+
+Microservices Patterns
+
+[Service DiscoveryIntermediate](/learn/system-design/service-discovery)
+
+Intermediate
+
+[API Gateway PatternIntermediate](/learn/system-design/api-gateway-pattern)
+
+Intermediate
+
+[Backend for Frontend (BFF)Intermediate](/learn/system-design/backend-for-frontend)
+
+Intermediate
+
+[Sidecar PatternIntermediate](/learn/system-design/sidecar-pattern)
+
+Intermediate
+
+[Circuit Breaker PatternIntermediate](/learn/system-design/circuit-breaker-pattern)
+
+Intermediate
+
+[Bulkhead PatternIntermediate](/learn/system-design/bulkhead-pattern)
+
+Intermediate
+
+[Strangler Fig PatternIntermediate](/learn/system-design/strangler-fig-pattern)
+
+Intermediate
+
+[Service MeshAdvanced](/learn/system-design/service-mesh)
+
+Advanced
+
+[Quiz](/learn/system-design/microservices-quiz)
+
+18
+
+Big Data Processing
+
+[Batch vs Stream ProcessingIntermediate](/learn/system-design/batch-vs-stream-processing)
+
+Intermediate
+
+[MapReduceIntermediate](/learn/system-design/mapreduce)
+
+Intermediate
+
+[ETL PipelinesIntermediate](/learn/system-design/etl-pipelines)
+
+Intermediate
+
+[Data LakesIntermediate](/learn/system-design/data-lakes)
+
+Intermediate
+
+[Data WarehousingIntermediate](/learn/system-design/data-warehousing)
+
+Intermediate
+
+[Data LakehouseAdvanced](/learn/system-design/data-lakehouse)
+
+Advanced
+
+[Lambda ArchitectureAdvanced](/learn/system-design/lambda-architecture)
+
+Advanced
+
+[Kappa ArchitectureAdvanced](/learn/system-design/kappa-architecture)
+
+Advanced
+
+[Streaming EnginesAdvanced](/learn/system-design/streaming-engines)
+
+Advanced
+
+[Quiz](/learn/system-design/big-data-processing-quiz)
+
+19
+
+Observability
+
+[Three Pillars of ObservabilityBeginner](/learn/system-design/three-pillars-observability)
+
+Beginner
+
+[Logging Best PracticesBeginner](/learn/system-design/logging)
+
+Beginner
+
+[Log AggregationIntermediate](/learn/system-design/log-aggregation)
+
+Intermediate
+
+[Correlation IDsIntermediate](/learn/system-design/correlation-ids)
+
+Intermediate
+
+[Metrics & InstrumentationIntermediate](/learn/system-design/metrics-instrumentation)
+
+Intermediate
+
+[Alert & MonitoringIntermediate](/learn/system-design/alert-monitoring)
+
+Intermediate
+
+[Dashboards & RunbooksIntermediate](/learn/system-design/dashboards-runbooks)
+
+Intermediate
+
+[Distributed TracingAdvanced](/learn/system-design/distributed-tracing)
+
+Advanced
+
+[Quiz](/learn/system-design/observability-quiz)
+
+20
+
+Advanced Security
+
+[SSL/TLS Deep DiveIntermediate](/learn/system-design/ssl-tls)
+
+Intermediate
+
+[RBACIntermediate](/learn/system-design/rbac)
+
+Intermediate
+
+[Secrets ManagementIntermediate](/learn/system-design/secrets-management)
+
+Intermediate
+
+[SAMLAdvanced](/learn/system-design/saml)
+
+Advanced
+
+Launching soon
