@@ -73,7 +73,7 @@ content:
         topic_name: "Scalability"
         sub_topic: "System Design Fundamentals"
         publish_date: 2026-03-05
-        description: "Scalability - Comprehensive guide for System Design Fundamentals."
+        description: "Learn how to design scalable systems that grow seamlessly with demand using vertical and horizontal scaling, caching, and database optimization strategies."
         topics:
           - system-design
         photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
@@ -86,7 +86,7 @@ content:
         topic_name: "Availability"
         sub_topic: "System Design Fundamentals"
         publish_date: 2026-03-05
-        description: "Availability - Comprehensive guide for System Design Fundamentals."
+        description: "Learn how to design highly available systems that remain operational despite failures using redundancy, load balancing, and failover strategies."
         topics:
           - system-design
         photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
