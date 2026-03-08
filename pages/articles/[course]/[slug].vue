@@ -312,6 +312,8 @@ onMounted(() => { setupContentImages('.prose'); loadProgress() })
           :is-older-than-one-year="isOlderThanOneYear"
           :enable-ai-notes="currentLecture?.enable_ai_notes ?? true"
           :enable-ai-quiz="currentLecture?.enable_ai_quiz ?? true"
+          :enable-resources-tab="courseDoc?.enable_resources_tab ?? true"
+          :hide-tab-headers="courseDoc?.hide_tab_headers ?? false"
           :content-theme="contentTheme"
         />
       </div>

@@ -56,6 +56,8 @@ const props = defineProps<{
   enableAiNotes?: boolean
   enableAiQuiz?: boolean
   contentTheme?: 'dark' | 'light'
+  enableResourcesTab?: boolean
+  hideTabHeaders?: boolean
 }>()
 
 // Computed theme — falls back to 'dark' if parent didn't pass the prop
@@ -81,6 +83,7 @@ const tabs = computed(() => {
   return allTabs.filter(tab => {
     if (tab.id === 'notes' && props.enableAiNotes === false) return false
     if (tab.id === 'quiz' && props.enableAiQuiz === false) return false
+    if (tab.id === 'resources' && props.enableResourcesTab === false) return false
     return true
   })
 })
@@ -620,6 +623,7 @@ onBeforeUnmount(() => {
     >
       <!-- Tab Navigation -->
       <div
+        v-if="!(hideTabHeaders && tabs.length === 1)"
         class="relative transition-colors duration-500"
         :class="isLight ? 'bg-stone-300' : 'bg-zinc-700'"
         role="tablist"
