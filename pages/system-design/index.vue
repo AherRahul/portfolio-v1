@@ -344,19 +344,19 @@ const mathTips = [
       
       <div class="relative group">
         <!-- Glow effect behind hero -->
-        <div class="absolute -inset-1 bg-gradient-to-r from-red-500 to-pink-600 rounded-3xl blur opacity-20 group-hover:opacity-30 transition duration-1000 group-hover:duration-200" />
+        <div class="absolute -inset-1 bg-gradient-to-r from-red-500 to-pink-600 rounded-none blur opacity-20 group-hover:opacity-30 transition duration-1000 group-hover:duration-200" />
         
-        <div class="relative overflow-hidden rounded-3xl bg-zinc-900/40 backdrop-blur-3xl border border-white/10 px-8 py-16 md:px-20 md:py-24 mb-12 shadow-2xl">
+        <div class="relative overflow-hidden rounded-none bg-zinc-900/40 backdrop-blur-3xl border border-white/10 px-8 py-16 md:px-20 md:py-24 mb-12 shadow-2xl">
           <!-- bg grid decoration -->
           <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle, #fff 1px, transparent 1px); background-size: 24px 24px;" />
           
           <div class="relative z-10 text-center md:text-left">
             <div class="flex flex-wrap justify-center md:justify-start items-center gap-2 mb-8 scale-in">
-              <span class="px-4 py-1.5 text-[10px] font-black bg-white/5 text-red-400 border border-red-500/20 rounded-full uppercase tracking-[0.2em] backdrop-blur-sm">Interview Forge</span>
-              <span class="px-4 py-1.5 text-[10px] font-black bg-white/5 text-zinc-400 border border-white/10 rounded-full uppercase tracking-[0.2em] backdrop-blur-sm">HLD + LLD Mastery</span>
+              <span class="px-4 py-1.5 text-[10px] font-black bg-white/5 text-red-400 border border-red-500/20 rounded-none uppercase tracking-[0.2em] backdrop-blur-sm">Interview Forge</span>
+              <span class="px-4 py-1.5 text-[10px] font-black bg-white/5 text-zinc-400 border border-white/10 rounded-none uppercase tracking-[0.2em] backdrop-blur-sm">HLD + LLD Mastery</span>
             </div>
             
-            <h1 class="text-4xl md:text-7xl font-black text-white leading-[1.1] mb-8 tracking-tight">
+            <h1 class="text-4xl md:text-7xl font-black uppercase text-white leading-[1.1] mb-8 tracking-tighter">
               Master the Art of<br/>
               <span class="bg-gradient-to-r from-red-500 via-pink-500 to-rose-500 bg-clip-text text-transparent drop-shadow-sm">System Design</span>
             </h1>
@@ -369,14 +369,14 @@ const mathTips = [
             <!-- CTA buttons -->
             <div class="flex flex-wrap justify-center md:justify-start gap-4 mb-12">
               <NuxtLink to="/system-design/practice"
-                class="group/btn relative inline-flex items-center gap-3 px-8 py-4 bg-white text-black font-black rounded-2xl hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-red-500/20 overflow-hidden">
+                class="group/btn relative inline-flex items-center gap-3 px-8 py-4 bg-white text-black font-black rounded-none hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-red-500/20 overflow-hidden">
                 <div class="absolute inset-0 bg-gradient-to-r from-red-500 to-pink-500 opacity-0 group-hover/btn:opacity-100 transition-opacity" />
                 <Icon name="heroicons:bolt-20-solid" class="text-xl relative z-10 group-hover/btn:text-white transition-colors" />
-                <span class="relative z-10 group-hover/btn:text-white transition-colors uppercase tracking-wider text-sm">Start Practicing</span>
+                <span class="relative z-10 group-hover/btn:text-white transition-colors uppercase tracking-widest text-sm">Start Practicing</span>
               </NuxtLink>
               
               <a href="#tabs"
-                class="inline-flex items-center gap-3 px-8 py-4 bg-zinc-800/50 backdrop-blur-md border border-white/10 text-zinc-300 hover:text-white hover:bg-zinc-800 hover:border-white/20 font-bold rounded-2xl transition-all duration-300 uppercase tracking-wider text-sm">
+                class="inline-flex items-center gap-3 px-8 py-4 bg-zinc-800/50 backdrop-blur-md border border-white/10 text-zinc-300 hover:text-white hover:bg-zinc-800 hover:border-white/20 font-bold rounded-none transition-all duration-300 uppercase tracking-widest text-sm text-[12px]">
                 <Icon name="heroicons:academic-cap" class="text-xl" />
                 Curriculum
               </a>
@@ -390,7 +390,7 @@ const mathTips = [
                 { v: 'JSON', l: 'Structures', icon: 'heroicons:code-bracket' },
                 { v: '∞', l: 'Readiness', icon: 'heroicons:check-badge' },
               ]" :key="stat.l" class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
+                <div class="w-10 h-10 rounded-none bg-white/5 border border-white/10 flex items-center justify-center">
                   <Icon :name="stat.icon" class="text-red-400 text-lg" />
                 </div>
                 <div class="flex flex-col">
@@ -407,11 +407,11 @@ const mathTips = [
     <!-- ══ ESTIMATION FLOATING HUB ══ -->
     <AppSection class="mb-0 pb-0">
       <div class="relative -mt-20 z-20 group">
-        <div class="absolute -inset-0.5 bg-gradient-to-r from-zinc-700 to-zinc-800 rounded-2xl blur opacity-20" />
-        <div class="relative bg-zinc-900/80 backdrop-blur-2xl border border-white/10 rounded-2xl p-8 shadow-2xl">
+        <div class="absolute -inset-0.5 bg-gradient-to-r from-zinc-700 to-zinc-800 rounded-none blur opacity-20" />
+        <div class="relative bg-zinc-900/80 backdrop-blur-2xl border border-white/10 rounded-none p-8 shadow-2xl">
           <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
             <div class="flex items-center gap-4">
-              <div class="w-12 h-12 bg-red-500/10 border border-red-500/20 rounded-xl flex items-center justify-center">
+              <div class="w-12 h-12 bg-red-500/10 border border-red-500/20 rounded-none flex items-center justify-center">
                 <Icon name="heroicons:beaker" class="text-red-400 text-2xl" />
               </div>
               <div>
@@ -419,15 +419,15 @@ const mathTips = [
                 <p class="text-xs text-zinc-500 font-medium">Quick math for back-of-the-envelope estimations</p>
               </div>
             </div>
-            <div class="hidden lg:flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full">
-              <div class="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+            <div class="hidden lg:flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-none">
+              <div class="w-2 h-2 rounded-none bg-red-500 animate-pulse" />
               <span class="text-[10px] font-bold text-zinc-400 uppercase tracking-widest">Real-time reference active</span>
             </div>
           </div>
           
           <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div v-for="tip in mathTips" :key="tip.label"
-              class="group/math relative overflow-hidden bg-white/5 border border-white/10 rounded-xl p-4 transition-all duration-300 hover:bg-white/10 hover:-translate-y-1">
+              class="group/math relative overflow-hidden bg-white/5 border border-white/10 rounded-none p-4 transition-all duration-300 hover:bg-white/10 hover:-translate-y-1">
               <div class="absolute bottom-0 right-0 p-1 opacity-0 group-hover/math:opacity-10 transition-opacity">
                 <Icon name="heroicons:calculator" class="text-4xl" />
               </div>
@@ -442,12 +442,12 @@ const mathTips = [
     <!-- ══ TAB NAV ══ -->
     <AppSection id="tabs" class="mb-0 pb-0 sticky top-0 z-40">
       <div class="px-2 py-4">
-        <div class="flex p-1.5 gap-1.5 overflow-x-auto bg-zinc-900/60 backdrop-blur-xl border border-white/10 rounded-2xl scrollbar-hide" style="scrollbar-width:none">
+        <div class="flex p-1.5 gap-1.5 overflow-x-auto bg-zinc-900/60 backdrop-blur-xl border border-white/10 rounded-none scrollbar-hide" style="scrollbar-width:none">
           <button
             v-for="tab in tabs" :key="tab.id"
             @click="activeTab = tab.id as any"
             :class="[
-              'flex items-center gap-2.5 px-6 py-3 rounded-xl text-xs font-black uppercase tracking-widest transition-all duration-300 whitespace-nowrap',
+              'flex items-center gap-2.5 px-6 py-3 rounded-none text-xs font-black uppercase tracking-widest transition-all duration-300 whitespace-nowrap',
               activeTab === tab.id
                 ? 'bg-white text-black shadow-lg shadow-white/10'
                 : 'text-zinc-500 hover:text-white hover:bg-white/5'
@@ -465,32 +465,32 @@ const mathTips = [
       <AppSection v-if="activeTab === 'hld'" class="mb-16">
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div class="max-w-2xl">
-            <h2 class="text-3xl md:text-5xl font-black text-white mb-4 tracking-tighter">High-Level Design<span class="text-red-500">.</span></h2>
+            <h2 class="text-3xl md:text-5xl font-black uppercase text-white mb-4 tracking-tighter">High-Level Design<span class="text-red-500">.</span></h2>
             <p class="text-zinc-400 text-lg leading-relaxed">A strategic blueprint for scaling systems to millions. Focus on components, interactions, and data flow.</p>
           </div>
-          <div class="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-zinc-500 bg-white/5 border border-white/10 px-4 py-2 rounded-full">
-            <span class="w-2 h-2 rounded-full bg-red-500" />
+          <div class="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-zinc-500 bg-white/5 border border-white/10 px-4 py-2 rounded-none">
+            <span class="w-2 h-2 rounded-none bg-red-500" />
             Strategic Phase
           </div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div v-for="step in hldSteps" :key="step.step"
-            class="group relative overflow-hidden bg-zinc-900/40 backdrop-blur-md border border-white/5 rounded-3xl p-8 hover:border-red-500/30 transition-all duration-500">
+            class="group relative overflow-hidden bg-zinc-900/40 backdrop-blur-md border border-white/5 rounded-none p-8 hover:border-red-500/30 transition-all duration-500">
             <div class="absolute top-0 right-0 p-8 text-6xl font-black text-white/[0.03] group-hover:text-red-500/[0.05] transition-colors">
               {{ step.step }}
             </div>
             
             <div class="relative z-10">
-              <div :class="`bg-gradient-to-br ${step.color} w-14 h-14 rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-white/5`">
+              <div :class="`bg-gradient-to-br ${step.color} w-14 h-14 rounded-none flex items-center justify-center mb-8 shadow-lg shadow-white/5`">
                 <Icon :name="step.icon" class="text-2xl text-white" />
               </div>
               
-              <h3 class="text-xl font-black text-white mb-6 tracking-tight group-hover:text-red-400 transition-colors">{{ step.title }}</h3>
+              <h3 class="text-xl font-black uppercase text-white mb-6 tracking-tighter group-hover:text-red-400 transition-colors">{{ step.title }}</h3>
               
               <ul class="space-y-4">
                 <li v-for="tip in step.tips" :key="tip" class="flex items-start gap-3 group/li">
-                  <div class="mt-1.5 w-1.5 h-1.5 rounded-full bg-zinc-700 group-hover/li:bg-red-500 transition-colors" />
+                  <div class="mt-1.5 w-1.5 h-1.5 rounded-none bg-zinc-700 group-hover/li:bg-red-500 transition-colors" />
                   <span class="text-sm text-zinc-500 leading-relaxed font-medium group-hover/li:text-zinc-300 transition-colors">{{ tip }}</span>
                 </li>
               </ul>
@@ -500,17 +500,17 @@ const mathTips = [
 
         <!-- HLD Tips box -->
         <div class="mt-16 group">
-          <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-red-600/10 to-pink-600/10 border border-red-500/20 p-8 md:p-12">
+          <div class="relative overflow-hidden rounded-none bg-gradient-to-br from-red-600/10 to-pink-600/10 border border-red-500/20 p-8 md:p-12">
             <div class="absolute top-0 right-0 w-64 h-64 bg-red-500/10 blur-[80px] -z-10" />
             <div class="flex items-center gap-4 mb-8">
-              <div class="w-12 h-12 bg-red-500 rounded-2xl flex items-center justify-center shadow-lg shadow-red-500/20">
+              <div class="w-12 h-12 bg-red-500 rounded-none flex items-center justify-center shadow-lg shadow-red-500/20">
                 <Icon name="heroicons:bolt-solid" class="text-white text-2xl" />
               </div>
-              <h3 class="text-2xl font-black text-white tracking-tight uppercase px-2">Interview Mastery</h3>
+              <h3 class="text-2xl font-black text-white tracking-tighter uppercase px-2">Interview Mastery</h3>
             </div>
             <div class="grid md:grid-cols-2 gap-4">
               <div v-for="tip in hldProTips" :key="tip"
-                class="flex items-center gap-4 bg-black/40 backdrop-blur-md border border-white/5 rounded-2xl px-6 py-4 hover:bg-black/60 transition-colors">
+                class="flex items-center gap-4 bg-black/40 backdrop-blur-md border border-white/5 rounded-none px-6 py-4 hover:bg-black/60 transition-colors">
                 <Icon name="heroicons:check-badge" class="text-red-500 text-xl shrink-0" />
                 <span class="text-sm font-bold text-zinc-300 leading-tight">{{ tip }}</span>
               </div>
@@ -523,32 +523,32 @@ const mathTips = [
       <AppSection v-if="activeTab === 'lld'" class="mb-16">
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div class="max-w-2xl">
-            <h2 class="text-3xl md:text-5xl font-black text-white mb-4 tracking-tighter">Low-Level Design<span class="text-purple-500">.</span></h2>
+            <h2 class="text-3xl md:text-5xl font-black uppercase text-white mb-4 tracking-tighter">Low-Level Design<span class="text-purple-500">.</span></h2>
             <p class="text-zinc-400 text-lg leading-relaxed">Turning concepts into executable reality. Focus on SOLID principles, clean code, and design patterns.</p>
           </div>
-          <div class="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-zinc-500 bg-white/5 border border-white/10 px-4 py-2 rounded-full">
-            <span class="w-2 h-2 rounded-full bg-purple-500" />
+          <div class="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-zinc-500 bg-white/5 border border-white/10 px-4 py-2 rounded-none">
+            <span class="w-2 h-2 rounded-none bg-purple-500" />
             Tactical Phase
           </div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div v-for="step in lldSteps" :key="step.step"
-            class="group relative overflow-hidden bg-zinc-900/40 backdrop-blur-md border border-white/5 rounded-3xl p-8 hover:border-purple-500/30 transition-all duration-500">
+            class="group relative overflow-hidden bg-zinc-900/40 backdrop-blur-md border border-white/5 rounded-none p-8 hover:border-purple-500/30 transition-all duration-500">
             <div class="absolute top-0 right-0 p-8 text-6xl font-black text-white/[0.03] group-hover:text-purple-500/[0.05] transition-colors">
               {{ step.step }}
             </div>
             
             <div class="relative z-10">
-              <div :class="`bg-gradient-to-br ${step.color} w-14 h-14 rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-white/5`">
+              <div :class="`bg-gradient-to-br ${step.color} w-14 h-14 rounded-none flex items-center justify-center mb-8 shadow-lg shadow-white/5`">
                 <Icon :name="step.icon" class="text-2xl text-white" />
               </div>
               
-              <h3 class="text-xl font-black text-white mb-6 tracking-tight group-hover:text-purple-400 transition-colors">{{ step.title }}</h3>
+              <h3 class="text-xl font-black uppercase text-white mb-6 tracking-tighter group-hover:text-purple-400 transition-colors">{{ step.title }}</h3>
               
               <ul class="space-y-4">
                 <li v-for="tip in step.tips" :key="tip" class="flex items-start gap-3 group/li">
-                  <div class="mt-1.5 w-1.5 h-1.5 rounded-full bg-zinc-700 group-hover/li:bg-purple-500 transition-colors" />
+                  <div class="mt-1.5 w-1.5 h-1.5 rounded-none bg-zinc-700 group-hover/li:bg-purple-500 transition-colors" />
                   <span class="text-sm text-zinc-500 leading-relaxed font-medium group-hover/li:text-zinc-300 transition-colors">{{ tip }}</span>
                 </li>
               </ul>
@@ -558,14 +558,14 @@ const mathTips = [
 
         <!-- SOLID Principles card -->
         <div class="mt-16 group">
-          <div class="relative overflow-hidden rounded-3xl bg-zinc-900 border border-white/10 p-1">
-            <div class="bg-zinc-900/40 backdrop-blur-3xl rounded-[22px] p-8 md:p-12">
+          <div class="relative overflow-hidden rounded-none bg-zinc-900 border border-white/10 p-1">
+            <div class="bg-zinc-900/40 backdrop-blur-3xl rounded-none p-8 md:p-12">
               <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12">
                 <div class="flex items-center gap-4">
-                  <div class="w-12 h-12 bg-purple-500 rounded-2xl flex items-center justify-center shadow-lg shadow-purple-500/20">
+                  <div class="w-12 h-12 bg-purple-500 rounded-none flex items-center justify-center shadow-lg shadow-purple-500/20">
                     <Icon name="heroicons:cube-transparent-solid" class="text-white text-2xl" />
                   </div>
-                  <h3 class="text-2xl font-black text-white tracking-tight uppercase">The SOLID Manifesto</h3>
+                  <h3 class="text-2xl font-black text-white tracking-tighter uppercase">The SOLID Manifesto</h3>
                 </div>
               </div>
               
@@ -577,7 +577,7 @@ const mathTips = [
                   { letter:'I', name:'Interface Segregation', desc:'Focused protocols' },
                   { letter:'D', name:'Dependency Inversion', desc:'Trust abstractions' },
                 ]" :key="s.letter"
-                class="group/solid relative bg-white/5 border border-white/5 rounded-2xl p-6 transition-all duration-300 hover:bg-purple-500/10 hover:border-purple-500/30">
+                class="group/solid relative bg-white/5 border border-white/5 rounded-none p-6 transition-all duration-300 hover:bg-purple-500/10 hover:border-purple-500/30">
                   <span class="block text-4xl font-black text-purple-500 mb-2 transition-transform group-hover/solid:scale-110">{{ s.letter }}</span>
                   <span class="block text-xs font-black text-white uppercase tracking-tighter mb-1">{{ s.name }}</span>
                   <span class="block text-[10px] font-bold text-zinc-500 uppercase leading-snug">{{ s.desc }}</span>
@@ -592,24 +592,24 @@ const mathTips = [
       <!-- ══ PATTERNS ══ -->
       <AppSection v-if="activeTab === 'patterns'" class="mb-16">
         <div class="mb-12">
-          <h2 class="text-3xl md:text-5xl font-black text-white mb-4 tracking-tighter">Architecture Patterns<span class="text-blue-500">.</span></h2>
+          <h2 class="text-3xl md:text-5xl font-black uppercase text-white mb-4 tracking-tighter">Architecture Patterns<span class="text-blue-500">.</span></h2>
           <p class="text-zinc-400 text-lg leading-relaxed">The reusable solutions to common system design challenges. Speak this language fluently.</p>
         </div>
         
         <div class="flex flex-col gap-12">
           <div v-for="group in designPatterns" :key="group.category"
-            class="relative overflow-hidden bg-zinc-900/40 backdrop-blur-md border border-white/5 rounded-3xl p-8">
+            class="relative overflow-hidden bg-zinc-900/40 backdrop-blur-md border border-white/5 rounded-none p-8">
             <div class="flex items-center gap-4 mb-10">
-              <span :class="`px-4 py-1.5 text-[10px] font-black rounded-full uppercase tracking-widest ${group.badge} border border-white/5 shadow-sm`">
+              <span :class="`px-4 py-1.5 text-[10px] font-black rounded-none uppercase tracking-widest ${group.badge} border border-white/5 shadow-sm`">
                 {{ group.category }}
               </span>
             </div>
             
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               <div v-for="item in group.items" :key="item.name"
-                class="group/pattern bg-white/5 border border-white/5 rounded-2xl p-6 hover:bg-white/10 hover:border-white/10 transition-all duration-300">
+                class="group/pattern bg-white/5 border border-white/5 rounded-none p-6 hover:bg-white/10 hover:border-white/10 transition-all duration-300">
                 <div class="flex items-center justify-between mb-4">
-                  <div class="font-black text-white text-base tracking-tight group-hover/pattern:text-blue-400 transition-colors">{{ item.name }}</div>
+                  <div class="font-black text-white text-base tracking-tight group-hover/pattern:text-blue-400 transition-colors uppercase">{{ item.name }}</div>
                   <Icon name="heroicons:arrow-up-right" class="text-zinc-600 transition-transform group-hover/pattern:translate-x-0.5 group-hover/pattern:-translate-y-0.5" />
                 </div>
                 <div class="text-sm text-zinc-500 leading-relaxed font-medium group-hover/pattern:text-zinc-400 transition-colors">{{ item.desc }}</div>
@@ -622,23 +622,23 @@ const mathTips = [
       <!-- ══ CASE STUDIES ══ -->
       <AppSection v-if="activeTab === 'cases'" class="mb-16">
         <div class="mb-12">
-          <h2 class="text-3xl md:text-5xl font-black text-white mb-4 tracking-tighter">Real-World Cases<span class="text-emerald-500">.</span></h2>
+          <h2 class="text-3xl md:text-5xl font-black uppercase text-white mb-4 tracking-tighter">Real-World Cases<span class="text-emerald-500">.</span></h2>
           <p class="text-zinc-400 text-lg leading-relaxed">Reverse-engineering the world's most scalable platforms. Identify the core bottlenecks first.</p>
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div v-for="cs in caseStudies" :key="cs.title"
-            class="group relative overflow-hidden bg-zinc-900/40 backdrop-blur-md border border-white/5 rounded-3xl p-8 hover:border-emerald-500/30 transition-all duration-500">
+            class="group relative overflow-hidden bg-zinc-900/40 backdrop-blur-md border border-white/5 rounded-none p-8 hover:border-emerald-500/30 transition-all duration-500">
             <div class="flex items-start justify-between mb-8">
               <div class="flex items-center gap-4">
-                <div class="w-14 h-14 bg-zinc-800 rounded-2xl flex items-center justify-center border border-white/5 shadow-xl transition-transform group-hover:scale-110">
+                <div class="w-14 h-14 bg-zinc-800 rounded-none flex items-center justify-center border border-white/5 shadow-xl transition-transform group-hover:scale-110">
                   <Icon :name="cs.icon" class="text-white text-2xl" />
                 </div>
                 <div>
-                  <h3 class="text-xl font-black text-white tracking-tight leading-tight group-hover:text-emerald-400 transition-colors">{{ cs.title }}</h3>
+                  <h3 class="text-xl font-black uppercase text-white tracking-tighter leading-tight group-hover:text-emerald-400 transition-colors">{{ cs.title }}</h3>
                   <div class="flex items-center gap-2 mt-1">
-                    <span :class="`text-[8px] px-2 py-0.5 rounded-full font-black uppercase tracking-widest ${cs.diffColor}`">{{ cs.difficulty }}</span>
-                    <span class="text-[8px] text-zinc-500 bg-white/5 border border-white/10 px-2 py-0.5 rounded-full font-black uppercase tracking-widest">{{ cs.tag }}</span>
+                    <span :class="`text-[8px] px-2 py-0.5 rounded-none font-black uppercase tracking-widest ${cs.diffColor}`">{{ cs.difficulty }}</span>
+                    <span class="text-[8px] text-zinc-500 bg-white/5 border border-white/10 px-2 py-0.5 rounded-none font-black uppercase tracking-widest">{{ cs.tag }}</span>
                   </div>
                 </div>
               </div>
@@ -646,7 +646,7 @@ const mathTips = [
 
             <div class="space-y-4 mb-10">
               <div v-for="kp in cs.keyPoints" :key="kp" class="flex items-start gap-3 group/li">
-                <div class="mt-1.5 w-1.5 h-1.5 rounded-full bg-zinc-700 group-hover/li:bg-emerald-500 transition-colors shrink-0" />
+                <div class="mt-1.5 w-1.5 h-1.5 rounded-none bg-zinc-700 group-hover/li:bg-emerald-500 transition-colors shrink-0" />
                 <span class="text-sm text-zinc-500 leading-relaxed font-medium group-hover/li:text-zinc-300 transition-colors">{{ kp }}</span>
               </div>
             </div>
@@ -669,21 +669,21 @@ const mathTips = [
       <AppSection v-if="activeTab === 'checklist'" class="mb-16">
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-12 mb-16">
           <div class="max-w-2xl">
-            <h2 class="text-3xl md:text-5xl font-black text-white mb-4 tracking-tighter">Readiness Metrics<span class="text-amber-500">.</span></h2>
+            <h2 class="text-3xl md:text-5xl font-black uppercase text-white mb-4 tracking-tighter">Readiness Metrics<span class="text-amber-500">.</span></h2>
             <p class="text-zinc-400 text-lg leading-relaxed">Quantify your interview readiness. Aim for 80%+ across all categories before your first mock.</p>
           </div>
           
           <!-- Premium Progress Tracker -->
           <div class="relative group shrink-0">
-            <div class="absolute -inset-1 bg-gradient-to-r from-amber-500 to-orange-600 rounded-3xl blur opacity-20 group-hover:opacity-40 transition duration-500" />
-            <div class="relative bg-zinc-900 border border-white/10 rounded-3xl p-8 min-w-[240px]">
+            <div class="absolute -inset-1 bg-gradient-to-r from-amber-500 to-orange-600 rounded-none blur opacity-20 group-hover:opacity-40 transition duration-500" />
+            <div class="relative bg-zinc-900 border border-white/10 rounded-none p-8 min-w-[240px]">
               <div class="flex items-center justify-between mb-4">
                 <span class="text-[10px] font-black text-zinc-500 uppercase tracking-widest">System Health</span>
                 <span class="text-lg font-black text-white tabular-nums">{{ progress }}%</span>
               </div>
-              <div class="h-4 bg-zinc-800 rounded-full overflow-hidden p-1 shadow-inner">
+              <div class="h-4 bg-zinc-800 rounded-none overflow-hidden p-1 shadow-inner">
                 <div
-                  class="h-full rounded-full bg-gradient-to-r from-amber-500 to-orange-600 transition-all duration-1000 ease-out shadow-lg shadow-amber-500/20"
+                  class="h-full rounded-none bg-gradient-to-r from-amber-500 to-orange-600 transition-all duration-1000 ease-out shadow-lg shadow-amber-500/20"
                   :style="`width: ${progress}%`"
                 />
               </div>
@@ -697,13 +697,13 @@ const mathTips = [
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div v-for="(group, gi) in checkGroups" :key="group.title"
-            class="group relative overflow-hidden bg-zinc-900/40 backdrop-blur-md border border-white/10 rounded-3xl p-8 hover:border-white/20 transition-all">
+            class="group relative overflow-hidden bg-zinc-900/40 backdrop-blur-md border border-white/10 rounded-none p-8 hover:border-white/20 transition-all">
             <div class="flex items-center gap-4 mb-8">
-              <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/5 flex items-center justify-center">
+              <div class="w-10 h-10 rounded-none bg-white/5 border border-white/5 flex items-center justify-center">
                 <Icon :name="group.icon" :class="`text-xl ${group.color}`" />
               </div>
               <div>
-                <h3 class="text-base font-black text-white tracking-tight uppercase leading-none mb-1">{{ group.title }}</h3>
+                <h3 class="text-base font-black text-white tracking-tighter uppercase leading-none mb-1">{{ group.title }}</h3>
                 <span class="text-[10px] font-black text-zinc-500 uppercase tracking-widest">
                   {{ group.items.filter(i => i.done).length }} of {{ group.items.length }} bitwise complete
                 </span>
@@ -725,7 +725,7 @@ const mathTips = [
                 />
                 <div
                   :class="[
-                    'w-6 h-6 rounded-lg border-2 flex items-center justify-center flex-shrink-0 transition-all duration-300',
+                    'w-6 h-6 rounded-none border-2 flex items-center justify-center flex-shrink-0 transition-all duration-300',
                     item.done ? 'bg-amber-500 border-amber-500 scale-110 shadow-lg shadow-amber-500/20' : 'border-zinc-800 bg-white/5 group-hover/label:border-zinc-600 group-hover/label:scale-105'
                   ]"
                 >

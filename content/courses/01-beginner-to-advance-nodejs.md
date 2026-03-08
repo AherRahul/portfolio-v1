@@ -4,6 +4,8 @@ description: "NodeJs is a powerful JavaScript runtime that enables fast, scalabl
 time: "1hr 30 mins"
 tutor: 1
 video: false
+published: true
+datePublished: 2026-02-21
 topics:
   - nodejs
   - javascript

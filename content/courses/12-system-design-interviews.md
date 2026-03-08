@@ -1,6 +1,6 @@
 ---
 title: System Design Interviews
-description: "Comprehensive preparation for System Design Interviews."
+description: "Master the fundamentals of designing scalable, reliable, and high-performance systems. This course teaches you how to approach system design interview problems, break down requirements, and design architectures used in real-world large-scale applications."
 tutor: 1
 video: false
 topics:
@@ -21,7 +21,7 @@ content:
         description: "Course Roadmap - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -34,7 +34,7 @@ content:
         description: "Join the Community - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -55,7 +55,7 @@ content:
         description: "What are System Design Interviews? - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -68,7 +68,7 @@ content:
         description: "Types of System Design Questions - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -81,7 +81,7 @@ content:
         description: "Expectations by Level/YoE - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -102,7 +102,7 @@ content:
         description: "Concepts - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -115,7 +115,7 @@ content:
         description: "Technologies - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -128,7 +128,7 @@ content:
         description: "Tradeoffs - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -141,7 +141,7 @@ content:
         description: "Data Structures - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -162,7 +162,7 @@ content:
         description: "Networking - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -175,7 +175,7 @@ content:
         description: "Caching - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -188,7 +188,7 @@ content:
         description: "API Design - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -201,7 +201,7 @@ content:
         description: "Database Design - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -214,7 +214,7 @@ content:
         description: "Distributed Systems - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -235,7 +235,7 @@ content:
         description: "PostgreSQL - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -248,7 +248,7 @@ content:
         description: "MySQL - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -261,7 +261,7 @@ content:
         description: "MongoDB - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -274,7 +274,7 @@ content:
         description: "Redis - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -287,7 +287,7 @@ content:
         description: "Memcached - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -300,7 +300,7 @@ content:
         description: "DynamoDB - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -313,7 +313,7 @@ content:
         description: "Cassandra - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -326,7 +326,7 @@ content:
         description: "Elasticsearch - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -339,7 +339,7 @@ content:
         description: "Kafka - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -352,7 +352,7 @@ content:
         description: "RabbitMQ - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -365,7 +365,7 @@ content:
         description: "SQS - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -378,7 +378,7 @@ content:
         description: "Flink - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -391,7 +391,7 @@ content:
         description: "Spark - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -404,7 +404,7 @@ content:
         description: "S3 - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -417,7 +417,7 @@ content:
         description: "AWS Lambda - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -430,7 +430,7 @@ content:
         description: "Nginx - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -443,7 +443,7 @@ content:
         description: "Zookeeper - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -456,7 +456,7 @@ content:
         description: "Docker - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -469,7 +469,7 @@ content:
         description: "Kubernetes - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -482,7 +482,7 @@ content:
         description: "Prometheus - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -503,7 +503,7 @@ content:
         description: "Realtime Updates - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -516,7 +516,7 @@ content:
         description: "Fanout Pattern - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -529,7 +529,7 @@ content:
         description: "High Read Traffic - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -542,7 +542,7 @@ content:
         description: "High Write Traffic - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -555,7 +555,7 @@ content:
         description: "Handling Hot Keys - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -568,7 +568,7 @@ content:
         description: "Handling Traffic Spikes - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -581,7 +581,7 @@ content:
         description: "Handling Large Files - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -594,7 +594,7 @@ content:
         description: "Media Streaming - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -607,7 +607,7 @@ content:
         description: "Handling Location Data - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -620,7 +620,7 @@ content:
         description: "Generating Unique IDs - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -633,7 +633,7 @@ content:
         description: "Distributed Counting - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -646,7 +646,7 @@ content:
         description: "Leader Election - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -659,7 +659,7 @@ content:
         description: "Failure Detection - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -672,7 +672,7 @@ content:
         description: "Handling Failures - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -685,7 +685,7 @@ content:
         description: "Recommendations - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -698,7 +698,7 @@ content:
         description: "Multi-Tenancy - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -711,7 +711,7 @@ content:
         description: "Multi-Region Architecture - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -724,7 +724,7 @@ content:
         description: "Deduplicating Data - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -737,7 +737,7 @@ content:
         description: "Distributed Transactions - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -750,7 +750,7 @@ content:
         description: "Removing Single Points of Failure - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -771,7 +771,7 @@ content:
         description: "Answering Framework - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -784,7 +784,7 @@ content:
         description: "Estimation Cheatsheet - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -797,7 +797,7 @@ content:
         description: "Diagramming Tips - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -810,7 +810,7 @@ content:
         description: "Choosing the Right Database - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -831,7 +831,7 @@ content:
         description: "Design URL Shortener - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -844,7 +844,7 @@ content:
         description: "Design Pastebin - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -865,7 +865,7 @@ content:
         description: "Design WhatsApp - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -878,7 +878,7 @@ content:
         description: "Design Slack - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -891,7 +891,7 @@ content:
         description: "Design Live Comments - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -904,7 +904,7 @@ content:
         description: "Design Google Docs - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -917,7 +917,7 @@ content:
         description: "Design Zoom - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -938,7 +938,7 @@ content:
         description: "Design Instagram - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -951,7 +951,7 @@ content:
         description: "Design FB News Feed - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -964,7 +964,7 @@ content:
         description: "Design TikTok - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -977,7 +977,7 @@ content:
         description: "Design Reddit - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -990,7 +990,7 @@ content:
         description: "Design Tinder - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1011,7 +1011,7 @@ content:
         description: "Design Spotify - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1024,7 +1024,7 @@ content:
         description: "Design YouTube - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1037,7 +1037,7 @@ content:
         description: "Design Netflix - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1050,7 +1050,7 @@ content:
         description: "Design Google Drive - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1063,7 +1063,7 @@ content:
         description: "Design Gmail - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1076,7 +1076,7 @@ content:
         description: "Design Twitch - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1097,7 +1097,7 @@ content:
         description: "Design Airbnb - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1110,7 +1110,7 @@ content:
         description: "Design Food Delivery Service - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1123,7 +1123,7 @@ content:
         description: "Design Uber - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1136,7 +1136,7 @@ content:
         description: "Design Google Maps - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1157,7 +1157,7 @@ content:
         description: "Design Search Autocomplete System - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1170,7 +1170,7 @@ content:
         description: "Design News Aggregator - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1183,7 +1183,7 @@ content:
         description: "Design Web Crawler - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1196,7 +1196,7 @@ content:
         description: "Design Google Search - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1209,7 +1209,7 @@ content:
         description: "Design Ad Click Aggregator - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1230,7 +1230,7 @@ content:
         description: "Design Amazon - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1243,7 +1243,7 @@ content:
         description: "Design Shopify - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1256,7 +1256,7 @@ content:
         description: "Design Flash Sale - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1269,7 +1269,7 @@ content:
         description: "Design Online Auction System - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1282,7 +1282,7 @@ content:
         description: "Design Movie Booking System - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1303,7 +1303,7 @@ content:
         description: "Design Payment System - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1316,7 +1316,7 @@ content:
         description: "Design Digital Wallet - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1329,7 +1329,7 @@ content:
         description: "Design Stock Exchange - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1350,7 +1350,7 @@ content:
         description: "Design Load Balancer - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1363,7 +1363,7 @@ content:
         description: "Design API Gateway - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1376,7 +1376,7 @@ content:
         description: "Design Rate Limiter - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1389,7 +1389,7 @@ content:
         description: "Design Key-Value Store - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1402,7 +1402,7 @@ content:
         description: "Design Distributed Cache - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1415,7 +1415,7 @@ content:
         description: "Design CDN - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1428,7 +1428,7 @@ content:
         description: "Design Object Storage like S3 - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1441,7 +1441,7 @@ content:
         description: "Design Messaging Queue - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1454,7 +1454,7 @@ content:
         description: "Design Time Series Database - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1467,7 +1467,7 @@ content:
         description: "Design Locking Service - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1488,7 +1488,7 @@ content:
         description: "Design Likes Counting System - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1501,7 +1501,7 @@ content:
         description: "Design Real Time Leaderboard - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1514,7 +1514,7 @@ content:
         description: "Design Top K - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1535,7 +1535,7 @@ content:
         description: "Design Notification Service - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1548,7 +1548,7 @@ content:
         description: "Design Job Scheduler - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1561,7 +1561,7 @@ content:
         description: "Design CI/CD Pipeline - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1574,7 +1574,7 @@ content:
         description: "Design Monitoring and Alerting System - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1595,7 +1595,7 @@ content:
         description: "Design LeetCode - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1608,7 +1608,7 @@ content:
         description: "Design Calendar System - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1621,7 +1621,7 @@ content:
         description: "Design Online Chess - Comprehensive guide for System Design Interviews."
         topics:
           - system-design-interviews
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970395/Portfolio/systemDesignInterview/ChatGPT_Image_Mar_8_2026_05_15_54_PM_nnw054.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false

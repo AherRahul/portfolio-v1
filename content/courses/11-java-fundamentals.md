@@ -27,7 +27,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: what-is-java
@@ -42,7 +42,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: history-of-java
@@ -57,7 +57,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: features-of-java
@@ -72,7 +72,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: jdk-jre-jvm
@@ -88,7 +88,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: setting-up-environment
@@ -104,7 +104,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: first-java-program
@@ -119,7 +119,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: how-java-works
@@ -142,7 +142,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: variables-and-data-types
@@ -157,7 +157,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: primitive-types
@@ -172,7 +172,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: reference-types
@@ -187,7 +187,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: type-casting
@@ -202,7 +202,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: operators
@@ -217,7 +217,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: input-output
@@ -232,7 +232,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: comments
@@ -247,7 +247,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: naming-conventions
@@ -270,7 +270,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: if-else
@@ -285,7 +285,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: switch-statement
@@ -300,7 +300,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: for-loop
@@ -315,7 +315,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: while-loop
@@ -330,7 +330,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: do-while-loop
@@ -345,7 +345,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: enhanced-for-loop
@@ -360,7 +360,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: break-continue
@@ -375,7 +375,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: labeled-statements
@@ -398,7 +398,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: arrays-basics
@@ -413,7 +413,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: array-operations
@@ -428,7 +428,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: multidimensional-arrays
@@ -443,7 +443,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: arrays-class
@@ -458,7 +458,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: copying-arrays
@@ -481,7 +481,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: string-basics
@@ -496,7 +496,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: string-methods
@@ -511,7 +511,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: string-immutability
@@ -526,7 +526,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: stringbuilder
@@ -541,7 +541,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: stringbuffer
@@ -556,7 +556,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: string-formatting
@@ -571,7 +571,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: string-comparison
@@ -586,7 +586,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: regular-expressions
@@ -609,7 +609,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: methods-basics
@@ -624,7 +624,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: method-parameters
@@ -639,7 +639,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: return-types
@@ -654,7 +654,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: method-overloading
@@ -669,7 +669,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: variable-arguments
@@ -684,7 +684,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: recursion
@@ -699,7 +699,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: pass-by-value
@@ -723,7 +723,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: classes-objects
@@ -739,7 +739,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: constructors
@@ -755,7 +755,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: this-keyword
@@ -771,7 +771,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: access-modifiers
@@ -787,7 +787,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: getters-setters
@@ -803,7 +803,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: static-keyword
@@ -819,7 +819,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: final-keyword
@@ -835,7 +835,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: initializer-blocks
@@ -851,7 +851,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: inner-classes
@@ -867,7 +867,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: anonymous-classes
@@ -883,7 +883,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: record-classes
@@ -899,7 +899,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: sealed-classes
@@ -922,7 +922,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: inheritance-basics
@@ -937,7 +937,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: extends-keyword
@@ -952,7 +952,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: super-keyword
@@ -967,7 +967,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: method-overriding
@@ -982,7 +982,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: constructor-chaining
@@ -997,7 +997,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: object-class
@@ -1012,7 +1012,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: instanceof-operator
@@ -1035,7 +1035,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: polymorphism-basics
@@ -1050,7 +1050,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: compile-time-polymorphism
@@ -1065,7 +1065,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: runtime-polymorphism
@@ -1080,7 +1080,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: dynamic-method-dispatch
@@ -1095,7 +1095,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: covariant-return-types
@@ -1118,7 +1118,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: abstract-classes
@@ -1133,7 +1133,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: abstract-methods
@@ -1148,7 +1148,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: interfaces
@@ -1163,7 +1163,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: default-methods
@@ -1178,7 +1178,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: static-interface-methods
@@ -1193,7 +1193,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: private-interface-methods
@@ -1208,7 +1208,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: functional-interfaces
@@ -1223,7 +1223,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: marker-interfaces
@@ -1246,7 +1246,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: encapsulation-basics
@@ -1261,7 +1261,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: data-hiding
@@ -1276,7 +1276,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: immutable-classes
@@ -1299,7 +1299,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: packages
@@ -1314,7 +1314,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: import-statement
@@ -1329,7 +1329,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: static-import
@@ -1344,7 +1344,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: java-modules-jpms
@@ -1359,7 +1359,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: module-infojava
@@ -1382,7 +1382,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: exception-basics
@@ -1397,7 +1397,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: try-catch-block
@@ -1413,7 +1413,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: multiple-catch-blocks
@@ -1428,7 +1428,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: finally-block
@@ -1443,7 +1443,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: throw-keyword
@@ -1458,7 +1458,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: throws-keyword
@@ -1474,7 +1474,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: checked-vs-unchecked-exceptions
@@ -1489,7 +1489,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: custom-exceptions
@@ -1504,7 +1504,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: try-with-resources
@@ -1519,7 +1519,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: exception-chaining
@@ -1543,7 +1543,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: collections-overview
@@ -1559,7 +1559,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: collection-interface
@@ -1574,7 +1574,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: list-interface
@@ -1589,7 +1589,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: arraylist
@@ -1604,7 +1604,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: linkedlist
@@ -1619,7 +1619,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: vector
@@ -1634,7 +1634,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: stack
@@ -1649,7 +1649,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: set-interface
@@ -1664,7 +1664,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: hashset
@@ -1679,7 +1679,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: linkedhashset
@@ -1694,7 +1694,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: treeset
@@ -1709,7 +1709,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: queue-interface
@@ -1724,7 +1724,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: priorityqueue
@@ -1739,7 +1739,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: deque-interface
@@ -1754,7 +1754,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: arraydeque
@@ -1769,7 +1769,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: map-interface
@@ -1784,7 +1784,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: hashmap
@@ -1799,7 +1799,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: linkedhashmap
@@ -1814,7 +1814,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: treemap
@@ -1829,7 +1829,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: hashtable
@@ -1845,7 +1845,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: concurrent-collections
@@ -1861,7 +1861,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: collections-utility-class
@@ -1877,7 +1877,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: comparable-comparator
@@ -1893,7 +1893,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: iterator-listiterator
@@ -1916,7 +1916,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: generics-basics
@@ -1931,7 +1931,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: generic-classes
@@ -1946,7 +1946,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: generic-methods
@@ -1961,7 +1961,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: bounded-type-parameters
@@ -1976,7 +1976,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: wildcards
@@ -1991,7 +1991,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: type-erasure
@@ -2006,7 +2006,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: generic-restrictions
@@ -2029,7 +2029,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: lambda-expressions
@@ -2044,7 +2044,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: method-references
@@ -2059,7 +2059,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: streams-basics
@@ -2074,7 +2074,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: stream-operations
@@ -2090,7 +2090,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: intermediate-operations
@@ -2105,7 +2105,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: terminal-operations
@@ -2120,7 +2120,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: collectors
@@ -2135,7 +2135,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: parallel-streams
@@ -2150,7 +2150,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: optional-class
@@ -2173,7 +2173,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: file-class
@@ -2189,7 +2189,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: fileinputstream-fileoutputstream
@@ -2204,7 +2204,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: filereader-filewriter
@@ -2220,7 +2220,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: bufferedreader-bufferedwriter
@@ -2235,7 +2235,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: printwriter
@@ -2250,7 +2250,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: scanner-class
@@ -2265,7 +2265,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: serialization
@@ -2280,7 +2280,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: deserialization
@@ -2295,7 +2295,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: nio-package
@@ -2310,7 +2310,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: paths-files
@@ -2325,7 +2325,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: file-channels
@@ -2348,7 +2348,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: threads-basics
@@ -2363,7 +2363,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: creating-threads
@@ -2378,7 +2378,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: thread-lifecycle
@@ -2393,7 +2393,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: thread-methods
@@ -2408,7 +2408,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: thread-priority
@@ -2423,7 +2423,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: synchronization
@@ -2438,7 +2438,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: synchronized-blocks
@@ -2453,7 +2453,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: volatile-keyword
@@ -2468,7 +2468,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: deadlock
@@ -2483,7 +2483,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: thread-communication
@@ -2498,7 +2498,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: thread-pools
@@ -2513,7 +2513,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: executor-framework
@@ -2528,7 +2528,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: callable-future
@@ -2543,7 +2543,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: completablefuture
@@ -2558,7 +2558,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: locks-conditions
@@ -2573,7 +2573,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: reentrantlock
@@ -2588,7 +2588,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: readwritelock
@@ -2603,7 +2603,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: semaphore
@@ -2618,7 +2618,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: countdownlatch
@@ -2633,7 +2633,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: cyclicbarrier
@@ -2648,7 +2648,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: forkjoin-framework
@@ -2663,7 +2663,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: atomic-classes
@@ -2679,7 +2679,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: virtual-threads-project-loom
@@ -2702,7 +2702,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: memory-model-basics
@@ -2717,7 +2717,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: heap-stack
@@ -2732,7 +2732,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: garbage-collection
@@ -2747,7 +2747,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: gc-algorithms
@@ -2762,7 +2762,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: memory-leaks
@@ -2778,7 +2778,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: weak-soft-phantom-references
@@ -2801,7 +2801,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: annotations-basics
@@ -2816,7 +2816,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: built-in-annotations
@@ -2831,7 +2831,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: custom-annotations
@@ -2846,7 +2846,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: retention-policy
@@ -2861,7 +2861,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: annotation-processing
@@ -2884,7 +2884,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: reflection-basics
@@ -2899,7 +2899,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: class-object
@@ -2914,7 +2914,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: inspecting-classes
@@ -2929,7 +2929,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: accessing-fields-methods
@@ -2945,7 +2945,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: creating-instances-dynamically
@@ -2960,7 +2960,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: reflection-use-cases
@@ -2983,7 +2983,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: networking-basics
@@ -2998,7 +2998,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: inetaddress
@@ -3013,7 +3013,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: url-class
@@ -3028,7 +3028,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: urlconnection
@@ -3043,7 +3043,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: sockets
@@ -3058,7 +3058,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: server-sockets
@@ -3073,7 +3073,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: datagram-sockets-udp
@@ -3088,7 +3088,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: http-client
@@ -3111,7 +3111,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: jdbc-basics
@@ -3126,7 +3126,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: jdbc-drivers
@@ -3141,7 +3141,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: connecting-to-database
@@ -3156,7 +3156,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: statement-interface
@@ -3171,7 +3171,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: preparedstatement
@@ -3186,7 +3186,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: callablestatement
@@ -3201,7 +3201,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: resultset
@@ -3216,7 +3216,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: transactions
@@ -3231,7 +3231,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: connection-pooling
@@ -3254,7 +3254,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: date-time-overview
@@ -3269,7 +3269,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: localdate
@@ -3284,7 +3284,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: localtime
@@ -3299,7 +3299,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: localdatetime
@@ -3314,7 +3314,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: zoneddatetime
@@ -3329,7 +3329,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: instant
@@ -3344,7 +3344,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: duration-period
@@ -3359,7 +3359,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: datetimeformatter
@@ -3383,7 +3383,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: var-keyword-java-10
@@ -3399,7 +3399,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: text-blocks-java-15
@@ -3415,7 +3415,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: switch-expressions-java-14
@@ -3431,7 +3431,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: pattern-matching-for-instanceof-java-16
@@ -3447,7 +3447,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: pattern-matching-for-switch-java-21
@@ -3462,7 +3462,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: records-java-16
@@ -3478,7 +3478,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: sealed-classes-interfaces-java-17
@@ -3494,7 +3494,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: unnamed-patterns-java-22
@@ -3510,7 +3510,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: sequenced-collections-java-21
@@ -3526,7 +3526,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: string-templates-java-21
@@ -3549,7 +3549,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: coding-standards
@@ -3564,7 +3564,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: effective-java-tips
@@ -3579,7 +3579,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: clean-code-principles
@@ -3594,7 +3594,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: common-pitfalls
@@ -3610,7 +3610,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: performance-optimization
@@ -3625,7 +3625,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: testing-basics
@@ -3640,7 +3640,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: junit-testing
@@ -3655,7 +3655,7 @@ content:
         topics:
           - java
         duration: 5 mins read
-        photo_url: ""
+        photo_url: "https://res.cloudinary.com/duojkrgue/image/upload/v1772969207/Portfolio/javaCourse/Borcelle_lh9vhb.png"
         auther_name: Rahul Aher
         is_on_youtube: false
         _path: debugging-techniques

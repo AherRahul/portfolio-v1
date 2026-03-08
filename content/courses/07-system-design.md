@@ -21,7 +21,7 @@ content:
         description: "Course Introduction - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -42,7 +42,7 @@ content:
         description: "Explore the fundamentals of system design, its key components, and essential questions to build scalable, reliable, and efficient software systems."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -55,7 +55,7 @@ content:
         description: "Top 30 System Design Concepts - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -76,7 +76,7 @@ content:
         description: "Learn how to design scalable systems that grow seamlessly with demand using vertical and horizontal scaling, caching, and database optimization strategies."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -89,7 +89,7 @@ content:
         description: "Learn how to design highly available systems that remain operational despite failures using redundancy, load balancing, and failover strategies."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -102,7 +102,7 @@ content:
         description: "Reliability - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -115,7 +115,7 @@ content:
         description: "Single Point of Failure (SPOF) - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -128,7 +128,7 @@ content:
         description: "Latency vs Throughput vs Bandwidth - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -141,7 +141,7 @@ content:
         description: "Consistent Hashing - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -154,7 +154,7 @@ content:
         description: "CAP Theorem - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -167,7 +167,7 @@ content:
         description: "Consistency Models - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -180,7 +180,7 @@ content:
         description: "Quiz - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -201,7 +201,7 @@ content:
         description: "OSI Model - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -214,7 +214,7 @@ content:
         description: "IP Address - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -227,7 +227,7 @@ content:
         description: "TCP vs UDP - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -240,7 +240,7 @@ content:
         description: "HTTP/HTTPS - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -253,7 +253,7 @@ content:
         description: "Domain Name System (DNS) - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -266,7 +266,7 @@ content:
         description: "Checksums - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -279,7 +279,7 @@ content:
         description: "Proxy vs Reverse Proxy - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -292,7 +292,7 @@ content:
         description: "Quiz - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -313,7 +313,7 @@ content:
         description: "What are Load Balancers? - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -326,7 +326,7 @@ content:
         description: "Load Balancing Algorithms - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -339,7 +339,7 @@ content:
         description: "DNS Load Balancing - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -352,7 +352,7 @@ content:
         description: "Anycast Routing - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -373,7 +373,7 @@ content:
         description: "What is an API? - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -386,7 +386,7 @@ content:
         description: "Idempotency - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -399,7 +399,7 @@ content:
         description: "Data Formats - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -412,7 +412,7 @@ content:
         description: "API Architectural Styles - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -425,7 +425,7 @@ content:
         description: "REST API Design - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -438,7 +438,7 @@ content:
         description: "GraphQL Deep Dive - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -451,7 +451,7 @@ content:
         description: "gRPC Deep Dive - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -464,7 +464,7 @@ content:
         description: "Quiz - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -477,7 +477,7 @@ content:
         description: "API Gateways - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -490,7 +490,7 @@ content:
         description: "Rate Limiting - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -503,7 +503,7 @@ content:
         description: "Authentication vs Authorization - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -516,7 +516,7 @@ content:
         description: "Session vs Token Based Auth - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -529,7 +529,7 @@ content:
         description: "JWT - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -542,7 +542,7 @@ content:
         description: "OAuth / OAuth2 - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -555,7 +555,7 @@ content:
         description: "Single Sign-On (SSO) - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -576,7 +576,7 @@ content:
         description: "Long Polling - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -589,7 +589,7 @@ content:
         description: "WebSockets - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -602,7 +602,7 @@ content:
         description: "Server-Sent Events (SSE) - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -615,7 +615,7 @@ content:
         description: "Webhooks - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -628,7 +628,7 @@ content:
         description: "WebRTC - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -641,7 +641,7 @@ content:
         description: "Sync vs Async Communication - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -654,7 +654,7 @@ content:
         description: "Message Queues - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -667,7 +667,7 @@ content:
         description: "Pub/Sub - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -680,7 +680,7 @@ content:
         description: "Change Data Capture (CDC) - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -693,7 +693,7 @@ content:
         description: "Delivery Semantics - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -706,7 +706,7 @@ content:
         description: "Dead Letter Queues - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -727,7 +727,7 @@ content:
         description: "What is Caching? - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -740,7 +740,7 @@ content:
         description: "Cache-Aside Pattern - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -753,7 +753,7 @@ content:
         description: "Read-Through vs Write-Through - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -766,7 +766,7 @@ content:
         description: "Write-Behind Cache - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -779,7 +779,7 @@ content:
         description: "Caching Strategies Summary - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -792,7 +792,7 @@ content:
         description: "Cache Eviction Policies - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -805,7 +805,7 @@ content:
         description: "Content Delivery Network (CDN) - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -818,7 +818,7 @@ content:
         description: "Distributed Cache Architecture - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -831,7 +831,7 @@ content:
         description: "Cache Invalidation - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -844,7 +844,7 @@ content:
         description: "Cache Stampede - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -857,7 +857,7 @@ content:
         description: "Cache Warming - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -870,7 +870,7 @@ content:
         description: "Quiz - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -891,7 +891,7 @@ content:
         description: "Database Types - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -904,7 +904,7 @@ content:
         description: "SQL vs NoSQL - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -917,7 +917,7 @@ content:
         description: "ACID Transactions - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -930,7 +930,7 @@ content:
         description: "Relational Databases - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -943,7 +943,7 @@ content:
         description: "Document Databases - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -956,7 +956,7 @@ content:
         description: "Key-Value Stores - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -969,7 +969,7 @@ content:
         description: "Wide Column Databases - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -982,7 +982,7 @@ content:
         description: "Graph Databases - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -995,7 +995,7 @@ content:
         description: "Time Series Databases - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1008,7 +1008,7 @@ content:
         description: "Full-Text Search Engines - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1021,7 +1021,7 @@ content:
         description: "Vector Databases - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1034,7 +1034,7 @@ content:
         description: "Bloom Filters - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1047,7 +1047,7 @@ content:
         description: "B-Trees and B+ Trees - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1060,7 +1060,7 @@ content:
         description: "LSM Trees - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1073,7 +1073,7 @@ content:
         description: "How Databases Guarantee Durability - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1086,7 +1086,7 @@ content:
         description: "Quiz - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1107,7 +1107,7 @@ content:
         description: "Indexing - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1120,7 +1120,7 @@ content:
         description: "Query Optimization - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1133,7 +1133,7 @@ content:
         description: "Read Replicas - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1146,7 +1146,7 @@ content:
         description: "Denormalization - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1159,7 +1159,7 @@ content:
         description: "Materialized Views - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1172,7 +1172,7 @@ content:
         description: "Connection Pooling - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1185,7 +1185,7 @@ content:
         description: "Vertical Partitioning - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1198,7 +1198,7 @@ content:
         description: "Sharding - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1211,7 +1211,7 @@ content:
         description: "Sharding vs Partitioning - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1224,7 +1224,7 @@ content:
         description: "Data Compression - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1237,7 +1237,7 @@ content:
         description: "Quiz - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1258,7 +1258,7 @@ content:
         description: "Block vs File vs Object Storage - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1271,7 +1271,7 @@ content:
         description: "Object Storage - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1284,7 +1284,7 @@ content:
         description: "Distributed File Systems - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1297,7 +1297,7 @@ content:
         description: "Erasure Coding - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1318,7 +1318,7 @@ content:
         description: "Vertical vs Horizontal Scaling - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1331,7 +1331,7 @@ content:
         description: "Concurrency vs Parallelism - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1344,7 +1344,7 @@ content:
         description: "Push vs Pull Architecture - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1357,7 +1357,7 @@ content:
         description: "Stateful vs Stateless Architecture - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1370,7 +1370,7 @@ content:
         description: "Long Polling vs WebSockets - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1383,7 +1383,7 @@ content:
         description: "Strong vs Eventual Consistency - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1396,7 +1396,7 @@ content:
         description: "Quiz - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1417,7 +1417,7 @@ content:
         description: "Challenges of Distribution - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1430,7 +1430,7 @@ content:
         description: "Network Partitions - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1443,7 +1443,7 @@ content:
         description: "Split Brain Problem - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1456,7 +1456,7 @@ content:
         description: "Heartbeats - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1469,7 +1469,7 @@ content:
         description: "Handling Failures in Distributed Systems - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1482,7 +1482,7 @@ content:
         description: "Clock Synchronization Problem - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1495,7 +1495,7 @@ content:
         description: "Logical Clocks - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1508,7 +1508,7 @@ content:
         description: "Lamport Timestamps - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1521,7 +1521,7 @@ content:
         description: "Vector Clocks - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1534,7 +1534,7 @@ content:
         description: "Consensus Algorithms - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1547,7 +1547,7 @@ content:
         description: "Paxos Algorithm - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1560,7 +1560,7 @@ content:
         description: "Raft Algorithm - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1573,7 +1573,7 @@ content:
         description: "Leader Election - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1586,7 +1586,7 @@ content:
         description: "Gossip Protocol - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1607,7 +1607,7 @@ content:
         description: "The Problem with Distributed Transactions - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1620,7 +1620,7 @@ content:
         description: "Two-Phase Commit (2PC) - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1633,7 +1633,7 @@ content:
         description: "Three-Phase Commit (3PC) - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1646,7 +1646,7 @@ content:
         description: "SAGA Pattern - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1659,7 +1659,7 @@ content:
         description: "Outbox Pattern - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1680,7 +1680,7 @@ content:
         description: "Geohash - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1693,7 +1693,7 @@ content:
         description: "Quad Trees - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1706,7 +1706,7 @@ content:
         description: "R-Trees - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1719,7 +1719,7 @@ content:
         description: "Skip Lists - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1732,7 +1732,7 @@ content:
         description: "Merkle Trees - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1745,7 +1745,7 @@ content:
         description: "HyperLogLog - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1758,7 +1758,7 @@ content:
         description: "Count-Min Sketch - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1779,7 +1779,7 @@ content:
         description: "Client-Server Architecture - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1792,7 +1792,7 @@ content:
         description: "Monolithic Architecture - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1805,7 +1805,7 @@ content:
         description: "Microservices Architecture - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1818,7 +1818,7 @@ content:
         description: "Serverless Architecture - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1831,7 +1831,7 @@ content:
         description: "Event-Driven Architecture - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1844,7 +1844,7 @@ content:
         description: "CQRS - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1857,7 +1857,7 @@ content:
         description: "Event Sourcing - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1870,7 +1870,7 @@ content:
         description: "Peer-to-Peer (P2P) - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1883,7 +1883,7 @@ content:
         description: "Quiz - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1904,7 +1904,7 @@ content:
         description: "Service Discovery - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1917,7 +1917,7 @@ content:
         description: "API Gateway Pattern - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1930,7 +1930,7 @@ content:
         description: "Backend for Frontend (BFF) - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1943,7 +1943,7 @@ content:
         description: "Sidecar Pattern - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1956,7 +1956,7 @@ content:
         description: "Circuit Breaker Pattern - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1969,7 +1969,7 @@ content:
         description: "Bulkhead Pattern - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1982,7 +1982,7 @@ content:
         description: "Strangler Fig Pattern - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1995,7 +1995,7 @@ content:
         description: "Service Mesh - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -2008,7 +2008,7 @@ content:
         description: "Quiz - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -2029,7 +2029,7 @@ content:
         description: "Batch vs Stream Processing - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -2042,7 +2042,7 @@ content:
         description: "MapReduce - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -2055,7 +2055,7 @@ content:
         description: "ETL Pipelines - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -2068,7 +2068,7 @@ content:
         description: "Data Lakes - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -2081,7 +2081,7 @@ content:
         description: "Data Warehousing - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -2094,7 +2094,7 @@ content:
         description: "Data Lakehouse - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -2107,7 +2107,7 @@ content:
         description: "Lambda Architecture - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -2120,7 +2120,7 @@ content:
         description: "Kappa Architecture - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -2133,7 +2133,7 @@ content:
         description: "Streaming Engines - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -2146,7 +2146,7 @@ content:
         description: "Quiz - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -2167,7 +2167,7 @@ content:
         description: "Three Pillars of Observability - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -2180,7 +2180,7 @@ content:
         description: "Logging Best Practices - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -2193,7 +2193,7 @@ content:
         description: "Log Aggregation - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -2206,7 +2206,7 @@ content:
         description: "Correlation IDs - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -2219,7 +2219,7 @@ content:
         description: "Metrics & Instrumentation - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -2232,7 +2232,7 @@ content:
         description: "Alert & Monitoring - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -2245,7 +2245,7 @@ content:
         description: "Dashboards & Runbooks - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -2258,7 +2258,7 @@ content:
         description: "Distributed Tracing - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -2271,7 +2271,7 @@ content:
         description: "Quiz - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -2292,7 +2292,7 @@ content:
         description: "SSL/TLS Deep Dive - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -2305,7 +2305,7 @@ content:
         description: "RBAC - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -2318,7 +2318,7 @@ content:
         description: "Secrets Management - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -2331,7 +2331,7 @@ content:
         description: "SAML - Comprehensive guide for System Design Fundamentals."
         topics:
           - system-design
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769695655/Portfolio/backendSystemDesign/backendSystemDesign_ma7bhg.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false

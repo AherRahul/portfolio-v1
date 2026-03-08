@@ -21,7 +21,7 @@ content:
         description: "What Is Git? - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -34,7 +34,7 @@ content:
         description: "Version Control Basics - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -47,7 +47,7 @@ content:
         description: "Distributed vs Centralized VCS - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -60,7 +60,7 @@ content:
         description: "History of Git - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -73,7 +73,7 @@ content:
         description: "Course Setup - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -86,7 +86,7 @@ content:
         description: "Git Configuration - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -107,7 +107,7 @@ content:
         description: "Creating a Repository - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -120,7 +120,7 @@ content:
         description: "Cloning a Repository - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -133,7 +133,7 @@ content:
         description: "The Staging Area - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -146,7 +146,7 @@ content:
         description: "Adding Files - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -159,7 +159,7 @@ content:
         description: "Committing Changes - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -172,7 +172,7 @@ content:
         description: "Viewing Status - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -185,7 +185,7 @@ content:
         description: "Viewing Differences - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -198,7 +198,7 @@ content:
         description: "Git Workflow Summary - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -211,7 +211,7 @@ content:
         description: "git add - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -224,7 +224,7 @@ content:
         description: "git commit - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -237,7 +237,7 @@ content:
         description: "git status - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -250,7 +250,7 @@ content:
         description: "git diff - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -271,7 +271,7 @@ content:
         description: "Removing Files - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -284,7 +284,7 @@ content:
         description: "Renaming Files - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -297,7 +297,7 @@ content:
         description: "File Permissions - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -310,7 +310,7 @@ content:
         description: "git rm - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -323,7 +323,7 @@ content:
         description: "git mv - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -336,7 +336,7 @@ content:
         description: "git clean - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -349,7 +349,7 @@ content:
         description: ".gitignore - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -362,7 +362,7 @@ content:
         description: ".gitattributes - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -383,7 +383,7 @@ content:
         description: "git log - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -396,7 +396,7 @@ content:
         description: "git show - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -409,7 +409,7 @@ content:
         description: "git blame - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -422,7 +422,7 @@ content:
         description: "git bisect - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -435,7 +435,7 @@ content:
         description: "Searching Git History - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -448,7 +448,7 @@ content:
         description: "git shortlog - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -461,7 +461,7 @@ content:
         description: "git blame - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -474,7 +474,7 @@ content:
         description: "git show - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -487,7 +487,7 @@ content:
         description: "Git Log Formatting - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -508,7 +508,7 @@ content:
         description: "git restore - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -521,7 +521,7 @@ content:
         description: "git reset - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -534,7 +534,7 @@ content:
         description: "git revert - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -547,7 +547,7 @@ content:
         description: "Undoing Changes Overview - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -560,7 +560,7 @@ content:
         description: "Reset Modes - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -573,7 +573,7 @@ content:
         description: "git reflog - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -586,7 +586,7 @@ content:
         description: "git commit --amend - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -599,7 +599,7 @@ content:
         description: "git checkout (files) - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -612,7 +612,7 @@ content:
         description: "git reset Deep Dive - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -625,7 +625,7 @@ content:
         description: "git revert Deep Dive - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -646,7 +646,7 @@ content:
         description: "Branching Basics - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -659,7 +659,7 @@ content:
         description: "Creating Branches - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -672,7 +672,7 @@ content:
         description: "git switch - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -685,7 +685,7 @@ content:
         description: "git checkout (branches) - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -698,7 +698,7 @@ content:
         description: "Deleting Branches - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -711,7 +711,7 @@ content:
         description: "Renaming Branches - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -724,7 +724,7 @@ content:
         description: "Branch Listing - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -737,7 +737,7 @@ content:
         description: "HEAD Pointer - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -750,7 +750,7 @@ content:
         description: "Detached HEAD State - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -771,7 +771,7 @@ content:
         description: "Merging Basics - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -784,7 +784,7 @@ content:
         description: "git merge - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -797,7 +797,7 @@ content:
         description: "Fast-Forward Merge - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -810,7 +810,7 @@ content:
         description: "Three-Way Merge - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -823,7 +823,7 @@ content:
         description: "Resolving Conflicts - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -836,7 +836,7 @@ content:
         description: "Aborting a Merge - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -849,7 +849,7 @@ content:
         description: "Merge Strategies - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -862,7 +862,7 @@ content:
         description: "git rerere - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -875,7 +875,7 @@ content:
         description: "Merge Commits - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -896,7 +896,7 @@ content:
         description: "Rebasing Basics - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -909,7 +909,7 @@ content:
         description: "git rebase - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -922,7 +922,7 @@ content:
         description: "Interactive Rebase - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -935,7 +935,7 @@ content:
         description: "Rebase vs Merge - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -948,7 +948,7 @@ content:
         description: "Squashing Commits - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -961,7 +961,7 @@ content:
         description: "Rebase Conflicts - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -974,7 +974,7 @@ content:
         description: "Rebase --onto - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -987,7 +987,7 @@ content:
         description: "Reordering Commits - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1000,7 +1000,7 @@ content:
         description: "Editing Commits - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1013,7 +1013,7 @@ content:
         description: "Splitting Commits - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1034,7 +1034,7 @@ content:
         description: "Remote Basics - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1047,7 +1047,7 @@ content:
         description: "git remote - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1060,7 +1060,7 @@ content:
         description: "git fetch - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1073,7 +1073,7 @@ content:
         description: "git pull - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1086,7 +1086,7 @@ content:
         description: "git push - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1099,7 +1099,7 @@ content:
         description: "Upstream Tracking - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1112,7 +1112,7 @@ content:
         description: "Remote Branches - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1125,7 +1125,7 @@ content:
         description: "git remote Advanced - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1146,7 +1146,7 @@ content:
         description: "GitHub Pull Requests - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1159,7 +1159,7 @@ content:
         description: "Forking Workflow - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1172,7 +1172,7 @@ content:
         description: "GitHub Fork - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1185,7 +1185,7 @@ content:
         description: "GitHub Issues - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1198,7 +1198,7 @@ content:
         description: "GitHub Releases - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1211,7 +1211,7 @@ content:
         description: "GitHub CLI (gh) - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1224,7 +1224,7 @@ content:
         description: "GitHub Discussions and Wikis - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1237,7 +1237,7 @@ content:
         description: "GitHub Projects and Milestones - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1258,7 +1258,7 @@ content:
         description: "Gitflow Workflow - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1271,7 +1271,7 @@ content:
         description: "GitHub Flow - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1284,7 +1284,7 @@ content:
         description: "Trunk-Based Development - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1297,7 +1297,7 @@ content:
         description: "Open Source Contribution Workflow - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1310,7 +1310,7 @@ content:
         description: "Team Git Workflows - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1331,7 +1331,7 @@ content:
         description: "git tag - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1344,7 +1344,7 @@ content:
         description: "Annotated vs Lightweight Tags - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1357,7 +1357,7 @@ content:
         description: "Semantic Versioning with Tags - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1370,7 +1370,7 @@ content:
         description: "Release Branch Strategy - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1391,7 +1391,7 @@ content:
         description: "git cherry-pick - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1404,7 +1404,7 @@ content:
         description: "Cherry-Pick Use Cases - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1417,7 +1417,7 @@ content:
         description: "git cherry-pick Conflicts - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1430,7 +1430,7 @@ content:
         description: "Rebase Advanced Techniques - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1451,7 +1451,7 @@ content:
         description: "Git Objects - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1464,7 +1464,7 @@ content:
         description: "git bisect - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1477,7 +1477,7 @@ content:
         description: "Git References and HEAD - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1490,7 +1490,7 @@ content:
         description: "Git Packfiles - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1503,7 +1503,7 @@ content:
         description: "Git Plumbing vs Porcelain - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1516,7 +1516,7 @@ content:
         description: "Git DAG and Commit Graph - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1529,7 +1529,7 @@ content:
         description: "Git Object Storage - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1550,7 +1550,7 @@ content:
         description: "Git Stash - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1563,7 +1563,7 @@ content:
         description: "Git Hooks - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1576,7 +1576,7 @@ content:
         description: "git worktree - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1589,7 +1589,7 @@ content:
         description: "git reflog - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1602,7 +1602,7 @@ content:
         description: "git filter-branch and git filter-repo - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1615,7 +1615,7 @@ content:
         description: "git archive - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1628,7 +1628,7 @@ content:
         description: "git stash Advanced - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1641,7 +1641,7 @@ content:
         description: "Git Hooks Advanced - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1662,7 +1662,7 @@ content:
         description: "Git Aliases - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1675,7 +1675,7 @@ content:
         description: "Advanced Git Configuration - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1688,7 +1688,7 @@ content:
         description: "Git Credential Management - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1701,7 +1701,7 @@ content:
         description: "Git Commit Signing with GPG - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1722,7 +1722,7 @@ content:
         description: "Git Submodules - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1735,7 +1735,7 @@ content:
         description: "git subtree - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1748,7 +1748,7 @@ content:
         description: "Git LFS (Large File Storage) - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1769,7 +1769,7 @@ content:
         description: "Semantic Commit Messages - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1782,7 +1782,7 @@ content:
         description: "Branching Strategies - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1795,7 +1795,7 @@ content:
         description: "gitignore Best Practices - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1808,7 +1808,7 @@ content:
         description: "Code Review Best Practices - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1821,7 +1821,7 @@ content:
         description: "Git Security - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1834,7 +1834,7 @@ content:
         description: "Dependency Management with Git - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1847,7 +1847,7 @@ content:
         description: "Enterprise Git Workflows - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1868,7 +1868,7 @@ content:
         description: "GitHub Actions - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1881,7 +1881,7 @@ content:
         description: "GitHub Actions Advanced - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1894,7 +1894,7 @@ content:
         description: "Git in CI/CD Pipelines - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1907,7 +1907,7 @@ content:
         description: "Changelog Generation - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1920,7 +1920,7 @@ content:
         description: "Testing Git Workflows - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1933,7 +1933,7 @@ content:
         description: "Docker and Git Workflow - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1946,7 +1946,7 @@ content:
         description: "Kubernetes and GitOps - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1967,7 +1967,7 @@ content:
         description: "git log - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1980,7 +1980,7 @@ content:
         description: "Debugging with Git - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1993,7 +1993,7 @@ content:
         description: "Git Performance Optimization - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -2006,7 +2006,7 @@ content:
         description: "Monorepo with Git - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -2019,7 +2019,7 @@ content:
         description: "Git Tips and Tricks - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -2032,7 +2032,7 @@ content:
         description: "Common Git Mistakes and Fixes - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -2045,7 +2045,7 @@ content:
         description: "Git gc and Maintenance - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -2058,7 +2058,7 @@ content:
         description: "Git Sparse Checkout - Complete guide for Git."
         topics:
           - git
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970575/Portfolio/gitMastery/Gemini_Generated_Image_pis399pis399pis3_jozi8j.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false

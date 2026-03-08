@@ -62,7 +62,7 @@ onMounted(() => {
               :class="{ '!border-red-500 text-red-500': $route.path.startsWith(item.to) || item.activeRoutes.some(route => $route.path.startsWith(route)) }"
               class="transition-all duration-200 border-b-2 border-transparent pt-1 py-1 px-2 md:px-3 md:py-2 text-base font-medium text-gray-300 hover:text-red-500 flex items-center gap-1.5">
               {{ item.text }}
-              <span v-if="item.badge" class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-red-500 text-white leading-none">{{ item.badge }}</span>
+              <span v-if="item.badge" class="text-[10px] font-bold px-1.5 py-0.5 rounded-none bg-red-500 text-white leading-none">{{ item.badge }}</span>
             </AppLink>
             <!-- <AppLink :to="isLive ? SOCIALS.twitch : undefined" title="To my Twitch Channel" :aria-disabled="!isLive" active-class="!border-red-500 text-red-500"
               class="transition-all inline-block relative duration-200 border-b-2 border-transparent py-1 md:px-3 md:py-2 text-base font-medium text-gray-300 hover:text-red-500">
@@ -72,7 +72,7 @@ onMounted(() => {
                   <span class="hidden lg:inline">LIVE NOW</span>
                 </span>
                 <span
-                  class="animate-ping inline-flex absolute h-4 w-4 top-0 right-0 rounded-full bg-red-700 opacity-50" />
+                  class="animate-ping inline-flex absolute h-4 w-4 top-0 right-0 rounded-none bg-red-700 opacity-50" />
               </template>
             </AppLink> -->
           </div>
@@ -84,12 +84,12 @@ onMounted(() => {
             <span>
               <Icon class="text-purple-700 lg:mr-2 text-lg" name="mdi:twitch" />
             </span>
-            <span class="animate-ping inline-flex absolute h-4 w-4 top-0 right-0 rounded-full bg-red-700 opacity-50" />
+            <span class="animate-ping inline-flex absolute h-4 w-4 top-0 right-0 rounded-none bg-red-700 opacity-50" />
           </AppLink> -->
           <div class="-mr-2 flex sm:hidden">
             <!-- Mobile menu button -->
             <DisclosureButton
-              class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+              class="relative inline-flex items-center justify-center rounded-none p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
               <span class="absolute -inset-0.5" />
               <span class="sr-only">Open main menu</span>
               <Icon :name="open ? 'heroicons:x-mark' : 'heroicons:bars-3'" class="block h-6 w-6" aria-hidden="true" />
@@ -103,7 +103,7 @@ onMounted(() => {
       <div class="space-y-1 px-2 pb-3 pt-2">
         <DisclosureButton v-for="item in MENU_ITEMS" as="span">
           <AppLink active-class="text-red-500" :to="item.to" @click="close"
-            class="transition-all block duration-200 rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:text-red-500">
+            class="transition-all block duration-200 rounded-none px-3 py-2 text-base font-medium text-gray-300 hover:text-red-500">
             {{ item.text }}</AppLink>
         </DisclosureButton>
       </div>

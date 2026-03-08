@@ -4,6 +4,8 @@ description: "This course is designed to take you from Zero to Hero in Frontend 
 tutor: 1
 time: "25hr 45 mins"
 video: false
+published: true
+datePublished: 2026-02-21
 topics:
   - frontend
 content:

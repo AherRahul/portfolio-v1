@@ -1,6 +1,6 @@
 ---
 title: Concurrency Interview
-description: "Comprehensive preparation for Concurrency Interviews."
+description: "Learn the core concepts of multithreading, synchronization, parallelism, and concurrency patterns commonly asked in technical interviews. This course helps you understand how modern systems handle multiple tasks efficiently and prepares you to confidently answer concurrency-related interview questions."
 tutor: 1
 video: false
 topics:
@@ -21,7 +21,7 @@ content:
         description: "Concurrency InterviewNew - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -42,7 +42,7 @@ content:
         description: "Course Roadmap - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -55,7 +55,7 @@ content:
         description: "Join the Community - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -76,7 +76,7 @@ content:
         description: "Introduction to Concurrency - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -89,7 +89,7 @@ content:
         description: "Concurrency vs Parallelism - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -102,7 +102,7 @@ content:
         description: "Processes vs Threads - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -115,7 +115,7 @@ content:
         description: "Thread Lifecycle and States - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -128,7 +128,7 @@ content:
         description: "Race Conditions and Critical Sections - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -141,7 +141,7 @@ content:
         description: "Concurrency Models - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -162,7 +162,7 @@ content:
         description: "Creating Threads - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -175,7 +175,7 @@ content:
         description: "Java Memory Model - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -188,7 +188,7 @@ content:
         description: "Synchronized vs ReentrantLock - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -201,7 +201,7 @@ content:
         description: "java.util.concurrent Package Tour - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -214,7 +214,7 @@ content:
         description: "Virtual Threads - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -227,7 +227,7 @@ content:
         description: "CompletableFuture Async Programming - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -240,7 +240,7 @@ content:
         description: "Creating Threads - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -253,7 +253,7 @@ content:
         description: "Global Interpreter Lock (GIL) - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -266,7 +266,7 @@ content:
         description: "Threading vs Multiprocessing - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -279,7 +279,7 @@ content:
         description: "Asyncio Fundamentals - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -292,7 +292,7 @@ content:
         description: "concurrent.futures Module - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -305,7 +305,7 @@ content:
         description: "Creating Threads - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -318,7 +318,7 @@ content:
         description: "C++ Memory Model - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -331,7 +331,7 @@ content:
         description: "std::atomic and Memory Orders - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -344,7 +344,7 @@ content:
         description: "RAII for Concurrency - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -357,7 +357,7 @@ content:
         description: "std::async, std::future, and std::promise - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -370,7 +370,7 @@ content:
         description: "Creating Threads - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -383,7 +383,7 @@ content:
         description: "C# Memory Model - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -396,7 +396,7 @@ content:
         description: "Lock, Monitor, and Synchronization - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -409,7 +409,7 @@ content:
         description: "Task Parallel Library (TPL) - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -422,7 +422,7 @@ content:
         description: "Async/Await Internals - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -435,7 +435,7 @@ content:
         description: "Channels and Dataflow - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -448,7 +448,7 @@ content:
         description: "Creating Goroutines - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -461,7 +461,7 @@ content:
         description: "Go Memory Model - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -474,7 +474,7 @@ content:
         description: "Goroutines and Scheduler - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -487,7 +487,7 @@ content:
         description: "Channels Fundamentals - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -500,7 +500,7 @@ content:
         description: "sync Package - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -521,7 +521,7 @@ content:
         description: "Mutex (Mutual Exclusion) - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -534,7 +534,7 @@ content:
         description: "Semaphores - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -547,7 +547,7 @@ content:
         description: "Condition Variables - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -560,7 +560,7 @@ content:
         description: "Read-Write Locks - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -573,7 +573,7 @@ content:
         description: "Barriers and Latches - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -594,7 +594,7 @@ content:
         description: "Coarse-grained vs Fine-grained Locking - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -607,7 +607,7 @@ content:
         description: "Reentrant Locks - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -620,7 +620,7 @@ content:
         description: "Try-Lock and Timed Locking - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -633,7 +633,7 @@ content:
         description: "Optimistic vs Pessimistic Locking - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -646,7 +646,7 @@ content:
         description: "Two-Phase Locking - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -667,7 +667,7 @@ content:
         description: "Compare-And-Swap (CAS) - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -680,7 +680,7 @@ content:
         description: "Atomic Operations - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -701,7 +701,7 @@ content:
         description: "Deadlock - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -714,7 +714,7 @@ content:
         description: "Livelock - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -727,7 +727,7 @@ content:
         description: "Starvation - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -740,7 +740,7 @@ content:
         description: "Lost Signal / Wakeup - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -753,7 +753,7 @@ content:
         description: "Spurious Wakeup - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -766,7 +766,7 @@ content:
         description: "Thread Leakage - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -779,7 +779,7 @@ content:
         description: "Priority Inversion - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -800,7 +800,7 @@ content:
         description: "Signaling Pattern - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -813,7 +813,7 @@ content:
         description: "Thread Pool Pattern - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -826,7 +826,7 @@ content:
         description: "Producer-Consumer Pattern - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -839,7 +839,7 @@ content:
         description: "Reader-Writer Pattern - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -852,7 +852,7 @@ content:
         description: "Future/Promise Pattern - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -865,7 +865,7 @@ content:
         description: "Fork-Join Pattern - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -878,7 +878,7 @@ content:
         description: "Double-Checked Locking Pattern - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -899,7 +899,7 @@ content:
         description: "Print Foo Bar Alternately - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -912,7 +912,7 @@ content:
         description: "Print Zero Even Odd - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -925,7 +925,7 @@ content:
         description: "Fizz Buzz Multithreaded - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -938,7 +938,7 @@ content:
         description: "Building H2O Molecule - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -951,7 +951,7 @@ content:
         description: "Readers-Writers Problem - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -964,7 +964,7 @@ content:
         description: "Unisex Bathroom - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -977,7 +977,7 @@ content:
         description: "Bounded Buffer - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -990,7 +990,7 @@ content:
         description: "Sleeping Barber - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1003,7 +1003,7 @@ content:
         description: "Dining Philosophers - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1016,7 +1016,7 @@ content:
         description: "Cigarette Smokers Problem - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1029,7 +1029,7 @@ content:
         description: "Santa Claus Problem - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1050,7 +1050,7 @@ content:
         description: "Design Thread-Safe Cache with TTL - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1063,7 +1063,7 @@ content:
         description: "Design Thread-Safe Rate Limiter - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1076,7 +1076,7 @@ content:
         description: "Design Deferred Callback Executor - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1089,7 +1089,7 @@ content:
         description: "Design Ticket Booking System - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1102,7 +1102,7 @@ content:
         description: "Design Multithreaded Web Crawler - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1115,7 +1115,7 @@ content:
         description: "Design Multithreaded Pub-Sub System - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1128,7 +1128,7 @@ content:
         description: "Design Task Scheduler with Dependencies - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1149,7 +1149,7 @@ content:
         description: "Design Concurrent HashMap - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1162,7 +1162,7 @@ content:
         description: "Design Thread-Safe Blocking Queue - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1175,7 +1175,7 @@ content:
         description: "Design Concurrent Bloom Filter - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1188,7 +1188,7 @@ content:
         description: "Design Lock-Free Queue - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1201,7 +1201,7 @@ content:
         description: "Design Concurrent Priority Queue - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1214,7 +1214,7 @@ content:
         description: "Design Thread-Safe Trie - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1235,7 +1235,7 @@ content:
         description: "Multi-threaded Merge Sort - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1248,7 +1248,7 @@ content:
         description: "Multi-threaded Word Frequency Counter - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false
@@ -1261,7 +1261,7 @@ content:
         description: "Concurrent BFS/DFS Graph Traversal - Comprehensive guide for Concurrency Interview."
         topics:
           - concurrency-interview
-        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1769794193/Portfolio/awsCourse/Aws_solution_architect_banner_image_uxqldk.png
+        photo_url: https://res.cloudinary.com/duojkrgue/image/upload/v1772970106/Portfolio/concurrencyInterview/ChatGPT_Image_Mar_8_2026_05_11_03_PM_okkizr.png
         duration: "10:00 mins read"
         auther_name: Rahul Aher
         is_on_youtube: false

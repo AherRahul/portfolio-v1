@@ -4,6 +4,8 @@ description: "Master React.js from fundamentals to advanced concepts. This compr
 tutor: 1
 time: "25hr 45 mins"
 video: false
+published: true
+datePublished: 2026-02-21
 topics:
    - javascript
 content:

@@ -119,284 +119,260 @@ defineOgImageComponent('Course', {
 </script>
 
 <template>
-  <div>
+  <div class="min-h-screen bg-black overflow-x-hidden">
     <!-- Hero Section -->
-    <AppSection class="bg-gradient-to-b from-black to-zinc-900 text-white pb-12">
-      <div class="container mx-auto">
-        <AppLinkBack to="/courses/" class="text-gray-300 hover:text-white">
-          All Courses
-        </AppLinkBack>
-        <ParagraphDecoration class="mt-2" />
-        <AppParagraph class="mt-4" look="heading" tag="h1">
-          {{ course.title }}
-        </AppParagraph>
-        <div class="flex flex-wrap gap-2 mt-2">
-          <span v-if="level" class="text-xs px-2 py-1 rounded-md border border-zinc-700 bg-zinc-900/60">{{ level }}</span>
-        </div>
-        <CourseDetails
-          :time="course.time"
-          :tutor="course.tutor"
-          :languages="course.languages"
-          :video="course.video"
-          class="mt-6 flex flex-wrap gap-8 hidden lg:flex"
-        />
-        <!-- <div class="mt-6">
-          <AppButton :to="enrollMailto" class="mr-3">Enroll / Contact</AppButton>
-          <AppButton to="/contact/" look="secondary">Contact form</AppButton>
-        </div> -->
+    <div class="relative overflow-hidden bg-zinc-950 pt-2 pb-6 lg:pt-2 lg:pb-10 border-b border-zinc-900">
+      <AppSection>
+        <div class="container mx-auto">
+          <AppLinkBack to="/courses/" class="inline-flex items-center gap-2 text-zinc-500 hover:text-red-500 transition-colors uppercase text-[10px] font-black tracking-[0.3em] mb-4">
+             All Courses
+          </AppLinkBack>
+          
+          <div class="max-w-4xl">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="h-px w-8 bg-red-600"></span>
+              <span class="text-[10px] sm:text-xs font-bold uppercase tracking-[0.3em] text-red-500">Course Deep Dive</span>
+            </div>
+            
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tighter text-white mb-4 uppercase">
+              {{ course.title }}
+            </h1>
+            
+            <div class="flex flex-wrap items-center gap-4 lg:gap-6 mb-6">
+              <div v-if="level" class="px-3 py-1.5 lg:px-4 lg:py-2 text-[10px] font-black uppercase tracking-widest bg-zinc-900 border border-zinc-800 text-zinc-400 rounded-none shadow-2xl">
+                {{ level }}
+              </div>
+              <div class="h-8 w-px bg-zinc-800 hidden sm:block"></div>
+              <CourseDetails
+                :time="course.time"
+                :tutor="course.tutor"
+                :languages="course.languages"
+                :video="course.video"
+                class="flex flex-wrap gap-4 lg:gap-8 text-zinc-400 font-bold uppercase text-[10px] lg:text-[11px] tracking-widest"
+              />
+            </div>
 
-      </div>
-    </AppSection>
+            <p class="text-base lg:text-lg leading-relaxed text-zinc-400 max-w-3xl font-medium mb-8">
+              {{ course.description }}
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 mb-4">
+              <AppButton :to="enrollMailto" class="w-full sm:w-auto flex justify-center items-center px-8 py-4 text-xs font-black uppercase tracking-[0.2em] rounded-none">
+                Get Started
+                <Icon name="heroicons:bolt-20-solid" class="ml-2" />
+              </AppButton>
+              <AppButton to="#curriculum" class="hidden sm:inline-flex justify-center items-center px-8 py-4 text-xs font-black uppercase tracking-[0.2em] rounded-none !bg-zinc-900 hover:!bg-zinc-800">
+                View Curriculum
+              </AppButton>
+            </div>
+          </div>
+        </div>
+      </AppSection>
+    </div>
 
     <!-- Course Content Section -->
-    <AppSection class="bg-zinc-900 pb-8 text-white">
-      <div class="container mx-auto">
-        <div class="lg:grid lg:grid-cols-12 lg:gap-8">
-          <aside class="hidden lg:block lg:col-span-3 sticky top-24 self-start">
-            <div class="bg-zinc-800 p-4 border border-zinc-700">
-              <h3 class="text-lg font-semibold mb-4 flex items-center gap-2">
-                <Icon name="heroicons:list-bullet" class="text-xl" />
-                Course Modules
-              </h3>
-              <ol class="space-y-2">
-                <li v-for="(module, index) in publishedModules" :key="module.module_id">
-                  <a :href="`#module-${index+1}`" 
-                     class="flex items-center gap-3 p-2 text-zinc-300 hover:text-white hover:bg-zinc-700 transition-all duration-200 group">
-                    <span class="flex-shrink-0 w-6 h-6 bg-zinc-700 group-hover:bg-red-500 flex items-center justify-center text-xs font-semibold">
-                      {{ index + 1 }}
+    <div id="curriculum" class="relative z-10 py-12 bg-black">
+      <AppSection>
+        <div class="container mx-auto">
+          <div class="lg:grid lg:grid-cols-12 lg:gap-16">
+            <!-- Sticky Sidebar -->
+            <aside class="hidden lg:block lg:col-span-3 sticky top-32 self-start">
+              <div class="bg-zinc-950 border border-zinc-900 p-8 shadow-2xl">
+                <h3 class="text-xs font-black uppercase tracking-[0.3em] text-red-500 mb-8 flex items-center gap-3">
+                  <Icon name="heroicons:list-bullet-20-solid" class="text-xl" />
+                  Index
+                </h3>
+                <nav class="space-y-6">
+                  <a v-for="(module, mIndex) in publishedModules" :key="module.module_id"
+                     :href="`#module-${Number(mIndex) + 1}`" 
+                     class="flex items-start gap-4 text-zinc-500 hover:text-white transition-all duration-300 group">
+                    <span class="flex-shrink-0 w-6 h-6 border border-zinc-800 group-hover:border-red-600 flex items-center justify-center text-[10px] font-black">
+                      {{ (Number(mIndex) + 1).toString().padStart(2, '0') }}
                     </span>
-                    <span class="text-sm leading-tight">{{ module.module_name }}</span>
+                    <span class="text-xs font-bold leading-tight uppercase tracking-wider">{{ module.module_name }}</span>
                   </a>
-                </li>
-              </ol>
-            </div>
-          </aside>
-          <div class="lg:col-span-9">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
-              <div>
-                <h2 class="text-3xl font-semibold mb-2">Course Content</h2>
-                <!-- Course stats -->
-                <div class="flex flex-wrap gap-4 text-sm text-zinc-400">
-                  <span>{{ publishedModules.length }} modules</span>
-                  <span>{{ publishedModules.reduce((total: number, module: any) => total + (module.topics?.length || 0), 0) }} lectures</span>
-                  <span>{{ course.time }} total length</span>
-                </div>
+                </nav>
               </div>
-              <div class="flex gap-2">
-                <AppButton look="secondary" @click="expandAll">
-                  <Icon name="heroicons:chevron-down" class="text-lg mr-1" />
-                  Expand all
-                </AppButton>
-                <AppButton look="secondary" @click="collapseAll">
-                  <Icon name="heroicons:chevron-up" class="text-lg mr-1" />
-                  Collapse all
-                </AppButton>
-              </div>
-            </div>
-            <div class="space-y-4">
-          <div
-            v-for="(module, index) in publishedModules"
-            :key="module.module_id"
-            :id="`module-${index+1}`"
-            class="bg-zinc-800 shadow-lg transition-all hover:shadow-xl border-l-4 border-red-500 overflow-hidden"
-          >
-            <button 
-              @click="(event) => toggleModule(module.module_id, event)"
-              class="w-full bg-zinc-800/90 p-4 sm:p-6 border-b border-zinc-700 hover:bg-zinc-700/50 transition-colors text-left"
-            >
-              <div class="flex items-center gap-3 text-white">
-                <span class="flex-shrink-0 w-8 h-8 bg-red-500 flex items-center justify-center text-sm font-bold">
-                  {{ index + 1 }}
-                </span>
-                <div class="flex-1 min-w-0">
-                  <div class="flex items-center gap-3">
-                    <span class="text-lg sm:text-xl font-semibold truncate">{{ module.module_name }}</span>
-                    <span class="hidden sm:inline text-sm text-zinc-400 bg-zinc-700 px-3 py-1 flex-shrink-0">
-                      {{ module.module_duration }}
-                    </span>
-                  </div>
-                  <!-- Module stats -->
-                  <div class="flex items-center gap-4 mt-1 text-xs text-zinc-400">
-                    <span>{{ module.topics?.length || 0 }} lectures</span>
-                    <span class="hidden sm:inline">{{ module.tutor }} instructor{{ module.tutor > 1 ? 's' : '' }}</span>
-                    <span class="text-green-600">{{ getModuleProgress(module) }}% complete</span>
-                  </div>
-                  <!-- Progress bar -->
-                  <div class="mt-2 w-full bg-zinc-700 h-1">
-                    <div 
-                      class="h-1 bg-gradient-to-r from-red-500 to-pink-600 transition-all duration-300"
-                      :style="{ width: `${getModuleProgress(module)}%` }"
-                    ></div>
+            </aside>
+
+            <!-- Main Content Area -->
+            <div class="lg:col-span-9">
+              <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-10 lg:mb-12">
+                <div class="flex flex-col">
+                  <span class="text-[10px] font-black uppercase tracking-[0.3em] text-red-600 mb-2">Curriculum Overview</span>
+                  <h2 class="text-3xl lg:text-4xl font-black uppercase tracking-tighter text-white">Full <span class="text-red-600">Syllabus</span></h2>
+                  <div class="flex flex-wrap gap-4 lg:gap-6 mt-4 text-[9px] lg:text-[10px] font-black uppercase tracking-widest text-zinc-500">
+                    <span>{{ publishedModules.length }} Modules</span>
+                    <span>{{ publishedModules.reduce((total: number, module: any) => total + (module.topics?.length || 0), 0) }} Lectures</span>
+                    <span>{{ course.time }} HD Content</span>
                   </div>
                 </div>
-                <Icon 
-                  :name="moduleExpanded[module.module_id] ? 'heroicons:chevron-up' : 'heroicons:chevron-down'"
-                  class="text-xl text-zinc-400 transition-transform duration-200 flex-shrink-0"
-                />
+                <div class="hidden sm:flex gap-2">
+                  <button @click="expandAll" class="px-4 py-2 border border-zinc-800 text-[10px] font-black uppercase tracking-widest text-zinc-400 hover:text-white hover:border-zinc-700 transition-all">
+                    Expand all
+                  </button>
+                  <button @click="collapseAll" class="px-4 py-2 border border-zinc-800 text-[10px] font-black uppercase tracking-widest text-zinc-400 hover:text-white hover:border-zinc-700 transition-all">
+                    Collapse all
+                  </button>
+                </div>
               </div>
-              <!-- Mobile duration -->
-              <div class="sm:hidden mt-2 text-sm text-zinc-400">
-                Duration: {{ module.module_duration }}
-              </div>
-            </button>
-            
-            <div 
-              v-show="moduleExpanded[module.module_id]"
-              class="transition-all duration-300 ease-in-out"
-            >
-              <div class="p-4 sm:p-6 space-y-4 sm:space-y-6">
+
+              <div class="space-y-4">
                 <div
-                  v-for="(lecture, l_index) in (module.topics || [])"
-                  :key="lecture.id"
-                  class="flex flex-col lg:grid lg:grid-cols-2 gap-4 lg:gap-6 bg-gradient-to-r from-zinc-700 to-zinc-700/80 p-4 sm:p-6 border border-zinc-600 hover:border-zinc-500 hover:shadow-lg transition-all duration-300"
+                  v-for="(module, mIndex) in publishedModules"
+                  :key="module.module_id"
+                  :id="`module-${Number(mIndex) + 1}`"
+                  class="bg-zinc-950 border border-zinc-900 group"
+                  :class="{ 'border-zinc-800 shadow-2xl': moduleExpanded[module.module_id] }"
                 >
-                  <!-- Video Section -->
-                  <div class="order-1 lg:order-1">
-                    <div v-if="lecture.videoUrl" class="video-container overflow-hidden shadow-sm">
-                      <iframe
-                        :src="lecture.videoUrl"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen
-                      ></iframe>
-                    </div>
-                    <div v-else class="overflow-hidden shadow-sm bg-zinc-600">
-                      <img
-                        :src="lecture.photo_url"
-                        :alt="`${lecture.topic_name} illustration`"
-                        class="w-full h-48 object-cover"
+                  <button 
+                    @click="(event) => toggleModule(module.module_id, event)"
+                    class="w-full p-4 sm:p-6 transition-colors text-left"
+                  >
+                    <div class="flex items-center gap-6 text-white">
+                      <span class="flex-shrink-0 w-10 h-10 border border-zinc-800 group-hover:border-red-600 flex items-center justify-center text-base font-black transition-colors" :class="{ 'border-red-600 text-red-500': moduleExpanded[module.module_id] }">
+                        {{ Number(mIndex) + 1 }}
+                      </span>
+                      <div class="flex-1 min-w-0">
+                        <div class="flex flex-wrap items-center gap-3 mb-1">
+                          <span class="text-xl font-black uppercase tracking-tighter">{{ module.module_name }}</span>
+                          <span class="text-[9px] font-black uppercase tracking-widest text-zinc-600 bg-zinc-900/50 px-2 py-0.5">
+                            {{ module.module_duration }}
+                          </span>
+                        </div>
+                        <div class="flex items-center gap-4 text-[9px] font-black uppercase tracking-widest">
+                          <span class="text-zinc-500">{{ module.topics?.length || 0 }} Lectures</span>
+                          <span class="text-red-500/80">{{ getModuleProgress(module) }}% Completed</span>
+                        </div>
+                      </div>
+                      <Icon 
+                        :name="moduleExpanded[module.module_id] ? 'heroicons:minus-20-solid' : 'heroicons:plus-20-solid'"
+                        class="text-xl text-zinc-700 transition-all group-hover:text-red-500"
+                        :class="{ 'text-red-500': moduleExpanded[module.module_id] }"
                       />
                     </div>
-                  </div>
+                  </button>
                   
-                  <!-- Lecture Details -->
-                  <div class="order-2 lg:order-2 space-y-3 sm:space-y-4">
-                    <div>
-                      <div class="flex items-start justify-between mb-2">
-                        <h4 class="text-base sm:text-lg font-semibold text-white flex items-center gap-2 flex-1">
-                          <span class="w-6 h-6 bg-red-500/20 border border-red-500/50 flex items-center justify-center text-xs font-bold text-red-400">
-                            {{ l_index + 1 }}
-                          </span>
-                          {{ lecture.topic_name }}
-                        </h4>
-                        <!-- Progress checkbox -->
-                        <button 
-                          @click="toggleLectureProgress(lecture.id)"
-                          class="flex-shrink-0 ml-2"
-                          :title="lectureProgress[lecture.id] ? 'Mark as incomplete' : 'Mark as complete'"
-                        >
-                          <Icon 
-                            :name="lectureProgress[lecture.id] ? 'heroicons:check-circle' : 'heroicons:check-circle'"
-                            :class="lectureProgress[lecture.id] ? 'text-green-500' : 'text-zinc-600 hover:text-green-500'"
-                            class="text-xl transition-colors"
-                          />
-                        </button>
-                      </div>
-                      
-                      <!-- Enhanced metadata -->
-                      <div class="space-y-2">
-                        <div v-if="lecture.sub_topic" class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-zinc-400 text-sm">
-                          <span class="flex items-center gap-1">
-                            <Icon class="text-lg" name="heroicons:book-open" /> 
-                            {{ lecture.sub_topic }}
-                          </span>
-                          <span v-if="lecture.duration" class="flex items-center gap-1">
-                            <Icon class="text-lg" name="heroicons:clock" /> 
-                            {{ lecture.duration }}
-                          </span>
-                        </div>
-                        
-                        <!-- Author and date -->
-                        <div v-if="lecture.auther_name || lecture.publish_date" class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-zinc-500 text-xs">
-                          <span v-if="lecture.auther_name" class="flex items-center gap-1">
-                            <Icon class="text-sm" name="heroicons:user" /> 
-                            {{ lecture.auther_name }}
-                          </span>
-                          <span v-if="lecture.publish_date" class="flex items-center gap-1">
-                            <Icon class="text-sm" name="heroicons:calendar" /> 
-                            {{ lecture.publish_date }}
-                          </span>
-                          <span v-if="lecture.is_on_youtube" class="flex items-center gap-1 text-red-500">
-                            <Icon class="text-sm" name="mdi:youtube" /> 
-                            YouTube Available
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div v-if="lecture.topics?.length" class="flex flex-wrap gap-2">
-                      <span
-                        v-for="topic in (lecture.topics || []).slice(0, 3)"
-                        :key="topic"
-                        class="bg-zinc-800 hover:bg-zinc-700 text-xs px-2 py-1 border border-zinc-600 hover:border-zinc-500 transition-colors"
+                  <div v-show="moduleExpanded[module.module_id]" class="border-t border-zinc-900 bg-black/40">
+                    <div class="p-4 sm:p-6 space-y-px bg-zinc-900 border-t border-zinc-900">
+                      <div
+                        v-for="(lecture, l_index) in (module.topics || [])"
+                        :key="lecture.id"
+                        class="bg-zinc-950 p-6 sm:p-8 border border-zinc-900 hover:border-zinc-700 transition-all duration-300"
                       >
-                        <AppLink :to="`/topics/${topic}`" class="hover:text-red-400 transition-colors">
-                          #{{ topic }}
-                        </AppLink>
-                      </span>
-                    </div>
+                        <div class="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-12">
+                          <!-- Media Section -->
+                          <div>
+                            <div v-if="lecture.videoUrl" class="video-container shadow-2xl ring-1 ring-zinc-800">
+                              <iframe
+                                :src="lecture.videoUrl"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                              ></iframe>
+                            </div>
+                            <div v-else class="relative group/img overflow-hidden ring-1 ring-zinc-800 bg-zinc-950 flex items-center justify-center">
+                              <img
+                                :src="lecture.photo_url"
+                                :alt="`${lecture.topic_name} illustration`"
+                                class="w-full aspect-video object-contain transition-all duration-700 group-hover/img:scale-105"
+                              />
+                            </div>
+                          </div>
+                          
+                          <!-- Info Section -->
+                          <div class="flex flex-col">
+                            <div class="flex items-start justify-between mb-4">
+                              <div class="flex flex-col">
+                                <span class="text-[9px] font-black uppercase tracking-[0.3em] text-red-600 mb-2">Lecture {{ Number(l_index) + 1 }}</span>
+                                <h4 class="text-xl font-black uppercase tracking-tighter text-white leading-tight">
+                                  {{ lecture.topic_name }}
+                                </h4>
+                              </div>
+                              <button @click="toggleLectureProgress(lecture.id)" class="text-2xl transition-all" :class="lectureProgress[lecture.id] ? 'text-green-500' : 'text-zinc-800 hover:text-zinc-600'">
+                                <Icon :name="lectureProgress[lecture.id] ? 'heroicons:check-badge-20-solid' : 'heroicons:check-badge-20-solid'" />
+                              </button>
+                            </div>
+                            
+                            <div class="flex flex-wrap gap-6 mb-6 text-[10px] font-black uppercase tracking-widest text-zinc-500">
+                              <span v-if="lecture.duration" class="flex items-center gap-2">
+                                <Icon class="text-lg text-zinc-800" name="heroicons:clock-20-solid" /> 
+                                {{ lecture.duration }}
+                              </span>
+                              <span v-if="lecture.is_on_youtube" class="flex items-center gap-2 text-red-500">
+                                <Icon class="text-lg" name="mdi:youtube" /> 
+                                Public
+                              </span>
+                            </div>
 
-                    <p v-if="lecture.description" class="text-zinc-300 leading-relaxed line-clamp-3">
-                      {{ lecture.description }}
-                    </p>
-                    
-                    <!-- Action buttons -->
-                    <div v-if="lecture._path || lecture.slidesUrl || lecture.videoUrl" class="flex flex-wrap justify-end gap-2 pt-3">
-                      <AppButton v-if="lecture._path" :to="`/articles/${$route.params.slug}/${lecture._path}`" look="secondary">
-                        <Icon name="heroicons:document-text" class="text-lg mr-1" />
-                        Read Article
-                      </AppButton>
-                      <AppButton v-if="lecture.slidesUrl" :to="lecture.slidesUrl" look="secondary" target="_blank">
-                        <Icon name="heroicons:presentation-chart-bar" class="text-lg mr-1" />
-                        View Slides
-                      </AppButton>
-                      <AppButton v-if="lecture.videoUrl && lecture.is_on_youtube" :to="lecture.videoUrl" look="secondary" target="_blank">
-                        <Icon name="mdi:youtube" class="text-lg mr-1" />
-                        Watch Video
-                      </AppButton>
+                            <p v-if="lecture.description" class="text-zinc-400 text-sm leading-relaxed line-clamp-2 mb-8 font-medium">
+                              {{ lecture.description }}
+                            </p>
+                            <div class="mt-auto flex flex-col sm:flex-row gap-3">
+                              <AppButton v-if="lecture._path" :to="`/articles/${$route.params.slug}/${lecture._path}`" class="w-full sm:w-auto flex justify-center items-center text-center !bg-red-600 hover:!bg-red-700 !text-[12px] py-4 px-8 lg:px-12 rounded-none border-none uppercase tracking-widest font-black shadow-xl transition-all hover:scale-105 active:scale-95">
+                                Read Article
+                              </AppButton>
+                              <AppButton v-if="lecture.slidesUrl" :to="lecture.slidesUrl" target="_blank" class="w-full sm:w-auto flex justify-center items-center text-center !bg-zinc-900 hover:!bg-zinc-800 !text-[9px] py-4 px-8 rounded-none border-none">
+                                DOWNLOAD SLIDES
+                              </AppButton>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
+          <!-- Secondary Details -->
+          <div v-if="prerequisites?.length || outcomes?.length || audience?.length" class="mt-8 border-t border-zinc-900 pt-8 mb-8">
+            <div class="grid md:grid-cols-3 gap-16">
+              <div v-if="prerequisites?.length">
+                <span class="text-[10px] font-black uppercase tracking-[0.3em] text-red-600 mb-4 block">Preparation</span>
+                <h3 class="text-2xl font-black uppercase tracking-tighter text-white mb-8">Prerequisites</h3>
+                <ul class="space-y-4">
+                  <li v-for="item in prerequisites" :key="item" class="flex items-start gap-3 text-zinc-400 text-sm font-medium">
+                    <Icon name="heroicons:chevron-right-20-solid" class="text-red-500 mt-0.5" />
+                    {{ item }}
+                  </li>
+                </ul>
+              </div>
+              <div v-if="outcomes?.length">
+                <span class="text-[10px] font-black uppercase tracking-[0.3em] text-red-600 mb-4 block">Knowledge</span>
+                <h3 class="text-2xl font-black uppercase tracking-tighter text-white mb-8">Outcomes</h3>
+                <ul class="space-y-4">
+                  <li v-for="item in outcomes" :key="item" class="flex items-start gap-3 text-zinc-400 text-sm font-medium">
+                    <Icon name="heroicons:check-20-solid" class="text-green-500 mt-0.5" />
+                    {{ item }}
+                  </li>
+                </ul>
+              </div>
+              <div v-if="audience?.length">
+                <span class="text-[10px] font-black uppercase tracking-[0.3em] text-red-600 mb-4 block">Targeting</span>
+                <h3 class="text-2xl font-black uppercase tracking-tighter text-white mb-8">Who it's for</h3>
+                <ul class="space-y-4">
+                  <li v-for="item in audience" :key="item" class="flex items-start gap-3 text-zinc-500 text-sm font-bold uppercase tracking-wide italic">
+                    {{ item }}
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
+      </AppSection>
+    </div>
 
-        <!-- Optional sections -->
-        <div class="mt-10 grid md:grid-cols-3 gap-6">
-          <div v-if="prerequisites?.length" class="bg-zinc-800 p-6 rounded-md border border-zinc-700">
-            <h3 class="text-xl font-semibold mb-3">Prerequisites</h3>
-            <ul class="list-disc pl-5 text-zinc-300 space-y-1">
-              <li v-for="item in prerequisites" :key="item">{{ item }}</li>
-            </ul>
-          </div>
-          <div v-if="outcomes?.length" class="bg-zinc-800 p-6 rounded-md border border-zinc-700">
-            <h3 class="text-xl font-semibold mb-3">What you'll learn</h3>
-            <ul class="list-disc pl-5 text-zinc-300 space-y-1">
-              <li v-for="item in outcomes" :key="item">{{ item }}</li>
-            </ul>
-          </div>
-          <div v-if="audience?.length" class="bg-zinc-800 p-6 rounded-md border border-zinc-700">
-            <h3 class="text-xl font-semibold mb-3">Who it's for</h3>
-            <ul class="list-disc pl-5 text-zinc-300 space-y-1">
-              <li v-for="item in audience" :key="item">{{ item }}</li>
-            </ul>
-          </div>
+    <!-- Article Content -->
+    <AppSection class="bg-black py-12 border-t border-zinc-900">
+      <div class="container mx-auto prose prose-invert prose-red max-w-none course-content">
+        <div class="flex items-center gap-4 mb-10">
+          <h2 class="text-4xl font-black uppercase tracking-tighter text-white m-0">
+            Deep <span class="text-red-600">Context</span>
+          </h2>
+          <div class="h-px flex-1 bg-zinc-900 mt-2"></div>
         </div>
-      </div>
-    </AppSection>
-
-    <!-- Additional Information Section -->
-    <AppSection class="bg-zinc-900 pb-8 border-t border-gray-700">
-      <!-- Content Reader positioned below heading -->
-      <!-- <div class="mt-8 ">
-        <ClientOnly>
-          <LazyContentReader :prepend="course.title" content-selector=".course-content" />
-        </ClientOnly>
-      </div> -->
-      <div class="container mx-auto prose md:prose-lg lg:prose-xl text-gray-300 course-content">
         <ContentDoc />
       </div>
     </AppSection>

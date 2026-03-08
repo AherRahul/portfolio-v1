@@ -72,16 +72,16 @@ function openSimulation(slug: string) {
     <!-- Simulation Modal -->
     <div v-if="showSimulationModal" class="fixed inset-0 z-[100] flex items-center justify-center p-4">
        <div class="absolute inset-0 bg-black/80 backdrop-blur-md" @click="showSimulationModal = false" />
-       <div class="relative w-full max-w-7xl bg-zinc-900 border border-white/5 rounded-1xl shadow-2xl flex flex-col max-h-[95vh] overflow-hidden scale-in">
+       <div class="relative w-full max-w-7xl bg-zinc-900 border border-white/5 rounded-none shadow-2xl flex flex-col max-h-[95vh] overflow-hidden scale-in">
           <div class="flex items-center justify-between px-8 py-6 border-b border-white/5 bg-zinc-900/50 backdrop-blur-xl">
              <div class="flex items-center gap-4">
-                <div class="w-12 h-12 bg-red-500/10 rounded-2xl flex items-center justify-center border border-red-500/20 shadow-[0_0_20px_rgba(239,68,68,0.1)]">
+                <div class="w-12 h-12 bg-red-500/10 rounded-none flex items-center justify-center border border-red-500/20 shadow-[0_0_20px_rgba(239,68,68,0.1)]">
                    <Icon name="heroicons:command-line" class="text-red-500 text-2xl" />
                 </div>
                 <div>
-                  <h3 class="text-xl font-black text-white tracking-tight uppercase leading-none mb-1.5">Design {{ activeSimulationSlug.split('-').slice(1).map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ') }}</h3>
+                  <h3 class="text-xl font-black text-white tracking-tighter uppercase leading-none mb-1.5">Design {{ activeSimulationSlug.split('-').slice(1).map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ') }}</h3>
                   <div class="flex items-center gap-2">
-                    <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+                    <span class="w-2 h-2 rounded-none bg-red-500 animate-pulse" />
                     <span class="text-[10px] font-black text-zinc-500 uppercase tracking-[0.2em]">Simulation Engine v1.0.8 // Terminal Active</span>
                   </div>
                 </div>
@@ -133,10 +133,10 @@ function openSimulation(slug: string) {
 
       <div class="flex flex-col md:flex-row md:items-end gap-6 mb-8">
         <div class="flex-1">
-          <h1 class="text-3xl font-extrabold text-white mb-2 tracking-tight">System Design Studio</h1>
+          <h1 class="text-3xl font-extrabold text-white mb-2 tracking-tighter uppercase">System Design Studio</h1>
           <p class="text-zinc-400 leading-relaxed max-w-2xl">Master HLD & LLD with interactive simulations and AI-powered evaluation. Practice real-world scenarios designed by industry experts.</p>
         </div>
-        <div class="flex items-center gap-3 px-4 py-2 bg-zinc-900 border border-zinc-700 rounded-xl">
+        <div class="flex items-center gap-3 px-4 py-2 bg-zinc-900 border border-zinc-700 rounded-none">
           <Icon name="heroicons:command-line" class="text-red-500" />
           <span class="text-xs font-black text-zinc-300 uppercase tracking-widest">{{ ALL_QUESTIONS.length }} Modules</span>
         </div>
@@ -145,10 +145,10 @@ function openSimulation(slug: string) {
       <!-- Tabs & Filters -->
       <div class="flex flex-col gap-6 mb-8">
         <!-- Tab Switcher -->
-        <div class="flex items-center p-1 bg-zinc-900 border border-zinc-800 rounded-2xl w-fit self-center md:self-start">
+        <div class="flex items-center p-1 bg-zinc-900 border border-zinc-800 rounded-none w-fit self-center md:self-start">
           <button 
             @click="activeTab = 'LLD'"
-            class="px-8 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all relative overflow-hidden"
+            class="px-8 py-2.5 rounded-none text-xs font-black uppercase tracking-widest transition-all relative overflow-hidden"
             :class="activeTab === 'LLD' ? 'text-white shadow-2xl' : 'text-zinc-500 hover:text-zinc-300'"
           >
             <div v-if="activeTab === 'LLD'" class="absolute inset-0 bg-gradient-to-r from-red-600 to-pink-600" />
@@ -156,7 +156,7 @@ function openSimulation(slug: string) {
           </button>
           <button 
             @click="activeTab = 'HLD'"
-            class="px-8 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all relative overflow-hidden"
+            class="px-8 py-2.5 rounded-none text-xs font-black uppercase tracking-widest transition-all relative overflow-hidden"
             :class="activeTab === 'HLD' ? 'text-white shadow-2xl' : 'text-zinc-500 hover:text-zinc-300'"
           >
             <div v-if="activeTab === 'HLD'" class="absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-600" />
@@ -172,13 +172,13 @@ function openSimulation(slug: string) {
               v-model="searchQuery"
               type="text"
               placeholder="Search problems by name or technology..."
-              class="w-full bg-zinc-900/50 backdrop-blur-sm border border-zinc-700 rounded-xl pl-9 pr-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-red-500/50 transition-all shadow-inner"
+              class="w-full bg-zinc-900/50 backdrop-blur-sm border border-zinc-700 rounded-none pl-9 pr-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-red-500/50 transition-all shadow-inner"
             />
           </div>
 
           <!-- Difficulty filter -->
           <select v-model="filterDifficulty"
-            class="bg-zinc-900/50 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-red-500/50 transition-all cursor-pointer min-w-[180px]">
+            class="bg-zinc-900/50 border border-zinc-700 rounded-none px-4 py-3 text-sm text-white focus:outline-none focus:border-red-500/50 transition-all cursor-pointer min-w-[180px]">
             <option value="All">Difficulty: Any</option>
             <option value="Easy">Beginner</option>
             <option value="Medium">Intermediate</option>
@@ -196,7 +196,7 @@ function openSimulation(slug: string) {
 
     <!-- QUESTION TABLE -->
     <AppSection class="mb-16">
-      <div v-if="filteredCategories.length === 0" class="text-center py-20 bg-zinc-900/40 border border-zinc-700 border-dashed rounded-3xl">
+      <div v-if="filteredCategories.length === 0" class="text-center py-20 bg-zinc-900/40 border border-zinc-700 border-dashed rounded-none">
         <Icon name="heroicons:circle-stack" class="text-4xl mb-4 text-zinc-700" />
         <div class="text-zinc-500 font-bold uppercase tracking-widest text-xs">No matching system modules found</div>
       </div>
@@ -206,7 +206,7 @@ function openSimulation(slug: string) {
           class="relative group">
           <!-- Category Header -->
           <div class="flex items-center gap-3 mb-6">
-            <div class="w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-700 flex items-center justify-center text-xl shadow-lg">
+            <div class="w-10 h-10 rounded-none bg-zinc-900 border border-zinc-700 flex items-center justify-center text-xl shadow-lg">
                {{ cat.icon }}
             </div>
             <div>
@@ -218,7 +218,7 @@ function openSimulation(slug: string) {
           <!-- Question Rows -->
           <div class="grid grid-cols-1 gap-3">
             <div v-for="(q, qi) in cat.questions" :key="q.slug"
-              class="relative overflow-hidden flex flex-col md:flex-row md:items-center gap-4 px-6 py-5 bg-zinc-900/40 backdrop-blur-md border border-white/5 rounded-2xl hover:border-red-500/30 transition-all group/row hover:-translate-y-1 shadow-sm">
+              class="relative overflow-hidden flex flex-col md:flex-row md:items-center gap-4 px-6 py-5 bg-zinc-900/40 backdrop-blur-md border border-white/5 rounded-none hover:border-red-500/30 transition-all group/row hover:-translate-y-1 shadow-sm">
               
               <!-- Subtle glow background -->
               <div class="absolute inset-0 bg-gradient-to-r from-red-500/0 via-red-500/[0.02] to-red-500/0 opacity-0 group-hover/row:opacity-100 transition-opacity pointer-events-none" />
@@ -229,18 +229,18 @@ function openSimulation(slug: string) {
                 <div class="min-w-0">
                   <NuxtLink
                     :to="`/system-design/practice/${q.slug}`"
-                    class="block text-sm font-black text-zinc-200 group-hover/row:text-white transition-colors hover:text-red-400 truncate tracking-tight uppercase"
+                    class="block text-sm font-black text-zinc-200 group-hover/row:text-white transition-colors hover:text-red-400 truncate tracking-tighter uppercase"
                   >
                     {{ q.title }}
                   </NuxtLink>
                   <div class="flex flex-wrap gap-2 mt-2">
                     <span v-for="tag in q.tags" :key="tag"
-                      class="text-[9px] font-black px-2 py-0.5 rounded-full bg-white/5 text-zinc-500 uppercase tracking-widest border border-white/5 group-hover/row:border-white/10 transition-colors">{{ tag }}</span>
+                      class="text-[9px] font-black px-2 py-0.5 rounded-none bg-white/5 text-zinc-500 uppercase tracking-widest border border-white/5 group-hover/row:border-white/10 transition-colors">{{ tag }}</span>
                   </div>
                 </div>
               </div>
 
-              <!-- Metrics (Hidden on Mobile) -->
+              <!-- Metrics -->
               <div class="hidden lg:flex items-center gap-8 px-8 border-x border-white/5">
                  <div class="flex flex-col gap-1">
                     <span class="text-[8px] font-black text-zinc-600 uppercase tracking-widest">Complexity</span>
@@ -260,7 +260,7 @@ function openSimulation(slug: string) {
                 <button
                   v-if="q.hasSimulation"
                   @click="openSimulation(q.slug)"
-                  class="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 text-zinc-300 hover:text-white hover:bg-white/10 rounded-xl transition-all text-[10px] font-black uppercase tracking-widest"
+                  class="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 text-zinc-300 hover:text-white hover:bg-white/10 rounded-none transition-all text-[10px] font-black uppercase tracking-widest"
                 >
                   <Icon name="heroicons:play-solid" class="text-red-500" />
                   Simulate
@@ -268,7 +268,7 @@ function openSimulation(slug: string) {
                 
                 <NuxtLink
                   :to="`/system-design/practice/${q.slug}?mode=${activeTab}`"
-                  class="relative group/btn overflow-hidden flex items-center justify-center gap-2 px-6 py-2.5 bg-zinc-800 text-white rounded-xl transition-all shadow-lg hover:shadow-red-500/20 active:scale-95 border border-white/5"
+                  class="relative group/btn overflow-hidden flex items-center justify-center gap-2 px-6 py-2.5 bg-zinc-800 text-white rounded-none transition-all shadow-lg hover:shadow-red-500/20 active:scale-95 border border-white/5"
                 >
                   <div class="absolute inset-0 bg-gradient-to-r from-red-600 to-pink-600 opacity-0 group-hover/btn:opacity-100 transition-opacity" />
                   <span class="relative z-10 text-[10px] font-black uppercase tracking-widest">Build System</span>
